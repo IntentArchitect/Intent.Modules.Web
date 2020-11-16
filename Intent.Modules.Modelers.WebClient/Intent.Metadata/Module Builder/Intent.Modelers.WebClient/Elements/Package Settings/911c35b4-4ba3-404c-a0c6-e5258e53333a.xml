@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="911c35b4-4ba3-404c-a0c6-e5258e53333a" type="Package Settings" typeId="89333f72-3960-4159-bf61-9c40d4b65088">
+  <name>Web Client</name>
+  <display>Web Client</display>
+  <isAbstract>false</isAbstract>
+  <order>0</order>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>93058b8a-4d1d-4f88-ac14-332c87666418</parentFolderId>
+  <packageId>2024876e-119b-4386-bc63-18e575f4e416</packageId>
+  <packageName>Intent.Modelers.WebClient</packageName>
+  <stereotypes>
+    <stereotype stereotypeDefinitionId="0cda9040-7af2-4bb5-8f9d-919455abc878" name="Package Settings">
+      <addedByDefault>true</addedByDefault>
+      <definitionPackageName>Intent.ModuleBuilder</definitionPackageName>
+      <definitionPackageId>9972b2a9-b749-4bba-b5c8-824bf694c6ef</definitionPackageId>
+      <properties>
+        <property name="fc8c4bc7-d83c-40e7-a85f-35886682d910" display="Default Name" isActive="true" />
+        <property name="3bdba51b-d9e1-4adb-a0ab-7999c4b4f563" display="Icon" isActive="true" />
+        <property name="c15cbaf3-f83d-4e3f-b489-7bf88a5143c4" display="Sorting" value="By type, then by name" isActive="true" />
+      </properties>
+    </stereotype>
+  </stereotypes>
+  <childElements>
+    <childElement id="e2eed931-fb1a-4b32-971e-8fb7b2bb45b7" type="Context Menu" typeId="d45e383d-90ba-4b64-aca7-34ca100cea21">
+      <name>[context menu]</name>
+      <display>[context menu]</display>
+      <isAbstract>false</isAbstract>
+      <order>0</order>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>911c35b4-4ba3-404c-a0c6-e5258e53333a</parentFolderId>
+      <packageId>2024876e-119b-4386-bc63-18e575f4e416</packageId>
+      <packageName>Intent.Modelers.WebClient</packageName>
+      <stereotypes />
+      <childElements />
+    </childElement>
+  </childElements>
+</class>

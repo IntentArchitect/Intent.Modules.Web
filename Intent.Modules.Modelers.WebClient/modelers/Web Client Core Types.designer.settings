@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<settings>
+  <id>93058b8a-4d1d-4f88-ac14-332c87666418</id>
+  <name>Web Client Core Types</name>
+  <packageSettings>
+    <packageSetting type="Web Client" typeId="911c35b4-4ba3-404c-a0c6-e5258e53333a">
+      <sortChildren>by-type-then-by-name</sortChildren>
+      <requiredPackages />
+      <creationOptions />
+      <typeOrder />
+    </packageSetting>
+  </packageSettings>
+  <packageExtensions />
+  <elementSettings />
+  <elementExtensions />
+  <associationSettings />
+</settings>
