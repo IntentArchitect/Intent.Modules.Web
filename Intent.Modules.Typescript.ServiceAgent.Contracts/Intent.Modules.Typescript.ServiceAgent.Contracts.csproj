@@ -5,24 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Intent.Packager" Version="3.0.0-pre.6">
+    <PackageReference Include="Intent.Modules.Common" Version="3.0.0-*" />
+    <PackageReference Include="Intent.Modules.Common.TypeScript" Version="3.0.0-*" />
+    <PackageReference Include="Intent.Modules.Modelers.Services" Version="3.0.0-*" />
+    <PackageReference Include="Intent.Packager" Version="3.0.0-*">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Intent.SoftwareFactory.SDK" Version="3.0.0-pre.9" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\Intent.Modules.Common.CSharp\Intent.Modules.Common.CSharp.csproj" />
-    <ProjectReference Include="..\Intent.Modules.Common.TypeScript\Intent.Modules.Common.TypeScript.csproj" />
-    <ProjectReference Include="..\Intent.Modules.Constants\Intent.Modules.Constants.csproj" />
-    <ProjectReference Include="..\Intent.Modules.Modelers.Services\Intent.Modules.Modelers.Services.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Reference Include="Intent.SoftwareFactory.SDK">
-      <HintPath>..\..\..\Intent\Intent.IntentArchitect\IntentArchitect.SoftwareFactory\Intent.SoftwareFactory.SDK\bin\Debug\netstandard2.0\Intent.SoftwareFactory.SDK.dll</HintPath>
-    </Reference>
   </ItemGroup>
 
   <ItemGroup>

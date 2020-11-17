@@ -36,7 +36,7 @@ namespace Intent.Modules.Typescript.ServiceAgent.Contracts.Templates.TypescriptD
                 fileName: Model.Name,
                 relativeLocation: "",
                 className: "${Model.Name}",
-                @namespace: "App.Contracts");
+                @namespace: OutputTarget.ApplicationName() == ApplicationName ? "App.Contracts" : $"App.Contracts.{ApplicationName}");
         }
     }
 }
