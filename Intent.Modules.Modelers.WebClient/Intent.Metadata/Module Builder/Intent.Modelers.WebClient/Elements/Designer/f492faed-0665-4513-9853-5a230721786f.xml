@@ -23,7 +23,7 @@
   <childElements>
     <childElement id="99431f87-6866-47a0-b6a8-4e30df7cbb05" type="Designer Reference" typeId="ace8c966-1a7f-487e-b21b-dd601e57f13f">
       <name>reference</name>
-      <display>reference: Web Client Core Types</display>
+      <display>reference: Web Client Package</display>
       <isAbstract>false</isAbstract>
       <order>0</order>
       <genericTypes />
@@ -35,6 +35,30 @@
         <isRequired>true</isRequired>
         <typePackageName>Intent.Modelers.WebClient</typePackageName>
         <typePackageId>2024876e-119b-4386-bc63-18e575f4e416</typePackageId>
+        <stereotypes />
+        <genericTypeParameters />
+      </typeReference>
+      <isMapped>false</isMapped>
+      <parentFolderId>f492faed-0665-4513-9853-5a230721786f</parentFolderId>
+      <packageId>2024876e-119b-4386-bc63-18e575f4e416</packageId>
+      <packageName>Intent.Modelers.WebClient</packageName>
+      <stereotypes />
+      <childElements />
+    </childElement>
+    <childElement id="8ca8ab75-e186-43de-be8b-4ea25b96b448" type="Designer Reference" typeId="ace8c966-1a7f-487e-b21b-dd601e57f13f">
+      <name>reference</name>
+      <display>reference: Common Types</display>
+      <isAbstract>false</isAbstract>
+      <order>1</order>
+      <genericTypes />
+      <typeReference id="329e6592-974b-451e-a7db-391fca251d2d">
+        <typeId>55d06096-83fe-4acf-86ef-586d254e5170</typeId>
+        <isNavigable>true</isNavigable>
+        <isNullable>false</isNullable>
+        <isCollection>false</isCollection>
+        <isRequired>true</isRequired>
+        <typePackageName>Intent.Common.Types</typePackageName>
+        <typePackageId>870ad967-cbd4-4ea9-b86d-9c3a5d55ea67</typePackageId>
         <stereotypes />
         <genericTypeParameters />
       </typeReference>

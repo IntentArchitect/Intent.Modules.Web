@@ -10,11 +10,13 @@ using Intent.Modules.Common;
 using Intent.Modules.Common.Templates;
 using Intent.Modules.Common.TypeScript;
 using Intent.Modules.Common.TypeScript.Templates;
+using Intent.Modules.Modelers.Types.ServiceProxies.Api;
 using Intent.Modules.Typescript.ServiceAgent.Contracts.Templates.TypescriptDTO;
+using OperationModel = Intent.Modules.Modelers.Types.ServiceProxies.Api.OperationModel;
 
 namespace Intent.Modules.Typescript.ServiceAgent.AngularJs.Templates.ServiceProxy
 {
-    partial class TypescriptWebApiClientServiceProxyTemplate : TypeScriptTemplateBase<ServiceModel>, ITemplate, ITemplateBeforeExecutionHook
+    partial class TypescriptWebApiClientServiceProxyTemplate : TypeScriptTemplateBase<ServiceProxyModel>, ITemplate, ITemplateBeforeExecutionHook
     {
         public const string RemoteIdentifier = "Intent.Typescript.ServiceAgent.AngularJs.Proxy.Remote";
         public const string LocalIdentifier = "Intent.Typescript.ServiceAgent.AngularJs.Proxy.Local";
@@ -22,12 +24,11 @@ namespace Intent.Modules.Typescript.ServiceAgent.AngularJs.Templates.ServiceProx
         public const string DomainTemplateDependancyId = "DomainTemplateDependancyId";
         private readonly IApplicationEventDispatcher _eventDispatcher;
 
-        public TypescriptWebApiClientServiceProxyTemplate(string identifier, IProject project, ServiceModel model, IApplicationEventDispatcher eventDispatcher)
+        public TypescriptWebApiClientServiceProxyTemplate(string identifier, IOutputTarget project, ServiceProxyModel model, IApplicationEventDispatcher eventDispatcher)
             : base(identifier, project, model)
         {
             _eventDispatcher = eventDispatcher;
-            AddTypeSource(TypescriptTypeSource.Create(ExecutionContext, TypescriptDtoTemplate.LocalIdentifier));
-            AddTypeSource(TypescriptTypeSource.Create(ExecutionContext, TypescriptDtoTemplate.RemoteIdentifier));
+            AddTypeSource(TypescriptTypeSource.Create(ExecutionContext, TypescriptDtoTemplate.TemplateId));
         }
 
         public override IEnumerable<ITemplateDependency> GetTemplateDependencies()
@@ -35,7 +36,7 @@ namespace Intent.Modules.Typescript.ServiceAgent.AngularJs.Templates.ServiceProx
             return new ITemplateDependency[0]; // disable adding on imports when merged
         }
 
-        public string ApiBasePathConfigKey => $"{OutputTarget.Application.SolutionName.ToLower()}_{Model.Application.Name.ToLower()}_api_basepath".Replace(".", "").ToLower();
+        public string ApiBasePathConfigKey => $"{OutputTarget.Application.SolutionName.ToLower()}_{ExecutionContext.GetApplicationConfig(Model.Mapping.ApplicationId).Name.ToLower()}_api_basepath".Replace(".", "").ToLower();
 
         public string AngularModule
         {
@@ -54,9 +55,9 @@ namespace Intent.Modules.Typescript.ServiceAgent.AngularJs.Templates.ServiceProx
         {
             return new TypeScriptFileConfig(
                 overwriteBehaviour: OverwriteBehaviour.Always,
-                fileName: "${Model.Name}Proxy",
+                fileName: $"{Model.Name}",
                 relativeLocation: $"",
-                className: "${Model.Name}Proxy",
+                className: $"{Model.Name}",
                 @namespace: "App.Proxies"
                 );
         }
@@ -73,28 +74,22 @@ namespace Intent.Modules.Typescript.ServiceAgent.AngularJs.Templates.ServiceProx
 
         private HttpVerb GetHttpVerb(OperationModel operation)
         {
-            var verb = operation.GetStereotypeProperty("Http", "Verb", "AUTO").ToUpper();
+            var verb = operation.InternalElement.MappedElement?.GetStereotypeProperty("Http", "Verb", "AUTO").ToUpper();
             if (verb != "AUTO")
             {
                 return Enum.TryParse(verb, out HttpVerb verbEnum) ? verbEnum : HttpVerb.POST;
             }
-            if (operation.ReturnType == null || operation.Parameters.Any(x => x.Type.Element.SpecializationType == "DTO"))
+            if (operation.TypeReference.Element == null || operation.Parameters.Any(x => x.TypeReference.Element.SpecializationType == "DTO"))
             {
                 return HttpVerb.POST;
             }
             return HttpVerb.GET;
         }
 
-        //private string GetAddress()
-        //{
-        //    var useSsl = false;
-        //    bool.TryParse(Project.ProjectType.Properties.FirstOrDefault(x => x.Name == "UseSsl")?.Value, out useSsl);
-        //    if (useSsl)
-        //    {
-        //        return "https://localhost:" + (Project.ProjectType.Properties.FirstOrDefault(x => x.Name == "SslPort")?.Value ?? "???");
-        //    }
-        //    return "http://localhost:" + (Project.ProjectType.Properties.FirstOrDefault(x => x.Name == "Port")?.Value ?? "???");
-        //}
+        private string GetRoute(OperationModel operation)
+        {
+            return $"{Model.Mapping.Element.Name.ToLower().Replace("service", "")}/{operation.Name.ToLower()}";
+        }
 
         private string GetMethodDefinitionParameters(OperationModel operation)
         {
@@ -104,7 +99,7 @@ namespace Intent.Modules.Typescript.ServiceAgent.AngularJs.Templates.ServiceProx
             }
 
             return operation.Parameters
-                .Select(x => $"{x.Name.ToCamelCase()}: {GetTypeName(x.Type)}")
+                .Select(x => $"{x.Name.ToCamelCase()}: {GetTypeName(x)}")
                 .Aggregate((x, y) => $"{x}, {y}");
         }
 

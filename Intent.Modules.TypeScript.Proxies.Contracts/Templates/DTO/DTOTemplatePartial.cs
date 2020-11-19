@@ -3,7 +3,7 @@ using System.Linq;
 using Intent.Engine;
 using Intent.Modules.Common.Templates;
 using Intent.Modules.Common.TypeScript.Templates;
-using Intent.Modules.Modelers.WebClient.Proxies.Api;
+using Intent.Modules.Modelers.Types.ServiceProxies.Api;
 using Intent.RoslynWeaver.Attributes;
 using Intent.Templates;
 

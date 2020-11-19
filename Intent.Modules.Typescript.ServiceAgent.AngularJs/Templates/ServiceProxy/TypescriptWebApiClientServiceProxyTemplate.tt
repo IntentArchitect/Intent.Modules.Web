@@ -1,9 +1,9 @@
-﻿<#@ template  debug="true"  inherits="TypeScriptTemplateBase<ServiceModel>" #>
+﻿<#@ template  debug="true"  inherits="TypeScriptTemplateBase<ServiceProxyModel>" #>
 <#@ output extension=".cs" #>
 <#@ Assembly Name="System.Core" #>
 <#@ Assembly Name="System.Windows.Forms" #>
 <#@ Assembly Name="Intent.SoftwareFactory" #>
-<#@ import namespace="Intent.Modelers.Services.Api" #>
+<#@ import namespace="Intent.Modules.Modelers.Types.ServiceProxies.Api" #>
 <#@ import namespace="Intent.Modules.Common.Templates" #>
 <#@ import namespace="Intent.Modules.Common.TypeScript.Templates" #>
 <#@ import namespace="System" #>
@@ -27,18 +27,18 @@ namespace <#= Namespace #> {
         }
 <#        foreach (var o in Model.Operations)
         {
-            if (o.ReturnType != null)
+            if (o.TypeReference.Element != null)
             {
 
 #>
 
-        <#= o.Name.ToCamelCase() #>(<#= GetMethodDefinitionParameters(o) #>): ng.IPromise<<#= GetTypeName(o.ReturnType) #>>
+        <#= o.Name.ToCamelCase() #>(<#= GetMethodDefinitionParameters(o) #>): ng.IPromise<<#= GetTypeName(o) #>>
         {
-            const url = `${this.baseUrl}/api/<#= Model.Name.ToLower().Replace("service","") #>/<#= o.Name.ToLower() #>`;
+            const url = `${this.baseUrl}/api/<#= GetRoute(o) #>`;
 <#              if (GetHttpVerb(o) == HttpVerb.GET) { #>
-            return this.$http.get<<#= GetTypeName(o.ReturnType) #>>(url, { params: { <#= GetMethodCallParametersForGet(o) #> } }).then(result => result.data);
+            return this.$http.get<<#= GetTypeName(o) #>>(url, { params: { <#= GetMethodCallParametersForGet(o) #> } }).then(result => result.data);
 <#              } else {#>
-            return this.$http.post<<#= GetTypeName(o.ReturnType) #>>(url, <#= GetMethodCallParametersForPost(o) #>).then(result => result.data);
+            return this.$http.post<<#= GetTypeName(o) #>>(url, <#= GetMethodCallParametersForPost(o) #>).then(result => result.data);
 <#              }#>
         }
 <#
@@ -49,7 +49,7 @@ namespace <#= Namespace #> {
 
         <#= o.Name.ToCamelCase() #>(<#= GetMethodDefinitionParameters(o) #>): ng.IPromise<void>
         {
-            const url = `${this.baseUrl}/api/<#= Model.Name.ToLower().Replace("service","") #>/<#= o.Name.ToLower() #>`;
+            const url = `${this.baseUrl}/api/<#= GetRoute(o) #>`;
             return this.$http.post<void>(url, <#= GetMethodCallParametersForPost(o) #>).then(() => null);
         }
 <#            }
@@ -57,5 +57,5 @@ namespace <#= Namespace #> {
 #>
     }
 
-    angular.module("<#= AngularModule #>").service("<#=Model.Name#>Proxy", <#=Model.Name#>Proxy);
+    angular.module("<#= AngularModule #>").service("<#=ClassName#>", <#=ClassName#>);
 }

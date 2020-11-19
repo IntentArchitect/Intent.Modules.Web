@@ -5,19 +5,19 @@ using Intent.Engine;
 using Intent.Modules.Common;
 using Intent.Modules.Common.TypeScript;
 using Intent.Modules.Common.TypeScript.Templates;
+using Intent.Modules.Modelers.Types.ServiceProxies.Api;
 using Intent.Templates;
 
 namespace Intent.Modules.Typescript.ServiceAgent.Contracts.Templates.TypescriptDTO
 {
-    partial class TypescriptDtoTemplate : TypeScriptTemplateBase<DTOModel>, ITemplate
+    partial class TypescriptDtoTemplate : TypeScriptTemplateBase<ServiceProxyDTOModel>, ITemplate
     {
-        public const string LocalIdentifier = "Intent.Typescript.ServiceAgent.Contracts.DTO.Local";
-        public const string RemoteIdentifier = "Intent.Typescript.ServiceAgent.Contracts.DTO.Remote";
-        public TypescriptDtoTemplate(string identifier, IProject project, DTOModel model)
+        public const string TemplateId = "Intent.Typescript.ServiceAgent.Contracts.DTO";
+
+        public TypescriptDtoTemplate(string identifier, IOutputTarget project, ServiceProxyDTOModel model)
             : base(identifier, project, model)
         {
-            AddTypeSource(TypescriptTypeSource.Create(ExecutionContext, TypescriptDtoTemplate.LocalIdentifier));
-            AddTypeSource(TypescriptTypeSource.Create(ExecutionContext, TypescriptDtoTemplate.RemoteIdentifier));
+            AddTypeSource(TypescriptTypeSource.Create(ExecutionContext, TypescriptDtoTemplate.TemplateId));
             // For reference purposes only:
             //Namespace = model.BoundedContextName == project.ApplicationName().Replace("_Client", "") ? "App.Contracts" : $"App.Contracts.{model.BoundedContextName}";
             //Location = model.BoundedContextName == project.ApplicationName().Replace("_Client", "") ? $"wwwroot/App/DTOs/Generated" : $@"wwwroot/App/DTOs/Generated/{model.BoundedContextName}";
@@ -34,9 +34,9 @@ namespace Intent.Modules.Typescript.ServiceAgent.Contracts.Templates.TypescriptD
             return new TypeScriptFileConfig(
                 overwriteBehaviour: OverwriteBehaviour.Always,
                 fileName: Model.Name,
-                relativeLocation: "",
-                className: "${Model.Name}",
-                @namespace: OutputTarget.ApplicationName() == ApplicationName ? "App.Contracts" : $"App.Contracts.{ApplicationName}");
+                relativeLocation: "ArchitectServer",
+                className: $"{Model.Name}",
+                @namespace: $"App.Contracts.ArchitectServer");
         }
     }
 }

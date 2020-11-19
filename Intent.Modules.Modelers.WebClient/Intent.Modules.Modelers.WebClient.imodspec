@@ -16,7 +16,7 @@
     <file src="$outDir$/$id$.pdb" />
   </files>
   <metadata>
-    <install src="modelers/Web Client Core Types.designer.settings" externalReference="93058b8a-4d1d-4f88-ac14-332c87666418" />
+    <install src="modelers/Web Client Package.designer.settings" externalReference="93058b8a-4d1d-4f88-ac14-332c87666418" />
     <install src="modelers/Web Client.designer.config" externalReference="f492faed-0665-4513-9853-5a230721786f" />
     <install target="Module Builder" src="Intent.Metadata/Module Builder/Intent.Modelers.WebClient/Intent.Modelers.WebClient.pkg.config" externalReference="2024876e-119b-4386-bc63-18e575f4e416" />
   </metadata>

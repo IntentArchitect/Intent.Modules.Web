@@ -1,9 +1,9 @@
-﻿<#@ template  debug="true"  inherits="TypeScriptTemplateBase<DTOModel>" #>
+﻿<#@ template  debug="true"  inherits="TypeScriptTemplateBase<ServiceProxyDTOModel>" #>
 <#@ output extension=".cs" #>
 <#@ Assembly Name="System.Core" #>
 <#@ Assembly Name="System.Windows.Forms" #>
 <#@ Assembly Name="Intent.SoftwareFactory" #>
-<#@ import namespace="Intent.Modelers.Services.Api" #>
+<#@ import namespace="Intent.Modules.Modelers.Types.ServiceProxies.Api" #>
 <#@ import namespace="Intent.Modules.Common.Templates" #>
 <#@ import namespace="Intent.Modules.Common.TypeScript.Templates" #>
 <#@ import namespace="System" #>
@@ -15,19 +15,10 @@
 
 namespace <#= Namespace #>
 {
-<# AddClass(Model);#>
-} 
-
-<#+
-    void AddClass(DTOModel model)
-    {
-#>
     export interface <#= ClassName #>
     {
-<#+ foreach (var field in Model.Fields) {#>
+<# foreach (var field in Model.Fields) {#>
         <#=field.Name.ToCamelCase()#><#= field.TypeReference.IsNullable ? "?" : "" #>: <#= GetTypeName(field.TypeReference) #>;
-<#+}#>
+<#}#>
     }
-<#+
-    }
-#>
+}

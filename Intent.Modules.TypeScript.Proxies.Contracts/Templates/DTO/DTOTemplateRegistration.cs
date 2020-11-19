@@ -5,8 +5,8 @@ using Intent.Engine;
 using Intent.Metadata.Models;
 using Intent.Modules.Common;
 using Intent.Modules.Common.Registrations;
+using Intent.Modules.Modelers.Types.ServiceProxies.Api;
 using Intent.Modules.Modelers.WebClient.Api;
-using Intent.Modules.Modelers.WebClient.Proxies.Api;
 using Intent.RoslynWeaver.Attributes;
 using Intent.Templates;
 

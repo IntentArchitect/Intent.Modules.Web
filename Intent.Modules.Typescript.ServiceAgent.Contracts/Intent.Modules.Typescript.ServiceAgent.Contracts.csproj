@@ -8,10 +8,15 @@
     <PackageReference Include="Intent.Modules.Common" Version="3.0.0-*" />
     <PackageReference Include="Intent.Modules.Common.TypeScript" Version="3.0.0-*" />
     <PackageReference Include="Intent.Modules.Modelers.Services" Version="3.0.0-*" />
+    <PackageReference Include="Intent.Modules.Modelers.Types.ServiceProxies" Version="3.0.0-*" />
     <PackageReference Include="Intent.Packager" Version="3.0.0-*">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Intent.Modules.Modelers.WebClient\Intent.Modules.Modelers.WebClient.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -9,7 +9,7 @@
 // ------------------------------------------------------------------------------
 namespace Intent.Modules.Typescript.ServiceAgent.Contracts.Templates.TypescriptDTO
 {
-    using Intent.Modelers.Services.Api;
+    using Intent.Modules.Modelers.Types.ServiceProxies.Api;
     using Intent.Modules.Common.Templates;
     using Intent.Modules.Common.TypeScript.Templates;
     using System;
@@ -23,9 +23,9 @@ namespace Intent.Modules.Typescript.ServiceAgent.Contracts.Templates.TypescriptD
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Dev\Intent.Modules\Modules\Intent.Modules.Typescript.ServiceAgent.Contracts\Templates\TypescriptDTO\TypescriptDtoTemplate.tt"
+    #line 1 "C:\Dev\Intent.Modules.Web\Intent.Modules.Typescript.ServiceAgent.Contracts\Templates\TypescriptDTO\TypescriptDtoTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
-    public partial class TypescriptDtoTemplate : TypeScriptTemplateBase<DTOModel>
+    public partial class TypescriptDtoTemplate : TypeScriptTemplateBase<ServiceProxyDTOModel>
     {
 #line hidden
         /// <summary>
@@ -35,120 +35,55 @@ namespace Intent.Modules.Typescript.ServiceAgent.Contracts.Templates.TypescriptD
         {
             this.Write("\r\nnamespace ");
             
-            #line 16 "C:\Dev\Intent.Modules\Modules\Intent.Modules.Typescript.ServiceAgent.Contracts\Templates\TypescriptDTO\TypescriptDtoTemplate.tt"
+            #line 16 "C:\Dev\Intent.Modules.Web\Intent.Modules.Typescript.ServiceAgent.Contracts\Templates\TypescriptDTO\TypescriptDtoTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Namespace));
             
             #line default
             #line hidden
-            this.Write("\r\n{\r\n");
+            this.Write("\r\n{\r\n    export interface ");
             
-            #line 18 "C:\Dev\Intent.Modules\Modules\Intent.Modules.Typescript.ServiceAgent.Contracts\Templates\TypescriptDTO\TypescriptDtoTemplate.tt"
- AddClass(Model);
+            #line 18 "C:\Dev\Intent.Modules.Web\Intent.Modules.Typescript.ServiceAgent.Contracts\Templates\TypescriptDTO\TypescriptDtoTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(ClassName));
             
             #line default
             #line hidden
-            this.Write("} \r\n\r\n");
+            this.Write("\r\n    {\r\n");
+            
+            #line 20 "C:\Dev\Intent.Modules.Web\Intent.Modules.Typescript.ServiceAgent.Contracts\Templates\TypescriptDTO\TypescriptDtoTemplate.tt"
+ foreach (var field in Model.Fields) {
+            
+            #line default
+            #line hidden
+            this.Write("        ");
+            
+            #line 21 "C:\Dev\Intent.Modules.Web\Intent.Modules.Typescript.ServiceAgent.Contracts\Templates\TypescriptDTO\TypescriptDtoTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(field.Name.ToCamelCase()));
+            
+            #line default
+            #line hidden
+            
+            #line 21 "C:\Dev\Intent.Modules.Web\Intent.Modules.Typescript.ServiceAgent.Contracts\Templates\TypescriptDTO\TypescriptDtoTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(field.TypeReference.IsNullable ? "?" : ""));
+            
+            #line default
+            #line hidden
+            this.Write(": ");
+            
+            #line 21 "C:\Dev\Intent.Modules.Web\Intent.Modules.Typescript.ServiceAgent.Contracts\Templates\TypescriptDTO\TypescriptDtoTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(GetTypeName(field.TypeReference)));
+            
+            #line default
+            #line hidden
+            this.Write(";\r\n");
+            
+            #line 22 "C:\Dev\Intent.Modules.Web\Intent.Modules.Typescript.ServiceAgent.Contracts\Templates\TypescriptDTO\TypescriptDtoTemplate.tt"
+}
+            
+            #line default
+            #line hidden
+            this.Write("    }\r\n}");
             return this.GenerationEnvironment.ToString();
         }
-        
-        #line 21 "C:\Dev\Intent.Modules\Modules\Intent.Modules.Typescript.ServiceAgent.Contracts\Templates\TypescriptDTO\TypescriptDtoTemplate.tt"
-
-    void AddClass(DTOModel model)
-    {
-
-        
-        #line default
-        #line hidden
-        
-        #line 24 "C:\Dev\Intent.Modules\Modules\Intent.Modules.Typescript.ServiceAgent.Contracts\Templates\TypescriptDTO\TypescriptDtoTemplate.tt"
-this.Write("    export interface ");
-
-        
-        #line default
-        #line hidden
-        
-        #line 25 "C:\Dev\Intent.Modules\Modules\Intent.Modules.Typescript.ServiceAgent.Contracts\Templates\TypescriptDTO\TypescriptDtoTemplate.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(ClassName));
-
-        
-        #line default
-        #line hidden
-        
-        #line 25 "C:\Dev\Intent.Modules\Modules\Intent.Modules.Typescript.ServiceAgent.Contracts\Templates\TypescriptDTO\TypescriptDtoTemplate.tt"
-this.Write("\r\n    {\r\n");
-
-        
-        #line default
-        #line hidden
-        
-        #line 27 "C:\Dev\Intent.Modules\Modules\Intent.Modules.Typescript.ServiceAgent.Contracts\Templates\TypescriptDTO\TypescriptDtoTemplate.tt"
- foreach (var field in Model.Fields) {
-        
-        #line default
-        #line hidden
-        
-        #line 27 "C:\Dev\Intent.Modules\Modules\Intent.Modules.Typescript.ServiceAgent.Contracts\Templates\TypescriptDTO\TypescriptDtoTemplate.tt"
-this.Write("        ");
-
-        
-        #line default
-        #line hidden
-        
-        #line 28 "C:\Dev\Intent.Modules\Modules\Intent.Modules.Typescript.ServiceAgent.Contracts\Templates\TypescriptDTO\TypescriptDtoTemplate.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(field.Name.ToCamelCase()));
-
-        
-        #line default
-        #line hidden
-        
-        #line 28 "C:\Dev\Intent.Modules\Modules\Intent.Modules.Typescript.ServiceAgent.Contracts\Templates\TypescriptDTO\TypescriptDtoTemplate.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(field.TypeReference.IsNullable ? "?" : ""));
-
-        
-        #line default
-        #line hidden
-        
-        #line 28 "C:\Dev\Intent.Modules\Modules\Intent.Modules.Typescript.ServiceAgent.Contracts\Templates\TypescriptDTO\TypescriptDtoTemplate.tt"
-this.Write(": ");
-
-        
-        #line default
-        #line hidden
-        
-        #line 28 "C:\Dev\Intent.Modules\Modules\Intent.Modules.Typescript.ServiceAgent.Contracts\Templates\TypescriptDTO\TypescriptDtoTemplate.tt"
-this.Write(this.ToStringHelper.ToStringWithCulture(GetTypeName(field.TypeReference)));
-
-        
-        #line default
-        #line hidden
-        
-        #line 28 "C:\Dev\Intent.Modules\Modules\Intent.Modules.Typescript.ServiceAgent.Contracts\Templates\TypescriptDTO\TypescriptDtoTemplate.tt"
-this.Write(";\r\n");
-
-        
-        #line default
-        #line hidden
-        
-        #line 29 "C:\Dev\Intent.Modules\Modules\Intent.Modules.Typescript.ServiceAgent.Contracts\Templates\TypescriptDTO\TypescriptDtoTemplate.tt"
-}
-        
-        #line default
-        #line hidden
-        
-        #line 29 "C:\Dev\Intent.Modules\Modules\Intent.Modules.Typescript.ServiceAgent.Contracts\Templates\TypescriptDTO\TypescriptDtoTemplate.tt"
-this.Write("    }\r\n");
-
-        
-        #line default
-        #line hidden
-        
-        #line 31 "C:\Dev\Intent.Modules\Modules\Intent.Modules.Typescript.ServiceAgent.Contracts\Templates\TypescriptDTO\TypescriptDtoTemplate.tt"
-
-    }
-
-        
-        #line default
-        #line hidden
     }
     
     #line default

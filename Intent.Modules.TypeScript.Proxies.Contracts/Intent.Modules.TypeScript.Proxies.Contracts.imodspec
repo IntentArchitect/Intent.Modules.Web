@@ -12,14 +12,17 @@
     </template>
   </templates>
   <dependencies>
-    <dependency id="Intent.Common" version="3.0.0-beta.1" />
-    <dependency id="Intent.Common.Types" version="3.0.0-beta.1" />
-    <dependency id="Intent.Common.TypeScript" version="3.0.0-beta" />
-    <dependency id="Intent.Modelers.WebClient.Proxies" version="3.0.0-beta.3" />
+    <dependency id="Intent.Common" version="3.0.0-beta.3" />
+    <dependency id="Intent.Common.Types" version="3.0.0-beta.3" />
+    <dependency id="Intent.Common.TypeScript" version="3.0.0-beta.3" />
+    <dependency id="Intent.Modelers.Types.ServiceProxies" version="3.0.0-beta.3" />
   </dependencies>
   <files>
     <file src="$outDir$/$id$.dll" />
     <file src="$outDir$/$id$.pdb" />
   </files>
-  <metadata />
+  <metadata>
+    <install target="Web Client" src="modelers/Proxy Extensions.designer.settings" externalReference="b5f0b18c-f43b-40f1-8be6-a055ead440a3" />
+  </metadata>
+  <factoryExtensions />
 </package>

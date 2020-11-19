@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <class id="93058b8a-4d1d-4f88-ac14-332c87666418" type="Designer Settings" typeId="7a6411a8-ffef-4209-91c6-8d12755a806a">
-  <name>Web Client Core Types</name>
-  <display>Web Client Core Types</display>
+  <name>Web Client Package</name>
+  <display>Web Client Package</display>
   <isAbstract>false</isAbstract>
   <order>1</order>
   <genericTypes />
