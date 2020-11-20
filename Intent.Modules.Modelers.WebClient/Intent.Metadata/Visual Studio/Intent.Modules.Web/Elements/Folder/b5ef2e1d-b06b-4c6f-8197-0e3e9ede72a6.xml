@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<class id="9889b0d6-a618-4114-9cb0-c74498f7bbeb" type="Folder" typeId="3407a825-1331-4f3f-89a4-901903ed97ce">
-  <name>modelers</name>
-  <display>modelers</display>
+<class id="b5ef2e1d-b06b-4c6f-8197-0e3e9ede72a6" type="Folder" typeId="3407a825-1331-4f3f-89a4-901903ed97ce">
+  <name>FactoryExtentions</name>
+  <display>FactoryExtentions</display>
   <isAbstract>false</isAbstract>
-  <order>3</order>
+  <order>2</order>
   <genericTypes />
   <isMapped>false</isMapped>
   <parentFolderId>10cf9138-e2fa-40a2-9599-11973c7e429d</parentFolderId>
@@ -20,27 +20,14 @@
     </stereotype>
   </stereotypes>
   <childElements>
-    <childElement id="771b17bd-ca85-4ae5-9939-762597288d71" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">
-      <name>Intent.ModuleBuilder.DesignerConfig</name>
-      <display>Intent.ModuleBuilder.DesignerConfig</display>
+    <childElement id="bbf28404-ff84-46ac-b279-d496f9351511" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">
+      <name>ModuleBuilder.Templates.FactoryExtension</name>
+      <display>ModuleBuilder.Templates.FactoryExtension</display>
       <isAbstract>false</isAbstract>
       <order>0</order>
       <genericTypes />
       <isMapped>false</isMapped>
-      <parentFolderId>9889b0d6-a618-4114-9cb0-c74498f7bbeb</parentFolderId>
-      <packageId>8a7e2758-112c-4c40-8790-505391e72e6f</packageId>
-      <packageName>Intent.Modules.Web</packageName>
-      <stereotypes />
-      <childElements />
-    </childElement>
-    <childElement id="a3e48613-61f5-489d-a32b-04a73aad56e3" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">
-      <name>Intent.ModuleBuilder.DesignerSettings</name>
-      <display>Intent.ModuleBuilder.DesignerSettings</display>
-      <isAbstract>false</isAbstract>
-      <order>1</order>
-      <genericTypes />
-      <isMapped>false</isMapped>
-      <parentFolderId>9889b0d6-a618-4114-9cb0-c74498f7bbeb</parentFolderId>
+      <parentFolderId>b5ef2e1d-b06b-4c6f-8197-0e3e9ede72a6</parentFolderId>
       <packageId>8a7e2758-112c-4c40-8790-505391e72e6f</packageId>
       <packageName>Intent.Modules.Web</packageName>
       <stereotypes />

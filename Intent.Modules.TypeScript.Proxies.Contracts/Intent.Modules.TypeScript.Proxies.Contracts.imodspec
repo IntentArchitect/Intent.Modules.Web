@@ -2,6 +2,7 @@
 <package>
   <id>Intent.Typescript.Proxies.Contracts</id>
   <version>3.0.0-beta.3</version>
+  <supportedClientVersions>[3.0.0-beta,4.0.0)</supportedClientVersions>
   <summary>A custom module for Intent.Modules.Web.</summary>
   <description>A custom module for Intent.Modules.Web.</description>
   <authors>Intent.Modules.Web</authors>

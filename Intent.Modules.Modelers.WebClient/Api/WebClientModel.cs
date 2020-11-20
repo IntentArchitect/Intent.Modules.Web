@@ -7,7 +7,7 @@ using Intent.RoslynWeaver.Attributes;
 [assembly: DefaultIntentManaged(Mode.Fully)]
 [assembly: IntentTemplate("ModuleBuilder.Templates.Api.ApiPackageModel", Version = "1.0")]
 
-namespace Intent.Modules.Modelers.WebClient.Api
+namespace Intent.Modelers.WebClient.Api
 {
     [IntentManaged(Mode.Merge)]
     public class WebClientModel : IHasStereotypes, IMetadataModel
