@@ -20,10 +20,6 @@ namespace Intent.Modules.Angular
         {
             if (step == ExecutionLifeCycleSteps.BeforeTemplateExecution)
             {
-                RequestInitialization(application);
-                //}
-                //else if (step == ExecutionLifeCycleSteps.BeforeCommitChanges )
-                //{
                 if (!AngularInstalled(application))
                 {
                     var outputTarget = CliCommand.GetWebCoreProject(application);
@@ -44,48 +40,6 @@ namespace Intent.Modules.Angular
         }
 
         public override string Id => "Intent.Angular.CLIInstaller";
-
-        private void RequestInitialization(IApplication application)
-        {
-            application.EventDispatcher.Publish(ServiceConfigurationRequiredEvent.EventId, new Dictionary<string, string>()
-            {
-                { ServiceConfigurationRequiredEvent.UsingsKey, $@"Microsoft.AspNetCore.SpaServices.AngularCli;" },
-                { ServiceConfigurationRequiredEvent.CallKey, "ConfigureAngularSpa(services);" },
-                { ServiceConfigurationRequiredEvent.MethodKey, $@"
-        //[IntentManaged(Mode.Ignore)] // Uncomment to take control of this method.
-        private void ConfigureAngularSpa(IServiceCollection services)
-        {{
-            // In production, the Angular files will be served from this directory
-            services.AddSpaStaticFiles(configuration =>
-            {{
-                configuration.RootPath = ""ClientApp/dist"";
-            }});
-        }}" }
-            });
-
-            application.EventDispatcher.Publish(InitializationRequiredEvent.EventId, new Dictionary<string, string>()
-            {
-                { InitializationRequiredEvent.UsingsKey, $@"Microsoft.AspNetCore.SpaServices.AngularCli;" },
-                { InitializationRequiredEvent.CallKey, $@"InitializeAngularSpa(app, env);" },
-                { InitializationRequiredEvent.MethodKey, $@"
-        //[IntentManaged(Mode.Ignore)] // Uncomment to take control of this method.
-        private void InitializeAngularSpa(IApplicationBuilder app, { (CliCommand.GetWebCoreProject(application).IsNetCore2App() ? "IHostingEnvironment" : "IWebHostEnvironment") } env)
-        {{
-            app.UseSpa(spa =>
-            {{
-                // To learn more about options for serving an Angular SPA from ASP.NET Core,
-                // see https://go.microsoft.com/fwlink/?linkid=864501
-
-                spa.Options.SourcePath = ""ClientApp"";
-
-                if (env.IsDevelopment())
-                {{
-                    spa.UseAngularCliServer(npmScript: ""start"");
-                }}
-            }});
-        }}" }
-            });
-        }
 
         public bool AngularInstalled(IApplication application)
         {
