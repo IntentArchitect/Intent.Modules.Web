@@ -23,7 +23,7 @@ namespace Intent.Modules.Angular.Templates.Environment.EnvironmentTemplate
         private IList<ConfigVariable> _configVariables = new List<ConfigVariable>();
 
         [IntentManaged(Mode.Fully)]
-        public const string TemplateId = "Angular.Environment.EnvironmentTemplate.EnvironmentTemplate";
+        public const string TemplateId = "Angular.Environment.EnvironmentTemplate";
 
         public EnvironmentTemplate(IOutputTarget project, object model) : base(TemplateId, project, model)
         {

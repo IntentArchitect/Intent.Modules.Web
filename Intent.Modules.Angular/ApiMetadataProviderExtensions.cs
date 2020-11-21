@@ -60,13 +60,6 @@ namespace Intent.Modules.Angular.Api
                 .ToList();
         }
 
-        public static IList<ServiceProxyModel> GetServiceProxyModels(this IDesigner designer)
-        {
-            return designer.GetElementsOfType(ServiceProxyModel.SpecializationTypeId)
-                .Select(x => new ServiceProxyModel(x))
-                .ToList();
-        }
-
         public static IList<TypeDefinitionModel> GetTypeDefinitionModels(this IDesigner designer)
         {
             return designer.GetElementsOfType(TypeDefinitionModel.SpecializationTypeId)

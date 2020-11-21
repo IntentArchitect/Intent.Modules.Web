@@ -11,8 +11,6 @@ using System.Linq;
 using Intent.Modules.Angular.Api;
 using Intent.Modules.Angular.Templates.Model.FormGroupTemplate;
 using Intent.Modules.Angular.Templates.Model.ModelTemplate;
-using Intent.Modules.Angular.Templates.Proxies.AngularDTOTemplate;
-using Intent.Modules.Angular.Templates.Proxies.AngularServiceProxyTemplate;
 using Intent.Modules.Angular.Templates.Shared.IntentDecoratorsTemplate;
 using Intent.Modules.Common.Plugins;
 using Intent.Modules.Common.TypeScript;
@@ -27,14 +25,14 @@ namespace Intent.Modules.Angular.Templates.Component.AngularComponentTsTemplate
     partial class AngularComponentTsTemplate : TypeScriptTemplateBase<ComponentModel>
     {
         [IntentManaged(Mode.Fully)]
-        public const string TemplateId = "Angular.Component.AngularComponentTsTemplate.AngularComponentTsTemplate";
+        public const string TemplateId = "Angular.Component.AngularComponentTsTemplate";
 
         public AngularComponentTsTemplate(IOutputTarget project, ComponentModel model) : base(TemplateId, project, model)
         {
             AddTypeSource(ModelTemplate.TemplateId);
             AddTypeSource(FormGroupTemplate.TemplateId);
-            AddTypeSource(AngularDTOTemplate.TemplateId);
-            AddTypeSource(AngularServiceProxyTemplate.TemplateId);
+            AddTypeSource("Angular.ServiceProxies.Proxies.AngularDTOTemplate");
+            AddTypeSource("Angular.ServiceProxies.Proxies.AngularServiceProxyTemplate");
             AddTemplateDependency(IntentDecoratorsTemplate.TemplateId);
             InjectedServices = Model.GetAngularComponentSettings().InjectServices()?.ToList() ?? new List<IElement>();
         }

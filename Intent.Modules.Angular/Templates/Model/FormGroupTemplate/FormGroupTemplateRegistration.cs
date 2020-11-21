@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Intent.Engine;
 using Intent.Metadata.Models;
+using Intent.Modelers.WebClient.Api;
 using Intent.Modules.Angular.Api;
 using Intent.Modules.Common;
 using Intent.Modules.Common.Registrations;
@@ -34,7 +35,7 @@ namespace Intent.Modules.Angular.Templates.Model.FormGroupTemplate
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]
         public override IEnumerable<FormGroupDefinitionModel> GetModels(IApplication application)
         {
-            return _metadataManager.Angular(application).GetFormGroupDefinitionModels();
+            return _metadataManager.WebClient(application).GetFormGroupDefinitionModels();
         }
     }
 }

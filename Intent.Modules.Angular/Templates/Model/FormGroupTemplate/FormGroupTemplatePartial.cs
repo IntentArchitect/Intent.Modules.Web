@@ -5,7 +5,6 @@ using Intent.Engine;
 using Intent.Metadata.Models;
 using Intent.Modelers.Services.Api;
 using Intent.Modules.Angular.Api;
-using Intent.Modules.Angular.Templates.Proxies.AngularDTOTemplate;
 using Intent.Modules.Common.Templates;
 using Intent.Modules.Common.TypeScript.Templates;
 using Intent.RoslynWeaver.Attributes;
@@ -21,12 +20,16 @@ namespace Intent.Modules.Angular.Templates.Model.FormGroupTemplate
     partial class FormGroupTemplate : TypeScriptTemplateBase<FormGroupDefinitionModel>
     {
         [IntentManaged(Mode.Fully)]
-        public const string TemplateId = "Angular.Model.FormGroupTemplate.FormGroupTemplate";
+        public const string TemplateId = "Angular.Model.FormGroupTemplate";
 
         public FormGroupTemplate(IOutputTarget project, FormGroupDefinitionModel model) : base(TemplateId, project, model)
         {
             AddTypeSource(FormGroupTemplate.TemplateId);
-            AddTypeSource(AngularDTOTemplate.TemplateId);
+            // GCB - an interesting dependency predicament. Perhaps there should be a mechanism where a template can declare itself
+            //       the representative of a model type, and this would not be necessary. Using the hierarchy of the OutputTargets could
+            //       make the discovery of the type predictable. Food for thought.
+            //AddTypeSource(AngularDTOTemplate.TemplateId);
+            AddTypeSource("Angular.ServiceProxies.Proxies.AngularDTOTemplate");
         }
 
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]

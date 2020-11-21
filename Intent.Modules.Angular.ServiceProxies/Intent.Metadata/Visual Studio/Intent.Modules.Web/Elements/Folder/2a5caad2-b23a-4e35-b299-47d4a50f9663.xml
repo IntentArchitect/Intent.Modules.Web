@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="2a5caad2-b23a-4e35-b299-47d4a50f9663" type="Folder" typeId="3407a825-1331-4f3f-89a4-901903ed97ce">
+  <name>FactoryExtensions</name>
+  <display>FactoryExtensions</display>
+  <isAbstract>false</isAbstract>
+  <order>2</order>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>6d139c9a-784d-48b9-a4af-e24859654dba</parentFolderId>
+  <packageId>3480796b-a59d-4366-a8eb-bf9b1a49f521</packageId>
+  <packageName>Intent.Modules.Web</packageName>
+  <stereotypes>
+    <stereotype stereotypeDefinitionId="61132551-825d-4c6e-b9f1-0f95249d08d4" name="Folder Options">
+      <addedByDefault>true</addedByDefault>
+      <definitionPackageName>Intent.VisualStudio.Projects</definitionPackageName>
+      <definitionPackageId>a0636ab7-d3a1-430b-9609-11a18aa3cc7f</definitionPackageId>
+      <properties>
+        <property name="4bfbefd0-d22e-4ca0-9723-92ae273feca4" display="Namespace Provider" value="true" isActive="true" />
+      </properties>
+    </stereotype>
+  </stereotypes>
+  <childElements>
+    <childElement id="269f3586-5ec9-4fae-ba3f-8ee90ce88fed" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">
+      <name>ModuleBuilder.Templates.FactoryExtension</name>
+      <display>ModuleBuilder.Templates.FactoryExtension</display>
+      <isAbstract>false</isAbstract>
+      <order>0</order>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>2a5caad2-b23a-4e35-b299-47d4a50f9663</parentFolderId>
+      <packageId>3480796b-a59d-4366-a8eb-bf9b1a49f521</packageId>
+      <packageName>Intent.Modules.Web</packageName>
+      <stereotypes />
+      <childElements />
+    </childElement>
+  </childElements>
+</class>

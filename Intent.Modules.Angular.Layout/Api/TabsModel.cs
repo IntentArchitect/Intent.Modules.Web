@@ -10,7 +10,7 @@ using Intent.RoslynWeaver.Attributes;
 namespace Intent.Modules.Angular.Layout.Api
 {
     [IntentManaged(Mode.Merge)]
-    public class TabsModel : IHasStereotypes, IMetadataModel
+    public class TabsModel : IHasStereotypes, IMetadataModel, IHasName
     {
         public const string SpecializationType = "Tabs";
         public const string SpecializationTypeId = "32e3b819-399f-4cbd-89d6-31dd5fab9d20";

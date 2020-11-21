@@ -11,7 +11,7 @@ using Intent.RoslynWeaver.Attributes;
 namespace Intent.Modules.Angular.Layout.Api
 {
     [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
-    public class FormFieldModel : IHasStereotypes, IMetadataModel
+    public class FormFieldModel : IMetadataModel, IHasStereotypes, IHasName, IHasTypeReference
     {
         public const string SpecializationType = "Form Field";
         protected readonly IElement _element;

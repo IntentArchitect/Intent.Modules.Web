@@ -4,7 +4,6 @@ using Intent.Engine;
 using Intent.Metadata.Models;
 using Intent.Modelers.Services.Api;
 using Intent.Modules.Angular.Api;
-using Intent.Modules.Angular.Templates.Proxies.AngularDTOTemplate;
 using Intent.Modules.Common.Templates;
 using Intent.Modules.Common.TypeScript.Templates;
 using Intent.RoslynWeaver.Attributes;
@@ -19,11 +18,11 @@ namespace Intent.Modules.Angular.Templates.Model.ModelTemplate
     partial class ModelTemplate : TypeScriptTemplateBase<ModelDefinitionModel>
     {
         [IntentManaged(Mode.Fully)]
-        public const string TemplateId = "Angular.Model.ModelTemplate.ModelTemplate";
+        public const string TemplateId = "Angular.Model.ModelTemplate";
 
         public ModelTemplate(IOutputTarget project, ModelDefinitionModel model) : base(TemplateId, project, model)
         {
-            AddTypeSource(AngularDTOTemplate.TemplateId);
+            AddTypeSource("Angular.ServiceProxies.Proxies.AngularDTOTemplate");
         }
 
         public string GetGenericParameters()

@@ -19,7 +19,7 @@ namespace Intent.Modules.Angular.Templates.Core.CoreModuleTemplate
     partial class CoreModuleTemplate : TypeScriptTemplateBase<object>
     {
         [IntentManaged(Mode.Fully)]
-        public const string TemplateId = "Angular.Core.CoreModuleTemplate.CoreModuleTemplate";
+        public const string TemplateId = "Angular.Core.CoreModuleTemplate";
 
         public CoreModuleTemplate(IOutputTarget project, object model) : base(TemplateId, project, model)
         {

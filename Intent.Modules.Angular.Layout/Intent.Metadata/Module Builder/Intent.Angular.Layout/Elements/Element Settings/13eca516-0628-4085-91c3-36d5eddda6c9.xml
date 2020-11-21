@@ -3,6 +3,7 @@
   <name>Button Control</name>
   <display>Button Control</display>
   <isAbstract>false</isAbstract>
+  <order>0</order>
   <genericTypes />
   <isMapped>false</isMapped>
   <parentFolderId>d3c58ce6-a07c-47dc-8626-f73cf1d047e2</parentFolderId>
@@ -45,6 +46,7 @@
       <name>NewMappingSettings</name>
       <display>[mappings]</display>
       <isAbstract>false</isAbstract>
+      <order>0</order>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>13eca516-0628-4085-91c3-36d5eddda6c9</parentFolderId>
@@ -56,7 +58,7 @@
           <definitionPackageName>Intent.ModuleBuilder</definitionPackageName>
           <definitionPackageId>9972b2a9-b749-4bba-b5c8-824bf694c6ef</definitionPackageId>
           <properties>
-            <property name="d233d3f9-934a-4690-a476-778e0c4927ef" display="Default Designer" value="7083df81-ccfb-435c-be88-d5701adcc106" isActive="true" />
+            <property name="d233d3f9-934a-4690-a476-778e0c4927ef" display="Default Designer" value="f492faed-0665-4513-9853-5a230721786f" isActive="true" />
           </properties>
         </stereotype>
       </stereotypes>
@@ -65,6 +67,7 @@
           <name>NewElementMapping</name>
           <display>[mapping]: Component Command -&gt; Button Control</display>
           <isAbstract>false</isAbstract>
+          <order>0</order>
           <genericTypes />
           <isMapped>false</isMapped>
           <parentFolderId>67e826e4-cf1c-4554-ab6f-be922c2d6a9f</parentFolderId>

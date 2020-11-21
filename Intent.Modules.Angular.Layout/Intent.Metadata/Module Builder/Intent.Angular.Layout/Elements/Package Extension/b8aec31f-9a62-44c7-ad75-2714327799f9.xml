@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <class id="b8aec31f-9a62-44c7-ad75-2714327799f9" type="Package Extension" typeId="ab4152df-3add-4a08-81b6-0fefc7cbb204">
   <name>Angular App Extensions</name>
-  <display>Angular App Extensions: Angular App</display>
+  <display>Angular App Extensions: Web Client</display>
   <isAbstract>false</isAbstract>
+  <order>8</order>
   <genericTypes />
   <typeReference id="2193ae6a-9e7a-4699-8dba-80af2fc7a128">
-    <typeId>fc44141e-8079-4f63-894b-f1a26736c991</typeId>
+    <typeId>911c35b4-4ba3-404c-a0c6-e5258e53333a</typeId>
     <isNavigable>true</isNavigable>
     <isNullable>false</isNullable>
     <isCollection>false</isCollection>
     <isRequired>true</isRequired>
-    <typePackageName>Intent.Angular</typePackageName>
-    <typePackageId>a3deb341-dd4e-4f7f-99f5-2f198c1c251c</typePackageId>
+    <typePackageName>Intent.Modelers.WebClient</typePackageName>
+    <typePackageId>2024876e-119b-4386-bc63-18e575f4e416</typePackageId>
     <stereotypes />
     <genericTypeParameters />
   </typeReference>
@@ -25,6 +26,7 @@
       <name>[context menu]</name>
       <display>[context menu]</display>
       <isAbstract>false</isAbstract>
+      <order>1</order>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>b8aec31f-9a62-44c7-ad75-2714327799f9</parentFolderId>
@@ -36,6 +38,7 @@
           <name>New Form Control Type</name>
           <display>New Form Control Type: Form Control</display>
           <isAbstract>false</isAbstract>
+          <order>0</order>
           <genericTypes />
           <typeReference id="82b9dbc5-8150-4cc2-a4e7-326394a64805">
             <typeId>f234d77d-a306-41c1-ad38-a47b14ecb0ff</typeId>
@@ -43,7 +46,7 @@
             <isNullable>false</isNullable>
             <isCollection>false</isCollection>
             <isRequired>true</isRequired>
-            <typePackageName>Angular.Layout.ModuleBuilder</typePackageName>
+            <typePackageName>Intent.Angular.Layout</typePackageName>
             <typePackageId>411a47ef-bf13-45dd-b800-7abf7eb9ac92</typePackageId>
             <stereotypes />
             <genericTypeParameters />

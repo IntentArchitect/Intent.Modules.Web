@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="5be4309a-b59b-4d53-af62-f0ef3b3310c5" type="Folder" typeId="4d95d53a-8855-4f35-aa82-e312643f5c5f">
+  <name>Core</name>
+  <display>Core</display>
+  <isAbstract>false</isAbstract>
+  <order>4</order>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>a3deb341-dd4e-4f7f-99f5-2f198c1c251c</parentFolderId>
+  <packageId>a3deb341-dd4e-4f7f-99f5-2f198c1c251c</packageId>
+  <packageName>Intent.Angular</packageName>
+  <stereotypes />
+  <childElements />
+</class>

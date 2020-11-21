@@ -21,11 +21,18 @@ namespace Intent.Modules.Angular.Templates
         public const string ModuleId = "ModuleId";
     }
 
-    public static class AngularServiceProxyCreatedEvent
+    public class AngularServiceProxyCreatedEvent
     {
-        public const string EventId = "AngularServiceProxyCreatedEvent";
-        public const string ModelId = "ModelId";
-        public const string ModuleId = "ModuleId";
+        public AngularServiceProxyCreatedEvent(string templateId, string modelId, string moduleId)
+        {
+            ModelId = modelId;
+            ModuleId = moduleId;
+            TemplateId = templateId;
+        }
+
+        public string ModelId { get; }
+        public string ModuleId { get; }
+        public string TemplateId { get; }
     }
 
     public static class AngularImportDependencyRequiredEvent

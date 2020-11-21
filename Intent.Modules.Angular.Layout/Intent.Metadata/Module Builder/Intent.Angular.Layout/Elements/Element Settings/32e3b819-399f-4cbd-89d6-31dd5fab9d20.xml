@@ -3,6 +3,7 @@
   <name>Tabs</name>
   <display>Tabs</display>
   <isAbstract>false</isAbstract>
+  <order>6</order>
   <genericTypes />
   <isMapped>false</isMapped>
   <parentFolderId>d3c58ce6-a07c-47dc-8626-f73cf1d047e2</parentFolderId>
@@ -45,6 +46,7 @@
       <name>[context menu]</name>
       <display>[context menu]</display>
       <isAbstract>false</isAbstract>
+      <order>0</order>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>32e3b819-399f-4cbd-89d6-31dd5fab9d20</parentFolderId>

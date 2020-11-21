@@ -1,4 +1,4 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netstandard2.0</TargetFramework>
@@ -8,19 +8,21 @@
   <ItemGroup>
     <PackageReference Include="Intent.Modules.Common" Version="3.0.0-*" />
     <PackageReference Include="Intent.Modules.Common.CSharp" Version="3.0.0-*" />
+    <PackageReference Include="Intent.Modules.Common.Typescript" Version="3.0.0-*" />
     <PackageReference Include="Intent.Modules.Modelers.Services" Version="3.0.0-*" />
-    <PackageReference Include="Intent.Code.Weaving.TypeScript" Version="1.0.0" />
     <PackageReference Include="Intent.Packager" Version="3.0.0-*">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Intent.RoslynWeaver.Attributes" Version="1.0.0" />
+    <PackageReference Include="Intent.SoftwareFactory.SDK" Version="3.0.0-*" />
     <PackageReference Include="Mono.TextTemplating" Version="2.0.4" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\Intent.Modules.Common.Html\Intent.Modules.Common.Html.csproj" />
     <ProjectReference Include="..\Intent.Modules.Common.TypeScript\Intent.Modules.Common.TypeScript.csproj" />
+    <ProjectReference Include="..\Intent.Modules.Modelers.WebClient\Intent.Modules.Modelers.WebClient.csproj" />
   </ItemGroup>
 
   <ItemGroup>
@@ -36,10 +38,6 @@
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>AngularComponentTsTemplate.cs</LastGenOutput>
     </None>
-    <None Update="Templates\Proxies\AngularDTOTemplate\AngularDTOTemplate.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>AngularDTOTemplate.cs</LastGenOutput>
-    </None>
     <None Update="Templates\Module\AngularModuleTemplate\AngularModuleTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>AngularModuleTemplate.cs</LastGenOutput>
@@ -47,10 +45,6 @@
     <None Update="Templates\Module\AngularRoutingModuleTemplate\AngularRoutingModuleTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>AngularRoutingModuleTemplate.cs</LastGenOutput>
-    </None>
-    <None Update="Templates\Proxies\AngularServiceProxyTemplate\AngularServiceProxyTemplate.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>AngularServiceProxyTemplate.cs</LastGenOutput>
     </None>
     <None Update="Templates\Core\ApiServiceTemplate\ApiServiceTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
@@ -140,16 +134,6 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>AngularRoutingModuleTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Update="Templates\Proxies\AngularDTOTemplate\AngularDTOTemplate.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>AngularDTOTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Update="Templates\Proxies\AngularServiceProxyTemplate\AngularServiceProxyTemplate.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>AngularServiceProxyTemplate.tt</DependentUpon>
     </Compile>
     <Compile Update="Templates\Model\FormGroupTemplate\FormGroupTemplate.cs">
       <DesignTime>True</DesignTime>

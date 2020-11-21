@@ -3,7 +3,7 @@
   <name>Module</name>
   <display>Module</display>
   <isAbstract>false</isAbstract>
-  <order>0</order>
+  <order>5</order>
   <genericTypes />
   <isMapped>false</isMapped>
   <parentFolderId>0a3786a7-f514-4ec3-88b9-7842744dbb3c</parentFolderId>
@@ -96,7 +96,7 @@
           <name>New Model Definition</name>
           <display>New Model Definition: Model Definition</display>
           <isAbstract>false</isAbstract>
-          <order>0</order>
+          <order>1</order>
           <genericTypes />
           <typeReference id="ce9f4ee2-2575-47ba-bc37-0aaa7d0dd6fb">
             <typeId>bd3941b5-e3b3-4a40-96e6-b9c87cea0101</typeId>
@@ -134,7 +134,7 @@
           <name>New Form Group</name>
           <display>New Form Group: Form Group Definition</display>
           <isAbstract>false</isAbstract>
-          <order>0</order>
+          <order>2</order>
           <genericTypes />
           <typeReference id="a51c4fd5-b4b5-4add-98d8-7ea61aa79705">
             <typeId>71142b08-4d10-405b-a5bd-0620d329a992</typeId>
@@ -160,44 +160,6 @@
               <properties>
                 <property name="9df41a97-0a8b-42c6-9d95-becf3d6d1e0b" display="Shortcut" isActive="true" />
                 <property name="ba8a3ecd-0f08-499e-bb5b-929d40f56a45" display="Default Name" value="" isActive="true" />
-                <property name="A43F388B-DAFF-422C-BD8D-FB433EFEC51B" display="Type Order" isActive="true" />
-                <property name="8e092aa6-7d1a-4a06-af82-903e7642cef6" display="Allow Multiple" value="true" isActive="true" />
-                <property name="719e9dff-2b8d-407d-912d-fac99a158721" display="Api Model Name" isActive="true" />
-              </properties>
-            </stereotype>
-          </stereotypes>
-          <childElements />
-        </childElement>
-        <childElement id="59493cc0-e39e-4d33-a261-59a9031ec403" type="Element Creation Option" typeId="5fa12f89-da1e-49c5-b8e9-427b22407f19">
-          <name>New Service Proxy</name>
-          <display>New Service Proxy: Service Proxy</display>
-          <isAbstract>false</isAbstract>
-          <order>0</order>
-          <genericTypes />
-          <typeReference id="6369a64e-ccf4-43ac-ac76-6998cfbefcbc">
-            <typeId>2d4ad132-e574-4319-9ae9-4d6e4b81110c</typeId>
-            <isNavigable>true</isNavigable>
-            <isNullable>false</isNullable>
-            <isCollection>false</isCollection>
-            <isRequired>true</isRequired>
-            <typePackageName>Intent.Angular</typePackageName>
-            <typePackageId>a3deb341-dd4e-4f7f-99f5-2f198c1c251c</typePackageId>
-            <stereotypes />
-            <genericTypeParameters />
-          </typeReference>
-          <isMapped>false</isMapped>
-          <parentFolderId>62ff7421-5417-4fdc-bb44-c005cd42ab60</parentFolderId>
-          <packageId>a3deb341-dd4e-4f7f-99f5-2f198c1c251c</packageId>
-          <packageName>Intent.Angular</packageName>
-          <stereotypes>
-            <stereotype stereotypeDefinitionId="f4250b35-559d-4c0b-91ee-c3d7aa239814" name="Option Settings">
-              <comment />
-              <addedByDefault>true</addedByDefault>
-              <definitionPackageName>Intent.ModuleBuilder</definitionPackageName>
-              <definitionPackageId>9972b2a9-b749-4bba-b5c8-824bf694c6ef</definitionPackageId>
-              <properties>
-                <property name="9df41a97-0a8b-42c6-9d95-becf3d6d1e0b" display="Shortcut" isActive="true" />
-                <property name="ba8a3ecd-0f08-499e-bb5b-929d40f56a45" display="Default Name" isActive="true" />
                 <property name="A43F388B-DAFF-422C-BD8D-FB433EFEC51B" display="Type Order" isActive="true" />
                 <property name="8e092aa6-7d1a-4a06-af82-903e7642cef6" display="Allow Multiple" value="true" isActive="true" />
                 <property name="719e9dff-2b8d-407d-912d-fac99a158721" display="Api Model Name" isActive="true" />

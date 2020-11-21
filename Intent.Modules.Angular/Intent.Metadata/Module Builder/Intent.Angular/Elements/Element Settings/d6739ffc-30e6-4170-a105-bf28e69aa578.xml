@@ -3,7 +3,7 @@
   <name>Component Command</name>
   <display>Component Command</display>
   <isAbstract>false</isAbstract>
-  <order>0</order>
+  <order>3</order>
   <genericTypes />
   <isMapped>false</isMapped>
   <parentFolderId>b1c481e1-e91e-4c29-9817-00ab9cad4b6b</parentFolderId>
@@ -56,12 +56,12 @@
       <childElements>
         <childElement id="020c157c-d0f7-4014-9ec0-d0c3f9f04130" type="Element Creation Option" typeId="5fa12f89-da1e-49c5-b8e9-427b22407f19">
           <name>Add Parameter</name>
-          <display>Add Parameter: Parameter</display>
+          <display>Add Parameter: Command Parameter</display>
           <isAbstract>false</isAbstract>
           <order>0</order>
           <genericTypes />
           <typeReference id="a63e6127-0d4c-470c-b394-d3c709387cf6">
-            <typeId>cad78742-0d76-4270-8704-59d47e773753</typeId>
+            <typeId>4a1ce2a9-e79f-4e93-96af-24b44728ecbc</typeId>
             <isNavigable>true</isNavigable>
             <isNullable>false</isNullable>
             <isCollection>false</isCollection>

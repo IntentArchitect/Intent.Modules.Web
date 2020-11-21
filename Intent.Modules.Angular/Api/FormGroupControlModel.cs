@@ -10,7 +10,7 @@ using Intent.RoslynWeaver.Attributes;
 namespace Intent.Modules.Angular.Api
 {
     [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
-    public class FormGroupControlModel : IHasStereotypes, IMetadataModel
+    public class FormGroupControlModel : IMetadataModel, IHasStereotypes, IHasName, IHasTypeReference
     {
         public const string SpecializationType = "Form Group Control";
         protected readonly IElement _element;

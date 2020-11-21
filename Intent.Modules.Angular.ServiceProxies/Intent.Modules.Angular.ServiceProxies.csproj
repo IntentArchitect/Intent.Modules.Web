@@ -1,0 +1,53 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Intent.Modules.Common" Version="3.0.0-*" />
+    <PackageReference Include="Intent.Modules.Common.Typescript" Version="3.0.0-*" />
+    <PackageReference Include="Intent.Modules.Modelers.Services" Version="3.0.0-*" />
+    <PackageReference Include="Intent.Modules.Modelers.Types.ServiceProxies" Version="3.0.0-*" />
+    <PackageReference Include="Intent.Packager" Version="3.0.0-*">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Intent.RoslynWeaver.Attributes" Version="1.0.0" />
+    <PackageReference Include="Intent.SoftwareFactory.SDK" Version="3.0.0-*" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Intent.Modules.Angular\Intent.Modules.Angular.csproj" />
+    <ProjectReference Include="..\Intent.Modules.Modelers.WebClient\Intent.Modules.Modelers.WebClient.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Templates\Proxies\AngularDTOTemplate\AngularDTOTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AngularDTOTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Templates\Proxies\AngularServiceProxyTemplate\AngularServiceProxyTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AngularServiceProxyTemplate.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="Templates\Proxies\AngularDTOTemplate\AngularDTOTemplate.tt">
+      <LastGenOutput>AngularDTOTemplate.cs</LastGenOutput>
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+    </None>
+    <None Update="Templates\Proxies\AngularServiceProxyTemplate\AngularServiceProxyTemplate.tt">
+      <LastGenOutput>AngularServiceProxyTemplate.cs</LastGenOutput>
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+    </None>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+  </ItemGroup>
+
+</Project>

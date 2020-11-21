@@ -21,7 +21,7 @@ namespace Intent.Modules.Angular.Templates.App.AppRoutingModuleTemplate
     partial class AppRoutingModuleTemplate : TypeScriptTemplateBase<IList<ModuleModel>>
     {
         [IntentManaged(Mode.Fully)]
-        public const string TemplateId = "Angular.App.AppRoutingModuleTemplate.AppRoutingModuleTemplate";
+        public const string TemplateId = "Angular.App.AppRoutingModuleTemplate";
 
         public AppRoutingModuleTemplate(IOutputTarget project, IList<ModuleModel> model) : base(TemplateId, project, model)
         {

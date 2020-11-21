@@ -20,6 +20,8 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intent.Modules.Common.TypeS
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intent.Modules.Common.Html", "Intent.Modules.Common.Html\Intent.Modules.Common.Html.csproj", "{52242927-03AB-43FA-B467-A8D12155C665}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intent.Modules.Angular.ServiceProxies", "Intent.Modules.Angular.ServiceProxies\Intent.Modules.Angular.ServiceProxies.csproj", "{6D139C9A-784D-48B9-A4AF-E24859654DBA}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -50,6 +52,10 @@ Global
 		{52242927-03AB-43FA-B467-A8D12155C665}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{52242927-03AB-43FA-B467-A8D12155C665}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{52242927-03AB-43FA-B467-A8D12155C665}.Release|Any CPU.Build.0 = Release|Any CPU
+		{6D139C9A-784D-48B9-A4AF-E24859654DBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6D139C9A-784D-48B9-A4AF-E24859654DBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6D139C9A-784D-48B9-A4AF-E24859654DBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6D139C9A-784D-48B9-A4AF-E24859654DBA}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -61,6 +67,7 @@ Global
 		{ED32631D-518F-4A7F-BAA1-FDE928110649} = {A198DA77-1381-49A4-BC5A-CAE92446D16B}
 		{D73385C5-F082-43BE-A2BF-E6B7B3FB98C0} = {A198DA77-1381-49A4-BC5A-CAE92446D16B}
 		{52242927-03AB-43FA-B467-A8D12155C665} = {A198DA77-1381-49A4-BC5A-CAE92446D16B}
+		{6D139C9A-784D-48B9-A4AF-E24859654DBA} = {A0A03C99-B672-4CAC-B744-D1022C2B7DF7}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9A6E9459-F9E0-4E3C-BE28-09642ECC30F4}

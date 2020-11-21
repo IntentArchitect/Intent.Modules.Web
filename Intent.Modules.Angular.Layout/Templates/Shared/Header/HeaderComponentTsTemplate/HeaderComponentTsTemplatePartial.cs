@@ -20,7 +20,7 @@ namespace Intent.Modules.Angular.Layout.Templates.Shared.Header.HeaderComponentT
     partial class HeaderComponentTsTemplate : TypeScriptTemplateBase<object>
     {
         [IntentManaged(Mode.Fully)]
-        public const string TemplateId = "Angular.Layout.Shared.Header.HeaderComponentTsTemplate.HeaderComponentTsTemplate";
+        public const string TemplateId = "Angular.Layout.Shared.Header.HeaderComponentTsTemplate";
 
         public HeaderComponentTsTemplate(IOutputTarget project, object model) : base(TemplateId, project, model)
         {

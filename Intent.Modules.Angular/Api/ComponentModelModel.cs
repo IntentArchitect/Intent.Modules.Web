@@ -10,7 +10,7 @@ using Intent.RoslynWeaver.Attributes;
 namespace Intent.Modules.Angular.Api
 {
     [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
-    public class ComponentModelModel : IHasStereotypes, IMetadataModel
+    public class ComponentModelModel : IMetadataModel, IHasStereotypes, IHasName, IHasTypeReference
     {
         public const string SpecializationType = "Component Model";
         protected readonly IElement _element;

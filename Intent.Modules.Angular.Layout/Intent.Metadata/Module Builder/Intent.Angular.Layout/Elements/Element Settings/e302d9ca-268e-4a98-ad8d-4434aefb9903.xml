@@ -3,6 +3,7 @@
   <name>Table Control</name>
   <display>Table Control</display>
   <isAbstract>false</isAbstract>
+  <order>5</order>
   <genericTypes />
   <isMapped>false</isMapped>
   <parentFolderId>d3c58ce6-a07c-47dc-8626-f73cf1d047e2</parentFolderId>
@@ -45,6 +46,7 @@
       <name>[context menu]</name>
       <display>[context menu]</display>
       <isAbstract>false</isAbstract>
+      <order>0</order>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>e302d9ca-268e-4a98-ad8d-4434aefb9903</parentFolderId>
@@ -56,6 +58,7 @@
           <name>Add Column</name>
           <display>Add Column: Table Column</display>
           <isAbstract>false</isAbstract>
+          <order>0</order>
           <genericTypes />
           <typeReference id="e6eb9ce7-9c6a-43f1-8057-c0bbc4353a94">
             <typeId>6837f6c2-f098-45df-8be4-900036b73e25</typeId>
@@ -63,7 +66,7 @@
             <isNullable>false</isNullable>
             <isCollection>false</isCollection>
             <isRequired>true</isRequired>
-            <typePackageName>Angular.Layout.ModuleBuilder</typePackageName>
+            <typePackageName>Intent.Angular.Layout</typePackageName>
             <typePackageId>411a47ef-bf13-45dd-b800-7abf7eb9ac92</typePackageId>
             <stereotypes />
             <genericTypeParameters />
@@ -95,6 +98,7 @@
       <name>NewMappingSettings</name>
       <display>[mappings]</display>
       <isAbstract>false</isAbstract>
+      <order>2</order>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>e302d9ca-268e-4a98-ad8d-4434aefb9903</parentFolderId>
@@ -106,7 +110,7 @@
           <definitionPackageName>Intent.ModuleBuilder</definitionPackageName>
           <definitionPackageId>9972b2a9-b749-4bba-b5c8-824bf694c6ef</definitionPackageId>
           <properties>
-            <property name="d233d3f9-934a-4690-a476-778e0c4927ef" display="Default Designer" value="7083df81-ccfb-435c-be88-d5701adcc106" isActive="true" />
+            <property name="d233d3f9-934a-4690-a476-778e0c4927ef" display="Default Designer" value="f492faed-0665-4513-9853-5a230721786f" isActive="true" />
           </properties>
         </stereotype>
       </stereotypes>
@@ -115,6 +119,7 @@
           <name>NewElementMapping</name>
           <display>[mapping]: Component Model -&gt; (Traverse)</display>
           <isAbstract>false</isAbstract>
+          <order>0</order>
           <genericTypes />
           <isMapped>false</isMapped>
           <parentFolderId>510bf1dc-08d2-4184-9358-499b96e41586</parentFolderId>
@@ -148,6 +153,7 @@
               <name>NewElementMapping</name>
               <display>[mapping]: Model Definition Field -&gt; Table Control</display>
               <isAbstract>false</isAbstract>
+              <order>0</order>
               <genericTypes />
               <isMapped>false</isMapped>
               <parentFolderId>7c808d5d-c6b5-4478-8df0-a95dc939ef11</parentFolderId>
@@ -181,6 +187,7 @@
                   <name>NewElementMapping</name>
                   <display>[mapping]: Model Definition Field -&gt; Table Column</display>
                   <isAbstract>false</isAbstract>
+                  <order>0</order>
                   <genericTypes />
                   <isMapped>false</isMapped>
                   <parentFolderId>c3360961-3eb7-4377-a387-f265c73fa65f</parentFolderId>
@@ -219,6 +226,7 @@
           <name>NewElementMapping</name>
           <display>[mapping]: Component Model -&gt; Table Control</display>
           <isAbstract>false</isAbstract>
+          <order>1</order>
           <genericTypes />
           <isMapped>false</isMapped>
           <parentFolderId>510bf1dc-08d2-4184-9358-499b96e41586</parentFolderId>
@@ -252,6 +260,7 @@
               <name>NewElementMapping</name>
               <display>[mapping]: Model Definition Field -&gt; Table Column</display>
               <isAbstract>false</isAbstract>
+              <order>0</order>
               <genericTypes />
               <isMapped>false</isMapped>
               <parentFolderId>aba6038e-8ff6-4311-9192-1abeb4d42504</parentFolderId>

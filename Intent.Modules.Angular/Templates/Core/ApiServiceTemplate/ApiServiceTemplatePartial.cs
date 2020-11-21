@@ -21,7 +21,7 @@ namespace Intent.Modules.Angular.Templates.Core.ApiServiceTemplate
         : TypeScriptTemplateBase<object>
     {
         [IntentManaged(Mode.Fully)]
-        public const string TemplateId = "Angular.Core.ApiServiceTemplate.ApiServiceTemplate";
+        public const string TemplateId = "Angular.Core.ApiServiceTemplate";
 
         public ApiServiceTemplate(IOutputTarget project, object model) : base(TemplateId, project, model)
         {

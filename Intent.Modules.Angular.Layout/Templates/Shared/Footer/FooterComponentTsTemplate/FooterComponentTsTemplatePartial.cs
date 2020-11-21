@@ -19,7 +19,7 @@ namespace Intent.Modules.Angular.Layout.Templates.Shared.Footer.FooterComponentT
     partial class FooterComponentTsTemplate : TypeScriptTemplateBase<object>
     {
         [IntentManaged(Mode.Fully)]
-        public const string TemplateId = "Angular.Layout.Shared.Footer.FooterComponentTsTemplate.FooterComponentTsTemplate";
+        public const string TemplateId = "Angular.Layout.Shared.Footer.FooterComponentTsTemplate";
 
         public FooterComponentTsTemplate(IOutputTarget project, object model) : base(TemplateId, project, model)
         {

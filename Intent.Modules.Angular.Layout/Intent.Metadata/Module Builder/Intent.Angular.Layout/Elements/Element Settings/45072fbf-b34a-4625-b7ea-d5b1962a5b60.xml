@@ -3,6 +3,7 @@
   <name>Section</name>
   <display>Section</display>
   <isAbstract>false</isAbstract>
+  <order>4</order>
   <genericTypes />
   <isMapped>false</isMapped>
   <parentFolderId>d3c58ce6-a07c-47dc-8626-f73cf1d047e2</parentFolderId>
@@ -45,6 +46,7 @@
       <name>[context menu]</name>
       <display>[context menu]</display>
       <isAbstract>false</isAbstract>
+      <order>0</order>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>45072fbf-b34a-4625-b7ea-d5b1962a5b60</parentFolderId>
@@ -56,6 +58,7 @@
           <name>New Table Control</name>
           <display>New Table Control: Table Control</display>
           <isAbstract>false</isAbstract>
+          <order>0</order>
           <genericTypes />
           <typeReference id="9cbc7b66-1a02-4ef4-9053-9f71884645a3">
             <typeId>e302d9ca-268e-4a98-ad8d-4434aefb9903</typeId>
@@ -63,7 +66,7 @@
             <isNullable>false</isNullable>
             <isCollection>false</isCollection>
             <isRequired>true</isRequired>
-            <typePackageName>Angular.Layout.ModuleBuilder</typePackageName>
+            <typePackageName>Intent.Angular.Layout</typePackageName>
             <typePackageId>411a47ef-bf13-45dd-b800-7abf7eb9ac92</typePackageId>
             <stereotypes />
             <genericTypeParameters />
@@ -93,6 +96,7 @@
           <name>New Pagination Control</name>
           <display>New Pagination Control: Pagination Control</display>
           <isAbstract>false</isAbstract>
+          <order>1</order>
           <genericTypes />
           <typeReference id="c1d47c26-9319-481a-ae9e-d5f445aa1c6b">
             <typeId>3faee16c-8605-4bb4-8566-06a555c929a3</typeId>
@@ -100,7 +104,7 @@
             <isNullable>false</isNullable>
             <isCollection>false</isCollection>
             <isRequired>true</isRequired>
-            <typePackageName>Angular.Layout.ModuleBuilder</typePackageName>
+            <typePackageName>Intent.Angular.Layout</typePackageName>
             <typePackageId>411a47ef-bf13-45dd-b800-7abf7eb9ac92</typePackageId>
             <stereotypes />
             <genericTypeParameters />
@@ -130,6 +134,7 @@
           <name>New Form</name>
           <display>New Form: Form</display>
           <isAbstract>false</isAbstract>
+          <order>2</order>
           <genericTypes />
           <typeReference id="6181da8d-b616-4c82-b652-fea5e5f4962c">
             <typeId>8aee9b69-d02d-4ca8-b28a-6585508bd033</typeId>
@@ -137,7 +142,7 @@
             <isNullable>false</isNullable>
             <isCollection>false</isCollection>
             <isRequired>true</isRequired>
-            <typePackageName>Angular.Layout.ModuleBuilder</typePackageName>
+            <typePackageName>Intent.Angular.Layout</typePackageName>
             <typePackageId>411a47ef-bf13-45dd-b800-7abf7eb9ac92</typePackageId>
             <stereotypes />
             <genericTypeParameters />
@@ -167,6 +172,7 @@
           <name>New Button Control</name>
           <display>New Button Control: Button Control</display>
           <isAbstract>false</isAbstract>
+          <order>3</order>
           <genericTypes />
           <typeReference id="d1d535a3-6e4d-4902-810e-1ed78d9971bf">
             <typeId>13eca516-0628-4085-91c3-36d5eddda6c9</typeId>
@@ -174,7 +180,7 @@
             <isNullable>false</isNullable>
             <isCollection>false</isCollection>
             <isRequired>true</isRequired>
-            <typePackageName>Angular.Layout.ModuleBuilder</typePackageName>
+            <typePackageName>Intent.Angular.Layout</typePackageName>
             <typePackageId>411a47ef-bf13-45dd-b800-7abf7eb9ac92</typePackageId>
             <stereotypes />
             <genericTypeParameters />
@@ -204,6 +210,7 @@
           <name>New Section</name>
           <display>New Section: Section</display>
           <isAbstract>false</isAbstract>
+          <order>4</order>
           <genericTypes />
           <typeReference id="8ea118f0-9d39-44a9-af11-c52033a7b240">
             <typeId>45072fbf-b34a-4625-b7ea-d5b1962a5b60</typeId>
@@ -211,7 +218,7 @@
             <isNullable>false</isNullable>
             <isCollection>false</isCollection>
             <isRequired>true</isRequired>
-            <typePackageName>Angular.Layout.ModuleBuilder</typePackageName>
+            <typePackageName>Intent.Angular.Layout</typePackageName>
             <typePackageId>411a47ef-bf13-45dd-b800-7abf7eb9ac92</typePackageId>
             <stereotypes />
             <genericTypeParameters />

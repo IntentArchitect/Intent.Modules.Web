@@ -10,7 +10,7 @@ using Intent.RoslynWeaver.Attributes;
 namespace Intent.Modules.Angular.Api
 {
     [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
-    public class TypeDefinitionModel : IHasStereotypes, IMetadataModel
+    public class TypeDefinitionModel : IMetadataModel, IHasStereotypes, IHasName
     {
         public const string SpecializationType = "Type Definition";
         protected readonly IElement _element;

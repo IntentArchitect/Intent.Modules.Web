@@ -8,6 +8,7 @@ using Intent.Metadata.Models;
 using Intent.Modules.Common;
 using System;
 using System.Linq;
+using Intent.Modelers.WebClient.Api;
 
 [assembly: DefaultIntentManaged(Mode.Merge)]
 [assembly: IntentTemplate("Intent.ModuleBuilder.TemplateRegistration.FilePerModel", Version = "1.0")]
@@ -34,7 +35,7 @@ namespace Intent.Modules.Angular.Templates.Module.AngularModuleTemplate
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]
         public override IEnumerable<ModuleModel> GetModels(IApplication application)
         {
-            return _metadataManager.Angular(application).GetModuleModels();
+            return _metadataManager.WebClient(application).GetModuleModels();
         }
     }
 }

@@ -10,7 +10,7 @@ using Intent.RoslynWeaver.Attributes;
 namespace Intent.Modules.Angular.Api
 {
     [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
-    public class ComponentCommandModel : IHasStereotypes, IMetadataModel
+    public class ComponentCommandModel : IMetadataModel, IHasStereotypes, IHasName, IHasTypeReference
     {
         public const string SpecializationType = "Component Command";
         protected readonly IElement _element;
@@ -71,9 +71,9 @@ namespace Intent.Modules.Angular.Api
 
 
         [IntentManaged(Mode.Fully)]
-        public IList<ParameterModel> Parameters => _element.ChildElements
-            .Where(x => x.SpecializationType == ParameterModel.SpecializationType)
-            .Select(x => new ParameterModel(x))
+        public IList<CommandParameterModel> Parameters => _element.ChildElements
+            .Where(x => x.SpecializationType == CommandParameterModel.SpecializationType)
+            .Select(x => new CommandParameterModel(x))
             .ToList();
         public const string SpecializationTypeId = "d6739ffc-30e6-4170-a105-bf28e69aa578";
     }

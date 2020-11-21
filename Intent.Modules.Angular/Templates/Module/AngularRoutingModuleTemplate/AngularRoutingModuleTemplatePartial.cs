@@ -22,7 +22,7 @@ namespace Intent.Modules.Angular.Templates.Module.AngularRoutingModuleTemplate
     partial class AngularRoutingModuleTemplate : TypeScriptTemplateBase<ModuleModel>
     {
         [IntentManaged(Mode.Fully)]
-        public const string TemplateId = "Angular.Module.AngularRoutingModuleTemplate.AngularRoutingModuleTemplate";
+        public const string TemplateId = "Angular.Module.AngularRoutingModuleTemplate";
 
         public AngularRoutingModuleTemplate(IOutputTarget project, ModuleModel model) : base(TemplateId, project, model)
         {

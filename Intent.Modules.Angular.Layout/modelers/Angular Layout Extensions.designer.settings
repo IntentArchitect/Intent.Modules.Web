@@ -2,9 +2,10 @@
 <settings>
   <id>d3c58ce6-a07c-47dc-8626-f73cf1d047e2</id>
   <name>Angular Layout Extensions</name>
+  <designerReferences />
   <packageSettings />
   <packageExtensions>
-    <packageExtension type="Angular App" typeId="fc44141e-8079-4f63-894b-f1a26736c991">
+    <packageExtension type="Web Client" typeId="911c35b4-4ba3-404c-a0c6-e5258e53333a">
       <requiredPackages />
       <creationOptions>
         <option type="element">
@@ -35,7 +36,7 @@
       <allowConvertToType d4p1:nil="true" xmlns:d4p1="http://www.w3.org/2001/XMLSchema-instance" />
       <allowSetValue>false</allowSetValue>
       <mappingSettings>
-        <defaultModeler>7083df81-ccfb-435c-be88-d5701adcc106</defaultModeler>
+        <defaultModeler>f492faed-0665-4513-9853-5a230721786f</defaultModeler>
         <mappings>
           <mapping id="1969ef34-7539-4640-bfe9-c766d3a275b2">
             <criteria specializationType="Component Command">
@@ -76,7 +77,7 @@
         </option>
       </creationOptions>
       <mappingSettings>
-        <defaultModeler>7083df81-ccfb-435c-be88-d5701adcc106</defaultModeler>
+        <defaultModeler>f492faed-0665-4513-9853-5a230721786f</defaultModeler>
         <mappings>
           <mapping id="eeb30624-b056-43ea-80ba-4debaa084cb2">
             <criteria specializationType="Component Model">
@@ -164,7 +165,7 @@
       <allowConvertToType d4p1:nil="true" xmlns:d4p1="http://www.w3.org/2001/XMLSchema-instance" />
       <allowSetValue>false</allowSetValue>
       <mappingSettings>
-        <defaultModeler>7083df81-ccfb-435c-be88-d5701adcc106</defaultModeler>
+        <defaultModeler>f492faed-0665-4513-9853-5a230721786f</defaultModeler>
         <mappings>
           <mapping id="0ce0fb70-8fef-4a1d-9b80-8b94b6a69452">
             <criteria specializationType="Component Model">
@@ -268,7 +269,7 @@
         </option>
       </creationOptions>
       <mappingSettings>
-        <defaultModeler>7083df81-ccfb-435c-be88-d5701adcc106</defaultModeler>
+        <defaultModeler>f492faed-0665-4513-9853-5a230721786f</defaultModeler>
         <mappings>
           <mapping id="7c808d5d-c6b5-4478-8df0-a95dc939ef11">
             <criteria specializationType="Component Model">

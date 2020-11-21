@@ -11,7 +11,7 @@ using Intent.RoslynWeaver.Attributes;
 namespace Intent.Modules.Angular.Layout.Api
 {
     [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
-    public class TableControlModel : IHasStereotypes, IMetadataModel
+    public class TableControlModel : IMetadataModel, IHasStereotypes, IHasName
     {
         [IntentManaged(Mode.Fully)] public const string SpecializationType = "Table Control";
         protected readonly IElement _element;

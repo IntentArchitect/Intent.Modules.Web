@@ -6,7 +6,6 @@ using Intent.Engine;
 using Intent.Metadata.Models;
 using Intent.Modules.Angular.Api;
 using Intent.Modules.Angular.Templates.Component.AngularComponentTsTemplate;
-using Intent.Modules.Angular.Templates.Proxies.AngularServiceProxyTemplate;
 using Intent.Modules.Angular.Templates.Shared.IntentDecoratorsTemplate;
 using Intent.Modules.Common;
 using Intent.Modules.Common.Templates;
@@ -23,7 +22,7 @@ namespace Intent.Modules.Angular.Templates.Module.AngularModuleTemplate
     partial class AngularModuleTemplate : TypeScriptTemplateBase<ModuleModel>
     {
         [IntentManaged(Mode.Fully)]
-        public const string TemplateId = "Angular.Module.AngularModuleTemplate.AngularModuleTemplate";
+        public const string TemplateId = "Angular.Module.AngularModuleTemplate";
         private readonly ISet<string> _components = new HashSet<string>();
         private readonly ISet<string> _providers = new HashSet<string>();
         private readonly ISet<string> _angularImports = new HashSet<string>();
@@ -42,16 +41,16 @@ namespace Intent.Modules.Angular.Templates.Module.AngularModuleTemplate
                     _components.Add(GetTypeName(AngularComponentTsTemplate.TemplateId, @event.GetValue(AngularComponentCreatedEvent.ModelId)));
                 });
 
-            project.Application.EventDispatcher.Subscribe(AngularServiceProxyCreatedEvent.EventId, @event =>
-            {
-                if (@event.GetValue(AngularServiceProxyCreatedEvent.ModuleId) != Model.Id)
-                {
-                    return;
-                }
+            project.Application.EventDispatcher.Subscribe<AngularServiceProxyCreatedEvent>(@event =>
+           {
+               if (@event.ModuleId != Model.Id)
+               {
+                   return;
+               }
 
-                var templateClassName = GetTypeName(AngularServiceProxyTemplate.TemplateId, @event.GetValue(AngularServiceProxyCreatedEvent.ModelId));
-                _providers.Add(templateClassName);
-            });
+               var templateClassName = GetTypeName(@event.TemplateId, @event.ModelId);
+               _providers.Add(templateClassName);
+           });
 
             project.Application.EventDispatcher.Subscribe(AngularImportDependencyRequiredEvent.EventId, @event =>
             {

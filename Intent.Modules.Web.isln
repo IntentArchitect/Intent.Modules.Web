@@ -11,5 +11,6 @@
     <application id="1cecc65d-e804-4de6-a27f-e8e4ad0190d7" name="Angular" relativePath="Intent.Modules.Angular\Angular.application.config" />
     <application id="49018a38-94b9-46d5-b6b7-8ce2e5aae4a9" name="Angular.Layout" relativePath="Intent.Modules.Angular.Layout\Angular.Layout.application.config" />
     <application id="52782ed2-925b-4f8c-96c0-3dff3bebd987" name="Intent.Modules.TypeScript.Proxies.Contracts" relativePath="Intent.Modules.TypeScript.Proxies.Contracts\Intent.Modules.TypeScript.Proxies.Contracts.application.config" />
+    <application id="194c7c1b-71e9-4344-8e30-4904a0157d02" name="Intent.Modules.Angular.ServiceProxies" relativePath="Intent.Modules.Angular.ServiceProxies/Intent.Modules.Angular.ServiceProxies.application.config" />
   </applications>
 </solution>

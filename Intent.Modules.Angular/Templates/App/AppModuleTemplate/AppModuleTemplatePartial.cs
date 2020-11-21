@@ -9,8 +9,6 @@ using Intent.Templates;
 using Intent.Metadata.Models;
 using System;
 using System.Collections.Generic;
-using Intent.Modules.Angular.Templates.Component.AngularComponentTsTemplate;
-using Intent.Modules.Angular.Templates.Proxies.AngularServiceProxyTemplate;
 using Intent.Modules.Angular.Templates.Shared.IntentDecoratorsTemplate;
 using Intent.Modules.Common.VisualStudio;
 using Intent.Modules.Angular.Api;
@@ -30,7 +28,7 @@ namespace Intent.Modules.Angular.Templates.App.AppModuleTemplate
         private readonly ISet<string> _imports = new HashSet<string>();
 
         [IntentManaged(Mode.Fully)]
-        public const string TemplateId = "Angular.App.AppModuleTemplate.AppModuleTemplate";
+        public const string TemplateId = "Angular.App.AppModuleTemplate";
 
         public AppModuleTemplate(IOutputTarget project, object model) : base(TemplateId, project, model)
         {
@@ -45,16 +43,16 @@ namespace Intent.Modules.Angular.Templates.App.AppModuleTemplate
                 _components.Add(GetTypeName(@event.GetValue(AngularComponentCreatedEvent.ModelId)));
             });
 
-            project.Application.EventDispatcher.Subscribe(AngularServiceProxyCreatedEvent.EventId, @event =>
-            {
-                if (@event.GetValue(AngularServiceProxyCreatedEvent.ModuleId) != ClassName)
-                {
-                    return;
-                }
+            project.Application.EventDispatcher.Subscribe<AngularServiceProxyCreatedEvent>(@event =>
+           {
+               if (@event.ModuleId != ClassName)
+               {
+                   return;
+               }
 
-                var template = GetTypeName(@event.GetValue(AngularServiceProxyCreatedEvent.ModelId));
-                _providers.Add(template);
-            });
+               var template = GetTypeName(@event.ModelId);
+               _providers.Add(template);
+           });
 
             project.Application.EventDispatcher.Subscribe(AngularImportDependencyRequiredEvent.EventId, @event =>
             {

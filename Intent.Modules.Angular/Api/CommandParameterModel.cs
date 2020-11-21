@@ -10,7 +10,7 @@ using Intent.RoslynWeaver.Attributes;
 namespace Intent.Modules.Angular.Api
 {
     [IntentManaged(Mode.Merge)]
-    public class CommandParameterModel : IHasStereotypes, IMetadataModel
+    public class CommandParameterModel : IHasStereotypes, IMetadataModel, IHasName, IHasTypeReference
     {
         public const string SpecializationType = "Command Parameter";
         public const string SpecializationTypeId = "4a1ce2a9-e79f-4e93-96af-24b44728ecbc";

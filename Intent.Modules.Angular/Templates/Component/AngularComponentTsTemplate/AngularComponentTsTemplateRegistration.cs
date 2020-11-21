@@ -7,6 +7,7 @@ using Intent.RoslynWeaver.Attributes;
 using Intent.Engine;
 using Intent.Templates;
 using System;
+using Intent.Modelers.WebClient.Api;
 using Intent.Modules.Angular.Api;
 
 [assembly: DefaultIntentManaged(Mode.Merge)]
@@ -34,7 +35,7 @@ namespace Intent.Modules.Angular.Templates.Component.AngularComponentTsTemplate
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]
         public override IEnumerable<ComponentModel> GetModels(IApplication application)
         {
-            return _metadataManager.Angular(application).GetComponentModels();
+            return _metadataManager.WebClient(application).GetComponentModels();
         }
     }
 }

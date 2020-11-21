@@ -10,7 +10,7 @@ using Intent.RoslynWeaver.Attributes;
 namespace Intent.Modules.Angular.Api
 {
     [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
-    public class ModuleModel : IHasStereotypes, IMetadataModel
+    public class ModuleModel : IMetadataModel, IHasStereotypes, IHasName
     {
         protected readonly IElement _element;
         public const string SpecializationType = "Module";
@@ -29,12 +29,6 @@ namespace Intent.Modules.Angular.Api
         [IntentManaged(Mode.Fully)]
         public string Name => _element.Name;
         public IElementApplication Application => _element.Application;
-
-        [IntentManaged(Mode.Fully)]
-        public IList<ServiceProxyModel> ServiceProxies => _element.ChildElements
-            .Where(x => x.SpecializationType == ServiceProxyModel.SpecializationType)
-            .Select(x => new ServiceProxyModel(x))
-            .ToList();
 
         [IntentManaged(Mode.Fully)]
         public IList<ModelDefinitionModel> ModelDefinitions => _element.ChildElements

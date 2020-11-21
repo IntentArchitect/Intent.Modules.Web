@@ -3,6 +3,7 @@
   <name>Angular Layout Extensions</name>
   <display>Angular Layout Extensions</display>
   <isAbstract>false</isAbstract>
+  <order>0</order>
   <genericTypes />
   <isMapped>false</isMapped>
   <parentFolderId>2003e5fc-edca-4ea3-8a4e-5035979355e1</parentFolderId>
@@ -15,7 +16,7 @@
       <definitionPackageId>9972b2a9-b749-4bba-b5c8-824bf694c6ef</definitionPackageId>
       <properties>
         <property name="9566aa04-ab84-4fbc-b039-6e676159ed82" display="Is Reference" value="false" isActive="true" />
-        <property name="fdbbd211-a162-4f29-bcdb-1250309d8aef" display="Extend Designers" value="[&quot;7083df81-ccfb-435c-be88-d5701adcc106&quot;]" isActive="true" />
+        <property name="fdbbd211-a162-4f29-bcdb-1250309d8aef" display="Extend Designers" value="[&quot;f492faed-0665-4513-9853-5a230721786f&quot;]" isActive="true" />
       </properties>
     </stereotype>
   </stereotypes>

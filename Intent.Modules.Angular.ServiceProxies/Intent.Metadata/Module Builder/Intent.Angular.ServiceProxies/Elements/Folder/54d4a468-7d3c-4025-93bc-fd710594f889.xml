@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="54d4a468-7d3c-4025-93bc-fd710594f889" type="Folder" typeId="4d95d53a-8855-4f35-aa82-e312643f5c5f">
+  <name>Proxies</name>
+  <display>Proxies</display>
+  <isAbstract>false</isAbstract>
+  <order>2</order>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>6acdce2e-cfb4-4988-beef-4ac087c6d857</parentFolderId>
+  <packageId>6acdce2e-cfb4-4988-beef-4ac087c6d857</packageId>
+  <packageName>Intent.Angular.ServiceProxies</packageName>
+  <stereotypes />
+  <childElements />
+</class>

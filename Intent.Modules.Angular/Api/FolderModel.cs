@@ -10,7 +10,7 @@ using Intent.RoslynWeaver.Attributes;
 namespace Intent.Modules.Angular.Api
 {
     [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
-    public class FolderModel : IHasStereotypes, IMetadataModel
+    public class FolderModel : IMetadataModel, IHasStereotypes, IHasName
     {
         public const string SpecializationType = "Folder";
         protected readonly IElement _element;
