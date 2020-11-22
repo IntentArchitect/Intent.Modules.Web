@@ -13,6 +13,7 @@ using Intent.Modules.Angular.Templates.Shared.IntentDecoratorsTemplate;
 using Intent.Modules.Common.VisualStudio;
 using Intent.Modules.Angular.Api;
 using Intent.Modules.Common.TypeScript.Templates;
+using Intent.Modelers.WebClient.Api;
 
 [assembly: DefaultIntentManaged(Mode.Merge)]
 [assembly: IntentTemplate("ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial", Version = "1.0")]
@@ -20,7 +21,7 @@ using Intent.Modules.Common.TypeScript.Templates;
 namespace Intent.Modules.Angular.Templates.App.AppModuleTemplate
 {
     [IntentManaged(Mode.Merge, Signature = Mode.Merge)]
-    partial class AppModuleTemplate : TypeScriptTemplateBase<object>, IHasNugetDependencies
+    partial class AppModuleTemplate : TypeScriptTemplateBase<AngularWebAppModel>, IHasNugetDependencies
     {
         private readonly ISet<string> _components = new HashSet<string>() { "AppComponent" };
         private readonly ISet<string> _providers = new HashSet<string>();
@@ -30,7 +31,7 @@ namespace Intent.Modules.Angular.Templates.App.AppModuleTemplate
         [IntentManaged(Mode.Fully)]
         public const string TemplateId = "Angular.App.AppModuleTemplate";
 
-        public AppModuleTemplate(IOutputTarget project, object model) : base(TemplateId, project, model)
+        public AppModuleTemplate(IOutputTarget project, AngularWebAppModel model) : base(TemplateId, project, model)
         {
             AddTemplateDependency(IntentDecoratorsTemplate.TemplateId);
             project.Application.EventDispatcher.Subscribe(AngularComponentCreatedEvent.EventId, @event =>

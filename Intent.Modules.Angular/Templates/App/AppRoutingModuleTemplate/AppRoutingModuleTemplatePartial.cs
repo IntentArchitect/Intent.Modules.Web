@@ -11,6 +11,7 @@ using Intent.Metadata.Models;
 using System;
 using Intent.Modules.Angular.Templates.Shared.IntentDecoratorsTemplate;
 using Intent.Modules.Common.TypeScript.Templates;
+using Intent.Modelers.WebClient.Api;
 
 [assembly: DefaultIntentManaged(Mode.Merge)]
 [assembly: IntentTemplate("ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial", Version = "1.0")]
@@ -18,44 +19,48 @@ using Intent.Modules.Common.TypeScript.Templates;
 namespace Intent.Modules.Angular.Templates.App.AppRoutingModuleTemplate
 {
     [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
-    partial class AppRoutingModuleTemplate : TypeScriptTemplateBase<IList<ModuleModel>>
+    partial class AppRoutingModuleTemplate : TypeScriptTemplateBase<AngularWebAppModel>
     {
         [IntentManaged(Mode.Fully)]
         public const string TemplateId = "Angular.App.AppRoutingModuleTemplate";
 
-        public AppRoutingModuleTemplate(IOutputTarget project, IList<ModuleModel> model) : base(TemplateId, project, model)
+        public AppRoutingModuleTemplate(IOutputTarget project, AngularWebAppModel model) : base(TemplateId, project, model)
         {
             AddTemplateDependency(IntentDecoratorsTemplate.TemplateId);
         }
-
-        public IEnumerable<AngularModuleTemplate> ModuleTemplates => Model.Select(x => GetTemplate<AngularModuleTemplate>(TemplateDependency.OnModel(AngularModuleTemplate.TemplateId, x)));
 
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]
         public override ITemplateFileConfig GetTemplateFileConfig()
         {
             return new TypeScriptFileConfig(
-                overwriteBehaviour: OverwriteBehaviour.Always,
-                fileName: $"app-routing.module",
-                relativeLocation: $"",
-                className: "AppRoutingModule"
+                className: "AppRoutingModule",
+                fileName: $"app-routing.module"
             );
         }
 
+        public IList<RouteModel> Routes => Model?.Routing?.Routes ?? new List<RouteModel>();
+
         public override void BeforeTemplateExecution()
         {
-            foreach (var module in Model)
+            foreach (var route in Routes.Where(x => x.TypeReference.Element.SpecializationTypeId == ModuleModel.SpecializationTypeId))
             {
                 ExecutionContext.EventDispatcher.Publish(AngularModuleRouteCreatedEvent.EventId, new Dictionary<string, string>()
                 {
-                    {AngularModuleRouteCreatedEvent.ModuleName, module.GetModuleName()},
-                    {AngularModuleRouteCreatedEvent.Route, GetRoute(module)},
+                    {AngularModuleRouteCreatedEvent.ModuleName, new ModuleModel((IElement) route.TypeReference.Element).GetModuleName()},
+                    {AngularModuleRouteCreatedEvent.Route, GetRoute(route)},
                 });
             }
         }
 
-        private string GetRoute(ModuleModel module)
+        private string GetModulePath(RouteModel route)
         {
-            return module.Name.Replace("Module", "").ToLower();
+            var template = GetTemplate<AngularModuleTemplate>(TemplateDependency.OnModel(AngularModuleTemplate.TemplateId, route.TypeReference.Element));
+            return GetMetadata().GetFilePath().GetRelativePath(template.GetMetadata().GetFilePathWithoutExtension()).Normalize();
+        }
+
+        private string GetRoute(RouteModel route)
+        {
+            return route.Name;
         }
     }
 }

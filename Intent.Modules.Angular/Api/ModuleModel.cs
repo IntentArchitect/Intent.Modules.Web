@@ -101,5 +101,10 @@ namespace Intent.Modules.Angular.Api
             }
             _element = element;
         }
+
+        public RoutingModel Routing => _element.ChildElements
+                    .Where(x => x.SpecializationType == RoutingModel.SpecializationType)
+                    .Select(x => new RoutingModel(x))
+                    .SingleOrDefault();
     }
 }

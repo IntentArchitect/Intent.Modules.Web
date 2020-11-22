@@ -19,36 +19,18 @@ using Intent.Modules.Common.TypeScript.Templates;
 namespace Intent.Modules.Angular.Templates.Module.AngularRoutingModuleTemplate
 {
     [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
-    partial class AngularRoutingModuleTemplate : TypeScriptTemplateBase<ModuleModel>
+    partial class AngularRoutingModuleTemplate : TypeScriptTemplateBase<RoutingModel>
     {
         [IntentManaged(Mode.Fully)]
         public const string TemplateId = "Angular.Module.AngularRoutingModuleTemplate";
 
-        public AngularRoutingModuleTemplate(IOutputTarget project, ModuleModel model) : base(TemplateId, project, model)
+        public AngularRoutingModuleTemplate(IOutputTarget project, RoutingModel model) : base(TemplateId, project, model)
         {
+            AddTypeSource(AngularComponentTsTemplate.TemplateId);
             AddTemplateDependency(IntentDecoratorsTemplate.TemplateId);
         }
 
-        public string ModuleName => Model.GetModuleName() + "Routing";
-
-        //      protected override void ApplyFileChanges(TypescriptFile file)
-        //      {
-        //          var routes = file.VariableDeclarations().FirstOrDefault();
-        //          foreach (var component in Model.Components)
-        //          {
-        //              var routeExists = routes.GetAssignedValue<TypescriptArrayLiteralExpression>()
-        //                  .GetValues<TypescriptObjectLiteralExpression>()
-        //                  .Any(x => x.PropertyAssignmentExists("component", GetClassName(component)));
-        //              if (!routeExists)
-        //              {
-        //                  var array = routes.GetAssignedValue<TypescriptArrayLiteralExpression>();
-        //                  array.AddValue($@"{{
-        //  path: '{GetPath(component)}',
-        //  component: {GetClassName(component)}  #>
-        //}}");
-        //              }
-        //          }
-        //      }
+        public string ModuleName => Model.Module.GetModuleName() + "Routing";
 
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]
         public override ITemplateFileConfig GetTemplateFileConfig()
@@ -56,19 +38,9 @@ namespace Intent.Modules.Angular.Templates.Module.AngularRoutingModuleTemplate
             return new TypeScriptFileConfig(
                 overwriteBehaviour: OverwriteBehaviour.Always,
                 fileName: $"{ModuleName.ToKebabCase()}.module",
-                relativeLocation: $"{ Model.GetModuleName().ToKebabCase() }",
+                relativeLocation: $"{ Model.Module.GetModuleName().ToKebabCase() }",
                 className: "${ModuleName}"
             );
-        }
-
-        private string GetPath(ComponentModel component)
-        {
-            return GetTypeName(AngularComponentTsTemplate.TemplateId, component).Replace("Component", "").ToKebabCase();
-        }
-
-        private string GetClassName(ComponentModel component)
-        {
-            return GetTypeName(AngularComponentTsTemplate.TemplateId, component);
         }
     }
 }

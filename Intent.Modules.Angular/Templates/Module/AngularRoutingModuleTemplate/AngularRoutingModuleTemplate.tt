@@ -1,4 +1,4 @@
-<#@ template language="C#" inherits="TypeScriptTemplateBase<ModuleModel>" #>
+<#@ template language="C#" inherits="TypeScriptTemplateBase<RoutingModel>" #>
 <#@ assembly name="System.Core" #>
 <#@ import namespace="System.Collections.Generic" #>
 <#@ import namespace="System.Linq" #>
@@ -8,25 +8,21 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
-//@IntentMerge()
 const routes: Routes = [
-<#  foreach(var component in Model.Components) { #>
-<#      if (Model.Components.IndexOf(component) == 0) { #>
-  //@IntentIgnore('default')
+<#  foreach(var redirect in Model.Redirects) { #>
   {
-    path: '',
-    redirectTo: '<#= GetPath(component) #>'
+    path: '<#= redirect.Name #>',
+    redirectTo: '<#= redirect.TypeReference.Element.Name  #>'
   },
-<#      } #>
-  //@IntentMerge('<#= GetClassName(component)  #>')
+<#  } #>
+<#  foreach(var route in Model.Routes) { #>
   {
-    path: '<#= GetPath(component) #>',
-    component: <#= GetClassName(component)  #>
+    path: '<#= route.Name #>',
+    component: <#= GetTypeName(route)  #>
   },
 <#  } #>
 ];
 
-@IntentMerge()
 @NgModule({
   imports: [RouterModule.forChild(routes)],
   exports: [RouterModule]

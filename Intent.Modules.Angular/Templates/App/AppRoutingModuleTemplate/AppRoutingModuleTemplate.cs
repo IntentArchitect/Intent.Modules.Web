@@ -14,16 +14,16 @@ namespace Intent.Modules.Angular.Templates.App.AppRoutingModuleTemplate
     using Intent.Modules.Common;
     using Intent.Modules.Common.TypeScript.Templates;
     using Intent.Metadata.Models;
-    using Intent.Modules.Angular.Api;
+    using Intent.Modelers.WebClient.Api;
     using System;
     
     /// <summary>
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Dev\Intent.Modules\Modules\Intent.Modules.Angular\Templates\App\AppRoutingModuleTemplate\AppRoutingModuleTemplate.tt"
+    #line 1 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\App\AppRoutingModuleTemplate\AppRoutingModuleTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
-    public partial class AppRoutingModuleTemplate : TypeScriptTemplateBase<IList<ModuleModel>>
+    public partial class AppRoutingModuleTemplate : TypeScriptTemplateBase<AngularWebAppModel>
     {
 #line hidden
         /// <summary>
@@ -35,44 +35,35 @@ namespace Intent.Modules.Angular.Templates.App.AppRoutingModuleTemplate
                     "AllModules } from \'@angular/router\';\r\n\r\n//@IntentMerge()\r\nconst routes: Routes =" +
                     " [\r\n");
             
-            #line 14 "C:\Dev\Intent.Modules\Modules\Intent.Modules.Angular\Templates\App\AppRoutingModuleTemplate\AppRoutingModuleTemplate.tt"
- foreach(var module in Model) {
-// All of the below is not gonna work; but for now just to test idea...
-
+            #line 14 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\App\AppRoutingModuleTemplate\AppRoutingModuleTemplate.tt"
+ foreach(var route in Routes) {
             
             #line default
             #line hidden
             this.Write("  {\r\n    path: \'");
             
-            #line 18 "C:\Dev\Intent.Modules\Modules\Intent.Modules.Angular\Templates\App\AppRoutingModuleTemplate\AppRoutingModuleTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(GetRoute(module)));
+            #line 16 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\App\AppRoutingModuleTemplate\AppRoutingModuleTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(GetRoute(route)));
             
             #line default
             #line hidden
-            this.Write("\',\r\n    loadChildren: \'./");
+            this.Write("\',\r\n    loadChildren: () => import(\'./");
             
-            #line 19 "C:\Dev\Intent.Modules\Modules\Intent.Modules.Angular\Templates\App\AppRoutingModuleTemplate\AppRoutingModuleTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(module.Name.Replace("Module","").ToLower()));
-            
-            #line default
-            #line hidden
-            this.Write("/");
-            
-            #line 19 "C:\Dev\Intent.Modules\Modules\Intent.Modules.Angular\Templates\App\AppRoutingModuleTemplate\AppRoutingModuleTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(module.Name.Replace("Module","").ToLower()));
+            #line 17 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\App\AppRoutingModuleTemplate\AppRoutingModuleTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(GetModulePath(route)));
             
             #line default
             #line hidden
-            this.Write(".module#");
+            this.Write("\').then(x => x.");
             
-            #line 19 "C:\Dev\Intent.Modules\Modules\Intent.Modules.Angular\Templates\App\AppRoutingModuleTemplate\AppRoutingModuleTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(module.Name));
+            #line 17 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\App\AppRoutingModuleTemplate\AppRoutingModuleTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(GetTypeName(route)));
             
             #line default
             #line hidden
-            this.Write("\'\r\n  },\r\n");
+            this.Write(")\r\n  },\r\n");
             
-            #line 21 "C:\Dev\Intent.Modules\Modules\Intent.Modules.Angular\Templates\App\AppRoutingModuleTemplate\AppRoutingModuleTemplate.tt"
+            #line 19 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\App\AppRoutingModuleTemplate\AppRoutingModuleTemplate.tt"
  } 
             
             #line default

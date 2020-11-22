@@ -3,6 +3,11 @@
   <ApplicationId>1cecc65d-e804-4de6-a27f-e8e4ad0190d7</ApplicationId>
   <FileLogs>
     <FileLog>
+      <ProjectId>b79f286d-1129-41f9-bb0f-d266b180d3c2</ProjectId>
+      <SolutionRelativeFilePath>..\Intent.Modules.Angular\AngularWebAppModel.cs</SolutionRelativeFilePath>
+      <ProjectRelativeFilePath>AngularWebAppModel.cs</ProjectRelativeFilePath>
+    </FileLog>
+    <FileLog>
       <ProjectId>9cc209e3-eb1e-4008-810e-53692a536107</ProjectId>
       <SolutionRelativeFilePath>..\Intent.Modules.Angular\Api\AngularServiceModel.cs</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>AngularServiceModel.cs</ProjectRelativeFilePath>
@@ -81,6 +86,21 @@
       <ProjectId>9cc209e3-eb1e-4008-810e-53692a536107</ProjectId>
       <SolutionRelativeFilePath>..\Intent.Modules.Angular\Api\ModuleModel.cs</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>ModuleModel.cs</ProjectRelativeFilePath>
+    </FileLog>
+    <FileLog>
+      <ProjectId>9cc209e3-eb1e-4008-810e-53692a536107</ProjectId>
+      <SolutionRelativeFilePath>..\Intent.Modules.Angular\Api\RedirectModel.cs</SolutionRelativeFilePath>
+      <ProjectRelativeFilePath>RedirectModel.cs</ProjectRelativeFilePath>
+    </FileLog>
+    <FileLog>
+      <ProjectId>9cc209e3-eb1e-4008-810e-53692a536107</ProjectId>
+      <SolutionRelativeFilePath>..\Intent.Modules.Angular\Api\RouteModel.cs</SolutionRelativeFilePath>
+      <ProjectRelativeFilePath>RouteModel.cs</ProjectRelativeFilePath>
+    </FileLog>
+    <FileLog>
+      <ProjectId>9cc209e3-eb1e-4008-810e-53692a536107</ProjectId>
+      <SolutionRelativeFilePath>..\Intent.Modules.Angular\Api\RoutingModel.cs</SolutionRelativeFilePath>
+      <ProjectRelativeFilePath>RoutingModel.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>9cc209e3-eb1e-4008-810e-53692a536107</ProjectId>

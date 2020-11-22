@@ -29,7 +29,7 @@ namespace Intent.Modules.Angular
                         return;
                     }
                     Logging.Log.Info($"Installing Angular into project: [{ outputTarget.Name }]");
-                    CliCommand.Run(outputTarget.Location, $@"ng new {application.Name} --directory ClientApp --minimal --defaults --skipGit=true --force=true");
+                    CliCommand.Run(outputTarget.Location, $@"ng new {application.Name} --directory ClientApp --skipGit --skipInstall --style=scss --interactive=false --force=true");
                     CliCommand.Run(outputTarget.Location, $@"npm i @types/node@8.10.52"); // Ensure this version - typescript fix
                 }
                 else

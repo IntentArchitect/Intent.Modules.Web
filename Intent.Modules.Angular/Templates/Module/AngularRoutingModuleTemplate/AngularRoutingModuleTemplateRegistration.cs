@@ -16,7 +16,7 @@ using Intent.Templates;
 namespace Intent.Modules.Angular.Templates.Module.AngularRoutingModuleTemplate
 {
     [IntentManaged(Mode.Merge, Body = Mode.Merge, Signature = Mode.Fully)]
-    public class AngularRoutingModuleTemplateRegistration : FilePerModelTemplateRegistration<ModuleModel>
+    public class AngularRoutingModuleTemplateRegistration : FilePerModelTemplateRegistration<RoutingModel>
     {
         private readonly IMetadataManager _metadataManager;
 
@@ -27,15 +27,15 @@ namespace Intent.Modules.Angular.Templates.Module.AngularRoutingModuleTemplate
 
         public override string TemplateId => AngularRoutingModuleTemplate.TemplateId;
 
-        public override ITemplate CreateTemplateInstance(IOutputTarget project, ModuleModel model)
+        public override ITemplate CreateTemplateInstance(IOutputTarget project, RoutingModel model)
         {
             return new AngularRoutingModuleTemplate(project, model);
         }
 
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]
-        public override IEnumerable<ModuleModel> GetModels(IApplication application)
+        public override IEnumerable<RoutingModel> GetModels(IApplication application)
         {
-            return _metadataManager.WebClient(application).GetModuleModels();
+            return _metadataManager.WebClient(application).GetModuleModels().Select(x => x.Routing).Where(x => x != null).ToList();
         }
     }
 }

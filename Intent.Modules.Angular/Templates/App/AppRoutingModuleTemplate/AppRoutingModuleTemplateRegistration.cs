@@ -11,12 +11,12 @@ using Intent.Templates;
 using Intent.Modules.Angular.Api;
 
 [assembly: DefaultIntentManaged(Mode.Merge)]
-[assembly: IntentTemplate("Intent.ModuleBuilder.TemplateRegistration.SingleFileListModel", Version = "1.0")]
+[assembly: IntentTemplate("Intent.ModuleBuilder.TemplateRegistration.FilePerModel", Version = "1.0")]
 
 namespace Intent.Modules.Angular.Templates.App.AppRoutingModuleTemplate
 {
     [IntentManaged(Mode.Merge, Body = Mode.Merge, Signature = Mode.Fully)]
-    public class AppRoutingModuleTemplateRegistration : SingleFileListModelTemplateRegistration<ModuleModel>
+    public class AppRoutingModuleTemplateRegistration : FilePerModelTemplateRegistration<AngularWebAppModel>
     {
         public override string TemplateId => App.AppRoutingModuleTemplate.AppRoutingModuleTemplate.TemplateId;
 
@@ -27,15 +27,15 @@ namespace Intent.Modules.Angular.Templates.App.AppRoutingModuleTemplate
             _metadataManager = metadataManager;
         }
 
-        public override ITemplate CreateTemplateInstance(IOutputTarget project, IList<ModuleModel> model)
+        public override ITemplate CreateTemplateInstance(IOutputTarget project, AngularWebAppModel model)
         {
             return new App.AppRoutingModuleTemplate.AppRoutingModuleTemplate(project, model);
         }
 
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]
-        public override IList<ModuleModel> GetModels(IApplication application)
+        public override IEnumerable<AngularWebAppModel> GetModels(IApplication application)
         {
-            return _metadataManager.WebClient(application).GetModuleModels().ToList();
+            return _metadataManager.WebClient(application).GetAngularWebAppModels();
         }
     }
 }

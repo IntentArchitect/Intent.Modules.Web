@@ -66,7 +66,7 @@ namespace Intent.Modules.Angular.Templates.Module.AngularModuleTemplate
 
         public string ModuleName => Model.GetModuleName();
 
-        public string RoutingModuleClassName => GetTypeName(AngularRoutingModuleTemplate.AngularRoutingModuleTemplate.TemplateId, Model);
+        public string RoutingModuleClassName => Model.Routing != null ? GetTypeName(AngularRoutingModuleTemplate.AngularRoutingModuleTemplate.TemplateId, Model.Routing) : "";
 
         public string GetImports()
         {
