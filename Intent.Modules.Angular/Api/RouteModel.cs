@@ -36,6 +36,12 @@ namespace Intent.Modules.Angular.Api
 
         public IElement InternalElement => _element;
 
+        [IntentManaged(Mode.Ignore)]
+        public bool RoutesToComponent => TypeReference.Element?.SpecializationTypeId == ComponentModel.SpecializationTypeId;
+
+        [IntentManaged(Mode.Ignore)]
+        public bool RoutesToModule => TypeReference.Element?.SpecializationTypeId == ModuleModel.SpecializationTypeId;
+
         public override string ToString()
         {
             return _element.ToString();

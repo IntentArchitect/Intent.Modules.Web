@@ -6,7 +6,6 @@
 
   <ItemGroup>
     <PackageReference Include="Intent.Modules.Common" Version="3.0.0-*" />
-    <PackageReference Include="Intent.Modules.Common.Typescript" Version="3.0.0-*" />
     <PackageReference Include="Intent.Modules.Modelers.Services" Version="3.0.0-*" />
     <PackageReference Include="Intent.Modules.Modelers.Types.ServiceProxies" Version="3.0.0-*" />
     <PackageReference Include="Intent.Packager" Version="3.0.0-*">

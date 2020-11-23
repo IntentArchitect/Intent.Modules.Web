@@ -32,38 +32,91 @@ namespace Intent.Modules.Angular.Templates.App.AppRoutingModuleTemplate
         public override string TransformText()
         {
             this.Write("import { NgModule } from \'@angular/core\';\r\nimport { Routes, RouterModule, Preload" +
-                    "AllModules } from \'@angular/router\';\r\n\r\n//@IntentMerge()\r\nconst routes: Routes =" +
-                    " [\r\n");
+                    "AllModules } from \'@angular/router\';\r\n\r\nconst routes: Routes = [\r\n");
             
-            #line 14 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\App\AppRoutingModuleTemplate\AppRoutingModuleTemplate.tt"
- foreach(var route in Routes) {
+            #line 13 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\App\AppRoutingModuleTemplate\AppRoutingModuleTemplate.tt"
+  foreach(var redirect in Redirects) { 
             
             #line default
             #line hidden
             this.Write("  {\r\n    path: \'");
             
+            #line 15 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\App\AppRoutingModuleTemplate\AppRoutingModuleTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(redirect.Name));
+            
+            #line default
+            #line hidden
+            this.Write("\',\r\n    redirectTo: \'");
+            
             #line 16 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\App\AppRoutingModuleTemplate\AppRoutingModuleTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(redirect.RedirectTo));
+            
+            #line default
+            #line hidden
+            this.Write("\'\r\n  },\r\n");
+            
+            #line 18 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\App\AppRoutingModuleTemplate\AppRoutingModuleTemplate.tt"
+  } 
+            
+            #line default
+            #line hidden
+            
+            #line 19 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\App\AppRoutingModuleTemplate\AppRoutingModuleTemplate.tt"
+ foreach(var route in Routes.Where(x => x.RoutesToComponent)) {
+            
+            #line default
+            #line hidden
+            this.Write("  {\r\n    path: \'");
+            
+            #line 21 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\App\AppRoutingModuleTemplate\AppRoutingModuleTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(GetRoute(route)));
+            
+            #line default
+            #line hidden
+            this.Write("\',\r\n    component: ");
+            
+            #line 22 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\App\AppRoutingModuleTemplate\AppRoutingModuleTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(GetTypeName(route)));
+            
+            #line default
+            #line hidden
+            this.Write("\r\n  },\r\n");
+            
+            #line 24 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\App\AppRoutingModuleTemplate\AppRoutingModuleTemplate.tt"
+ } 
+            
+            #line default
+            #line hidden
+            
+            #line 25 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\App\AppRoutingModuleTemplate\AppRoutingModuleTemplate.tt"
+ foreach(var route in Routes.Where(x => x.RoutesToModule)) {
+            
+            #line default
+            #line hidden
+            this.Write("  {\r\n    path: \'");
+            
+            #line 27 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\App\AppRoutingModuleTemplate\AppRoutingModuleTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(GetRoute(route)));
             
             #line default
             #line hidden
             this.Write("\',\r\n    loadChildren: () => import(\'./");
             
-            #line 17 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\App\AppRoutingModuleTemplate\AppRoutingModuleTemplate.tt"
+            #line 28 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\App\AppRoutingModuleTemplate\AppRoutingModuleTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(GetModulePath(route)));
             
             #line default
             #line hidden
             this.Write("\').then(x => x.");
             
-            #line 17 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\App\AppRoutingModuleTemplate\AppRoutingModuleTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(GetTypeName(route)));
+            #line 28 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\App\AppRoutingModuleTemplate\AppRoutingModuleTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(GetModuleClassName(route)));
             
             #line default
             #line hidden
             this.Write(")\r\n  },\r\n");
             
-            #line 19 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\App\AppRoutingModuleTemplate\AppRoutingModuleTemplate.tt"
+            #line 30 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\App\AppRoutingModuleTemplate\AppRoutingModuleTemplate.tt"
  } 
             
             #line default

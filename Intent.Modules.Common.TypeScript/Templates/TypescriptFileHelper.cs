@@ -20,7 +20,7 @@ namespace Intent.Modules.Common.TypeScript.Templates
 
                 file.AddImportIfNotExists(
                     className: ((IClassProvider)dependency).ClassName,
-                    location: template.GetMetadata().GetFilePath().GetRelativePath(dependency.GetMetadata().GetFilePathWithoutExtension()).Normalize());
+                    location: "./" + template.GetMetadata().GetFilePath().GetRelativePath(dependency.GetMetadata().GetFilePathWithoutExtension()).Normalize());
             }
         }
     }

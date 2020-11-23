@@ -1,7 +1,9 @@
+using System;
 using System.IO;
 using Intent.Code.Weaving.TypeScript.Editor;
 using Intent.Engine;
 using Intent.Modules.Common.Templates;
+using Intent.Utils;
 
 namespace Intent.Modules.Common.TypeScript.Templates
 {
@@ -34,7 +36,16 @@ namespace Intent.Modules.Common.TypeScript.Templates
 
         public TypeScriptFile GetTemplateFile()
         {
-            return new TypeScriptFileEditor(base.RunTemplate()).File;
+            try
+            {
+                return new TypeScriptFileEditor(base.RunTemplate()).File;
+            }
+            catch
+            {
+                Logging.Log.Failure($@"Failed to parse TypesScript output file:
+{base.RunTemplate()}");
+                throw;
+            }
         }
 
         public TypeScriptFile GetExistingFile()

@@ -38,24 +38,28 @@ namespace Intent.Modules.Angular.Templates.App.AppRoutingModuleTemplate
             );
         }
 
-        public IList<RouteModel> Routes => Model?.Routing?.Routes ?? new List<RouteModel>();
+        public IList<RedirectModel> Redirects => Model.Routing?.Redirects ?? new List<RedirectModel>();
+        public IList<RouteModel> Routes => Model.Routing?.Routes ?? new List<RouteModel>();
 
         public override void BeforeTemplateExecution()
         {
-            foreach (var route in Routes.Where(x => x.TypeReference.Element.SpecializationTypeId == ModuleModel.SpecializationTypeId))
+            foreach (var route in Routes.Where(x => x.RoutesToModule))
             {
-                ExecutionContext.EventDispatcher.Publish(AngularModuleRouteCreatedEvent.EventId, new Dictionary<string, string>()
-                {
-                    {AngularModuleRouteCreatedEvent.ModuleName, new ModuleModel((IElement) route.TypeReference.Element).GetModuleName()},
-                    {AngularModuleRouteCreatedEvent.Route, GetRoute(route)},
-                });
+                ExecutionContext.EventDispatcher.Publish(new AngularAppRouteCreatedEvent(
+                    moduleName: new ModuleModel((IElement)route.TypeReference.Element).GetModuleName(),
+                    route: GetRoute(route)));
             }
         }
 
         private string GetModulePath(RouteModel route)
         {
-            var template = GetTemplate<AngularModuleTemplate>(TemplateDependency.OnModel(AngularModuleTemplate.TemplateId, route.TypeReference.Element));
+            var template = GetTemplate<ITemplate>(AngularModuleTemplate.TemplateId, route.TypeReference.Element, new TemplateDiscoveryOptions() { TrackDependency = false });
             return GetMetadata().GetFilePath().GetRelativePath(template.GetMetadata().GetFilePathWithoutExtension()).Normalize();
+        }
+
+        private string GetModuleClassName(RouteModel route)
+        {
+            return GetTypeName(AngularModuleTemplate.TemplateId, route.TypeReference.Element, new TemplateDiscoveryOptions() { TrackDependency = false });
         }
 
         private string GetRoute(RouteModel route)

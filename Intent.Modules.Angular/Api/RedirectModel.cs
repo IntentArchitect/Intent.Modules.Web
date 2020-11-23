@@ -36,6 +36,9 @@ namespace Intent.Modules.Angular.Api
 
         public IElement InternalElement => _element;
 
+        [IntentManaged(Mode.Ignore)]
+        public string RedirectTo => TypeReference.Element?.Name;
+
         public override string ToString()
         {
             return _element.ToString();

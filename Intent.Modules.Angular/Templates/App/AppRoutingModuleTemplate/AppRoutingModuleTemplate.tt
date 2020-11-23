@@ -9,12 +9,23 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule, PreloadAllModules } from '@angular/router';
 
-//@IntentMerge()
 const routes: Routes = [
-<# foreach(var route in Routes) {#>
+<#  foreach(var redirect in Redirects) { #>
+  {
+    path: '<#= redirect.Name #>',
+    redirectTo: '<#= redirect.RedirectTo  #>'
+  },
+<#  } #>
+<# foreach(var route in Routes.Where(x => x.RoutesToComponent)) {#>
   {
     path: '<#= GetRoute(route) #>',
-    loadChildren: () => import('./<#= GetModulePath(route) #>').then(x => x.<#= GetTypeName(route) #>)
+    component: <#= GetTypeName(route) #>
+  },
+<# } #>
+<# foreach(var route in Routes.Where(x => x.RoutesToModule)) {#>
+  {
+    path: '<#= GetRoute(route) #>',
+    loadChildren: () => import('./<#= GetModulePath(route) #>').then(x => x.<#= GetModuleClassName(route) #>)
   },
 <# } #>
 ];
