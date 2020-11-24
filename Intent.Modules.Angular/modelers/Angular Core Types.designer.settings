@@ -250,6 +250,11 @@
       </creationOptions>
       <mappingSettings>
         <defaultModeler>81104ae6-2bc5-4bae-b05a-f987b0372d81</defaultModeler>
+        <optionsSource>elements-of-type</optionsSource>
+        <targetTypeOptions>
+          <option specializationType="fee0edca-4aa0-4f77-a524-6bbd84e78734" displayText="DTO" />
+        </targetTypeOptions>
+        <mapFrom>root</mapFrom>
         <mappings>
           <mapping id="1dcb02b3-0d14-4918-9ae9-23e8396a4804">
             <criteria specializationType="DTO">
@@ -258,6 +263,7 @@
               <hasChildren d8p1:nil="true" xmlns:d8p1="http://www.w3.org/2001/XMLSchema-instance" />
             </criteria>
             <mapTo specializationType="Form Group Definition" childMappingMode="map-to-child" />
+            <behaviour autoSelectChildren="true" />
             <childMappings>
               <mapping id="2a07fde9-a674-454a-a710-651db48aa7f8">
                 <criteria specializationType="DTO-Field">
@@ -266,6 +272,7 @@
                   <hasChildren d10p1:nil="true" xmlns:d10p1="http://www.w3.org/2001/XMLSchema-instance" />
                 </criteria>
                 <mapTo specializationType="Form Group Control" childMappingMode="map-to-child" />
+                <behaviour autoSelectChildren="false" />
                 <childMappings />
               </mapping>
             </childMappings>
@@ -330,6 +337,11 @@
       </creationOptions>
       <mappingSettings>
         <defaultModeler>81104ae6-2bc5-4bae-b05a-f987b0372d81</defaultModeler>
+        <optionsSource>elements-of-type</optionsSource>
+        <targetTypeOptions>
+          <option specializationType="fee0edca-4aa0-4f77-a524-6bbd84e78734" displayText="DTO" />
+        </targetTypeOptions>
+        <mapFrom>root</mapFrom>
         <mappings>
           <mapping id="22ba6711-485c-4ffc-b222-faeba5720947">
             <criteria specializationType="DTO">
@@ -338,6 +350,7 @@
               <hasChildren d8p1:nil="true" xmlns:d8p1="http://www.w3.org/2001/XMLSchema-instance" />
             </criteria>
             <mapTo specializationType="Model Definition" childMappingMode="map-to-child" />
+            <behaviour autoSelectChildren="true" />
             <childMappings>
               <mapping id="46217ad2-743c-4d19-9a67-d4d0fd439496">
                 <criteria specializationType="DTO-Field">
@@ -346,6 +359,7 @@
                   <hasChildren d10p1:nil="true" xmlns:d10p1="http://www.w3.org/2001/XMLSchema-instance" />
                 </criteria>
                 <mapTo specializationType="Model Definition Field" childMappingMode="map-to-child" />
+                <behaviour autoSelectChildren="false" />
                 <childMappings />
               </mapping>
             </childMappings>

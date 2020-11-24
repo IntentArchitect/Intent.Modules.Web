@@ -59,6 +59,10 @@
           <definitionPackageId>9972b2a9-b749-4bba-b5c8-824bf694c6ef</definitionPackageId>
           <properties>
             <property name="d233d3f9-934a-4690-a476-778e0c4927ef" display="Default Designer" value="f492faed-0665-4513-9853-5a230721786f" isActive="true" />
+            <property name="39d623e0-b8c5-4d23-8d78-75a7e2fa0c9d" display="Option Source" value="Lookup Element" isActive="true" />
+            <property name="5bed7f14-ebd8-4055-be29-3a2f8407eb5d" display="Lookup Element Function" value="return getParent('Component').id" isActive="true" />
+            <property name="8e840576-890b-4f3a-8733-058c3a1d545f" display="Lookup Types" isActive="false" />
+            <property name="53ea4519-611c-47ee-8be7-bffb616a52fd" display="Map From" value="Child Elements" isActive="true" />
           </properties>
         </stereotype>
       </stereotypes>
@@ -93,6 +97,14 @@
                 <property name="a272509a-3819-4631-b27c-a4680055efa4" display="Has Type-Reference" value="Not Applicable" isActive="true" />
                 <property name="315a6b58-efa4-421c-8345-1cde99ba7262" display="Has Children" value="Not Applicable" isActive="true" />
                 <property name="60dbe07e-26ee-4ffd-98c2-0d4f4ee29912" display="Is Collection" value="Not Applicable" isActive="true" />
+              </properties>
+            </stereotype>
+            <stereotype stereotypeDefinitionId="47ec6487-1f69-4691-9c8c-031e2da08c07" name="Behaviour Settings">
+              <addedByDefault>true</addedByDefault>
+              <definitionPackageName>Intent.ModuleBuilder</definitionPackageName>
+              <definitionPackageId>9972b2a9-b749-4bba-b5c8-824bf694c6ef</definitionPackageId>
+              <properties>
+                <property name="c4b2b450-dc7a-4cdc-a526-1ec3eb2f921a" display="Auto-select Children" value="false" isActive="true" />
               </properties>
             </stereotype>
           </stereotypes>

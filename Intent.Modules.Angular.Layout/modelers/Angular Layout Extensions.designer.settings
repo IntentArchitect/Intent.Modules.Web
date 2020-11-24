@@ -37,6 +37,9 @@
       <allowSetValue>false</allowSetValue>
       <mappingSettings>
         <defaultModeler>f492faed-0665-4513-9853-5a230721786f</defaultModeler>
+        <optionsSource>lookup-element</optionsSource>
+        <lookupElementFunction>return getParent('Component').id</lookupElementFunction>
+        <mapFrom>children</mapFrom>
         <mappings>
           <mapping id="1969ef34-7539-4640-bfe9-c766d3a275b2">
             <criteria specializationType="Component Command">
@@ -45,6 +48,7 @@
               <hasChildren d8p1:nil="true" xmlns:d8p1="http://www.w3.org/2001/XMLSchema-instance" />
             </criteria>
             <mapTo specializationType="Button Control" childMappingMode="map-to-child" />
+            <behaviour autoSelectChildren="false" />
             <childMappings />
           </mapping>
         </mappings>
@@ -78,6 +82,9 @@
       </creationOptions>
       <mappingSettings>
         <defaultModeler>f492faed-0665-4513-9853-5a230721786f</defaultModeler>
+        <optionsSource>lookup-element</optionsSource>
+        <lookupElementFunction>return getParent('Component').id</lookupElementFunction>
+        <mapFrom>children</mapFrom>
         <mappings>
           <mapping id="eeb30624-b056-43ea-80ba-4debaa084cb2">
             <criteria specializationType="Component Model">
@@ -86,6 +93,7 @@
               <hasChildren d8p1:nil="true" xmlns:d8p1="http://www.w3.org/2001/XMLSchema-instance" />
             </criteria>
             <mapTo specializationType="Form" childMappingMode="map-to-child" />
+            <behaviour autoSelectChildren="false" />
             <childMappings>
               <mapping id="9c631b3f-f3cf-422a-b16b-f218751bef31">
                 <criteria specializationType="Model Definition Field">
@@ -94,6 +102,7 @@
                   <hasChildren d10p1:nil="true" xmlns:d10p1="http://www.w3.org/2001/XMLSchema-instance" />
                 </criteria>
                 <mapTo specializationType="Form Field" childMappingMode="map-to-child" />
+                <behaviour autoSelectChildren="false" />
                 <childMappings />
               </mapping>
               <mapping id="3b64ef6d-24e0-4230-953f-9da734ad5bd3">
@@ -103,6 +112,7 @@
                   <hasChildren d10p1:nil="true" xmlns:d10p1="http://www.w3.org/2001/XMLSchema-instance" />
                 </criteria>
                 <mapTo specializationType="Form Field" childMappingMode="map-to-child" />
+                <behaviour autoSelectChildren="false" />
                 <childMappings />
               </mapping>
             </childMappings>
@@ -166,6 +176,9 @@
       <allowSetValue>false</allowSetValue>
       <mappingSettings>
         <defaultModeler>f492faed-0665-4513-9853-5a230721786f</defaultModeler>
+        <optionsSource>lookup-element</optionsSource>
+        <lookupElementFunction>return getParent('Component').id</lookupElementFunction>
+        <mapFrom>children</mapFrom>
         <mappings>
           <mapping id="0ce0fb70-8fef-4a1d-9b80-8b94b6a69452">
             <criteria specializationType="Component Model">
@@ -174,6 +187,7 @@
               <hasChildren d8p1:nil="true" xmlns:d8p1="http://www.w3.org/2001/XMLSchema-instance" />
             </criteria>
             <mapTo specializationType="Pagination Control" childMappingMode="map-to-child" />
+            <behaviour autoSelectChildren="false" />
             <childMappings />
           </mapping>
         </mappings>
@@ -270,6 +284,9 @@
       </creationOptions>
       <mappingSettings>
         <defaultModeler>f492faed-0665-4513-9853-5a230721786f</defaultModeler>
+        <optionsSource>lookup-element</optionsSource>
+        <lookupElementFunction>return getParent('Component').id</lookupElementFunction>
+        <mapFrom>children</mapFrom>
         <mappings>
           <mapping id="7c808d5d-c6b5-4478-8df0-a95dc939ef11">
             <criteria specializationType="Component Model">
@@ -278,6 +295,7 @@
               <hasChildren d8p1:nil="true" xmlns:d8p1="http://www.w3.org/2001/XMLSchema-instance" />
             </criteria>
             <mapTo childMappingMode="traverse" />
+            <behaviour autoSelectChildren="true" />
             <childMappings>
               <mapping id="c3360961-3eb7-4377-a387-f265c73fa65f">
                 <criteria specializationType="Model Definition Field">
@@ -286,6 +304,7 @@
                   <hasChildren d10p1:nil="true" xmlns:d10p1="http://www.w3.org/2001/XMLSchema-instance" />
                 </criteria>
                 <mapTo specializationType="Table Control" childMappingMode="map-to-child" />
+                <behaviour autoSelectChildren="true" />
                 <childMappings>
                   <mapping id="7a509075-49fe-471f-90b5-fcd84e45e613">
                     <criteria specializationType="Model Definition Field">
@@ -294,6 +313,7 @@
                       <hasChildren d12p1:nil="true" xmlns:d12p1="http://www.w3.org/2001/XMLSchema-instance" />
                     </criteria>
                     <mapTo specializationType="Table Column" childMappingMode="map-to-child" />
+                    <behaviour autoSelectChildren="false" />
                     <childMappings />
                   </mapping>
                 </childMappings>
@@ -307,6 +327,7 @@
               <hasChildren d8p1:nil="true" xmlns:d8p1="http://www.w3.org/2001/XMLSchema-instance" />
             </criteria>
             <mapTo specializationType="Table Control" childMappingMode="map-to-child" />
+            <behaviour autoSelectChildren="true" />
             <childMappings>
               <mapping id="6cc930f2-3bda-49b7-a3c8-6ae7d49c9de0">
                 <criteria specializationType="Model Definition Field">
@@ -315,6 +336,17 @@
                   <hasChildren d10p1:nil="true" xmlns:d10p1="http://www.w3.org/2001/XMLSchema-instance" />
                 </criteria>
                 <mapTo specializationType="Table Column" childMappingMode="map-to-child" />
+                <behaviour autoSelectChildren="false" />
+                <childMappings />
+              </mapping>
+              <mapping id="e35fc91a-4390-438c-a681-3aea014d2b5c">
+                <criteria specializationType="DTO-Field">
+                  <hasTypeReference d10p1:nil="true" xmlns:d10p1="http://www.w3.org/2001/XMLSchema-instance" />
+                  <isCollection d10p1:nil="true" xmlns:d10p1="http://www.w3.org/2001/XMLSchema-instance" />
+                  <hasChildren d10p1:nil="true" xmlns:d10p1="http://www.w3.org/2001/XMLSchema-instance" />
+                </criteria>
+                <mapTo specializationType="Table Column" childMappingMode="map-to-child" />
+                <behaviour autoSelectChildren="false" />
                 <childMappings />
               </mapping>
             </childMappings>
