@@ -16,7 +16,7 @@ namespace Intent.Modules.TypeScript.Proxies.Contracts.Templates.DTO
     using Intent.Modules.Common.TypeScript.Templates;
     using Intent.Templates;
     using Intent.Metadata.Models;
-    using Intent.Modules.Modelers.Types.ServiceProxies.Api;
+    using Intent.Modelers.Types.ServiceProxies.Api;
     using System;
     
     /// <summary>

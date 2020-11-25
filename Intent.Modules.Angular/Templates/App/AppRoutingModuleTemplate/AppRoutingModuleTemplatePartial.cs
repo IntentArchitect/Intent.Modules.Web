@@ -54,7 +54,7 @@ namespace Intent.Modules.Angular.Templates.App.AppRoutingModuleTemplate
         private string GetModulePath(RouteModel route)
         {
             var template = GetTemplate<ITemplate>(AngularModuleTemplate.TemplateId, route.TypeReference.Element, new TemplateDiscoveryOptions() { TrackDependency = false });
-            return GetMetadata().GetFilePath().GetRelativePath(template.GetMetadata().GetFilePathWithoutExtension()).Normalize();
+            return GetMetadata().GetFullLocationPath().GetRelativePath(template.GetMetadata().GetFilePathWithoutExtension()).Normalize();
         }
 
         private string GetModuleClassName(RouteModel route)

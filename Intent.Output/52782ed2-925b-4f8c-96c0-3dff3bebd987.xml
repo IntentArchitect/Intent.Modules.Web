@@ -19,6 +19,11 @@
     </FileLog>
     <FileLog>
       <ProjectId>ed32631d-518f-4a7f-baa1-fde928110649</ProjectId>
+      <SolutionRelativeFilePath>..\Intent.Modules.TypeScript.Proxies.Contracts\PackageSettingsModel.cs</SolutionRelativeFilePath>
+      <ProjectRelativeFilePath>PackageSettingsModel.cs</ProjectRelativeFilePath>
+    </FileLog>
+    <FileLog>
+      <ProjectId>ed32631d-518f-4a7f-baa1-fde928110649</ProjectId>
       <SolutionRelativeFilePath>..\Intent.Modules.TypeScript.Proxies.Contracts\README.txt</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>README.txt</ProjectRelativeFilePath>
     </FileLog>
