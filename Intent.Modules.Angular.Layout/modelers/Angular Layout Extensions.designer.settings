@@ -92,7 +92,7 @@
               <isCollection>false</isCollection>
               <hasChildren d8p1:nil="true" xmlns:d8p1="http://www.w3.org/2001/XMLSchema-instance" />
             </criteria>
-            <mapTo specializationType="Form" childMappingMode="map-to-child" />
+            <mapTo specializationType="Form" childMappingMode="traverse" />
             <behaviour autoSelectChildren="false" />
             <childMappings>
               <mapping id="9c631b3f-f3cf-422a-b16b-f218751bef31">
@@ -303,7 +303,7 @@
                   <isCollection>true</isCollection>
                   <hasChildren d10p1:nil="true" xmlns:d10p1="http://www.w3.org/2001/XMLSchema-instance" />
                 </criteria>
-                <mapTo specializationType="Table Control" childMappingMode="map-to-child" />
+                <mapTo specializationType="Table Control" childMappingMode="traverse" />
                 <behaviour autoSelectChildren="true" />
                 <childMappings>
                   <mapping id="7a509075-49fe-471f-90b5-fcd84e45e613">
@@ -326,7 +326,7 @@
               <isCollection>true</isCollection>
               <hasChildren d8p1:nil="true" xmlns:d8p1="http://www.w3.org/2001/XMLSchema-instance" />
             </criteria>
-            <mapTo specializationType="Table Control" childMappingMode="map-to-child" />
+            <mapTo specializationType="Table Control" childMappingMode="traverse" />
             <behaviour autoSelectChildren="true" />
             <childMappings>
               <mapping id="6cc930f2-3bda-49b7-a3c8-6ae7d49c9de0">
