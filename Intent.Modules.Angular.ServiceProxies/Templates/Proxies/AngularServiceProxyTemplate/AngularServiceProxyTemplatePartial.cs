@@ -147,8 +147,11 @@ namespace Intent.Modules.Angular.ServiceProxies.Templates.Proxies.AngularService
 
         private string GetPath(ProxyOperationModel operation)
         {
-            var path = operation.GetStereotypeProperty<string>("Http", "Route")?.ToLower();
-            return path ?? $"/{Model.MappedService.Name.ToLower()}/{operation.Mapping.Element.Name.ToLower()}";
+            var servicePath = Model.MappedService.GetStereotypeProperty<string>("Api Settings", "Http Route")?.ToLower()
+                .Replace("[controller]", Model.MappedService.Name.ToLower()) ?? $"api/{Model.MappedService.Name.ToLower()}";
+            var operationPath = operation.MappedOperation.GetStereotypeProperty<string>("Api Settings", "Http Route")?.ToLower()
+                .Replace("[action]", operation.MappedOperation.Name.ToLower());
+            return string.IsNullOrWhiteSpace(operationPath) ? $"/{servicePath}" : $"/{servicePath}/{operationPath}";
         }
     }
 

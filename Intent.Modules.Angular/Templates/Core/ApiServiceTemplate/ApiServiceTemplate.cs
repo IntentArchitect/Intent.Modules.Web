@@ -20,7 +20,7 @@ namespace Intent.Modules.Angular.Templates.Core.ApiServiceTemplate
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Dev\Intent.Modules\Modules\Intent.Modules.Angular\Templates\Core\ApiServiceTemplate\ApiServiceTemplate.tt"
+    #line 1 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\Core\ApiServiceTemplate\ApiServiceTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
     public partial class ApiServiceTemplate : TypeScriptTemplateBase<object>
     {
@@ -39,7 +39,7 @@ import { catchError } from 'rxjs/operators';
 @Injectable()
 export class ");
             
-            #line 15 "C:\Dev\Intent.Modules\Modules\Intent.Modules.Angular\Templates\Core\ApiServiceTemplate\ApiServiceTemplate.tt"
+            #line 15 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\Core\ApiServiceTemplate\ApiServiceTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(ClassName));
             
             #line default
@@ -54,13 +54,13 @@ export class ");
   }
 
   get(path: string, params: HttpParams = new HttpParams()): Observable<any> {
-    return this.http.get(`${environment.api_url}${path}`, { params })
+    return this.http.get(`${environment.api_base_url}${path}`, { params })
       .pipe(catchError(this.formatErrors));
   }
 
   put(path: string, body: Object = {}): Observable<any> {
     return this.http.put(
-      `${environment.api_url}${path}`,
+      `${environment.api_base_url}${path}`,
       JSON.stringify(body),
       {
         headers: new HttpHeaders({
@@ -72,7 +72,7 @@ export class ");
 
   post(path: string, body: Object = {}): Observable<any> {
     return this.http.post(
-      `${environment.api_url}${path}`,
+      `${environment.api_base_url}${path}`,
       JSON.stringify(body),
       {
         headers: new HttpHeaders({
@@ -83,7 +83,7 @@ export class ");
 
   delete(path): Observable<any> {
     return this.http.delete(
-      `${environment.api_url}${path}`
+      `${environment.api_base_url}${path}`
     ).pipe(catchError(this.formatErrors));
   }
 }");

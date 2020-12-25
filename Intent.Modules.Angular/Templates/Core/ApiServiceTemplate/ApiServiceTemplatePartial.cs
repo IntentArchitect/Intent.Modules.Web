@@ -32,8 +32,8 @@ namespace Intent.Modules.Angular.Templates.Core.ApiServiceTemplate
             ExecutionContext.EventDispatcher.Publish(AngularConfigVariableRequiredEvent.EventId,
                 new Dictionary<string, string>()
                 {
-                    {AngularConfigVariableRequiredEvent.VariableId, "api_url" },
-                    {AngularConfigVariableRequiredEvent.DefaultValueId, "\"https://localhost:{port}/api\"" },
+                    {AngularConfigVariableRequiredEvent.VariableId, "api_base_url" },
+                    {AngularConfigVariableRequiredEvent.DefaultValueId, "\"https://localhost:{port}\"" },
                 });
         }
 
