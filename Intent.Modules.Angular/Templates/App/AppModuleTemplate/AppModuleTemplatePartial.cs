@@ -10,7 +10,6 @@ using Intent.Metadata.Models;
 using System;
 using System.Collections.Generic;
 using Intent.Modules.Angular.Templates.Shared.IntentDecoratorsTemplate;
-using Intent.Modules.Common.VisualStudio;
 using Intent.Modules.Angular.Api;
 using Intent.Modules.Common.TypeScript.Templates;
 using Intent.Modelers.WebClient.Api;
@@ -21,7 +20,7 @@ using Intent.Modelers.WebClient.Api;
 namespace Intent.Modules.Angular.Templates.App.AppModuleTemplate
 {
     [IntentManaged(Mode.Merge, Signature = Mode.Merge)]
-    partial class AppModuleTemplate : TypeScriptTemplateBase<AngularWebAppModel>, IHasNugetDependencies
+    partial class AppModuleTemplate : TypeScriptTemplateBase<AngularWebAppModel>
     {
         private readonly ISet<string> _components = new HashSet<string>() { "AppComponent" };
         private readonly ISet<string> _providers = new HashSet<string>();
@@ -115,24 +114,6 @@ namespace Intent.Modules.Angular.Templates.App.AppModuleTemplate
                 relativeLocation: $"",
                 className: "AppModule"
             );
-        }
-
-        public IEnumerable<INugetPackageInfo> GetNugetDependencies()
-        {
-            // Reason for this version:
-            // Angular 8 wants Typescript >= 3.4.0 and < 3.6.0, but Visual Studio 2019 builds using 3.7.
-            // https://stackoverflow.com/questions/58485673/vs2019-error-ts2300-duplicate-identifier-iteratorresult
-            var packages = new List<INugetPackageInfo>()
-            {
-                new NugetPackageInfo("Microsoft.TypeScript.MsBuild", "3.5.3")
-            };
-
-            if (OutputTarget.IsNetCore3App())
-            {
-                packages.Add(new NugetPackageInfo("Microsoft.AspNetCore.SpaServices.Extensions", "3.1.4"));
-            }
-
-            return packages;
         }
     }
 }

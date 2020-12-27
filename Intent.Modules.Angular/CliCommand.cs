@@ -2,9 +2,9 @@ using System;
 using System.IO;
 using System.Linq;
 using Intent.Engine;
+using Intent.Modules.Angular.Templates.Module.AngularModuleTemplate;
 using Intent.Modules.Bower.Installer;
 using Intent.Modules.Common.Processors;
-using Intent.Modules.Constants;
 using Intent.Utils;
 
 namespace Intent.Modules.Angular
@@ -42,7 +42,7 @@ To install the CLI using npm, open a terminal/console window and enter the follo
 
         public static IOutputTarget GetWebCoreProject(IApplication application)
         {
-            return application.OutputTargets.FirstOrDefault(x => x.Type == VisualStudioProjectTypeIds.CoreWebApp);
+            return application.OutputTargets.FirstOrDefault(x => x.HasTemplateInstances(AngularModuleTemplate.TemplateId));
         }
     }
 }

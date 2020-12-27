@@ -2,10 +2,8 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
 using Intent.Modules.Common.Plugins;
-using Intent.Modules.Constants;
 using Intent.SoftwareFactory;
 using Intent.Engine;
-using Intent.Modules.Common.VisualStudio;
 using Intent.Plugins.FactoryExtensions;
 using Intent.Utils;
 
