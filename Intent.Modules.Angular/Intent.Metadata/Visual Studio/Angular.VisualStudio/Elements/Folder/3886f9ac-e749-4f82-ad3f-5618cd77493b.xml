@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<class id="13ee36ce-f734-4f85-9e96-a2675959bce4" type="Folder" typeId="3407a825-1331-4f3f-89a4-901903ed97ce">
-  <name>FactoryExtentions</name>
-  <display>FactoryExtentions</display>
+<class id="3886f9ac-e749-4f82-ad3f-5618cd77493b" type="Folder" typeId="3407a825-1331-4f3f-89a4-901903ed97ce">
+  <name>FactoryExtensions</name>
+  <display>FactoryExtensions</display>
   <isAbstract>false</isAbstract>
-  <order>3</order>
+  <order>2</order>
   <genericTypes />
   <isMapped>false</isMapped>
   <parentFolderId>b79f286d-1129-41f9-bb0f-d266b180d3c2</parentFolderId>
@@ -20,14 +20,15 @@
     </stereotype>
   </stereotypes>
   <childElements>
-    <childElement id="c9870306-1146-4d34-a4d5-14f7a1ccbbf9" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">
-      <name>ModuleBuilder.Templates.FactoryExtension</name>
-      <display>ModuleBuilder.Templates.FactoryExtension</display>
+    <childElement id="a8fe6085-6641-4b2b-9b56-97719504d338" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">
+      <name>Intent.ModuleBuilder.Templates.FactoryExtension</name>
+      <display>Intent.ModuleBuilder.Templates.FactoryExtension</display>
+      <externalReference>Intent.ModuleBuilder</externalReference>
       <isAbstract>false</isAbstract>
       <order>0</order>
       <genericTypes />
       <isMapped>false</isMapped>
-      <parentFolderId>13ee36ce-f734-4f85-9e96-a2675959bce4</parentFolderId>
+      <parentFolderId>3886f9ac-e749-4f82-ad3f-5618cd77493b</parentFolderId>
       <packageId>ad91f155-bad0-4aaf-97d6-d72d8d08f389</packageId>
       <packageName>Angular.VisualStudio</packageName>
       <stereotypes />
