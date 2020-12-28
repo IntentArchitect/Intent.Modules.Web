@@ -2,6 +2,7 @@ using System;
 using System.IO;
 using System.Linq;
 using Intent.Engine;
+using Intent.Modules.Angular.Templates.App.AppModuleTemplate;
 using Intent.Modules.Angular.Templates.Module.AngularModuleTemplate;
 using Intent.Modules.Bower.Installer;
 using Intent.Modules.Common.Processors;
@@ -33,16 +34,16 @@ namespace Intent.Modules.Angular
             {
                 Logging.Log.Failure($@"Failed to execute: ""{command}""
 Please ensure that both npm and that the Angular CLI have been installed.
-To check that you have the npm client installed, run npm -v in a terminal/console window.
-To install the CLI using npm, open a terminal/console window and enter the following command: npm install -g @angular/cli.");
+To check that you have the npm client installed, run the following command in a terminal/console window: npm -v
+To install the CLI using npm, open a terminal/console window and enter the following command: npm install -g @angular/cli");
                 Logging.Log.Failure(e);
             }
 
         }
 
-        public static IOutputTarget GetWebCoreProject(IApplication application)
+        public static IOutputTarget GetFrontEndOutputTarget(IApplication application)
         {
-            return application.OutputTargets.FirstOrDefault(x => x.HasTemplateInstances(AngularModuleTemplate.TemplateId));
+            return application.OutputTargets.FirstOrDefault(x => x.HasRole("Front End"));
         }
     }
 }

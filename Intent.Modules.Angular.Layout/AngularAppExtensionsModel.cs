@@ -3,13 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using Intent.Metadata.Models;
 using Intent.Modelers.WebClient.Api;
-using Intent.Modules.Angular.Layout.Api;
 using Intent.RoslynWeaver.Attributes;
 
 [assembly: DefaultIntentManaged(Mode.Fully)]
-[assembly: IntentTemplate("ModuleBuilder.Templates.Api.ApiPackageExtensionModel", Version = "1.0")]
+[assembly: IntentTemplate("Intent.ModuleBuilder.Templates.Api.ApiPackageExtensionModel", Version = "1.0")]
 
-namespace Intent.Modules.Angular.Layout
+namespace Intent.Angular.Layout.Api
 {
     [IntentManaged(Mode.Merge)]
     public class AngularAppExtensionsModel : WebClientModel

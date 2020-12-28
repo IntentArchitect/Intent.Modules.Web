@@ -20,11 +20,25 @@
     </stereotype>
   </stereotypes>
   <childElements>
+    <childElement id="9937dd99-b109-4f39-8335-afe86fbdde85" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">
+      <name>Intent.ModuleBuilder.Templates.FactoryExtension</name>
+      <display>Intent.ModuleBuilder.Templates.FactoryExtension</display>
+      <externalReference>Intent.ModuleBuilder</externalReference>
+      <isAbstract>false</isAbstract>
+      <order>0</order>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>2a5caad2-b23a-4e35-b299-47d4a50f9663</parentFolderId>
+      <packageId>3480796b-a59d-4366-a8eb-bf9b1a49f521</packageId>
+      <packageName>Intent.Modules.Web</packageName>
+      <stereotypes />
+      <childElements />
+    </childElement>
     <childElement id="269f3586-5ec9-4fae-ba3f-8ee90ce88fed" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">
       <name>ModuleBuilder.Templates.FactoryExtension</name>
       <display>ModuleBuilder.Templates.FactoryExtension</display>
       <isAbstract>false</isAbstract>
-      <order>0</order>
+      <order>1</order>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>2a5caad2-b23a-4e35-b299-47d4a50f9663</parentFolderId>

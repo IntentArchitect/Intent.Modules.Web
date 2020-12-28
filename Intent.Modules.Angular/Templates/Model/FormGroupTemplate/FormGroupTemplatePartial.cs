@@ -10,17 +10,18 @@ using Intent.Modules.Common.TypeScript.Templates;
 using Intent.RoslynWeaver.Attributes;
 using Intent.Templates;
 using Intent.Utils;
+using Intent.Angular.Api;
 
 [assembly: DefaultIntentManaged(Mode.Merge)]
-[assembly: IntentTemplate("ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial", Version = "1.0")]
+[assembly: IntentTemplate("Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial", Version = "1.0")]
 
 namespace Intent.Modules.Angular.Templates.Model.FormGroupTemplate
 {
     [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
-    partial class FormGroupTemplate : TypeScriptTemplateBase<FormGroupDefinitionModel>
+    partial class FormGroupTemplate : TypeScriptTemplateBase<Intent.Angular.Api.FormGroupDefinitionModel>
     {
         [IntentManaged(Mode.Fully)]
-        public const string TemplateId = "Angular.Model.FormGroupTemplate";
+        public const string TemplateId = "Intent.Angular.Model.FormGroupTemplate";
 
         public FormGroupTemplate(IOutputTarget project, FormGroupDefinitionModel model) : base(TemplateId, project, model)
         {

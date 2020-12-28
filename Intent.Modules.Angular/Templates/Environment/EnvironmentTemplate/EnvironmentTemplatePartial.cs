@@ -13,7 +13,7 @@ using Intent.Modules.Common.TypeScript.Templates;
 using Intent.Modules.Angular.Api;
 
 [assembly: DefaultIntentManaged(Mode.Merge)]
-[assembly: IntentTemplate("ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial", Version = "1.0")]
+[assembly: IntentTemplate("Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial", Version = "1.0")]
 
 namespace Intent.Modules.Angular.Templates.Environment.EnvironmentTemplate
 {
@@ -23,7 +23,7 @@ namespace Intent.Modules.Angular.Templates.Environment.EnvironmentTemplate
         private IList<ConfigVariable> _configVariables = new List<ConfigVariable>();
 
         [IntentManaged(Mode.Fully)]
-        public const string TemplateId = "Angular.Environment.EnvironmentTemplate";
+        public const string TemplateId = "Intent.Angular.Environment.EnvironmentTemplate";
 
         public EnvironmentTemplate(IOutputTarget project, object model) : base(TemplateId, project, model)
         {

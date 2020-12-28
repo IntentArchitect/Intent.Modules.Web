@@ -19,7 +19,7 @@ namespace Intent.Modules.Angular.Layout.Decorators.Controls.Section
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Dev\Intent.Modules\Modules\Intent.Modules.Angular.Layout\Decorators\Controls\Section\SectionTemplate.tt"
+    #line 1 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Decorators\Controls\Section\SectionTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
     public partial class SectionTemplate : T4TemplateBase
     {
@@ -31,14 +31,14 @@ namespace Intent.Modules.Angular.Layout.Decorators.Controls.Section
         {
             this.Write("  <div class=\"row\" intent-id=\"");
             
-            #line 7 "C:\Dev\Intent.Modules\Modules\Intent.Modules.Angular.Layout\Decorators\Controls\Section\SectionTemplate.tt"
+            #line 7 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Decorators\Controls\Section\SectionTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Model.Name));
             
             #line default
             #line hidden
             this.Write("\">\r\n    <div class=\"col\">\r\n");
             
-            #line 9 "C:\Dev\Intent.Modules\Modules\Intent.Modules.Angular.Layout\Decorators\Controls\Section\SectionTemplate.tt"
+            #line 9 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Decorators\Controls\Section\SectionTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(ControlWriter.WriteControls()));
             
             #line default

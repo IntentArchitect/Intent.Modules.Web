@@ -7,7 +7,7 @@ using System.Collections.Generic;
 using Intent.Modules.Angular.Api;
 
 [assembly: DefaultIntentManaged(Mode.Merge)]
-[assembly: IntentTemplate("ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial", Version = "1.0")]
+[assembly: IntentTemplate("Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial", Version = "1.0")]
 
 namespace Intent.Modules.Angular.Templates.Shared.IntentDecoratorsTemplate
 {
@@ -15,7 +15,7 @@ namespace Intent.Modules.Angular.Templates.Shared.IntentDecoratorsTemplate
     partial class IntentDecoratorsTemplate : TypeScriptTemplateBase<object>
     {
         [IntentManaged(Mode.Fully)]
-        public const string TemplateId = "Angular.Shared.IntentDecoratorsTemplate";
+        public const string TemplateId = "Intent.Angular.Shared.IntentDecoratorsTemplate";
 
         public IntentDecoratorsTemplate(IOutputTarget project, object model) : base(TemplateId, project, model)
         {

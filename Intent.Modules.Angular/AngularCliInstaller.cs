@@ -20,14 +20,16 @@ namespace Intent.Modules.Angular
             {
                 if (!AngularInstalled(application))
                 {
-                    var outputTarget = CliCommand.GetWebCoreProject(application);
+                    var outputTarget = CliCommand.GetFrontEndOutputTarget(application);
                     if (outputTarget == null)
                     {
-                        Logging.Log.Failure("Could not find project to install Angular application.");
+                        Logging.Log.Warning("Could not find a location to install Angular application. Ensure that a Web Client package has been created.");
                         return;
                     }
                     Logging.Log.Info($"Installing Angular into project: [{ outputTarget.Name }]");
-                    CliCommand.Run(outputTarget.Location, $@"ng new {application.Name} --directory ClientApp --skipGit --skipInstall --style=scss --interactive=false --force=true");
+                    CliCommand.Run(outputTarget.Location, $@"npm i @angular/cli@8 --save-dev"); // Ensure this version - typescript fix
+                    // add --skipInstall to skip running the npm i
+                    CliCommand.Run(outputTarget.Location, $@"ng new {application.Name} --directory=. --skipGit --style=scss --interactive=false --force=true");
                     CliCommand.Run(outputTarget.Location, $@"npm i @types/node@8.10.52"); // Ensure this version - typescript fix
                 }
                 else
@@ -41,8 +43,8 @@ namespace Intent.Modules.Angular
 
         public bool AngularInstalled(IApplication application)
         {
-            var project = CliCommand.GetWebCoreProject(application);
-            return project != null && File.Exists(Path.Combine(project.Location, "ClientApp", "angular.json"));
+            var project = CliCommand.GetFrontEndOutputTarget(application);
+            return project != null && File.Exists(Path.Combine(project.Location, "angular.json"));
         }
     }
 }

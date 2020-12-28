@@ -12,7 +12,7 @@ using Intent.Modules.Common.TypeScript.Templates;
 using Intent.Modules.Angular.Api;
 
 [assembly: DefaultIntentManaged(Mode.Merge)]
-[assembly: IntentTemplate("ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial", Version = "1.0")]
+[assembly: IntentTemplate("Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial", Version = "1.0")]
 
 namespace Intent.Modules.Angular.Templates.Core.ApiServiceTemplate
 {
@@ -21,7 +21,7 @@ namespace Intent.Modules.Angular.Templates.Core.ApiServiceTemplate
         : TypeScriptTemplateBase<object>
     {
         [IntentManaged(Mode.Fully)]
-        public const string TemplateId = "Angular.Core.ApiServiceTemplate";
+        public const string TemplateId = "Intent.Angular.Core.ApiServiceTemplate";
 
         public ApiServiceTemplate(IOutputTarget project, object model) : base(TemplateId, project, model)
         {

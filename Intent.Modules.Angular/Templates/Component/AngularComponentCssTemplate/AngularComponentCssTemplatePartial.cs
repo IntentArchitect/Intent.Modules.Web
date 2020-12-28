@@ -9,6 +9,7 @@ using Intent.Templates;
 using System.Collections.Generic;
 using System.Linq;
 using Intent.Modules.Angular.Api;
+using Intent.Angular.Api;
 
 [assembly: DefaultIntentManaged(Mode.Merge)]
 [assembly: IntentTemplate("Intent.ModuleBuilder.ProjectItemTemplate.Partial", Version = "1.0")]
@@ -16,10 +17,10 @@ using Intent.Modules.Angular.Api;
 namespace Intent.Modules.Angular.Templates.Component.AngularComponentCssTemplate
 {
     [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
-    partial class AngularComponentCssTemplate : IntentTemplateBase<ComponentModel>
+    partial class AngularComponentCssTemplate : IntentTemplateBase<Intent.Angular.Api.ComponentModel>
     {
         [IntentManaged(Mode.Fully)]
-        public const string TemplateId = "Angular.Component.AngularComponentCssTemplate";
+        public const string TemplateId = "Intent.Angular.Component.AngularComponentCssTemplate";
 
         public AngularComponentCssTemplate(IOutputTarget project, ComponentModel model) : base(TemplateId, project, model)
         {

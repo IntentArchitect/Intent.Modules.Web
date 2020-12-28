@@ -21,7 +21,7 @@ namespace Intent.Modules.Angular.Layout.Templates.Shared.Header.HeaderComponentH
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Dev\Intent.Modules\Modules\Intent.Modules.Angular.Layout\Templates\Shared\Header\HeaderComponentHtmlTemplate\HeaderComponentHtmlTemplate.tt"
+    #line 1 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Templates\Shared\Header\HeaderComponentHtmlTemplate\HeaderComponentHtmlTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
     public partial class HeaderComponentHtmlTemplate : HtmlTemplateBase<object>
     {
@@ -43,35 +43,35 @@ namespace Intent.Modules.Angular.Layout.Templates.Shared.Header.HeaderComponentH
     <ul class=""navbar-nav"" intent-manage intent-id=""navbar"">
 ");
             
-            #line 19 "C:\Dev\Intent.Modules\Modules\Intent.Modules.Angular.Layout\Templates\Shared\Header\HeaderComponentHtmlTemplate\HeaderComponentHtmlTemplate.tt"
+            #line 19 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Templates\Shared\Header\HeaderComponentHtmlTemplate\HeaderComponentHtmlTemplate.tt"
   foreach (var moduleRoute in _mainRoutes) { 
             
             #line default
             #line hidden
             this.Write("      <li class=\"nav-item active\" intent-manage=\"");
             
-            #line 20 "C:\Dev\Intent.Modules\Modules\Intent.Modules.Angular.Layout\Templates\Shared\Header\HeaderComponentHtmlTemplate\HeaderComponentHtmlTemplate.tt"
+            #line 20 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Templates\Shared\Header\HeaderComponentHtmlTemplate\HeaderComponentHtmlTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(moduleRoute.Route));
             
             #line default
             #line hidden
             this.Write("\">\r\n        <a class=\"nav-link\" routerLink=\"/");
             
-            #line 21 "C:\Dev\Intent.Modules\Modules\Intent.Modules.Angular.Layout\Templates\Shared\Header\HeaderComponentHtmlTemplate\HeaderComponentHtmlTemplate.tt"
+            #line 21 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Templates\Shared\Header\HeaderComponentHtmlTemplate\HeaderComponentHtmlTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(moduleRoute.Route));
             
             #line default
             #line hidden
             this.Write("\">");
             
-            #line 21 "C:\Dev\Intent.Modules\Modules\Intent.Modules.Angular.Layout\Templates\Shared\Header\HeaderComponentHtmlTemplate\HeaderComponentHtmlTemplate.tt"
+            #line 21 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Templates\Shared\Header\HeaderComponentHtmlTemplate\HeaderComponentHtmlTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(moduleRoute.ModuleName));
             
             #line default
             #line hidden
             this.Write("</a>\r\n      </li>\r\n");
             
-            #line 23 "C:\Dev\Intent.Modules\Modules\Intent.Modules.Angular.Layout\Templates\Shared\Header\HeaderComponentHtmlTemplate\HeaderComponentHtmlTemplate.tt"
+            #line 23 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Templates\Shared\Header\HeaderComponentHtmlTemplate\HeaderComponentHtmlTemplate.tt"
   } 
             
             #line default

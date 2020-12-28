@@ -22,15 +22,15 @@ using ProxyOperationModel = Intent.Modelers.Types.ServiceProxies.Api.OperationMo
 using OperationModel = Intent.Modelers.Services.Api.OperationModel;
 
 [assembly: DefaultIntentManaged(Mode.Merge)]
-[assembly: IntentTemplate("ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial", Version = "1.0")]
+[assembly: IntentTemplate("Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial", Version = "1.0")]
 
 namespace Intent.Modules.Angular.ServiceProxies.Templates.Proxies.AngularServiceProxyTemplate
 {
     [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
-    partial class AngularServiceProxyTemplate : TypeScriptTemplateBase<ServiceProxyModel>
+    partial class AngularServiceProxyTemplate : TypeScriptTemplateBase<Intent.Modelers.Types.ServiceProxies.Api.ServiceProxyModel>
     {
         [IntentManaged(Mode.Fully)]
-        public const string TemplateId = "Angular.ServiceProxies.Proxies.AngularServiceProxyTemplate";
+        public const string TemplateId = "Intent.Angular.ServiceProxies.Proxies.AngularServiceProxyTemplate";
 
         public AngularServiceProxyTemplate(IOutputTarget project, ServiceProxyModel model) : base(TemplateId, project, model)
         {

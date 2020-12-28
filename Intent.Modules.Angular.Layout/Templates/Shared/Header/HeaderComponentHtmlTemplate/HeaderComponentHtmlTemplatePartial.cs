@@ -13,7 +13,6 @@ using Intent.Modules.Common.Html.Templates;
 using Intent.Modules.Common.Templates;
 using Intent.RoslynWeaver.Attributes;
 using Intent.Templates;
-using Intent.Modules.Angular.Layout.Api;
 
 
 [assembly: DefaultIntentManaged(Mode.Merge)]
@@ -27,7 +26,7 @@ namespace Intent.Modules.Angular.Layout.Templates.Shared.Header.HeaderComponentH
         private readonly List<ModuleRoute> _mainRoutes = new List<ModuleRoute>();
 
         [IntentManaged(Mode.Fully)]
-        public const string TemplateId = "Angular.Layout.Shared.Header.HeaderComponentHtmlTemplate";
+        public const string TemplateId = "Intent.Angular.Layout.Shared.Header.HeaderComponentHtmlTemplate";
 
         public HeaderComponentHtmlTemplate(IOutputTarget project) : base(TemplateId, project, null)
         {

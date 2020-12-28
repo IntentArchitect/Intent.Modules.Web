@@ -1,5 +1,5 @@
-﻿using Intent.Eventing;
-using Intent.Modules.Angular.Layout.Api;
+﻿using Intent.Angular.Layout.Api;
+using Intent.Eventing;
 using Intent.Utils;
 
 namespace Intent.Modules.Angular.Layout.Decorators.Controls.Section

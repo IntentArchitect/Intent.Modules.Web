@@ -21,7 +21,7 @@ namespace Intent.Modules.Angular.Layout.Templates.Shared.Footer.FooterComponentT
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Dev\Intent.Modules\Modules\Intent.Modules.Angular.Layout\Templates\Shared\Footer\FooterComponentTsTemplate\FooterComponentTsTemplate.tt"
+    #line 1 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Templates\Shared\Footer\FooterComponentTsTemplate\FooterComponentTsTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
     public partial class FooterComponentTsTemplate : TypeScriptTemplateBase<object>
     {
@@ -35,7 +35,7 @@ namespace Intent.Modules.Angular.Layout.Templates.Shared.Footer.FooterComponentT
                     "ector: \'app-layout-footer\',\r\n  templateUrl: \'./footer.component.html\',\r\n  styleU" +
                     "rls: [\'./footer.component.css\']\r\n})\r\nexport class ");
             
-            #line 17 "C:\Dev\Intent.Modules\Modules\Intent.Modules.Angular.Layout\Templates\Shared\Footer\FooterComponentTsTemplate\FooterComponentTsTemplate.tt"
+            #line 17 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Templates\Shared\Footer\FooterComponentTsTemplate\FooterComponentTsTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(ClassName));
             
             #line default

@@ -5,9 +5,9 @@ using Intent.Metadata.Models;
 using Intent.RoslynWeaver.Attributes;
 
 [assembly: DefaultIntentManaged(Mode.Fully)]
-[assembly: IntentTemplate("ModuleBuilder.Templates.Api.ApiElementModel", Version = "1.0")]
+[assembly: IntentTemplate("Intent.ModuleBuilder.Templates.Api.ApiElementModel", Version = "1.0")]
 
-namespace Intent.Modules.Angular.Api
+namespace Intent.Angular.Api
 {
     [IntentManaged(Mode.Merge)]
     public class RouteModel : IMetadataModel, IHasStereotypes, IHasName, IHasTypeReference

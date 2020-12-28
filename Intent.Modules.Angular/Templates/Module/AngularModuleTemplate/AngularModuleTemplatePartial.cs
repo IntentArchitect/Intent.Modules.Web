@@ -12,17 +12,18 @@ using Intent.Modules.Common.Templates;
 using Intent.RoslynWeaver.Attributes;
 using Intent.Templates;
 using Intent.Modules.Common.TypeScript.Templates;
+using Intent.Angular.Api;
 
 [assembly: DefaultIntentManaged(Mode.Merge)]
-[assembly: IntentTemplate("ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial", Version = "1.0")]
+[assembly: IntentTemplate("Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial", Version = "1.0")]
 
 namespace Intent.Modules.Angular.Templates.Module.AngularModuleTemplate
 {
     [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
-    partial class AngularModuleTemplate : TypeScriptTemplateBase<ModuleModel>
+    partial class AngularModuleTemplate : TypeScriptTemplateBase<Intent.Angular.Api.ModuleModel>
     {
         [IntentManaged(Mode.Fully)]
-        public const string TemplateId = "Angular.Module.AngularModuleTemplate";
+        public const string TemplateId = "Intent.Angular.Module.AngularModuleTemplate";
         private readonly ISet<string> _components = new HashSet<string>();
         private readonly ISet<string> _providers = new HashSet<string>();
         private readonly ISet<string> _angularImports = new HashSet<string>();

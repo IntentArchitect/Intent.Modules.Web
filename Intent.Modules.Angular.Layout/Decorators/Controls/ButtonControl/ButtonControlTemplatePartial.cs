@@ -1,4 +1,4 @@
-﻿using Intent.Modules.Angular.Layout.Api;
+﻿using Intent.Angular.Layout.Api;
 
 namespace Intent.Modules.Angular.Layout.Decorators.Controls.ButtonControl
 {

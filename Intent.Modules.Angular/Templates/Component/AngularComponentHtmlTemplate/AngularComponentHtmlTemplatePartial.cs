@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Intent.Modules.Angular.Api;
 using Intent.Modules.Common.Html.Templates;
+using Intent.Angular.Api;
 
 [assembly: DefaultIntentManaged(Mode.Merge)]
 [assembly: IntentTemplate("ModuleBuilder.Html.Templates.HtmlFileTemplatePartial", Version = "1.0")]
@@ -26,7 +27,7 @@ namespace Intent.Modules.Angular.Templates.Component.AngularComponentHtmlTemplat
     {
         private readonly IList<IOverwriteDecorator> _decorators = new List<IOverwriteDecorator>();
         [IntentManaged(Mode.Fully)]
-        public const string TemplateId = "Angular.Component.AngularComponentHtmlTemplate";
+        public const string TemplateId = "Intent.Angular.Component.AngularComponentHtmlTemplate";
 
         public AngularComponentHtmlTemplate(IOutputTarget project, ComponentModel model) : base(TemplateId, project, model)
         {

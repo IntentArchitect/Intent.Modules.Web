@@ -7,8 +7,6 @@ using Intent.Modules.Common;
 using Intent.Modules.Common.Templates;
 using Intent.RoslynWeaver.Attributes;
 using Intent.Templates;
-using Intent.Modules.Angular.Layout.Api;
-
 
 [assembly: DefaultIntentManaged(Mode.Merge)]
 [assembly: IntentTemplate("Intent.ModuleBuilder.ProjectItemTemplate.Partial", Version = "1.0")]
@@ -19,7 +17,7 @@ namespace Intent.Modules.Angular.Layout.Templates.Shared.Footer.FooterComponentC
     partial class FooterComponentCssTemplate : IntentTemplateBase<object>
     {
         [IntentManaged(Mode.Fully)]
-        public const string TemplateId = "Angular.Layout.Shared.Footer.FooterComponentCssTemplate";
+        public const string TemplateId = "Intent.Angular.Layout.Shared.Footer.FooterComponentCssTemplate";
 
         public FooterComponentCssTemplate(IOutputTarget project, object model) : base(TemplateId, project, model)
         {

@@ -15,17 +15,18 @@ using Intent.Modules.Angular.Templates.Shared.IntentDecoratorsTemplate;
 using Intent.Modules.Common.Plugins;
 using Intent.Modules.Common.TypeScript;
 using Intent.Modules.Common.TypeScript.Templates;
+using Intent.Angular.Api;
 
 [assembly: DefaultIntentManaged(Mode.Merge)]
-[assembly: IntentTemplate("ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial", Version = "1.0")]
+[assembly: IntentTemplate("Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial", Version = "1.0")]
 
 namespace Intent.Modules.Angular.Templates.Component.AngularComponentTsTemplate
 {
     [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
-    partial class AngularComponentTsTemplate : TypeScriptTemplateBase<ComponentModel>
+    partial class AngularComponentTsTemplate : TypeScriptTemplateBase<Intent.Angular.Api.ComponentModel>
     {
         [IntentManaged(Mode.Fully)]
-        public const string TemplateId = "Angular.Component.AngularComponentTsTemplate";
+        public const string TemplateId = "Intent.Angular.Component.AngularComponentTsTemplate";
 
         public AngularComponentTsTemplate(IOutputTarget project, ComponentModel model) : base(TemplateId, project, model)
         {
@@ -53,7 +54,7 @@ namespace Intent.Modules.Angular.Templates.Component.AngularComponentTsTemplate
 
         public override void BeforeTemplateExecution()
         {
-            if (File.Exists(GetMetadata().GetFullLocationPathWithFileName()))
+            if (File.Exists(GetMetadata().GetFilePath()))
             {
                 return;
             }

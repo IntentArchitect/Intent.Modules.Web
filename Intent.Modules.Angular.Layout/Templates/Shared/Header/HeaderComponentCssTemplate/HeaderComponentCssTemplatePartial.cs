@@ -7,7 +7,6 @@ using Intent.Modules.Common;
 using Intent.Modules.Common.Templates;
 using Intent.RoslynWeaver.Attributes;
 using Intent.Templates;
-using Intent.Modules.Angular.Layout.Api;
 
 
 [assembly: DefaultIntentManaged(Mode.Merge)]
@@ -19,7 +18,7 @@ namespace Intent.Modules.Angular.Layout.Templates.Shared.Header.HeaderComponentC
     partial class HeaderComponentCssTemplate : IntentTemplateBase<object>
     {
         [IntentManaged(Mode.Fully)]
-        public const string TemplateId = "Angular.Layout.Shared.Header.HeaderComponentCssTemplate";
+        public const string TemplateId = "Intent.Angular.Layout.Shared.Header.HeaderComponentCssTemplate";
 
         public HeaderComponentCssTemplate(IOutputTarget project, object model) : base(TemplateId, project, model)
         {

@@ -1,9 +1,9 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Intent.Angular.Layout.Api;
 using Intent.Eventing;
 using Intent.Metadata.Models;
-using Intent.Modules.Angular.Layout.Api;
 using Intent.Modules.Angular.Layout.Decorators.Controls.ButtonControl;
 using Intent.Modules.Angular.Layout.Decorators.Controls.Form;
 using Intent.Modules.Angular.Layout.Decorators.Controls.PaginationControl;

@@ -19,7 +19,7 @@ namespace Intent.Modules.Angular.Layout.Decorators.Controls.PaginationControl
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Dev\Intent.Modules\Modules\Intent.Modules.Angular.Layout\Decorators\Controls\PaginationControl\PaginationControlTemplate.tt"
+    #line 1 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Decorators\Controls\PaginationControl\PaginationControlTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
     public partial class PaginationControlTemplate : T4TemplateBase
     {
@@ -31,35 +31,35 @@ namespace Intent.Modules.Angular.Layout.Decorators.Controls.PaginationControl
         {
             this.Write("  <div class=\"row\" intent-manage intent-id=\"");
             
-            #line 7 "C:\Dev\Intent.Modules\Modules\Intent.Modules.Angular.Layout\Decorators\Controls\PaginationControl\PaginationControlTemplate.tt"
+            #line 7 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Decorators\Controls\PaginationControl\PaginationControlTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Model.Name.Replace(" ", "").ToKebabCase()));
             
             #line default
             #line hidden
             this.Write("\">\r\n    <div class=\"col\">\r\n      <pagination [totalItems]=\"");
             
-            #line 9 "C:\Dev\Intent.Modules\Modules\Intent.Modules.Angular.Layout\Decorators\Controls\PaginationControl\PaginationControlTemplate.tt"
+            #line 9 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Decorators\Controls\PaginationControl\PaginationControlTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Model.DataModelPath));
             
             #line default
             #line hidden
             this.Write("?.");
             
-            #line 9 "C:\Dev\Intent.Modules\Modules\Intent.Modules.Angular.Layout\Decorators\Controls\PaginationControl\PaginationControlTemplate.tt"
+            #line 9 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Decorators\Controls\PaginationControl\PaginationControlTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Model.TotalItemsPath));
             
             #line default
             #line hidden
             this.Write("\" [(ngModel)]=\"");
             
-            #line 9 "C:\Dev\Intent.Modules\Modules\Intent.Modules.Angular.Layout\Decorators\Controls\PaginationControl\PaginationControlTemplate.tt"
+            #line 9 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Decorators\Controls\PaginationControl\PaginationControlTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Model.DataModelPath));
             
             #line default
             #line hidden
             this.Write(".");
             
-            #line 9 "C:\Dev\Intent.Modules\Modules\Intent.Modules.Angular.Layout\Decorators\Controls\PaginationControl\PaginationControlTemplate.tt"
+            #line 9 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Decorators\Controls\PaginationControl\PaginationControlTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Model.PageNumberPath));
             
             #line default

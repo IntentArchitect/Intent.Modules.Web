@@ -19,7 +19,7 @@ namespace Intent.Modules.Angular.Layout.Decorators.Controls.Form
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Dev\Intent.Modules\Modules\Intent.Modules.Angular.Layout\Decorators\Controls\Form\FormTemplate.tt"
+    #line 1 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Decorators\Controls\Form\FormTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
     public partial class FormTemplate : T4TemplateBase
     {
@@ -31,159 +31,159 @@ namespace Intent.Modules.Angular.Layout.Decorators.Controls.Form
         {
             this.Write("  <form [formGroup]=\"");
             
-            #line 7 "C:\Dev\Intent.Modules\Modules\Intent.Modules.Angular.Layout\Decorators\Controls\Form\FormTemplate.tt"
+            #line 7 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Decorators\Controls\Form\FormTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Model.DataModelPath));
             
             #line default
             #line hidden
             this.Write("\" intent-manage intent-id=\"");
             
-            #line 7 "C:\Dev\Intent.Modules\Modules\Intent.Modules.Angular.Layout\Decorators\Controls\Form\FormTemplate.tt"
+            #line 7 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Decorators\Controls\Form\FormTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Model.Name.Replace(" ", "").ToKebabCase()));
             
             #line default
             #line hidden
             this.Write("\">\r\n");
             
-            #line 8 "C:\Dev\Intent.Modules\Modules\Intent.Modules.Angular.Layout\Decorators\Controls\Form\FormTemplate.tt"
+            #line 8 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Decorators\Controls\Form\FormTemplate.tt"
   foreach(var field in Model.FormFields) { 
             
             #line default
             #line hidden
             
-            #line 9 "C:\Dev\Intent.Modules\Modules\Intent.Modules.Angular.Layout\Decorators\Controls\Form\FormTemplate.tt"
+            #line 9 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Decorators\Controls\Form\FormTemplate.tt"
       if (field.TypeReference.Element.Name == "Text Input") { 
             
             #line default
             #line hidden
             this.Write("    <div class=\"form-group\" intent-id=\"");
             
-            #line 10 "C:\Dev\Intent.Modules\Modules\Intent.Modules.Angular.Layout\Decorators\Controls\Form\FormTemplate.tt"
+            #line 10 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Decorators\Controls\Form\FormTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(field.Id));
             
             #line default
             #line hidden
             this.Write("\">\r\n      <label for=\"");
             
-            #line 11 "C:\Dev\Intent.Modules\Modules\Intent.Modules.Angular.Layout\Decorators\Controls\Form\FormTemplate.tt"
+            #line 11 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Decorators\Controls\Form\FormTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(field.DataModelPath));
             
             #line default
             #line hidden
             this.Write("\">");
             
-            #line 11 "C:\Dev\Intent.Modules\Modules\Intent.Modules.Angular.Layout\Decorators\Controls\Form\FormTemplate.tt"
+            #line 11 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Decorators\Controls\Form\FormTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(field.Name));
             
             #line default
             #line hidden
             this.Write("</label>\r\n      <input id=\"");
             
-            #line 12 "C:\Dev\Intent.Modules\Modules\Intent.Modules.Angular.Layout\Decorators\Controls\Form\FormTemplate.tt"
+            #line 12 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Decorators\Controls\Form\FormTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(field.DataModelPath));
             
             #line default
             #line hidden
             this.Write("\" class=\"form-control\" formControlName=\"");
             
-            #line 12 "C:\Dev\Intent.Modules\Modules\Intent.Modules.Angular.Layout\Decorators\Controls\Form\FormTemplate.tt"
+            #line 12 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Decorators\Controls\Form\FormTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(field.DataModelPath));
             
             #line default
             #line hidden
             this.Write("\" type=\"text\" />\r\n    </div>\r\n");
             
-            #line 14 "C:\Dev\Intent.Modules\Modules\Intent.Modules.Angular.Layout\Decorators\Controls\Form\FormTemplate.tt"
+            #line 14 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Decorators\Controls\Form\FormTemplate.tt"
       } else if (field.TypeReference.Element.Name == "Checkbox") { 
             
             #line default
             #line hidden
             this.Write("    <div class=\"form-check\" intent-id=\"");
             
-            #line 15 "C:\Dev\Intent.Modules\Modules\Intent.Modules.Angular.Layout\Decorators\Controls\Form\FormTemplate.tt"
+            #line 15 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Decorators\Controls\Form\FormTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(field.Id));
             
             #line default
             #line hidden
             this.Write("\">\r\n      <input id=\"");
             
-            #line 16 "C:\Dev\Intent.Modules\Modules\Intent.Modules.Angular.Layout\Decorators\Controls\Form\FormTemplate.tt"
+            #line 16 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Decorators\Controls\Form\FormTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(field.DataModelPath));
             
             #line default
             #line hidden
             this.Write("\" class=\"form-check-input\" formControlName=\"");
             
-            #line 16 "C:\Dev\Intent.Modules\Modules\Intent.Modules.Angular.Layout\Decorators\Controls\Form\FormTemplate.tt"
+            #line 16 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Decorators\Controls\Form\FormTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(field.DataModelPath));
             
             #line default
             #line hidden
             this.Write("\" type=\"checkbox\" />\r\n      <label for=\"");
             
-            #line 17 "C:\Dev\Intent.Modules\Modules\Intent.Modules.Angular.Layout\Decorators\Controls\Form\FormTemplate.tt"
+            #line 17 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Decorators\Controls\Form\FormTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(field.DataModelPath));
             
             #line default
             #line hidden
             this.Write("\" class=\"form-check-label\">");
             
-            #line 17 "C:\Dev\Intent.Modules\Modules\Intent.Modules.Angular.Layout\Decorators\Controls\Form\FormTemplate.tt"
+            #line 17 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Decorators\Controls\Form\FormTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(field.Name));
             
             #line default
             #line hidden
             this.Write("</label>\r\n    </div>\r\n");
             
-            #line 19 "C:\Dev\Intent.Modules\Modules\Intent.Modules.Angular.Layout\Decorators\Controls\Form\FormTemplate.tt"
+            #line 19 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Decorators\Controls\Form\FormTemplate.tt"
       } else if (field.TypeReference.Element.Name == "Datepicker") { 
             
             #line default
             #line hidden
             this.Write("    <div class=\"form-group\" intent-id=\"");
             
-            #line 20 "C:\Dev\Intent.Modules\Modules\Intent.Modules.Angular.Layout\Decorators\Controls\Form\FormTemplate.tt"
+            #line 20 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Decorators\Controls\Form\FormTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(field.Id));
             
             #line default
             #line hidden
             this.Write("\">\r\n      <label for=\"");
             
-            #line 21 "C:\Dev\Intent.Modules\Modules\Intent.Modules.Angular.Layout\Decorators\Controls\Form\FormTemplate.tt"
+            #line 21 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Decorators\Controls\Form\FormTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(field.DataModelPath));
             
             #line default
             #line hidden
             this.Write("\">");
             
-            #line 21 "C:\Dev\Intent.Modules\Modules\Intent.Modules.Angular.Layout\Decorators\Controls\Form\FormTemplate.tt"
+            #line 21 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Decorators\Controls\Form\FormTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(field.Name));
             
             #line default
             #line hidden
             this.Write("</label>\r\n      <input id=\"");
             
-            #line 22 "C:\Dev\Intent.Modules\Modules\Intent.Modules.Angular.Layout\Decorators\Controls\Form\FormTemplate.tt"
+            #line 22 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Decorators\Controls\Form\FormTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(field.DataModelPath));
             
             #line default
             #line hidden
             this.Write("\" class=\"form-control\" formControlName=\"");
             
-            #line 22 "C:\Dev\Intent.Modules\Modules\Intent.Modules.Angular.Layout\Decorators\Controls\Form\FormTemplate.tt"
+            #line 22 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Decorators\Controls\Form\FormTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(field.DataModelPath));
             
             #line default
             #line hidden
             this.Write("\" type=\"text\" bsDatepicker=\"\" />\r\n    </div>\r\n");
             
-            #line 24 "C:\Dev\Intent.Modules\Modules\Intent.Modules.Angular.Layout\Decorators\Controls\Form\FormTemplate.tt"
+            #line 24 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Decorators\Controls\Form\FormTemplate.tt"
       } 
             
             #line default
             #line hidden
             
-            #line 25 "C:\Dev\Intent.Modules\Modules\Intent.Modules.Angular.Layout\Decorators\Controls\Form\FormTemplate.tt"
+            #line 25 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Decorators\Controls\Form\FormTemplate.tt"
   } 
             
             #line default

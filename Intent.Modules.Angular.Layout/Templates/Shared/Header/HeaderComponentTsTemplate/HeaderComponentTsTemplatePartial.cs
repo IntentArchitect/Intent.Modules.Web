@@ -8,11 +8,10 @@ using Intent.Modules.Common.Templates;
 using Intent.Modules.Common.TypeScript.Templates;
 using Intent.RoslynWeaver.Attributes;
 using Intent.Templates;
-using Intent.Modules.Angular.Layout.Api;
 
 
 [assembly: DefaultIntentManaged(Mode.Merge)]
-[assembly: IntentTemplate("ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial", Version = "1.0")]
+[assembly: IntentTemplate("Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial", Version = "1.0")]
 
 namespace Intent.Modules.Angular.Layout.Templates.Shared.Header.HeaderComponentTsTemplate
 {
@@ -20,7 +19,7 @@ namespace Intent.Modules.Angular.Layout.Templates.Shared.Header.HeaderComponentT
     partial class HeaderComponentTsTemplate : TypeScriptTemplateBase<object>
     {
         [IntentManaged(Mode.Fully)]
-        public const string TemplateId = "Angular.Layout.Shared.Header.HeaderComponentTsTemplate";
+        public const string TemplateId = "Intent.Angular.Layout.Shared.Header.HeaderComponentTsTemplate";
 
         public HeaderComponentTsTemplate(IOutputTarget project, object model) : base(TemplateId, project, model)
         {
@@ -40,10 +39,10 @@ namespace Intent.Modules.Angular.Layout.Templates.Shared.Header.HeaderComponentT
 
         public override void BeforeTemplateExecution()
         {
-            if (File.Exists(GetMetadata().GetFilePath()))
-            {
-                return;
-            }
+            //if (File.Exists(GetMetadata().GetFilePath()))
+            //{
+            //    return;
+            //}
 
             // New Component:
             ExecutionContext.EventDispatcher.Publish(AngularComponentCreatedEvent.EventId,

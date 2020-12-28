@@ -19,7 +19,7 @@ namespace Intent.Modules.Angular.Layout.Decorators.Controls.ButtonControl
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Dev\Intent.Modules\Modules\Intent.Modules.Angular.Layout\Decorators\Controls\ButtonControl\ButtonControlTemplate.tt"
+    #line 1 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Decorators\Controls\ButtonControl\ButtonControlTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
     public partial class ButtonControlTemplate : T4TemplateBase
     {
@@ -31,35 +31,35 @@ namespace Intent.Modules.Angular.Layout.Decorators.Controls.ButtonControl
         {
             this.Write("      <span intent-manage intent-id=\"");
             
-            #line 7 "C:\Dev\Intent.Modules\Modules\Intent.Modules.Angular.Layout\Decorators\Controls\ButtonControl\ButtonControlTemplate.tt"
+            #line 7 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Decorators\Controls\ButtonControl\ButtonControlTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Model.Id));
             
             #line default
             #line hidden
             this.Write("\">\r\n        <button class=\"btn btn-default\" ");
             
-            #line 8 "C:\Dev\Intent.Modules\Modules\Intent.Modules.Angular.Layout\Decorators\Controls\ButtonControl\ButtonControlTemplate.tt"
+            #line 8 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Decorators\Controls\ButtonControl\ButtonControlTemplate.tt"
  if (Model.ClickCommandPath != null) { 
             
             #line default
             #line hidden
             this.Write(" (click)=\"");
             
-            #line 8 "C:\Dev\Intent.Modules\Modules\Intent.Modules.Angular.Layout\Decorators\Controls\ButtonControl\ButtonControlTemplate.tt"
+            #line 8 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Decorators\Controls\ButtonControl\ButtonControlTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Model.ClickCommandPath));
             
             #line default
             #line hidden
             this.Write("($event)\" ");
             
-            #line 8 "C:\Dev\Intent.Modules\Modules\Intent.Modules.Angular.Layout\Decorators\Controls\ButtonControl\ButtonControlTemplate.tt"
+            #line 8 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Decorators\Controls\ButtonControl\ButtonControlTemplate.tt"
  } 
             
             #line default
             #line hidden
             this.Write(" >");
             
-            #line 8 "C:\Dev\Intent.Modules\Modules\Intent.Modules.Angular.Layout\Decorators\Controls\ButtonControl\ButtonControlTemplate.tt"
+            #line 8 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Decorators\Controls\ButtonControl\ButtonControlTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Model.Name));
             
             #line default

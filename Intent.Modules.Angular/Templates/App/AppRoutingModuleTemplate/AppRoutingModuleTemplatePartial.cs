@@ -12,17 +12,18 @@ using System;
 using Intent.Modules.Angular.Templates.Shared.IntentDecoratorsTemplate;
 using Intent.Modules.Common.TypeScript.Templates;
 using Intent.Modelers.WebClient.Api;
+using Intent.Angular.Api;
 
 [assembly: DefaultIntentManaged(Mode.Merge)]
-[assembly: IntentTemplate("ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial", Version = "1.0")]
+[assembly: IntentTemplate("Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial", Version = "1.0")]
 
 namespace Intent.Modules.Angular.Templates.App.AppRoutingModuleTemplate
 {
     [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
-    partial class AppRoutingModuleTemplate : TypeScriptTemplateBase<AngularWebAppModel>
+    partial class AppRoutingModuleTemplate : TypeScriptTemplateBase<Intent.Angular.Api.AngularWebAppModel>
     {
         [IntentManaged(Mode.Fully)]
-        public const string TemplateId = "Angular.App.AppRoutingModuleTemplate";
+        public const string TemplateId = "Intent.Angular.App.AppRoutingModuleTemplate";
 
         public AppRoutingModuleTemplate(IOutputTarget project, AngularWebAppModel model) : base(TemplateId, project, model)
         {

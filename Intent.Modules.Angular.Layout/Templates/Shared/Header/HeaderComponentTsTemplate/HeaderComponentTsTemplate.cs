@@ -21,7 +21,7 @@ namespace Intent.Modules.Angular.Layout.Templates.Shared.Header.HeaderComponentT
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Dev\Intent.Modules\Modules\Intent.Modules.Angular.Layout\Templates\Shared\Header\HeaderComponentTsTemplate\HeaderComponentTsTemplate.tt"
+    #line 1 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Templates\Shared\Header\HeaderComponentTsTemplate\HeaderComponentTsTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
     public partial class HeaderComponentTsTemplate : TypeScriptTemplateBase<object>
     {
@@ -35,14 +35,14 @@ namespace Intent.Modules.Angular.Layout.Templates.Shared.Header.HeaderComponentT
                     "ector: \'app-layout-header\',\r\n  templateUrl: \'./header.component.html\',\r\n  styleU" +
                     "rls: [\'./header.component.css\']\r\n})\r\nexport class ");
             
-            #line 17 "C:\Dev\Intent.Modules\Modules\Intent.Modules.Angular.Layout\Templates\Shared\Header\HeaderComponentTsTemplate\HeaderComponentTsTemplate.tt"
+            #line 17 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Templates\Shared\Header\HeaderComponentTsTemplate\HeaderComponentTsTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(ClassName));
             
             #line default
             #line hidden
             this.Write(" {\r\n  title = \'");
             
-            #line 18 "C:\Dev\Intent.Modules\Modules\Intent.Modules.Angular.Layout\Templates\Shared\Header\HeaderComponentTsTemplate\HeaderComponentTsTemplate.tt"
+            #line 18 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Templates\Shared\Header\HeaderComponentTsTemplate\HeaderComponentTsTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(OutputTarget.Application.Name));
             
             #line default

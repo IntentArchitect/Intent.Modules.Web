@@ -12,15 +12,15 @@ using Intent.Modelers.Types.ServiceProxies.Api;
 using Intent.Modules.Common.Templates;
 
 [assembly: DefaultIntentManaged(Mode.Merge)]
-[assembly: IntentTemplate("ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial", Version = "1.0")]
+[assembly: IntentTemplate("Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial", Version = "1.0")]
 
 namespace Intent.Modules.Angular.ServiceProxies.Templates.Proxies.AngularDTOTemplate
 {
     [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
-    partial class AngularDTOTemplate : TypeScriptTemplateBase<ServiceProxyDTOModel>
+    partial class AngularDTOTemplate : TypeScriptTemplateBase<Intent.Modelers.Types.ServiceProxies.Api.ServiceProxyDTOModel>
     {
         [IntentManaged(Mode.Fully)]
-        public const string TemplateId = "Angular.ServiceProxies.Proxies.AngularDTOTemplate";
+        public const string TemplateId = "Intent.Angular.ServiceProxies.Proxies.AngularDTOTemplate";
 
         public AngularDTOTemplate(IOutputTarget project, ServiceProxyDTOModel model) : base(TemplateId, project, model)
         {

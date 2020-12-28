@@ -20,7 +20,7 @@ namespace Intent.Modules.Angular.Templates.Core.CoreModuleTemplate
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Dev\Intent.Modules\Modules\Intent.Modules.Angular\Templates\Core\CoreModuleTemplate\CoreModuleTemplate.tt"
+    #line 1 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\Core\CoreModuleTemplate\CoreModuleTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
     public partial class CoreModuleTemplate : TypeScriptTemplateBase<object>
     {
@@ -47,7 +47,7 @@ import { ApiService } from ""./api.service"";
 })
 export class ");
             
-            #line 23 "C:\Dev\Intent.Modules\Modules\Intent.Modules.Angular\Templates\Core\CoreModuleTemplate\CoreModuleTemplate.tt"
+            #line 23 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\Core\CoreModuleTemplate\CoreModuleTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(ClassName));
             
             #line default

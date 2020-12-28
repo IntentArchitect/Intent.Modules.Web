@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
+using Intent.Angular.Layout.Api;
 using Intent.Eventing;
-using Intent.Modules.Angular.Layout.Api;
 using Intent.Modules.Angular.Templates;
 
 namespace Intent.Modules.Angular.Layout.Decorators.Controls.PaginationControl

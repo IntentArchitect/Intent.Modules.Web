@@ -9,6 +9,7 @@ using Intent.Modules.Common;
 using System;
 using System.Linq;
 using Intent.Modelers.WebClient.Api;
+using Intent.Angular.Api;
 
 [assembly: DefaultIntentManaged(Mode.Merge)]
 [assembly: IntentTemplate("Intent.ModuleBuilder.TemplateRegistration.FilePerModel", Version = "1.0")]

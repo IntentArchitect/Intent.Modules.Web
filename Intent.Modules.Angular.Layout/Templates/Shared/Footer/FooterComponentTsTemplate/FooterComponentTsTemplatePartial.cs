@@ -8,10 +8,9 @@ using Intent.Modules.Common.Templates;
 using Intent.Modules.Common.TypeScript.Templates;
 using Intent.RoslynWeaver.Attributes;
 using Intent.Templates;
-using Intent.Modules.Angular.Layout.Api;
 
 [assembly: DefaultIntentManaged(Mode.Merge)]
-[assembly: IntentTemplate("ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial", Version = "1.0")]
+[assembly: IntentTemplate("Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial", Version = "1.0")]
 
 namespace Intent.Modules.Angular.Layout.Templates.Shared.Footer.FooterComponentTsTemplate
 {
@@ -19,7 +18,7 @@ namespace Intent.Modules.Angular.Layout.Templates.Shared.Footer.FooterComponentT
     partial class FooterComponentTsTemplate : TypeScriptTemplateBase<object>
     {
         [IntentManaged(Mode.Fully)]
-        public const string TemplateId = "Angular.Layout.Shared.Footer.FooterComponentTsTemplate";
+        public const string TemplateId = "Intent.Angular.Layout.Shared.Footer.FooterComponentTsTemplate";
 
         public FooterComponentTsTemplate(IOutputTarget project, object model) : base(TemplateId, project, model)
         {
@@ -39,10 +38,10 @@ namespace Intent.Modules.Angular.Layout.Templates.Shared.Footer.FooterComponentT
 
         public override void BeforeTemplateExecution()
         {
-            if (File.Exists(GetMetadata().GetFilePath()))
-            {
-                return;
-            }
+            //if (File.Exists(GetMetadata().GetFilePath()))
+            //{
+            //    return;
+            //}
 
             // New Component:
             ExecutionContext.EventDispatcher.Publish(AngularComponentCreatedEvent.EventId,

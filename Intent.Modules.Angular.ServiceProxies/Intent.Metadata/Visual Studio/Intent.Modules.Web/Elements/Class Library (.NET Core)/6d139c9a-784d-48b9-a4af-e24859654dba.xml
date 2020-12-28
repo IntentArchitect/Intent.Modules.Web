@@ -48,11 +48,67 @@
       <stereotypes />
       <childElements />
     </childElement>
+    <childElement id="f5c94a38-4c5a-4c85-b68c-c3c087c8b8f4" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">
+      <name>Intent.ModuleBuilder.Templates.Api.ApiMetadataDesignerExtensions</name>
+      <display>Intent.ModuleBuilder.Templates.Api.ApiMetadataDesignerExtensions</display>
+      <externalReference>Intent.ModuleBuilder</externalReference>
+      <isAbstract>false</isAbstract>
+      <order>7</order>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>6d139c9a-784d-48b9-a4af-e24859654dba</parentFolderId>
+      <packageId>3480796b-a59d-4366-a8eb-bf9b1a49f521</packageId>
+      <packageName>Intent.Modules.Web</packageName>
+      <stereotypes />
+      <childElements />
+    </childElement>
+    <childElement id="cdc2af22-3d46-4da9-9319-b4c148c6e92a" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">
+      <name>Intent.ModuleBuilder.Templates.Api.ApiMetadataPackageExtensions</name>
+      <display>Intent.ModuleBuilder.Templates.Api.ApiMetadataPackageExtensions</display>
+      <externalReference>Intent.ModuleBuilder</externalReference>
+      <isAbstract>false</isAbstract>
+      <order>8</order>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>6d139c9a-784d-48b9-a4af-e24859654dba</parentFolderId>
+      <packageId>3480796b-a59d-4366-a8eb-bf9b1a49f521</packageId>
+      <packageName>Intent.Modules.Web</packageName>
+      <stereotypes />
+      <childElements />
+    </childElement>
+    <childElement id="60cee8c4-2e11-4ed9-84e4-167e050227e4" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">
+      <name>Intent.ModuleBuilder.Templates.Api.ApiMetadataProviderExtensions</name>
+      <display>Intent.ModuleBuilder.Templates.Api.ApiMetadataProviderExtensions</display>
+      <externalReference>Intent.ModuleBuilder</externalReference>
+      <isAbstract>false</isAbstract>
+      <order>9</order>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>6d139c9a-784d-48b9-a4af-e24859654dba</parentFolderId>
+      <packageId>3480796b-a59d-4366-a8eb-bf9b1a49f521</packageId>
+      <packageName>Intent.Modules.Web</packageName>
+      <stereotypes />
+      <childElements />
+    </childElement>
+    <childElement id="3891ea7e-70db-46bb-8354-59696236c4bd" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">
+      <name>Intent.ModuleBuilder.Templates.Api.ApiPackageExtensionModel</name>
+      <display>Intent.ModuleBuilder.Templates.Api.ApiPackageExtensionModel</display>
+      <externalReference>Intent.ModuleBuilder</externalReference>
+      <isAbstract>false</isAbstract>
+      <order>10</order>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>6d139c9a-784d-48b9-a4af-e24859654dba</parentFolderId>
+      <packageId>3480796b-a59d-4366-a8eb-bf9b1a49f521</packageId>
+      <packageName>Intent.Modules.Web</packageName>
+      <stereotypes />
+      <childElements />
+    </childElement>
     <childElement id="17faf14b-bf07-4157-a710-1f065374a967" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">
       <name>ModuleBuilder.Templates.Api.ApiMetadataDesignerExtensions</name>
       <display>ModuleBuilder.Templates.Api.ApiMetadataDesignerExtensions</display>
       <isAbstract>false</isAbstract>
-      <order>7</order>
+      <order>11</order>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>6d139c9a-784d-48b9-a4af-e24859654dba</parentFolderId>
@@ -65,7 +121,7 @@
       <name>ModuleBuilder.Templates.Api.ApiMetadataPackageExtensions</name>
       <display>ModuleBuilder.Templates.Api.ApiMetadataPackageExtensions</display>
       <isAbstract>false</isAbstract>
-      <order>8</order>
+      <order>12</order>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>6d139c9a-784d-48b9-a4af-e24859654dba</parentFolderId>
@@ -78,7 +134,7 @@
       <name>ModuleBuilder.Templates.Api.ApiMetadataProviderExtensions</name>
       <display>ModuleBuilder.Templates.Api.ApiMetadataProviderExtensions</display>
       <isAbstract>false</isAbstract>
-      <order>9</order>
+      <order>13</order>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>6d139c9a-784d-48b9-a4af-e24859654dba</parentFolderId>
@@ -91,7 +147,7 @@
       <name>ModuleBuilder.Templates.Api.ApiPackageExtensionModel</name>
       <display>ModuleBuilder.Templates.Api.ApiPackageExtensionModel</display>
       <isAbstract>false</isAbstract>
-      <order>10</order>
+      <order>14</order>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>6d139c9a-784d-48b9-a4af-e24859654dba</parentFolderId>
@@ -104,7 +160,7 @@
       <name>Api</name>
       <display>Api</display>
       <isAbstract>false</isAbstract>
-      <order>11</order>
+      <order>15</order>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>6d139c9a-784d-48b9-a4af-e24859654dba</parentFolderId>
@@ -117,7 +173,7 @@
       <name>Decorators</name>
       <display>Decorators</display>
       <isAbstract>false</isAbstract>
-      <order>12</order>
+      <order>16</order>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>6d139c9a-784d-48b9-a4af-e24859654dba</parentFolderId>
@@ -130,7 +186,7 @@
       <name>DesignerConfig</name>
       <display>DesignerConfig</display>
       <isAbstract>false</isAbstract>
-      <order>13</order>
+      <order>17</order>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>6d139c9a-784d-48b9-a4af-e24859654dba</parentFolderId>
@@ -143,7 +199,7 @@
       <name>IModSpec</name>
       <display>IModSpec</display>
       <isAbstract>false</isAbstract>
-      <order>14</order>
+      <order>18</order>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>6d139c9a-784d-48b9-a4af-e24859654dba</parentFolderId>
@@ -156,7 +212,7 @@
       <name>Templates</name>
       <display>Templates</display>
       <isAbstract>false</isAbstract>
-      <order>15</order>
+      <order>19</order>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>6d139c9a-784d-48b9-a4af-e24859654dba</parentFolderId>

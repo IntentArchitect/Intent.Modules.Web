@@ -20,7 +20,7 @@ namespace Intent.Modules.Angular.Layout.Templates.Shared.Header.HeaderComponentC
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Dev\Intent.Modules\Modules\Intent.Modules.Angular.Layout\Templates\Shared\Header\HeaderComponentCssTemplate\HeaderComponentCssTemplate.tt"
+    #line 1 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Templates\Shared\Header\HeaderComponentCssTemplate\HeaderComponentCssTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
     public partial class HeaderComponentCssTemplate : IntentTemplateBase<object>
     {

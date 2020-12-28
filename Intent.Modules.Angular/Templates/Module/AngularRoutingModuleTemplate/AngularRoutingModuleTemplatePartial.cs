@@ -12,17 +12,18 @@ using Intent.Modules.Common.Templates;
 using Intent.RoslynWeaver.Attributes;
 using Intent.Templates;
 using Intent.Modules.Common.TypeScript.Templates;
+using Intent.Angular.Api;
 
 [assembly: DefaultIntentManaged(Mode.Merge)]
-[assembly: IntentTemplate("ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial", Version = "1.0")]
+[assembly: IntentTemplate("Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial", Version = "1.0")]
 
 namespace Intent.Modules.Angular.Templates.Module.AngularRoutingModuleTemplate
 {
     [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
-    partial class AngularRoutingModuleTemplate : TypeScriptTemplateBase<RoutingModel>
+    partial class AngularRoutingModuleTemplate : TypeScriptTemplateBase<Intent.Angular.Api.RoutingModel>
     {
         [IntentManaged(Mode.Fully)]
-        public const string TemplateId = "Angular.Module.AngularRoutingModuleTemplate";
+        public const string TemplateId = "Intent.Angular.Module.AngularRoutingModuleTemplate";
 
         public AngularRoutingModuleTemplate(IOutputTarget project, RoutingModel model) : base(TemplateId, project, model)
         {

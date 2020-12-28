@@ -19,18 +19,17 @@ namespace Intent.Modules.Angular
         {
             if (step == ExecutionLifeCycleSteps.BeforeTemplateExecution)
             {
-                var project = CliCommand.GetWebCoreProject(application);
-                if (project == null)
+                var outputTarget = CliCommand.GetFrontEndOutputTarget(application);
+                if (outputTarget == null)
                 {
-                    Logging.Log.Failure("Could not find project to install Angular application.");
+                    Logging.Log.Warning("Could not find a location to install ngx-bootstrap. Ensure that a Web Client package has been created.");
                     return;
                 }
-                var appLocation = Path.Join(project.Location, "ClientApp");
-                if (!IsNgxBootrapInstalled(appLocation))
+                if (!IsNgxBootrapInstalled(outputTarget.Location))
                 {
-                    Logging.Log.Info($"Installing Ngx-Bootstrap into Angular app at location [{appLocation}]");
-                    CliCommand.Run(appLocation, $@"ng add ngx-bootstrap");
-                    CliCommand.Run(appLocation, $@"npm i ngx-bootstrap@5.3.2"); // Ensure this version
+                    Logging.Log.Info($"Installing Ngx-Bootstrap into Angular app at location [{outputTarget.Location}]");
+                    CliCommand.Run(outputTarget.Location, $@"ng add ngx-bootstrap");
+                    CliCommand.Run(outputTarget.Location, $@"npm i ngx-bootstrap@5.3.2"); // Ensure this version
                 }
                 else
                 {

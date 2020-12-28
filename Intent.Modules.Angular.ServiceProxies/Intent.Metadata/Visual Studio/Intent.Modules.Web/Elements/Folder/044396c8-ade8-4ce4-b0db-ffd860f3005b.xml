@@ -46,5 +46,33 @@
       <stereotypes />
       <childElements />
     </childElement>
+    <childElement id="5795b0ed-128c-4287-ac9c-ecaa6faeb573" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">
+      <name>Intent.ModuleBuilder.Templates.TemplateDecorator</name>
+      <display>Intent.ModuleBuilder.Templates.TemplateDecorator</display>
+      <externalReference>Intent.ModuleBuilder</externalReference>
+      <isAbstract>false</isAbstract>
+      <order>2</order>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>044396c8-ade8-4ce4-b0db-ffd860f3005b</parentFolderId>
+      <packageId>3480796b-a59d-4366-a8eb-bf9b1a49f521</packageId>
+      <packageName>Intent.Modules.Web</packageName>
+      <stereotypes />
+      <childElements />
+    </childElement>
+    <childElement id="41e7fba9-c3ec-40eb-9144-67e2b188bb84" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">
+      <name>Intent.ModuleBuilder.Templates.TemplateDecoratorRegistration</name>
+      <display>Intent.ModuleBuilder.Templates.TemplateDecoratorRegistration</display>
+      <externalReference>Intent.ModuleBuilder</externalReference>
+      <isAbstract>false</isAbstract>
+      <order>3</order>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>044396c8-ade8-4ce4-b0db-ffd860f3005b</parentFolderId>
+      <packageId>3480796b-a59d-4366-a8eb-bf9b1a49f521</packageId>
+      <packageName>Intent.Modules.Web</packageName>
+      <stereotypes />
+      <childElements />
+    </childElement>
   </childElements>
 </class>

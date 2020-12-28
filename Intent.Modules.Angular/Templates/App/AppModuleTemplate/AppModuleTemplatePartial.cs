@@ -13,9 +13,10 @@ using Intent.Modules.Angular.Templates.Shared.IntentDecoratorsTemplate;
 using Intent.Modules.Angular.Api;
 using Intent.Modules.Common.TypeScript.Templates;
 using Intent.Modelers.WebClient.Api;
+using Intent.Angular.Api;
 
 [assembly: DefaultIntentManaged(Mode.Merge)]
-[assembly: IntentTemplate("ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial", Version = "1.0")]
+[assembly: IntentTemplate("Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial", Version = "1.0")]
 
 namespace Intent.Modules.Angular.Templates.App.AppModuleTemplate
 {
@@ -28,7 +29,7 @@ namespace Intent.Modules.Angular.Templates.App.AppModuleTemplate
         private readonly ISet<string> _imports = new HashSet<string>();
 
         [IntentManaged(Mode.Fully)]
-        public const string TemplateId = "Angular.App.AppModuleTemplate";
+        public const string TemplateId = "Intent.Angular.App.AppModuleTemplate";
 
         public AppModuleTemplate(IOutputTarget project, AngularWebAppModel model) : base(TemplateId, project, model)
         {

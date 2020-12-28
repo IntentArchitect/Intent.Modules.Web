@@ -21,9 +21,9 @@ namespace Intent.Modules.Angular.Templates.Component.AngularComponentHtmlTemplat
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Dev\Intent.Modules\Modules\Intent.Modules.Angular\Templates\Component\AngularComponentHtmlTemplate\AngularComponentHtmlTemplate.tt"
+    #line 1 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\Component\AngularComponentHtmlTemplate\AngularComponentHtmlTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
-    public partial class AngularComponentHtmlTemplate : HtmlTemplateBase<ComponentModel>
+    public partial class AngularComponentHtmlTemplate : HtmlTemplateBase<Intent.Angular.Api.ComponentModel>
     {
 #line hidden
         /// <summary>
@@ -34,7 +34,7 @@ namespace Intent.Modules.Angular.Templates.Component.AngularComponentHtmlTemplat
             this.Write("<div class=\"container-fluid\" intent-manage=\"add remove\" intent-id=\"container\">\r\n " +
                     "   <h3>");
             
-            #line 10 "C:\Dev\Intent.Modules\Modules\Intent.Modules.Angular\Templates\Component\AngularComponentHtmlTemplate\AngularComponentHtmlTemplate.tt"
+            #line 10 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\Component\AngularComponentHtmlTemplate\AngularComponentHtmlTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Model.Name));
             
             #line default
