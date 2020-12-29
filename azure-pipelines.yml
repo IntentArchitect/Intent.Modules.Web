@@ -1,0 +1,41 @@
+trigger:
+  batch: true
+  branches:
+    include:
+    - '*'
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+
+- checkout: 'self'
+  persistCredentials: true
+  fetchDepth: 1
+  submodules: 'recursive'
+
+- task: NuGetAuthenticate@0
+  displayName: 'nuget authenticate'
+
+- task: DotNetCoreCLI@2
+  displayName: 'dotnet build'
+  env:
+    DOTNET_NOLOGO: 1
+  inputs:
+      command: 'build'
+      projects: '**/*.sln'
+
+- task: DotNetCoreCLI@2
+  displayName: 'dotnet test'
+  env:
+    DOTNET_NOLOGO: 1
+  inputs:
+      command: 'test'
+      projects: '**/*.sln'
+      nobuild: true
+
+- template: 'azure-pipelines/templates/steps/nuget.yml'
+  parameters:
+    noBuild: true
+    projects:
+    - 'Intent.Modules.Modelers.WebClient'

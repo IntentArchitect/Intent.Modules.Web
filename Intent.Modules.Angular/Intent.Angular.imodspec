@@ -83,8 +83,8 @@
     <dependency id="Intent.Modelers.WebClient" version="3.0.0" />
   </dependencies>
   <files>
-    <file src="$outDir$\$id$.dll" />
-    <file src="$outDir$\$id$.pdb" />
+    <file src="$outDir$/$id$.dll" />
+    <file src="$outDir$/$id$.pdb" />
   </files>
   <metadata>
     <install target="Web Client" src="modelers/Angular Core Types.designer.settings" externalReference="0a3786a7-f514-4ec3-88b9-7842744dbb3c" />
