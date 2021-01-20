@@ -6,6 +6,7 @@ using System.Linq;
 using Intent.Angular.ServiceProxies.Api;
 using Intent.Engine;
 using Intent.Metadata.Models;
+using Intent.Metadata.WebApi.Api;
 using Intent.Modelers.Services.Api;
 using Intent.Modelers.Types.ServiceProxies.Api;
 using Intent.Modules.Angular.Templates.Core.ApiServiceTemplate;
@@ -128,28 +129,14 @@ namespace Intent.Modules.Angular.ServiceProxies.Templates.Proxies.AngularService
 
         private HttpVerb GetHttpVerb(ProxyOperationModel operation)
         {
-            var verb = operation.GetStereotypeProperty("Http", "Verb", "AUTO").ToUpper();
-            if (verb != "AUTO")
-            {
-                return Enum.TryParse(verb, out HttpVerb verbEnum) ? verbEnum : HttpVerb.POST;
-            }
-            if (operation.ReturnType == null || operation.Parameters.Any(x => x.TypeReference.Element.SpecializationType == DTOModel.SpecializationType))
-            {
-                var hasIdParam = operation.Parameters.Any(x => x.Name.ToLower().EndsWith("id") && x.TypeReference.Element.SpecializationType != DTOModel.SpecializationType);
-                if (hasIdParam && new[] { "delete", "remove" }.Any(x => operation.Name.ToLower().Contains(x)))
-                {
-                    return HttpVerb.DELETE;
-                }
-                return hasIdParam ? HttpVerb.PUT : HttpVerb.POST;
-            }
-            return HttpVerb.GET;
+            return Enum.TryParse(operation.MappedOperation.GetHttpSettings().Verb().Value, out HttpVerb verbEnum) ? verbEnum : HttpVerb.POST;
         }
 
         private string GetPath(ProxyOperationModel operation)
         {
-            var servicePath = Model.MappedService.GetStereotypeProperty<string>("Api Settings", "Http Route")?.ToLower()
+            var servicePath = Model.MappedService.GetHttpServiceSettings()?.Route()?.ToLower()
                 .Replace("[controller]", Model.MappedService.Name.ToLower()) ?? $"api/{Model.MappedService.Name.ToLower()}";
-            var operationPath = operation.MappedOperation.GetStereotypeProperty<string>("Api Settings", "Http Route")?.ToLower()
+            var operationPath = operation.MappedOperation.GetHttpSettings()?.Route()?.ToLower()
                 .Replace("[action]", operation.MappedOperation.Name.ToLower());
             return string.IsNullOrWhiteSpace(operationPath) ? $"/{servicePath}" : $"/{servicePath}/{operationPath}";
         }
