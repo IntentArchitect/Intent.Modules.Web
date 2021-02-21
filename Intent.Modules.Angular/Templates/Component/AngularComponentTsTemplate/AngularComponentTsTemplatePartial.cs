@@ -32,8 +32,8 @@ namespace Intent.Modules.Angular.Templates.Component.AngularComponentTsTemplate
         {
             AddTypeSource(ModelTemplate.TemplateId);
             AddTypeSource(FormGroupTemplate.TemplateId);
-            AddTypeSource("Angular.ServiceProxies.Proxies.AngularDTOTemplate");
-            AddTypeSource("Angular.ServiceProxies.Proxies.AngularServiceProxyTemplate");
+            AddTypeSource("Intent.Angular.ServiceProxies.Proxies.AngularDTOTemplate");
+            AddTypeSource("Intent.Angular.ServiceProxies.Proxies.AngularServiceProxyTemplate");
             AddTemplateDependency(IntentDecoratorsTemplate.TemplateId);
             InjectedServices = Model.GetAngularComponentSettings().InjectServices()?.ToList() ?? new List<IElement>();
         }

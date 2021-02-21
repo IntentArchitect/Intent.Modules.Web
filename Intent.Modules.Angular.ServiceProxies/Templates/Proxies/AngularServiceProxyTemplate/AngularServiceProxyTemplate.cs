@@ -24,7 +24,7 @@ namespace Intent.Modules.Angular.ServiceProxies.Templates.Proxies.AngularService
     
     #line 1 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.ServiceProxies\Templates\Proxies\AngularServiceProxyTemplate\AngularServiceProxyTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
-    public partial class AngularServiceProxyTemplate : TypeScriptTemplateBase<ServiceProxyModel>
+    public partial class AngularServiceProxyTemplate : TypeScriptTemplateBase<Intent.Modelers.Types.ServiceProxies.Api.ServiceProxyModel>
     {
 #line hidden
         /// <summary>
@@ -75,14 +75,14 @@ namespace Intent.Modules.Angular.ServiceProxies.Templates.Proxies.AngularService
             
             #line default
             #line hidden
-            this.Write("> {\r\n    let url = \"");
+            this.Write("> {\r\n    let url = `");
             
             #line 24 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.ServiceProxies\Templates\Proxies\AngularServiceProxyTemplate\AngularServiceProxyTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(GetPath(operation)));
             
             #line default
             #line hidden
-            this.Write("\";");
+            this.Write("`;");
             
             #line 24 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.ServiceProxies\Templates\Proxies\AngularServiceProxyTemplate\AngularServiceProxyTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(GetUpdateUrl(operation)));

@@ -23,7 +23,7 @@ namespace Intent.Modules.Angular.Templates.Model.ModelTemplate
 
         public ModelTemplate(IOutputTarget project, ModelDefinitionModel model) : base(TemplateId, project, model)
         {
-            AddTypeSource("Angular.ServiceProxies.Proxies.AngularDTOTemplate");
+            AddTypeSource("Intent.Angular.ServiceProxies.Proxies.AngularDTOTemplate");
         }
 
         public string GetGenericParameters()

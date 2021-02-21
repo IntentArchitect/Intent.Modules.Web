@@ -8,22 +8,22 @@
 <#@ import namespace="Intent.Templates" #>
 <#@ import namespace="Intent.Metadata.Models" #>
 <#@ import namespace="Intent.Modules.Angular.Api" #>
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, FormArray } from '@angular/forms';
 
 export class <#= ClassName #> extends FormGroup {
   public static createEmpty(): <#= ClassName #> {
     return new <#= ClassName #>({
 <#  foreach (var control in Model.Fields) {#>
-      <#= control.Name.ToCamelCase() #>: <#= (GetTypeName(control.TypeReference) == "string" ? "\"\"" : "null") #>,
+      <#= control.Name.ToCamelCase() #>: <#= GetFieldDefaultValue(control) #>,
 <#  }#>
     });
   }
 <#  if (Model.Mapping != null) { #>
 
-  public static create(dto: <#= GetTypeName(Model.Mapping.Element) #>): <#= ClassName #> {
+  public static create(dto: <#= GetTypeName(Model.Mapping) #>): <#= ClassName #> {
     return new <#= ClassName #>({
-<#      foreach (var field in Model.Fields.Where(x => x.InternalElement.IsMapped)) {#>
-      <#= field.Name.ToCamelCase() #>: dto.<#=GetPath(field.InternalElement.MappedElement.Path)#>,
+<#      foreach (var field in Model.Fields) {#>
+      <#= field.Name.ToCamelCase() #>: <#= field.InternalElement.IsMapped ? GetPathFromMapping("dto.", field) : GetFieldDefaultValue(field) #>,
 <#      }#>
     });
   }
@@ -36,7 +36,7 @@ export class <#= ClassName #> extends FormGroup {
   }) {
     super({
 <#  foreach (var control in Model.Fields) {#>
-      <#= control.Name.ToCamelCase() #>: new FormControl(initialValue.<#= control.Name.ToCamelCase() #>),
+      <#= control.Name.ToCamelCase() #>: new <#= GetFormFieldType(control) #>(initialValue.<#= control.Name.ToCamelCase() #>),
 <#  }#>
     });
   }

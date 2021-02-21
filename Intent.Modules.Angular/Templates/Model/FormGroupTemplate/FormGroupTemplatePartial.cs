@@ -30,7 +30,7 @@ namespace Intent.Modules.Angular.Templates.Model.FormGroupTemplate
             //       the representative of a model type, and this would not be necessary. Using the hierarchy of the OutputTargets could
             //       make the discovery of the type predictable. Food for thought.
             //AddTypeSource(AngularDTOTemplate.TemplateId);
-            AddTypeSource("Angular.ServiceProxies.Proxies.AngularDTOTemplate");
+            AddTypeSource("Intent.Angular.ServiceProxies.Proxies.AngularDTOTemplate");
         }
 
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]
@@ -38,7 +38,7 @@ namespace Intent.Modules.Angular.Templates.Model.FormGroupTemplate
         {
             return new TypeScriptFileConfig(
                 overwriteBehaviour: OverwriteBehaviour.Always,
-                fileName: $"{Model.Name.ToKebabCase()}.model",
+                fileName: $"{Model.Name.ToKebabCase().RemoveSuffix("-model")}.model",
                 relativeLocation: $"{(Model.Module != null ? Model.Module.GetModuleName().ToKebabCase() + "/models" : "models")}",
                 className: "${Model.Name}"
             );
@@ -58,15 +58,39 @@ namespace Intent.Modules.Angular.Templates.Model.FormGroupTemplate
             }
         }
 
-        private string GetFileName()
+        private string GetFieldDefaultValue(FormGroupControlModel field)
         {
-            var modelName = Model.Name.EndsWith("Model") ? Model.Name.Substring(0, Model.Name.Length - "Model".Length) : Model.Name;
-            return $"{modelName.ToKebabCase()}.model";
+            switch (GetTypeName(field.TypeReference))
+            {
+                case "string":
+                    return "\"\"";
+                case "boolean":
+                    return "false";
+                default:
+                    return field.TypeReference.IsCollection ? "[]" : "null";
+            }
         }
 
-        public string GetPath(IEnumerable<IElementMappingPathTarget> path)
+        public string GetPathFromMapping(string prefix, FormGroupControlModel field)
         {
-            return string.Join(".", path.Select(x => x.Name.ToCamelCase()));
+            var path = prefix + string.Join(".", field.InternalElement.MappedElement.Path.Select(x => x.Name.ToCamelCase()));
+            if (field.InternalElement.IsMapped && field.TypeReference.Element.SpecializationTypeId == FormGroupDefinitionModel.SpecializationTypeId)
+            {
+                if (field.TypeReference.IsCollection)
+                {
+                    path += $".map(x => new {GetTypeName(field).RemoveSuffix("[]")}(x))";
+                }
+                else
+                {
+                    path = $"new {GetTypeName(field)}({path})";
+                }
+            }
+            return path;
+        }
+
+        private string GetFormFieldType(FormGroupControlModel field)
+        {
+            return field.TypeReference.IsCollection ? "FormArray" : "FormControl";
         }
     }
 }

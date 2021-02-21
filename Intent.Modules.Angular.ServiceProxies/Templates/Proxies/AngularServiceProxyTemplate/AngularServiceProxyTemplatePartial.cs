@@ -89,14 +89,17 @@ namespace Intent.Modules.Angular.ServiceProxies.Templates.Proxies.AngularService
             {
                 throw new Exception($"Different number of properties for mapped operation [{operation.Name}] on {ServiceProxyModel.SpecializationType} [{Model.Name}]");
             }
-            if (!mappedOperation.Parameters.Any() || mappedOperation.Parameters.All(x => x.Type.Element.SpecializationType == DTOModel.SpecializationType))
+
+            var path = GetPath(operation);
+            var urlParameters = mappedOperation.Parameters.Where(x => x.Type.Element.SpecializationType != DTOModel.SpecializationType &&
+                                                                      !path.Contains($"${{{x.Name.ToCamelCase()}}}")).ToList();
+            if (!urlParameters.Any())
             {
                 return "";
             }
 
             return $@"
-        url = `${{url}}?{string.Join("&", mappedOperation.Parameters.Where(x => x.Type.Element.SpecializationType != DTOModel.SpecializationType)
-                .Select((x, index) => $"{x.Name.ToCamelCase()}=${{{operation.Parameters[index].Name.ToCamelCase()}}}"))}`;";
+        url = `${{url}}?{string.Join("&", urlParameters.Select((x, index) => $"{x.Name.ToCamelCase()}=${{{operation.Parameters[index].Name.ToCamelCase()}}}"))}`;";
         }
 
         private string GetDataServiceCall(ProxyOperationModel operation)
@@ -138,6 +141,23 @@ namespace Intent.Modules.Angular.ServiceProxies.Templates.Proxies.AngularService
                 .Replace("[controller]", Model.MappedService.Name.ToLower()) ?? $"api/{Model.MappedService.Name.ToLower()}";
             var operationPath = operation.MappedOperation.GetHttpSettings()?.Route()?.ToLower()
                 .Replace("[action]", operation.MappedOperation.Name.ToLower());
+            if (!string.IsNullOrWhiteSpace(operationPath))
+            {
+                foreach (var parameter in operation.Parameters)
+                {
+                    var startIndex = operationPath.IndexOf($"{{{parameter.Name}", StringComparison.InvariantCultureIgnoreCase);
+                    if (startIndex != -1)
+                    {
+                        var endIndex = operationPath.IndexOf("}", startIndex, StringComparison.InvariantCultureIgnoreCase);
+                        if (endIndex != -1)
+                        {
+                            operationPath = operationPath.Remove(startIndex, endIndex - startIndex + 1);
+                            operationPath = operationPath.Insert(startIndex, $"${{{parameter.Name.ToCamelCase()}}}");
+                        }
+                    }
+                }
+            }
+
             return string.IsNullOrWhiteSpace(operationPath) ? $"/{servicePath}" : $"/{servicePath}/{operationPath}";
         }
     }

@@ -5,7 +5,7 @@
 <#@ import namespace="Intent.Modules.Common" #>
 <#@ import namespace="Intent.Modules.Common.Templates" #>
   <div class="row" intent-id="<#= Model.Name #>">
-    <div class="col">
+    <div class="col" intent-manage>
 <#= ControlWriter.WriteControls() #>
     </div>
   </div>

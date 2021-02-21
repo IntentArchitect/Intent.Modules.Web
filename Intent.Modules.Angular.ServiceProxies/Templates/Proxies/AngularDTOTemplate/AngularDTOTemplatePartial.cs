@@ -34,7 +34,7 @@ namespace Intent.Modules.Angular.ServiceProxies.Templates.Proxies.AngularDTOTemp
         {
             return new TypeScriptFileConfig(
                 overwriteBehaviour: OverwriteBehaviour.Always,
-                fileName: $"{Model.Name}",
+                fileName: $"{Model.Name.ToKebabCase().RemoveSuffix("-dto")}.dto",
                 relativeLocation: $"{Model.GetModule().GetModuleName().ToKebabCase()}/models",
                 className: $"{Model.Name}"
             );

@@ -36,7 +36,7 @@ namespace Intent.Modules.Angular.Layout.Decorators.Controls.Section
             
             #line default
             #line hidden
-            this.Write("\">\r\n    <div class=\"col\">\r\n");
+            this.Write("\">\r\n    <div class=\"col\" intent-manage>\r\n");
             
             #line 9 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Decorators\Controls\Section\SectionTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(ControlWriter.WriteControls()));

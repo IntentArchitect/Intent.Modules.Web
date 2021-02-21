@@ -33,7 +33,8 @@ namespace Intent.Modules.Angular.Templates.Model.FormGroupTemplate
         /// </summary>
         public override string TransformText()
         {
-            this.Write("import { FormGroup, FormControl } from \'@angular/forms\';\r\n\r\nexport class ");
+            this.Write("import { FormGroup, FormControl, FormArray } from \'@angular/forms\';\r\n\r\nexport cla" +
+                    "ss ");
             
             #line 13 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\Model\FormGroupTemplate\FormGroupTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(ClassName));
@@ -71,7 +72,7 @@ namespace Intent.Modules.Angular.Templates.Model.FormGroupTemplate
             this.Write(": ");
             
             #line 17 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\Model\FormGroupTemplate\FormGroupTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture((GetTypeName(control.TypeReference) == "string" ? "\"\"" : "null")));
+            this.Write(this.ToStringHelper.ToStringWithCulture(GetFieldDefaultValue(control)));
             
             #line default
             #line hidden
@@ -92,7 +93,7 @@ namespace Intent.Modules.Angular.Templates.Model.FormGroupTemplate
             this.Write("\r\n  public static create(dto: ");
             
             #line 23 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\Model\FormGroupTemplate\FormGroupTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(GetTypeName(Model.Mapping.Element)));
+            this.Write(this.ToStringHelper.ToStringWithCulture(GetTypeName(Model.Mapping)));
             
             #line default
             #line hidden
@@ -113,7 +114,7 @@ namespace Intent.Modules.Angular.Templates.Model.FormGroupTemplate
             this.Write("({\r\n");
             
             #line 25 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\Model\FormGroupTemplate\FormGroupTemplate.tt"
-      foreach (var field in Model.Fields.Where(x => x.InternalElement.IsMapped)) {
+      foreach (var field in Model.Fields) {
             
             #line default
             #line hidden
@@ -124,10 +125,10 @@ namespace Intent.Modules.Angular.Templates.Model.FormGroupTemplate
             
             #line default
             #line hidden
-            this.Write(": dto.");
+            this.Write(": ");
             
             #line 26 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\Model\FormGroupTemplate\FormGroupTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(GetPath(field.InternalElement.MappedElement.Path)));
+            this.Write(this.ToStringHelper.ToStringWithCulture(field.InternalElement.IsMapped ? GetPathFromMapping("dto.", field) : GetFieldDefaultValue(field)));
             
             #line default
             #line hidden
@@ -187,7 +188,14 @@ namespace Intent.Modules.Angular.Templates.Model.FormGroupTemplate
             
             #line default
             #line hidden
-            this.Write(": new FormControl(initialValue.");
+            this.Write(": new ");
+            
+            #line 39 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\Model\FormGroupTemplate\FormGroupTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(GetFormFieldType(control)));
+            
+            #line default
+            #line hidden
+            this.Write("(initialValue.");
             
             #line 39 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\Model\FormGroupTemplate\FormGroupTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(control.Name.ToCamelCase()));
