@@ -137,6 +137,7 @@
             <targetTypes>
               <type>Form Control</type>
             </targetTypes>
+            <defaultTypeId>cddc4621-68ae-4888-8f4c-118a9cefdb33</defaultTypeId>
             <allowIsNavigable>true</allowIsNavigable>
             <allowIsNullable>true</allowIsNullable>
             <allowIsCollection>false</allowIsCollection>

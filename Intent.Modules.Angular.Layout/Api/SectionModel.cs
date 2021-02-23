@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Intent.Metadata.Models;
 using Intent.RoslynWeaver.Attributes;
+using Intent.Modules.Common;
 
 [assembly: DefaultIntentManaged(Mode.Merge)]
 [assembly: IntentTemplate("Intent.ModuleBuilder.Templates.Api.ApiElementModel", Version = "1.0")]
@@ -39,31 +40,31 @@ namespace Intent.Angular.Layout.Api
 
         [IntentManaged(Mode.Fully)]
         public IList<TableControlModel> TableControls => _element.ChildElements
-            .Where(x => x.SpecializationType == TableControlModel.SpecializationType)
+            .GetElementsOfType(TableControlModel.SpecializationTypeId)
             .Select(x => new TableControlModel(x))
             .ToList();
 
         [IntentManaged(Mode.Fully)]
         public IList<PaginationControlModel> PaginationControls => _element.ChildElements
-            .Where(x => x.SpecializationType == PaginationControlModel.SpecializationType)
+            .GetElementsOfType(PaginationControlModel.SpecializationTypeId)
             .Select(x => new PaginationControlModel(x))
             .ToList();
 
         [IntentManaged(Mode.Fully)]
         public IList<FormModel> Forms => _element.ChildElements
-            .Where(x => x.SpecializationType == FormModel.SpecializationType)
+            .GetElementsOfType(FormModel.SpecializationTypeId)
             .Select(x => new FormModel(x))
             .ToList();
 
         [IntentManaged(Mode.Fully)]
         public IList<ButtonControlModel> ButtonControls => _element.ChildElements
-            .Where(x => x.SpecializationType == ButtonControlModel.SpecializationType)
+            .GetElementsOfType(ButtonControlModel.SpecializationTypeId)
             .Select(x => new ButtonControlModel(x))
             .ToList();
 
         [IntentManaged(Mode.Fully)]
         public IList<SectionModel> Sections => _element.ChildElements
-            .Where(x => x.SpecializationType == SectionModel.SpecializationType)
+            .GetElementsOfType(SectionModel.SpecializationTypeId)
             .Select(x => new SectionModel(x))
             .ToList();
 

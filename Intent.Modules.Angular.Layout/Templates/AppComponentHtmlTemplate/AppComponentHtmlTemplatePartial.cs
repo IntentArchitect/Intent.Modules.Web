@@ -19,7 +19,8 @@ namespace Intent.Modules.Angular.Layout.Templates.AppComponentHtmlTemplate
         [IntentManaged(Mode.Fully)]
         public const string TemplateId = "Intent.Angular.Layout.AppComponentHtmlTemplate";
 
-        public AppComponentHtmlTemplate(IOutputTarget project, object model) : base(TemplateId, project, model)
+        [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
+        public AppComponentHtmlTemplate(IOutputTarget outputTarget, object model = null) : base(TemplateId, outputTarget, model)
         {
         }
 

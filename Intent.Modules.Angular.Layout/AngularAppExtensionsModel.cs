@@ -4,6 +4,7 @@ using System.Linq;
 using Intent.Metadata.Models;
 using Intent.Modelers.WebClient.Api;
 using Intent.RoslynWeaver.Attributes;
+using Intent.Modules.Common;
 
 [assembly: DefaultIntentManaged(Mode.Fully)]
 [assembly: IntentTemplate("Intent.ModuleBuilder.Templates.Api.ApiPackageExtensionModel", Version = "1.0")]
@@ -19,7 +20,7 @@ namespace Intent.Angular.Layout.Api
         }
 
         public IList<FormControlModel> FormControlTypes => UnderlyingPackage.ChildElements
-            .Where(x => x.SpecializationType == FormControlModel.SpecializationType)
+            .GetElementsOfType(FormControlModel.SpecializationTypeId)
             .Select(x => new FormControlModel(x))
             .ToList();
     }

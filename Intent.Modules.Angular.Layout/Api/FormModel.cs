@@ -56,7 +56,7 @@ namespace Intent.Angular.Layout.Api
 
         [IntentManaged(Mode.Fully)]
         public IList<FormFieldModel> FormFields => _element.ChildElements
-            .Where(x => x.SpecializationType == FormFieldModel.SpecializationType)
+            .GetElementsOfType(FormFieldModel.SpecializationTypeId)
             .Select(x => new FormFieldModel(x))
             .ToList();
 

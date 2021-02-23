@@ -21,6 +21,16 @@
       <label for="<#= field.DataModelPath #>"><#= field.Name #></label>
       <input id="<#= field.DataModelPath #>" class="form-control" formControlName="<#= field.DataModelPath #>" type="text" bsDatepicker="" />
     </div>
+<#      } else if (field.TypeReference.Element.Name == "Select") { #>
+    <div class="form-group" intent-id="<#= field.Id #>">
+      <label for="<#= field.DataModelPath #>"><#= field.Name #></label>
+      <ngx-select id="<#= field.DataModelPath #>"[items]="<#= GetSelectItemsModel(field) #>" formControlName="<#= field.DataModelPath #>" optionValueField="<#= GetSelectValueField(field) #>" optionTextField="<#= GetSelectTextField(field) #>" />
+    </div>
+<#      } else if (field.TypeReference.Element.Name == "Custom") { #>
+    <div class="form-group" intent-id="<#= field.Id #>" intent-ignore>
+      <label for="<#= field.DataModelPath #>"><#= field.Name #></label>
+      <input id="<#= field.DataModelPath #>" class="form-control" formControlName="<#= field.DataModelPath #>" type="text" />
+    </div>
 <#      } #>
 <#  } #>
   </form>

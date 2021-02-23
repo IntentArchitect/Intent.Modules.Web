@@ -28,9 +28,10 @@ namespace Intent.Modules.Angular.Layout.Templates.Shared.Header.HeaderComponentH
         [IntentManaged(Mode.Fully)]
         public const string TemplateId = "Intent.Angular.Layout.Shared.Header.HeaderComponentHtmlTemplate";
 
-        public HeaderComponentHtmlTemplate(IOutputTarget project) : base(TemplateId, project, null)
+        [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
+        public HeaderComponentHtmlTemplate(IOutputTarget outputTarget, object model = null) : base(TemplateId, outputTarget, null)
         {
-            project.Application.EventDispatcher.Subscribe<AngularAppRouteCreatedEvent>(@event =>
+            outputTarget.Application.EventDispatcher.Subscribe<AngularAppRouteCreatedEvent>(@event =>
            {
                _mainRoutes.Add(new ModuleRoute(@event.ModuleName, @event.Route));
            });

@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<stereotypeDefinition id="eb93cf3d-18dc-45e4-bc12-52957d4cc79f">
+  <name>Select Control Options</name>
+  <targetMode>that-reference</targetMode>
+  <targetElements>
+    <element id="1db37bef-68b3-4128-8e92-b1c5853dca00">Select</element>
+  </targetElements>
+  <applyMode>always</applyMode>
+  <icon type="UrlImagePath" source="./img/icons/common/StereotypeDef_256x.png" />
+  <displayIcon>false</displayIcon>
+  <displayFunction />
+  <autoAdd>false</autoAdd>
+  <parentFolderId>411a47ef-bf13-45dd-b800-7abf7eb9ac92</parentFolderId>
+  <order>0</order>
+  <packageId>411a47ef-bf13-45dd-b800-7abf7eb9ac92</packageId>
+  <packageName>Intent.Angular.Layout</packageName>
+  <properties>
+    <property id="639ec98d-6898-435f-a804-6f20f3036a38">
+      <name>Options Source</name>
+      <type>string</type>
+      <controlType>select</controlType>
+      <optionsSource>lookup-children</optionsSource>
+      <placeholder />
+      <valueOptions />
+      <lookupTypes>
+        <type>356fbe17-bc63-4e16-b915-feefbc063cbe</type>
+      </lookupTypes>
+      <lookupInternalTargetPropertyId>return element.getParent("Component").id;</lookupInternalTargetPropertyId>
+    </property>
+    <property id="61a6dc22-ed1f-40cb-876d-dc8e5cb31caa">
+      <name>Option Value Field</name>
+      <type>string</type>
+      <controlType>text</controlType>
+      <optionsSource>n/a</optionsSource>
+      <placeholder />
+      <defaultValue>id</defaultValue>
+      <valueOptions />
+      <lookupTypes />
+    </property>
+    <property id="e2fa9a82-8ca8-4e82-9c54-2c8e4790210e">
+      <name>Option Text Field</name>
+      <type>string</type>
+      <controlType>text</controlType>
+      <optionsSource>n/a</optionsSource>
+      <placeholder />
+      <defaultValue>description</defaultValue>
+      <valueOptions />
+      <lookupTypes />
+    </property>
+  </properties>
+</stereotypeDefinition>

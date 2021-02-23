@@ -20,7 +20,8 @@ namespace Intent.Modules.Angular.Layout.Templates.Shared.Footer.FooterComponentT
         [IntentManaged(Mode.Fully)]
         public const string TemplateId = "Intent.Angular.Layout.Shared.Footer.FooterComponentTsTemplate";
 
-        public FooterComponentTsTemplate(IOutputTarget project, object model) : base(TemplateId, project, model)
+        [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
+        public FooterComponentTsTemplate(IOutputTarget outputTarget, object model = null) : base(TemplateId, outputTarget, model)
         {
             AddTemplateDependency(IntentDecoratorsTemplate.TemplateId);
         }

@@ -5,6 +5,7 @@ using Intent.Angular.Api;
 using Intent.Metadata.Models;
 using Intent.RoslynWeaver.Attributes;
 using Intent.Modules.Angular.Api;
+using Intent.Modules.Common;
 
 [assembly: DefaultIntentManaged(Mode.Fully)]
 [assembly: IntentTemplate("Intent.ModuleBuilder.Templates.Api.ApiElementExtensionModel", Version = "1.0")]
@@ -20,32 +21,32 @@ namespace Intent.Angular.Layout.Api
         }
 
         public IList<TableControlModel> TableControls => _element.ChildElements
-            .Where(x => x.SpecializationType == TableControlModel.SpecializationType)
+            .GetElementsOfType(TableControlModel.SpecializationTypeId)
             .Select(x => new TableControlModel(x))
             .ToList();
 
         public IList<PaginationControlModel> PaginationControls => _element.ChildElements
-            .Where(x => x.SpecializationType == PaginationControlModel.SpecializationType)
+            .GetElementsOfType(PaginationControlModel.SpecializationTypeId)
             .Select(x => new PaginationControlModel(x))
             .ToList();
 
         public IList<FormModel> Forms => _element.ChildElements
-            .Where(x => x.SpecializationType == FormModel.SpecializationType)
+            .GetElementsOfType(FormModel.SpecializationTypeId)
             .Select(x => new FormModel(x))
             .ToList();
 
         public IList<ButtonControlModel> ButtonControls => _element.ChildElements
-            .Where(x => x.SpecializationType == ButtonControlModel.SpecializationType)
+            .GetElementsOfType(ButtonControlModel.SpecializationTypeId)
             .Select(x => new ButtonControlModel(x))
             .ToList();
 
         public IList<SectionModel> Sections => _element.ChildElements
-            .Where(x => x.SpecializationType == SectionModel.SpecializationType)
+            .GetElementsOfType(SectionModel.SpecializationTypeId)
             .Select(x => new SectionModel(x))
             .ToList();
 
         public IList<TabsModel> Tabses => _element.ChildElements
-            .Where(x => x.SpecializationType == TabsModel.SpecializationType)
+            .GetElementsOfType(TabsModel.SpecializationTypeId)
             .Select(x => new TabsModel(x))
             .ToList();
 
