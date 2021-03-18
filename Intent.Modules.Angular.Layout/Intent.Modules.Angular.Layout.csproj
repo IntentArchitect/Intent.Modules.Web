@@ -1,10 +1,10 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <Version>3.0.0-beta.6</Version>
   </PropertyGroup>
-
   <ItemGroup>
     <None Remove="Decorators\Controls\ButtonControl\ButtonControlTemplate.tt" />
     <None Remove="Decorators\Controls\Form\FormTemplate.tt" />
@@ -12,7 +12,6 @@
     <None Remove="Decorators\AngularComponentHtml\TableControlTemplate.tt" />
     <None Remove="Decorators\Controls\Section\SectionTemplate.tt" />
   </ItemGroup>
-
   <ItemGroup>
     <Content Include="Decorators\Controls\Section\SectionTemplate.tt">
       <LastGenOutput>SectionTemplate.cs</LastGenOutput>
@@ -35,7 +34,6 @@
       <Generator>TextTemplatingFilePreprocessor</Generator>
     </Content>
   </ItemGroup>
-
   <ItemGroup>
     <None Update="Templates\AppComponentHtmlTemplate\AppComponentHtmlTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
@@ -66,7 +64,6 @@
       <LastGenOutput>HeaderComponentTsTemplate.cs</LastGenOutput>
     </None>
   </ItemGroup>
-
   <ItemGroup>
     <Compile Update="Decorators\Controls\Section\SectionTemplate.cs">
       <DependentUpon>SectionTemplate.tt</DependentUpon>
@@ -139,11 +136,10 @@
       <DependentUpon>TestPerModelTemplate.tt</DependentUpon>
     </Compile>
   </ItemGroup>
-
   <ItemGroup>
-    <PackageReference Include="Intent.Modules.Common" Version="3.0.3" />
-    <PackageReference Include="Intent.Modules.Common.Html" Version="3.0.1" />
-    <PackageReference Include="Intent.Modules.Common.Typescript" Version="3.0.1" />
+    <PackageReference Include="Intent.Modules.Common" Version="3.0.4" />
+    <PackageReference Include="Intent.Modules.Common.Html" Version="3.0.2" />
+    <PackageReference Include="Intent.Modules.Common.Typescript" Version="3.0.3" />
     <PackageReference Include="Intent.Packager" Version="3.0.1">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -152,13 +148,10 @@
     <PackageReference Include="Intent.SoftwareFactory.SDK" Version="3.0.0" />
     <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
   </ItemGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\Intent.Modules.Angular\Intent.Modules.Angular.csproj" />
   </ItemGroup>
-
   <ItemGroup>
     <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
   </ItemGroup>
-
 </Project>
