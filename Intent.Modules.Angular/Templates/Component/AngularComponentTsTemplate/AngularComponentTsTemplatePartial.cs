@@ -28,7 +28,8 @@ namespace Intent.Modules.Angular.Templates.Component.AngularComponentTsTemplate
         [IntentManaged(Mode.Fully)]
         public const string TemplateId = "Intent.Angular.Component.AngularComponentTsTemplate";
 
-        public AngularComponentTsTemplate(IOutputTarget project, ComponentModel model) : base(TemplateId, project, model)
+        [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
+        public AngularComponentTsTemplate(IOutputTarget outputTarget, Intent.Angular.Api.ComponentModel model) : base(TemplateId, outputTarget, model)
         {
             AddTypeSource(ModelTemplate.TemplateId);
             AddTypeSource(FormGroupTemplate.TemplateId);

@@ -38,16 +38,6 @@
       <ProjectRelativeFilePath>ComponentViewModel.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
-      <ProjectId>9cc209e3-eb1e-4008-810e-53692a536107</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Angular/Api/EnumLiteralModel.cs</SolutionRelativeFilePath>
-      <ProjectRelativeFilePath>EnumLiteralModel.cs</ProjectRelativeFilePath>
-    </FileLog>
-    <FileLog>
-      <ProjectId>9cc209e3-eb1e-4008-810e-53692a536107</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Angular/Api/EnumModel.cs</SolutionRelativeFilePath>
-      <ProjectRelativeFilePath>EnumModel.cs</ProjectRelativeFilePath>
-    </FileLog>
-    <FileLog>
       <ProjectId>c9057d93-2617-44ca-9bd6-8ee166b881d1</ProjectId>
       <SolutionRelativeFilePath>../Intent.Modules.Angular/Api/Extensions/AngularServiceModelExtensions.cs</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>AngularServiceModelExtensions.cs</ProjectRelativeFilePath>
@@ -101,11 +91,6 @@
       <ProjectId>9cc209e3-eb1e-4008-810e-53692a536107</ProjectId>
       <SolutionRelativeFilePath>../Intent.Modules.Angular/Api/RoutingModel.cs</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>RoutingModel.cs</ProjectRelativeFilePath>
-    </FileLog>
-    <FileLog>
-      <ProjectId>9cc209e3-eb1e-4008-810e-53692a536107</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Angular/Api/TypeDefinitionModel.cs</SolutionRelativeFilePath>
-      <ProjectRelativeFilePath>TypeDefinitionModel.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>b79f286d-1129-41f9-bb0f-d266b180d3c2</ProjectId>

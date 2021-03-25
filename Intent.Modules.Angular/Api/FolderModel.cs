@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Intent.Metadata.Models;
 using Intent.RoslynWeaver.Attributes;
+using Intent.Modules.Common;
 
 [assembly: DefaultIntentManaged(Mode.Merge)]
 [assembly: IntentTemplate("Intent.ModuleBuilder.Templates.Api.ApiElementModel", Version = "1.0")]
@@ -39,31 +40,19 @@ namespace Intent.Angular.Api
 
         [IntentManaged(Mode.Fully)]
         public IList<ModuleModel> Modules => _element.ChildElements
-            .Where(x => x.SpecializationType == ModuleModel.SpecializationType)
+            .GetElementsOfType(ModuleModel.SpecializationTypeId)
             .Select(x => new ModuleModel(x))
             .ToList();
 
         [IntentManaged(Mode.Fully)]
         public IList<ModelDefinitionModel> ModelDefinitions => _element.ChildElements
-            .Where(x => x.SpecializationType == ModelDefinitionModel.SpecializationType)
+            .GetElementsOfType(ModelDefinitionModel.SpecializationTypeId)
             .Select(x => new ModelDefinitionModel(x))
             .ToList();
 
         [IntentManaged(Mode.Fully)]
-        public IList<TypeDefinitionModel> TypeDefinitions => _element.ChildElements
-            .Where(x => x.SpecializationType == TypeDefinitionModel.SpecializationType)
-            .Select(x => new TypeDefinitionModel(x))
-            .ToList();
-
-        [IntentManaged(Mode.Fully)]
-        public IList<EnumModel> Enums => _element.ChildElements
-            .Where(x => x.SpecializationType == EnumModel.SpecializationType)
-            .Select(x => new EnumModel(x))
-            .ToList();
-
-        [IntentManaged(Mode.Fully)]
         public IList<FolderModel> Folders => _element.ChildElements
-            .Where(x => x.SpecializationType == FolderModel.SpecializationType)
+            .GetElementsOfType(FolderModel.SpecializationTypeId)
             .Select(x => new FolderModel(x))
             .ToList();
 
@@ -96,9 +85,11 @@ namespace Intent.Angular.Api
 
         [IntentManaged(Mode.Fully)]
         public IList<AngularServiceModel> Services => _element.ChildElements
-            .Where(x => x.SpecializationType == AngularServiceModel.SpecializationType)
+            .GetElementsOfType(AngularServiceModel.SpecializationTypeId)
             .Select(x => new AngularServiceModel(x))
             .ToList();
         public const string SpecializationTypeId = "0b1c1dcb-8c31-4294-883c-a130345730d2";
+
+        public string Comment => _element.Comment;
     }
 }

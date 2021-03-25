@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Intent.Metadata.Models;
 using Intent.RoslynWeaver.Attributes;
+using Intent.Modules.Common;
 
 [assembly: DefaultIntentManaged(Mode.Fully)]
 [assembly: IntentTemplate("Intent.ModuleBuilder.Templates.Api.ApiElementModel", Version = "1.0")]
@@ -38,7 +39,7 @@ namespace Intent.Angular.Api
         public ModuleModel Module => new ModuleModel(InternalElement.ParentElement);
 
         public IList<RouteModel> Routes => _element.ChildElements
-            .Where(x => x.SpecializationType == RouteModel.SpecializationType)
+            .GetElementsOfType(RouteModel.SpecializationTypeId)
             .Select(x => new RouteModel(x))
             .ToList();
 
@@ -66,8 +67,10 @@ namespace Intent.Angular.Api
         }
 
         public IList<RedirectModel> Redirects => _element.ChildElements
-            .Where(x => x.SpecializationType == RedirectModel.SpecializationType)
+            .GetElementsOfType(RedirectModel.SpecializationTypeId)
             .Select(x => new RedirectModel(x))
             .ToList();
+
+        public string Comment => _element.Comment;
     }
 }

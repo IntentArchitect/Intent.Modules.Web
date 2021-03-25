@@ -67,25 +67,25 @@ namespace Intent.Angular.Api
 
         [IntentManaged(Mode.Fully)]
         public IList<ComponentCommandModel> Commands => _element.ChildElements
-            .Where(x => x.SpecializationType == ComponentCommandModel.SpecializationType)
+            .GetElementsOfType(ComponentCommandModel.SpecializationTypeId)
             .Select(x => new ComponentCommandModel(x))
             .ToList();
 
         [IntentManaged(Mode.Fully)]
         public IList<ComponentModelModel> Models => _element.ChildElements
-            .Where(x => x.SpecializationType == ComponentModelModel.SpecializationType)
+            .GetElementsOfType(ComponentModelModel.SpecializationTypeId)
             .Select(x => new ComponentModelModel(x))
             .ToList();
 
         [IntentManaged(Mode.Fully)]
         public IList<ModelDefinitionModel> ModelDefinitions => _element.ChildElements
-            .Where(x => x.SpecializationType == ModelDefinitionModel.SpecializationType)
+            .GetElementsOfType(ModelDefinitionModel.SpecializationTypeId)
             .Select(x => new ModelDefinitionModel(x))
             .ToList();
 
         [IntentManaged(Mode.Fully)]
         public ComponentViewModel View => _element.ChildElements
-            .Where(x => x.SpecializationType == ComponentViewModel.SpecializationType)
+            .GetElementsOfType(ComponentViewModel.SpecializationTypeId)
             .Select(x => new ComponentViewModel(x))
             .SingleOrDefault();
         public const string SpecializationTypeId = "b1c481e1-e91e-4c29-9817-00ab9cad4b6b";

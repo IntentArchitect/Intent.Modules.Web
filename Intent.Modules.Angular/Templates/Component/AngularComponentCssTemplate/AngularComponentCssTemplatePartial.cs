@@ -17,12 +17,13 @@ using Intent.Angular.Api;
 namespace Intent.Modules.Angular.Templates.Component.AngularComponentCssTemplate
 {
     [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
-    partial class AngularComponentCssTemplate : IntentTemplateBase<Intent.Angular.Api.ComponentModel>
+    partial class AngularComponentCssTemplate : IntentTemplateBase<ComponentModel>
     {
         [IntentManaged(Mode.Fully)]
         public const string TemplateId = "Intent.Angular.Component.AngularComponentCssTemplate";
 
-        public AngularComponentCssTemplate(IOutputTarget project, ComponentModel model) : base(TemplateId, project, model)
+        [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
+        public AngularComponentCssTemplate(IOutputTarget outputTarget, ComponentModel model) : base(TemplateId, outputTarget, model)
         {
         }
 

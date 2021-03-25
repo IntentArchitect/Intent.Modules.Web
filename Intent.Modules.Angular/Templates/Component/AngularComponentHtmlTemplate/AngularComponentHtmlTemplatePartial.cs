@@ -13,7 +13,7 @@ using Intent.Modules.Common.Html.Templates;
 using Intent.Angular.Api;
 
 [assembly: DefaultIntentManaged(Mode.Merge)]
-[assembly: IntentTemplate("ModuleBuilder.Html.Templates.HtmlFileTemplatePartial", Version = "1.0")]
+[assembly: IntentTemplate("Intent.ModuleBuilder.Html.Templates.HtmlFileTemplatePartial", Version = "1.0")]
 
 namespace Intent.Modules.Angular.Templates.Component.AngularComponentHtmlTemplate
 {
@@ -29,7 +29,8 @@ namespace Intent.Modules.Angular.Templates.Component.AngularComponentHtmlTemplat
         [IntentManaged(Mode.Fully)]
         public const string TemplateId = "Intent.Angular.Component.AngularComponentHtmlTemplate";
 
-        public AngularComponentHtmlTemplate(IOutputTarget project, ComponentModel model) : base(TemplateId, project, model)
+        [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
+        public AngularComponentHtmlTemplate(IOutputTarget outputTarget, Intent.Angular.Api.ComponentModel model) : base(TemplateId, outputTarget, model)
         {
         }
 

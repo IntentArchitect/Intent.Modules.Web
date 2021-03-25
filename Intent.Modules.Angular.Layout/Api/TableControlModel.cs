@@ -113,5 +113,7 @@ namespace Intent.Angular.Layout.Api
                     .Where(x => x.SpecializationType == TableColumnModel.SpecializationType)
                     .Select(x => new TableColumnModel(x))
                     .ToList();
+
+        public string Comment => _element.Comment;
     }
 }

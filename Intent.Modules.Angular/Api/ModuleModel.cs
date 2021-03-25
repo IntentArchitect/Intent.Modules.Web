@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Intent.Metadata.Models;
 using Intent.RoslynWeaver.Attributes;
+using Intent.Modules.Common;
 
 [assembly: IntentTemplate("Intent.ModuleBuilder.Templates.Api.ApiElementModel", Version = "1.0")]
 [assembly: DefaultIntentManaged(Mode.Merge)]
@@ -15,6 +16,7 @@ namespace Intent.Angular.Api
         protected readonly IElement _element;
         public const string SpecializationType = "Module";
 
+        [IntentManaged(Mode.Ignore)]
         public ModuleModel(IElement element)
         {
             _element = element;
@@ -32,7 +34,7 @@ namespace Intent.Angular.Api
 
         [IntentManaged(Mode.Fully)]
         public IList<ModelDefinitionModel> ModelDefinitions => _element.ChildElements
-            .Where(x => x.SpecializationType == ModelDefinitionModel.SpecializationType)
+            .GetElementsOfType(ModelDefinitionModel.SpecializationTypeId)
             .Select(x => new ModelDefinitionModel(x))
             .ToList();
 
@@ -40,7 +42,7 @@ namespace Intent.Angular.Api
 
         [IntentManaged(Mode.Fully)]
         public IList<ComponentModel> Components => _element.ChildElements
-            .Where(x => x.SpecializationType == ComponentModel.SpecializationType)
+            .GetElementsOfType(ComponentModel.SpecializationTypeId)
             .Select(x => new ComponentModel(x))
             .ToList();
 
@@ -87,7 +89,7 @@ namespace Intent.Angular.Api
 
         [IntentManaged(Mode.Fully)]
         public IList<FormGroupDefinitionModel> FormGroups => _element.ChildElements
-            .Where(x => x.SpecializationType == FormGroupDefinitionModel.SpecializationType)
+            .GetElementsOfType(FormGroupDefinitionModel.SpecializationTypeId)
             .Select(x => new FormGroupDefinitionModel(x))
             .ToList();
         public const string SpecializationTypeId = "cac14331-198a-4f9a-bbb9-171eb0bd4efe";

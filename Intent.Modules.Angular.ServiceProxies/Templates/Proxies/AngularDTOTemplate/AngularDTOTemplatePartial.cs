@@ -22,7 +22,8 @@ namespace Intent.Modules.Angular.ServiceProxies.Templates.Proxies.AngularDTOTemp
         [IntentManaged(Mode.Fully)]
         public const string TemplateId = "Intent.Angular.ServiceProxies.Proxies.AngularDTOTemplate";
 
-        public AngularDTOTemplate(IOutputTarget project, ServiceProxyDTOModel model) : base(TemplateId, project, model)
+        [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
+        public AngularDTOTemplate(IOutputTarget outputTarget, Intent.Modelers.Types.ServiceProxies.Api.ServiceProxyDTOModel model) : base(TemplateId, outputTarget, model)
         {
             AddTypeSource(TemplateId);
         }

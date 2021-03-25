@@ -17,7 +17,8 @@ namespace Intent.Modules.Angular.Templates.Shared.IntentDecoratorsTemplate
         [IntentManaged(Mode.Fully)]
         public const string TemplateId = "Intent.Angular.Shared.IntentDecoratorsTemplate";
 
-        public IntentDecoratorsTemplate(IOutputTarget project, object model) : base(TemplateId, project, model)
+        [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
+        public IntentDecoratorsTemplate(IOutputTarget outputTarget, object model = null) : base(TemplateId, outputTarget, model)
         {
         }
 

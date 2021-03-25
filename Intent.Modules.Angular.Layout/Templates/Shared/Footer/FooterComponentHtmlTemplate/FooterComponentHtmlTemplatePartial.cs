@@ -10,7 +10,7 @@ using Intent.Templates;
 using Intent.Modules.Common.Html.Templates;
 
 [assembly: DefaultIntentManaged(Mode.Merge)]
-[assembly: IntentTemplate("ModuleBuilder.Html.Templates.HtmlFileTemplatePartial", Version = "1.0")]
+[assembly: IntentTemplate("Intent.ModuleBuilder.Html.Templates.HtmlFileTemplatePartial", Version = "1.0")]
 
 namespace Intent.Modules.Angular.Layout.Templates.Shared.Footer.FooterComponentHtmlTemplate
 {

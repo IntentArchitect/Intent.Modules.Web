@@ -23,7 +23,8 @@ namespace Intent.Modules.Angular.Templates.Model.FormGroupTemplate
         [IntentManaged(Mode.Fully)]
         public const string TemplateId = "Intent.Angular.Model.FormGroupTemplate";
 
-        public FormGroupTemplate(IOutputTarget project, FormGroupDefinitionModel model) : base(TemplateId, project, model)
+        [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
+        public FormGroupTemplate(IOutputTarget outputTarget, Intent.Angular.Api.FormGroupDefinitionModel model) : base(TemplateId, outputTarget, model)
         {
             AddTypeSource(FormGroupTemplate.TemplateId);
             // GCB - an interesting dependency predicament. Perhaps there should be a mechanism where a template can declare itself

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.IO;
 using System.Linq;
+using Intent.Angular.Api;
 using Intent.Angular.ServiceProxies.Api;
 using Intent.Engine;
 using Intent.Metadata.Models;
@@ -19,8 +20,10 @@ using Intent.Templates;
 using Intent.Utils;
 using Intent.Modules.Common.TypeScript.Templates;
 using Intent.Modules.Angular.Templates;
+using EnumModel = Intent.Modules.Common.Types.Api.EnumModel;
 using ProxyOperationModel = Intent.Modelers.Types.ServiceProxies.Api.OperationModel;
 using OperationModel = Intent.Modelers.Services.Api.OperationModel;
+using TypeDefinitionModel = Intent.Modules.Common.Types.Api.TypeDefinitionModel;
 
 [assembly: DefaultIntentManaged(Mode.Merge)]
 [assembly: IntentTemplate("Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial", Version = "1.0")]
@@ -33,7 +36,8 @@ namespace Intent.Modules.Angular.ServiceProxies.Templates.Proxies.AngularService
         [IntentManaged(Mode.Fully)]
         public const string TemplateId = "Intent.Angular.ServiceProxies.Proxies.AngularServiceProxyTemplate";
 
-        public AngularServiceProxyTemplate(IOutputTarget project, ServiceProxyModel model) : base(TemplateId, project, model)
+        [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
+        public AngularServiceProxyTemplate(IOutputTarget outputTarget, Intent.Modelers.Types.ServiceProxies.Api.ServiceProxyModel model) : base(TemplateId, outputTarget, model)
         {
             AddTypeSource(AngularDTOTemplate.AngularDTOTemplate.TemplateId);
 
@@ -91,7 +95,7 @@ namespace Intent.Modules.Angular.ServiceProxies.Templates.Proxies.AngularService
             }
 
             var path = GetPath(operation);
-            var urlParameters = mappedOperation.Parameters.Where(x => x.Type.Element.SpecializationType != DTOModel.SpecializationType &&
+            var urlParameters = mappedOperation.Parameters.Where(x => !IsComplexObject(x.Type.Element) &&
                                                                       !path.Contains($"${{{x.Name.ToCamelCase()}}}")).ToList();
             if (!urlParameters.Any())
             {
@@ -102,6 +106,12 @@ namespace Intent.Modules.Angular.ServiceProxies.Templates.Proxies.AngularService
         url = `${{url}}?{string.Join("&", urlParameters.Select((x, index) => $"{x.Name.ToCamelCase()}=${{{operation.Parameters[index].Name.ToCamelCase()}}}"))}`;";
         }
 
+        private bool IsComplexObject(ICanBeReferencedType element)
+        {
+            return element.SpecializationTypeId != TypeDefinitionModel.SpecializationTypeId &&
+                   element.SpecializationTypeId != EnumModel.SpecializationTypeId;
+        }
+
         private string GetDataServiceCall(ProxyOperationModel operation)
         {
             switch (GetHttpVerb(operation))
@@ -109,9 +119,9 @@ namespace Intent.Modules.Angular.ServiceProxies.Templates.Proxies.AngularService
                 case HttpVerb.GET:
                     return $"get(url)";
                 case HttpVerb.POST:
-                    return $"post(url, {operation.Parameters.FirstOrDefault(x => x.TypeReference.Element.SpecializationType == DTOModel.SpecializationType)?.Name.ToCamelCase() ?? "null"})";
+                    return $"post(url, {operation.Parameters.FirstOrDefault(x => IsComplexObject(x.TypeReference.Element))?.Name.ToCamelCase() ?? "null"})";
                 case HttpVerb.PUT:
-                    return $"put(url, {operation.Parameters.FirstOrDefault(x => x.TypeReference.Element.SpecializationType == DTOModel.SpecializationType)?.Name.ToCamelCase() ?? "null"})";
+                    return $"put(url, {operation.Parameters.FirstOrDefault(x => IsComplexObject(x.TypeReference.Element))?.Name.ToCamelCase() ?? "null"})";
                 case HttpVerb.DELETE:
                     return $"delete(url)";
                 default:
@@ -138,7 +148,7 @@ namespace Intent.Modules.Angular.ServiceProxies.Templates.Proxies.AngularService
         private string GetPath(ProxyOperationModel operation)
         {
             var servicePath = Model.MappedService.GetHttpServiceSettings()?.Route()?.ToLower()
-                .Replace("[controller]", Model.MappedService.Name.ToLower()) ?? $"api/{Model.MappedService.Name.ToLower()}";
+                .Replace("[controller]", Model.MappedService.Name.ToLower().RemoveSuffix("controller", "service")) ?? $"api/{Model.MappedService.Name.ToLower().RemoveSuffix("controller", "service")}";
             var operationPath = operation.MappedOperation.GetHttpSettings()?.Route()?.ToLower()
                 .Replace("[action]", operation.MappedOperation.Name.ToLower());
             if (!string.IsNullOrWhiteSpace(operationPath))

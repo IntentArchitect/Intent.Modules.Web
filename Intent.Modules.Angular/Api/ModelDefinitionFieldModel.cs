@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Intent.Metadata.Models;
 using Intent.RoslynWeaver.Attributes;
+using Intent.Modules.Common;
 
 [assembly: DefaultIntentManaged(Mode.Merge)]
 [assembly: IntentTemplate("Intent.ModuleBuilder.Templates.Api.ApiElementModel", Version = "1.0")]
@@ -67,5 +68,7 @@ namespace Intent.Angular.Api
         [IntentManaged(Mode.Fully)]
         public ITypeReference TypeReference => _element.TypeReference;
         public const string SpecializationTypeId = "0dfc489c-7456-4a3d-a28b-50a633631a48";
+
+        public string Comment => _element.Comment;
     }
 }

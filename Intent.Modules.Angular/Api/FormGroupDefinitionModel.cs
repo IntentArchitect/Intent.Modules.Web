@@ -69,7 +69,7 @@ namespace Intent.Angular.Api
 
         [IntentManaged(Mode.Fully)]
         public IList<FormGroupControlModel> Fields => _element.ChildElements
-            .Where(x => x.SpecializationType == FormGroupControlModel.SpecializationType)
+            .GetElementsOfType(FormGroupControlModel.SpecializationTypeId)
             .Select(x => new FormGroupControlModel(x))
             .ToList();
 
@@ -79,5 +79,7 @@ namespace Intent.Angular.Api
         [IntentManaged(Mode.Fully)]
         public IElementMapping Mapping => _element.MappedElement;
         public const string SpecializationTypeId = "71142b08-4d10-405b-a5bd-0620d329a992";
+
+        public string Comment => _element.Comment;
     }
 }

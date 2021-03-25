@@ -99,5 +99,7 @@ namespace Intent.Angular.Layout.Api
         public IElementMapping Mapping => _element.MappedElement;
         public const string SpecializationTypeId = "3faee16c-8605-4bb4-8566-06a555c929a3";
 
+        public string Comment => _element.Comment;
+
     }
 }

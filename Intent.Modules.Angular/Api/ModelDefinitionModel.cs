@@ -69,7 +69,7 @@ namespace Intent.Angular.Api
 
         [IntentManaged(Mode.Fully)]
         public IList<ModelDefinitionFieldModel> Fields => _element.ChildElements
-            .Where(x => x.SpecializationType == ModelDefinitionFieldModel.SpecializationType)
+            .GetElementsOfType(ModelDefinitionFieldModel.SpecializationTypeId)
             .Select(x => new ModelDefinitionFieldModel(x))
             .ToList();
 
@@ -82,5 +82,7 @@ namespace Intent.Angular.Api
         [IntentManaged(Mode.Fully)]
         public IEnumerable<string> GenericTypes => _element.GenericTypes.Select(x => x.Name);
         public const string SpecializationTypeId = "bd3941b5-e3b3-4a40-96e6-b9c87cea0101";
+
+        public string Comment => _element.Comment;
     }
 }

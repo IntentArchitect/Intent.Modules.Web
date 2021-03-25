@@ -6,6 +6,7 @@ using Intent.Metadata.Models;
 using Intent.Modelers.Types.ServiceProxies.Api;
 using Intent.RoslynWeaver.Attributes;
 using Intent.Modules.Angular.Api;
+using Intent.Modules.Common;
 
 [assembly: DefaultIntentManaged(Mode.Fully)]
 [assembly: IntentTemplate("Intent.ModuleBuilder.Templates.Api.ApiElementExtensionModel", Version = "1.0")]
@@ -21,7 +22,7 @@ namespace Intent.Angular.ServiceProxies.Api
         }
 
         public IList<ServiceProxyModel> ServiceProxies => _element.ChildElements
-            .Where(x => x.SpecializationType == ServiceProxyModel.SpecializationType)
+            .GetElementsOfType(ServiceProxyModel.SpecializationTypeId)
             .Select(x => new ServiceProxyModel(x))
             .ToList();
 

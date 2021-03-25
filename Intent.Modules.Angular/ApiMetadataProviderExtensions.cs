@@ -25,13 +25,6 @@ namespace Intent.Angular.Api
                 .ToList();
         }
 
-        public static IList<EnumModel> GetEnumModels(this IDesigner designer)
-        {
-            return designer.GetElementsOfType(EnumModel.SpecializationTypeId)
-                .Select(x => new EnumModel(x))
-                .ToList();
-        }
-
         public static IList<FolderModel> GetFolderModels(this IDesigner designer)
         {
             return designer.GetElementsOfType(FolderModel.SpecializationTypeId)
@@ -57,13 +50,6 @@ namespace Intent.Angular.Api
         {
             return designer.GetElementsOfType(ModuleModel.SpecializationTypeId)
                 .Select(x => new ModuleModel(x))
-                .ToList();
-        }
-
-        public static IList<TypeDefinitionModel> GetTypeDefinitionModels(this IDesigner designer)
-        {
-            return designer.GetElementsOfType(TypeDefinitionModel.SpecializationTypeId)
-                .Select(x => new TypeDefinitionModel(x))
                 .ToList();
         }
 

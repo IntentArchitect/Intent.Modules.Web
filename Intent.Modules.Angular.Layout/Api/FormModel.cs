@@ -92,5 +92,7 @@ namespace Intent.Angular.Layout.Api
             return true;
         }
         public const string SpecializationTypeId = "8aee9b69-d02d-4ca8-b28a-6585508bd033";
+
+        public string Comment => _element.Comment;
     }
 }

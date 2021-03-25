@@ -31,10 +31,11 @@ namespace Intent.Modules.Angular.Templates.App.AppModuleTemplate
         [IntentManaged(Mode.Fully)]
         public const string TemplateId = "Intent.Angular.App.AppModuleTemplate";
 
-        public AppModuleTemplate(IOutputTarget project, AngularWebAppModel model) : base(TemplateId, project, model)
+        [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
+        public AppModuleTemplate(IOutputTarget outputTarget, Intent.Angular.Api.AngularWebAppModel model) : base(TemplateId, outputTarget, model)
         {
             AddTemplateDependency(IntentDecoratorsTemplate.TemplateId);
-            project.Application.EventDispatcher.Subscribe(AngularComponentCreatedEvent.EventId, @event =>
+            ExecutionContext.EventDispatcher.Subscribe(AngularComponentCreatedEvent.EventId, @event =>
             {
                 if (@event.GetValue(AngularComponentCreatedEvent.ModuleId) != ClassName)
                 {
@@ -44,18 +45,18 @@ namespace Intent.Modules.Angular.Templates.App.AppModuleTemplate
                 _components.Add(GetTypeName(@event.GetValue(AngularComponentCreatedEvent.ModelId)));
             });
 
-            project.Application.EventDispatcher.Subscribe<AngularServiceProxyCreatedEvent>(@event =>
-           {
-               if (@event.ModuleId != ClassName)
-               {
-                   return;
-               }
+            ExecutionContext.EventDispatcher.Subscribe<AngularServiceProxyCreatedEvent>(@event =>
+            {
+                if (@event.ModuleId != ClassName)
+                {
+                    return;
+                }
 
-               var template = GetTypeName(@event.ModelId);
-               _providers.Add(template);
-           });
+                var template = GetTypeName(@event.ModelId);
+                _providers.Add(template);
+            });
 
-            project.Application.EventDispatcher.Subscribe(AngularImportDependencyRequiredEvent.EventId, @event =>
+            ExecutionContext.EventDispatcher.Subscribe(AngularImportDependencyRequiredEvent.EventId, @event =>
             {
                 if (@event.GetValue(AngularImportDependencyRequiredEvent.ModuleId) != ClassName)
                 {

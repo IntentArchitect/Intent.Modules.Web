@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Intent.Metadata.Models;
 using Intent.RoslynWeaver.Attributes;
+using Intent.Modules.Common;
 
 [assembly: DefaultIntentManaged(Mode.Merge)]
 [assembly: IntentTemplate("Intent.ModuleBuilder.Templates.Api.ApiElementModel", Version = "1.0")]
@@ -72,9 +73,11 @@ namespace Intent.Angular.Api
 
         [IntentManaged(Mode.Fully)]
         public IList<CommandParameterModel> Parameters => _element.ChildElements
-            .Where(x => x.SpecializationType == CommandParameterModel.SpecializationType)
+            .GetElementsOfType(CommandParameterModel.SpecializationTypeId)
             .Select(x => new CommandParameterModel(x))
             .ToList();
         public const string SpecializationTypeId = "d6739ffc-30e6-4170-a105-bf28e69aa578";
+
+        public string Comment => _element.Comment;
     }
 }

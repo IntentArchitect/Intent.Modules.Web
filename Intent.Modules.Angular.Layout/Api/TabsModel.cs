@@ -57,5 +57,7 @@ namespace Intent.Angular.Layout.Api
         {
             return (_element != null ? _element.GetHashCode() : 0);
         }
+
+        public string Comment => _element.Comment;
     }
 }

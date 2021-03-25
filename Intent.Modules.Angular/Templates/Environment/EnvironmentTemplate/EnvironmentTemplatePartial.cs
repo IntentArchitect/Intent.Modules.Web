@@ -25,9 +25,10 @@ namespace Intent.Modules.Angular.Templates.Environment.EnvironmentTemplate
         [IntentManaged(Mode.Fully)]
         public const string TemplateId = "Intent.Angular.Environment.EnvironmentTemplate";
 
-        public EnvironmentTemplate(IOutputTarget project, object model) : base(TemplateId, project, model)
+        [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
+        public EnvironmentTemplate(IOutputTarget outputTarget, object model = null) : base(TemplateId, outputTarget, model)
         {
-            project.Application.EventDispatcher.Subscribe(AngularConfigVariableRequiredEvent.EventId, HandleConfigVariableRequiredEvent);
+            ExecutionContext.EventDispatcher.Subscribe(AngularConfigVariableRequiredEvent.EventId, HandleConfigVariableRequiredEvent);
         }
 
         private void HandleConfigVariableRequiredEvent(ApplicationEvent @event)
