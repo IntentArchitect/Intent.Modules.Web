@@ -38,7 +38,14 @@ namespace Intent.Modules.Angular.Templates.Module.AngularModuleTemplate
             
             #line default
             #line hidden
-            this.Write("\r\n\r\n@IntentMerge()\r\n@NgModule({\r\n  declarations: [");
+            this.Write("\r\n\r\n");
+            
+            #line 11 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\Module\AngularModuleTemplate\AngularModuleTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.IntentMergeDecorator()));
+            
+            #line default
+            #line hidden
+            this.Write("\r\n@NgModule({\r\n  declarations: [");
             
             #line 13 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\Module\AngularModuleTemplate\AngularModuleTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(GetComponents()));
@@ -66,22 +73,16 @@ namespace Intent.Modules.Angular.Templates.Module.AngularModuleTemplate
             
             #line default
             #line hidden
-            this.Write("  imports: [\r\n    CommonModule,\r\n    ");
+            this.Write("  imports: [\r\n    CommonModule,");
             
-            #line 19 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\Module\AngularModuleTemplate\AngularModuleTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(RoutingModuleClassName));
-            
-            #line default
-            #line hidden
-            
-            #line 19 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\Module\AngularModuleTemplate\AngularModuleTemplate.tt"
+            #line 18 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\Module\AngularModuleTemplate\AngularModuleTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(GetAngularImports()));
             
             #line default
             #line hidden
             this.Write("\r\n  ]\r\n})\r\nexport class ");
             
-            #line 22 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\Module\AngularModuleTemplate\AngularModuleTemplate.tt"
+            #line 21 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\Module\AngularModuleTemplate\AngularModuleTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(ClassName));
             
             #line default

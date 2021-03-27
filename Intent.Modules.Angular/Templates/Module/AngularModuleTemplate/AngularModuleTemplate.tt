@@ -8,15 +8,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';<#= GetImports() #>
 
-@IntentMerge()
+<#= this.IntentMergeDecorator() #>
 @NgModule({
   declarations: [<#= GetComponents() #>],
 <#  if (HasProviders()) { #>
   providers: [<#= GetProviders() #>],
 <#  } #>
   imports: [
-    CommonModule,
-    <#= RoutingModuleClassName #><#= GetAngularImports() #>
+    CommonModule,<#= GetAngularImports() #>
   ]
 })
 export class <#= ClassName #> { }

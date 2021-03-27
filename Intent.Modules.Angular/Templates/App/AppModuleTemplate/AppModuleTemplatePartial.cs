@@ -9,7 +9,6 @@ using Intent.Templates;
 using Intent.Metadata.Models;
 using System;
 using System.Collections.Generic;
-using Intent.Modules.Angular.Templates.Shared.IntentDecoratorsTemplate;
 using Intent.Modules.Angular.Api;
 using Intent.Modules.Common.TypeScript.Templates;
 using Intent.Modelers.WebClient.Api;
@@ -34,7 +33,6 @@ namespace Intent.Modules.Angular.Templates.App.AppModuleTemplate
         [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
         public AppModuleTemplate(IOutputTarget outputTarget, Intent.Angular.Api.AngularWebAppModel model) : base(TemplateId, outputTarget, model)
         {
-            AddTemplateDependency(IntentDecoratorsTemplate.TemplateId);
             ExecutionContext.EventDispatcher.Subscribe(AngularComponentCreatedEvent.EventId, @event =>
             {
                 if (@event.GetValue(AngularComponentCreatedEvent.ModuleId) != ClassName)

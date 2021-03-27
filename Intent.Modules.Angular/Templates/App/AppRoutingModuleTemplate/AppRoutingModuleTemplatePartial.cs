@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using System.Linq;
 using Intent.Engine;
-using Intent.Modules.Angular.Api;
 using Intent.Modules.Angular.Templates.Module.AngularModuleTemplate;
 using Intent.Modules.Common;
 using Intent.Modules.Common.Templates;
@@ -9,9 +8,7 @@ using Intent.RoslynWeaver.Attributes;
 using Intent.Templates;
 using Intent.Metadata.Models;
 using System;
-using Intent.Modules.Angular.Templates.Shared.IntentDecoratorsTemplate;
 using Intent.Modules.Common.TypeScript.Templates;
-using Intent.Modelers.WebClient.Api;
 using Intent.Angular.Api;
 
 [assembly: DefaultIntentManaged(Mode.Merge)]
@@ -28,7 +25,6 @@ namespace Intent.Modules.Angular.Templates.App.AppRoutingModuleTemplate
         [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
         public AppRoutingModuleTemplate(IOutputTarget outputTarget, Intent.Angular.Api.AngularWebAppModel model) : base(TemplateId, outputTarget, model)
         {
-            AddTemplateDependency(IntentDecoratorsTemplate.TemplateId);
         }
 
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]

@@ -6,7 +6,6 @@ using Intent.Engine;
 using Intent.Metadata.Models;
 using Intent.Modules.Angular.Api;
 using Intent.Modules.Angular.Templates.Component.AngularComponentTsTemplate;
-using Intent.Modules.Angular.Templates.Shared.IntentDecoratorsTemplate;
 using Intent.Modules.Common;
 using Intent.Modules.Common.Templates;
 using Intent.RoslynWeaver.Attributes;
@@ -32,7 +31,6 @@ namespace Intent.Modules.Angular.Templates.Module.AngularModuleTemplate
         [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
         public AngularModuleTemplate(IOutputTarget outputTarget, Intent.Angular.Api.ModuleModel model) : base(TemplateId, outputTarget, model)
         {
-            AddTemplateDependency(IntentDecoratorsTemplate.TemplateId);
             ExecutionContext.EventDispatcher.Subscribe(AngularComponentCreatedEvent.EventId, @event =>
                 {
                     if (@event.GetValue(AngularComponentCreatedEvent.ModuleId) != Model.Id)
@@ -67,8 +65,6 @@ namespace Intent.Modules.Angular.Templates.Module.AngularModuleTemplate
         }
 
         public string ModuleName => Model.GetModuleName();
-
-        public string RoutingModuleClassName => Model.Routing != null ? GetTypeName(AngularRoutingModuleTemplate.AngularRoutingModuleTemplate.TemplateId, Model.Routing) : "";
 
         public string GetImports()
         {
@@ -109,11 +105,17 @@ namespace Intent.Modules.Angular.Templates.Module.AngularModuleTemplate
 
         public string GetAngularImports()
         {
+            if (Model.Routing != null)
+            {
+                _angularImports.Add(GetTypeName(AngularRoutingModuleTemplate.AngularRoutingModuleTemplate.TemplateId, Model.Routing));
+            }
             if (!_angularImports.Any())
             {
                 return "";
             }
-            return $",{System.Environment.NewLine}    " + string.Join($",    {System.Environment.NewLine}    ", _angularImports);
+            return @"
+    " + string.Join($@",
+    ", _angularImports);
         }
 
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]

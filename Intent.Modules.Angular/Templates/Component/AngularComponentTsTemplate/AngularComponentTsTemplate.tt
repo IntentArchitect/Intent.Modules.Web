@@ -19,14 +19,15 @@ export class <#= ClassName #> implements OnInit {
   <#= model.Name #>: <#= GetTypeName(model.TypeReference)#>;
 <#  }#>
 
+  //@IntentCanAdd()
   constructor(<#= GetConstructorParams() #>) { }
 
-  @IntentIgnore()
+  <#= this.IntentIgnoreDecorator() #>
   ngOnInit() {
   }
 <#  foreach (var command in Model.Commands) {#>
 
-  @IntentIgnore()
+  <#= this.IntentIgnoreBodyDecorator() #>
   <#= command.Name.ToCamelCase() #>(<#= GetParameters(command) #>): <#= GetReturnType(command) #> {
     // write your business logic here for this command
   }

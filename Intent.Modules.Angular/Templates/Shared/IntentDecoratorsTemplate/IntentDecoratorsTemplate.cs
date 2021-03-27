@@ -31,32 +31,82 @@ namespace Intent.Modules.Angular.Templates.Shared.IntentDecoratorsTemplate
         /// </summary>
         public override string TransformText()
         {
-            this.Write(@"
-export const IntentIgnore = (identifier?: string) => {
-  return (target: any, propertyKey?: string, descriptor?: any) => {
-  }
-}
-
-export interface IntentIgnore {
-
-}
-
-export const IntentMerge = (identifier?: string) => {
-  return (target: any, propertyKey?: string, descriptor?: any) => {
-  }
-}
-export interface IntentMerge {
-
-}
-
-export const IntentManage = (identifier?: string) => {
-  return (target: any, propertyKey?: string, descriptor?: any) => {
-  }
-}
-export interface IntentManage {
-
-}
-");
+            this.Write("\r\nexport const ");
+            
+            #line 10 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\Shared\IntentDecoratorsTemplate\IntentDecoratorsTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(IntentIgnore));
+            
+            #line default
+            #line hidden
+            this.Write(" = (identifier?: string) => {\r\n  return (target: any, propertyKey?: string, descr" +
+                    "iptor?: any) => {\r\n  }\r\n}\r\n\r\nexport interface ");
+            
+            #line 15 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\Shared\IntentDecoratorsTemplate\IntentDecoratorsTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(IntentIgnore));
+            
+            #line default
+            #line hidden
+            this.Write(" {\r\n\r\n}\r\n\r\nexport const ");
+            
+            #line 19 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\Shared\IntentDecoratorsTemplate\IntentDecoratorsTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(IntentIgnoreBody));
+            
+            #line default
+            #line hidden
+            this.Write(" = (identifier?: string) => {\r\n  return (target: any, propertyKey?: string, descr" +
+                    "iptor?: any) => {\r\n  }\r\n}\r\n\r\nexport interface ");
+            
+            #line 24 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\Shared\IntentDecoratorsTemplate\IntentDecoratorsTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(IntentIgnoreBody));
+            
+            #line default
+            #line hidden
+            this.Write(" {\r\n\r\n}\r\n\r\nexport const ");
+            
+            #line 28 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\Shared\IntentDecoratorsTemplate\IntentDecoratorsTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(IntentMerge));
+            
+            #line default
+            #line hidden
+            this.Write(" = (identifier?: string) => {\r\n  return (target: any, propertyKey?: string, descr" +
+                    "iptor?: any) => {\r\n  }\r\n}\r\nexport interface ");
+            
+            #line 32 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\Shared\IntentDecoratorsTemplate\IntentDecoratorsTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(IntentMerge));
+            
+            #line default
+            #line hidden
+            this.Write(" {\r\n\r\n}\r\n\r\nexport const ");
+            
+            #line 36 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\Shared\IntentDecoratorsTemplate\IntentDecoratorsTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(IntentManage));
+            
+            #line default
+            #line hidden
+            this.Write(" = (identifier?: string) => {\r\n  return (target: any, propertyKey?: string, descr" +
+                    "iptor?: any) => {\r\n  }\r\n}\r\nexport interface ");
+            
+            #line 40 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\Shared\IntentDecoratorsTemplate\IntentDecoratorsTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(IntentManage));
+            
+            #line default
+            #line hidden
+            this.Write(" {\r\n\r\n}\r\n\r\nexport const ");
+            
+            #line 44 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\Shared\IntentDecoratorsTemplate\IntentDecoratorsTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(IntentManageClass));
+            
+            #line default
+            #line hidden
+            this.Write(" = (identifier?: string) => {\r\n  return (target: any, propertyKey?: string, descr" +
+                    "iptor?: any) => {\r\n  }\r\n}\r\nexport interface ");
+            
+            #line 48 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\Shared\IntentDecoratorsTemplate\IntentDecoratorsTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(IntentManageClass));
+            
+            #line default
+            #line hidden
+            this.Write(" {\r\n\r\n}\r\n");
             return this.GenerationEnvironment.ToString();
         }
     }

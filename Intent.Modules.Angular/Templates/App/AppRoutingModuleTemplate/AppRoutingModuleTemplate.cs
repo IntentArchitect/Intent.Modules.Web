@@ -121,9 +121,16 @@ namespace Intent.Modules.Angular.Templates.App.AppRoutingModuleTemplate
             
             #line default
             #line hidden
-            this.Write("];\r\n\r\n@IntentMerge()\r\n@NgModule({\r\n  imports: [RouterModule.forRoot(routes, {\r\n  " +
-                    "  preloadingStrategy: PreloadAllModules\r\n  })],\r\n  exports: [RouterModule]\r\n})\r\n" +
-                    "export class AppRoutingModule { }\r\n");
+            this.Write("];\r\n\r\n");
+            
+            #line 33 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\App\AppRoutingModuleTemplate\AppRoutingModuleTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.IntentMergeDecorator()));
+            
+            #line default
+            #line hidden
+            this.Write("\r\n@NgModule({\r\n  imports: [RouterModule.forRoot(routes, {\r\n    preloadingStrategy" +
+                    ": PreloadAllModules\r\n  })],\r\n  exports: [RouterModule]\r\n})\r\nexport class AppRout" +
+                    "ingModule { }\r\n");
             return this.GenerationEnvironment.ToString();
         }
     }

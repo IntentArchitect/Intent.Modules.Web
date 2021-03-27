@@ -39,8 +39,14 @@ namespace Intent.Modules.Angular.Templates.App.AppModuleTemplate
             
             #line default
             #line hidden
-            this.Write("\r\n\r\nimport { AppComponent } from \'./app.component\';\r\n\r\n@IntentMerge()\r\n@NgModule(" +
-                    "{\r\n  declarations: [");
+            this.Write("\r\n\r\nimport { AppComponent } from \'./app.component\';\r\n\r\n");
+            
+            #line 14 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\App\AppModuleTemplate\AppModuleTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.IntentMergeDecorator()));
+            
+            #line default
+            #line hidden
+            this.Write("\r\n@NgModule({\r\n  declarations: [");
             
             #line 16 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\App\AppModuleTemplate\AppModuleTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(GetComponents()));
