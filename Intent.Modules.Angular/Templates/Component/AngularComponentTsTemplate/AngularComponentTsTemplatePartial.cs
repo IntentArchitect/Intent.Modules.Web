@@ -8,12 +8,8 @@ using Intent.Engine;
 using Intent.Templates;
 using System.Collections.Generic;
 using System.Linq;
-using Intent.Modules.Angular.Api;
 using Intent.Modules.Angular.Templates.Model.FormGroupTemplate;
 using Intent.Modules.Angular.Templates.Model.ModelTemplate;
-using Intent.Modules.Angular.Templates.Shared.IntentDecoratorsTemplate;
-using Intent.Modules.Common.Plugins;
-using Intent.Modules.Common.TypeScript;
 using Intent.Modules.Common.TypeScript.Templates;
 using Intent.Angular.Api;
 
@@ -54,10 +50,10 @@ namespace Intent.Modules.Angular.Templates.Component.AngularComponentTsTemplate
 
         public override void BeforeTemplateExecution()
         {
-            if (File.Exists(GetMetadata().GetFilePath()))
-            {
-                return;
-            }
+            //if (File.Exists(GetMetadata().GetFilePath()))
+            //{
+            //    return;
+            //}
 
             // New Component:
             ExecutionContext.EventDispatcher.Publish(AngularComponentCreatedEvent.EventId,
