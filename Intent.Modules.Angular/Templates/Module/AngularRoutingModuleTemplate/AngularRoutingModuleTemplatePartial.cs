@@ -12,7 +12,7 @@ using Intent.Modules.Common.Templates;
 using Intent.RoslynWeaver.Attributes;
 using Intent.Templates;
 using Intent.Modules.Common.TypeScript.Templates;
-using Intent.Angular.Api;
+using Intent.Modelers.WebClient.Angular.Api;
 
 [assembly: DefaultIntentManaged(Mode.Merge)]
 [assembly: IntentTemplate("Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial", Version = "1.0")]
@@ -20,13 +20,13 @@ using Intent.Angular.Api;
 namespace Intent.Modules.Angular.Templates.Module.AngularRoutingModuleTemplate
 {
     [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
-    partial class AngularRoutingModuleTemplate : TypeScriptTemplateBase<Intent.Angular.Api.RoutingModel>
+    partial class AngularRoutingModuleTemplate : TypeScriptTemplateBase<Intent.Modelers.WebClient.Angular.Api.RoutingModel>
     {
         [IntentManaged(Mode.Fully)]
         public const string TemplateId = "Intent.Angular.Module.AngularRoutingModuleTemplate";
 
         [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
-        public AngularRoutingModuleTemplate(IOutputTarget outputTarget, Intent.Angular.Api.RoutingModel model) : base(TemplateId, outputTarget, model)
+        public AngularRoutingModuleTemplate(IOutputTarget outputTarget, Intent.Modelers.WebClient.Angular.Api.RoutingModel model) : base(TemplateId, outputTarget, model)
         {
             AddTypeSource(AngularComponentTsTemplate.TemplateId);
             AddTemplateDependency(IntentDecoratorsTemplate.TemplateId);

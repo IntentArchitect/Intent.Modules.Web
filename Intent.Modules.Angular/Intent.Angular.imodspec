@@ -1,7 +1,7 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <package>
   <id>Intent.Angular</id>
-  <version>3.0.0-beta.7</version>
+  <version>3.0.0</version>
   <supportedClientVersions>[3.0.0,4.0.0)</supportedClientVersions>
   <summary>Angular for ASP.NET Core</summary>
   <description>This module installs and wires up Angular to run from within the ASP.NET Core environment.</description>
@@ -81,13 +81,13 @@
     <dependency id="Intent.Common.Html" version="3.0.2" />
     <dependency id="Intent.Common.TypeScript" version="3.0.3" />
     <dependency id="Intent.Modelers.WebClient" version="3.0.1" />
+    <dependency id="Intent.Modelers.WebClient.Angular" version="3.0.0" />
   </dependencies>
   <files>
     <file src="$outDir$/$id$.dll" />
     <file src="$outDir$/$id$.pdb" />
   </files>
   <metadata>
-    <install target="Web Client" src="modelers/Angular Core Types.designer.settings" externalReference="0a3786a7-f514-4ec3-88b9-7842744dbb3c" />
     <install target="Web Client" src="Intent.Metadata/Module Builder/Intent.Angular/Intent.Angular.pkg.config" externalReference="a3deb341-dd4e-4f7f-99f5-2f198c1c251c" />
     <install target="Web Client" src="Intent.Metadata/Web Client/Intent.Angular.Types/Intent.Angular.Types.pkg.config" />
   </metadata>

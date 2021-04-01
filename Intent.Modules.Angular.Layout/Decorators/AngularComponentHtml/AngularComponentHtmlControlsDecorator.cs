@@ -1,6 +1,6 @@
 using System.Linq;
 using System.Text;
-using Intent.Angular.Api;
+using Intent.Modelers.WebClient.Angular.Api;
 using Intent.Modules.Angular.Layout.Decorators.Controls;
 using Intent.Modules.Angular.Templates.Component.AngularComponentHtmlTemplate;
 using Intent.Modules.Common.Templates;

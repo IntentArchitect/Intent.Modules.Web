@@ -83,6 +83,7 @@
       <mappingSettings>
         <defaultModeler>f492faed-0665-4513-9853-5a230721786f</defaultModeler>
         <optionsSource>lookup-element</optionsSource>
+        <autoSyncTypeReferences>false</autoSyncTypeReferences>
         <lookupElementFunction>return getParent('Component').id</lookupElementFunction>
         <mapFrom>children</mapFrom>
         <mappings>

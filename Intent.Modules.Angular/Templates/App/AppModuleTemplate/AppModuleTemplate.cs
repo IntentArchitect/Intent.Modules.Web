@@ -22,7 +22,7 @@ namespace Intent.Modules.Angular.Templates.App.AppModuleTemplate
     
     #line 1 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\App\AppModuleTemplate\AppModuleTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
-    public partial class AppModuleTemplate : TypeScriptTemplateBase<Intent.Angular.Api.AngularWebAppModel>
+    public partial class AppModuleTemplate : TypeScriptTemplateBase<Intent.Modelers.WebClient.Angular.Api.AngularWebAppModel>
     {
 #line hidden
         /// <summary>

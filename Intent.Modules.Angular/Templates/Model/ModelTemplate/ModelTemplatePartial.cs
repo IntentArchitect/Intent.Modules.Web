@@ -8,7 +8,7 @@ using Intent.Modules.Common.Templates;
 using Intent.Modules.Common.TypeScript.Templates;
 using Intent.RoslynWeaver.Attributes;
 using Intent.Templates;
-using Intent.Angular.Api;
+using Intent.Modelers.WebClient.Angular.Api;
 
 [assembly: DefaultIntentManaged(Mode.Merge)]
 [assembly: IntentTemplate("Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial", Version = "1.0")]
@@ -16,13 +16,13 @@ using Intent.Angular.Api;
 namespace Intent.Modules.Angular.Templates.Model.ModelTemplate
 {
     [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
-    partial class ModelTemplate : TypeScriptTemplateBase<Intent.Angular.Api.ModelDefinitionModel>
+    partial class ModelTemplate : TypeScriptTemplateBase<Intent.Modelers.WebClient.Angular.Api.ModelDefinitionModel>
     {
         [IntentManaged(Mode.Fully)]
         public const string TemplateId = "Intent.Angular.Model.ModelTemplate";
 
         [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
-        public ModelTemplate(IOutputTarget outputTarget, Intent.Angular.Api.ModelDefinitionModel model) : base(TemplateId, outputTarget, model)
+        public ModelTemplate(IOutputTarget outputTarget, Intent.Modelers.WebClient.Angular.Api.ModelDefinitionModel model) : base(TemplateId, outputTarget, model)
         {
             AddTypeSource("Intent.Angular.ServiceProxies.Proxies.AngularDTOTemplate");
         }

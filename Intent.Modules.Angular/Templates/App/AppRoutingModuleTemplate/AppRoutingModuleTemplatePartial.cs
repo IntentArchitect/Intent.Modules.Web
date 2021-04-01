@@ -9,7 +9,7 @@ using Intent.Templates;
 using Intent.Metadata.Models;
 using System;
 using Intent.Modules.Common.TypeScript.Templates;
-using Intent.Angular.Api;
+using Intent.Modelers.WebClient.Angular.Api;
 
 [assembly: DefaultIntentManaged(Mode.Merge)]
 [assembly: IntentTemplate("Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial", Version = "1.0")]
@@ -17,13 +17,13 @@ using Intent.Angular.Api;
 namespace Intent.Modules.Angular.Templates.App.AppRoutingModuleTemplate
 {
     [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
-    partial class AppRoutingModuleTemplate : TypeScriptTemplateBase<Intent.Angular.Api.AngularWebAppModel>
+    partial class AppRoutingModuleTemplate : TypeScriptTemplateBase<Intent.Modelers.WebClient.Angular.Api.AngularWebAppModel>
     {
         [IntentManaged(Mode.Fully)]
         public const string TemplateId = "Intent.Angular.App.AppRoutingModuleTemplate";
 
         [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
-        public AppRoutingModuleTemplate(IOutputTarget outputTarget, Intent.Angular.Api.AngularWebAppModel model) : base(TemplateId, outputTarget, model)
+        public AppRoutingModuleTemplate(IOutputTarget outputTarget, Intent.Modelers.WebClient.Angular.Api.AngularWebAppModel model) : base(TemplateId, outputTarget, model)
         {
         }
 

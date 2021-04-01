@@ -8,15 +8,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intent.Modules.Angular", "I
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intent.Modules.Angular.Layout", "Intent.Modules.Angular.Layout\Intent.Modules.Angular.Layout.csproj", "{09081CF8-1475-47D6-9199-FC13A83E960D}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intent.Modules.TypeScript.Proxies.Contracts", "Intent.Modules.TypeScript.Proxies.Contracts\Intent.Modules.TypeScript.Proxies.Contracts.csproj", "{ED32631D-518F-4A7F-BAA1-FDE928110649}"
-EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Angular", "Angular", "{A0A03C99-B672-4CAC-B744-D1022C2B7DF7}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Designer", "Designer", "{AB4A5A3E-4A31-43C5-A4EC-F3A14831D754}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{A198DA77-1381-49A4-BC5A-CAE92446D16B}"
-EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intent.Modules.Angular.ServiceProxies", "Intent.Modules.Angular.ServiceProxies\Intent.Modules.Angular.ServiceProxies.csproj", "{6D139C9A-784D-48B9-A4AF-E24859654DBA}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intent.Modules.Modelers.WebClient.Angular", "Intent.Modules.Modelers.WebClient.Angular\Intent.Modules.Modelers.WebClient.Angular.csproj", "{74DDE750-06F1-4029-AADA-873CC2E5BD4E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -36,14 +34,14 @@ Global
 		{09081CF8-1475-47D6-9199-FC13A83E960D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{09081CF8-1475-47D6-9199-FC13A83E960D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{09081CF8-1475-47D6-9199-FC13A83E960D}.Release|Any CPU.Build.0 = Release|Any CPU
-		{ED32631D-518F-4A7F-BAA1-FDE928110649}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{ED32631D-518F-4A7F-BAA1-FDE928110649}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{ED32631D-518F-4A7F-BAA1-FDE928110649}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{ED32631D-518F-4A7F-BAA1-FDE928110649}.Release|Any CPU.Build.0 = Release|Any CPU
 		{6D139C9A-784D-48B9-A4AF-E24859654DBA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{6D139C9A-784D-48B9-A4AF-E24859654DBA}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6D139C9A-784D-48B9-A4AF-E24859654DBA}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6D139C9A-784D-48B9-A4AF-E24859654DBA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74DDE750-06F1-4029-AADA-873CC2E5BD4E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74DDE750-06F1-4029-AADA-873CC2E5BD4E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74DDE750-06F1-4029-AADA-873CC2E5BD4E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74DDE750-06F1-4029-AADA-873CC2E5BD4E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -52,8 +50,8 @@ Global
 		{10CF9138-E2FA-40A2-9599-11973C7E429D} = {AB4A5A3E-4A31-43C5-A4EC-F3A14831D754}
 		{3BA65C1B-BA94-4A8F-B35A-C9B9C401975E} = {A0A03C99-B672-4CAC-B744-D1022C2B7DF7}
 		{09081CF8-1475-47D6-9199-FC13A83E960D} = {A0A03C99-B672-4CAC-B744-D1022C2B7DF7}
-		{ED32631D-518F-4A7F-BAA1-FDE928110649} = {A198DA77-1381-49A4-BC5A-CAE92446D16B}
 		{6D139C9A-784D-48B9-A4AF-E24859654DBA} = {A0A03C99-B672-4CAC-B744-D1022C2B7DF7}
+		{74DDE750-06F1-4029-AADA-873CC2E5BD4E} = {AB4A5A3E-4A31-43C5-A4EC-F3A14831D754}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9A6E9459-F9E0-4E3C-BE28-09642ECC30F4}

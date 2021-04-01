@@ -12,7 +12,7 @@ using System.Collections.Generic;
 using Intent.Modules.Angular.Api;
 using Intent.Modules.Common.TypeScript.Templates;
 using Intent.Modelers.WebClient.Api;
-using Intent.Angular.Api;
+using Intent.Modelers.WebClient.Angular.Api;
 
 [assembly: DefaultIntentManaged(Mode.Merge)]
 [assembly: IntentTemplate("Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial", Version = "1.0")]
@@ -31,7 +31,7 @@ namespace Intent.Modules.Angular.Templates.App.AppModuleTemplate
         public const string TemplateId = "Intent.Angular.App.AppModuleTemplate";
 
         [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
-        public AppModuleTemplate(IOutputTarget outputTarget, Intent.Angular.Api.AngularWebAppModel model) : base(TemplateId, outputTarget, model)
+        public AppModuleTemplate(IOutputTarget outputTarget, Intent.Modelers.WebClient.Angular.Api.AngularWebAppModel model) : base(TemplateId, outputTarget, model)
         {
             ExecutionContext.EventDispatcher.Subscribe(AngularComponentCreatedEvent.EventId, @event =>
             {

@@ -1,6 +1,6 @@
 using System.Linq;
-using Intent.Angular.Api;
 using Intent.Modelers.Types.ServiceProxies.Api;
+using Intent.Modelers.WebClient.Angular.Api;
 using Intent.Modules.Common;
 
 namespace Intent.Angular.ServiceProxies.Api

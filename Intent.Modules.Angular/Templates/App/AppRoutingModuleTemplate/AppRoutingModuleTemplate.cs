@@ -23,7 +23,7 @@ namespace Intent.Modules.Angular.Templates.App.AppRoutingModuleTemplate
     
     #line 1 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\App\AppRoutingModuleTemplate\AppRoutingModuleTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
-    public partial class AppRoutingModuleTemplate : TypeScriptTemplateBase<Intent.Angular.Api.AngularWebAppModel>
+    public partial class AppRoutingModuleTemplate : TypeScriptTemplateBase<Intent.Modelers.WebClient.Angular.Api.AngularWebAppModel>
     {
 #line hidden
         /// <summary>

@@ -1,4 +1,4 @@
-<#@ template language="C#" inherits="TypeScriptTemplateBase<Intent.Angular.Api.AngularWebAppModel>" #>
+<#@ template language="C#" inherits="TypeScriptTemplateBase<Intent.Modelers.WebClient.Angular.Api.AngularWebAppModel>" #>
 <#@ assembly name="System.Core" #>
 <#@ import namespace="System.Collections.Generic" #>
 <#@ import namespace="System.Linq" #>

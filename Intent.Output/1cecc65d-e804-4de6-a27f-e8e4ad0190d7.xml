@@ -3,41 +3,6 @@
   <ApplicationId>1cecc65d-e804-4de6-a27f-e8e4ad0190d7</ApplicationId>
   <FileLogs>
     <FileLog>
-      <ProjectId>9cc209e3-eb1e-4008-810e-53692a536107</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Angular/Api/AngularServiceModel.cs</SolutionRelativeFilePath>
-      <ProjectRelativeFilePath>AngularServiceModel.cs</ProjectRelativeFilePath>
-    </FileLog>
-    <FileLog>
-      <ProjectId>9cc209e3-eb1e-4008-810e-53692a536107</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Angular/Api/AngularWebAppModel.cs</SolutionRelativeFilePath>
-      <ProjectRelativeFilePath>AngularWebAppModel.cs</ProjectRelativeFilePath>
-    </FileLog>
-    <FileLog>
-      <ProjectId>9cc209e3-eb1e-4008-810e-53692a536107</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Angular/Api/CommandParameterModel.cs</SolutionRelativeFilePath>
-      <ProjectRelativeFilePath>CommandParameterModel.cs</ProjectRelativeFilePath>
-    </FileLog>
-    <FileLog>
-      <ProjectId>9cc209e3-eb1e-4008-810e-53692a536107</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Angular/Api/ComponentCommandModel.cs</SolutionRelativeFilePath>
-      <ProjectRelativeFilePath>ComponentCommandModel.cs</ProjectRelativeFilePath>
-    </FileLog>
-    <FileLog>
-      <ProjectId>9cc209e3-eb1e-4008-810e-53692a536107</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Angular/Api/ComponentModel.cs</SolutionRelativeFilePath>
-      <ProjectRelativeFilePath>ComponentModel.cs</ProjectRelativeFilePath>
-    </FileLog>
-    <FileLog>
-      <ProjectId>9cc209e3-eb1e-4008-810e-53692a536107</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Angular/Api/ComponentModelModel.cs</SolutionRelativeFilePath>
-      <ProjectRelativeFilePath>ComponentModelModel.cs</ProjectRelativeFilePath>
-    </FileLog>
-    <FileLog>
-      <ProjectId>9cc209e3-eb1e-4008-810e-53692a536107</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Angular/Api/ComponentViewModel.cs</SolutionRelativeFilePath>
-      <ProjectRelativeFilePath>ComponentViewModel.cs</ProjectRelativeFilePath>
-    </FileLog>
-    <FileLog>
       <ProjectId>c9057d93-2617-44ca-9bd6-8ee166b881d1</ProjectId>
       <SolutionRelativeFilePath>../Intent.Modules.Angular/Api/Extensions/AngularServiceModelExtensions.cs</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>AngularServiceModelExtensions.cs</ProjectRelativeFilePath>
@@ -48,56 +13,6 @@
       <ProjectRelativeFilePath>ComponentModelExtensions.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
-      <ProjectId>9cc209e3-eb1e-4008-810e-53692a536107</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Angular/Api/FolderModel.cs</SolutionRelativeFilePath>
-      <ProjectRelativeFilePath>FolderModel.cs</ProjectRelativeFilePath>
-    </FileLog>
-    <FileLog>
-      <ProjectId>9cc209e3-eb1e-4008-810e-53692a536107</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Angular/Api/FormGroupControlModel.cs</SolutionRelativeFilePath>
-      <ProjectRelativeFilePath>FormGroupControlModel.cs</ProjectRelativeFilePath>
-    </FileLog>
-    <FileLog>
-      <ProjectId>9cc209e3-eb1e-4008-810e-53692a536107</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Angular/Api/FormGroupDefinitionModel.cs</SolutionRelativeFilePath>
-      <ProjectRelativeFilePath>FormGroupDefinitionModel.cs</ProjectRelativeFilePath>
-    </FileLog>
-    <FileLog>
-      <ProjectId>9cc209e3-eb1e-4008-810e-53692a536107</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Angular/Api/ModelDefinitionFieldModel.cs</SolutionRelativeFilePath>
-      <ProjectRelativeFilePath>ModelDefinitionFieldModel.cs</ProjectRelativeFilePath>
-    </FileLog>
-    <FileLog>
-      <ProjectId>9cc209e3-eb1e-4008-810e-53692a536107</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Angular/Api/ModelDefinitionModel.cs</SolutionRelativeFilePath>
-      <ProjectRelativeFilePath>ModelDefinitionModel.cs</ProjectRelativeFilePath>
-    </FileLog>
-    <FileLog>
-      <ProjectId>9cc209e3-eb1e-4008-810e-53692a536107</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Angular/Api/ModuleModel.cs</SolutionRelativeFilePath>
-      <ProjectRelativeFilePath>ModuleModel.cs</ProjectRelativeFilePath>
-    </FileLog>
-    <FileLog>
-      <ProjectId>9cc209e3-eb1e-4008-810e-53692a536107</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Angular/Api/RedirectModel.cs</SolutionRelativeFilePath>
-      <ProjectRelativeFilePath>RedirectModel.cs</ProjectRelativeFilePath>
-    </FileLog>
-    <FileLog>
-      <ProjectId>9cc209e3-eb1e-4008-810e-53692a536107</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Angular/Api/RouteModel.cs</SolutionRelativeFilePath>
-      <ProjectRelativeFilePath>RouteModel.cs</ProjectRelativeFilePath>
-    </FileLog>
-    <FileLog>
-      <ProjectId>9cc209e3-eb1e-4008-810e-53692a536107</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Angular/Api/RoutingModel.cs</SolutionRelativeFilePath>
-      <ProjectRelativeFilePath>RoutingModel.cs</ProjectRelativeFilePath>
-    </FileLog>
-    <FileLog>
-      <ProjectId>b79f286d-1129-41f9-bb0f-d266b180d3c2</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Angular/ApiMetadataProviderExtensions.cs</SolutionRelativeFilePath>
-      <ProjectRelativeFilePath>ApiMetadataProviderExtensions.cs</ProjectRelativeFilePath>
-    </FileLog>
-    <FileLog>
       <ProjectId>b79f286d-1129-41f9-bb0f-d266b180d3c2</ProjectId>
       <SolutionRelativeFilePath>../Intent.Modules.Angular/Intent.Angular.imodspec</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>Intent.Angular.imodspec</ProjectRelativeFilePath>
@@ -106,11 +21,6 @@
       <ProjectId>b79f286d-1129-41f9-bb0f-d266b180d3c2</ProjectId>
       <SolutionRelativeFilePath>../Intent.Modules.Angular/Intent.Modules.Angular.csproj</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>Intent.Modules.Angular.csproj</ProjectRelativeFilePath>
-    </FileLog>
-    <FileLog>
-      <ProjectId>e10c5473-8f0d-4feb-9f68-572ac62b4bc3</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Angular/modelers/Angular Core Types.designer.settings</SolutionRelativeFilePath>
-      <ProjectRelativeFilePath>Angular Core Types.designer.settings</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>b79f286d-1129-41f9-bb0f-d266b180d3c2</ProjectId>

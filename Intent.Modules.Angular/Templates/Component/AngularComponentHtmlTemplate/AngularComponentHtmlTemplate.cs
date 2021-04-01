@@ -23,7 +23,7 @@ namespace Intent.Modules.Angular.Templates.Component.AngularComponentHtmlTemplat
     
     #line 1 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\Component\AngularComponentHtmlTemplate\AngularComponentHtmlTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
-    public partial class AngularComponentHtmlTemplate : HtmlTemplateBase<Intent.Angular.Api.ComponentModel>
+    public partial class AngularComponentHtmlTemplate : HtmlTemplateBase<Intent.Modelers.WebClient.Angular.Api.ComponentModel>
     {
 #line hidden
         /// <summary>

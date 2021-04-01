@@ -25,7 +25,7 @@ namespace Intent.Modules.Angular.Templates.Model.FormGroupTemplate
     
     #line 1 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\Model\FormGroupTemplate\FormGroupTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
-    public partial class FormGroupTemplate : TypeScriptTemplateBase<Intent.Angular.Api.FormGroupDefinitionModel>
+    public partial class FormGroupTemplate : TypeScriptTemplateBase<Intent.Modelers.WebClient.Angular.Api.FormGroupDefinitionModel>
     {
 #line hidden
         /// <summary>

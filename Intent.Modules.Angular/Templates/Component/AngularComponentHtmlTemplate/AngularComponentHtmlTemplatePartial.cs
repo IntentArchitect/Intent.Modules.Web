@@ -10,7 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Intent.Modules.Angular.Api;
 using Intent.Modules.Common.Html.Templates;
-using Intent.Angular.Api;
+using Intent.Modelers.WebClient.Angular.Api;
 
 [assembly: DefaultIntentManaged(Mode.Merge)]
 [assembly: IntentTemplate("Intent.ModuleBuilder.Html.Templates.HtmlFileTemplatePartial", Version = "1.0")]
@@ -30,7 +30,7 @@ namespace Intent.Modules.Angular.Templates.Component.AngularComponentHtmlTemplat
         public const string TemplateId = "Intent.Angular.Component.AngularComponentHtmlTemplate";
 
         [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
-        public AngularComponentHtmlTemplate(IOutputTarget outputTarget, Intent.Angular.Api.ComponentModel model) : base(TemplateId, outputTarget, model)
+        public AngularComponentHtmlTemplate(IOutputTarget outputTarget, Intent.Modelers.WebClient.Angular.Api.ComponentModel model) : base(TemplateId, outputTarget, model)
         {
         }
 

@@ -11,8 +11,8 @@
     <isNullable>false</isNullable>
     <isCollection>false</isCollection>
     <isRequired>true</isRequired>
-    <typePackageName>Intent.Angular</typePackageName>
-    <typePackageId>a3deb341-dd4e-4f7f-99f5-2f198c1c251c</typePackageId>
+    <typePackageName>Intent.Modelers.WebClient.Angular</typePackageName>
+    <typePackageId>9cf8c5df-18a9-470e-a4fd-7e18d7050cd6</typePackageId>
     <stereotypes />
     <genericTypeParameters />
   </typeReference>

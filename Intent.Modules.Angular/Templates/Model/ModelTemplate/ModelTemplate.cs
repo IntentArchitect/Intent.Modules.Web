@@ -25,7 +25,7 @@ namespace Intent.Modules.Angular.Templates.Model.ModelTemplate
     
     #line 1 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\Model\ModelTemplate\ModelTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
-    public partial class ModelTemplate : TypeScriptTemplateBase<Intent.Angular.Api.ModelDefinitionModel>
+    public partial class ModelTemplate : TypeScriptTemplateBase<Intent.Modelers.WebClient.Angular.Api.ModelDefinitionModel>
     {
 #line hidden
         /// <summary>

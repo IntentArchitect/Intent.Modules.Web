@@ -11,7 +11,7 @@ using Intent.Modules.Common.Templates;
 using Intent.RoslynWeaver.Attributes;
 using Intent.Templates;
 using Intent.Modules.Common.TypeScript.Templates;
-using Intent.Angular.Api;
+using Intent.Modelers.WebClient.Angular.Api;
 
 [assembly: DefaultIntentManaged(Mode.Merge)]
 [assembly: IntentTemplate("Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial", Version = "1.0")]
@@ -19,7 +19,7 @@ using Intent.Angular.Api;
 namespace Intent.Modules.Angular.Templates.Module.AngularModuleTemplate
 {
     [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
-    partial class AngularModuleTemplate : TypeScriptTemplateBase<Intent.Angular.Api.ModuleModel>
+    partial class AngularModuleTemplate : TypeScriptTemplateBase<Intent.Modelers.WebClient.Angular.Api.ModuleModel>
     {
         [IntentManaged(Mode.Fully)]
         public const string TemplateId = "Intent.Angular.Module.AngularModuleTemplate";
@@ -29,7 +29,7 @@ namespace Intent.Modules.Angular.Templates.Module.AngularModuleTemplate
         private readonly ISet<string> _imports = new HashSet<string>();
 
         [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
-        public AngularModuleTemplate(IOutputTarget outputTarget, Intent.Angular.Api.ModuleModel model) : base(TemplateId, outputTarget, model)
+        public AngularModuleTemplate(IOutputTarget outputTarget, Intent.Modelers.WebClient.Angular.Api.ModuleModel model) : base(TemplateId, outputTarget, model)
         {
             ExecutionContext.EventDispatcher.Subscribe(AngularComponentCreatedEvent.EventId, @event =>
                 {

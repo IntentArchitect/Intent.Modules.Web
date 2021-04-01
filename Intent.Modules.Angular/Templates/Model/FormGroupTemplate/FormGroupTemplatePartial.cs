@@ -10,7 +10,7 @@ using Intent.Modules.Common.TypeScript.Templates;
 using Intent.RoslynWeaver.Attributes;
 using Intent.Templates;
 using Intent.Utils;
-using Intent.Angular.Api;
+using Intent.Modelers.WebClient.Angular.Api;
 
 [assembly: DefaultIntentManaged(Mode.Merge)]
 [assembly: IntentTemplate("Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial", Version = "1.0")]
@@ -18,13 +18,13 @@ using Intent.Angular.Api;
 namespace Intent.Modules.Angular.Templates.Model.FormGroupTemplate
 {
     [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
-    partial class FormGroupTemplate : TypeScriptTemplateBase<Intent.Angular.Api.FormGroupDefinitionModel>
+    partial class FormGroupTemplate : TypeScriptTemplateBase<Intent.Modelers.WebClient.Angular.Api.FormGroupDefinitionModel>
     {
         [IntentManaged(Mode.Fully)]
         public const string TemplateId = "Intent.Angular.Model.FormGroupTemplate";
 
         [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
-        public FormGroupTemplate(IOutputTarget outputTarget, Intent.Angular.Api.FormGroupDefinitionModel model) : base(TemplateId, outputTarget, model)
+        public FormGroupTemplate(IOutputTarget outputTarget, Intent.Modelers.WebClient.Angular.Api.FormGroupDefinitionModel model) : base(TemplateId, outputTarget, model)
         {
             AddTypeSource(FormGroupTemplate.TemplateId);
             // GCB - an interesting dependency predicament. Perhaps there should be a mechanism where a template can declare itself
