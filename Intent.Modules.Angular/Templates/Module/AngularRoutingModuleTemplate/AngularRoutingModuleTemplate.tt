@@ -12,7 +12,8 @@ const routes: Routes = [
 <#  foreach(var redirect in Model.Redirects) { #>
   {
     path: '<#= redirect.Name #>',
-    redirectTo: '<#= redirect.RedirectTo  #>'
+    redirectTo: '<#= redirect.RedirectTo  #>'<#= string.IsNullOrEmpty(redirect.Name) && Model.Module.IsRootModule() ? @",
+    pathMatch: 'full'" : "" #>
   },
 <#  } #>
 <# foreach(var route in Model.Routes.Where(x => x.RoutesToComponent)) {#>

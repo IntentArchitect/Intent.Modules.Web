@@ -1,9 +1,13 @@
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.IO;
+using System.Linq;
 using Intent.Modules.Common.Plugins;
 using Intent.SoftwareFactory;
 using Intent.Engine;
+using Intent.Modelers.WebClient.Angular.Api;
+using Intent.Modelers.WebClient.Api;
 using Intent.Plugins.FactoryExtensions;
 using Intent.Utils;
 
@@ -12,10 +16,23 @@ namespace Intent.Modules.Angular
     [Description("Angular CLI Installer")]
     public class AngularCliInstaller : FactoryExtensionBase, IExecutionLifeCycle
     {
+        private readonly IMetadataManager _metadataManager;
         public override int Order => 100;
+
+        public AngularCliInstaller(IMetadataManager metadataManager)
+        {
+            _metadataManager = metadataManager;
+        }
 
         public void OnStep(IApplication application, string step)
         {
+            if (step == ExecutionLifeCycleSteps.AfterMetadataLoad)
+            {
+                if (!_metadataManager.WebClient(application).GetModuleModels().Any(x => x.IsRootModule() && x.Name == "AppModule"))
+                {
+                    throw new Exception("No Web Client Package found. Create a new Package and Root Module 'AppModule' in the Web Client designer.");
+                }
+            }
             if (step == ExecutionLifeCycleSteps.BeforeTemplateExecution)
             {
                 if (!AngularInstalled(application))

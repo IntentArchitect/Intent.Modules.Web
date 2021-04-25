@@ -45,12 +45,14 @@ namespace Intent.Modules.Angular.Templates.Module.AngularModuleTemplate
 
             ExecutionContext.EventDispatcher.Subscribe(AngularComponentCreatedEvent.EventId, @event =>
                 {
-                    if (@event.GetValue(AngularComponentCreatedEvent.ModuleId) != Model.Id)
+                    if (@event.GetValue(AngularComponentCreatedEvent.ModuleId) == ClassName)
                     {
-                        return;
+                        _components.Add(GetTypeName(@event.GetValue(AngularComponentCreatedEvent.ModelId)));
                     }
-
-                    _components.Add(GetTypeName(AngularComponentTsTemplate.TemplateId, @event.GetValue(AngularComponentCreatedEvent.ModelId)));
+                    else if (@event.GetValue(AngularComponentCreatedEvent.ModuleId) == Model.Id)
+                    {
+                        _components.Add(GetTypeName(AngularComponentTsTemplate.TemplateId, @event.GetValue(AngularComponentCreatedEvent.ModelId)));
+                    }
                 });
 
             ExecutionContext.EventDispatcher.Subscribe<AngularServiceProxyCreatedEvent>(@event =>
@@ -127,7 +129,8 @@ namespace Intent.Modules.Angular.Templates.Module.AngularModuleTemplate
             }
             return @"
     " + string.Join($@",
-    ", _angularImports.OrderBy(x => x));
+    ", _angularImports.OrderBy(x => x)) + @"
+  ";
         }
 
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]

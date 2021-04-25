@@ -1,0 +1,14 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<settings>
+  <targetDesignerId>27916ede-58c6-4356-87b1-0b0628d1e2a7</targetDesignerId>
+  <createPackages>
+    <package type="Root Location Package" typeId="fbca4a65-b376-482c-a23d-32da9908cac9">
+      <name>root</name>
+      <childElements>
+        <element type="Role" typeId="8663c9f9-2852-45e7-aaa1-0883a2e6f1da">
+          <name>Front End</name>
+        </element>
+      </childElements>
+    </package>
+  </createPackages>
+</settings>
