@@ -15,6 +15,15 @@
   <packageId>a3deb341-dd4e-4f7f-99f5-2f198c1c251c</packageId>
   <packageName>Intent.Angular</packageName>
   <properties>
+    <property id="fb7aa637-1748-45fc-852d-084cf0d6d5de">
+      <name>Selector</name>
+      <type>string</type>
+      <controlType>text</controlType>
+      <optionsSource>n/a</optionsSource>
+      <placeholder>(default)</placeholder>
+      <valueOptions />
+      <lookupTypes />
+    </property>
     <property id="861d6123-3795-4065-a58d-526a04e833ba">
       <name>Inject Services</name>
       <type>string</type>

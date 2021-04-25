@@ -10,6 +10,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Intent.Modules.Angular.Api;
 using Intent.Modelers.WebClient.Angular.Api;
+using Intent.Modules.Common.Types.Api;
 
 [assembly: DefaultIntentManaged(Mode.Merge)]
 [assembly: IntentTemplate("Intent.ModuleBuilder.ProjectItemTemplate.Partial", Version = "1.0")]
@@ -69,7 +70,7 @@ namespace Intent.Modules.Angular.Templates.Component.AngularComponentCssTemplate
             return new TemplateFileConfig(
                 fileName: $"{ComponentName.ToKebabCase()}.component",
                 fileExtension: "css", // Change to desired file extension.
-                relativeLocation: $"{moduleTemplate.ModuleName.ToKebabCase()}/{ComponentName.ToKebabCase()}"
+                relativeLocation: $"{string.Join("/", Model.GetParentFolderNames().Concat(new[] { ComponentName.ToKebabCase() }))}"
             );
         }
     }

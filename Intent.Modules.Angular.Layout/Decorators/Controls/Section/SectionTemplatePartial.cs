@@ -1,27 +1,21 @@
 ﻿using Intent.Angular.Layout.Api;
 using Intent.Eventing;
+using Intent.Modules.Angular.Templates.Component;
+using Intent.Modules.Angular.Templates.Component.AngularComponentHtmlTemplate;
+using Intent.Modules.Angular.Templates.Component.Controls;
 using Intent.Utils;
 
 namespace Intent.Modules.Angular.Layout.Decorators.Controls.Section
 {
-    public partial class SectionTemplate
+    public partial class SectionTemplate : IControl
     {
-        public SectionTemplate(SectionModel model, IApplicationEventDispatcher eventDispatcher)
+        public SectionTemplate(SectionModel model, ControlWriter controlWriter)
         {
             Model = model;
-            ControlWriter = new ControlWriter(eventDispatcher);
-            foreach (var control in Model.InternalElement.ChildElements)
-            {
-                var successful = ControlWriter.AddControl(control);
-                if (!successful)
-                {
-                    Logging.Log.Warning("Control could not be added as it has invalid bindings: " + control);
-                }
-            }
+            ControlWriter = controlWriter;
         }
 
-        public ControlWriter ControlWriter { get; }
-
         public SectionModel Model { get; }
+        public ControlWriter ControlWriter { get; }
     }
 }

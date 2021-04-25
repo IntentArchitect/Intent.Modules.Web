@@ -4,46 +4,46 @@
   <FileLogs>
     <FileLog>
       <ProjectId>d0e72d48-eabc-4818-9d3e-3dcf185a39af</ProjectId>
-      <SolutionRelativeFilePath>..\Intent.Modules.Modelers.WebClient\Api\WebClientModel.cs</SolutionRelativeFilePath>
+      <SolutionRelativeFilePath>../Intent.Modules.Modelers.WebClient/Api/WebClientModel.cs</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>WebClientModel.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>10cf9138-e2fa-40a2-9599-11973c7e429d</ProjectId>
-      <SolutionRelativeFilePath>..\Intent.Modules.Modelers.WebClient\ApiMetadataDesignerExtensions.cs</SolutionRelativeFilePath>
+      <SolutionRelativeFilePath>../Intent.Modules.Modelers.WebClient/ApiMetadataDesignerExtensions.cs</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>ApiMetadataDesignerExtensions.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>10cf9138-e2fa-40a2-9599-11973c7e429d</ProjectId>
-      <SolutionRelativeFilePath>..\Intent.Modules.Modelers.WebClient\ApiMetadataPackageExtensions.cs</SolutionRelativeFilePath>
+      <SolutionRelativeFilePath>../Intent.Modules.Modelers.WebClient/ApiMetadataPackageExtensions.cs</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>ApiMetadataPackageExtensions.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>10cf9138-e2fa-40a2-9599-11973c7e429d</ProjectId>
-      <SolutionRelativeFilePath>..\Intent.Modules.Modelers.WebClient\Intent.Modules.Modelers.WebClient.csproj</SolutionRelativeFilePath>
-      <ProjectRelativeFilePath>Intent.Modules.Modelers.WebClient.csproj</ProjectRelativeFilePath>
+      <SolutionRelativeFilePath>../Intent.Modules.Modelers.WebClient/Intent.Modelers.WebClient.imodspec</SolutionRelativeFilePath>
+      <ProjectRelativeFilePath>Intent.Modelers.WebClient.imodspec</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>10cf9138-e2fa-40a2-9599-11973c7e429d</ProjectId>
-      <SolutionRelativeFilePath>..\Intent.Modules.Modelers.WebClient\Intent.Modules.Modelers.WebClient.imodspec</SolutionRelativeFilePath>
-      <ProjectRelativeFilePath>Intent.Modules.Modelers.WebClient.imodspec</ProjectRelativeFilePath>
+      <SolutionRelativeFilePath>../Intent.Modules.Modelers.WebClient/Intent.Modules.Modelers.WebClient.csproj</SolutionRelativeFilePath>
+      <ProjectRelativeFilePath>Intent.Modules.Modelers.WebClient.csproj</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>9889b0d6-a618-4114-9cb0-c74498f7bbeb</ProjectId>
-      <SolutionRelativeFilePath>..\Intent.Modules.Modelers.WebClient\modelers\Web Client Package.designer.settings</SolutionRelativeFilePath>
+      <SolutionRelativeFilePath>../Intent.Modules.Modelers.WebClient/modelers/Web Client Package.designer.settings</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>Web Client Package.designer.settings</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>9889b0d6-a618-4114-9cb0-c74498f7bbeb</ProjectId>
-      <SolutionRelativeFilePath>..\Intent.Modules.Modelers.WebClient\modelers\Web Client.designer.config</SolutionRelativeFilePath>
+      <SolutionRelativeFilePath>../Intent.Modules.Modelers.WebClient/modelers/Web Client.designer.config</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>Web Client.designer.config</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>10cf9138-e2fa-40a2-9599-11973c7e429d</ProjectId>
-      <SolutionRelativeFilePath>..\Intent.Modules.Modelers.WebClient\README.txt</SolutionRelativeFilePath>
+      <SolutionRelativeFilePath>../Intent.Modules.Modelers.WebClient/README.txt</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>README.txt</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
-      <SolutionRelativeFilePath>..\Intent.Modules.Web.sln</SolutionRelativeFilePath>
+      <SolutionRelativeFilePath>../Intent.Modules.Web.sln</SolutionRelativeFilePath>
     </FileLog>
   </FileLogs>
 </outputLog>

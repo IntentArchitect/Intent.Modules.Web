@@ -30,7 +30,7 @@ namespace Intent.Modules.Angular.Templates.Module.AngularRoutingModuleTemplate
         /// </summary>
         public override string TransformText()
         {
-            this.Write("import { NgModule } from \'@angular/core\';\r\nimport { RouterModule, Routes } from \'" +
+            this.Write("import { NgModule } from \'@angular/core\';\r\nimport { Routes, RouterModule } from \'" +
                     "@angular/router\';\r\n\r\nconst routes: Routes = [\r\n");
             
             #line 12 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\Module\AngularRoutingModuleTemplate\AngularRoutingModuleTemplate.tt"
@@ -48,7 +48,7 @@ namespace Intent.Modules.Angular.Templates.Module.AngularRoutingModuleTemplate
             this.Write("\',\r\n    redirectTo: \'");
             
             #line 15 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\Module\AngularRoutingModuleTemplate\AngularRoutingModuleTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(redirect.TypeReference.Element.Name));
+            this.Write(this.ToStringHelper.ToStringWithCulture(redirect.RedirectTo));
             
             #line default
             #line hidden
@@ -61,14 +61,14 @@ namespace Intent.Modules.Angular.Templates.Module.AngularRoutingModuleTemplate
             #line hidden
             
             #line 18 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\Module\AngularRoutingModuleTemplate\AngularRoutingModuleTemplate.tt"
-  foreach(var route in Model.Routes) { 
+ foreach(var route in Model.Routes.Where(x => x.RoutesToComponent)) {
             
             #line default
             #line hidden
             this.Write("  {\r\n    path: \'");
             
             #line 20 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\Module\AngularRoutingModuleTemplate\AngularRoutingModuleTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(route.Name));
+            this.Write(this.ToStringHelper.ToStringWithCulture(GetRoute(route)));
             
             #line default
             #line hidden
@@ -82,14 +82,54 @@ namespace Intent.Modules.Angular.Templates.Module.AngularRoutingModuleTemplate
             this.Write("\r\n  },\r\n");
             
             #line 23 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\Module\AngularRoutingModuleTemplate\AngularRoutingModuleTemplate.tt"
-  } 
+ } 
             
             #line default
             #line hidden
-            this.Write("];\r\n\r\n@NgModule({\r\n  imports: [RouterModule.forChild(routes)],\r\n  exports: [Route" +
-                    "rModule]\r\n})\r\nexport class ");
             
-            #line 30 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\Module\AngularRoutingModuleTemplate\AngularRoutingModuleTemplate.tt"
+            #line 24 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\Module\AngularRoutingModuleTemplate\AngularRoutingModuleTemplate.tt"
+ foreach(var route in Model.Routes.Where(x => x.RoutesToModule)) {
+            
+            #line default
+            #line hidden
+            this.Write("  {\r\n    path: \'");
+            
+            #line 26 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\Module\AngularRoutingModuleTemplate\AngularRoutingModuleTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(GetRoute(route)));
+            
+            #line default
+            #line hidden
+            this.Write("\',\r\n    loadChildren: () => import(\'./");
+            
+            #line 27 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\Module\AngularRoutingModuleTemplate\AngularRoutingModuleTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(GetModulePath(route)));
+            
+            #line default
+            #line hidden
+            this.Write("\').then(x => x.");
+            
+            #line 27 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\Module\AngularRoutingModuleTemplate\AngularRoutingModuleTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(GetModuleClassName(route)));
+            
+            #line default
+            #line hidden
+            this.Write(")\r\n  },\r\n");
+            
+            #line 29 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\Module\AngularRoutingModuleTemplate\AngularRoutingModuleTemplate.tt"
+ } 
+            
+            #line default
+            #line hidden
+            this.Write("];\r\n\r\n@NgModule({\r\n  imports: [");
+            
+            #line 33 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\Module\AngularRoutingModuleTemplate\AngularRoutingModuleTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(GetNgModuleImports()));
+            
+            #line default
+            #line hidden
+            this.Write("],\r\n  exports: [RouterModule]\r\n})\r\nexport class ");
+            
+            #line 36 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\Module\AngularRoutingModuleTemplate\AngularRoutingModuleTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(ClassName));
             
             #line default

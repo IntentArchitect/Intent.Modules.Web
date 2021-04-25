@@ -4,6 +4,8 @@ using System.Linq;
 using Intent.Metadata.Models;
 using Intent.RoslynWeaver.Attributes;
 using Intent.Modules.Common;
+using Intent.Modules.Common.Templates;
+using Intent.Modules.Common.Types.Api;
 
 [assembly: IntentTemplate("Intent.ModuleBuilder.Templates.Api.ApiElementModel", Version = "1.0")]
 [assembly: DefaultIntentManaged(Mode.Merge)]
@@ -11,7 +13,7 @@ using Intent.Modules.Common;
 namespace Intent.Modelers.WebClient.Angular.Api
 {
     [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
-    public class ModuleModel : IMetadataModel, IHasStereotypes, IHasName
+    public class ModuleModel : IMetadataModel, IHasStereotypes, IHasName, IHasFolder<IFolder>, IFolder
     {
         protected readonly IElement _element;
         public const string SpecializationType = "Module";
@@ -49,11 +51,7 @@ namespace Intent.Modelers.WebClient.Angular.Api
 
         public string GetModuleName()
         {
-            if (Name.EndsWith("Module", StringComparison.InvariantCultureIgnoreCase))
-            {
-                return Name.Substring(0, Name.Length - "Module".Length);
-            }
-            return Name;
+            return Name.RemoveSuffix("Module");
         }
 
         [IntentManaged(Mode.Fully)]
@@ -104,9 +102,35 @@ namespace Intent.Modelers.WebClient.Angular.Api
             _element = element;
         }
 
+        [IntentManaged(Mode.Ignore)]
+        public IFolder Folder => InternalElement.GetParentFolder();
+
+        [IntentManaged(Mode.Ignore)]
+        string IFolder.Name => GetModuleName().ToKebabCase();
+
         public RoutingModel Routing => _element.ChildElements
                     .Where(x => x.SpecializationType == RoutingModel.SpecializationType)
                     .Select(x => new RoutingModel(x))
                     .SingleOrDefault();
+
+        public IList<ModuleModel> Modules => _element.ChildElements
+                    .GetElementsOfType(ModuleModel.SpecializationTypeId)
+                    .Select(x => new ModuleModel(x))
+                    .ToList();
+
+        public IList<FolderModel> Folders => _element.ChildElements
+                    .GetElementsOfType(FolderModel.SpecializationTypeId)
+                    .Select(x => new FolderModel(x))
+                    .ToList();
+
+        public ModuleModel GetParentModule()
+        {
+            return InternalElement.GetModule();
+        }
+
+        public bool IsRootModule()
+        {
+            return GetParentModule() == null;
+        }
     }
 }

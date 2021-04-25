@@ -12,7 +12,7 @@ using Intent.Modules.Common.Types.Api;
 namespace Intent.Modelers.WebClient.Angular.Api
 {
     [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
-    public class FolderModel : IMetadataModel, IHasStereotypes, IHasName
+    public class FolderModel : IMetadataModel, IHasStereotypes, IHasName, IFolder, IHasFolder<IFolder>
     {
         public const string SpecializationType = "Folder";
         protected readonly IElement _element;
@@ -26,6 +26,9 @@ namespace Intent.Modelers.WebClient.Angular.Api
             }
             _element = element;
         }
+
+        [IntentManaged(Mode.Ignore)]
+        public IFolder Folder => InternalElement.GetParentFolder();
 
         [IntentManaged(Mode.Fully)]
         public string Id => _element.Id;
@@ -102,5 +105,11 @@ namespace Intent.Modelers.WebClient.Angular.Api
                     .GetElementsOfType(TypeDefinitionModel.SpecializationTypeId)
                     .Select(x => new TypeDefinitionModel(x))
                     .ToList();
+
+        public IList<ComponentModel> Components => _element.ChildElements
+                    .GetElementsOfType(ComponentModel.SpecializationTypeId)
+                    .Select(x => new ComponentModel(x))
+                    .ToList();
+
     }
 }

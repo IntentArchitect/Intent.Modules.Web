@@ -8,31 +8,42 @@ using Intent.Engine;
 using Intent.Templates;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using Intent.Modules.Angular.Api;
 using Intent.Modules.Common.Html.Templates;
 using Intent.Modelers.WebClient.Angular.Api;
+using Intent.Modules.Angular.Templates.Component.Controls;
+using Intent.Modules.Angular.Templates.Component.Controls.DisplayComponent;
+using Intent.Modules.Common.Types.Api;
+using Intent.Utils;
 
 [assembly: DefaultIntentManaged(Mode.Merge)]
 [assembly: IntentTemplate("Intent.ModuleBuilder.Html.Templates.HtmlFileTemplatePartial", Version = "1.0")]
 
 namespace Intent.Modules.Angular.Templates.Component.AngularComponentHtmlTemplate
 {
-    public interface IOverwriteDecorator : ITemplateDecorator
+    public interface IAngularComponentHtmlDecorator : ITemplateDecorator
     {
-        string GetOverwrite();
+        void RegisterControls(ControlWriter controlWriter);
     }
 
     [IntentManaged(Mode.Merge, Signature = Mode.Merge)]
-    partial class AngularComponentHtmlTemplate : HtmlTemplateBase<ComponentModel>, ITemplatePostCreationHook, IHasDecorators<IOverwriteDecorator>
+    partial class AngularComponentHtmlTemplate : HtmlTemplateBase<ComponentModel>, ITemplatePostCreationHook, IHasDecorators<IAngularComponentHtmlDecorator>
     {
-        private readonly IList<IOverwriteDecorator> _decorators = new List<IOverwriteDecorator>();
+        private readonly IList<IAngularComponentHtmlDecorator> _decorators = new List<IAngularComponentHtmlDecorator>();
+
         [IntentManaged(Mode.Fully)]
         public const string TemplateId = "Intent.Angular.Component.AngularComponentHtmlTemplate";
 
         [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
         public AngularComponentHtmlTemplate(IOutputTarget outputTarget, Intent.Modelers.WebClient.Angular.Api.ComponentModel model) : base(TemplateId, outputTarget, model)
         {
+            ControlWriter = new ControlWriter();
+            ControlWriter.RegisterControl(DisplayComponentModel.SpecializationTypeId, element => new DisplayComponentTemplate(new DisplayComponentModel(element), this));
+            ControlWriter.RegisterControl(RouterOutletModel.SpecializationTypeId, element => new RouterOutletTemplate(new RouterOutletModel(element)));
         }
+
+        public ControlWriter ControlWriter;
 
         public string ComponentName
         {
@@ -50,7 +61,8 @@ namespace Intent.Modules.Angular.Templates.Component.AngularComponentHtmlTemplat
 
         public override void OnCreated()
         {
-            var moduleTemplate = ExecutionContext.FindTemplateInstance<Module.AngularModuleTemplate.AngularModuleTemplate>(Module.AngularModuleTemplate.AngularModuleTemplate.TemplateId, Model.Module);
+            base.OnCreated();
+            var moduleTemplate = GetTemplate<Module.AngularModuleTemplate.AngularModuleTemplate>(Module.AngularModuleTemplate.AngularModuleTemplate.TemplateId, Model.Module);
             ModuleName = moduleTemplate.ModuleName;
         }
 
@@ -64,7 +76,16 @@ namespace Intent.Modules.Angular.Templates.Component.AngularComponentHtmlTemplat
             //    var source = File.ReadAllText(fullFileName);
             //if (source.StartsWith("<!--IntentManaged-->"))
             //{
-            return GetDecorators().Any() ? GetDecorators().First().GetOverwrite() ?? base.RunTemplate() : base.RunTemplate();
+            if (Model.View == null || !Model.View.InternalElement.ChildElements.Any())
+            {
+                return base.RunTemplate();
+            }
+
+            var sb = new StringBuilder();
+            sb.AppendLine("<div class=\"container-fluid\" intent-manage=\"add remove\" intent-id=\"container\">");
+            sb.AppendLine("  " + ControlWriter.WriteControls(Model.View.InternalElement.ChildElements, "  "));
+            sb.AppendLine("</div>");
+            return sb.ToString();
             //}
             //else
             //{
@@ -75,12 +96,13 @@ namespace Intent.Modules.Angular.Templates.Component.AngularComponentHtmlTemplat
             //return base.RunTemplate();
         }
 
-        public void AddDecorator(IOverwriteDecorator decorator)
+        public void AddDecorator(IAngularComponentHtmlDecorator decorator)
         {
+            decorator.RegisterControls(ControlWriter);
             _decorators.Add(decorator);
         }
 
-        public IEnumerable<IOverwriteDecorator> GetDecorators()
+        public IEnumerable<IAngularComponentHtmlDecorator> GetDecorators()
         {
             return _decorators;
         }
@@ -93,12 +115,10 @@ namespace Intent.Modules.Angular.Templates.Component.AngularComponentHtmlTemplat
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]
         public override ITemplateFileConfig GetTemplateFileConfig()
         {
-            var moduleTemplate = ExecutionContext.FindTemplateInstance<Module.AngularModuleTemplate.AngularModuleTemplate>(Module.AngularModuleTemplate.AngularModuleTemplate.TemplateId, Model.Module);
             return new TemplateFileConfig(
                 fileName: $"{ComponentName.ToKebabCase()}.component",
                 fileExtension: "html",
-                relativeLocation: $"{moduleTemplate.ModuleName.ToKebabCase()}/{ComponentName.ToKebabCase()}"
-                    );
+                relativeLocation: $"{string.Join("/", Model.GetParentFolderNames().Concat(new[] { ComponentName.ToKebabCase() }))}");
         }
     }
 }

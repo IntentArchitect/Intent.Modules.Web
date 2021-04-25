@@ -4,11 +4,11 @@ using Intent.Modules.Common.Registrations;
 
 namespace Intent.Modules.Angular.Layout.Decorators.AngularComponentHtml
 {
-    public class AngularComponentHtmlControlsDecoratorRegistration : DecoratorRegistration<AngularComponentHtmlTemplate, IOverwriteDecorator>
+    public class AngularComponentHtmlControlsDecoratorRegistration : DecoratorRegistration<AngularComponentHtmlTemplate, IAngularComponentHtmlDecorator>
     {
         public override string DecoratorId => AngularComponentHtmlControlsDecorator.DecoratorId;
 
-        public override IOverwriteDecorator CreateDecoratorInstance(AngularComponentHtmlTemplate template, IApplication application)
+        public override IAngularComponentHtmlDecorator CreateDecoratorInstance(AngularComponentHtmlTemplate template, IApplication application)
         {
             return new AngularComponentHtmlControlsDecorator(template);
         }

@@ -34,6 +34,11 @@ namespace Intent.Angular.Api
 
             public string Name => _stereotype.Name;
 
+            public string Selector()
+            {
+                return _stereotype.GetProperty<string>("Selector");
+            }
+
             public IElement[] InjectServices()
             {
                 return _stereotype.GetProperty<IElement[]>("Inject Services");

@@ -10,31 +10,23 @@
   <templates>
     <template id="Intent.Angular.Component.AngularComponentCssTemplate" externalReference="3d1fe1c1-b396-4c8b-bc0f-f7ab2537ae7e">
       <role>Front End</role>
-      <location>src/app</location>
+      <location>src</location>
     </template>
     <template id="Intent.Angular.Component.AngularComponentTsTemplate" externalReference="aa06d3ae-2965-4101-8f8b-8db7da8a0146">
       <role>Front End</role>
-      <location>src/app</location>
+      <location>src</location>
     </template>
     <template id="Intent.Angular.Module.AngularModuleTemplate" externalReference="84287d05-962d-4c48-a274-5057407cd4aa">
       <role>Front End</role>
-      <location>src/app</location>
+      <location>src</location>
     </template>
     <template id="Intent.Angular.Module.AngularRoutingModuleTemplate" externalReference="1a817c51-35c5-4e17-8c69-f6a193f338a7">
       <role>Front End</role>
-      <location>src/app</location>
+      <location>src</location>
     </template>
     <template id="Intent.Angular.Core.ApiServiceTemplate" externalReference="ce096dec-3721-4a3d-9d36-038c7448e74c">
       <role>Front End</role>
       <location>src/app/core</location>
-    </template>
-    <template id="Intent.Angular.App.AppModuleTemplate" externalReference="c3f4ca75-2cfb-410c-abdc-240e472a57ee">
-      <role>Front End</role>
-      <location>src/app</location>
-    </template>
-    <template id="Intent.Angular.App.AppRoutingModuleTemplate" externalReference="4c0ed534-fdef-45bb-b843-4e292a3ebb4c">
-      <role>Front End</role>
-      <location>src/app</location>
     </template>
     <template id="Intent.Angular.Core.CoreModuleTemplate" externalReference="ba59d6a8-a629-4feb-9e5b-c3498b89e9ec">
       <role>Front End</role>
@@ -46,11 +38,11 @@
     </template>
     <template id="Intent.Angular.Model.ModelTemplate" externalReference="9273966e-d177-45c3-8807-1e3bcbbf2cd8">
       <role>Front End</role>
-      <location>src/app</location>
+      <location>src</location>
     </template>
     <template id="Intent.Angular.Component.AngularComponentHtmlTemplate" externalReference="25779bc1-5d6b-4fe5-89fb-97d75e8df259">
       <role>Front End</role>
-      <location>src/app</location>
+      <location>src</location>
     </template>
     <template id="Intent.Angular.Shared.IntentDecoratorsTemplate" externalReference="24192b12-bce1-4ac8-8edd-3f68a2eb3b7c">
       <role>Front End</role>
@@ -58,7 +50,7 @@
     </template>
     <template id="Intent.Angular.Model.FormGroupTemplate" externalReference="fc84fb37-d9ec-4459-a3e1-e165eec1ca0e">
       <role>Front End</role>
-      <location>src/app</location>
+      <location>src</location>
     </template>
   </templates>
   <decorators>
@@ -77,10 +69,9 @@
   <dependencies>
     <dependency id="Intent.Common" version="3.0.4" />
     <dependency id="Intent.Common.CSharp" version="3.0.7" />
-    <dependency id="Intent.Common.Types" version="3.0.3" />
+    <dependency id="Intent.Common.Types" version="3.0.4" />
     <dependency id="Intent.Common.Html" version="3.0.2" />
-    <dependency id="Intent.Common.TypeScript" version="3.0.3" />
-    <dependency id="Intent.Modelers.WebClient" version="3.0.1" />
+    <dependency id="Intent.Common.TypeScript" version="3.0.4" />
     <dependency id="Intent.Modelers.WebClient.Angular" version="3.0.0" />
   </dependencies>
   <files>

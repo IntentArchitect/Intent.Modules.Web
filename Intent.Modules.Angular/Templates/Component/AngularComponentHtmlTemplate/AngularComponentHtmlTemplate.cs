@@ -32,7 +32,7 @@ namespace Intent.Modules.Angular.Templates.Component.AngularComponentHtmlTemplat
         public override string TransformText()
         {
             this.Write("<div class=\"container-fluid\" intent-manage=\"add remove\" intent-id=\"container\">\r\n " +
-                    "   <h3>");
+                    " <h3>");
             
             #line 10 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\Component\AngularComponentHtmlTemplate\AngularComponentHtmlTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Model.Name));

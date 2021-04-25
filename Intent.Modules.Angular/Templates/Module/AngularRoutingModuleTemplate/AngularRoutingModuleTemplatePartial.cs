@@ -13,6 +13,7 @@ using Intent.RoslynWeaver.Attributes;
 using Intent.Templates;
 using Intent.Modules.Common.TypeScript.Templates;
 using Intent.Modelers.WebClient.Angular.Api;
+using Intent.Modules.Common.Types.Api;
 
 [assembly: DefaultIntentManaged(Mode.Merge)]
 [assembly: IntentTemplate("Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial", Version = "1.0")]
@@ -40,9 +41,53 @@ namespace Intent.Modules.Angular.Templates.Module.AngularRoutingModuleTemplate
             return new TypeScriptFileConfig(
                 overwriteBehaviour: OverwriteBehaviour.Always,
                 fileName: $"{ModuleName.ToKebabCase()}.module",
-                relativeLocation: $"{ Model.Module.GetModuleName().ToKebabCase() }",
-                className: "${ModuleName}"
+                relativeLocation: $"{string.Join("/", Model.Module.GetParentFolderNames().Concat(new[] { Model.Module.GetModuleName().ToKebabCase() }))}",
+                className: $"{ModuleName}Module"
             );
+        }
+
+        public override void BeforeTemplateExecution()
+        {
+            base.BeforeTemplateExecution();
+            if (!Model.Module.IsRootModule())
+            {
+                return;
+            }
+
+            foreach (var route in Model.Routes.Where(x => x.RoutesToModule))
+            {
+                ExecutionContext.EventDispatcher.Publish(new AngularAppRouteCreatedEvent(
+                    moduleName: new ModuleModel((IElement)route.TypeReference.Element).GetModuleName(),
+                    route: GetRoute(route)));
+            }
+        }
+
+        private string GetRoute(RouteModel route)
+        {
+            return route.Name;
+        }
+
+        private string GetModulePath(RouteModel route)
+        {
+            var template = GetTemplate<ITemplate>(AngularModuleTemplate.AngularModuleTemplate.TemplateId, route.TypeReference.Element, new TemplateDiscoveryOptions() { TrackDependency = false });
+            return GetMetadata().GetFullLocationPath().GetRelativePath(template.GetMetadata().GetFilePathWithoutExtension()).Normalize();
+        }
+
+        private string GetModuleClassName(RouteModel route)
+        {
+            return GetTypeName(AngularModuleTemplate.AngularModuleTemplate.TemplateId, route.TypeReference.Element, new TemplateDiscoveryOptions() { TrackDependency = false });
+        }
+
+        private string GetNgModuleImports()
+        {
+            if (Model.Module.IsRootModule())
+            {
+                AddImport("PreloadAllModules", "@angular/router");
+                return $@"RouterModule.forRoot(routes, {{
+    preloadingStrategy: PreloadAllModules
+  }})";
+            }
+            return @"RouterModule.forChild(routes)";
         }
     }
 }

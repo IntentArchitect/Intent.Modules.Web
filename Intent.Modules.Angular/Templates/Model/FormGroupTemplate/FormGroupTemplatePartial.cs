@@ -11,6 +11,7 @@ using Intent.RoslynWeaver.Attributes;
 using Intent.Templates;
 using Intent.Utils;
 using Intent.Modelers.WebClient.Angular.Api;
+using Intent.Modules.Common.Types.Api;
 
 [assembly: DefaultIntentManaged(Mode.Merge)]
 [assembly: IntentTemplate("Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial", Version = "1.0")]
@@ -40,7 +41,7 @@ namespace Intent.Modules.Angular.Templates.Model.FormGroupTemplate
             return new TypeScriptFileConfig(
                 overwriteBehaviour: OverwriteBehaviour.Always,
                 fileName: $"{Model.Name.ToKebabCase().RemoveSuffix("-model")}.model",
-                relativeLocation: $"{(Model.Module != null ? Model.Module.GetModuleName().ToKebabCase() + "/models" : "models")}",
+                relativeLocation: $"{string.Join("/", Model.GetParentFolderNames().Concat(new[] { "models" }))}",
                 className: "${Model.Name}"
             );
         }

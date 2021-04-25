@@ -5,8 +5,7 @@
 <#@ import namespace="Intent.Modules.Common" #>
 <#@ import namespace="Intent.Modules.Common.TypeScript.Templates" #>
 <#@ import namespace="Intent.Modules.Angular.Api" #>
-import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';<#= GetImports() #>
+import { NgModule } from '@angular/core';<#= GetImports() #>
 
 <#= this.IntentMergeDecorator() #>
 @NgModule({
@@ -14,8 +13,7 @@ import { CommonModule } from '@angular/common';<#= GetImports() #>
 <#  if (HasProviders()) { #>
   providers: [<#= GetProviders() #>],
 <#  } #>
-  imports: [
-    CommonModule,<#= GetAngularImports() #>
-  ]
+  imports: [<#= GetAngularImports() #>]<#= Model.IsRootModule() ? @",
+  bootstrap: [AppComponent]" : "" #>
 })
 export class <#= ClassName #> { }

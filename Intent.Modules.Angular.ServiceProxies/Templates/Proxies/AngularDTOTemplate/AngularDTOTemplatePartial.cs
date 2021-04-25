@@ -9,7 +9,9 @@ using Intent.RoslynWeaver.Attributes;
 using Intent.Templates;
 using Intent.Modules.Common.TypeScript.Templates;
 using Intent.Modelers.Types.ServiceProxies.Api;
+using Intent.Modelers.WebClient.Angular.Api;
 using Intent.Modules.Common.Templates;
+using Intent.Modules.Common.Types.Api;
 
 [assembly: DefaultIntentManaged(Mode.Merge)]
 [assembly: IntentTemplate("Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial", Version = "1.0")]
@@ -36,7 +38,7 @@ namespace Intent.Modules.Angular.ServiceProxies.Templates.Proxies.AngularDTOTemp
             return new TypeScriptFileConfig(
                 overwriteBehaviour: OverwriteBehaviour.Always,
                 fileName: $"{Model.Name.ToKebabCase().RemoveSuffix("-dto")}.dto",
-                relativeLocation: $"{Model.GetModule().GetModuleName().ToKebabCase()}/models",
+                relativeLocation: $"{string.Join("/", Model.GetModule().InternalElement.GetFolderPath(Model.GetModule().GetModuleName().ToKebabCase(), "models"))}",
                 className: $"{Model.Name}"
             );
         }

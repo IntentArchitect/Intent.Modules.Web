@@ -20,31 +20,6 @@ namespace Intent.Modelers.WebClient.Angular.Api
         {
         }
 
-        public RoutingModel Routing => UnderlyingPackage.ChildElements
-            .GetElementsOfType(RoutingModel.SpecializationTypeId)
-            .Select(x => new RoutingModel(x))
-            .SingleOrDefault();
-
-        public IList<ModuleModel> Modules => UnderlyingPackage.ChildElements
-            .GetElementsOfType(ModuleModel.SpecializationTypeId)
-            .Select(x => new ModuleModel(x))
-            .ToList();
-
-        public IList<ModelDefinitionModel> ModelDefinitions => UnderlyingPackage.ChildElements
-            .GetElementsOfType(ModelDefinitionModel.SpecializationTypeId)
-            .Select(x => new ModelDefinitionModel(x))
-            .ToList();
-
-        public IList<FolderModel> Folders => UnderlyingPackage.ChildElements
-            .GetElementsOfType(FolderModel.SpecializationTypeId)
-            .Select(x => new FolderModel(x))
-            .ToList();
-
-        public IList<AngularServiceModel> Services => UnderlyingPackage.ChildElements
-            .GetElementsOfType(AngularServiceModel.SpecializationTypeId)
-            .Select(x => new AngularServiceModel(x))
-            .ToList();
-
         public IList<EnumModel> Enums => UnderlyingPackage.ChildElements
             .GetElementsOfType(EnumModel.SpecializationTypeId)
             .Select(x => new EnumModel(x))
@@ -54,6 +29,11 @@ namespace Intent.Modelers.WebClient.Angular.Api
             .GetElementsOfType(TypeDefinitionModel.SpecializationTypeId)
             .Select(x => new TypeDefinitionModel(x))
             .ToList();
+
+        public ModuleModel RootModule => UnderlyingPackage.ChildElements
+            .GetElementsOfType(ModuleModel.SpecializationTypeId)
+            .Select(x => new ModuleModel(x))
+            .SingleOrDefault();
 
     }
 }

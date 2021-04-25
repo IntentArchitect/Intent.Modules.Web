@@ -3,11 +3,13 @@ using System.Linq;
 using Intent.Angular.Layout.Api;
 using Intent.Eventing;
 using Intent.Modules.Angular.Templates;
+using Intent.Modules.Angular.Templates.Component;
+using Intent.Modules.Angular.Templates.Component.Controls;
 using Intent.Modules.Common;
 
 namespace Intent.Modules.Angular.Layout.Decorators.Controls.Form
 {
-    public partial class FormTemplate
+    public partial class FormTemplate : IControl
     {
         public FormTemplate(FormModel model, IApplicationEventDispatcher eventDispatcher)
         {

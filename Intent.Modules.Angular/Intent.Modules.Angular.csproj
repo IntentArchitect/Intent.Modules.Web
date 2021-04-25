@@ -5,6 +5,14 @@
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Remove="Templates\App\AppModuleTemplate\**" />
+    <Compile Remove="Templates\App\AppRoutingModuleTemplate\**" />
+    <EmbeddedResource Remove="Templates\App\AppModuleTemplate\**" />
+    <EmbeddedResource Remove="Templates\App\AppRoutingModuleTemplate\**" />
+    <None Remove="Templates\App\AppModuleTemplate\**" />
+    <None Remove="Templates\App\AppRoutingModuleTemplate\**" />
+  </ItemGroup>
+  <ItemGroup>
     <PackageReference Include="Intent.Modules.Common" Version="3.0.4" />
     <PackageReference Include="Intent.Modules.Common.Html" Version="3.0.2" />
     <PackageReference Include="Intent.Modules.Common.TypeScript" Version="3.0.4" />
@@ -46,14 +54,6 @@
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>ApiServiceTemplate.cs</LastGenOutput>
     </None>
-    <None Update="Templates\App\AppModuleTemplate\AppModuleTemplate.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>AppModuleTemplate.cs</LastGenOutput>
-    </None>
-    <None Update="Templates\App\AppRoutingModuleTemplate\AppRoutingModuleTemplate.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>AppRoutingModuleTemplate.cs</LastGenOutput>
-    </None>
     <None Update="Templates\Core\CoreModuleTemplate\CoreModuleTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>CoreModuleTemplate.cs</LastGenOutput>
@@ -79,16 +79,6 @@
     <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="Templates\App\AppModuleTemplate\AppModuleTemplate.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>AppModuleTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Update="Templates\App\AppRoutingModuleTemplate\AppRoutingModuleTemplate.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>AppRoutingModuleTemplate.tt</DependentUpon>
-    </Compile>
     <Compile Update="Templates\Component\AngularComponentCssTemplate\AngularComponentCssTemplate.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -144,5 +134,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>ModelTemplate.tt</DependentUpon>
     </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Templates\App\" />
   </ItemGroup>
 </Project>

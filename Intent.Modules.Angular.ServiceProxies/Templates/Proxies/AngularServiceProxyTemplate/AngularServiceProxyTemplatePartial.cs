@@ -10,6 +10,7 @@ using Intent.Metadata.Models;
 using Intent.Metadata.WebApi.Api;
 using Intent.Modelers.Services.Api;
 using Intent.Modelers.Types.ServiceProxies.Api;
+using Intent.Modelers.WebClient.Angular.Api;
 using Intent.Modules.Angular.Templates.Core.ApiServiceTemplate;
 using Intent.Modules.Angular.Templates.Module.AngularModuleTemplate;
 using Intent.Modules.Common;
@@ -20,6 +21,7 @@ using Intent.Templates;
 using Intent.Utils;
 using Intent.Modules.Common.TypeScript.Templates;
 using Intent.Modules.Angular.Templates;
+using Intent.Modules.Common.Types.Api;
 using EnumModel = Intent.Modules.Common.Types.Api.EnumModel;
 using ProxyOperationModel = Intent.Modelers.Types.ServiceProxies.Api.OperationModel;
 using OperationModel = Intent.Modelers.Services.Api.OperationModel;
@@ -135,7 +137,7 @@ namespace Intent.Modules.Angular.ServiceProxies.Templates.Proxies.AngularService
             return new TypeScriptFileConfig(
                 overwriteBehaviour: OverwriteBehaviour.Always,
                 fileName: $"{Model.Name.ToKebabCase()}.service",
-                relativeLocation: $"{Model.GetModule().GetModuleName().ToKebabCase()}",
+                relativeLocation: $"{string.Join("/", Model.GetModule().InternalElement.GetFolderPath(additionalFolders: Model.GetModule().GetModuleName().ToKebabCase()))}",
                 className: "${Model.Name}"
             );
         }

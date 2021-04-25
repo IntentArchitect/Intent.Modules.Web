@@ -13,6 +13,7 @@ using Intent.Modules.Angular.Templates.Model.FormGroupTemplate;
 using Intent.Modules.Angular.Templates.Model.ModelTemplate;
 using Intent.Modules.Common.TypeScript.Templates;
 using Intent.Modelers.WebClient.Angular.Api;
+using Intent.Modules.Common.Types.Api;
 
 [assembly: DefaultIntentManaged(Mode.Merge)]
 [assembly: IntentTemplate("Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial", Version = "1.0")]
@@ -93,6 +94,15 @@ namespace Intent.Modules.Angular.Templates.Component.AngularComponentTsTemplate
             return command.ReturnType != null ? GetTypeName(command.ReturnType) : "void";
         }
 
+        public string GetSelector()
+        {
+            if (!string.IsNullOrWhiteSpace(Model.GetAngularComponentSettings().Selector()))
+            {
+                return Model.GetAngularComponentSettings().Selector();
+            }
+            return $"app-{ComponentName.ToKebabCase()}";
+        }
+
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]
         public override ITemplateFileConfig GetTemplateFileConfig()
         {
@@ -100,9 +110,10 @@ namespace Intent.Modules.Angular.Templates.Component.AngularComponentTsTemplate
             return new TypeScriptFileConfig(
                 overwriteBehaviour: OverwriteBehaviour.Always,
                 fileName: $"{ComponentName.ToKebabCase()}.component",
-                relativeLocation: $"{moduleTemplate.ModuleName.ToKebabCase()}/{ComponentName.ToKebabCase()}",
-                className: "${ComponentName}Component"
+                relativeLocation: $"{string.Join("/", Model.GetParentFolderNames().Concat(new[] { ComponentName.ToKebabCase() }))}",
+                className: $"{ComponentName}Component"
             );
         }
+
     }
 }

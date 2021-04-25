@@ -15,6 +15,7 @@ namespace Intent.Modules.Angular.Layout.Templates.Shared.Header.HeaderComponentT
     using Intent.Modules.Common.TypeScript.Templates;
     using Intent.Templates;
     using Intent.Metadata.Models;
+    using Intent.Modules.Angular.Templates;
     using System;
     
     /// <summary>
@@ -31,9 +32,16 @@ namespace Intent.Modules.Angular.Layout.Templates.Shared.Header.HeaderComponentT
         /// </summary>
         public override string TransformText()
         {
-            this.Write("import { Component } from \'@angular/core\';\r\n\r\n@IntentMerge()\r\n@Component({\r\n  sel" +
-                    "ector: \'app-layout-header\',\r\n  templateUrl: \'./header.component.html\',\r\n  styleU" +
-                    "rls: [\'./header.component.css\']\r\n})\r\nexport class ");
+            this.Write("\n");
+            this.Write("import { Component } from \'@angular/core\';\r\n\r\n");
+            
+            #line 11 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Templates\Shared\Header\HeaderComponentTsTemplate\HeaderComponentTsTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.IntentMergeDecorator()));
+            
+            #line default
+            #line hidden
+            this.Write("\r\n@Component({\r\n  selector: \'app-layout-header\',\r\n  templateUrl: \'./header.compon" +
+                    "ent.html\',\r\n  styleUrls: [\'./header.component.css\']\r\n})\r\nexport class ");
             
             #line 17 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Templates\Shared\Header\HeaderComponentTsTemplate\HeaderComponentTsTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(ClassName));

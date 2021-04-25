@@ -67,5 +67,15 @@ namespace Intent.Modelers.WebClient.Angular.Api
         public const string SpecializationTypeId = "624513a6-cba8-4dde-8ebe-6b19f00f0364";
 
         public string Comment => _element.Comment;
+
+        public IList<DisplayComponentModel> DisplayComponents => _element.ChildElements
+                    .GetElementsOfType(DisplayComponentModel.SpecializationTypeId)
+                    .Select(x => new DisplayComponentModel(x))
+                    .ToList();
+
+        public RouterOutletModel RouterOutlet => _element.ChildElements
+                    .GetElementsOfType(RouterOutletModel.SpecializationTypeId)
+                    .Select(x => new RouterOutletModel(x))
+                    .SingleOrDefault();
     }
 }

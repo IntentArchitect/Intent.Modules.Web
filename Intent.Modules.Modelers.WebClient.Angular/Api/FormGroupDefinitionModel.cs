@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Intent.Metadata.Models;
 using Intent.Modules.Common;
+using Intent.Modules.Common.Types.Api;
 using Intent.RoslynWeaver.Attributes;
 
 [assembly: DefaultIntentManaged(Mode.Merge)]
@@ -11,7 +12,7 @@ using Intent.RoslynWeaver.Attributes;
 namespace Intent.Modelers.WebClient.Angular.Api
 {
     [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
-    public class FormGroupDefinitionModel : IMetadataModel, IHasStereotypes, IHasName
+    public class FormGroupDefinitionModel : IMetadataModel, IHasStereotypes, IHasName, IHasFolder<IFolder>
     {
         public const string SpecializationType = "Form Group Definition";
         protected readonly IElement _element;
@@ -25,6 +26,9 @@ namespace Intent.Modelers.WebClient.Angular.Api
             }
             _element = element;
         }
+
+        [IntentManaged(Mode.Ignore)]
+        public IFolder Folder => InternalElement.GetParentFolder();
 
         public ModuleModel Module => new ModuleModel(_element.GetParentPath().Reverse().First(x => x.SpecializationType == ModuleModel.SpecializationType));
 

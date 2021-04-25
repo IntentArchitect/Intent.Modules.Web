@@ -320,6 +320,27 @@
                   </mapping>
                 </childMappings>
               </mapping>
+              <mapping id="144bea54-c425-4bf2-a0c1-9106b789878a">
+                <criteria specializationType="DTO-Field">
+                  <hasTypeReference>true</hasTypeReference>
+                  <isCollection>true</isCollection>
+                  <hasChildren d10p1:nil="true" xmlns:d10p1="http://www.w3.org/2001/XMLSchema-instance" />
+                </criteria>
+                <mapTo specializationType="Table Control" childMappingMode="traverse" />
+                <behaviour autoSelectChildren="true" />
+                <childMappings>
+                  <mapping id="819085e3-cb8d-4a74-bc61-bc170385a4b1">
+                    <criteria specializationType="DTO-Field">
+                      <hasTypeReference d12p1:nil="true" xmlns:d12p1="http://www.w3.org/2001/XMLSchema-instance" />
+                      <isCollection d12p1:nil="true" xmlns:d12p1="http://www.w3.org/2001/XMLSchema-instance" />
+                      <hasChildren d12p1:nil="true" xmlns:d12p1="http://www.w3.org/2001/XMLSchema-instance" />
+                    </criteria>
+                    <mapTo specializationType="Table Column" childMappingMode="map-to-child" />
+                    <behaviour autoSelectChildren="false" />
+                    <childMappings />
+                  </mapping>
+                </childMappings>
+              </mapping>
             </childMappings>
           </mapping>
           <mapping id="aba6038e-8ff6-4311-9192-1abeb4d42504">

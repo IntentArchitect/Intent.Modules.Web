@@ -6,6 +6,6 @@
 <#@ import namespace="Intent.Modules.Common.Templates" #>
   <div class="row" intent-id="<#= Model.Name #>">
     <div class="col" intent-manage>
-<#= ControlWriter.WriteControls() #>
+      <#= ControlWriter.WriteControls(Model.InternalElement.ChildElements, CurrentIndent) #>
     </div>
   </div>

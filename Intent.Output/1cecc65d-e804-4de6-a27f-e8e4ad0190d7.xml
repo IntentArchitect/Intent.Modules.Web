@@ -29,46 +29,6 @@
     </FileLog>
     <FileLog>
       <ProjectId>abc98339-4259-4d28-82ae-502ba6cdc8b2</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Angular/Templates/App/AppModuleTemplate/AppModuleTemplate.cs</SolutionRelativeFilePath>
-      <ProjectRelativeFilePath>App/AppModuleTemplate/AppModuleTemplate.cs</ProjectRelativeFilePath>
-    </FileLog>
-    <FileLog>
-      <ProjectId>abc98339-4259-4d28-82ae-502ba6cdc8b2</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Angular/Templates/App/AppModuleTemplate/AppModuleTemplate.tt</SolutionRelativeFilePath>
-      <ProjectRelativeFilePath>App/AppModuleTemplate/AppModuleTemplate.tt</ProjectRelativeFilePath>
-    </FileLog>
-    <FileLog>
-      <ProjectId>abc98339-4259-4d28-82ae-502ba6cdc8b2</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Angular/Templates/App/AppModuleTemplate/AppModuleTemplatePartial.cs</SolutionRelativeFilePath>
-      <ProjectRelativeFilePath>App/AppModuleTemplate/AppModuleTemplatePartial.cs</ProjectRelativeFilePath>
-    </FileLog>
-    <FileLog>
-      <ProjectId>abc98339-4259-4d28-82ae-502ba6cdc8b2</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Angular/Templates/App/AppModuleTemplate/AppModuleTemplateRegistration.cs</SolutionRelativeFilePath>
-      <ProjectRelativeFilePath>App/AppModuleTemplate/AppModuleTemplateRegistration.cs</ProjectRelativeFilePath>
-    </FileLog>
-    <FileLog>
-      <ProjectId>abc98339-4259-4d28-82ae-502ba6cdc8b2</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Angular/Templates/App/AppRoutingModuleTemplate/AppRoutingModuleTemplate.cs</SolutionRelativeFilePath>
-      <ProjectRelativeFilePath>App/AppRoutingModuleTemplate/AppRoutingModuleTemplate.cs</ProjectRelativeFilePath>
-    </FileLog>
-    <FileLog>
-      <ProjectId>abc98339-4259-4d28-82ae-502ba6cdc8b2</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Angular/Templates/App/AppRoutingModuleTemplate/AppRoutingModuleTemplate.tt</SolutionRelativeFilePath>
-      <ProjectRelativeFilePath>App/AppRoutingModuleTemplate/AppRoutingModuleTemplate.tt</ProjectRelativeFilePath>
-    </FileLog>
-    <FileLog>
-      <ProjectId>abc98339-4259-4d28-82ae-502ba6cdc8b2</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Angular/Templates/App/AppRoutingModuleTemplate/AppRoutingModuleTemplatePartial.cs</SolutionRelativeFilePath>
-      <ProjectRelativeFilePath>App/AppRoutingModuleTemplate/AppRoutingModuleTemplatePartial.cs</ProjectRelativeFilePath>
-    </FileLog>
-    <FileLog>
-      <ProjectId>abc98339-4259-4d28-82ae-502ba6cdc8b2</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Angular/Templates/App/AppRoutingModuleTemplate/AppRoutingModuleTemplateRegistration.cs</SolutionRelativeFilePath>
-      <ProjectRelativeFilePath>App/AppRoutingModuleTemplate/AppRoutingModuleTemplateRegistration.cs</ProjectRelativeFilePath>
-    </FileLog>
-    <FileLog>
-      <ProjectId>abc98339-4259-4d28-82ae-502ba6cdc8b2</ProjectId>
       <SolutionRelativeFilePath>../Intent.Modules.Angular/Templates/Component/AngularComponentCssTemplate/AngularComponentCssTemplate.cs</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>Component/AngularComponentCssTemplate/AngularComponentCssTemplate.cs</ProjectRelativeFilePath>
     </FileLog>

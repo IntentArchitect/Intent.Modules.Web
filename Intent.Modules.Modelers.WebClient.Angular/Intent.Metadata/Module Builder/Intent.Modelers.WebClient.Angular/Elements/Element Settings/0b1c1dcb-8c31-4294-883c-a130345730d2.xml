@@ -3,7 +3,7 @@
   <name>Folder</name>
   <display>Folder</display>
   <isAbstract>false</isAbstract>
-  <order>1</order>
+  <order>2</order>
   <genericTypes />
   <isMapped>false</isMapped>
   <parentFolderId>0a3786a7-f514-4ec3-88b9-7842744dbb3c</parentFolderId>
@@ -54,11 +54,50 @@
       <packageName>Intent.Modelers.WebClient.Angular</packageName>
       <stereotypes />
       <childElements>
+        <childElement id="77f33c9d-1501-4456-a199-f8e2c8264b6d" type="Element Creation Option" typeId="5fa12f89-da1e-49c5-b8e9-427b22407f19">
+          <name>New Component</name>
+          <display>New Component: Component</display>
+          <isAbstract>false</isAbstract>
+          <order>0</order>
+          <genericTypes />
+          <typeReference id="a1882a9f-6080-4d6b-8bdc-ad1f37885a27">
+            <typeId>b1c481e1-e91e-4c29-9817-00ab9cad4b6b</typeId>
+            <isNavigable>true</isNavigable>
+            <isNullable>false</isNullable>
+            <isCollection>false</isCollection>
+            <isRequired>true</isRequired>
+            <typePackageName>Intent.Modelers.WebClient.Angular</typePackageName>
+            <typePackageId>9cf8c5df-18a9-470e-a4fd-7e18d7050cd6</typePackageId>
+            <stereotypes />
+            <genericTypeParameters />
+          </typeReference>
+          <isMapped>false</isMapped>
+          <parentFolderId>b9260416-935d-42d5-91cd-69cdd5980a02</parentFolderId>
+          <packageId>9cf8c5df-18a9-470e-a4fd-7e18d7050cd6</packageId>
+          <packageName>Intent.Modelers.WebClient.Angular</packageName>
+          <stereotypes>
+            <stereotype stereotypeDefinitionId="f4250b35-559d-4c0b-91ee-c3d7aa239814" name="Option Settings">
+              <comment />
+              <addedByDefault>true</addedByDefault>
+              <definitionPackageName>Intent.ModuleBuilder</definitionPackageName>
+              <definitionPackageId>9972b2a9-b749-4bba-b5c8-824bf694c6ef</definitionPackageId>
+              <properties>
+                <property name="9df41a97-0a8b-42c6-9d95-becf3d6d1e0b" display="Shortcut" isActive="true" />
+                <property name="5572d05e-dd37-47f6-944a-73710c07f4f1" display="Shortcut (macOS)" isActive="true" />
+                <property name="ba8a3ecd-0f08-499e-bb5b-929d40f56a45" display="Default Name" value="" isActive="true" />
+                <property name="A43F388B-DAFF-422C-BD8D-FB433EFEC51B" display="Type Order" isActive="true" />
+                <property name="8e092aa6-7d1a-4a06-af82-903e7642cef6" display="Allow Multiple" value="true" isActive="true" />
+                <property name="719e9dff-2b8d-407d-912d-fac99a158721" display="Api Model Name" isActive="true" />
+              </properties>
+            </stereotype>
+          </stereotypes>
+          <childElements />
+        </childElement>
         <childElement id="864377d1-e96f-40b0-9b88-ecdfb7eb62b2" type="Element Creation Option" typeId="5fa12f89-da1e-49c5-b8e9-427b22407f19">
           <name>New Module</name>
           <display>New Module: Module</display>
           <isAbstract>false</isAbstract>
-          <order>0</order>
+          <order>1</order>
           <genericTypes />
           <typeReference id="e0cf6631-1b6a-4d4e-bdb2-92c0a222d328">
             <typeId>cac14331-198a-4f9a-bbb9-171eb0bd4efe</typeId>
@@ -97,7 +136,7 @@
           <name>New Model Definition</name>
           <display>New Model Definition: Model Definition</display>
           <isAbstract>false</isAbstract>
-          <order>1</order>
+          <order>2</order>
           <genericTypes />
           <typeReference id="aed8f9da-b72a-49e6-ae37-d7a643935d23">
             <typeId>bd3941b5-e3b3-4a40-96e6-b9c87cea0101</typeId>
@@ -136,7 +175,7 @@
           <name>New Type-Definition</name>
           <display>New Type-Definition: Type-Definition</display>
           <isAbstract>false</isAbstract>
-          <order>2</order>
+          <order>3</order>
           <genericTypes />
           <typeReference id="aad916a1-2678-490b-b08b-5a4281a5701b">
             <typeId>d4e577cd-ad05-4180-9a2e-fff4ddea0e1e</typeId>
@@ -175,7 +214,7 @@
           <name>New Enum</name>
           <display>New Enum: Enum</display>
           <isAbstract>false</isAbstract>
-          <order>3</order>
+          <order>4</order>
           <genericTypes />
           <typeReference id="1e9f76ae-f07b-4c9a-8382-983f7becd5e8">
             <typeId>85fba0e9-9161-4c85-a603-a229ef312beb</typeId>
@@ -214,7 +253,7 @@
           <name>New Folder</name>
           <display>New Folder: Folder</display>
           <isAbstract>false</isAbstract>
-          <order>4</order>
+          <order>5</order>
           <genericTypes />
           <typeReference id="c3af9934-a4c7-44e6-bfa8-8738d6d5d4e0">
             <typeId>0b1c1dcb-8c31-4294-883c-a130345730d2</typeId>
@@ -253,7 +292,7 @@
           <name>New Service</name>
           <display>New Service: Angular Service</display>
           <isAbstract>false</isAbstract>
-          <order>5</order>
+          <order>6</order>
           <genericTypes />
           <typeReference id="e4f4fa38-011f-4e10-9bb9-b9014730d54d">
             <typeId>d009e5af-adb7-45c5-921c-fe8e209b8aa2</typeId>
@@ -292,7 +331,7 @@
           <name>New Stereotype-Definition</name>
           <display>New Stereotype-Definition: Stereotype-Definition</display>
           <isAbstract>false</isAbstract>
-          <order>6</order>
+          <order>7</order>
           <genericTypes />
           <typeReference id="412e76c6-4c61-41a9-b70f-5d7618ba8ffc">
             <typeId>54eff27b-2dfc-4853-8498-1a2c4700e385</typeId>

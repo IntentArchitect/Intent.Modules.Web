@@ -2,9 +2,6 @@ using System;
 using System.IO;
 using System.Linq;
 using Intent.Engine;
-using Intent.Modules.Angular.Templates.App.AppModuleTemplate;
-using Intent.Modules.Angular.Templates.Module.AngularModuleTemplate;
-using Intent.Modules.Bower.Installer;
 using Intent.Modules.Common.Processors;
 using Intent.Utils;
 

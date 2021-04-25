@@ -6,25 +6,31 @@
 <#@ import namespace="Intent.Modules.Common.TypeScript.Templates" #>
 <#@ import namespace="Intent.Modules.Angular.Api" #>
 import { NgModule } from '@angular/core';
-import { RouterModule, Routes } from '@angular/router';
+import { Routes, RouterModule } from '@angular/router';
 
 const routes: Routes = [
 <#  foreach(var redirect in Model.Redirects) { #>
   {
     path: '<#= redirect.Name #>',
-    redirectTo: '<#= redirect.TypeReference.Element.Name  #>'
+    redirectTo: '<#= redirect.RedirectTo  #>'
   },
 <#  } #>
-<#  foreach(var route in Model.Routes) { #>
+<# foreach(var route in Model.Routes.Where(x => x.RoutesToComponent)) {#>
   {
-    path: '<#= route.Name #>',
-    component: <#= GetTypeName(route)  #>
+    path: '<#= GetRoute(route) #>',
+    component: <#= GetTypeName(route) #>
   },
-<#  } #>
+<# } #>
+<# foreach(var route in Model.Routes.Where(x => x.RoutesToModule)) {#>
+  {
+    path: '<#= GetRoute(route) #>',
+    loadChildren: () => import('./<#= GetModulePath(route) #>').then(x => x.<#= GetModuleClassName(route) #>)
+  },
+<# } #>
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
+  imports: [<#= GetNgModuleImports() #>],
   exports: [RouterModule]
 })
 export class <#= ClassName #> { }

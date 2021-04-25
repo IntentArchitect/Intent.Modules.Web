@@ -2,10 +2,12 @@
 using Intent.Angular.Layout.Api;
 using Intent.Eventing;
 using Intent.Modules.Angular.Templates;
+using Intent.Modules.Angular.Templates.Component;
+using Intent.Modules.Angular.Templates.Component.Controls;
 
 namespace Intent.Modules.Angular.Layout.Decorators.Controls.PaginationControl
 {
-    public partial class PaginationControlTemplate
+    public partial class PaginationControlTemplate : IControl
     {
         public PaginationControlTemplate(PaginationControlModel model, IApplicationEventDispatcher eventDispatcher)
         {

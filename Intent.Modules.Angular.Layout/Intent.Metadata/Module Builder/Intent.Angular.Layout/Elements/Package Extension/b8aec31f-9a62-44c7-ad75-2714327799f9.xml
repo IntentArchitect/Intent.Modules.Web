@@ -3,7 +3,7 @@
   <name>Angular App Extensions</name>
   <display>Angular App Extensions: Web Client</display>
   <isAbstract>false</isAbstract>
-  <order>8</order>
+  <order>7</order>
   <genericTypes />
   <typeReference id="2193ae6a-9e7a-4699-8dba-80af2fc7a128">
     <typeId>911c35b4-4ba3-404c-a0c6-e5258e53333a</typeId>

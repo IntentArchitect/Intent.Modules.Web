@@ -51,10 +51,12 @@
       <display>Intent.ModuleBuilder.Templates.TemplateDecorator</display>
       <externalReference>Intent.ModuleBuilder</externalReference>
       <isAbstract>false</isAbstract>
-      <order>0</order>
+      <order>2</order>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>d99e53aa-19d1-4651-bae4-216814c73d25</parentFolderId>
+      <packageId>8a7e2758-112c-4c40-8790-505391e72e6f</packageId>
+      <packageName>Intent.Modules.Web</packageName>
       <stereotypes />
       <childElements />
     </childElement>
@@ -63,10 +65,12 @@
       <display>Intent.ModuleBuilder.Templates.TemplateDecoratorRegistration</display>
       <externalReference>Intent.ModuleBuilder</externalReference>
       <isAbstract>false</isAbstract>
-      <order>0</order>
+      <order>3</order>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>d99e53aa-19d1-4651-bae4-216814c73d25</parentFolderId>
+      <packageId>8a7e2758-112c-4c40-8790-505391e72e6f</packageId>
+      <packageName>Intent.Modules.Web</packageName>
       <stereotypes />
       <childElements />
     </childElement>

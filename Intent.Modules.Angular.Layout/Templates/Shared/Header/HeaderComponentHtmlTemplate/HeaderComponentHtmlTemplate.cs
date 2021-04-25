@@ -48,7 +48,7 @@ namespace Intent.Modules.Angular.Layout.Templates.Shared.Header.HeaderComponentH
             
             #line default
             #line hidden
-            this.Write("      <li class=\"nav-item active\" intent-manage=\"");
+            this.Write("      <li class=\"nav-item active\" intent-manage intent-id=\"");
             
             #line 20 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Templates\Shared\Header\HeaderComponentHtmlTemplate\HeaderComponentHtmlTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(moduleRoute.Route));

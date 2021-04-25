@@ -9,7 +9,7 @@
 import { Component, OnInit } from '@angular/core';<#= GetImports() #>
 
 @Component({
-  selector: 'app-<#= ComponentName.ToKebabCase() #>',
+  selector: '<#= GetSelector() #>',
   templateUrl: './<#= ComponentName.ToKebabCase() #>.component.html',
   styleUrls: ['./<#= ComponentName.ToKebabCase() #>.component.css']
 })

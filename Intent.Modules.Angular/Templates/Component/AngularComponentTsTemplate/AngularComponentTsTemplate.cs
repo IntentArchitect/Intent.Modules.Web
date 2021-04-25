@@ -38,10 +38,10 @@ namespace Intent.Modules.Angular.Templates.Component.AngularComponentTsTemplate
             
             #line default
             #line hidden
-            this.Write("\r\n\r\n@Component({\r\n  selector: \'app-");
+            this.Write("\r\n\r\n@Component({\r\n  selector: \'");
             
             #line 12 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\Component\AngularComponentTsTemplate\AngularComponentTsTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(ComponentName.ToKebabCase()));
+            this.Write(this.ToStringHelper.ToStringWithCulture(GetSelector()));
             
             #line default
             #line hidden

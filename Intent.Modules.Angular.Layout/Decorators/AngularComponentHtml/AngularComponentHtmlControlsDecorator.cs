@@ -1,9 +1,13 @@
 using System.Linq;
 using System.Text;
-using Intent.Modelers.WebClient.Angular.Api;
-using Intent.Modules.Angular.Layout.Decorators.Controls;
+using Intent.Angular.Layout.Api;
+using Intent.Modules.Angular.Layout.Decorators.Controls.ButtonControl;
+using Intent.Modules.Angular.Layout.Decorators.Controls.Form;
+using Intent.Modules.Angular.Layout.Decorators.Controls.PaginationControl;
+using Intent.Modules.Angular.Layout.Decorators.Controls.Section;
+using Intent.Modules.Angular.Layout.Decorators.Controls.TableControl;
 using Intent.Modules.Angular.Templates.Component.AngularComponentHtmlTemplate;
-using Intent.Modules.Common.Templates;
+using Intent.Modules.Angular.Templates.Component.Controls;
 using Intent.RoslynWeaver.Attributes;
 using Intent.Utils;
 
@@ -13,46 +17,25 @@ using Intent.Utils;
 namespace Intent.Modules.Angular.Layout.Decorators.AngularComponentHtml
 {
     [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
-    public class AngularComponentHtmlControlsDecorator : IOverwriteDecorator
+    public class AngularComponentHtmlControlsDecorator : IAngularComponentHtmlDecorator
     {
         public const string DecoratorId = "Angular.Layout.AngularComponentHtmlDecorator.Controls";
-        private readonly AngularComponentHtmlTemplate _template;
-        private readonly ControlWriter _controlWriter;
+        public readonly AngularComponentHtmlTemplate Template;
 
         public AngularComponentHtmlControlsDecorator(AngularComponentHtmlTemplate template)
         {
-            _template = template;
-            _controlWriter = new ControlWriter(_template.ExecutionContext.EventDispatcher);
-            if (View == null)
-            {
-                return;
-            }
-            foreach (var control in View.InternalElement.ChildElements)
-            {
-                var successful = _controlWriter.AddControl(control);
-                if (!successful)
-                {
-                    Logging.Log.Warning("Control could not be added as it has invalid bindings: " + control);
-                }
-            }
+            Template = template;
         }
 
-        public ComponentViewModel View => _template.Model.View;
-        public ComponentModel Model => _template.Model;
-        //public ComponentModelModel PaginationModel => new ComponentModelModel(View.GetStereotypeProperty<IElement>("Search View Settings", "Pagination Model"));
-        //public IElement DataModel => PaginationModel.TypeReference.GenericTypeParameters.First().Element;
+        public void RegisterControls(ControlWriter controlWriter)
+        {
+            controlWriter.RegisterControl(SectionModel.SpecializationTypeId, control =>  new SectionTemplate(new SectionModel(control), controlWriter));
+            controlWriter.RegisterControl(ButtonControlModel.SpecializationTypeId, control =>  new ButtonControlTemplate(new ButtonControlModel(control)));
+            controlWriter.RegisterControl(TableControlModel.SpecializationTypeId, control =>  new TableControlTemplate(new TableControlModel(control)));
+            controlWriter.RegisterControl(PaginationControlModel.SpecializationTypeId, control =>  new PaginationControlTemplate(new PaginationControlModel(control), Template.ExecutionContext.EventDispatcher));
+            controlWriter.RegisterControl(FormModel.SpecializationTypeId, control =>  new FormTemplate(new FormModel(control), Template.ExecutionContext.EventDispatcher));
+        }
 
         public int Priority { get; } = 0;
-        public string GetOverwrite() => MustOverwrite() ? GetOutput() : null;
-        private bool MustOverwrite() => View?.InternalElement.ChildElements.Any() ?? false;
-
-        public string GetOutput()
-        {
-            var sb = new StringBuilder();
-            sb.AppendLine("<div class=\"container-fluid\" intent-manage=\"add remove\" intent-id=\"container\">");
-            sb.Append(_controlWriter.WriteControls());
-            sb.AppendLine("</div>");
-            return sb.ToString();
-        }
     }
 }

@@ -70,5 +70,7 @@ namespace Intent.Modelers.WebClient.Angular.Api
             .GetElementsOfType(RedirectModel.SpecializationTypeId)
             .Select(x => new RedirectModel(x))
             .ToList();
+
+        public string Comment => _element.Comment;
     }
 }

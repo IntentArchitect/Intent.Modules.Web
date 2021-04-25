@@ -17,7 +17,7 @@
   <div class="collapse navbar-collapse" [collapse]="isCollapsed">
     <ul class="navbar-nav" intent-manage intent-id="navbar">
 <#  foreach (var moduleRoute in _mainRoutes) { #>
-      <li class="nav-item active" intent-manage="<#= moduleRoute.Route #>">
+      <li class="nav-item active" intent-manage intent-id="<#= moduleRoute.Route #>">
         <a class="nav-link" routerLink="/<#= moduleRoute.Route #>"><#= moduleRoute.ModuleName #></a>
       </li>
 <#  } #>

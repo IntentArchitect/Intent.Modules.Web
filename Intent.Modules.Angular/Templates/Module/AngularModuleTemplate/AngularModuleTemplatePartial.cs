@@ -12,6 +12,7 @@ using Intent.RoslynWeaver.Attributes;
 using Intent.Templates;
 using Intent.Modules.Common.TypeScript.Templates;
 using Intent.Modelers.WebClient.Angular.Api;
+using Intent.Modules.Common.Types.Api;
 
 [assembly: DefaultIntentManaged(Mode.Merge)]
 [assembly: IntentTemplate("Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial", Version = "1.0")]
@@ -31,6 +32,17 @@ namespace Intent.Modules.Angular.Templates.Module.AngularModuleTemplate
         [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
         public AngularModuleTemplate(IOutputTarget outputTarget, Intent.Modelers.WebClient.Angular.Api.ModuleModel model) : base(TemplateId, outputTarget, model)
         {
+            if (Model.IsRootModule())
+            {
+                _angularImports.Add(this.UseType("BrowserModule", "@angular/platform-browser"));
+                _angularImports.Add(this.UseType("BrowserAnimationsModule", "@angular/platform-browser/animations"));
+                _components.Add(this.UseType("AppComponent", "./app.component"));
+            }
+            else
+            {
+                _angularImports.Add(this.UseType("CommonModule", "@angular/common"));
+            }
+
             ExecutionContext.EventDispatcher.Subscribe(AngularComponentCreatedEvent.EventId, @event =>
                 {
                     if (@event.GetValue(AngularComponentCreatedEvent.ModuleId) != Model.Id)
@@ -54,7 +66,7 @@ namespace Intent.Modules.Angular.Templates.Module.AngularModuleTemplate
 
             ExecutionContext.EventDispatcher.Subscribe(AngularImportDependencyRequiredEvent.EventId, @event =>
             {
-                if (@event.GetValue(AngularImportDependencyRequiredEvent.ModuleId) != Model.Id)
+                if (@event.GetValue(AngularImportDependencyRequiredEvent.ModuleId) != Model.Id && @event.GetValue(AngularImportDependencyRequiredEvent.ModuleId) != ClassName)
                 {
                     return;
                 }
@@ -72,7 +84,7 @@ namespace Intent.Modules.Angular.Templates.Module.AngularModuleTemplate
             {
                 return "";
             }
-            return $"{System.Environment.NewLine}" + string.Join($"{System.Environment.NewLine}", _imports);
+            return $"{System.Environment.NewLine}" + string.Join($"{System.Environment.NewLine}", _imports) + $"{System.Environment.NewLine}  ";
         }
 
         public bool HasComponents()
@@ -115,7 +127,7 @@ namespace Intent.Modules.Angular.Templates.Module.AngularModuleTemplate
             }
             return @"
     " + string.Join($@",
-    ", _angularImports);
+    ", _angularImports.OrderBy(x => x));
         }
 
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]
@@ -124,7 +136,7 @@ namespace Intent.Modules.Angular.Templates.Module.AngularModuleTemplate
             return new TypeScriptFileConfig(
                 overwriteBehaviour: OverwriteBehaviour.Always,
                 fileName: $"{ModuleName.ToKebabCase()}.module",
-                relativeLocation: $"{ ModuleName.ToKebabCase() }",
+                relativeLocation: $"{string.Join("/", Model.GetParentFolderNames().Concat(new[] { ModuleName.ToKebabCase() }))}",
                 className: "${ModuleName}Module");
         }
     }
@@ -160,6 +172,15 @@ namespace Intent.Modules.Angular.Templates.Module.AngularModuleTemplate
         public override string ToString()
         {
             return $"Provider: {ProviderName} - {Location}";
+        }
+    }
+
+    public static class TypeScriptTemplateExtensions
+    {
+        public static string UseType<T>(this TypeScriptTemplateBase<T> template, string type, string location)
+        {
+            template.AddImport(type, location);
+            return type;
         }
     }
 }

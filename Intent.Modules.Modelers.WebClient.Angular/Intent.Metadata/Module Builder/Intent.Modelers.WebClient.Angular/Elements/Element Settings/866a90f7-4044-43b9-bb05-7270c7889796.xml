@@ -1,26 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
-<class id="32e3b819-399f-4cbd-89d6-31dd5fab9d20" type="Element Settings" typeId="727577aa-3e07-4b41-be7d-7359bb1e48c8">
-  <name>Tabs</name>
-  <display>Tabs</display>
+<class id="866a90f7-4044-43b9-bb05-7270c7889796" type="Element Settings" typeId="727577aa-3e07-4b41-be7d-7359bb1e48c8">
+  <name>Display Component</name>
+  <display>Display Component</display>
   <isAbstract>false</isAbstract>
-  <order>6</order>
+  <order>1</order>
   <genericTypes />
   <isMapped>false</isMapped>
-  <parentFolderId>d3c58ce6-a07c-47dc-8626-f73cf1d047e2</parentFolderId>
-  <packageId>411a47ef-bf13-45dd-b800-7abf7eb9ac92</packageId>
-  <packageName>Intent.Angular.Layout</packageName>
+  <parentFolderId>624513a6-cba8-4dde-8ebe-6b19f00f0364</parentFolderId>
+  <packageId>9cf8c5df-18a9-470e-a4fd-7e18d7050cd6</packageId>
+  <packageName>Intent.Modelers.WebClient.Angular</packageName>
   <stereotypes>
     <stereotype stereotypeDefinitionId="d8f6f331-d4f0-4c75-aa91-f2e715cd9591" name="Type Reference Settings">
       <addedByDefault>true</addedByDefault>
       <definitionPackageName>Intent.ModuleBuilder</definitionPackageName>
       <definitionPackageId>9972b2a9-b749-4bba-b5c8-824bf694c6ef</definitionPackageId>
       <properties>
-        <property name="8da796ff-e5b8-4a53-9c18-9176bfff8fbc" display="Mode" value="Disabled" isActive="true" />
-        <property name="b94f760c-0ce7-4176-bbae-97e26914b39c" display="Target Types" isActive="false" />
-        <property name="eedd06e4-e2b8-42f2-b882-c8ae9cecabb8" display="Represents" value="Reference" isActive="false" />
-        <property name="ff4b18c5-397b-4639-ba79-89939deb9834" display="Default Type Id" isActive="false" />
-        <property name="229dcbe7-f000-4ee9-a06a-febad727f7e1" display="Allow Nullable" value="true" isActive="false" />
-        <property name="d04ec558-6f6a-462b-b16a-9da1d7b4e9db" display="Allow Collection" value="true" isActive="false" />
+        <property name="8da796ff-e5b8-4a53-9c18-9176bfff8fbc" display="Mode" value="Required" isActive="true" />
+        <property name="b94f760c-0ce7-4176-bbae-97e26914b39c" display="Target Types" value="[&quot;b1c481e1-e91e-4c29-9817-00ab9cad4b6b&quot;]" isActive="true" />
+        <property name="eedd06e4-e2b8-42f2-b882-c8ae9cecabb8" display="Represents" value="Reference" isActive="true" />
+        <property name="ff4b18c5-397b-4639-ba79-89939deb9834" display="Default Type Id" isActive="true" />
+        <property name="229dcbe7-f000-4ee9-a06a-febad727f7e1" display="Allow Nullable" value="false" isActive="true" />
+        <property name="d04ec558-6f6a-462b-b16a-9da1d7b4e9db" display="Allow Collection" value="false" isActive="true" />
       </properties>
     </stereotype>
     <stereotype stereotypeDefinitionId="f406222b-31a8-435e-80f6-6a08f9108649" name="Settings">
@@ -32,7 +32,7 @@
         <property name="736b1337-6f35-4e38-85a8-69ff5d69fb7d" display="Icon" isActive="true" />
         <property name="32086823-bd72-4be0-a765-2d9530f4ce06" display="Expanded Icon" isActive="true" />
         <property name="0632053a-6b40-47a0-857f-6840e322344c" display="Display Text Function" value="" isActive="true" />
-        <property name="c48d9593-c1f4-4610-9cb3-54de9c2f0c06" display="Allow Rename" value="true" isActive="true" />
+        <property name="c48d9593-c1f4-4610-9cb3-54de9c2f0c06" display="Allow Rename" value="false" isActive="true" />
         <property name="4b17e907-bd58-4f70-b376-383c6046ad8a" display="Allow Abstract" value="false" isActive="true" />
         <property name="0eb8bcd6-4120-47c5-ac74-9a9e4a7d4536" display="Allow Set Value" value="false" isActive="true" />
         <property name="8ad604ab-7edf-4a6c-86a5-e27f0f95dfac" display="Allow Generic Types" value="false" isActive="true" />
@@ -42,16 +42,16 @@
     </stereotype>
   </stereotypes>
   <childElements>
-    <childElement id="23983fe6-205c-4c1b-b651-8a008348033e" type="Context Menu" typeId="d45e383d-90ba-4b64-aca7-34ca100cea21">
+    <childElement id="09549e35-2940-4c11-82cd-d777a3316bd8" type="Context Menu" typeId="d45e383d-90ba-4b64-aca7-34ca100cea21">
       <name>[context menu]</name>
       <display>[context menu]</display>
       <isAbstract>false</isAbstract>
       <order>0</order>
       <genericTypes />
       <isMapped>false</isMapped>
-      <parentFolderId>32e3b819-399f-4cbd-89d6-31dd5fab9d20</parentFolderId>
-      <packageId>411a47ef-bf13-45dd-b800-7abf7eb9ac92</packageId>
-      <packageName>Intent.Angular.Layout</packageName>
+      <parentFolderId>866a90f7-4044-43b9-bb05-7270c7889796</parentFolderId>
+      <packageId>9cf8c5df-18a9-470e-a4fd-7e18d7050cd6</packageId>
+      <packageName>Intent.Modelers.WebClient.Angular</packageName>
       <stereotypes />
       <childElements />
     </childElement>
