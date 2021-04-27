@@ -32,7 +32,8 @@ namespace Intent.Angular.Layout.Api
             }
         }
 
-        public ModuleModel Module => new ModuleModel(_element.GetParentPath().Reverse().First(x => x.SpecializationType == ModuleModel.SpecializationType));
+        public ModuleModel Module => InternalElement.GetModule();
+
         public string DataModelPath { get; } = "";
 
         [IntentManaged(Mode.Fully)]

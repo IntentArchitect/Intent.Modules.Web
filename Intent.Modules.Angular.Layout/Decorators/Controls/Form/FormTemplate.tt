@@ -4,33 +4,33 @@
 <#@ import namespace="System.Linq" #>
 <#@ import namespace="Intent.Modules.Common" #>
 <#@ import namespace="Intent.Modules.Common.Templates" #>
-  <form [formGroup]="<#= Model.DataModelPath #>" intent-manage intent-id="<#= Model.Name.Replace(" ", "").ToKebabCase() #>">
+<form [formGroup]="<#= Model.DataModelPath #>" intent-manage intent-id="<#= Model.Name.Replace(" ", "").ToKebabCase() #>">
 <#  foreach(var field in Model.FormFields) { #>
 <#      if (field.TypeReference.Element.Name == "Text Input") { #>
-    <div class="form-group" intent-id="<#= field.Id #>">
-      <label for="<#= field.DataModelPath #>"><#= field.Name #></label>
-      <input id="<#= field.DataModelPath #>" class="form-control" formControlName="<#= field.DataModelPath #>" type="text" />
-    </div>
+  <div class="form-group" intent-id="<#= field.Id #>">
+    <label for="<#= field.DataModelPath #>"><#= field.Name #></label>
+    <input id="<#= field.DataModelPath #>" class="form-control" formControlName="<#= field.DataModelPath #>" type="text" />
+  </div>
 <#      } else if (field.TypeReference.Element.Name == "Checkbox") { #>
-    <div class="form-check" intent-id="<#= field.Id #>">
-      <input id="<#= field.DataModelPath #>" class="form-check-input" formControlName="<#= field.DataModelPath #>" type="checkbox" />
-      <label for="<#= field.DataModelPath #>" class="form-check-label"><#= field.Name #></label>
-    </div>
+  <div class="form-check" intent-id="<#= field.Id #>">
+    <input id="<#= field.DataModelPath #>" class="form-check-input" formControlName="<#= field.DataModelPath #>" type="checkbox" />
+    <label for="<#= field.DataModelPath #>" class="form-check-label"><#= field.Name #></label>
+  </div>
 <#      } else if (field.TypeReference.Element.Name == "Datepicker") { #>
-    <div class="form-group" intent-id="<#= field.Id #>">
-      <label for="<#= field.DataModelPath #>"><#= field.Name #></label>
-      <input id="<#= field.DataModelPath #>" class="form-control" formControlName="<#= field.DataModelPath #>" type="text" bsDatepicker="" />
-    </div>
+  <div class="form-group" intent-id="<#= field.Id #>">
+    <label for="<#= field.DataModelPath #>"><#= field.Name #></label>
+    <input id="<#= field.DataModelPath #>" class="form-control" formControlName="<#= field.DataModelPath #>" type="text" bsDatepicker="" />
+  </div>
 <#      } else if (field.TypeReference.Element.Name == "Select") { #>
-    <div class="form-group" intent-id="<#= field.Id #>">
-      <label for="<#= field.DataModelPath #>"><#= field.Name #></label>
-      <ngx-select id="<#= field.DataModelPath #>"[items]="<#= GetSelectItemsModel(field) #>" formControlName="<#= field.DataModelPath #>" optionValueField="<#= GetSelectValueField(field) #>" optionTextField="<#= GetSelectTextField(field) #>" />
-    </div>
+  <div class="form-group" intent-id="<#= field.Id #>">
+    <label for="<#= field.DataModelPath #>"><#= field.Name #></label>
+    <ngx-select id="<#= field.DataModelPath #>"[items]="<#= GetSelectItemsModel(field) #>" formControlName="<#= field.DataModelPath #>" optionValueField="<#= GetSelectValueField(field) #>" optionTextField="<#= GetSelectTextField(field) #>" />
+  </div>
 <#      } else if (field.TypeReference.Element.Name == "Custom") { #>
-    <div class="form-group" intent-id="<#= field.Id #>" intent-ignore>
-      <label for="<#= field.DataModelPath #>"><#= field.Name #></label>
-      <input id="<#= field.DataModelPath #>" class="form-control" formControlName="<#= field.DataModelPath #>" type="text" />
-    </div>
+  <div class="form-group" intent-id="<#= field.Id #>" intent-ignore>
+    <label for="<#= field.DataModelPath #>"><#= field.Name #></label>
+    <input id="<#= field.DataModelPath #>" class="form-control" formControlName="<#= field.DataModelPath #>" type="text" />
+  </div>
 <#      } #>
 <#  } #>
-  </form>
+</form>

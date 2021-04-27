@@ -43,12 +43,7 @@ namespace Intent.Modules.Angular.Layout.Templates.Shared.Footer.FooterComponentT
             //}
 
             // New Component:
-            ExecutionContext.EventDispatcher.Publish(AngularComponentCreatedEvent.EventId,
-                new Dictionary<string, string>()
-                {
-                    {AngularComponentCreatedEvent.ModuleId, "AppModule" },
-                    {AngularComponentCreatedEvent.ModelId, TemplateId},
-                });
+            ExecutionContext.EventDispatcher.Publish(new AngularComponentCreatedEvent(modelId: TemplateId, moduleId: "AppModule"));
         }
 
     }

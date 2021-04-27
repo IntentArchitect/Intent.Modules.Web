@@ -12,6 +12,7 @@ using Intent.RoslynWeaver.Attributes;
 using Intent.Templates;
 using Intent.Modules.Common.TypeScript.Templates;
 using Intent.Modelers.WebClient.Angular.Api;
+using Intent.Modules.Angular.Templates.Core.CoreModuleTemplate;
 using Intent.Modules.Common.Types.Api;
 
 [assembly: DefaultIntentManaged(Mode.Merge)]
@@ -43,15 +44,15 @@ namespace Intent.Modules.Angular.Templates.Module.AngularModuleTemplate
                 _angularImports.Add(this.UseType("CommonModule", "@angular/common"));
             }
 
-            ExecutionContext.EventDispatcher.Subscribe(AngularComponentCreatedEvent.EventId, @event =>
+            ExecutionContext.EventDispatcher.Subscribe<AngularComponentCreatedEvent>(@event =>
                 {
-                    if (@event.GetValue(AngularComponentCreatedEvent.ModuleId) == ClassName)
+                    if (@event.ModuleId == ClassName)
                     {
-                        _components.Add(GetTypeName(@event.GetValue(AngularComponentCreatedEvent.ModelId)));
+                        _components.Add(GetTypeName(@event.ModelId));
                     }
-                    else if (@event.GetValue(AngularComponentCreatedEvent.ModuleId) == Model.Id)
+                    else if (@event.ModuleId == Model.Id)
                     {
-                        _components.Add(GetTypeName(AngularComponentTsTemplate.TemplateId, @event.GetValue(AngularComponentCreatedEvent.ModelId)));
+                        _components.Add(GetTypeName(AngularComponentTsTemplate.TemplateId, @event.ModelId));
                     }
                 });
 
@@ -66,15 +67,15 @@ namespace Intent.Modules.Angular.Templates.Module.AngularModuleTemplate
                 _providers.Add(templateClassName);
             });
 
-            ExecutionContext.EventDispatcher.Subscribe(AngularImportDependencyRequiredEvent.EventId, @event =>
+            ExecutionContext.EventDispatcher.Subscribe<AngularImportDependencyRequiredEvent>(@event =>
             {
-                if (@event.GetValue(AngularImportDependencyRequiredEvent.ModuleId) != Model.Id && @event.GetValue(AngularImportDependencyRequiredEvent.ModuleId) != ClassName)
+                if (@event.ModuleId != Model.Id && @event.ModuleId != ClassName)
                 {
                     return;
                 }
 
-                _angularImports.Add(@event.GetValue(AngularImportDependencyRequiredEvent.Dependency));
-                _imports.Add(@event.GetValue(AngularImportDependencyRequiredEvent.Import));
+                _angularImports.Add(@event.Dependency);
+                _imports.Add(@event.Import);
             });
         }
 
@@ -119,6 +120,10 @@ namespace Intent.Modules.Angular.Templates.Module.AngularModuleTemplate
 
         public string GetAngularImports()
         {
+            if (Model.IsRootModule())
+            {
+                _angularImports.Add(GetTypeName(CoreModuleTemplate.TemplateId));
+            }
             if (Model.Routing != null)
             {
                 _angularImports.Add(GetTypeName(AngularRoutingModuleTemplate.AngularRoutingModuleTemplate.TemplateId, Model.Routing));

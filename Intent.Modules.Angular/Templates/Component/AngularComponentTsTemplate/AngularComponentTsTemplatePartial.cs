@@ -58,12 +58,7 @@ namespace Intent.Modules.Angular.Templates.Component.AngularComponentTsTemplate
             //}
 
             // New Component:
-            ExecutionContext.EventDispatcher.Publish(AngularComponentCreatedEvent.EventId,
-                new Dictionary<string, string>()
-                {
-                    {AngularComponentCreatedEvent.ModuleId, Model.Module.Id },
-                    {AngularComponentCreatedEvent.ModelId, Model.Id},
-                });
+            ExecutionContext.EventDispatcher.Publish(new AngularComponentCreatedEvent(modelId: Model.Id, moduleId: Model.Module.Id));
         }
 
         public IList<IElement> InjectedServices { get; }

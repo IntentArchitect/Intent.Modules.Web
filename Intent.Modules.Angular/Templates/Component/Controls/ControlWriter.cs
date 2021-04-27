@@ -19,6 +19,8 @@ namespace Intent.Modules.Angular.Templates.Component.Controls
         {
         }
 
+        public string CurrentIndent = "";
+
         public void RegisterControl(string elementTypeId, Func<IElement, IControl> controlActivator)
         {
             _controlsRegistry.Add(elementTypeId, controlActivator);
@@ -26,7 +28,9 @@ namespace Intent.Modules.Angular.Templates.Component.Controls
 
         public string WriteControls(IEnumerable<IElement> elements, string currentIndent)
         {
-            return string.Join($"{System.Environment.NewLine}{currentIndent}", elements.Select(element =>
+            var previousIndent = CurrentIndent;
+            CurrentIndent = currentIndent;
+            var result = string.Join($"{System.Environment.NewLine}", elements.Select(element =>
             {
                 if (!_controlsRegistry.ContainsKey(element.SpecializationTypeId))
                 {
@@ -36,7 +40,9 @@ namespace Intent.Modules.Angular.Templates.Component.Controls
 
                 try
                 {
-                    return _controlsRegistry[element.SpecializationTypeId](element).TransformText().Trim();
+                    var lines = _controlsRegistry[element.SpecializationTypeId](element).TransformText()
+                        .Split(new[] {'\r', '\n'}, StringSplitOptions.RemoveEmptyEntries);
+                    return currentIndent + string.Join($"{System.Environment.NewLine}{currentIndent}", lines);
                 }
                 catch (Exception e)
                 {
@@ -45,6 +51,8 @@ namespace Intent.Modules.Angular.Templates.Component.Controls
                     return null;
                 }
             }).Where(x => x != null));
+            CurrentIndent = previousIndent;
+            return result;
         }
     }
 }

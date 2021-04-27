@@ -44,20 +44,12 @@ namespace Intent.Modules.Angular.Layout.Templates.Shared.Header.HeaderComponentT
             //}
 
             // New Component:
-            ExecutionContext.EventDispatcher.Publish(AngularComponentCreatedEvent.EventId,
-                new Dictionary<string, string>()
-                {
-                    {AngularComponentCreatedEvent.ModuleId, "AppModule" },
-                    {AngularComponentCreatedEvent.ModelId, TemplateId},
-                });
+            ExecutionContext.EventDispatcher.Publish(new AngularComponentCreatedEvent(modelId: TemplateId, moduleId: "AppModule"));
 
-            ExecutionContext.EventDispatcher.Publish(AngularImportDependencyRequiredEvent.EventId,
-                new Dictionary<string, string>()
-                {
-                    {AngularImportDependencyRequiredEvent.ModuleId, "AppModule" },
-                    {AngularImportDependencyRequiredEvent.Dependency, "CollapseModule.forRoot()"},
-                    {AngularImportDependencyRequiredEvent.Import, "import { CollapseModule } from 'ngx-bootstrap/collapse';"},
-                });
+            ExecutionContext.EventDispatcher.Publish(new AngularImportDependencyRequiredEvent(
+                moduleId: "AppModule", 
+                dependency: "CollapseModule.forRoot()", 
+                import: "import { CollapseModule } from 'ngx-bootstrap/collapse';"));
         }
     }
 }

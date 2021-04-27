@@ -29,14 +29,14 @@ namespace Intent.Modules.Angular.Layout.Decorators.Controls.PaginationControl
         /// </summary>
         public override string TransformText()
         {
-            this.Write("  <div class=\"row\" intent-manage intent-id=\"");
+            this.Write("<div class=\"row\" intent-manage intent-id=\"");
             
             #line 7 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Decorators\Controls\PaginationControl\PaginationControlTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Model.Name.Replace(" ", "").ToKebabCase()));
             
             #line default
             #line hidden
-            this.Write("\">\r\n    <div class=\"col\">\r\n      <pagination [totalItems]=\"");
+            this.Write("\">\r\n  <div class=\"col\">\r\n    <pagination [totalItems]=\"");
             
             #line 9 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Decorators\Controls\PaginationControl\PaginationControlTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Model.DataModelPath));
@@ -64,7 +64,7 @@ namespace Intent.Modules.Angular.Layout.Decorators.Controls.PaginationControl
             
             #line default
             #line hidden
-            this.Write("\" (pageChanged)=\"pageChanged($event)\"></pagination>\r\n    </div>\r\n  </div>\r\n");
+            this.Write("\" (pageChanged)=\"pageChanged($event)\"></pagination>\r\n  </div>\r\n</div>\r\n");
             return this.GenerationEnvironment.ToString();
         }
     }

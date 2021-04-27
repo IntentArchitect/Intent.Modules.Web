@@ -14,35 +14,27 @@ namespace Intent.Modules.Angular.Layout.Decorators.Controls.Form
         public FormTemplate(FormModel model, IApplicationEventDispatcher eventDispatcher)
         {
             Model = model;
-            eventDispatcher.Publish(AngularImportDependencyRequiredEvent.EventId, new Dictionary<string, string>()
-            {
-                { AngularImportDependencyRequiredEvent.ModuleId, Model.Module.Id},
-                { AngularImportDependencyRequiredEvent.Dependency, "ReactiveFormsModule"},
-                { AngularImportDependencyRequiredEvent.Import, "import { ReactiveFormsModule } from '@angular/forms';"}
-            });
-            eventDispatcher.Publish(AngularImportDependencyRequiredEvent.EventId, new Dictionary<string, string>()
-            {
-                { AngularImportDependencyRequiredEvent.ModuleId, Model.Module.Id},
-                { AngularImportDependencyRequiredEvent.Dependency, "FormsModule"},
-                { AngularImportDependencyRequiredEvent.Import, "import { FormsModule } from '@angular/forms';"}
-            });
+            eventDispatcher.Publish(new AngularImportDependencyRequiredEvent(
+                moduleId: Model.Module.Id, 
+                dependency: "ReactiveFormsModule", 
+                import: "import { ReactiveFormsModule } from '@angular/forms';"));
+            eventDispatcher.Publish(new AngularImportDependencyRequiredEvent(
+                moduleId: Model.Module.Id, 
+                dependency: "FormsModule", 
+                import: "import { FormsModule } from '@angular/forms';"));
             if (Model.FormFields.Any(x => x.TypeReference.Element.Name == "Datepicker"))
             {
-                eventDispatcher.Publish(AngularImportDependencyRequiredEvent.EventId, new Dictionary<string, string>()
-                {
-                    { AngularImportDependencyRequiredEvent.ModuleId, Model.Module.Id},
-                    { AngularImportDependencyRequiredEvent.Dependency, "BsDatepickerModule.forRoot()"},
-                    { AngularImportDependencyRequiredEvent.Import, "import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';"}
-                });
+                eventDispatcher.Publish(new AngularImportDependencyRequiredEvent(
+                    moduleId: Model.Module.Id,
+                    dependency: "BsDatepickerModule.forRoot()",
+                    import: "import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';"));
             }
             if (Model.FormFields.Any(x => x.TypeReference.Element.Name == "Select"))
             {
-                eventDispatcher.Publish(AngularImportDependencyRequiredEvent.EventId, new Dictionary<string, string>()
-                {
-                    { AngularImportDependencyRequiredEvent.ModuleId, Model.Module.Id},
-                    { AngularImportDependencyRequiredEvent.Dependency, "NgxSelectModule"},
-                    { AngularImportDependencyRequiredEvent.Import, "import { NgxSelectModule } from 'ngx-select-ex';"}
-                });
+                eventDispatcher.Publish(new AngularImportDependencyRequiredEvent(
+                    moduleId: Model.Module.Id,
+                    dependency: "NgxSelectModule",
+                    import: "import { NgxSelectModule } from 'ngx-select-ex';"));
             }
         }
 

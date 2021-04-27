@@ -12,12 +12,10 @@ namespace Intent.Modules.Angular.Layout.Decorators.Controls.PaginationControl
         public PaginationControlTemplate(PaginationControlModel model, IApplicationEventDispatcher eventDispatcher)
         {
             Model = model;
-            eventDispatcher.Publish(AngularImportDependencyRequiredEvent.EventId, new Dictionary<string, string>()
-            {
-                { AngularImportDependencyRequiredEvent.ModuleId, Model.Module.Id},
-                { AngularImportDependencyRequiredEvent.Dependency, "PaginationModule.forRoot()"},
-                { AngularImportDependencyRequiredEvent.Import, "import { PaginationModule } from 'ngx-bootstrap/pagination';"}
-            });
+            eventDispatcher.Publish(new AngularImportDependencyRequiredEvent(
+                moduleId: Model.Module.Id,
+                dependency: "PaginationModule.forRoot()",
+                import: "import { PaginationModule } from 'ngx-bootstrap/pagination';"));
         }
 
         public PaginationControlModel Model { get; }

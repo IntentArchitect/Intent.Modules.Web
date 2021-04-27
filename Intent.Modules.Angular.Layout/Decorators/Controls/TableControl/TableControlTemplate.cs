@@ -29,15 +29,15 @@ namespace Intent.Modules.Angular.Layout.Decorators.Controls.TableControl
         /// </summary>
         public override string TransformText()
         {
-            this.Write("  <div class=\"row\" intent-id=\"");
+            this.Write("<div class=\"row\" intent-id=\"");
             
             #line 7 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Decorators\Controls\TableControl\TableControlTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Model.Name.Replace(" ", "").ToKebabCase()));
             
             #line default
             #line hidden
-            this.Write("\">\r\n    <div class=\"col\">\r\n      <table class=\"table table-hover\">\r\n        <thea" +
-                    "d class=\"thead-dark\">\r\n          <tr intent-manage intent-id=\"");
+            this.Write("\">\r\n  <div class=\"col\">\r\n    <table class=\"table table-hover\">\r\n      <thead clas" +
+                    "s=\"thead-dark\">\r\n        <tr intent-manage intent-id=\"");
             
             #line 11 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Decorators\Controls\TableControl\TableControlTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Model.Name.Replace(" ", "").ToKebabCase()));
@@ -51,7 +51,7 @@ namespace Intent.Modules.Angular.Layout.Decorators.Controls.TableControl
             
             #line default
             #line hidden
-            this.Write("            <th>");
+            this.Write("          <th>");
             
             #line 13 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Decorators\Controls\TableControl\TableControlTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(field.Name));
@@ -65,8 +65,7 @@ namespace Intent.Modules.Angular.Layout.Decorators.Controls.TableControl
             
             #line default
             #line hidden
-            this.Write("          </tr>\r\n        </thead>\r\n        <tbody>\r\n          <tr *ngFor=\"let ite" +
-                    "m of ");
+            this.Write("        </tr>\r\n      </thead>\r\n      <tbody>\r\n        <tr *ngFor=\"let item of ");
             
             #line 18 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Decorators\Controls\TableControl\TableControlTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Model.DataModelPath));
@@ -94,7 +93,7 @@ namespace Intent.Modules.Angular.Layout.Decorators.Controls.TableControl
             
             #line default
             #line hidden
-            this.Write("            <td>");
+            this.Write("          <td>");
             
             #line 20 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Decorators\Controls\TableControl\TableControlTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(field.DataPath  != null ? "{{item." + field.DataPath + "}}" : ""));
@@ -108,7 +107,7 @@ namespace Intent.Modules.Angular.Layout.Decorators.Controls.TableControl
             
             #line default
             #line hidden
-            this.Write("          </tr>\r\n        </tbody>\r\n      </table>\r\n    </div>\r\n  </div>");
+            this.Write("        </tr>\r\n      </tbody>\r\n    </table>\r\n  </div>\r\n</div>");
             return this.GenerationEnvironment.ToString();
         }
     }

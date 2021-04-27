@@ -29,21 +29,21 @@ namespace Intent.Modules.Angular.Layout.Decorators.Controls.Section
         /// </summary>
         public override string TransformText()
         {
-            this.Write("  <div class=\"row\" intent-id=\"");
+            this.Write("<div class=\"row\" intent-id=\"");
             
             #line 7 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Decorators\Controls\Section\SectionTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Model.Name));
             
             #line default
             #line hidden
-            this.Write("\">\r\n    <div class=\"col\" intent-manage>\r\n      ");
+            this.Write("\">\r\n  <div class=\"col\" intent-manage>\r\n");
             
             #line 9 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Decorators\Controls\Section\SectionTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(ControlWriter.WriteControls(Model.InternalElement.ChildElements, CurrentIndent)));
+            this.Write(this.ToStringHelper.ToStringWithCulture(ControlWriter.WriteControls(Model.InternalElement.ChildElements, "    ")));
             
             #line default
             #line hidden
-            this.Write("\r\n    </div>\r\n  </div>\r\n");
+            this.Write("\r\n  </div>\r\n</div>\r\n");
             return this.GenerationEnvironment.ToString();
         }
     }

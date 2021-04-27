@@ -18,11 +18,16 @@ namespace Intent.Modules.Angular.Templates
         public string Route { get; }
     }
 
-    public static class AngularComponentCreatedEvent
+    public class AngularComponentCreatedEvent
     {
-        public const string EventId = "AngularComponentCreatedEvent";
-        public const string ModelId = "ModelId";
-        public const string ModuleId = "ModuleId";
+        public AngularComponentCreatedEvent(string modelId, string moduleId)
+        {
+            ModelId = modelId;
+            ModuleId = moduleId;
+        }
+
+        public string ModelId { get; }
+        public string ModuleId { get; }
     }
 
     public class AngularServiceProxyCreatedEvent
@@ -39,12 +44,17 @@ namespace Intent.Modules.Angular.Templates
         public string TemplateId { get; }
     }
 
-    public static class AngularImportDependencyRequiredEvent
+    public class AngularImportDependencyRequiredEvent
     {
-        public const string EventId = "ModuleProviderDependencyEvent";
-        public const string ModuleId = "ModuleId";
-        public const string Dependency = "Dependency";
-        public const string Import = "Import";
+        public AngularImportDependencyRequiredEvent(string moduleId, string dependency, string import)
+        {
+            ModuleId = moduleId;
+            Dependency = dependency;
+            Import = import;
+        }
+        public string ModuleId { get; }
+        public string Dependency { get; }
+        public string Import { get; }
     }
 
     public static class AngularConfigVariableRequiredEvent

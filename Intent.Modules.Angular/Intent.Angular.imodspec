@@ -62,7 +62,7 @@
   <interoperability>
     <detect id="Intent.AspNetCore">
       <install>
-        <package id="Intent.AspNetCore.Interop.Angular" version="3.0.2" />
+        <package id="Intent.AspNetCore.Interop.Angular" version="3.0.3" />
       </install>
     </detect>
   </interoperability>

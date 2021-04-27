@@ -44,6 +44,7 @@ namespace Intent.Modules.Angular.Templates.Component.AngularComponentHtmlTemplat
         }
 
         public ControlWriter ControlWriter;
+        public string ControlWriterOutput;
 
         public string ComponentName
         {
@@ -66,6 +67,12 @@ namespace Intent.Modules.Angular.Templates.Component.AngularComponentHtmlTemplat
             ModuleName = moduleTemplate.ModuleName;
         }
 
+        public override void BeforeTemplateExecution()
+        {
+            base.BeforeTemplateExecution();
+            ControlWriterOutput = ControlWriter.WriteControls(Model.View.InternalElement.ChildElements, "  ");
+        }
+
         public override string RunTemplate()
         {
             //var meta = GetMetadata();
@@ -83,7 +90,7 @@ namespace Intent.Modules.Angular.Templates.Component.AngularComponentHtmlTemplat
 
             var sb = new StringBuilder();
             sb.AppendLine("<div class=\"container-fluid\" intent-manage=\"add remove\" intent-id=\"container\">");
-            sb.AppendLine("  " + ControlWriter.WriteControls(Model.View.InternalElement.ChildElements, "  "));
+            sb.AppendLine(ControlWriterOutput);
             sb.AppendLine("</div>");
             return sb.ToString();
             //}
