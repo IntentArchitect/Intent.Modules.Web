@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<stereotypeDefinition id="83a5537c-2283-450f-99be-640547d0fad0">
+  <name>Link Settings</name>
+  <targetMode>of-type</targetMode>
+  <targetElements>
+    <element id="b0127146-e571-4000-825e-e7a04e4a45d6">Link</element>
+  </targetElements>
+  <applyMode>always</applyMode>
+  <icon type="FontAwesome" source="cogs" />
+  <displayIcon>false</displayIcon>
+  <displayFunction>return `[${properties["Router Link"].value}]`</displayFunction>
+  <autoAdd>false</autoAdd>
+  <parentFolderId>411a47ef-bf13-45dd-b800-7abf7eb9ac92</parentFolderId>
+  <order>0</order>
+  <packageId>411a47ef-bf13-45dd-b800-7abf7eb9ac92</packageId>
+  <packageName>Intent.Angular.Layout</packageName>
+  <properties>
+    <property id="4cfff4ff-84fe-4b70-82c0-295e1d8a692e">
+      <name>Router Link</name>
+      <type>string</type>
+      <controlType>text</controlType>
+      <optionsSource>n/a</optionsSource>
+      <placeholder>(required)</placeholder>
+      <valueOptions />
+      <lookupTypes />
+      <isRequiredFunction>return true;</isRequiredFunction>
+    </property>
+  </properties>
+</stereotypeDefinition>

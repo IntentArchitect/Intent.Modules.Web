@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<stereotypeDefinition id="df59cc7e-978d-42e3-921f-3f43d120834e">
+  <name>Table Settings</name>
+  <targetMode>of-type</targetMode>
+  <targetElements>
+    <element id="e302d9ca-268e-4a98-ad8d-4434aefb9903">Table Control</element>
+  </targetElements>
+  <applyMode>always</applyMode>
+  <icon type="FontAwesome" source="cogs" />
+  <displayIcon>false</displayIcon>
+  <displayFunction />
+  <autoAdd>false</autoAdd>
+  <parentFolderId>411a47ef-bf13-45dd-b800-7abf7eb9ac92</parentFolderId>
+  <order>0</order>
+  <packageId>411a47ef-bf13-45dd-b800-7abf7eb9ac92</packageId>
+  <packageName>Intent.Angular.Layout</packageName>
+  <properties>
+    <property id="b5ae6643-a53d-4aac-bd8a-4e212638cb0d">
+      <name>On Select Row</name>
+      <type>string</type>
+      <controlType>select</controlType>
+      <optionsSource>lookup-children</optionsSource>
+      <placeholder />
+      <valueOptions />
+      <lookupTypes>
+        <type>97a3de8a-c9bf-4cf2-bc0a-b8692b02211b</type>
+        <type>2b191288-ecae-4743-b069-cbdd927ef349</type>
+        <type>d6739ffc-30e6-4170-a105-bf28e69aa578</type>
+      </lookupTypes>
+      <lookupInternalTargetPropertyId>return element.getParent("Component").id;</lookupInternalTargetPropertyId>
+    </property>
+  </properties>
+</stereotypeDefinition>

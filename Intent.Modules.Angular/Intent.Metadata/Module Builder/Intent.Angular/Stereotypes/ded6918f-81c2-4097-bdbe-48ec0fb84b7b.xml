@@ -36,5 +36,15 @@
         <type>2d4ad132-e574-4319-9ae9-4d6e4b81110c</type>
       </lookupTypes>
     </property>
+    <property id="f9710a21-4db0-4fff-a61f-09761a5cc0b8">
+      <name>In Own Folder</name>
+      <type>string</type>
+      <controlType>checkbox</controlType>
+      <optionsSource>n/a</optionsSource>
+      <placeholder />
+      <defaultValue>true</defaultValue>
+      <valueOptions />
+      <lookupTypes />
+    </property>
   </properties>
 </stereotypeDefinition>

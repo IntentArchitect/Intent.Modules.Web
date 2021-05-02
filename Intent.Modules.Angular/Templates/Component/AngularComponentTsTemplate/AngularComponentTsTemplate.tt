@@ -6,6 +6,7 @@
 <#@ import namespace="Intent.Modules.Common.Templates" #>
 <#@ import namespace="Intent.Modules.Common.TypeScript.Templates" #>
 <#@ import namespace="Intent.Modules.Angular.Api" #>
+<#@ import namespace="Intent.Modelers.WebClient.Angular.Api" #>
 import { Component, OnInit } from '@angular/core';<#= GetImports() #>
 
 @Component({
@@ -30,6 +31,20 @@ export class <#= ClassName #> implements OnInit {
   <#= this.IntentIgnoreBodyDecorator() #>
   <#= command.Name.ToCamelCase() #>(<#= GetParameters(command) #>): <#= GetReturnType(command) #> {
     // write your business logic here for this command
+  }
+<#  }#>
+<#  foreach (var navigation in Model.NavigateToComponents().Where(x => x.IsNavigable)) {#>
+
+  <#= this.IntentManageDecorator() #>
+  <#= navigation.Name.ToCamelCase() #>(): void {
+    this.router.navigate(<#= GetNavigationCommand(navigation) #>);
+  }
+<#  }#>
+<#  foreach (var navigation in Model.NavigateBackComponents().Where(x => x.IsNavigable)) {#>
+
+  <#= this.IntentManageDecorator() #>
+  <#= navigation.Name.ToCamelCase() #>(): void {
+    this.router.navigate(<#= GetNavigationCommand(navigation) #>);
   }
 <#  }#>
 }

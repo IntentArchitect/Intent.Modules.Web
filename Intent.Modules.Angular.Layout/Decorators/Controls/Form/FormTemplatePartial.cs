@@ -42,17 +42,17 @@ namespace Intent.Modules.Angular.Layout.Decorators.Controls.Form
 
         private string GetSelectItemsModel(FormFieldModel field)
         {
-            return field.GetSelectControlOptions()?.OptionsSource().Name ?? "[]";
+            return field.GetSelectControlSettings()?.OptionsSource().Name ?? "[]";
         }
 
         private string GetSelectValueField(FormFieldModel field)
         {
-            return field.GetSelectControlOptions()?.OptionValueField() ?? "id";
+            return field.GetSelectControlSettings()?.OptionValueField() ?? "id";
         }
 
         private string GetSelectTextField(FormFieldModel field)
         {
-            return field.GetSelectControlOptions()?.OptionTextField() ?? "description";
+            return field.GetSelectControlSettings()?.OptionTextField() ?? "description";
         }
     }
 }

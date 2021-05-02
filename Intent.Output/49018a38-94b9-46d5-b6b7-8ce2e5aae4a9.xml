@@ -19,6 +19,21 @@
     </FileLog>
     <FileLog>
       <ProjectId>0d2ee049-ab68-4892-b48f-6577cc634f4c</ProjectId>
+      <SolutionRelativeFilePath>../Intent.Modules.Angular.Layout/Api/DropdownModel.cs</SolutionRelativeFilePath>
+      <ProjectRelativeFilePath>DropdownModel.cs</ProjectRelativeFilePath>
+    </FileLog>
+    <FileLog>
+      <ProjectId>188e1552-f648-48db-a9c3-75b661358b0d</ProjectId>
+      <SolutionRelativeFilePath>../Intent.Modules.Angular.Layout/Api/Extensions/LinkModelExtensions.cs</SolutionRelativeFilePath>
+      <ProjectRelativeFilePath>LinkModelExtensions.cs</ProjectRelativeFilePath>
+    </FileLog>
+    <FileLog>
+      <ProjectId>188e1552-f648-48db-a9c3-75b661358b0d</ProjectId>
+      <SolutionRelativeFilePath>../Intent.Modules.Angular.Layout/Api/Extensions/TableControlModelExtensions.cs</SolutionRelativeFilePath>
+      <ProjectRelativeFilePath>TableControlModelExtensions.cs</ProjectRelativeFilePath>
+    </FileLog>
+    <FileLog>
+      <ProjectId>0d2ee049-ab68-4892-b48f-6577cc634f4c</ProjectId>
       <SolutionRelativeFilePath>../Intent.Modules.Angular.Layout/Api/FormControlModel.cs</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>FormControlModel.cs</ProjectRelativeFilePath>
     </FileLog>
@@ -31,6 +46,16 @@
       <ProjectId>0d2ee049-ab68-4892-b48f-6577cc634f4c</ProjectId>
       <SolutionRelativeFilePath>../Intent.Modules.Angular.Layout/Api/FormModel.cs</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>FormModel.cs</ProjectRelativeFilePath>
+    </FileLog>
+    <FileLog>
+      <ProjectId>0d2ee049-ab68-4892-b48f-6577cc634f4c</ProjectId>
+      <SolutionRelativeFilePath>../Intent.Modules.Angular.Layout/Api/LinkModel.cs</SolutionRelativeFilePath>
+      <ProjectRelativeFilePath>LinkModel.cs</ProjectRelativeFilePath>
+    </FileLog>
+    <FileLog>
+      <ProjectId>0d2ee049-ab68-4892-b48f-6577cc634f4c</ProjectId>
+      <SolutionRelativeFilePath>../Intent.Modules.Angular.Layout/Api/NavbarModel.cs</SolutionRelativeFilePath>
+      <ProjectRelativeFilePath>NavbarModel.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>0d2ee049-ab68-4892-b48f-6577cc634f4c</ProjectId>
@@ -51,16 +76,6 @@
       <ProjectId>0d2ee049-ab68-4892-b48f-6577cc634f4c</ProjectId>
       <SolutionRelativeFilePath>../Intent.Modules.Angular.Layout/Api/TableControlModel.cs</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>TableControlModel.cs</ProjectRelativeFilePath>
-    </FileLog>
-    <FileLog>
-      <ProjectId>0d2ee049-ab68-4892-b48f-6577cc634f4c</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Angular.Layout/Api/TabsModel.cs</SolutionRelativeFilePath>
-      <ProjectRelativeFilePath>TabsModel.cs</ProjectRelativeFilePath>
-    </FileLog>
-    <FileLog>
-      <ProjectId>52d04f2f-7ff6-4102-bfc1-fcb55203dad0</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Angular.Layout/ApiMetadataProviderExtensions.cs</SolutionRelativeFilePath>
-      <ProjectRelativeFilePath>ApiMetadataProviderExtensions.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>52d04f2f-7ff6-4102-bfc1-fcb55203dad0</ProjectId>

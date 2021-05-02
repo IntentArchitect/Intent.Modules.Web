@@ -12,7 +12,7 @@ using Intent.Modules.Common.Types.Api;
 
 namespace Intent.Modelers.WebClient.Angular.Api
 {
-    [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
+    [IntentManaged(Mode.Merge, Signature = Mode.Merge)]
     public class ModuleModel : IMetadataModel, IHasStereotypes, IHasName, IHasFolder<IFolder>, IFolder
     {
         protected readonly IElement _element;

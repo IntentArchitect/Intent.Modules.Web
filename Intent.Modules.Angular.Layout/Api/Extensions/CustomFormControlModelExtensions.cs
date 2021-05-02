@@ -10,23 +10,23 @@ namespace Intent.Angular.Layout.Api
 {
     public static class CustomFormControlModelExtensions
     {
-        public static SelectControlOptions GetSelectControlOptions(this FormFieldModel model)
+        public static SelectControlSettings GetSelectControlSettings(this FormFieldModel model)
         {
-            var stereotype = model.GetStereotype("Select Control Options");
-            return stereotype != null ? new SelectControlOptions(stereotype) : null;
+            var stereotype = model.GetStereotype("Select Control Settings");
+            return stereotype != null ? new SelectControlSettings(stereotype) : null;
         }
 
-        public static bool HasSelectControlOptions(this FormFieldModel model)
+        public static bool HasSelectControlSettings(this FormFieldModel model)
         {
-            return model.HasStereotype("Select Control Options");
+            return model.HasStereotype("Select Control Settings");
         }
 
 
-        public class SelectControlOptions
+        public class SelectControlSettings
         {
             private IStereotype _stereotype;
 
-            public SelectControlOptions(IStereotype stereotype)
+            public SelectControlSettings(IStereotype stereotype)
             {
                 _stereotype = stereotype;
             }

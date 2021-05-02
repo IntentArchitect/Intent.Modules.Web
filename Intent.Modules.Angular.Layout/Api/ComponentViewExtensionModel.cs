@@ -46,9 +46,9 @@ namespace Intent.Angular.Layout.Api
             .Select(x => new SectionModel(x))
             .ToList();
 
-        public IList<TabsModel> Tabses => _element.ChildElements
-            .GetElementsOfType(TabsModel.SpecializationTypeId)
-            .Select(x => new TabsModel(x))
+        public IList<NavbarModel> Navbars => _element.ChildElements
+            .GetElementsOfType(NavbarModel.SpecializationTypeId)
+            .Select(x => new NavbarModel(x))
             .ToList();
 
     }

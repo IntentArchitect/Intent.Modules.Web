@@ -13,6 +13,7 @@ namespace Intent.Modules.Angular.Layout.Decorators.Controls.TableControl
     using System.Linq;
     using Intent.Modules.Common;
     using Intent.Modules.Common.Templates;
+    using Intent.Angular.Layout.Api;
     using System;
     
     /// <summary>
@@ -29,10 +30,11 @@ namespace Intent.Modules.Angular.Layout.Decorators.Controls.TableControl
         /// </summary>
         public override string TransformText()
         {
+            this.Write("\n");
             this.Write("<div class=\"row\" intent-id=\"");
             
             #line 7 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Decorators\Controls\TableControl\TableControlTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(Model.Name.Replace(" ", "").ToKebabCase()));
+            this.Write(this.ToStringHelper.ToStringWithCulture(GetTableName()));
             
             #line default
             #line hidden
@@ -40,7 +42,7 @@ namespace Intent.Modules.Angular.Layout.Decorators.Controls.TableControl
                     "s=\"thead-dark\">\r\n        <tr intent-manage intent-id=\"");
             
             #line 11 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Decorators\Controls\TableControl\TableControlTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(Model.Name.Replace(" ", "").ToKebabCase()));
+            this.Write(this.ToStringHelper.ToStringWithCulture(GetTableName()));
             
             #line default
             #line hidden
@@ -72,17 +74,17 @@ namespace Intent.Modules.Angular.Layout.Decorators.Controls.TableControl
             
             #line default
             #line hidden
-            this.Write("\" class=\"clickable\" intent-manage intent-id=\"");
+            this.Write("\" class=\"clickable\" ");
             
             #line 18 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Decorators\Controls\TableControl\TableControlTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(Model.Name.Replace(" ", "").ToKebabCase()));
+            this.Write(this.ToStringHelper.ToStringWithCulture(GetTableRowAttributes()));
             
             #line default
             #line hidden
-            this.Write("-");
+            this.Write(" intent-manage intent-id=\"");
             
             #line 18 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Decorators\Controls\TableControl\TableControlTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(Model.Name.ToKebabCase()));
+            this.Write(this.ToStringHelper.ToStringWithCulture(GetTableName()));
             
             #line default
             #line hidden

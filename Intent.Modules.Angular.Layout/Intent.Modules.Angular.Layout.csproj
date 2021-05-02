@@ -7,11 +7,16 @@
   <ItemGroup>
     <None Remove="Decorators\Controls\ButtonControl\ButtonControlTemplate.tt" />
     <None Remove="Decorators\Controls\Form\FormTemplate.tt" />
+    <None Remove="Decorators\Controls\Navbar\NavbarTemplate.tt" />
     <None Remove="Decorators\Controls\PaginationControl\PaginationControlTemplate.tt" />
     <None Remove="Decorators\AngularComponentHtml\TableControlTemplate.tt" />
     <None Remove="Decorators\Controls\Section\SectionTemplate.tt" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Decorators\Controls\Navbar\NavbarTemplate.tt">
+      <LastGenOutput>NavbarTemplate.cs</LastGenOutput>
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+    </Content>
     <Content Include="Decorators\Controls\Section\SectionTemplate.tt">
       <LastGenOutput>SectionTemplate.cs</LastGenOutput>
       <Generator>TextTemplatingFilePreprocessor</Generator>
@@ -64,6 +69,11 @@
     </None>
   </ItemGroup>
   <ItemGroup>
+    <Compile Update="Decorators\Controls\Navbar\NavbarTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>NavbarTemplate.tt</DependentUpon>
+    </Compile>
     <Compile Update="Decorators\Controls\Section\SectionTemplate.cs">
       <DependentUpon>SectionTemplate.tt</DependentUpon>
       <DesignTime>True</DesignTime>

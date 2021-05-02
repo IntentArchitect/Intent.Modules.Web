@@ -6,6 +6,7 @@ using Intent.Modules.Angular.Templates.Shared.IntentDecoratorsTemplate;
 using Intent.Modules.Common.TypeScript.Templates;
 using Intent.RoslynWeaver.Attributes;
 using Intent.Templates;
+using Intent.Modules.Common.Templates;
 
 
 [assembly: DefaultIntentManaged(Mode.Merge)]
@@ -47,8 +48,8 @@ namespace Intent.Modules.Angular.Layout.Templates.Shared.Header.HeaderComponentT
             ExecutionContext.EventDispatcher.Publish(new AngularComponentCreatedEvent(modelId: TemplateId, moduleId: "AppModule"));
 
             ExecutionContext.EventDispatcher.Publish(new AngularImportDependencyRequiredEvent(
-                moduleId: "AppModule", 
-                dependency: "CollapseModule.forRoot()", 
+                moduleId: "AppModule",
+                dependency: "CollapseModule.forRoot()",
                 import: "import { CollapseModule } from 'ngx-bootstrap/collapse';"));
         }
     }

@@ -11,7 +11,7 @@ using Intent.RoslynWeaver.Attributes;
 
 namespace Intent.Modelers.WebClient.Angular.Api
 {
-    [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
+    [IntentManaged(Mode.Merge, Signature = Mode.Merge)]
     public class ModelDefinitionModel : IMetadataModel, IHasStereotypes, IHasName, IHasFolder<IFolder>
     {
         public const string SpecializationType = "Model Definition";
@@ -31,7 +31,7 @@ namespace Intent.Modelers.WebClient.Angular.Api
 
         [IntentManaged(Mode.Ignore)]
         public IFolder Folder => InternalElement.GetParentFolder();
-        
+
         [IntentManaged(Mode.Fully)]
         public string Id => _element.Id;
 

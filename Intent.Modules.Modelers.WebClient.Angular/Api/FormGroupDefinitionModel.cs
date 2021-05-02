@@ -11,7 +11,7 @@ using Intent.RoslynWeaver.Attributes;
 
 namespace Intent.Modelers.WebClient.Angular.Api
 {
-    [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
+    [IntentManaged(Mode.Merge, Signature = Mode.Merge)]
     public class FormGroupDefinitionModel : IMetadataModel, IHasStereotypes, IHasName, IHasFolder<IFolder>
     {
         public const string SpecializationType = "Form Group Definition";

@@ -1,0 +1,42 @@
+<#@ template language="C#" inherits="T4TemplateBase" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="Intent.Modules.Common" #>
+<#@ import namespace="Intent.Modules.Common.Templates" #>
+<#@ import namespace="Intent.Angular.Layout.Api" #>
+<nav class="navbar navbar-expand-lg " role="navigation" intent-manage>
+  <div class="navbar-header">
+    <a class="navbar-brand" href="#"><span></span></a>
+  </div>
+  <button class="navbar-toggler" type="button" (click)="isCollapsed = !isCollapsed" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  <div class="collapse navbar-collapse" [collapse]="isCollapsed">
+    <ul class="nav navbar-nav">
+<#  foreach(var navItem in Model.InternalElement.ChildElements) { #>
+<#      if (navItem.IsLink()) {
+            var linkModel = navItem.AsLinkModel(); #>
+      <li class="nav-item">
+        <a class="nav-link" routerLink="<#= linkModel.GetLinkSettings().RouterLink() #>" routerLinkActive="active">
+          <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
+          <span><#= linkModel.Name #></span>
+        </a>
+      </li>
+<#      } #>
+<#      if (navItem.IsDropdown()) {
+            var dropdownModel = navItem.AsIsDropdownModel(); #>
+      <li class="dropdown nav-item" dropdown>
+        <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" dropdownToggle><#= dropdownModel.Name #><span class="caret"></span>
+        </a>
+        <div class="dropdown-menu" *dropdownMenu>
+<#        foreach(var linkModel in dropdownModel.Links) { #>
+          <a class="dropdown-item" routerLink="<#= linkModel.GetLinkSettings().RouterLink() #>"><span class="glyphicon glyphicon-search" aria-hidden="true"></span><span> <#= linkModel.Name #></span></a>
+<#        } #>
+        </div>
+      </li>
+<#      } #>
+<#  } #>
+    </ul>
+  </div>
+</nav>

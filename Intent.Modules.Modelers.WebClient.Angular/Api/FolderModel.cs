@@ -11,7 +11,7 @@ using Intent.Modules.Common.Types.Api;
 
 namespace Intent.Modelers.WebClient.Angular.Api
 {
-    [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
+    [IntentManaged(Mode.Merge, Signature = Mode.Merge)]
     public class FolderModel : IMetadataModel, IHasStereotypes, IHasName, IFolder, IHasFolder<IFolder>
     {
         public const string SpecializationType = "Folder";

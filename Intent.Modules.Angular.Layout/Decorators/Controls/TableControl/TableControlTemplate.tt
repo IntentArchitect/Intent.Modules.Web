@@ -4,18 +4,19 @@
 <#@ import namespace="System.Linq" #>
 <#@ import namespace="Intent.Modules.Common" #>
 <#@ import namespace="Intent.Modules.Common.Templates" #>
-<div class="row" intent-id="<#= Model.Name.Replace(" ", "").ToKebabCase() #>">
+<#@ import namespace="Intent.Angular.Layout.Api" #>
+<div class="row" intent-id="<#= GetTableName() #>">
   <div class="col">
     <table class="table table-hover">
       <thead class="thead-dark">
-        <tr intent-manage intent-id="<#= Model.Name.Replace(" ", "").ToKebabCase() #>-header">
+        <tr intent-manage intent-id="<#= GetTableName() #>-header">
 <# foreach(var field in Model.Columns) { #>
           <th><#= field.Name #></th>
 <# } #>
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let item of <#= Model.DataModelPath #>" class="clickable" intent-manage intent-id="<#= Model.Name.Replace(" ", "").ToKebabCase() #>-<#= Model.Name.ToKebabCase() #>-data">
+        <tr *ngFor="let item of <#= Model.DataModelPath #>" class="clickable" <#= GetTableRowAttributes() #> intent-manage intent-id="<#= GetTableName() #>-data">
 <# foreach(var field in Model.Columns) { #>
           <td><#= field.DataPath  != null ? "{{item." + field.DataPath + "}}" : ""#></td>
 <# } #>

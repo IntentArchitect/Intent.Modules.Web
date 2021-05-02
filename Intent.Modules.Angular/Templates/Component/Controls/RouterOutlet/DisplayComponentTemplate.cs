@@ -11,8 +11,7 @@ namespace Intent.Modules.Angular.Templates.Component.Controls.DisplayComponent
 
         public string TransformText()
         {
-            return @"
-        <router-outlet></router-outlet>";
+            return @"<router-outlet></router-outlet>";
         }
     }
 }

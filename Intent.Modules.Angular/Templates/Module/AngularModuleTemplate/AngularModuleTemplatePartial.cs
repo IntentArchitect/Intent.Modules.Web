@@ -124,17 +124,24 @@ namespace Intent.Modules.Angular.Templates.Module.AngularModuleTemplate
             {
                 _angularImports.Add(GetTypeName(CoreModuleTemplate.TemplateId));
             }
+
+            foreach (var subModule in Model.Modules)
+            {
+                _angularImports.Add(GetTypeName(TemplateId, subModule));
+            }
+
             if (Model.Routing != null)
             {
                 _angularImports.Add(GetTypeName(AngularRoutingModuleTemplate.AngularRoutingModuleTemplate.TemplateId, Model.Routing));
             }
+
             if (!_angularImports.Any())
             {
                 return "";
             }
             return @"
     " + string.Join($@",
-    ", _angularImports.OrderBy(x => x)) + @"
+    ", _angularImports) + @"
   ";
         }
 

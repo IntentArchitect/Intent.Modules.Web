@@ -13,6 +13,7 @@ using Intent.Modules.Angular.Templates.Model.FormGroupTemplate;
 using Intent.Modules.Angular.Templates.Model.ModelTemplate;
 using Intent.Modules.Common.TypeScript.Templates;
 using Intent.Modelers.WebClient.Angular.Api;
+using Intent.Modules.Angular.Templates.Module.AngularModuleTemplate;
 using Intent.Modules.Common.Types.Api;
 
 [assembly: DefaultIntentManaged(Mode.Merge)]
@@ -76,7 +77,13 @@ namespace Intent.Modules.Angular.Templates.Component.AngularComponentTsTemplate
 
         public string GetConstructorParams()
         {
-            return string.Join(", ", InjectedServices.Select(x => $"private {x.Name.ToCamelCase()}: {GetTypeName(x)}"));
+            var services = new List<string>();
+            services.AddRange(InjectedServices.Select(x => $"private {x.Name.ToCamelCase()}: {GetTypeName(x)}"));
+            if (Model.NavigateToComponents().Any() || Model.NavigateBackComponents().Any() && InjectedServices.All(x => x.Name != "Router"))
+            {
+                services.Add($"private router: {this.UseType("Router", "@angular/router")}");
+            }
+            return string.Join(", ", services);
         }
 
         public string GetParameters(ComponentCommandModel command)
@@ -105,10 +112,15 @@ namespace Intent.Modules.Angular.Templates.Component.AngularComponentTsTemplate
             return new TypeScriptFileConfig(
                 overwriteBehaviour: OverwriteBehaviour.Always,
                 fileName: $"{ComponentName.ToKebabCase()}.component",
-                relativeLocation: $"{string.Join("/", Model.GetParentFolderNames().Concat(new[] { ComponentName.ToKebabCase() }))}",
+                relativeLocation: $"{string.Join("/", Model.GetParentFolderNames())}/{(Model.GetAngularComponentSettings().InOwnFolder() ? $"/{ComponentName.ToKebabCase()}" : "")}",
                 className: $"{ComponentName}Component"
             );
         }
 
+        private string GetNavigationCommand(NavigationEndModel navigation)
+        {
+            var route = Model.Module.Routing.Routes.FirstOrDefault(x => x.TypeReference.Element.Id == navigation.Element.Id);
+            return route != null ? $"[\"{route.Name}\"]" : $"[]";
+        }
     }
 }

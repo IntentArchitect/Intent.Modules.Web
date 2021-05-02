@@ -8,6 +8,7 @@ using Intent.Engine;
 using Intent.Templates;
 using System.Collections.Generic;
 using System.Linq;
+using Intent.Angular.Api;
 using Intent.Modules.Angular.Api;
 using Intent.Modelers.WebClient.Angular.Api;
 using Intent.Modules.Common.Types.Api;
@@ -70,7 +71,7 @@ namespace Intent.Modules.Angular.Templates.Component.AngularComponentCssTemplate
             return new TemplateFileConfig(
                 fileName: $"{ComponentName.ToKebabCase()}.component",
                 fileExtension: "css", // Change to desired file extension.
-                relativeLocation: $"{string.Join("/", Model.GetParentFolderNames().Concat(new[] { ComponentName.ToKebabCase() }))}"
+                relativeLocation: $"{string.Join("/", Model.GetParentFolderNames())}/{(Model.GetAngularComponentSettings().InOwnFolder() ? $"/{ComponentName.ToKebabCase()}" : "")}"
             );
         }
     }

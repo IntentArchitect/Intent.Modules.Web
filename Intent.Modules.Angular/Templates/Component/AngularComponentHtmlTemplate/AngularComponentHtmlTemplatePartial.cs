@@ -9,6 +9,7 @@ using Intent.Templates;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using Intent.Angular.Api;
 using Intent.Modules.Angular.Api;
 using Intent.Modules.Common.Html.Templates;
 using Intent.Modelers.WebClient.Angular.Api;
@@ -125,7 +126,7 @@ namespace Intent.Modules.Angular.Templates.Component.AngularComponentHtmlTemplat
             return new TemplateFileConfig(
                 fileName: $"{ComponentName.ToKebabCase()}.component",
                 fileExtension: "html",
-                relativeLocation: $"{string.Join("/", Model.GetParentFolderNames().Concat(new[] { ComponentName.ToKebabCase() }))}");
+                relativeLocation: $"{string.Join("/", Model.GetParentFolderNames())}/{(Model.GetAngularComponentSettings().InOwnFolder() ? $"/{ComponentName.ToKebabCase()}" : "")}");
         }
     }
 }

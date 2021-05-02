@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <stereotypeDefinition id="eb93cf3d-18dc-45e4-bc12-52957d4cc79f">
-  <name>Select Control Options</name>
+  <name>Select Control Settings</name>
   <targetMode>that-reference</targetMode>
   <targetElements>
     <element id="1db37bef-68b3-4128-8e92-b1c5853dca00">Select</element>
   </targetElements>
   <applyMode>always</applyMode>
-  <icon type="UrlImagePath" source="./img/icons/common/StereotypeDef_256x.png" />
+  <icon type="FontAwesome" source="cogs" />
   <displayIcon>false</displayIcon>
   <displayFunction />
   <autoAdd>false</autoAdd>

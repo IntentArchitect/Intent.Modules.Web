@@ -48,6 +48,11 @@
       <ProjectRelativeFilePath>DisplayComponentModel.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
+      <ProjectId>f681c920-0dae-4317-a5dc-8a744a3beb72</ProjectId>
+      <SolutionRelativeFilePath>../Intent.Modules.Modelers.WebClient.Angular/Api/Extensions/NavigationModelAssociationExtensions.cs</SolutionRelativeFilePath>
+      <ProjectRelativeFilePath>NavigationModelAssociationExtensions.cs</ProjectRelativeFilePath>
+    </FileLog>
+    <FileLog>
       <ProjectId>cd404cb9-57b2-4161-a7ae-e864b9a9e35d</ProjectId>
       <SolutionRelativeFilePath>../Intent.Modules.Modelers.WebClient.Angular/Api/FolderModel.cs</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>FolderModel.cs</ProjectRelativeFilePath>
@@ -76,6 +81,11 @@
       <ProjectId>cd404cb9-57b2-4161-a7ae-e864b9a9e35d</ProjectId>
       <SolutionRelativeFilePath>../Intent.Modules.Modelers.WebClient.Angular/Api/ModuleModel.cs</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>ModuleModel.cs</ProjectRelativeFilePath>
+    </FileLog>
+    <FileLog>
+      <ProjectId>cd404cb9-57b2-4161-a7ae-e864b9a9e35d</ProjectId>
+      <SolutionRelativeFilePath>../Intent.Modules.Modelers.WebClient.Angular/Api/NavigationModel.cs</SolutionRelativeFilePath>
+      <ProjectRelativeFilePath>NavigationModel.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>cd404cb9-57b2-4161-a7ae-e864b9a9e35d</ProjectId>

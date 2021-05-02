@@ -2,8 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Intent.Metadata.Models;
-using Intent.RoslynWeaver.Attributes;
 using Intent.Modules.Common;
+using Intent.RoslynWeaver.Attributes;
 
 [assembly: DefaultIntentManaged(Mode.Fully)]
 [assembly: IntentTemplate("Intent.ModuleBuilder.Templates.Api.ApiElementModel", Version = "1.0")]
@@ -11,14 +11,14 @@ using Intent.Modules.Common;
 namespace Intent.Angular.Layout.Api
 {
     [IntentManaged(Mode.Merge)]
-    public class TabsModel : IHasStereotypes, IMetadataModel, IHasName
+    public class DropdownModel : IMetadataModel, IHasStereotypes, IHasName
     {
-        public const string SpecializationType = "Tabs";
-        public const string SpecializationTypeId = "32e3b819-399f-4cbd-89d6-31dd5fab9d20";
+        public const string SpecializationType = "Dropdown";
+        public const string SpecializationTypeId = "91610e3a-f0e4-4807-a1b3-4dc947fe13ac";
         protected readonly IElement _element;
 
         [IntentManaged(Mode.Ignore)]
-        public TabsModel(IElement element, string requiredType = SpecializationType)
+        public DropdownModel(IElement element, string requiredType = SpecializationType)
         {
             if (!requiredType.Equals(element.SpecializationType, StringComparison.InvariantCultureIgnoreCase))
             {
@@ -31,16 +31,23 @@ namespace Intent.Angular.Layout.Api
 
         public string Name => _element.Name;
 
+        public string Comment => _element.Comment;
+
         public IEnumerable<IStereotype> Stereotypes => _element.Stereotypes;
 
         public IElement InternalElement => _element;
+
+        public IList<LinkModel> Links => _element.ChildElements
+            .GetElementsOfType(LinkModel.SpecializationTypeId)
+            .Select(x => new LinkModel(x))
+            .ToList();
 
         public override string ToString()
         {
             return _element.ToString();
         }
 
-        public bool Equals(TabsModel other)
+        public bool Equals(DropdownModel other)
         {
             return Equals(_element, other?._element);
         }
@@ -50,14 +57,12 @@ namespace Intent.Angular.Layout.Api
             if (ReferenceEquals(null, obj)) return false;
             if (ReferenceEquals(this, obj)) return true;
             if (obj.GetType() != this.GetType()) return false;
-            return Equals((TabsModel)obj);
+            return Equals((DropdownModel)obj);
         }
 
         public override int GetHashCode()
         {
             return (_element != null ? _element.GetHashCode() : 0);
         }
-
-        public string Comment => _element.Comment;
     }
 }

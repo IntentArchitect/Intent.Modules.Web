@@ -3,7 +3,7 @@
   <name>Angular Web App</name>
   <display>Angular Web App: Web Client</display>
   <isAbstract>false</isAbstract>
-  <order>7</order>
+  <order>8</order>
   <genericTypes />
   <typeReference id="e511005a-f36f-4bf7-8613-401407884a44">
     <typeId>911c35b4-4ba3-404c-a0c6-e5258e53333a</typeId>

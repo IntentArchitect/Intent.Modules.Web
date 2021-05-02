@@ -44,6 +44,11 @@ namespace Intent.Angular.Api
                 return _stereotype.GetProperty<IElement[]>("Inject Services");
             }
 
+            public bool InOwnFolder()
+            {
+                return _stereotype.GetProperty<bool>("In Own Folder");
+            }
+
         }
 
     }
