@@ -77,6 +77,17 @@ namespace Intent.Modules.Angular.Templates.Module.AngularModuleTemplate
                 _angularImports.Add(@event.Dependency);
                 _imports.Add(@event.Import);
             });
+
+            ExecutionContext.EventDispatcher.Subscribe<AngularCustomProviderRequiredEvent>(@event =>
+            {
+                if (@event.ModuleId != Model.Id && @event.ModuleId != ClassName)
+                {
+                    return;
+                }
+
+                _providers.Add($"{{ provide: {@event.Provide}, useClass: {@event.UseClass}, multi: {@event.Multi.ToString().ToLower()} }}");
+                _imports.Add(@event.Import);
+            });
         }
 
         public string ModuleName => Model.GetModuleName();

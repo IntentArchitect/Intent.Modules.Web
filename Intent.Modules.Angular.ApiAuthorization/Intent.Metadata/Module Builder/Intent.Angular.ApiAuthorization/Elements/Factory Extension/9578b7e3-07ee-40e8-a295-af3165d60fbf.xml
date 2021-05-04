@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="9578b7e3-07ee-40e8-a295-af3165d60fbf" type="Factory Extension" typeId="7d008e84-bb28-4b10-ba28-7439202fca76">
+  <name>NpmCliInstaller</name>
+  <display>NpmCliInstaller</display>
+  <isAbstract>false</isAbstract>
+  <order>2</order>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>1e254a4c-2cb2-410c-a4d4-fcadd59c9353</parentFolderId>
+  <packageId>1e254a4c-2cb2-410c-a4d4-fcadd59c9353</packageId>
+  <packageName>Intent.Angular.ApiAuthorization</packageName>
+  <stereotypes />
+  <childElements />
+</class>

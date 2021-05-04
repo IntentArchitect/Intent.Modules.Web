@@ -57,6 +57,24 @@ namespace Intent.Modules.Angular.Templates
         public string Import { get; }
     }
 
+    public class AngularCustomProviderRequiredEvent
+    {
+        public AngularCustomProviderRequiredEvent(string moduleId, string provide, string useClass, bool multi, string import)
+        {
+            ModuleId = moduleId;
+            Provide = provide;
+            UseClass = useClass;
+            Multi = multi;
+            Import = import;
+        }
+
+        public string ModuleId { get; }
+        public string Provide { get; }
+        public string UseClass { get; }
+        public bool Multi { get; }
+        public string Import { get; }
+    }
+
     public static class AngularConfigVariableRequiredEvent
     {
         public const string EventId = nameof(AngularConfigVariableRequiredEvent);
