@@ -7,15 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Templates\App\AppModuleTemplate\**" />
-    <Compile Remove="Templates\App\AppRoutingModuleTemplate\**" />
-    <EmbeddedResource Remove="Templates\App\AppModuleTemplate\**" />
-    <EmbeddedResource Remove="Templates\App\AppRoutingModuleTemplate\**" />
-    <None Remove="Templates\App\AppModuleTemplate\**" />
-    <None Remove="Templates\App\AppRoutingModuleTemplate\**" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="Intent.Modules.Common" Version="3.0.4" />
     <PackageReference Include="Intent.Modules.Common.Html" Version="3.0.2" />
     <PackageReference Include="Intent.Modules.Common.Typescript" Version="3.0.3" />
@@ -142,10 +133,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>ModelTemplate.tt</DependentUpon>
     </Compile>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Templates\App\" />
   </ItemGroup>
 
 </Project>
