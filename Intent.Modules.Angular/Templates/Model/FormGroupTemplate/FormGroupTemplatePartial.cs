@@ -87,6 +87,11 @@ namespace Intent.Modules.Angular.Templates.Model.FormGroupTemplate
                     path = $"new {GetTypeName(field)}({path})";
                 }
             }
+
+            if (GetTypeName(field) == "Date")
+            {
+                return $"new Date({path})";
+            }
             return path;
         }
 

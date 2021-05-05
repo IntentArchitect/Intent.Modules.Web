@@ -29,6 +29,11 @@
     </FileLog>
     <FileLog>
       <ProjectId>cd404cb9-57b2-4161-a7ae-e864b9a9e35d</ProjectId>
+      <SolutionRelativeFilePath>../Intent.Modules.Modelers.WebClient.Angular/Api/ComponentInputModel.cs</SolutionRelativeFilePath>
+      <ProjectRelativeFilePath>ComponentInputModel.cs</ProjectRelativeFilePath>
+    </FileLog>
+    <FileLog>
+      <ProjectId>cd404cb9-57b2-4161-a7ae-e864b9a9e35d</ProjectId>
       <SolutionRelativeFilePath>../Intent.Modules.Modelers.WebClient.Angular/Api/ComponentModel.cs</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>ComponentModel.cs</ProjectRelativeFilePath>
     </FileLog>
@@ -36,6 +41,11 @@
       <ProjectId>cd404cb9-57b2-4161-a7ae-e864b9a9e35d</ProjectId>
       <SolutionRelativeFilePath>../Intent.Modules.Modelers.WebClient.Angular/Api/ComponentModelModel.cs</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>ComponentModelModel.cs</ProjectRelativeFilePath>
+    </FileLog>
+    <FileLog>
+      <ProjectId>cd404cb9-57b2-4161-a7ae-e864b9a9e35d</ProjectId>
+      <SolutionRelativeFilePath>../Intent.Modules.Modelers.WebClient.Angular/Api/ComponentOutputModel.cs</SolutionRelativeFilePath>
+      <ProjectRelativeFilePath>ComponentOutputModel.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>cd404cb9-57b2-4161-a7ae-e864b9a9e35d</ProjectId>
@@ -96,6 +106,11 @@
       <ProjectId>cd404cb9-57b2-4161-a7ae-e864b9a9e35d</ProjectId>
       <SolutionRelativeFilePath>../Intent.Modules.Modelers.WebClient.Angular/Api/RouteModel.cs</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>RouteModel.cs</ProjectRelativeFilePath>
+    </FileLog>
+    <FileLog>
+      <ProjectId>cd404cb9-57b2-4161-a7ae-e864b9a9e35d</ProjectId>
+      <SolutionRelativeFilePath>../Intent.Modules.Modelers.WebClient.Angular/Api/RouteParameterModel.cs</SolutionRelativeFilePath>
+      <ProjectRelativeFilePath>RouteParameterModel.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>cd404cb9-57b2-4161-a7ae-e864b9a9e35d</ProjectId>

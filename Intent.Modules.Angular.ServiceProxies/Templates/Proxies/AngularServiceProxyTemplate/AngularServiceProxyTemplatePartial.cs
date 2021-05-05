@@ -157,16 +157,26 @@ namespace Intent.Modules.Angular.ServiceProxies.Templates.Proxies.AngularService
             {
                 foreach (var parameter in operation.Parameters)
                 {
-                    var startIndex = operationPath.IndexOf($"{{{parameter.Name}", StringComparison.InvariantCultureIgnoreCase);
-                    if (startIndex != -1)
+                    //var routeElements = operationPath.Split("/", StringSplitOptions.RemoveEmptyEntries);
+                    //if (routeElements.Any(x => x.Contains('{') 
+                    //                           && x.Contains('}')
+                    //                           && x.Split(new[] {'{', '}'}, StringSplitOptions.RemoveEmptyEntries).Any(i => i == parameter.Name.ToCamelCase())))
+                    //{
+                    if (operationPath.Contains($"{{{parameter.Name}}}", StringComparison.InvariantCultureIgnoreCase))
                     {
-                        var endIndex = operationPath.IndexOf("}", startIndex, StringComparison.InvariantCultureIgnoreCase);
-                        if (endIndex != -1)
-                        {
-                            operationPath = operationPath.Remove(startIndex, endIndex - startIndex + 1);
-                            operationPath = operationPath.Insert(startIndex, $"${{{parameter.Name.ToCamelCase()}}}");
-                        }
+                        operationPath = operationPath.Replace($"{{{parameter.Name}}}", $"${{{parameter.Name.ToCamelCase()}}}", StringComparison.InvariantCultureIgnoreCase);
                     }
+                    //}
+                    //var startIndex = operationPath.IndexOf($"{{{parameter.Name}", StringComparison.InvariantCultureIgnoreCase);
+                    //if (startIndex != -1)
+                    //{
+                    //    var endIndex = operationPath.IndexOf("}", startIndex, StringComparison.InvariantCultureIgnoreCase);
+                    //    if (endIndex != -1)
+                    //    {
+                    //        operationPath = operationPath.Remove(startIndex, endIndex - startIndex + 1);
+                    //        operationPath = operationPath.Insert(startIndex, $"${{{parameter.Name.ToCamelCase()}}}");
+                    //    }
+                    //}
                 }
             }
 

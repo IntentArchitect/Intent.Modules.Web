@@ -79,7 +79,7 @@ namespace Intent.Modules.Angular.Templates.Component.AngularComponentTsTemplate
         {
             var services = new List<string>();
             services.AddRange(InjectedServices.Select(x => $"private {x.Name.ToCamelCase()}: {GetTypeName(x)}"));
-            if (Model.NavigateToComponents().Any() || Model.NavigateBackComponents().Any() && InjectedServices.All(x => x.Name != "Router"))
+            if ((Model.NavigateToComponents().Any(x => x.IsNavigable) || Model.NavigateBackComponents().Any(x => x.IsNavigable)) && InjectedServices.All(x => x.Name != "Router"))
             {
                 services.Add($"private router: {this.UseType("Router", "@angular/router")}");
             }
@@ -119,8 +119,40 @@ namespace Intent.Modules.Angular.Templates.Component.AngularComponentTsTemplate
 
         private string GetNavigationCommand(NavigationEndModel navigation)
         {
-            var route = Model.Module.Routing.Routes.FirstOrDefault(x => x.TypeReference.Element.Id == navigation.Element.Id);
-            return route != null ? $"[\"{route.Name}\"]" : $"[]";
+            var route = GetNavigationRoute(navigation);
+            //var component = route?.RoutesToComponent == true
+            //    ? new ComponentModel((IElement)route.TypeReference.Element)
+            //    : null;
+            if (route != null)
+            {
+
+                //var parameters = string.Join(", ", component.Inputs.Select(x => $"{x.Name}: {GetTypeName(x)}"));
+                //var arguments = component.Inputs.Select(x => $"{x.Name}").ToList();
+                return $@"
+  {navigation.Name}({string.Join(", ", route.Name.Split('/').Where(IsRouteParameter).Select(x => x.Substring(1) + ": any"))}): void {{
+    this.router.navigate([{string.Join(", ", route.Name.Split('/').Select(x => IsRouteParameter(x) ? x.Substring(1) : $"\"{x}\""))}]);
+  }}";
+            }
+            return $@"
+  {this.IntentIgnoreBodyDecorator()}
+  {navigation.Name}(): void {{
+    // custom navigation logic...
+    // e.g. this.router.navigate([""your-route""]);
+  }}";
+        }
+
+        private RouteModel GetNavigationRoute(NavigationEndModel navigation)
+        {
+            var module = new ComponentModel((IElement) navigation.Element).Module;
+            var modulesToCheck = new[] {Model.Module, module}.Concat(module.GetParentFolders().OfType<ModuleModel>()).ToList();
+            var routes = modulesToCheck.SelectMany(x => x.Routing?.Routes ?? new List<RouteModel>()).ToList();
+            var route = routes.FirstOrDefault(x => x.TypeReference.Element.Id == navigation.Element.Id);
+            return route;
+        }
+
+        private bool IsRouteParameter(string routeElement)
+        {
+            return routeElement.StartsWith(":");
         }
     }
 }

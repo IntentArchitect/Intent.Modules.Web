@@ -7,6 +7,7 @@
 <#@ import namespace="Intent.Modules.Common.TypeScript.Templates" #>
 <#@ import namespace="Intent.Modules.Angular.Api" #>
 <#@ import namespace="Intent.Modelers.WebClient.Angular.Api" #>
+<#@ import namespace="Intent.Modules.Angular.Templates.Module.AngularModuleTemplate" #>
 import { Component, OnInit } from '@angular/core';<#= GetImports() #>
 
 @Component({
@@ -15,8 +16,13 @@ import { Component, OnInit } from '@angular/core';<#= GetImports() #>
   styleUrls: ['./<#= ComponentName.ToKebabCase() #>.component.css']
 })
 export class <#= ClassName #> implements OnInit {
+<#  foreach (var model in Model.Inputs) {#>
+  <#= model.Name #>: <#= GetTypeName(model.TypeReference)#>;
+<#  }#>
+<#  foreach (var model in Model.Outputs) {#>
+  @Output() <#= model.Name #> = new <#= this.UseType("EventEmitter", "@angular/core") #><<#= GetTypeName(model.TypeReference)#>>();
+<#  }#>
 <#  foreach (var model in Model.Models) {#>
-
   <#= model.Name #>: <#= GetTypeName(model.TypeReference)#>;
 <#  }#>
 
@@ -34,17 +40,9 @@ export class <#= ClassName #> implements OnInit {
   }
 <#  }#>
 <#  foreach (var navigation in Model.NavigateToComponents().Where(x => x.IsNavigable)) {#>
-
-  <#= this.IntentManageDecorator() #>
-  <#= navigation.Name.ToCamelCase() #>(): void {
-    this.router.navigate(<#= GetNavigationCommand(navigation) #>);
-  }
+<#= GetNavigationCommand(navigation) #>
 <#  }#>
 <#  foreach (var navigation in Model.NavigateBackComponents().Where(x => x.IsNavigable)) {#>
-
-  <#= this.IntentManageDecorator() #>
-  <#= navigation.Name.ToCamelCase() #>(): void {
-    this.router.navigate(<#= GetNavigationCommand(navigation) #>);
-  }
+<#= GetNavigationCommand(navigation) #>
 <#  }#>
 }

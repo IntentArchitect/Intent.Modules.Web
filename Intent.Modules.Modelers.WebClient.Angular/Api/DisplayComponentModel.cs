@@ -15,7 +15,6 @@ namespace Intent.Modelers.WebClient.Angular.Api
     {
         public const string SpecializationType = "Display Component";
         public const string SpecializationTypeId = "866a90f7-4044-43b9-bb05-7270c7889796";
-        protected readonly IElement _element;
 
         [IntentManaged(Mode.Ignore)]
         public DisplayComponentModel(IElement element, string requiredType = SpecializationType)
@@ -28,16 +27,6 @@ namespace Intent.Modelers.WebClient.Angular.Api
         }
 
         public string Id => _element.Id;
-
-        public string Name => _element.Name;
-
-        public string Comment => _element.Comment;
-
-        public IEnumerable<IStereotype> Stereotypes => _element.Stereotypes;
-
-        public ITypeReference TypeReference => _element.TypeReference;
-
-        public IElement InternalElement => _element;
 
         public override string ToString()
         {
@@ -61,5 +50,16 @@ namespace Intent.Modelers.WebClient.Angular.Api
         {
             return (_element != null ? _element.GetHashCode() : 0);
         }
+        protected readonly IElement _element;
+
+        public string Comment => _element.Comment;
+
+        public IElement InternalElement => _element;
+
+        public string Name => _element.Name;
+
+        public IEnumerable<IStereotype> Stereotypes => _element.Stereotypes;
+
+        public ITypeReference TypeReference => _element.TypeReference;
     }
 }

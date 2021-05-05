@@ -10,6 +10,7 @@ using Intent.Modelers.WebClient.Angular.Api;
 using Intent.Modelers.WebClient.Api;
 using Intent.Plugins.FactoryExtensions;
 using Intent.Utils;
+using Newtonsoft.Json;
 
 namespace Intent.Modules.Angular
 {
@@ -17,6 +18,7 @@ namespace Intent.Modules.Angular
     public class AngularCliInstaller : FactoryExtensionBase, IExecutionLifeCycle
     {
         private readonly IMetadataManager _metadataManager;
+        private IList<NpmPackageInstallationRequest> _installationRequests = new List<NpmPackageInstallationRequest>();
         public override int Order => 100;
 
         public AngularCliInstaller(IMetadataManager metadataManager)
@@ -32,17 +34,19 @@ namespace Intent.Modules.Angular
                 {
                     throw new Exception("No Web Client Package found. Create a new Package and Root Module 'AppModule' in the Web Client designer.");
                 }
+                application.EventDispatcher.Subscribe<NpmPackageInstallationRequest>(request => _installationRequests.Add(request));
             }
             if (step == ExecutionLifeCycleSteps.BeforeTemplateExecution)
             {
+                var outputTarget = CliCommand.GetFrontEndOutputTarget(application);
+                if (outputTarget == null)
+                {
+                    Logging.Log.Warning("Could not find a location to install Angular application. Ensure that a Web Client package has been created.");
+                    return;
+                }
                 if (!AngularInstalled(application))
                 {
-                    var outputTarget = CliCommand.GetFrontEndOutputTarget(application);
-                    if (outputTarget == null)
-                    {
-                        Logging.Log.Warning("Could not find a location to install Angular application. Ensure that a Web Client package has been created.");
-                        return;
-                    }
+
                     Logging.Log.Info($"Installing Angular into project: [{ outputTarget.Name }]");
                     CliCommand.Run(outputTarget.Location, $@"npm i @angular/cli@8 --save-dev"); // Ensure this version - typescript fix
                     // add --skipInstall to skip running the npm i
@@ -52,6 +56,14 @@ namespace Intent.Modules.Angular
                 else
                 {
                     Logging.Log.Info("Angular app already installed. Skipping Angular CLI installation");
+                }
+
+                foreach (var npmPackage in _installationRequests)
+                {
+                    if (!IsPackageInstalled(application, npmPackage.PackageName))
+                    {
+                        CliCommand.Run(outputTarget.Location, $"npm i {npmPackage.PackageName}{(npmPackage.PackageVersion != null ? $"@{npmPackage.PackageVersion}" : "")} {npmPackage.Arguments ?? ""}");
+                    }
                 }
             }
         }
@@ -63,5 +75,34 @@ namespace Intent.Modules.Angular
             var project = CliCommand.GetFrontEndOutputTarget(application);
             return project != null && File.Exists(Path.Combine(project.Location, "angular.json"));
         }
+
+        public bool IsPackageInstalled(IApplication application, string package)
+        {
+            string appLocation = CliCommand.GetFrontEndOutputTarget(application).Location;
+            if (!File.Exists($@"{appLocation}/package.json"))
+            {
+                return true;
+            }
+            using (var file = File.OpenText($@"{appLocation}/package.json"))
+            {
+                JsonSerializer serializer = new JsonSerializer();
+                var packageFile = (dynamic)serializer.Deserialize(new JsonTextReader(file));
+                return packageFile.dependencies[package] != null;
+            }
+        }
+    }
+
+    public class NpmPackageInstallationRequest
+    {
+        public NpmPackageInstallationRequest(string packageName, string packageVersion, string arguments)
+        {
+            PackageName = packageName;
+            PackageVersion = packageVersion;
+            Arguments = arguments;
+        }
+
+        public string PackageName { get; set; }
+        public string PackageVersion { get; set; }
+        public string Arguments { get; set; }
     }
 }

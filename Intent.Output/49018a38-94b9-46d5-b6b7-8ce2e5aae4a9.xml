@@ -14,6 +14,11 @@
     </FileLog>
     <FileLog>
       <ProjectId>0d2ee049-ab68-4892-b48f-6577cc634f4c</ProjectId>
+      <SolutionRelativeFilePath>../Intent.Modules.Angular.Layout/Api/ButtonControlParameterModel.cs</SolutionRelativeFilePath>
+      <ProjectRelativeFilePath>ButtonControlParameterModel.cs</ProjectRelativeFilePath>
+    </FileLog>
+    <FileLog>
+      <ProjectId>0d2ee049-ab68-4892-b48f-6577cc634f4c</ProjectId>
       <SolutionRelativeFilePath>../Intent.Modules.Angular.Layout/Api/ComponentViewExtensionModel.cs</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>ComponentViewExtensionModel.cs</ProjectRelativeFilePath>
     </FileLog>

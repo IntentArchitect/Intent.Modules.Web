@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Intent.Metadata.Models;
+using Intent.Modelers.WebClient.Angular.Api;
 using Intent.Modules.Common.Templates;
 using Intent.RoslynWeaver.Attributes;
 using Intent.Modules.Common;
@@ -28,6 +29,21 @@ namespace Intent.Angular.Layout.Api
             if (InternalElement.IsMapped)
             {
                 ClickCommandPath = string.Join(".", InternalElement.MappedElement.Path.Select(x => x.Name.ToCamelCase()));
+                if (InternalElement.MappedElement.Element.SpecializationTypeId == NavigationTargetEndModel.SpecializationTypeId ||
+                    InternalElement.MappedElement.Element.SpecializationTypeId == NavigationSourceEndModel.SpecializationTypeId)
+                {
+                    // This is a best-attempt hack.
+                    var associationEnd = (IAssociationEnd)InternalElement.MappedElement.Element;
+                    var navigationModel = new NavigationModel(associationEnd.Association);
+                    var navigationEndModel = associationEnd.IsTargetEnd() ? (NavigationEndModel)navigationModel.TargetEnd : navigationModel.SourceEnd;
+                    var component = new ComponentModel((IElement) navigationEndModel.Element);
+                    var sourceComponent = new ComponentModel((IElement) navigationEndModel.GetOtherEnd().Element);
+                    ClickCommandPath += $"({string.Join(", ", component.Inputs.Select(x => sourceComponent.Models.Any(m => m.Name == x.Name) || sourceComponent.Inputs.Any(m => m.Name == x.Name) ? x.Name : x.Name.ToDotCase()))})";
+                }
+                else
+                {
+                    ClickCommandPath += "()";
+                }
             }
         }
 

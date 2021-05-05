@@ -14,7 +14,7 @@ namespace Intent.Modules.Angular
     public class AngularCliNgxBootstrapInstaller : FactoryExtensionBase, IExecutionLifeCycle
     {
         public override int Order => 200;
-
+        
         public void OnStep(IApplication application, string step)
         {
             if (step == ExecutionLifeCycleSteps.BeforeTemplateExecution)

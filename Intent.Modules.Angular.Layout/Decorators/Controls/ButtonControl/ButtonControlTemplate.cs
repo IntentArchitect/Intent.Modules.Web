@@ -50,7 +50,7 @@ namespace Intent.Modules.Angular.Layout.Decorators.Controls.ButtonControl
             
             #line default
             #line hidden
-            this.Write("()\" ");
+            this.Write("\" ");
             
             #line 8 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Decorators\Controls\ButtonControl\ButtonControlTemplate.tt"
  } 

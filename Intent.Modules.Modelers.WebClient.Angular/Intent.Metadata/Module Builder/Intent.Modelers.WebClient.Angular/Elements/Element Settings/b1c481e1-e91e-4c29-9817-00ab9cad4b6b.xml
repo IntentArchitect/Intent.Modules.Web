@@ -55,11 +55,89 @@
       <packageName>Intent.Modelers.WebClient.Angular</packageName>
       <stereotypes />
       <childElements>
+        <childElement id="caf4d278-a9b2-48b1-996d-a0a85c1b1052" type="Element Creation Option" typeId="5fa12f89-da1e-49c5-b8e9-427b22407f19">
+          <name>Add Input</name>
+          <display>Add Input: Component Input</display>
+          <isAbstract>false</isAbstract>
+          <order>0</order>
+          <genericTypes />
+          <typeReference id="291abda5-c3b7-4a85-9603-e335f206e20e">
+            <typeId>807bc2cd-cdba-482d-a47e-d2aa546200fc</typeId>
+            <isNavigable>true</isNavigable>
+            <isNullable>false</isNullable>
+            <isCollection>false</isCollection>
+            <isRequired>true</isRequired>
+            <typePackageName>Intent.Modelers.WebClient.Angular</typePackageName>
+            <typePackageId>9cf8c5df-18a9-470e-a4fd-7e18d7050cd6</typePackageId>
+            <stereotypes />
+            <genericTypeParameters />
+          </typeReference>
+          <isMapped>false</isMapped>
+          <parentFolderId>1477276d-8293-4b3e-8b5a-25082aa7a00b</parentFolderId>
+          <packageId>9cf8c5df-18a9-470e-a4fd-7e18d7050cd6</packageId>
+          <packageName>Intent.Modelers.WebClient.Angular</packageName>
+          <stereotypes>
+            <stereotype stereotypeDefinitionId="f4250b35-559d-4c0b-91ee-c3d7aa239814" name="Option Settings">
+              <comment />
+              <addedByDefault>true</addedByDefault>
+              <definitionPackageName>Intent.ModuleBuilder</definitionPackageName>
+              <definitionPackageId>9972b2a9-b749-4bba-b5c8-824bf694c6ef</definitionPackageId>
+              <properties>
+                <property name="9df41a97-0a8b-42c6-9d95-becf3d6d1e0b" display="Shortcut" isActive="true" />
+                <property name="5572d05e-dd37-47f6-944a-73710c07f4f1" display="Shortcut (macOS)" isActive="true" />
+                <property name="ba8a3ecd-0f08-499e-bb5b-929d40f56a45" display="Default Name" value="" isActive="true" />
+                <property name="A43F388B-DAFF-422C-BD8D-FB433EFEC51B" display="Type Order" isActive="true" />
+                <property name="8e092aa6-7d1a-4a06-af82-903e7642cef6" display="Allow Multiple" value="true" isActive="true" />
+                <property name="719e9dff-2b8d-407d-912d-fac99a158721" display="Api Model Name" isActive="true" />
+              </properties>
+            </stereotype>
+          </stereotypes>
+          <childElements />
+        </childElement>
+        <childElement id="38f78904-7c9e-4597-a179-415e01694f0f" type="Element Creation Option" typeId="5fa12f89-da1e-49c5-b8e9-427b22407f19">
+          <name>Add Output</name>
+          <display>Add Output: Component Output</display>
+          <isAbstract>false</isAbstract>
+          <order>1</order>
+          <genericTypes />
+          <typeReference id="b2c78e99-aaaa-4bc0-bd50-61d7f52171c4">
+            <typeId>56a7ef0e-737e-4a62-8237-7541c0d56882</typeId>
+            <isNavigable>true</isNavigable>
+            <isNullable>false</isNullable>
+            <isCollection>false</isCollection>
+            <isRequired>true</isRequired>
+            <typePackageName>Intent.Modelers.WebClient.Angular</typePackageName>
+            <typePackageId>9cf8c5df-18a9-470e-a4fd-7e18d7050cd6</typePackageId>
+            <stereotypes />
+            <genericTypeParameters />
+          </typeReference>
+          <isMapped>false</isMapped>
+          <parentFolderId>1477276d-8293-4b3e-8b5a-25082aa7a00b</parentFolderId>
+          <packageId>9cf8c5df-18a9-470e-a4fd-7e18d7050cd6</packageId>
+          <packageName>Intent.Modelers.WebClient.Angular</packageName>
+          <stereotypes>
+            <stereotype stereotypeDefinitionId="f4250b35-559d-4c0b-91ee-c3d7aa239814" name="Option Settings">
+              <comment />
+              <addedByDefault>true</addedByDefault>
+              <definitionPackageName>Intent.ModuleBuilder</definitionPackageName>
+              <definitionPackageId>9972b2a9-b749-4bba-b5c8-824bf694c6ef</definitionPackageId>
+              <properties>
+                <property name="9df41a97-0a8b-42c6-9d95-becf3d6d1e0b" display="Shortcut" isActive="true" />
+                <property name="5572d05e-dd37-47f6-944a-73710c07f4f1" display="Shortcut (macOS)" isActive="true" />
+                <property name="ba8a3ecd-0f08-499e-bb5b-929d40f56a45" display="Default Name" value="" isActive="true" />
+                <property name="A43F388B-DAFF-422C-BD8D-FB433EFEC51B" display="Type Order" isActive="true" />
+                <property name="8e092aa6-7d1a-4a06-af82-903e7642cef6" display="Allow Multiple" value="true" isActive="true" />
+                <property name="719e9dff-2b8d-407d-912d-fac99a158721" display="Api Model Name" isActive="true" />
+              </properties>
+            </stereotype>
+          </stereotypes>
+          <childElements />
+        </childElement>
         <childElement id="4fedda05-bcdb-4e94-a593-441ed184ee9b" type="Element Creation Option" typeId="5fa12f89-da1e-49c5-b8e9-427b22407f19">
           <name>Add Model</name>
           <display>Add Model: Component Model</display>
           <isAbstract>false</isAbstract>
-          <order>0</order>
+          <order>2</order>
           <genericTypes />
           <typeReference id="e1461bf9-c162-4f51-8b4f-6f3a453b0223">
             <typeId>356fbe17-bc63-4e16-b915-feefbc063cbe</typeId>
@@ -98,7 +176,7 @@
           <name>Add Command</name>
           <display>Add Command: Component Command</display>
           <isAbstract>false</isAbstract>
-          <order>1</order>
+          <order>3</order>
           <genericTypes />
           <typeReference id="3a34762f-d6d8-45f0-84ce-3595e2c16347">
             <typeId>d6739ffc-30e6-4170-a105-bf28e69aa578</typeId>
@@ -137,7 +215,7 @@
           <name>Add View</name>
           <display>Add View: Component View</display>
           <isAbstract>false</isAbstract>
-          <order>2</order>
+          <order>4</order>
           <genericTypes />
           <typeReference id="e3401edf-e01b-4407-bf21-337d28775df6">
             <typeId>624513a6-cba8-4dde-8ebe-6b19f00f0364</typeId>
@@ -176,7 +254,7 @@
           <name>Add Model Definition</name>
           <display>Add Model Definition: Model Definition</display>
           <isAbstract>false</isAbstract>
-          <order>3</order>
+          <order>5</order>
           <genericTypes />
           <typeReference id="f1890e12-f2e8-49b7-9f70-2440042287d1">
             <typeId>bd3941b5-e3b3-4a40-96e6-b9c87cea0101</typeId>
@@ -215,7 +293,7 @@
           <name>Add Navigation</name>
           <display>Add Navigation: Navigation</display>
           <isAbstract>false</isAbstract>
-          <order>4</order>
+          <order>6</order>
           <genericTypes />
           <typeReference id="1fbb06b7-7a64-4d76-a506-80cab8102b49">
             <typeId>6d2b2070-c1cb-4cd2-88b4-4e5f8414bd9e</typeId>
@@ -255,7 +333,7 @@
       <name>[visual]</name>
       <display>[visual]: Component</display>
       <isAbstract>false</isAbstract>
-      <order>4</order>
+      <order>6</order>
       <genericTypes />
       <typeReference id="337233ae-4a53-4313-bdda-801d7007f895">
         <typeId>b1c481e1-e91e-4c29-9817-00ab9cad4b6b</typeId>
@@ -304,7 +382,7 @@
               <properties>
                 <property name="27138300-900e-4a82-ad06-8abcedf0864a" display="Path" value="`M${x + 20},${y} h${w - 40} a20,20 0 0 1 20,20 v${h - 40} a20,20 0 0 1 -20,20 h-${w - 40} a20,20 0 0 1 -20,-20 v-${h - 40} a20,20 0 0 1 20,-20 z`" isActive="true" />
                 <property name="8996260d-790c-4e7b-8607-65fa2dd4ac24" display="Condition" isActive="true" />
-                <property name="5cd8b8b8-ccb4-4951-819c-4f49d0ad4a24" display="Line Color" isActive="true" />
+                <property name="5cd8b8b8-ccb4-4951-819c-4f49d0ad4a24" display="Line Color" value="#0077b6" isActive="true" />
                 <property name="d644b3e2-bb71-4d18-8a2a-e222a02da4ae" display="Line Width" isActive="true" />
                 <property name="30ba379d-6d61-4e6e-b038-81cd322241e6" display="Line Dash Array" isActive="true" />
                 <property name="4fb316a4-ebee-45c1-96e0-636698f52976" display="Fill Color" isActive="true" />
@@ -401,7 +479,7 @@
                   <properties>
                     <property name="27138300-900e-4a82-ad06-8abcedf0864a" display="Path" value="`M${x},${y - 6} h${w}`" isActive="true" />
                     <property name="8996260d-790c-4e7b-8607-65fa2dd4ac24" display="Condition" value="return $firstOfType;" isActive="true" />
-                    <property name="5cd8b8b8-ccb4-4951-819c-4f49d0ad4a24" display="Line Color" isActive="true" />
+                    <property name="5cd8b8b8-ccb4-4951-819c-4f49d0ad4a24" display="Line Color" value="#0077b6" isActive="true" />
                     <property name="d644b3e2-bb71-4d18-8a2a-e222a02da4ae" display="Line Width" isActive="true" />
                     <property name="30ba379d-6d61-4e6e-b038-81cd322241e6" display="Line Dash Array" isActive="true" />
                     <property name="4fb316a4-ebee-45c1-96e0-636698f52976" display="Fill Color" isActive="true" />
@@ -500,7 +578,7 @@
                   <properties>
                     <property name="27138300-900e-4a82-ad06-8abcedf0864a" display="Path" value="`M${x},${y - 6} h${w}`" isActive="true" />
                     <property name="8996260d-790c-4e7b-8607-65fa2dd4ac24" display="Condition" value="return $firstOfType;" isActive="true" />
-                    <property name="5cd8b8b8-ccb4-4951-819c-4f49d0ad4a24" display="Line Color" isActive="true" />
+                    <property name="5cd8b8b8-ccb4-4951-819c-4f49d0ad4a24" display="Line Color" value="#0077b6" isActive="true" />
                     <property name="d644b3e2-bb71-4d18-8a2a-e222a02da4ae" display="Line Width" isActive="true" />
                     <property name="30ba379d-6d61-4e6e-b038-81cd322241e6" display="Line Dash Array" isActive="true" />
                     <property name="4fb316a4-ebee-45c1-96e0-636698f52976" display="Fill Color" isActive="true" />
@@ -552,7 +630,7 @@
       <name>NewElementEventSettings</name>
       <display>[events]</display>
       <isAbstract>false</isAbstract>
-      <order>5</order>
+      <order>7</order>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>b1c481e1-e91e-4c29-9817-00ab9cad4b6b</parentFolderId>

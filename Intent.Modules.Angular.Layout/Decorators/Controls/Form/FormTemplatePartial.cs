@@ -35,6 +35,7 @@ namespace Intent.Modules.Angular.Layout.Decorators.Controls.Form
                     moduleId: Model.Module.Id,
                     dependency: "NgxSelectModule",
                     import: "import { NgxSelectModule } from 'ngx-select-ex';"));
+                eventDispatcher.Publish(new NpmPackageInstallationRequest("ngx-select-ex", "3", "--save"));
             }
         }
 

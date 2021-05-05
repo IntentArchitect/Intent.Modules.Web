@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Intent.Metadata.Models;
+using Intent.Modules.Common.Types.Api;
 using Intent.RoslynWeaver.Attributes;
 
 [assembly: DefaultIntentManaged(Mode.Fully)]
@@ -62,11 +63,14 @@ namespace Intent.Modelers.WebClient.Angular.Api
         {
             return (_association != null ? _association.GetHashCode() : 0);
         }
+        public const string SpecializationTypeId = "6d2b2070-c1cb-4cd2-88b4-4e5f8414bd9e";
     }
 
     [IntentManaged(Mode.Fully)]
     public class NavigationSourceEndModel : NavigationEndModel
     {
+        public const string SpecializationTypeId = "6d2b2070-c1cb-4cd2-88b4-4e5f8414bd9e";
+
         public NavigationSourceEndModel(IAssociationEnd associationEnd, NavigationModel association) : base(associationEnd, association)
         {
         }
@@ -75,12 +79,14 @@ namespace Intent.Modelers.WebClient.Angular.Api
     [IntentManaged(Mode.Fully)]
     public class NavigationTargetEndModel : NavigationEndModel
     {
+        public const string SpecializationTypeId = "6d2b2070-c1cb-4cd2-88b4-4e5f8414bd9e";
+
         public NavigationTargetEndModel(IAssociationEnd associationEnd, NavigationModel association) : base(associationEnd, association)
         {
         }
     }
 
-    [IntentManaged(Mode.Fully)]
+    [IntentManaged(Mode.Merge)]
     public class NavigationEndModel : IAssociationEnd
     {
         protected readonly IAssociationEnd _associationEnd;
@@ -90,6 +96,12 @@ namespace Intent.Modelers.WebClient.Angular.Api
         {
             _associationEnd = associationEnd;
             _association = association;
+        }
+
+        [IntentManaged(Mode.Ignore)]
+        public NavigationEndModel GetOtherEnd()
+        {
+            return this.Equals(_association.SourceEnd) ? (NavigationEndModel)Association.TargetEnd : Association.SourceEnd;
         }
 
         public string Id => _associationEnd.Id;
@@ -141,5 +153,17 @@ namespace Intent.Modelers.WebClient.Angular.Api
         {
             return (_associationEnd != null ? _associationEnd.GetHashCode() : 0);
         }
+
+        [IntentManaged(Mode.Ignore)]
+        public RouteModel GetNavigationRoute()
+        {
+            var module = new ComponentModel((IElement)Element).Module;
+            var otherEndModule = new ComponentModel((IElement)_associationEnd.OtherEnd().Element).Module;
+            var modulesToCheck = new[] { otherEndModule, module }.Concat(module.GetParentFolders().OfType<ModuleModel>()).ToList();
+            var routes = modulesToCheck.SelectMany(x => x.Routing?.Routes ?? new List<RouteModel>()).ToList();
+            var route = routes.FirstOrDefault(x => x.TypeReference.Element.Id == Element.Id);
+            return route;
+        }
+
     }
 }
