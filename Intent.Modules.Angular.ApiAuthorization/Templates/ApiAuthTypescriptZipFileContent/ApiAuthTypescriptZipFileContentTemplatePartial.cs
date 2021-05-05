@@ -27,6 +27,7 @@ namespace Intent.Modules.Angular.ApiAuthorization.Templates.ApiAuthTypescriptZip
             _zipEntry = (ZipEntry)model;
         }
 
+        [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]
         public override ITemplateFileConfig GetTemplateFileConfig()
         {
             string filename;
@@ -79,7 +80,7 @@ namespace Intent.Modules.Angular.ApiAuthorization.Templates.ApiAuthTypescriptZip
                     @event: new Dictionary<string, string>()
                     {
                         { AngularConfigVariableRequiredEvent.VariableId, "auth" },
-                        { 
+                        {
                             AngularConfigVariableRequiredEvent.DefaultValueId,
                             @"{
     authority: 'https://localhost:{sts port number}',

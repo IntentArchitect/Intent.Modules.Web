@@ -32,7 +32,7 @@ namespace Intent.Modules.Angular.ApiAuthorization.Templates.GeneralApiAuthZipFil
         {
             ResourceHelper.ApiAuthFileContents(archive =>
             {
-                foreach (var entry in archive.Entries.Where(p => p.Name != string.Empty 
+                foreach (var entry in archive.Entries.Where(p => p.Name != string.Empty
                     && Path.GetExtension(p.Name) != ".ts"))
                 {
                     registery.RegisterTemplate(TemplateId, project => new GeneralApiAuthZipFileContentTemplate(
