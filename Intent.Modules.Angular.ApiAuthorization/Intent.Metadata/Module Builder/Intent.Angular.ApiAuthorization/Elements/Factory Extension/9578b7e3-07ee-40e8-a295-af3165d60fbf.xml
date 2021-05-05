@@ -3,7 +3,7 @@
   <name>NpmCliInstaller</name>
   <display>NpmCliInstaller</display>
   <isAbstract>false</isAbstract>
-  <order>2</order>
+  <order>3</order>
   <genericTypes />
   <isMapped>false</isMapped>
   <parentFolderId>1e254a4c-2cb2-410c-a4d4-fcadd59c9353</parentFolderId>

@@ -14,35 +14,36 @@ using System.Collections.Generic;
 [assembly: DefaultIntentManaged(Mode.Merge)]
 [assembly: IntentTemplate("Intent.ModuleBuilder.TemplateRegistration.Custom", Version = "1.0")]
 
-namespace Intent.Modules.Angular.ApiAuthorization.Templates.ApiAuthZipFileContent
+namespace Intent.Modules.Angular.ApiAuthorization.Templates.GeneralApiAuthZipFileContent
 {
     [IntentManaged(Mode.Merge, Body = Mode.Merge, Signature = Mode.Fully)]
-    public class ApiAuthZipFileContentTemplateRegistration : ITemplateRegistration
+    public class GeneralApiAuthZipFileContentTemplateRegistration : ITemplateRegistration
     {
         private readonly IMetadataManager _metadataManager;
 
-        public ApiAuthZipFileContentTemplateRegistration(IMetadataManager metadataManager)
+        public GeneralApiAuthZipFileContentTemplateRegistration(IMetadataManager metadataManager)
         {
             _metadataManager = metadataManager;
         }
 
-        public string TemplateId => ApiAuthZipFileContentTemplate.TemplateId;
+        public string TemplateId => GeneralApiAuthZipFileContentTemplate.TemplateId;
 
         public void DoRegistration(ITemplateInstanceRegistry registery, IApplication applicationManager)
         {
-            ResourceHelper.ApiAuthFileContents((Action<System.IO.Compression.ZipArchive>)(archive =>
+            ResourceHelper.ApiAuthFileContents(archive =>
             {
-                foreach (var entry in archive.Entries.Where(p => p.Name != string.Empty))
+                foreach (var entry in archive.Entries.Where(p => p.Name != string.Empty 
+                    && Path.GetExtension(p.Name) != ".ts"))
                 {
-                    registery.RegisterTemplate(TemplateId, (Func<IOutputTarget, ITemplate>)(project => new ApiAuthZipFileContentTemplate(
-                        outputTarget: (IOutputTarget)project,
-                        model: (object)new ZipEntry
+                    registery.RegisterTemplate(TemplateId, project => new GeneralApiAuthZipFileContentTemplate(
+                        outputTarget: project,
+                        model: new ZipEntry
                         {
                             FullFileNamePath = entry.FullName,
-                            Content = new StreamReader((Stream)entry.Open()).ReadToEnd()
-                        })));
+                            Content = new StreamReader(entry.Open()).ReadToEnd()
+                        }));
                 }
-            }));
+            });
         }
     }
 }

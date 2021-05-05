@@ -24,13 +24,33 @@
     </FileLog>
     <FileLog>
       <ProjectId>55893a93-c4f1-4a6a-926b-16485d9034d8</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Angular.ApiAuthorization/Templates/ApiAuthZipFileContent/ApiAuthZipFileContentTemplatePartial.cs</SolutionRelativeFilePath>
-      <ProjectRelativeFilePath>ApiAuthZipFileContent/ApiAuthZipFileContentTemplatePartial.cs</ProjectRelativeFilePath>
+      <SolutionRelativeFilePath>../Intent.Modules.Angular.ApiAuthorization/Templates/ApiAuthTypescriptZipFileContent/ApiAuthTypescriptZipFileContentTemplate.cs</SolutionRelativeFilePath>
+      <ProjectRelativeFilePath>ApiAuthTypescriptZipFileContent/ApiAuthTypescriptZipFileContentTemplate.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>55893a93-c4f1-4a6a-926b-16485d9034d8</ProjectId>
-      <SolutionRelativeFilePath>../Intent.Modules.Angular.ApiAuthorization/Templates/ApiAuthZipFileContent/ApiAuthZipFileContentTemplateRegistration.cs</SolutionRelativeFilePath>
-      <ProjectRelativeFilePath>ApiAuthZipFileContent/ApiAuthZipFileContentTemplateRegistration.cs</ProjectRelativeFilePath>
+      <SolutionRelativeFilePath>../Intent.Modules.Angular.ApiAuthorization/Templates/ApiAuthTypescriptZipFileContent/ApiAuthTypescriptZipFileContentTemplate.tt</SolutionRelativeFilePath>
+      <ProjectRelativeFilePath>ApiAuthTypescriptZipFileContent/ApiAuthTypescriptZipFileContentTemplate.tt</ProjectRelativeFilePath>
+    </FileLog>
+    <FileLog>
+      <ProjectId>55893a93-c4f1-4a6a-926b-16485d9034d8</ProjectId>
+      <SolutionRelativeFilePath>../Intent.Modules.Angular.ApiAuthorization/Templates/ApiAuthTypescriptZipFileContent/ApiAuthTypescriptZipFileContentTemplatePartial.cs</SolutionRelativeFilePath>
+      <ProjectRelativeFilePath>ApiAuthTypescriptZipFileContent/ApiAuthTypescriptZipFileContentTemplatePartial.cs</ProjectRelativeFilePath>
+    </FileLog>
+    <FileLog>
+      <ProjectId>55893a93-c4f1-4a6a-926b-16485d9034d8</ProjectId>
+      <SolutionRelativeFilePath>../Intent.Modules.Angular.ApiAuthorization/Templates/ApiAuthTypescriptZipFileContent/ApiAuthTypescriptZipFileContentTemplateRegistration.cs</SolutionRelativeFilePath>
+      <ProjectRelativeFilePath>ApiAuthTypescriptZipFileContent/ApiAuthTypescriptZipFileContentTemplateRegistration.cs</ProjectRelativeFilePath>
+    </FileLog>
+    <FileLog>
+      <ProjectId>55893a93-c4f1-4a6a-926b-16485d9034d8</ProjectId>
+      <SolutionRelativeFilePath>../Intent.Modules.Angular.ApiAuthorization/Templates/GeneralApiAuthZipFileContent/GeneralApiAuthZipFileContentTemplatePartial.cs</SolutionRelativeFilePath>
+      <ProjectRelativeFilePath>GeneralApiAuthZipFileContent/GeneralApiAuthZipFileContentTemplatePartial.cs</ProjectRelativeFilePath>
+    </FileLog>
+    <FileLog>
+      <ProjectId>55893a93-c4f1-4a6a-926b-16485d9034d8</ProjectId>
+      <SolutionRelativeFilePath>../Intent.Modules.Angular.ApiAuthorization/Templates/GeneralApiAuthZipFileContent/GeneralApiAuthZipFileContentTemplateRegistration.cs</SolutionRelativeFilePath>
+      <ProjectRelativeFilePath>GeneralApiAuthZipFileContent/GeneralApiAuthZipFileContentTemplateRegistration.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <SolutionRelativeFilePath>../Intent.Modules.Web.sln</SolutionRelativeFilePath>

@@ -6,6 +6,10 @@
 
   <ItemGroup>
     <None Remove="Resources\api-authorization.zip" />
+    <None Update="Templates\ApiAuthTypescriptZipFileContent\ApiAuthTypescriptZipFileContentTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ApiAuthTypescriptZipFileContentTemplate.cs</LastGenOutput>
+    </None>
   </ItemGroup>
 
   <ItemGroup>
@@ -14,6 +18,7 @@
 
   <ItemGroup>
     <PackageReference Include="Intent.Modules.Common" Version="3.0.4" />
+    <PackageReference Include="Intent.Modules.Common.TypeScript" Version="3.0.4" />
     <PackageReference Include="Intent.Packager" Version="3.0.1">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -24,6 +29,18 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Intent.Modules.Angular\Intent.Modules.Angular.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Templates\ApiAuthTypescriptZipFileContent\ApiAuthTypescriptZipFileContentTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ApiAuthTypescriptZipFileContentTemplate.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
   </ItemGroup>
 
 </Project>

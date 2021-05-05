@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 
-namespace Intent.Modules.Angular.ApiAuthorization.Templates.ApiAuthZipFileContent
+namespace Intent.Modules.Angular.ApiAuthorization.Templates
 {
     class ZipEntry
     {

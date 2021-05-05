@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<class id="08ee557b-aba4-4960-b6f3-ff4affb5093a" type="File Template" typeId="43eae4bd-4613-4d15-88ac-52b7e743b7b2">
-  <name>GeneralApiAuthZipFileContent</name>
-  <display>GeneralApiAuthZipFileContent: Custom</display>
+<class id="b1160f24-71f9-46fd-94d7-8d76a833ade9" type="Typescript File Template" typeId="e6e41d88-2829-41b6-a791-065d2bb44eb3">
+  <name>ApiAuthTypescriptZipFileContent</name>
+  <display>ApiAuthTypescriptZipFileContent: Custom</display>
   <isAbstract>false</isAbstract>
-  <order>1</order>
+  <order>2</order>
   <genericTypes />
-  <typeReference id="f13d3310-8d20-4fc1-b09e-71515f961b2c">
+  <typeReference id="e708cf3e-750d-4c40-8db0-802e91b20f03">
     <typeId>d2931361-7cf0-4c79-9847-621c60886ef9</typeId>
     <isNavigable>true</isNavigable>
     <isNullable>false</isNullable>
@@ -21,15 +21,6 @@
   <packageId>1e254a4c-2cb2-410c-a4d4-fcadd59c9353</packageId>
   <packageName>Intent.Angular.ApiAuthorization</packageName>
   <stereotypes>
-    <stereotype stereotypeDefinitionId="819dee60-184a-4cb7-9529-0d3910f82ee6" name="File Settings">
-      <addedByDefault>true</addedByDefault>
-      <definitionPackageName>Intent.ModuleBuilder</definitionPackageName>
-      <definitionPackageId>9972b2a9-b749-4bba-b5c8-824bf694c6ef</definitionPackageId>
-      <properties>
-        <property name="329d0550-b81b-4db6-a99b-05d90360d432" display="File Extension" value="txt" isActive="true" />
-        <property name="c22d63a0-a3ad-4fe0-a956-7ac74bb6c2fe" display="Templating Method" value="Custom" isActive="true" />
-      </properties>
-    </stereotype>
     <stereotype stereotypeDefinitionId="b1f08a30-9aae-4702-bfc8-e285e6b43a61" name="Template Settings">
       <addedByDefault>true</addedByDefault>
       <definitionPackageName>Intent.ModuleBuilder</definitionPackageName>
