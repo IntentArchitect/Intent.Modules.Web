@@ -18,7 +18,7 @@ namespace Intent.Modules.Angular.ApiAuthorization.Templates.ApiAuthTypescriptZip
     {
         [IntentManaged(Mode.Fully)]
         public const string TemplateId = "Intent.Angular.ApiAuthorization.ApiAuthTypescriptZipFileContent";
-        
+
         private ZipEntry _zipEntry;
 
         [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
@@ -51,24 +51,49 @@ namespace Intent.Modules.Angular.ApiAuthorization.Templates.ApiAuthTypescriptZip
             return _zipEntry.Content;
         }
 
+        private static bool _hasBeenPublished;
+
         public override void BeforeTemplateExecution()
         {
-            OutputTarget.Application.EventDispatcher.Publish(new AngularImportDependencyRequiredEvent(
-                moduleId: "AppModule",
-                dependency: "ApiAuthorizationModule",
-                import: "import { ApiAuthorizationModule } from './api-authorization/api-authorization.module';"));
+            if (!_hasBeenPublished)
+            {
+                OutputTarget.Application.EventDispatcher.Publish(new AngularImportDependencyRequiredEvent(
+                    moduleId: "AppModule",
+                    dependency: "ApiAuthorizationModule",
+                    import: "import { ApiAuthorizationModule } from './api-authorization/api-authorization.module';"));
 
-            OutputTarget.Application.EventDispatcher.Publish(new AngularImportDependencyRequiredEvent(
-                moduleId: "AppModule",
-                dependency: "HttpClientModule",
-                import: "import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';"));
+                OutputTarget.Application.EventDispatcher.Publish(new AngularImportDependencyRequiredEvent(
+                    moduleId: "AppModule",
+                    dependency: "HttpClientModule",
+                    import: "import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';"));
 
-            OutputTarget.Application.EventDispatcher.Publish(new AngularCustomProviderRequiredEvent(
-                moduleId: "AppModule",
-                provide: "HTTP_INTERCEPTORS",
-                useClass: "AuthorizeInterceptor",
-                multi: true,
-                import: "import { AuthorizeInterceptor } from './api-authorization/authorize.interceptor';"));
+                OutputTarget.Application.EventDispatcher.Publish(new AngularCustomProviderRequiredEvent(
+                    moduleId: "AppModule",
+                    provide: "HTTP_INTERCEPTORS",
+                    useClass: "AuthorizeInterceptor",
+                    multi: true,
+                    import: "import { AuthorizeInterceptor } from './api-authorization/authorize.interceptor';"));
+
+                OutputTarget.Application.EventDispatcher.Publish(
+                    eventIdentifier: AngularConfigVariableRequiredEvent.EventId,
+                    @event: new Dictionary<string, string>()
+                    {
+                        { AngularConfigVariableRequiredEvent.VariableId, "auth" },
+                        { 
+                            AngularConfigVariableRequiredEvent.DefaultValueId,
+                            @"{
+    authority: 'https://localhost:{sts port number}',
+    client_id: 'Auth_Code_Client',
+    redirect_uri: window.location.origin + '/authentication/login-callback',
+    post_logout_redirect_uri: window.location.origin + '/authentication/logout-callback',
+    response_type: 'code',
+    scope: 'openid profile email api roles'
+  }"
+                        },
+                    });
+
+                _hasBeenPublished = true;
+            }
         }
     }
 }
