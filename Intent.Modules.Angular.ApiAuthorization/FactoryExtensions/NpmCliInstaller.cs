@@ -2,6 +2,7 @@ using Intent.Engine;
 using Intent.Modules.Common.Plugins;
 using Intent.Plugins.FactoryExtensions;
 using Intent.RoslynWeaver.Attributes;
+using Intent.Utils;
 using System.IO;
 
 [assembly: DefaultIntentManaged(Mode.Fully)]
@@ -18,9 +19,14 @@ namespace Intent.Modules.Angular.ApiAuthorization.FactoryExtensions
         [IntentManaged(Mode.Ignore)]
         public void OnStep(IApplication application, string step)
         {
-            if (step == ExecutionLifeCycleSteps.AfterCommitChanges)
+            if (step == ExecutionLifeCycleSteps.BeforeTemplateExecution)
             {
                 var outputTarget = CliCommand.GetFrontEndOutputTarget(application);
+                if (outputTarget == null)
+                {
+                    Logging.Log.Warning("Could not find a location where the Angular application is installed. Ensure that a Web Client package has been created.");
+                    return;
+                }
                 if (!Directory.Exists(Path.Combine(outputTarget.Location, "node_modules", "oidc-client")))
                 {
                     CliCommand.Run(outputTarget.Location, $@"npm i oidc-client");
