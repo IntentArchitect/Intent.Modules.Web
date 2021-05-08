@@ -36,8 +36,8 @@ namespace Intent.Angular.Layout.Api
                     var associationEnd = (IAssociationEnd)InternalElement.MappedElement.Element;
                     var navigationModel = new NavigationModel(associationEnd.Association);
                     var navigationEndModel = associationEnd.IsTargetEnd() ? (NavigationEndModel)navigationModel.TargetEnd : navigationModel.SourceEnd;
-                    var component = new ComponentModel((IElement) navigationEndModel.Element);
-                    var sourceComponent = new ComponentModel((IElement) navigationEndModel.GetOtherEnd().Element);
+                    var component = new ComponentModel((IElement)navigationEndModel.Element);
+                    var sourceComponent = new ComponentModel((IElement)navigationEndModel.GetOtherEnd().Element);
                     ClickCommandPath += $"({string.Join(", ", component.Inputs.Select(x => sourceComponent.Models.Any(m => m.Name == x.Name) || sourceComponent.Inputs.Any(m => m.Name == x.Name) ? x.Name : x.Name.ToDotCase()))})";
                 }
                 else

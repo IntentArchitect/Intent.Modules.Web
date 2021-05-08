@@ -595,6 +595,20 @@
         <type>Navbar</type>
       </typeOrder>
     </elementExtension>
+    <elementExtension type="Module" typeId="cac14331-198a-4f9a-bbb9-171eb0bd4efe">
+      <macros>
+        <macro trigger="on-created">
+          <script>if (context.name == "AppModule") {
+    var appComponent = createElement("Component", "AppComponent", context.id);
+    appComponent.getStereotype("Angular Component Settings").getProperty("Selector").setValue("app-root");
+    appComponent.getStereotype("Angular Component Settings").getProperty("In Own Folder").setValue(false);
+    var view = appComponent.getChildren("Component View")[0];
+    createElement("Navbar", "Navbar", view.id);
+    createElement("Router Outlet", "[router-outlet]", view.id);
+}</script>
+        </macro>
+      </macros>
+    </elementExtension>
   </elementExtensions>
   <associationSettings />
 </settings>

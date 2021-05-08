@@ -143,8 +143,8 @@ namespace Intent.Modules.Angular.Templates.Component.AngularComponentTsTemplate
 
         private RouteModel GetNavigationRoute(NavigationEndModel navigation)
         {
-            var module = new ComponentModel((IElement) navigation.Element).Module;
-            var modulesToCheck = new[] {Model.Module, module}.Concat(module.GetParentFolders().OfType<ModuleModel>()).ToList();
+            var module = new ComponentModel((IElement)navigation.Element).Module;
+            var modulesToCheck = new[] { Model.Module, module }.Concat(module.GetParentFolders().OfType<ModuleModel>()).ToList();
             var routes = modulesToCheck.SelectMany(x => x.Routing?.Routes ?? new List<RouteModel>()).ToList();
             var route = routes.FirstOrDefault(x => x.TypeReference.Element.Id == navigation.Element.Id);
             return route;
