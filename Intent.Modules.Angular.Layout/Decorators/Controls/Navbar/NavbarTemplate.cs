@@ -30,9 +30,16 @@ namespace Intent.Modules.Angular.Layout.Decorators.Controls.Navbar
         /// </summary>
         public override string TransformText()
         {
-            this.Write(@"<nav class=""navbar navbar-expand-lg "" role=""navigation"" intent-manage>
-  <div class=""navbar-header"">
-    <a class=""navbar-brand"" href=""#""><span></span></a>
+            this.Write("<nav class=\"navbar navbar-expand-lg navbar-light bg-light\" role=\"navigation\" inte" +
+                    "nt-manage=\"\">\r\n  <div class=\"navbar-header\">\r\n    <a class=\"navbar-brand\" href=\"" +
+                    "#\"><span>");
+            
+            #line 10 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Decorators\Controls\Navbar\NavbarTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(Application.Name));
+            
+            #line default
+            #line hidden
+            this.Write(@"</span></a>
   </div>
   <button class=""navbar-toggler"" type=""button"" (click)=""isCollapsed = !isCollapsed"" aria-controls=""navbarNav"" aria-expanded=""false"" aria-label=""Toggle navigation"">
     <span class=""navbar-toggler-icon""></span>

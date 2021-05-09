@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Intent.Metadata.Models;
+using Intent.Modelers.WebClient.Angular.Api;
 using Intent.Modules.Common;
 using Intent.RoslynWeaver.Attributes;
 
@@ -32,6 +33,9 @@ namespace Intent.Angular.Layout.Api
         public string Name => _element.Name;
 
         public string Comment => _element.Comment;
+
+        [IntentManaged(Mode.Ignore)]
+        public ModuleModel Module => InternalElement.GetModule();
 
         public IEnumerable<IStereotype> Stereotypes => _element.Stereotypes;
 

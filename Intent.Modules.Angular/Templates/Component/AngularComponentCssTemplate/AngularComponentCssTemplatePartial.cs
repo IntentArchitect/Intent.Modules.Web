@@ -70,7 +70,7 @@ namespace Intent.Modules.Angular.Templates.Component.AngularComponentCssTemplate
             var moduleTemplate = ExecutionContext.FindTemplateInstance<Module.AngularModuleTemplate.AngularModuleTemplate>(Module.AngularModuleTemplate.AngularModuleTemplate.TemplateId, Model.Module);
             return new TemplateFileConfig(
                 fileName: $"{ComponentName.ToKebabCase()}.component",
-                fileExtension: "css", // Change to desired file extension.
+                fileExtension: "scss",
                 relativeLocation: $"{string.Join("/", Model.GetParentFolderNames())}/{(Model.GetAngularComponentSettings().InOwnFolder() ? $"/{ComponentName.ToKebabCase()}" : "")}"
             );
         }

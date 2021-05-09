@@ -90,7 +90,7 @@ namespace Intent.Modules.Angular.Templates.Component.AngularComponentHtmlTemplat
             }
 
             var sb = new StringBuilder();
-            sb.AppendLine("<div class=\"container-fluid\" intent-manage=\"add remove\" intent-id=\"container\">");
+            sb.AppendLine("<div class=\"\" intent-manage=\"add remove\" intent-id=\"container\">");
             sb.AppendLine(ControlWriterOutput);
             sb.AppendLine("</div>");
             return sb.ToString();

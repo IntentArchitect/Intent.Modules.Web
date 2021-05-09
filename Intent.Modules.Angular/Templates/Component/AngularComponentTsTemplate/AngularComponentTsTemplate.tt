@@ -13,7 +13,7 @@ import { Component, OnInit } from '@angular/core';<#= GetImports() #>
 @Component({
   selector: '<#= GetSelector() #>',
   templateUrl: './<#= ComponentName.ToKebabCase() #>.component.html',
-  styleUrls: ['./<#= ComponentName.ToKebabCase() #>.component.css']
+  styleUrls: ['./<#= ComponentName.ToKebabCase() #>.component.scss']
 })
 export class <#= ClassName #> implements OnInit {
 <#  foreach (var model in Model.Inputs) {#>

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+
 <Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
@@ -11,6 +11,11 @@
     <None Remove="Decorators\Controls\PaginationControl\PaginationControlTemplate.tt" />
     <None Remove="Decorators\AngularComponentHtml\TableControlTemplate.tt" />
     <None Remove="Decorators\Controls\Section\SectionTemplate.tt" />
+  
+    <None Update="Templates\AppComponentHtmlOverride\AppComponentHtmlOverrideTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>AppComponentHtmlOverrideTemplate.cs</LastGenOutput>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <Content Include="Decorators\Controls\Navbar\NavbarTemplate.tt">
@@ -143,6 +148,12 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>TestPerModelTemplate.tt</DependentUpon>
+    </Compile>
+  
+    <Compile Update="Templates\AppComponentHtmlOverride\AppComponentHtmlOverrideTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AppComponentHtmlOverrideTemplate.tt</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

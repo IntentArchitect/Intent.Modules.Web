@@ -4,6 +4,8 @@ using System.IO;
 using Intent.Modules.Common.Plugins;
 using Intent.SoftwareFactory;
 using Intent.Engine;
+using Intent.Modules.Angular.Templates.Component.AngularComponentHtmlTemplate;
+using Intent.Modules.Common.Templates;
 using Intent.Plugins.FactoryExtensions;
 using Intent.Utils;
 using Newtonsoft.Json;
@@ -30,6 +32,16 @@ namespace Intent.Modules.Angular
                     Logging.Log.Info($"Installing Ngx-Bootstrap into Angular app at location [{outputTarget.Location}]");
                     CliCommand.Run(outputTarget.Location, $@"ng add ngx-bootstrap");
                     CliCommand.Run(outputTarget.Location, $@"npm i ngx-bootstrap@5.3.2"); // Ensure this version
+
+                    var appComponent = application.FindTemplateInstance(AngularComponentHtmlTemplate.TemplateId, t => t.GetMetadata().FileName == "app.component");
+                    if (appComponent != null)
+                    {
+                        if (File.Exists(appComponent.GetMetadata().GetFilePath()))
+                        {
+                            Logging.Log.Info($"Overriding app.component.html file.");
+                            File.WriteAllText(appComponent.GetMetadata().GetFilePath(), "");
+                        }
+                    }
                 }
                 else
                 {

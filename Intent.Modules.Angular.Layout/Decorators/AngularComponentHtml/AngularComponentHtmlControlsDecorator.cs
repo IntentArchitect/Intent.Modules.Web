@@ -1,6 +1,7 @@
 using System.Linq;
 using System.Text;
 using Intent.Angular.Layout.Api;
+using Intent.Engine;
 using Intent.Modules.Angular.Layout.Decorators.Controls.ButtonControl;
 using Intent.Modules.Angular.Layout.Decorators.Controls.Form;
 using Intent.Modules.Angular.Layout.Decorators.Controls.Navbar;
@@ -35,7 +36,7 @@ namespace Intent.Modules.Angular.Layout.Decorators.AngularComponentHtml
             controlWriter.RegisterControl(TableControlModel.SpecializationTypeId, control =>  new TableControlTemplate(new TableControlModel(control)));
             controlWriter.RegisterControl(PaginationControlModel.SpecializationTypeId, control =>  new PaginationControlTemplate(new PaginationControlModel(control), Template.ExecutionContext.EventDispatcher));
             controlWriter.RegisterControl(FormModel.SpecializationTypeId, control =>  new FormTemplate(new FormModel(control), Template.ExecutionContext.EventDispatcher));
-            controlWriter.RegisterControl(NavbarModel.SpecializationTypeId, control =>  new NavbarTemplate(new NavbarModel(control)));
+            controlWriter.RegisterControl(NavbarModel.SpecializationTypeId, control =>  new NavbarTemplate(new NavbarModel(control), (IApplication)Template.ExecutionContext));
         }
 
         public int Priority { get; } = 0;
