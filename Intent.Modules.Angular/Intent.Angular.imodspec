@@ -52,6 +52,10 @@
       <role>Front End</role>
       <location>src</location>
     </template>
+    <template id="Intent.Angular.Module.AngularResolver" externalReference="46c14796-f106-463c-93de-d60d31354fac">
+      <role>Front End</role>
+      <location>src</location>
+    </template>
   </templates>
   <decorators>
     <decorator id="Angular.AngularComponentHtmlTemplate.PagedSearchDecorator" />
@@ -78,7 +82,7 @@
     <file src="$outDir$/$id$.pdb" />
   </files>
   <metadata>
-    <install target="Web Client" src="Intent.Metadata/Module Builder/Intent.Angular/Intent.Angular.pkg.config" externalReference="a3deb341-dd4e-4f7f-99f5-2f198c1c251c" />
+    <install target="Web Client;Module Builder" src="Intent.Metadata/Module Builder/Intent.Angular/Intent.Angular.pkg.config" externalReference="a3deb341-dd4e-4f7f-99f5-2f198c1c251c" />
     <install target="Web Client" src="Intent.Metadata/Web Client/Intent.Angular.Types/Intent.Angular.Types.pkg.config" />
   </metadata>
 </package>

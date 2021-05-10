@@ -15,6 +15,7 @@ using Intent.Modules.Common.TypeScript.Templates;
 using Intent.Modelers.WebClient.Angular.Api;
 using Intent.Modules.Angular.Templates.Module.AngularModuleTemplate;
 using Intent.Modules.Common.Types.Api;
+using Mono.TextTemplating;
 
 [assembly: DefaultIntentManaged(Mode.Merge)]
 [assembly: IntentTemplate("Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial", Version = "1.0")]
@@ -22,7 +23,7 @@ using Intent.Modules.Common.Types.Api;
 namespace Intent.Modules.Angular.Templates.Component.AngularComponentTsTemplate
 {
     [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
-    partial class AngularComponentTsTemplate : TypeScriptTemplateBase<Intent.Modelers.WebClient.Angular.Api.ComponentModel>
+    partial class AngularComponentTsTemplate : TypeScriptTemplateBase<Intent.Modelers.WebClient.Angular.Api.ComponentModel, AngularComponentTsDecorator>
     {
         [IntentManaged(Mode.Fully)]
         public const string TemplateId = "Intent.Angular.Component.AngularComponentTsTemplate";
@@ -34,7 +35,9 @@ namespace Intent.Modules.Angular.Templates.Component.AngularComponentTsTemplate
             AddTypeSource(FormGroupTemplate.TemplateId);
             AddTypeSource("Intent.Angular.ServiceProxies.Proxies.AngularDTOTemplate");
             AddTypeSource("Intent.Angular.ServiceProxies.Proxies.AngularServiceProxyTemplate");
-            InjectedServices = Model.GetAngularComponentSettings().InjectServices()?.ToList() ?? new List<IElement>();
+            _injectedServices = Model.GetAngularComponentSettings().InjectServices()?.Where(x => x.SpecializationTypeId == AngularServiceModel.SpecializationTypeId)
+                .Select(x => (x.Name.ToCamelCase(), this.UseType(x.Name, new AngularServiceModel(x).GetAngularServiceSettings().Location())))
+                .ToList() ?? new List<(string, string)>();
         }
 
         public string ComponentName
@@ -62,24 +65,30 @@ namespace Intent.Modules.Angular.Templates.Component.AngularComponentTsTemplate
             ExecutionContext.EventDispatcher.Publish(new AngularComponentCreatedEvent(modelId: Model.Id, moduleId: Model.Module.Id));
         }
 
-        public IList<IElement> InjectedServices { get; }
+        private IList<(string name, string type)> _injectedServices { get; }
+
+        public void InjectService(string name, string type, string location = null)
+        {
+            _injectedServices.Add((name, location != null ? this.UseType(type, location) : type));
+        }
 
         public string GetImports()
         {
-            if (!InjectedServices.Any())
-            {
-                return "";
-            }
-            return @"
-" + string.Join(@"
-", InjectedServices.Where(x => x.SpecializationType == AngularServiceModel.SpecializationType).Select(x => $"import {{ {x.Name} }} from '{new AngularServiceModel(x).GetAngularServiceSettings().Location()}'"));
+            return "";
+            //            if (!_injectedServices.Any())
+            //            {
+            //                return "";
+            //            }
+            //            return @"
+            //" + string.Join(@"
+            //", _injectedServices.Where(x => x.SpecializationType == AngularServiceModel.SpecializationType).Select(x => $"import {{ {x.Name} }} from '{new AngularServiceModel(x).GetAngularServiceSettings().Location()}'"));
         }
 
         public string GetConstructorParams()
         {
             var services = new List<string>();
-            services.AddRange(InjectedServices.Select(x => $"private {x.Name.ToCamelCase()}: {GetTypeName(x)}"));
-            if ((Model.NavigateToComponents().Any(x => x.IsNavigable) || Model.NavigateBackComponents().Any(x => x.IsNavigable)) && InjectedServices.All(x => x.Name != "Router"))
+            services.AddRange(_injectedServices.Select(x => $"private {x.name}: {x.type}"));
+            if ((Model.NavigateToComponents().Any(x => x.IsNavigable) || Model.NavigateBackComponents().Any(x => x.IsNavigable)) && _injectedServices.All(x => x.type != "Router"))
             {
                 services.Add($"private router: {this.UseType("Router", "@angular/router")}");
             }

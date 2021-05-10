@@ -32,4 +32,7 @@
   <metadata>
     <install target="Web Client" src="modelers/Service Proxies Extension.designer.settings" externalReference="d609adc5-ceab-4079-8201-c9d04c4b7303" />
   </metadata>
+  <decorators>
+    <decorator id="Intent.Angular.ServiceProxies.PopulateDataComponentDecorator" externalReference="0ea5db52-70fd-4918-b3d7-9e960c841f99" />
+  </decorators>
 </package>

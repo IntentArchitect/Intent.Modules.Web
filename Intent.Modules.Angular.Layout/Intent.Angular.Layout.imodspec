@@ -14,7 +14,7 @@
   <dependencies>
     <dependency id="Intent.Angular" version="3.0.1" />
     <dependency id="Intent.Common.Html" version="3.0.2" />
-    <dependency id="Intent.Common.TypeScript" version="3.0.3" />
+    <dependency id="Intent.Common.TypeScript" version="3.0.5" />
     <dependency id="Intent.Common" version="3.0.4" />
     <dependency id="Intent.Common.Types" version="3.0.4" />
   </dependencies>

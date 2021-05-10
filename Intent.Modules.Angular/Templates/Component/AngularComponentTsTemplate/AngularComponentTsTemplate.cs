@@ -25,7 +25,7 @@ namespace Intent.Modules.Angular.Templates.Component.AngularComponentTsTemplate
     
     #line 1 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\Component\AngularComponentTsTemplate\AngularComponentTsTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "16.0.0.0")]
-    public partial class AngularComponentTsTemplate : TypeScriptTemplateBase<Intent.Modelers.WebClient.Angular.Api.ComponentModel>
+    public partial class AngularComponentTsTemplate : TypeScriptTemplateBase<Intent.Modelers.WebClient.Angular.Api.ComponentModel, Intent.Modules.Angular.Templates.Component.AngularComponentTsTemplate.AngularComponentTsDecorator>
     {
 #line hidden
         /// <summary>
@@ -102,7 +102,14 @@ namespace Intent.Modules.Angular.Templates.Component.AngularComponentTsTemplate
             
             #line default
             #line hidden
-            this.Write("  @Output() ");
+            this.Write("  @");
+            
+            #line 23 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\Component\AngularComponentTsTemplate\AngularComponentTsTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(this.UseType("Output", "@angular/core")));
+            
+            #line default
+            #line hidden
+            this.Write("() ");
             
             #line 23 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\Component\AngularComponentTsTemplate\AngularComponentTsTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(model.Name));
@@ -171,7 +178,14 @@ namespace Intent.Modules.Angular.Templates.Component.AngularComponentTsTemplate
             
             #line default
             #line hidden
-            this.Write("\r\n  ngOnInit() {\r\n  }\r\n");
+            this.Write("\r\n  ngOnInit() {");
+            
+            #line 33 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\Component\AngularComponentTsTemplate\AngularComponentTsTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(GetDecoratorsOutput(x => x.OnInit())));
+            
+            #line default
+            #line hidden
+            this.Write("\r\n  }\r\n");
             
             #line 35 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\Component\AngularComponentTsTemplate\AngularComponentTsTemplate.tt"
   foreach (var command in Model.Commands) {

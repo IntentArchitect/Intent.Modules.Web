@@ -1,4 +1,4 @@
-<#@ template language="C#" inherits="TypeScriptTemplateBase<Intent.Modelers.WebClient.Angular.Api.ComponentModel>" #>
+<#@ template language="C#" inherits="TypeScriptTemplateBase<Intent.Modelers.WebClient.Angular.Api.ComponentModel, Intent.Modules.Angular.Templates.Component.AngularComponentTsTemplate.AngularComponentTsDecorator>" #>
 <#@ assembly name="System.Core" #>
 <#@ import namespace="System.Collections.Generic" #>
 <#@ import namespace="System.Linq" #>
@@ -20,7 +20,7 @@ export class <#= ClassName #> implements OnInit {
   <#= model.Name #>: <#= GetTypeName(model.TypeReference)#>;
 <#  }#>
 <#  foreach (var model in Model.Outputs) {#>
-  @Output() <#= model.Name #> = new <#= this.UseType("EventEmitter", "@angular/core") #><<#= GetTypeName(model.TypeReference)#>>();
+  @<#= this.UseType("Output", "@angular/core") #>() <#= model.Name #> = new <#= this.UseType("EventEmitter", "@angular/core") #><<#= GetTypeName(model.TypeReference)#>>();
 <#  }#>
 <#  foreach (var model in Model.Models) {#>
   <#= model.Name #>: <#= GetTypeName(model.TypeReference)#>;
@@ -30,7 +30,7 @@ export class <#= ClassName #> implements OnInit {
   constructor(<#= GetConstructorParams() #>) { }
 
   <#= this.IntentIgnoreDecorator() #>
-  ngOnInit() {
+  ngOnInit() {<#= GetDecoratorsOutput(x => x.OnInit()) #>
   }
 <#  foreach (var command in Model.Commands) {#>
 

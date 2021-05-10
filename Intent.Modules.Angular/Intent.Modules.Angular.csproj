@@ -9,7 +9,7 @@
   <ItemGroup>
     <PackageReference Include="Intent.Modules.Common" Version="3.0.4" />
     <PackageReference Include="Intent.Modules.Common.Html" Version="3.0.2" />
-    <PackageReference Include="Intent.Modules.Common.TypeScript" Version="3.0.4" />
+    <PackageReference Include="Intent.Modules.Common.TypeScript" Version="3.0.5" />
     <PackageReference Include="Intent.Modules.Modelers.Services" Version="3.0.2" />
     <PackageReference Include="Intent.Packager" Version="3.0.1">
       <PrivateAssets>all</PrivateAssets>
@@ -70,6 +70,11 @@
     <None Update="Templates\Model\ModelTemplate\ModelTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>ModelTemplate.cs</LastGenOutput>
+    </None>
+  
+    <None Update="Templates\Module\AngularResolver\AngularResolverTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>AngularResolverTemplate.cs</LastGenOutput>
     </None>
   </ItemGroup>
 
@@ -132,6 +137,12 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>ModelTemplate.tt</DependentUpon>
+    </Compile>
+  
+    <Compile Update="Templates\Module\AngularResolver\AngularResolverTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AngularResolverTemplate.tt</DependentUpon>
     </Compile>
   </ItemGroup>
 

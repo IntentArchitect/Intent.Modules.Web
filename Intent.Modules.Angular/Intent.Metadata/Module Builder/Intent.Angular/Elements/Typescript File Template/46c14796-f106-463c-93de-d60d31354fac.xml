@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<class id="e7ea472f-5ef5-453b-8df6-4fb3569b9e07" type="Typescript File Template" typeId="e6e41d88-2829-41b6-a791-065d2bb44eb3">
-  <name>EnvironmentTemplate</name>
-  <display>EnvironmentTemplate: Single File</display>
+<class id="46c14796-f106-463c-93de-d60d31354fac" type="Typescript File Template" typeId="e6e41d88-2829-41b6-a791-065d2bb44eb3">
+  <name>AngularResolver</name>
+  <display>AngularResolver: File Per Model</display>
   <isAbstract>false</isAbstract>
-  <order>0</order>
+  <order>1</order>
   <genericTypes />
-  <typeReference id="bd31a48d-7ac1-4e23-bb3c-362243fd0a1c">
-    <typeId>f65d2904-88c9-4501-873a-a4eec8303b1d</typeId>
+  <typeReference id="20ec86a7-9e9d-422e-adba-369d33c3e430">
+    <typeId>99cb461f-ec82-4dde-a804-e3393a5e2a8d</typeId>
     <isNavigable>true</isNavigable>
     <isNullable>false</isNullable>
     <isCollection>false</isCollection>
@@ -17,7 +17,7 @@
     <genericTypeParameters />
   </typeReference>
   <isMapped>false</isMapped>
-  <parentFolderId>433f0fec-55d0-484f-b3dd-81d59d806674</parentFolderId>
+  <parentFolderId>c39d6711-5d0f-4071-8833-fac4dd9c054a</parentFolderId>
   <packageId>a3deb341-dd4e-4f7f-99f5-2f198c1c251c</packageId>
   <packageName>Intent.Angular</packageName>
   <stereotypes>
@@ -28,10 +28,10 @@
       <properties>
         <property name="a9de6cf5-6d4f-4ae1-aa60-5ca85e458709" display="Source" value="Lookup Type" isActive="true" />
         <property name="00d3537c-f71f-4450-8cc8-d9e87c12baee" display="Designer" value="f492faed-0665-4513-9853-5a230721786f" isActive="true" />
-        <property name="75b89367-1808-43f8-9f18-785915ec1630" display="Model Type" value="" isActive="true" />
+        <property name="75b89367-1808-43f8-9f18-785915ec1630" display="Model Type" value="8112a50c-9394-4e05-996b-0e57b40b3f46" isActive="true" />
         <property name="d1e89313-0647-48bd-81da-b04b644db475" display="Model Name" value="object" isActive="false" />
         <property name="f1d88e59-1ca6-426e-b52d-42f3467e6bd5" display="Role" value="Front End" isActive="true" />
-        <property name="1ac0fa39-ecea-48f8-92e4-41616a639586" display="Default Location" isActive="true" />
+        <property name="1ac0fa39-ecea-48f8-92e4-41616a639586" display="Default Location" value="src" isActive="true" />
       </properties>
     </stereotype>
   </stereotypes>

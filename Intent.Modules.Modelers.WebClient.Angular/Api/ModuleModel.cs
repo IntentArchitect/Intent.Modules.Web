@@ -132,5 +132,10 @@ namespace Intent.Modelers.WebClient.Angular.Api
         {
             return GetParentModule() == null;
         }
+
+        public IList<ResolverModel> Resolvers => _element.ChildElements
+                    .GetElementsOfType(ResolverModel.SpecializationTypeId)
+                    .Select(x => new ResolverModel(x))
+                    .ToList();
     }
 }

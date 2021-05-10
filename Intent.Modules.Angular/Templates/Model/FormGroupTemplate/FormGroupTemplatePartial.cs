@@ -97,7 +97,8 @@ namespace Intent.Modules.Angular.Templates.Model.FormGroupTemplate
 
         private string GetFormFieldType(FormGroupControlModel field)
         {
-            return field.TypeReference.IsCollection ? "FormArray" : "FormControl";
+            return field.TypeReference.IsCollection && field.TypeReference.Element.SpecializationTypeId != TypeDefinitionModel.SpecializationTypeId
+                ? "FormArray" : "FormControl";
         }
     }
 }

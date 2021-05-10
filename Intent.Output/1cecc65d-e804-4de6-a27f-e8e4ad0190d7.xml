@@ -69,6 +69,11 @@
     </FileLog>
     <FileLog>
       <ProjectId>abc98339-4259-4d28-82ae-502ba6cdc8b2</ProjectId>
+      <SolutionRelativeFilePath>../Intent.Modules.Angular/Templates/Component/AngularComponentTsTemplate/AngularComponentTsDecorator.cs</SolutionRelativeFilePath>
+      <ProjectRelativeFilePath>Component/AngularComponentTsTemplate/AngularComponentTsDecorator.cs</ProjectRelativeFilePath>
+    </FileLog>
+    <FileLog>
+      <ProjectId>abc98339-4259-4d28-82ae-502ba6cdc8b2</ProjectId>
       <SolutionRelativeFilePath>../Intent.Modules.Angular/Templates/Component/AngularComponentTsTemplate/AngularComponentTsTemplate.cs</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>Component/AngularComponentTsTemplate/AngularComponentTsTemplate.cs</ProjectRelativeFilePath>
     </FileLog>
@@ -206,6 +211,26 @@
       <ProjectId>abc98339-4259-4d28-82ae-502ba6cdc8b2</ProjectId>
       <SolutionRelativeFilePath>../Intent.Modules.Angular/Templates/Module/AngularModuleTemplate/AngularModuleTemplateRegistration.cs</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>Module/AngularModuleTemplate/AngularModuleTemplateRegistration.cs</ProjectRelativeFilePath>
+    </FileLog>
+    <FileLog>
+      <ProjectId>abc98339-4259-4d28-82ae-502ba6cdc8b2</ProjectId>
+      <SolutionRelativeFilePath>../Intent.Modules.Angular/Templates/Module/AngularResolver/AngularResolverTemplate.cs</SolutionRelativeFilePath>
+      <ProjectRelativeFilePath>Module/AngularResolver/AngularResolverTemplate.cs</ProjectRelativeFilePath>
+    </FileLog>
+    <FileLog>
+      <ProjectId>abc98339-4259-4d28-82ae-502ba6cdc8b2</ProjectId>
+      <SolutionRelativeFilePath>../Intent.Modules.Angular/Templates/Module/AngularResolver/AngularResolverTemplate.tt</SolutionRelativeFilePath>
+      <ProjectRelativeFilePath>Module/AngularResolver/AngularResolverTemplate.tt</ProjectRelativeFilePath>
+    </FileLog>
+    <FileLog>
+      <ProjectId>abc98339-4259-4d28-82ae-502ba6cdc8b2</ProjectId>
+      <SolutionRelativeFilePath>../Intent.Modules.Angular/Templates/Module/AngularResolver/AngularResolverTemplatePartial.cs</SolutionRelativeFilePath>
+      <ProjectRelativeFilePath>Module/AngularResolver/AngularResolverTemplatePartial.cs</ProjectRelativeFilePath>
+    </FileLog>
+    <FileLog>
+      <ProjectId>abc98339-4259-4d28-82ae-502ba6cdc8b2</ProjectId>
+      <SolutionRelativeFilePath>../Intent.Modules.Angular/Templates/Module/AngularResolver/AngularResolverTemplateRegistration.cs</SolutionRelativeFilePath>
+      <ProjectRelativeFilePath>Module/AngularResolver/AngularResolverTemplateRegistration.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>abc98339-4259-4d28-82ae-502ba6cdc8b2</ProjectId>

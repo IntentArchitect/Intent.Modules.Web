@@ -53,5 +53,12 @@ namespace Intent.Modelers.WebClient.Angular.Api
                 .ToList();
         }
 
+        public static IList<ResolverModel> GetResolverModels(this IDesigner designer)
+        {
+            return designer.GetElementsOfType(ResolverModel.SpecializationTypeId)
+                .Select(x => new ResolverModel(x))
+                .ToList();
+        }
+
     }
 }

@@ -104,6 +104,11 @@
     </FileLog>
     <FileLog>
       <ProjectId>cd404cb9-57b2-4161-a7ae-e864b9a9e35d</ProjectId>
+      <SolutionRelativeFilePath>../Intent.Modules.Modelers.WebClient.Angular/Api/ResolverModel.cs</SolutionRelativeFilePath>
+      <ProjectRelativeFilePath>ResolverModel.cs</ProjectRelativeFilePath>
+    </FileLog>
+    <FileLog>
+      <ProjectId>cd404cb9-57b2-4161-a7ae-e864b9a9e35d</ProjectId>
       <SolutionRelativeFilePath>../Intent.Modules.Modelers.WebClient.Angular/Api/RouteModel.cs</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>RouteModel.cs</ProjectRelativeFilePath>
     </FileLog>

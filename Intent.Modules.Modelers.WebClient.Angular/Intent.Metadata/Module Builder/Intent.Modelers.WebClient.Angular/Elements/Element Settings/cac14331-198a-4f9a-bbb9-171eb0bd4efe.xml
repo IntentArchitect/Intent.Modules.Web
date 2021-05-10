@@ -250,11 +250,50 @@
           </stereotypes>
           <childElements />
         </childElement>
+        <childElement id="e5dc4313-7c4e-49a2-9093-8ea0965dd3cf" type="Element Creation Option" typeId="5fa12f89-da1e-49c5-b8e9-427b22407f19">
+          <name>New Resolver</name>
+          <display>New Resolver: Resolver</display>
+          <isAbstract>false</isAbstract>
+          <order>5</order>
+          <genericTypes />
+          <typeReference id="e0a4c2b4-ad3b-4ce9-bdef-4b8a2cf2bb90">
+            <typeId>8112a50c-9394-4e05-996b-0e57b40b3f46</typeId>
+            <isNavigable>true</isNavigable>
+            <isNullable>false</isNullable>
+            <isCollection>false</isCollection>
+            <isRequired>true</isRequired>
+            <typePackageName>Intent.Modelers.WebClient.Angular</typePackageName>
+            <typePackageId>9cf8c5df-18a9-470e-a4fd-7e18d7050cd6</typePackageId>
+            <stereotypes />
+            <genericTypeParameters />
+          </typeReference>
+          <isMapped>false</isMapped>
+          <parentFolderId>1a60a561-b486-45db-9b1d-70abf85b81a3</parentFolderId>
+          <packageId>9cf8c5df-18a9-470e-a4fd-7e18d7050cd6</packageId>
+          <packageName>Intent.Modelers.WebClient.Angular</packageName>
+          <stereotypes>
+            <stereotype stereotypeDefinitionId="f4250b35-559d-4c0b-91ee-c3d7aa239814" name="Option Settings">
+              <comment />
+              <addedByDefault>true</addedByDefault>
+              <definitionPackageName>Intent.ModuleBuilder</definitionPackageName>
+              <definitionPackageId>9972b2a9-b749-4bba-b5c8-824bf694c6ef</definitionPackageId>
+              <properties>
+                <property name="9df41a97-0a8b-42c6-9d95-becf3d6d1e0b" display="Shortcut" isActive="true" />
+                <property name="5572d05e-dd37-47f6-944a-73710c07f4f1" display="Shortcut (macOS)" isActive="true" />
+                <property name="ba8a3ecd-0f08-499e-bb5b-929d40f56a45" display="Default Name" value="" isActive="true" />
+                <property name="A43F388B-DAFF-422C-BD8D-FB433EFEC51B" display="Type Order" isActive="true" />
+                <property name="8e092aa6-7d1a-4a06-af82-903e7642cef6" display="Allow Multiple" value="true" isActive="true" />
+                <property name="719e9dff-2b8d-407d-912d-fac99a158721" display="Api Model Name" isActive="true" />
+              </properties>
+            </stereotype>
+          </stereotypes>
+          <childElements />
+        </childElement>
         <childElement id="6923fec2-8edf-4840-a590-709cfdf21d3c" type="Element Creation Option" typeId="5fa12f89-da1e-49c5-b8e9-427b22407f19">
           <name>New Folder</name>
           <display>New Folder: Folder</display>
           <isAbstract>false</isAbstract>
-          <order>5</order>
+          <order>6</order>
           <genericTypes />
           <typeReference id="f050ebdb-56d8-489c-b123-19505d9bc991">
             <typeId>0b1c1dcb-8c31-4294-883c-a130345730d2</typeId>
@@ -295,7 +334,7 @@
       <name>NewElementEventSettings</name>
       <display>[events]</display>
       <isAbstract>false</isAbstract>
-      <order>2</order>
+      <order>4</order>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>cac14331-198a-4f9a-bbb9-171eb0bd4efe</parentFolderId>

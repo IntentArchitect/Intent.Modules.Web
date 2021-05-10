@@ -8,6 +8,16 @@
       <ProjectRelativeFilePath>ModuleExtensionModel.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
+      <ProjectId>044396c8-ade8-4ce4-b0db-ffd860f3005b</ProjectId>
+      <SolutionRelativeFilePath>../Intent.Modules.Angular.ServiceProxies/Decorators/PopulateDataComponentDecorator.cs</SolutionRelativeFilePath>
+      <ProjectRelativeFilePath>PopulateDataComponentDecorator.cs</ProjectRelativeFilePath>
+    </FileLog>
+    <FileLog>
+      <ProjectId>044396c8-ade8-4ce4-b0db-ffd860f3005b</ProjectId>
+      <SolutionRelativeFilePath>../Intent.Modules.Angular.ServiceProxies/Decorators/PopulateDataComponentDecoratorRegistration.cs</SolutionRelativeFilePath>
+      <ProjectRelativeFilePath>PopulateDataComponentDecoratorRegistration.cs</ProjectRelativeFilePath>
+    </FileLog>
+    <FileLog>
       <ProjectId>6d139c9a-784d-48b9-a4af-e24859654dba</ProjectId>
       <SolutionRelativeFilePath>../Intent.Modules.Angular.ServiceProxies/Intent.Angular.ServiceProxies.imodspec</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>Intent.Angular.ServiceProxies.imodspec</ProjectRelativeFilePath>
