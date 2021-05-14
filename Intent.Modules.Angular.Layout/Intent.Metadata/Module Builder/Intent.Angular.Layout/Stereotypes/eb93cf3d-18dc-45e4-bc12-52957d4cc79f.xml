@@ -4,6 +4,7 @@
   <targetMode>that-reference</targetMode>
   <targetElements>
     <element id="1db37bef-68b3-4128-8e92-b1c5853dca00">Select</element>
+    <element id="b76edc8d-ccac-4dea-81ed-353232ee5426">Multi-Select</element>
   </targetElements>
   <applyMode>always</applyMode>
   <icon type="FontAwesome" source="cogs" />
@@ -26,6 +27,7 @@
         <type>356fbe17-bc63-4e16-b915-feefbc063cbe</type>
       </lookupTypes>
       <lookupInternalTargetPropertyId>return element.getParent("Component").id;</lookupInternalTargetPropertyId>
+      <isRequiredFunction>return true;</isRequiredFunction>
     </property>
     <property id="61a6dc22-ed1f-40cb-876d-dc8e5cb31caa">
       <name>Option Value Field</name>

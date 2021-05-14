@@ -11,9 +11,10 @@ namespace Intent.Modules.Angular.Layout.Decorators.Controls.Form
 {
     public partial class FormTemplate : IControl
     {
-        public FormTemplate(FormModel model, IApplicationEventDispatcher eventDispatcher)
+        public FormTemplate(FormModel model, ControlWriter controlWriter, IApplicationEventDispatcher eventDispatcher)
         {
             Model = model;
+            ControlWriter = controlWriter;
             eventDispatcher.Publish(new AngularImportDependencyRequiredEvent(
                 moduleId: Model.Module.Id, 
                 dependency: "ReactiveFormsModule", 
@@ -29,17 +30,23 @@ namespace Intent.Modules.Angular.Layout.Decorators.Controls.Form
                     dependency: "BsDatepickerModule.forRoot()",
                     import: "import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';"));
             }
-            if (Model.FormFields.Any(x => x.TypeReference.Element.Name == "Select"))
+            if (Model.FormFields.Any(x => x.TypeReference.Element.Name == "Select" || x.TypeReference.Element.Name == "Multi-Select"))
             {
+                //eventDispatcher.Publish(new AngularImportDependencyRequiredEvent(
+                //    moduleId: Model.Module.Id,
+                //    dependency: "NgxSelectModule",
+                //    import: "import { NgxSelectModule } from 'ngx-select-ex';"));
+                //eventDispatcher.Publish(new CliInstallationRequest("ngx-select-ex", "3", "--save"));
                 eventDispatcher.Publish(new AngularImportDependencyRequiredEvent(
                     moduleId: Model.Module.Id,
-                    dependency: "NgxSelectModule",
-                    import: "import { NgxSelectModule } from 'ngx-select-ex';"));
-                eventDispatcher.Publish(new NpmPackageInstallationRequest("ngx-select-ex", "3", "--save"));
+                    dependency: "MatSelectModule",
+                    import: "import { MatSelectModule } from '@angular/material/select';"));
+                eventDispatcher.Publish(new CliInstallationRequest("@angular/material", "ng add @angular/material"));
             }
         }
 
         public FormModel Model { get; }
+        public ControlWriter ControlWriter { get; }
 
         private string GetSelectItemsModel(FormFieldModel field)
         {

@@ -94,5 +94,10 @@ namespace Intent.Angular.Layout.Api
         public const string SpecializationTypeId = "8aee9b69-d02d-4ca8-b28a-6585508bd033";
 
         public string Comment => _element.Comment;
+
+        public IList<SectionModel> Sections => _element.ChildElements
+                    .GetElementsOfType(SectionModel.SpecializationTypeId)
+                    .Select(x => new SectionModel(x))
+                    .ToList();
     }
 }

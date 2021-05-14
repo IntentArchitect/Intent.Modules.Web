@@ -12,5 +12,26 @@ namespace Intent.Modules.Angular.Layout.Decorators.Controls.ButtonControl
         }
 
         public ButtonControlModel Model { get; }
+
+        private string GetButtonType()
+        {
+            if (Model.GetButtonSettings().Type().IsButton())
+            {
+                return "button";
+            }
+            if (Model.GetButtonSettings().Type().IsSubmit())
+            {
+                return "submit";
+            }
+            if (Model.GetButtonSettings().Type().IsReset())
+            {
+                return "reset";
+            }
+            if (Model.GetButtonSettings().Type().IsMenu())
+            {
+                return "menu";
+            }
+            return "button";
+        }
     }
 }

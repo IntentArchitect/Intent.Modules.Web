@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<stereotypeDefinition id="abb75515-21f5-4675-9914-d0973f2aeb57">
+  <name>Button Settings</name>
+  <targetMode>of-type</targetMode>
+  <targetElements>
+    <element id="13eca516-0628-4085-91c3-36d5eddda6c9">Button Control</element>
+  </targetElements>
+  <applyMode>always</applyMode>
+  <icon type="FontAwesome" source="cogs" />
+  <displayIcon>false</displayIcon>
+  <displayFunction />
+  <autoAdd>false</autoAdd>
+  <parentFolderId>411a47ef-bf13-45dd-b800-7abf7eb9ac92</parentFolderId>
+  <order>0</order>
+  <packageId>411a47ef-bf13-45dd-b800-7abf7eb9ac92</packageId>
+  <packageName>Intent.Angular.Layout</packageName>
+  <properties>
+    <property id="0512b9ca-15bb-4367-99cd-b281a45b15f5">
+      <name>Type</name>
+      <type>string</type>
+      <controlType>select</controlType>
+      <optionsSource>options</optionsSource>
+      <placeholder />
+      <defaultValue>Button</defaultValue>
+      <valueOptions>
+        <option>Button</option>
+        <option>Submit</option>
+        <option>Reset</option>
+        <option>Menu</option>
+      </valueOptions>
+      <lookupTypes />
+      <isRequiredFunction>return true;</isRequiredFunction>
+    </property>
+  </properties>
+</stereotypeDefinition>

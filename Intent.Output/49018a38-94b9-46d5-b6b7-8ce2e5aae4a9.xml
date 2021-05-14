@@ -29,6 +29,11 @@
     </FileLog>
     <FileLog>
       <ProjectId>188e1552-f648-48db-a9c3-75b661358b0d</ProjectId>
+      <SolutionRelativeFilePath>../Intent.Modules.Angular.Layout/Api/Extensions/ButtonControlModelExtensions.cs</SolutionRelativeFilePath>
+      <ProjectRelativeFilePath>ButtonControlModelExtensions.cs</ProjectRelativeFilePath>
+    </FileLog>
+    <FileLog>
+      <ProjectId>188e1552-f648-48db-a9c3-75b661358b0d</ProjectId>
       <SolutionRelativeFilePath>../Intent.Modules.Angular.Layout/Api/Extensions/LinkModelExtensions.cs</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>LinkModelExtensions.cs</ProjectRelativeFilePath>
     </FileLog>

@@ -4,6 +4,7 @@
 <#@ import namespace="System.Linq" #>
 <#@ import namespace="Intent.Modules.Common" #>
 <#@ import namespace="Intent.Modules.Common.Templates" #>
+<#@ import namespace="Intent.Modules.Angular.Layout.Decorators.Controls.Section" #>
 <form [formGroup]="<#= Model.DataModelPath #>" intent-manage intent-id="<#= Model.Name.Replace(" ", "").ToKebabCase() #>">
 <#  foreach(var field in Model.FormFields) { #>
 <#      if (field.TypeReference.Element.Name == "Text Input") { #>
@@ -24,7 +25,20 @@
 <#      } else if (field.TypeReference.Element.Name == "Select") { #>
   <div class="form-group" intent-id="<#= field.Id #>">
     <label for="<#= field.DataModelPath #>"><#= field.Name #></label>
-    <ngx-select id="<#= field.DataModelPath #>"[items]="<#= GetSelectItemsModel(field) #>" formControlName="<#= field.DataModelPath #>" optionValueField="<#= GetSelectValueField(field) #>" optionTextField="<#= GetSelectTextField(field) #>" />
+    <mat-select id="<#= field.DataModelPath #>" class="form-control" formControlName="<#= field.DataModelPath #>" type="text">
+      <mat-option *ngFor="let option of <#= GetSelectItemsModel(field) #>" [value]="option.<#= GetSelectValueField(field) #>">
+        {{ option.<#= GetSelectTextField(field) #> }}
+      </mat-option>
+    </mat-select>
+  </div>
+<#      } else if (field.TypeReference.Element.Name == "Multi-Select") { #>
+  <div class="form-group" intent-id="<#= field.Id #>">
+    <label for="<#= field.DataModelPath #>"><#= field.Name #></label>
+    <mat-select id="<#= field.DataModelPath #>" class="form-control" formControlName="<#= field.DataModelPath #>" type="text" multiple="">
+      <mat-option *ngFor="let option of <#= GetSelectItemsModel(field) #>" [value]="option.<#= GetSelectValueField(field) #>">
+        {{ option.<#= GetSelectTextField(field) #> }}
+      </mat-option>
+    </mat-select>
   </div>
 <#      } else if (field.TypeReference.Element.Name == "Custom") { #>
   <div class="form-group" intent-id="<#= field.Id #>" intent-ignore>
@@ -33,4 +47,5 @@
   </div>
 <#      } #>
 <#  } #>
+<#= ControlWriter.WriteControls(Model.Sections.Select(x => x.InternalElement), "  ") #>
 </form>

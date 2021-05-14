@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<stereotypeDefinition id="6939babe-3de0-49f6-a299-58b947129a8d">
+  <name>@Input</name>
+  <targetMode>of-type</targetMode>
+  <targetElements />
+  <applyMode>manually</applyMode>
+  <icon type="UrlImagePath" source="./img/icons/common/StereotypeDef_256x.png" />
+  <displayIcon>false</displayIcon>
+  <displayFunction />
+  <autoAdd>false</autoAdd>
+  <parentFolderId>a3deb341-dd4e-4f7f-99f5-2f198c1c251c</parentFolderId>
+  <order>0</order>
+  <packageId>a3deb341-dd4e-4f7f-99f5-2f198c1c251c</packageId>
+  <packageName>Intent.Angular</packageName>
+  <properties />
+</stereotypeDefinition>

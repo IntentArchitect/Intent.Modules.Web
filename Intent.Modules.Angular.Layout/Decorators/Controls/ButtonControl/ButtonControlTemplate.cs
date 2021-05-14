@@ -36,7 +36,14 @@ namespace Intent.Modules.Angular.Layout.Decorators.Controls.ButtonControl
             
             #line default
             #line hidden
-            this.Write("\">\r\n  <button class=\"btn btn-default\" ");
+            this.Write("\">\r\n  <button class=\"btn btn-default\" type=\"");
+            
+            #line 8 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Decorators\Controls\ButtonControl\ButtonControlTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(GetButtonType()));
+            
+            #line default
+            #line hidden
+            this.Write("\" ");
             
             #line 8 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Decorators\Controls\ButtonControl\ButtonControlTemplate.tt"
  if (Model.ClickCommandPath != null) { 

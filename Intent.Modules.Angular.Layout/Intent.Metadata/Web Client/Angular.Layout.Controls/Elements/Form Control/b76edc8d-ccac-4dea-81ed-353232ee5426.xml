@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<class id="cddc4621-68ae-4888-8f4c-118a9cefdb33" type="Form Control" typeId="f234d77d-a306-41c1-ad38-a47b14ecb0ff">
-  <name>Text Input</name>
-  <display>Text Input</display>
+<class id="b76edc8d-ccac-4dea-81ed-353232ee5426" type="Form Control" typeId="f234d77d-a306-41c1-ad38-a47b14ecb0ff">
+  <name>Multi-Select</name>
+  <display>Multi-Select</display>
   <isAbstract>false</isAbstract>
-  <order>6</order>
+  <order>4</order>
   <genericTypes />
   <isMapped>false</isMapped>
   <parentFolderId>6c7013d3-ba6b-4135-8af0-421b662ec802</parentFolderId>

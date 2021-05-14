@@ -18,7 +18,7 @@ namespace Intent.Modules.Angular
     public class AngularCliInstaller : FactoryExtensionBase, IExecutionLifeCycle
     {
         private readonly IMetadataManager _metadataManager;
-        private IList<NpmPackageInstallationRequest> _installationRequests = new List<NpmPackageInstallationRequest>();
+        private IList<CliInstallationRequest> _installationRequests = new List<CliInstallationRequest>();
         public override int Order => 100;
 
         public AngularCliInstaller(IMetadataManager metadataManager)
@@ -34,7 +34,7 @@ namespace Intent.Modules.Angular
                 {
                     throw new Exception("No Web Client Package found. Create a new Package and Root Module 'AppModule' in the Web Client designer.");
                 }
-                application.EventDispatcher.Subscribe<NpmPackageInstallationRequest>(request => _installationRequests.Add(request));
+                application.EventDispatcher.Subscribe<CliInstallationRequest>(request => _installationRequests.Add(request));
             }
             if (step == ExecutionLifeCycleSteps.BeforeTemplateExecution)
             {
@@ -58,11 +58,11 @@ namespace Intent.Modules.Angular
                     Logging.Log.Info("Angular app already installed. Skipping Angular CLI installation");
                 }
 
-                foreach (var npmPackage in _installationRequests)
+                foreach (var installationRequest in _installationRequests)
                 {
-                    if (!IsPackageInstalled(application, npmPackage.PackageName))
+                    if (!IsPackageInstalled(application, installationRequest.NpmPackageName))
                     {
-                        CliCommand.Run(outputTarget.Location, $"npm i {npmPackage.PackageName}{(npmPackage.PackageVersion != null ? $"@{npmPackage.PackageVersion}" : "")} {npmPackage.Arguments ?? ""}");
+                        CliCommand.Run(outputTarget.Location, $"{installationRequest.Command}");
                     }
                 }
             }
@@ -92,17 +92,15 @@ namespace Intent.Modules.Angular
         }
     }
 
-    public class NpmPackageInstallationRequest
+    public class CliInstallationRequest
     {
-        public NpmPackageInstallationRequest(string packageName, string packageVersion, string arguments)
+        public CliInstallationRequest(string npmPackageName, string command)
         {
-            PackageName = packageName;
-            PackageVersion = packageVersion;
-            Arguments = arguments;
+            NpmPackageName = npmPackageName;
+            Command = command;
         }
 
-        public string PackageName { get; set; }
-        public string PackageVersion { get; set; }
-        public string Arguments { get; set; }
+        public string NpmPackageName { get; set; }
+        public string Command { get; }
     }
 }

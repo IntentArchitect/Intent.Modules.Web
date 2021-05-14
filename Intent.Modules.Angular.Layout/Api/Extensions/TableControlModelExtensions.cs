@@ -33,9 +33,9 @@ namespace Intent.Angular.Layout.Api
 
             public string Name => _stereotype.Name;
 
-            public ICanBeReferencedType OnSelectRow()
+            public IElement OnSelectRow()
             {
-                return _stereotype.GetProperty<ICanBeReferencedType>("On Select Row");
+                return _stereotype.GetProperty<IElement>("On Select Row");
             }
 
         }
