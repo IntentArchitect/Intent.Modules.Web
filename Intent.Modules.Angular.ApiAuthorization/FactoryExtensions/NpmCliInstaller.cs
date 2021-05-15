@@ -19,7 +19,7 @@ namespace Intent.Modules.Angular.ApiAuthorization.FactoryExtensions
         [IntentManaged(Mode.Ignore)]
         public void OnStep(IApplication application, string step)
         {
-            if (step == ExecutionLifeCycleSteps.BeforeTemplateExecution)
+            if (step == ExecutionLifeCycleSteps.AfterCommitChanges)
             {
                 var outputTarget = CliCommand.GetFrontEndOutputTarget(application);
                 if (outputTarget == null)
