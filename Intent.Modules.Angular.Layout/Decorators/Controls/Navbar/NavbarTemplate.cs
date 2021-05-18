@@ -31,8 +31,14 @@ namespace Intent.Modules.Angular.Layout.Decorators.Controls.Navbar
         public override string TransformText()
         {
             this.Write("<nav class=\"navbar navbar-expand-lg navbar-light bg-light\" role=\"navigation\" inte" +
-                    "nt-manage=\"\">\r\n  <div class=\"navbar-header\">\r\n    <a class=\"navbar-brand\" href=\"" +
-                    "#\"><span>");
+                    "nt-manage=\"\" intent-id=\"");
+            
+            #line 8 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Decorators\Controls\Navbar\NavbarTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(Model.Id));
+            
+            #line default
+            #line hidden
+            this.Write("\">\r\n  <div class=\"navbar-header\">\r\n    <a class=\"navbar-brand\" href=\"#\"><span>");
             
             #line 10 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Decorators\Controls\Navbar\NavbarTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Application.Name));
@@ -45,11 +51,11 @@ namespace Intent.Modules.Angular.Layout.Decorators.Controls.Navbar
     <span class=""navbar-toggler-icon""></span>
   </button>
   <div class=""collapse navbar-collapse"" [collapse]=""isCollapsed"">
-    <ul class=""nav navbar-nav"">
+    <ul class=""nav navbar-nav"" intent-manage="""" intent-id=""navbar-nav"">
 ");
             
             #line 17 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Decorators\Controls\Navbar\NavbarTemplate.tt"
-  foreach(var navItem in Model.InternalElement.ChildElements) { 
+  foreach(var navItem in Model.InternalElement.ChildElements.OrderBy(x => x.Order)) { 
             
             #line default
             #line hidden
@@ -60,7 +66,14 @@ namespace Intent.Modules.Angular.Layout.Decorators.Controls.Navbar
             
             #line default
             #line hidden
-            this.Write("      <li class=\"nav-item\">\r\n        <a class=\"nav-link\" routerLink=\"");
+            this.Write("      <li class=\"nav-item\" intent-id=\"");
+            
+            #line 20 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Decorators\Controls\Navbar\NavbarTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(navItem.Id));
+            
+            #line default
+            #line hidden
+            this.Write("\">\r\n        <a class=\"nav-link\" routerLink=\"");
             
             #line 21 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Decorators\Controls\Navbar\NavbarTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(linkModel.GetLinkSettings().RouterLink()));
@@ -84,14 +97,20 @@ namespace Intent.Modules.Angular.Layout.Decorators.Controls.Navbar
             #line hidden
             
             #line 27 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Decorators\Controls\Navbar\NavbarTemplate.tt"
-      if (navItem.IsDropdown()) {
+      else if (navItem.IsDropdown()) {
             var dropdownModel = navItem.AsIsDropdownModel(); 
             
             #line default
             #line hidden
-            this.Write("      <li class=\"dropdown nav-item\" dropdown>\r\n        <a class=\"nav-link dropdow" +
-                    "n-toggle\" data-toggle=\"dropdown\" role=\"button\" aria-haspopup=\"true\" aria-expande" +
-                    "d=\"false\" dropdownToggle>");
+            this.Write("      <li class=\"dropdown nav-item\" dropdown intent-id=\"");
+            
+            #line 29 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Decorators\Controls\Navbar\NavbarTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(navItem.Id));
+            
+            #line default
+            #line hidden
+            this.Write("\">\r\n        <a class=\"nav-link dropdown-toggle\" data-toggle=\"dropdown\" role=\"butt" +
+                    "on\" aria-haspopup=\"true\" aria-expanded=\"false\" dropdownToggle>");
             
             #line 30 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Decorators\Controls\Navbar\NavbarTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(dropdownModel.Name));
@@ -136,6 +155,33 @@ namespace Intent.Modules.Angular.Layout.Decorators.Controls.Navbar
             #line hidden
             
             #line 39 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Decorators\Controls\Navbar\NavbarTemplate.tt"
+      else { 
+            
+            #line default
+            #line hidden
+            this.Write("      <li class=\"nav-item\" intent-id=\"");
+            
+            #line 40 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Decorators\Controls\Navbar\NavbarTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(navItem.Id));
+            
+            #line default
+            #line hidden
+            this.Write("\">\r\n");
+            
+            #line 41 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Decorators\Controls\Navbar\NavbarTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(ControlWriter.WriteControl(navItem, "        ")));
+            
+            #line default
+            #line hidden
+            this.Write("\r\n      </li>\r\n");
+            
+            #line 43 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Decorators\Controls\Navbar\NavbarTemplate.tt"
+      } 
+            
+            #line default
+            #line hidden
+            
+            #line 44 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Decorators\Controls\Navbar\NavbarTemplate.tt"
   } 
             
             #line default

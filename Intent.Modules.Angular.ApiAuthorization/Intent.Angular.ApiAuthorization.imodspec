@@ -17,7 +17,9 @@
       <location>src/app</location>
     </template>
   </templates>
-  <decorators></decorators>
+  <decorators>
+    <decorator id="Intent.Angular.ApiAuthorization.AuthorizationControlsDecorator"/>
+  </decorators>
   <factoryExtensions>
     <factoryExtension id="Intent.Angular.ApiAuthorization.NpmCliInstaller" externalReference="9578b7e3-07ee-40e8-a295-af3165d60fbf" />
   </factoryExtensions>
@@ -31,5 +33,8 @@
     <file src="$outDir$/$id$.dll" />
     <file src="$outDir$/$id$.pdb" />
   </files>
-  <metadata />
+  <metadata>
+    <install target="Web Client" src="modelers/Authorization Components.designer.settings" externalReference="b03cd747-cd8a-49af-9959-be9f69cb96f0" />
+    <install target="Web Client" src="Intent.Metadata/Module Builder/Intent.Angular.ApiAuthorization/Intent.Angular.ApiAuthorization.pkg.config" externalReference="1e254a4c-2cb2-410c-a4d4-fcadd59c9353" />
+  </metadata>
 </package>

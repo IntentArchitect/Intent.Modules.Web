@@ -8,10 +8,11 @@ namespace Intent.Modules.Angular.Layout.Decorators.Controls.Navbar
 {
     public partial class NavbarTemplate : IControl
     {
-        public NavbarTemplate(NavbarModel model, IApplication application)
+        public NavbarTemplate(NavbarModel model, IApplication application, ControlWriter controlWriter)
         {
             Model = model;
             Application = application;
+            ControlWriter = controlWriter;
             application.EventDispatcher.Publish(new AngularImportDependencyRequiredEvent(
                 moduleId: "AppModule",
                 dependency: "CollapseModule.forRoot()",
@@ -20,5 +21,6 @@ namespace Intent.Modules.Angular.Layout.Decorators.Controls.Navbar
 
         public NavbarModel Model { get; }
         public IApplication Application { get; }
+        public ControlWriter ControlWriter { get; }
     }
 }

@@ -3,52 +3,97 @@
   <ApplicationId>fe241e7f-8588-40fa-86be-f9fb01a88e36</ApplicationId>
   <FileLogs>
     <FileLog>
+      <ProjectId>d463283f-3f3e-43e0-bb51-b135b172311c</ProjectId>
+      <CorrelationId>870f96f9-8a6e-4847-8de4-f883c5eafc62</CorrelationId>
+      <SolutionRelativeFilePath>../Intent.Modules.Angular.ApiAuthorization/Api/ComponentViewExtensionModel.cs</SolutionRelativeFilePath>
+      <ProjectRelativeFilePath>ComponentViewExtensionModel.cs</ProjectRelativeFilePath>
+    </FileLog>
+    <FileLog>
+      <ProjectId>d463283f-3f3e-43e0-bb51-b135b172311c</ProjectId>
+      <CorrelationId>fc108495-cb62-4a0a-8b3e-1b601a442da3</CorrelationId>
+      <SolutionRelativeFilePath>../Intent.Modules.Angular.ApiAuthorization/Api/LoginMenuModel.cs</SolutionRelativeFilePath>
+      <ProjectRelativeFilePath>LoginMenuModel.cs</ProjectRelativeFilePath>
+    </FileLog>
+    <FileLog>
+      <ProjectId>d463283f-3f3e-43e0-bb51-b135b172311c</ProjectId>
+      <CorrelationId>92d1d466-c0a0-4168-bf58-54cd4f166b08</CorrelationId>
+      <SolutionRelativeFilePath>../Intent.Modules.Angular.ApiAuthorization/Api/NavbarExtensionModel.cs</SolutionRelativeFilePath>
+      <ProjectRelativeFilePath>NavbarExtensionModel.cs</ProjectRelativeFilePath>
+    </FileLog>
+    <FileLog>
+      <ProjectId>d463283f-3f3e-43e0-bb51-b135b172311c</ProjectId>
+      <CorrelationId>d7a42e98-3ee1-487b-8e69-8a589a6d434c</CorrelationId>
+      <SolutionRelativeFilePath>../Intent.Modules.Angular.ApiAuthorization/Api/SectionExtensionModel.cs</SolutionRelativeFilePath>
+      <ProjectRelativeFilePath>SectionExtensionModel.cs</ProjectRelativeFilePath>
+    </FileLog>
+    <FileLog>
+      <ProjectId>0b4155ba-8b36-4eb9-a383-2d23ee7113a3</ProjectId>
+      <SolutionRelativeFilePath>../Intent.Modules.Angular.ApiAuthorization/ApiMetadataProviderExtensions.cs</SolutionRelativeFilePath>
+      <ProjectRelativeFilePath>ApiMetadataProviderExtensions.cs</ProjectRelativeFilePath>
+    </FileLog>
+    <FileLog>
       <ProjectId>139cbb36-978e-4638-acde-c4ee8b1ca524</ProjectId>
+      <CorrelationId>9578b7e3-07ee-40e8-a295-af3165d60fbf</CorrelationId>
       <SolutionRelativeFilePath>../Intent.Modules.Angular.ApiAuthorization/FactoryExtensions/NpmCliInstaller.cs</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>NpmCliInstaller.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>0b4155ba-8b36-4eb9-a383-2d23ee7113a3</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.IModeSpecFile</CorrelationId>
       <SolutionRelativeFilePath>../Intent.Modules.Angular.ApiAuthorization/Intent.Angular.ApiAuthorization.imodspec</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>Intent.Angular.ApiAuthorization.imodspec</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>0b4155ba-8b36-4eb9-a383-2d23ee7113a3</ProjectId>
+      <CorrelationId>0b4155ba-8b36-4eb9-a383-2d23ee7113a3</CorrelationId>
       <SolutionRelativeFilePath>../Intent.Modules.Angular.ApiAuthorization/Intent.Modules.Angular.ApiAuthorization.csproj</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>Intent.Modules.Angular.ApiAuthorization.csproj</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
+      <ProjectId>116f7317-3e6b-4b94-a73e-7d9c9f11e207</ProjectId>
+      <CorrelationId>b03cd747-cd8a-49af-9959-be9f69cb96f0</CorrelationId>
+      <SolutionRelativeFilePath>../Intent.Modules.Angular.ApiAuthorization/modelers/Authorization Components.designer.settings</SolutionRelativeFilePath>
+      <ProjectRelativeFilePath>Authorization Components.designer.settings</ProjectRelativeFilePath>
+    </FileLog>
+    <FileLog>
       <ProjectId>0b4155ba-8b36-4eb9-a383-2d23ee7113a3</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.ReadMe</CorrelationId>
       <SolutionRelativeFilePath>../Intent.Modules.Angular.ApiAuthorization/README.txt</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>README.txt</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>55893a93-c4f1-4a6a-926b-16485d9034d8</ProjectId>
+      <CorrelationId>b1160f24-71f9-46fd-94d7-8d76a833ade9</CorrelationId>
       <SolutionRelativeFilePath>../Intent.Modules.Angular.ApiAuthorization/Templates/ApiAuthTypescriptZipFileContent/ApiAuthTypescriptZipFileContentTemplate.cs</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>ApiAuthTypescriptZipFileContent/ApiAuthTypescriptZipFileContentTemplate.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>55893a93-c4f1-4a6a-926b-16485d9034d8</ProjectId>
+      <CorrelationId>b1160f24-71f9-46fd-94d7-8d76a833ade9</CorrelationId>
       <SolutionRelativeFilePath>../Intent.Modules.Angular.ApiAuthorization/Templates/ApiAuthTypescriptZipFileContent/ApiAuthTypescriptZipFileContentTemplate.tt</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>ApiAuthTypescriptZipFileContent/ApiAuthTypescriptZipFileContentTemplate.tt</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>55893a93-c4f1-4a6a-926b-16485d9034d8</ProjectId>
+      <CorrelationId>b1160f24-71f9-46fd-94d7-8d76a833ade9</CorrelationId>
       <SolutionRelativeFilePath>../Intent.Modules.Angular.ApiAuthorization/Templates/ApiAuthTypescriptZipFileContent/ApiAuthTypescriptZipFileContentTemplatePartial.cs</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>ApiAuthTypescriptZipFileContent/ApiAuthTypescriptZipFileContentTemplatePartial.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>55893a93-c4f1-4a6a-926b-16485d9034d8</ProjectId>
+      <CorrelationId>b1160f24-71f9-46fd-94d7-8d76a833ade9</CorrelationId>
       <SolutionRelativeFilePath>../Intent.Modules.Angular.ApiAuthorization/Templates/ApiAuthTypescriptZipFileContent/ApiAuthTypescriptZipFileContentTemplateRegistration.cs</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>ApiAuthTypescriptZipFileContent/ApiAuthTypescriptZipFileContentTemplateRegistration.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>55893a93-c4f1-4a6a-926b-16485d9034d8</ProjectId>
+      <CorrelationId>08ee557b-aba4-4960-b6f3-ff4affb5093a</CorrelationId>
       <SolutionRelativeFilePath>../Intent.Modules.Angular.ApiAuthorization/Templates/GeneralApiAuthZipFileContent/GeneralApiAuthZipFileContentTemplatePartial.cs</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>GeneralApiAuthZipFileContent/GeneralApiAuthZipFileContentTemplatePartial.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>55893a93-c4f1-4a6a-926b-16485d9034d8</ProjectId>
+      <CorrelationId>08ee557b-aba4-4960-b6f3-ff4affb5093a</CorrelationId>
       <SolutionRelativeFilePath>../Intent.Modules.Angular.ApiAuthorization/Templates/GeneralApiAuthZipFileContent/GeneralApiAuthZipFileContentTemplateRegistration.cs</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>GeneralApiAuthZipFileContent/GeneralApiAuthZipFileContentTemplateRegistration.cs</ProjectRelativeFilePath>
     </FileLog>

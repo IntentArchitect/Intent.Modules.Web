@@ -1,0 +1,9 @@
+<#@ template language="C#" inherits="T4TemplateBase" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="Intent.Modules.Common" #>
+<#@ import namespace="Intent.Modules.Common.Templates" #>
+<div class="pull-right" intent-id="login-menu" intent-managed="">
+  <app-login-menu></app-login-menu>
+</div>

@@ -5,7 +5,7 @@
 <#@ import namespace="Intent.Modules.Common" #>
 <#@ import namespace="Intent.Modules.Common.Templates" #>
 <#@ import namespace="Intent.Angular.Layout.Api" #>
-<nav class="navbar navbar-expand-lg navbar-light bg-light" role="navigation" intent-manage="">
+<nav class="navbar navbar-expand-lg navbar-light bg-light" role="navigation" intent-manage="" intent-id="<#= Model.Id #>">
   <div class="navbar-header">
     <a class="navbar-brand" href="#"><span><#= Application.Name #></span></a>
   </div>
@@ -13,20 +13,20 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   <div class="collapse navbar-collapse" [collapse]="isCollapsed">
-    <ul class="nav navbar-nav">
-<#  foreach(var navItem in Model.InternalElement.ChildElements) { #>
+    <ul class="nav navbar-nav" intent-manage="" intent-id="navbar-nav">
+<#  foreach(var navItem in Model.InternalElement.ChildElements.OrderBy(x => x.Order)) { #>
 <#      if (navItem.IsLink()) {
             var linkModel = navItem.AsLinkModel(); #>
-      <li class="nav-item">
+      <li class="nav-item" intent-id="<#= navItem.Id #>">
         <a class="nav-link" routerLink="<#= linkModel.GetLinkSettings().RouterLink() #>" routerLinkActive="active">
           <span class="glyphicon glyphicon-th-list" aria-hidden="true"></span>
           <span><#= linkModel.Name #></span>
         </a>
       </li>
 <#      } #>
-<#      if (navItem.IsDropdown()) {
+<#      else if (navItem.IsDropdown()) {
             var dropdownModel = navItem.AsIsDropdownModel(); #>
-      <li class="dropdown nav-item" dropdown>
+      <li class="dropdown nav-item" dropdown intent-id="<#= navItem.Id #>">
         <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" dropdownToggle><#= dropdownModel.Name #><span class="caret"></span>
         </a>
         <div class="dropdown-menu" *dropdownMenu>
@@ -34,6 +34,11 @@
           <a class="dropdown-item" routerLink="<#= linkModel.GetLinkSettings().RouterLink() #>"><span class="glyphicon glyphicon-search" aria-hidden="true"></span><span> <#= linkModel.Name #></span></a>
 <#        } #>
         </div>
+      </li>
+<#      } #>
+<#      else { #>
+      <li class="nav-item" intent-id="<#= navItem.Id #>">
+<#= ControlWriter.WriteControl(navItem, "        ") #>
       </li>
 <#      } #>
 <#  } #>

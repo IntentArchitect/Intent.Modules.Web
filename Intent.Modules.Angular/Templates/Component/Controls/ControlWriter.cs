@@ -32,27 +32,57 @@ namespace Intent.Modules.Angular.Templates.Component.Controls
             CurrentIndent = currentIndent;
             var result = string.Join($"{System.Environment.NewLine}", elements.Select(element =>
             {
-                if (!_controlsRegistry.ContainsKey(element.SpecializationTypeId))
-                {
-                    Logging.Log.Warning("No control template has been registered for type: " + element.ToString());
-                    return null;
-                }
+                return WriteControl(element, currentIndent);
+                //if (!_controlsRegistry.ContainsKey(element.SpecializationTypeId))
+                //{
+                //    Logging.Log.Warning("No control template has been registered for type: " + element.ToString());
+                //    return null;
+                //}
 
-                try
-                {
-                    var lines = _controlsRegistry[element.SpecializationTypeId](element).TransformText()
-                        .Split(new[] {'\r', '\n'}, StringSplitOptions.RemoveEmptyEntries);
-                    return currentIndent + string.Join($"{System.Environment.NewLine}{currentIndent}", lines);
-                }
-                catch (Exception e)
-                {
-                    Logging.Log.Warning("Failed to write control for type: " + element.ToString());
-                    Logging.Log.Warning(e.ToString());
-                    return null;
-                }
+                //try
+                //{
+                //    var lines = _controlsRegistry[element.SpecializationTypeId](element).TransformText()
+                //        .Split(new[] { '\r', '\n' }, StringSplitOptions.RemoveEmptyEntries);
+                //    return currentIndent + string.Join($"{System.Environment.NewLine}{currentIndent}", lines);
+                //}
+                //catch (Exception e)
+                //{
+                //    Logging.Log.Warning("Failed to write control for type: " + element.ToString());
+                //    Logging.Log.Warning(e.ToString());
+                //    return null;
+                //}
             }).Where(x => x != null));
             CurrentIndent = previousIndent;
             return result;
+        }
+
+        public string WriteControl(IElement element, string currentIndent)
+        {
+            var previousIndent = CurrentIndent;
+            CurrentIndent = currentIndent;
+            if (!_controlsRegistry.ContainsKey(element.SpecializationTypeId))
+            {
+                Logging.Log.Warning("No control template has been registered for type: " + element.ToString());
+                CurrentIndent = previousIndent;
+                return null;
+            }
+
+            try
+            {
+                var lines = _controlsRegistry[element.SpecializationTypeId](element).TransformText()
+                    .Split(new[] {'\r', '\n'}, StringSplitOptions.RemoveEmptyEntries);
+                return $"{System.Environment.NewLine}{currentIndent + string.Join($"{System.Environment.NewLine}{currentIndent}", lines)}";
+            }
+            catch (Exception e)
+            {
+                Logging.Log.Warning("Failed to write control for type: " + element.ToString());
+                Logging.Log.Warning(e.ToString());
+                return null;
+            }
+            finally
+            {
+                CurrentIndent = previousIndent;
+            }
         }
     }
 }

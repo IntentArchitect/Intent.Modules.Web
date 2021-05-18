@@ -25,6 +25,6 @@
   <metadata>
     <install target="Web Client" src="Intent.Metadata/Web Client/Angular.Layout.Controls/Angular.Layout.Controls.pkg.config" />
     <install target="Web Client" src="modelers/Angular Layout Extensions.designer.settings" externalReference="d3c58ce6-a07c-47dc-8626-f73cf1d047e2" />
-    <install target="Web Client" src="Intent.Metadata/Module Builder/Intent.Angular.Layout/Intent.Angular.Layout.pkg.config" externalReference="411a47ef-bf13-45dd-b800-7abf7eb9ac92" />
+    <install target="Web Client;Module Builder" src="Intent.Metadata/Module Builder/Intent.Angular.Layout/Intent.Angular.Layout.pkg.config" externalReference="411a47ef-bf13-45dd-b800-7abf7eb9ac92" />
   </metadata>
 </package>

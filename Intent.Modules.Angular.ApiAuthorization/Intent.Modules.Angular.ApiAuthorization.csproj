@@ -6,7 +6,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="HtmlControls\LoginMenu\LoginMenuTemplate.tt" />
     <None Remove="Resources\api-authorization.zip" />
+    <Content Include="HtmlControls\LoginMenu\LoginMenuTemplate.tt">
+      <LastGenOutput>LoginMenuTemplate.cs</LastGenOutput>
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+    </Content>
     <None Update="Templates\ApiAuthTypescriptZipFileContent\ApiAuthTypescriptZipFileContentTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>ApiAuthTypescriptZipFileContentTemplate.cs</LastGenOutput>
@@ -29,10 +34,16 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\Intent.Modules.Angular.Layout\Intent.Modules.Angular.Layout.csproj" />
     <ProjectReference Include="..\Intent.Modules.Angular\Intent.Modules.Angular.csproj" />
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="HtmlControls\LoginMenu\LoginMenuTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>LoginMenuTemplate.tt</DependentUpon>
+    </Compile>
     <Compile Update="Templates\ApiAuthTypescriptZipFileContent\ApiAuthTypescriptZipFileContentTemplate.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>

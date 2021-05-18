@@ -36,7 +36,7 @@ namespace Intent.Modules.Angular.Layout.Decorators.AngularComponentHtml
             controlWriter.RegisterControl(TableControlModel.SpecializationTypeId, control =>  new TableControlTemplate(new TableControlModel(control)));
             controlWriter.RegisterControl(PaginationControlModel.SpecializationTypeId, control =>  new PaginationControlTemplate(new PaginationControlModel(control), Template.ExecutionContext.EventDispatcher));
             controlWriter.RegisterControl(FormModel.SpecializationTypeId, control =>  new FormTemplate(new FormModel(control), controlWriter, Template.ExecutionContext.EventDispatcher));
-            controlWriter.RegisterControl(NavbarModel.SpecializationTypeId, control =>  new NavbarTemplate(new NavbarModel(control), (IApplication)Template.ExecutionContext));
+            controlWriter.RegisterControl(NavbarModel.SpecializationTypeId, control =>  new NavbarTemplate(new NavbarModel(control), (IApplication)Template.ExecutionContext, controlWriter));
         }
 
         public int Priority { get; } = 0;
