@@ -4,10 +4,11 @@
     <TargetFramework>netcoreapp2.1</TargetFramework>
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
     <LangVersion>latest</LangVersion>
+    <Version>3.0.2</Version>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Intent.Modules.Common" Version="3.0.4" />
+    <PackageReference Include="Intent.Modules.Common" Version="3.0.5" />
     <PackageReference Include="Intent.Modules.Common.Html" Version="3.0.2" />
     <PackageReference Include="Intent.Modules.Common.TypeScript" Version="3.0.5" />
     <PackageReference Include="Intent.Modules.Modelers.Services" Version="3.0.2" />
