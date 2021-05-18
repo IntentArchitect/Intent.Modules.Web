@@ -75,10 +75,14 @@ namespace Intent.Modules.Angular.Templates
         public string Import { get; }
     }
 
-    public static class AngularConfigVariableRequiredEvent
+    public class AngularConfigVariableRequiredEvent
     {
-        public const string EventId = nameof(AngularConfigVariableRequiredEvent);
-        public const string VariableId = nameof(VariableId);
-        public const string DefaultValueId = nameof(DefaultValueId);
+        public AngularConfigVariableRequiredEvent(string variableKey, string defaultValue)
+        {
+            VariableKey = variableKey;
+            DefaultValue = defaultValue;
+        }
+        public string VariableKey { get; }
+        public string DefaultValue { get; }
     }
 }

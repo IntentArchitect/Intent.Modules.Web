@@ -28,14 +28,14 @@ namespace Intent.Modules.Angular.Templates.Environment.EnvironmentTemplate
         [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
         public EnvironmentTemplate(IOutputTarget outputTarget, object model = null) : base(TemplateId, outputTarget, model)
         {
-            ExecutionContext.EventDispatcher.Subscribe(AngularConfigVariableRequiredEvent.EventId, HandleConfigVariableRequiredEvent);
+            ExecutionContext.EventDispatcher.Subscribe<AngularConfigVariableRequiredEvent>(HandleConfigVariableRequiredEvent);
         }
 
-        private void HandleConfigVariableRequiredEvent(ApplicationEvent @event)
+        private void HandleConfigVariableRequiredEvent(AngularConfigVariableRequiredEvent @event)
         {
             _configVariables.Add(new ConfigVariable(
-                name: @event.GetValue(AngularConfigVariableRequiredEvent.VariableId),
-                defaultValue: @event.GetValue(AngularConfigVariableRequiredEvent.DefaultValueId)));
+                name: @event.VariableKey,
+                defaultValue: @event.DefaultValue));
         }
 
         public string GetEnvironmentVariables()

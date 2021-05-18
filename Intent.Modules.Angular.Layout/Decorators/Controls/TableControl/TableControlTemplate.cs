@@ -30,10 +30,9 @@ namespace Intent.Modules.Angular.Layout.Decorators.Controls.TableControl
         /// </summary>
         public override string TransformText()
         {
-            this.Write("\n");
             this.Write("<div class=\"row\" intent-id=\"");
             
-            #line 7 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Decorators\Controls\TableControl\TableControlTemplate.tt"
+            #line 8 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Decorators\Controls\TableControl\TableControlTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(GetTableName()));
             
             #line default
@@ -41,70 +40,70 @@ namespace Intent.Modules.Angular.Layout.Decorators.Controls.TableControl
             this.Write("\">\r\n  <div class=\"col\">\r\n    <table class=\"table table-hover\">\r\n      <thead clas" +
                     "s=\"thead-dark\">\r\n        <tr intent-manage intent-id=\"");
             
-            #line 11 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Decorators\Controls\TableControl\TableControlTemplate.tt"
+            #line 12 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Decorators\Controls\TableControl\TableControlTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(GetTableName()));
             
             #line default
             #line hidden
             this.Write("-header\">\r\n");
             
-            #line 12 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Decorators\Controls\TableControl\TableControlTemplate.tt"
+            #line 13 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Decorators\Controls\TableControl\TableControlTemplate.tt"
  foreach(var field in Model.Columns) { 
             
             #line default
             #line hidden
             this.Write("          <th>");
             
-            #line 13 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Decorators\Controls\TableControl\TableControlTemplate.tt"
+            #line 14 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Decorators\Controls\TableControl\TableControlTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(field.Name));
             
             #line default
             #line hidden
             this.Write("</th>\r\n");
             
-            #line 14 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Decorators\Controls\TableControl\TableControlTemplate.tt"
+            #line 15 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Decorators\Controls\TableControl\TableControlTemplate.tt"
  } 
             
             #line default
             #line hidden
             this.Write("        </tr>\r\n      </thead>\r\n      <tbody>\r\n        <tr *ngFor=\"let item of ");
             
-            #line 18 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Decorators\Controls\TableControl\TableControlTemplate.tt"
+            #line 19 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Decorators\Controls\TableControl\TableControlTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(Model.DataModelPath));
             
             #line default
             #line hidden
             this.Write("\" class=\"clickable\" ");
             
-            #line 18 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Decorators\Controls\TableControl\TableControlTemplate.tt"
+            #line 19 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Decorators\Controls\TableControl\TableControlTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(GetTableRowAttributes()));
             
             #line default
             #line hidden
             this.Write(" intent-manage intent-id=\"");
             
-            #line 18 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Decorators\Controls\TableControl\TableControlTemplate.tt"
+            #line 19 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Decorators\Controls\TableControl\TableControlTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(GetTableName()));
             
             #line default
             #line hidden
             this.Write("-data\">\r\n");
             
-            #line 19 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Decorators\Controls\TableControl\TableControlTemplate.tt"
+            #line 20 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Decorators\Controls\TableControl\TableControlTemplate.tt"
  foreach(var field in Model.Columns) { 
             
             #line default
             #line hidden
             this.Write("          <td>");
             
-            #line 20 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Decorators\Controls\TableControl\TableControlTemplate.tt"
+            #line 21 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Decorators\Controls\TableControl\TableControlTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(field.DataPath  != null ? "{{item." + field.DataPath + "}}" : ""));
             
             #line default
             #line hidden
             this.Write("</td>\r\n");
             
-            #line 21 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Decorators\Controls\TableControl\TableControlTemplate.tt"
+            #line 22 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Decorators\Controls\TableControl\TableControlTemplate.tt"
  } 
             
             #line default

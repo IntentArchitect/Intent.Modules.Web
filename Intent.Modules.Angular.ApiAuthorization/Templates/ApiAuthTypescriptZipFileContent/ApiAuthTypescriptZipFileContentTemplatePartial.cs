@@ -2,6 +2,7 @@ using System.Collections.Generic;
 using System.IO;
 using Intent.Engine;
 using Intent.Modules.Angular.Templates;
+using Intent.Modules.Common.Configuration;
 using Intent.Modules.Common.Templates;
 using Intent.Modules.Common.TypeScript.Templates;
 using Intent.RoslynWeaver.Attributes;
@@ -20,11 +21,18 @@ namespace Intent.Modules.Angular.ApiAuthorization.Templates.ApiAuthTypescriptZip
         public const string TemplateId = "Intent.Angular.ApiAuthorization.ApiAuthTypescriptZipFileContent";
 
         private ZipEntry _zipEntry;
+        private string _stsPort = "sts_port";
 
         [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
         public ApiAuthTypescriptZipFileContentTemplate(IOutputTarget outputTarget, object model = null) : base(TemplateId, outputTarget, model)
         {
             _zipEntry = (ZipEntry)model;
+            ExecutionContext.EventDispatcher.Subscribe<HostingSettingsCreatedEvent>(Handle);
+        }
+
+        private void Handle(HostingSettingsCreatedEvent @event)
+        {
+            _stsPort = @event.SslPort.ToString();
         }
 
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]
@@ -75,23 +83,14 @@ namespace Intent.Modules.Angular.ApiAuthorization.Templates.ApiAuthTypescriptZip
                     multi: true,
                     import: "import { AuthorizeInterceptor } from './api-authorization/authorize.interceptor';"));
 
-                OutputTarget.Application.EventDispatcher.Publish(
-                    eventIdentifier: AngularConfigVariableRequiredEvent.EventId,
-                    @event: new Dictionary<string, string>()
-                    {
-                        { AngularConfigVariableRequiredEvent.VariableId, "auth" },
-                        {
-                            AngularConfigVariableRequiredEvent.DefaultValueId,
-                            @"{
-    authority: 'https://localhost:{sts port number}',
+                OutputTarget.Application.EventDispatcher.Publish(new AngularConfigVariableRequiredEvent("auth", $@"{{
+    authority: 'https://localhost:{_stsPort}',
     client_id: 'Auth_Code_Client',
     redirect_uri: window.location.origin + '/authentication/login-callback',
     post_logout_redirect_uri: window.location.origin + '/authentication/logout-callback',
     response_type: 'code',
     scope: 'openid profile email api roles'
-  }"
-                        },
-                    });
+  }}"));
 
                 _hasBeenPublished = true;
             }

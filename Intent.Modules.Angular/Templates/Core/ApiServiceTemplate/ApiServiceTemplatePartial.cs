@@ -10,6 +10,7 @@ using Intent.RoslynWeaver.Attributes;
 using Intent.Templates;
 using Intent.Modules.Common.TypeScript.Templates;
 using Intent.Modules.Angular.Api;
+using Intent.Modules.Common.Configuration;
 
 [assembly: DefaultIntentManaged(Mode.Merge)]
 [assembly: IntentTemplate("Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial", Version = "1.0")]
@@ -20,22 +21,25 @@ namespace Intent.Modules.Angular.Templates.Core.ApiServiceTemplate
     partial class ApiServiceTemplate
         : TypeScriptTemplateBase<object>
     {
+        private string _sslPort = "{api_port}";
+
         [IntentManaged(Mode.Fully)]
         public const string TemplateId = "Intent.Angular.Core.ApiServiceTemplate";
 
         [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
         public ApiServiceTemplate(IOutputTarget outputTarget, object model = null) : base(TemplateId, outputTarget, model)
         {
+            ExecutionContext.EventDispatcher.Subscribe<HostingSettingsCreatedEvent>(Handle);
+        }
+
+        private void Handle(HostingSettingsCreatedEvent @event)
+        {
+            _sslPort = @event.SslPort.ToString();
         }
 
         public override void BeforeTemplateExecution()
         {
-            ExecutionContext.EventDispatcher.Publish(AngularConfigVariableRequiredEvent.EventId,
-                new Dictionary<string, string>()
-                {
-                    {AngularConfigVariableRequiredEvent.VariableId, "api_base_url" },
-                    {AngularConfigVariableRequiredEvent.DefaultValueId, "\"https://localhost:{port}\"" },
-                });
+            ExecutionContext.EventDispatcher.Publish(new AngularConfigVariableRequiredEvent("api_base_url", $"\"https://localhost:{_sslPort}\""));
         }
 
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]
