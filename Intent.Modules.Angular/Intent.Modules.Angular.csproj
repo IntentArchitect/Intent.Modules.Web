@@ -1,16 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project Sdk="Microsoft.NET.Sdk">
-
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
     <LangVersion>latest</LangVersion>
-    <Version>3.0.2</Version>
+    <Version>3.0.3</Version>
   </PropertyGroup>
-
   <ItemGroup>
     <PackageReference Include="Intent.Modules.Common" Version="3.0.6" />
     <PackageReference Include="Intent.Modules.Common.Html" Version="3.0.2" />
-    <PackageReference Include="Intent.Modules.Common.TypeScript" Version="3.0.5" />
+    <PackageReference Include="Intent.Modules.Common.TypeScript" Version="3.0.6" />
     <PackageReference Include="Intent.Modules.Modelers.Services" Version="3.0.2" />
     <PackageReference Include="Intent.Packager" Version="3.0.1">
       <PrivateAssets>all</PrivateAssets>
@@ -21,12 +20,10 @@
     <PackageReference Include="Mono.TextTemplating" Version="2.0.4" />
     <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
   </ItemGroup>
-
   <ItemGroup>
     <ProjectReference Include="..\Intent.Modules.Modelers.WebClient.Angular\Intent.Modules.Modelers.WebClient.Angular.csproj" />
     <ProjectReference Include="..\Intent.Modules.Modelers.WebClient\Intent.Modules.Modelers.WebClient.csproj" />
   </ItemGroup>
-
   <ItemGroup>
     <None Update="Templates\Component\AngularComponentCssTemplate\AngularComponentCssTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
@@ -72,17 +69,14 @@
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>ModelTemplate.cs</LastGenOutput>
     </None>
-  
     <None Update="Templates\Module\AngularResolver\AngularResolverTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>AngularResolverTemplate.cs</LastGenOutput>
     </None>
   </ItemGroup>
-
   <ItemGroup>
     <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
   </ItemGroup>
-
   <ItemGroup>
     <Compile Update="Templates\Component\AngularComponentCssTemplate\AngularComponentCssTemplate.cs">
       <DesignTime>True</DesignTime>
@@ -139,12 +133,10 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>ModelTemplate.tt</DependentUpon>
     </Compile>
-  
     <Compile Update="Templates\Module\AngularResolver\AngularResolverTemplate.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>AngularResolverTemplate.tt</DependentUpon>
     </Compile>
   </ItemGroup>
-
 </Project>
