@@ -4,26 +4,31 @@
   <FileLogs>
     <FileLog>
       <ProjectId>52d04f2f-7ff6-4102-bfc1-fcb55203dad0</ProjectId>
+      <CorrelationId>b8aec31f-9a62-44c7-ad75-2714327799f9</CorrelationId>
       <SolutionRelativeFilePath>../Intent.Modules.Angular.Layout/AngularAppExtensionsModel.cs</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>AngularAppExtensionsModel.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>0d2ee049-ab68-4892-b48f-6577cc634f4c</ProjectId>
+      <CorrelationId>13eca516-0628-4085-91c3-36d5eddda6c9</CorrelationId>
       <SolutionRelativeFilePath>../Intent.Modules.Angular.Layout/Api/ButtonControlModel.cs</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>ButtonControlModel.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>0d2ee049-ab68-4892-b48f-6577cc634f4c</ProjectId>
+      <CorrelationId>8e6bf0e3-9f98-4143-9900-78815b2201db</CorrelationId>
       <SolutionRelativeFilePath>../Intent.Modules.Angular.Layout/Api/ButtonControlParameterModel.cs</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>ButtonControlParameterModel.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>0d2ee049-ab68-4892-b48f-6577cc634f4c</ProjectId>
+      <CorrelationId>7ecca4f0-404f-45fe-988c-272ac8c26ec6</CorrelationId>
       <SolutionRelativeFilePath>../Intent.Modules.Angular.Layout/Api/ComponentViewExtensionModel.cs</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>ComponentViewExtensionModel.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>0d2ee049-ab68-4892-b48f-6577cc634f4c</ProjectId>
+      <CorrelationId>91610e3a-f0e4-4807-a1b3-4dc947fe13ac</CorrelationId>
       <SolutionRelativeFilePath>../Intent.Modules.Angular.Layout/Api/DropdownModel.cs</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>DropdownModel.cs</ProjectRelativeFilePath>
     </FileLog>
@@ -44,71 +49,85 @@
     </FileLog>
     <FileLog>
       <ProjectId>0d2ee049-ab68-4892-b48f-6577cc634f4c</ProjectId>
+      <CorrelationId>f234d77d-a306-41c1-ad38-a47b14ecb0ff</CorrelationId>
       <SolutionRelativeFilePath>../Intent.Modules.Angular.Layout/Api/FormControlModel.cs</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>FormControlModel.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>0d2ee049-ab68-4892-b48f-6577cc634f4c</ProjectId>
+      <CorrelationId>1e3e3916-0cdb-45bb-a3b8-d7e01834cc36</CorrelationId>
       <SolutionRelativeFilePath>../Intent.Modules.Angular.Layout/Api/FormFieldModel.cs</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>FormFieldModel.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>0d2ee049-ab68-4892-b48f-6577cc634f4c</ProjectId>
+      <CorrelationId>8aee9b69-d02d-4ca8-b28a-6585508bd033</CorrelationId>
       <SolutionRelativeFilePath>../Intent.Modules.Angular.Layout/Api/FormModel.cs</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>FormModel.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>0d2ee049-ab68-4892-b48f-6577cc634f4c</ProjectId>
+      <CorrelationId>b0127146-e571-4000-825e-e7a04e4a45d6</CorrelationId>
       <SolutionRelativeFilePath>../Intent.Modules.Angular.Layout/Api/LinkModel.cs</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>LinkModel.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>0d2ee049-ab68-4892-b48f-6577cc634f4c</ProjectId>
+      <CorrelationId>39f08424-a591-4e93-b302-d7dd27360b4e</CorrelationId>
       <SolutionRelativeFilePath>../Intent.Modules.Angular.Layout/Api/ModuleExtensionModel.cs</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>ModuleExtensionModel.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>0d2ee049-ab68-4892-b48f-6577cc634f4c</ProjectId>
+      <CorrelationId>990cd6f1-8840-419b-be75-4ec63f03f359</CorrelationId>
       <SolutionRelativeFilePath>../Intent.Modules.Angular.Layout/Api/NavbarModel.cs</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>NavbarModel.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>0d2ee049-ab68-4892-b48f-6577cc634f4c</ProjectId>
+      <CorrelationId>3faee16c-8605-4bb4-8566-06a555c929a3</CorrelationId>
       <SolutionRelativeFilePath>../Intent.Modules.Angular.Layout/Api/PaginationControlModel.cs</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>PaginationControlModel.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>0d2ee049-ab68-4892-b48f-6577cc634f4c</ProjectId>
+      <CorrelationId>45072fbf-b34a-4625-b7ea-d5b1962a5b60</CorrelationId>
       <SolutionRelativeFilePath>../Intent.Modules.Angular.Layout/Api/SectionModel.cs</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>SectionModel.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>0d2ee049-ab68-4892-b48f-6577cc634f4c</ProjectId>
+      <CorrelationId>6837f6c2-f098-45df-8be4-900036b73e25</CorrelationId>
       <SolutionRelativeFilePath>../Intent.Modules.Angular.Layout/Api/TableColumnModel.cs</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>TableColumnModel.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>0d2ee049-ab68-4892-b48f-6577cc634f4c</ProjectId>
+      <CorrelationId>e302d9ca-268e-4a98-ad8d-4434aefb9903</CorrelationId>
       <SolutionRelativeFilePath>../Intent.Modules.Angular.Layout/Api/TableControlModel.cs</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>TableControlModel.cs</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>52d04f2f-7ff6-4102-bfc1-fcb55203dad0</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.IModeSpecFile</CorrelationId>
       <SolutionRelativeFilePath>../Intent.Modules.Angular.Layout/Intent.Angular.Layout.imodspec</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>Intent.Angular.Layout.imodspec</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>52d04f2f-7ff6-4102-bfc1-fcb55203dad0</ProjectId>
+      <CorrelationId>52d04f2f-7ff6-4102-bfc1-fcb55203dad0</CorrelationId>
       <SolutionRelativeFilePath>../Intent.Modules.Angular.Layout/Intent.Modules.Angular.Layout.csproj</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>Intent.Modules.Angular.Layout.csproj</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>e80fbd12-d8c0-4373-b120-7a22a655410b</ProjectId>
+      <CorrelationId>d3c58ce6-a07c-47dc-8626-f73cf1d047e2</CorrelationId>
       <SolutionRelativeFilePath>../Intent.Modules.Angular.Layout/modelers/Angular Layout Extensions.designer.settings</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>Angular Layout Extensions.designer.settings</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>52d04f2f-7ff6-4102-bfc1-fcb55203dad0</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.ReadMe</CorrelationId>
       <SolutionRelativeFilePath>../Intent.Modules.Angular.Layout/README.txt</SolutionRelativeFilePath>
       <ProjectRelativeFilePath>README.txt</ProjectRelativeFilePath>
     </FileLog>

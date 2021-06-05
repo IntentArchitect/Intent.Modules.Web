@@ -40,6 +40,7 @@
         <defaultModeler>f492faed-0665-4513-9853-5a230721786f</defaultModeler>
         <optionsSource>lookup-element</optionsSource>
         <lookupElementFunction>return getParent('Component').id</lookupElementFunction>
+        <autoSyncTypeReferences>true</autoSyncTypeReferences>
         <mapFrom>children</mapFrom>
         <mappings>
           <mapping id="1969ef34-7539-4640-bfe9-c766d3a275b2">
@@ -174,6 +175,7 @@
         <defaultModeler>f492faed-0665-4513-9853-5a230721786f</defaultModeler>
         <optionsSource>lookup-element</optionsSource>
         <lookupElementFunction>return getParent('Component').id</lookupElementFunction>
+        <autoSyncTypeReferences>false</autoSyncTypeReferences>
         <mapFrom>children</mapFrom>
         <mappings>
           <mapping id="eeb30624-b056-43ea-80ba-4debaa084cb2">
@@ -326,6 +328,7 @@
         <defaultModeler>f492faed-0665-4513-9853-5a230721786f</defaultModeler>
         <optionsSource>lookup-element</optionsSource>
         <lookupElementFunction>return getParent('Component').id</lookupElementFunction>
+        <autoSyncTypeReferences>true</autoSyncTypeReferences>
         <mapFrom>children</mapFrom>
         <mappings>
           <mapping id="0ce0fb70-8fef-4a1d-9b80-8b94b6a69452">
@@ -436,6 +439,7 @@
         <defaultModeler>f492faed-0665-4513-9853-5a230721786f</defaultModeler>
         <optionsSource>lookup-element</optionsSource>
         <lookupElementFunction>return getParent('Component').id</lookupElementFunction>
+        <autoSyncTypeReferences>true</autoSyncTypeReferences>
         <mapFrom>children</mapFrom>
         <mappings>
           <mapping id="7c808d5d-c6b5-4478-8df0-a95dc939ef11">

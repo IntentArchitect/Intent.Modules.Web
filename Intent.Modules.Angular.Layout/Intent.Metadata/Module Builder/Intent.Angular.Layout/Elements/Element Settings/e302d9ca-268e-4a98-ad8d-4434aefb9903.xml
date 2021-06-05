@@ -117,6 +117,7 @@
             <property name="5bed7f14-ebd8-4055-be29-3a2f8407eb5d" display="Lookup Element Function" value="return getParent('Component').id" isActive="true" />
             <property name="8e840576-890b-4f3a-8733-058c3a1d545f" display="Lookup Types" isActive="false" />
             <property name="53ea4519-611c-47ee-8be7-bffb616a52fd" display="Map From" value="Child Elements" isActive="true" />
+            <property name="02e7f455-ba13-4e99-ac6c-a46490980134" display="Auto-sync Type References" value="true" isActive="true" />
           </properties>
         </stereotype>
       </stereotypes>

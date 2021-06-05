@@ -29,8 +29,8 @@ namespace Intent.Modules.Angular.ApiAuthorization.HtmlControls.LoginMenu
         /// </summary>
         public override string TransformText()
         {
-            this.Write("<div class=\"pull-right\" intent-id=\"login-menu\" intent-managed=\"\">\r\n  <app-login-m" +
-                    "enu></app-login-menu>\r\n</div>\r\n");
+            this.Write("<div class=\"\" intent-id=\"login-menu\" intent-managed=\"\">\r\n  <app-login-menu></app-" +
+                    "login-menu>\r\n</div>\r\n");
             return this.GenerationEnvironment.ToString();
         }
     }

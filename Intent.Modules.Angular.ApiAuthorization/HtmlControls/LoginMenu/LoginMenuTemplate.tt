@@ -4,6 +4,6 @@
 <#@ import namespace="System.Linq" #>
 <#@ import namespace="Intent.Modules.Common" #>
 <#@ import namespace="Intent.Modules.Common.Templates" #>
-<div class="pull-right" intent-id="login-menu" intent-managed="">
+<div class="" intent-id="login-menu" intent-managed="">
   <app-login-menu></app-login-menu>
 </div>
