@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <package>
   <id>Intent.Angular.ApiAuthorization</id>
-  <version>3.0.2</version>
-  <supportedClientVersions>[3.0.0,4.0.0)</supportedClientVersions>
+  <version>3.1.0</version>
+  <supportedClientVersions>[3.1.0,4.0.0)</supportedClientVersions>
   <summary>Angular with API Authorization.</summary>
   <description>Decorate your application with authorization guards and securely access your API services with bearer tokens</description>
   <authors>Intent.Modules.Web</authors>
@@ -24,10 +24,10 @@
     <factoryExtension id="Intent.Angular.ApiAuthorization.NpmCliInstaller" externalReference="9578b7e3-07ee-40e8-a295-af3165d60fbf" />
   </factoryExtensions>
   <dependencies>
-    <dependency id="Intent.Common" version="3.0.6" />
-    <dependency id="Intent.Common.Types" version="3.0.5" />
-    <dependency id="Intent.Angular" version="3.0.3" />
-    <dependency id="Intent.Common.TypeScript" version="3.0.8" />
+    <dependency id="Intent.Common" version="3.1.0" />
+    <dependency id="Intent.Common.Types" version="3.1.0" />
+    <dependency id="Intent.Angular" version="3.1.0" />
+    <dependency id="Intent.Common.TypeScript" version="3.1.0" />
   </dependencies>
   <files>
     <file src="$outDir$/$id$.dll" />
