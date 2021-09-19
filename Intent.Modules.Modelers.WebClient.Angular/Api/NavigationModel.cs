@@ -105,15 +105,19 @@ namespace Intent.Modelers.WebClient.Angular.Api
         }
 
         public string Id => _associationEnd.Id;
+        public string SpecializationType => _associationEnd.SpecializationType;
+        public string SpecializationTypeId => _associationEnd.SpecializationTypeId;
         public string Name => _associationEnd.Name;
         public NavigationModel Association => _association;
         IAssociation IAssociationEnd.Association => _association.InternalAssociation;
         public bool IsNavigable => _associationEnd.IsNavigable;
-        public bool IsNullable => _associationEnd.IsNullable;
-        public bool IsCollection => _associationEnd.IsCollection;
-        public ICanBeReferencedType Element => _associationEnd.Element;
-        public IEnumerable<ITypeReference> GenericTypeParameters => _associationEnd.GenericTypeParameters;
+        public bool IsNullable => _associationEnd.TypeReference.IsNullable;
+        public bool IsCollection => _associationEnd.TypeReference.IsCollection;
+        public ICanBeReferencedType Element => _associationEnd.TypeReference.Element;
+        public IEnumerable<ITypeReference> GenericTypeParameters => _associationEnd.TypeReference.GenericTypeParameters;
         public string Comment => _associationEnd.Comment;
+        public ITypeReference TypeReference => _associationEnd.TypeReference;
+        public IPackage Package => _associationEnd.Package;
         public IEnumerable<IStereotype> Stereotypes => _associationEnd.Stereotypes;
 
         IAssociationEnd IAssociationEnd.OtherEnd()
@@ -158,7 +162,7 @@ namespace Intent.Modelers.WebClient.Angular.Api
         public RouteModel GetNavigationRoute()
         {
             var module = new ComponentModel((IElement)Element).Module;
-            var otherEndModule = new ComponentModel((IElement)_associationEnd.OtherEnd().Element).Module;
+            var otherEndModule = new ComponentModel((IElement)_associationEnd.OtherEnd().TypeReference.Element).Module;
             var modulesToCheck = new[] { otherEndModule, module }.Concat(module.GetParentFolders().OfType<ModuleModel>()).ToList();
             var routes = modulesToCheck.SelectMany(x => x.Routing?.Routes ?? new List<RouteModel>()).ToList();
             var route = routes.FirstOrDefault(x => x.TypeReference.Element.Id == Element.Id);
