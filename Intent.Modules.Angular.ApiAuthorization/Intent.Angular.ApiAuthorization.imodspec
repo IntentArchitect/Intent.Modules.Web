@@ -2,7 +2,7 @@
 <package>
   <id>Intent.Angular.ApiAuthorization</id>
   <version>3.1.0</version>
-  <supportedClientVersions>[3.1.0,4.0.0)</supportedClientVersions>
+  <supportedClientVersions>[3.1.0-pre.0, 4.0.0)</supportedClientVersions>
   <summary>Angular with API Authorization.</summary>
   <description>Decorate your application with authorization guards and securely access your API services with bearer tokens</description>
   <authors>Intent.Modules.Web</authors>
