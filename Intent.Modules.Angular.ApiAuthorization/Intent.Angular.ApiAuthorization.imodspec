@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <package>
   <id>Intent.Angular.ApiAuthorization</id>
   <version>3.1.0</version>
@@ -37,4 +37,5 @@
     <install target="Web Client" src="modelers/Authorization Components.designer.settings" externalReference="b03cd747-cd8a-49af-9959-be9f69cb96f0" />
     <install target="Web Client" src="Intent.Metadata/Module Builder/Intent.Angular.ApiAuthorization/Intent.Angular.ApiAuthorization.pkg.config" externalReference="1e254a4c-2cb2-410c-a4d4-fcadd59c9353" />
   </metadata>
+  <moduleSettings />
 </package>

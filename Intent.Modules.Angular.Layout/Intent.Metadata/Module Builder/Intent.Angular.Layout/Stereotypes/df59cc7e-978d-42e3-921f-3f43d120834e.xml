@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<stereotypeDefinition id="df59cc7e-978d-42e3-921f-3f43d120834e">
+<stereotypeDefinition id="df59cc7e-978d-42e3-921f-3f43d120834e" version="3.1.0">
   <name>Table Settings</name>
   <targetMode>of-type</targetMode>
-  <targetElements>
-    <element id="e302d9ca-268e-4a98-ad8d-4434aefb9903">Table Control</element>
-  </targetElements>
+  <targetTypes>
+    <type id="e302d9ca-268e-4a98-ad8d-4434aefb9903">Table Control</type>
+  </targetTypes>
+  <targetReferenceTypes />
   <applyMode>always</applyMode>
   <icon type="FontAwesome" source="cogs" />
   <displayIcon>false</displayIcon>

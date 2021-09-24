@@ -60,4 +60,19 @@ namespace Intent.Modelers.WebClient.Angular.Api
             return (_element != null ? _element.GetHashCode() : 0);
         }
     }
+
+    [IntentManaged(Mode.Fully)]
+    public static class RouterOutletModelExtensions
+    {
+
+        public static bool IsRouterOutletModel(this ICanBeReferencedType type)
+        {
+            return type != null && type is IElement element && element.SpecializationTypeId == RouterOutletModel.SpecializationTypeId;
+        }
+
+        public static RouterOutletModel ToRouterOutletModel(this ICanBeReferencedType type)
+        {
+            return type.IsRouterOutletModel() ? new RouterOutletModel((IElement)type) : null;
+        }
+    }
 }

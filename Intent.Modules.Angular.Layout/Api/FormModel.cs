@@ -100,4 +100,19 @@ namespace Intent.Angular.Layout.Api
                     .Select(x => new SectionModel(x))
                     .ToList();
     }
+
+    [IntentManaged(Mode.Fully)]
+    public static class FormModelExtensions
+    {
+
+        public static bool IsFormModel(this ICanBeReferencedType type)
+        {
+            return type != null && type is IElement element && element.SpecializationTypeId == FormModel.SpecializationTypeId;
+        }
+
+        public static FormModel ToFormModel(this ICanBeReferencedType type)
+        {
+            return type.IsFormModel() ? new FormModel((IElement)type) : null;
+        }
+    }
 }

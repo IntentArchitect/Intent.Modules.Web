@@ -101,4 +101,19 @@ namespace Intent.Angular.Layout.Api
         public string Comment => _element.Comment;
 
     }
+
+    [IntentManaged(Mode.Fully)]
+    public static class PaginationControlModelExtensions
+    {
+
+        public static bool IsPaginationControlModel(this ICanBeReferencedType type)
+        {
+            return type != null && type is IElement element && element.SpecializationTypeId == PaginationControlModel.SpecializationTypeId;
+        }
+
+        public static PaginationControlModel ToPaginationControlModel(this ICanBeReferencedType type)
+        {
+            return type.IsPaginationControlModel() ? new PaginationControlModel((IElement)type) : null;
+        }
+    }
 }

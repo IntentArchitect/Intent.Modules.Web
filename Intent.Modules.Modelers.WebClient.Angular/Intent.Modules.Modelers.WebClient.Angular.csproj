@@ -1,13 +1,13 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp2.1</TargetFramework>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Intent.Modules.Common" Version="3.1.0" />
     <PackageReference Include="Intent.Modules.Common.Types" Version="3.1.0" />
-    <PackageReference Include="Intent.Packager" Version="3.1.0">
+    <PackageReference Include="Intent.Packager" Version="3.0.5">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>

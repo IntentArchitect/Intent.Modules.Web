@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<outputLog>
+  <ApplicationId>9df99115-886a-4429-93c8-e03f42d47e10</ApplicationId>
+  <FileLogs>
+    <FileLog>
+      <ApplicationRelativeFilePath>../Intent.Modules.Web.sln</ApplicationRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>d0e72d48-eabc-4818-9d3e-3dcf185a39af</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.Templates.Api.ApiPackageModel#911c35b4-4ba3-404c-a0c6-e5258e53333a</CorrelationId>
+      <ApplicationRelativeFilePath>Api/WebClientModel.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>WebClientModel.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>10cf9138-e2fa-40a2-9599-11973c7e429d</ProjectId>
+      <ApplicationRelativeFilePath>ApiMetadataDesignerExtensions.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>ApiMetadataDesignerExtensions.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>10cf9138-e2fa-40a2-9599-11973c7e429d</ProjectId>
+      <ApplicationRelativeFilePath>ApiMetadataPackageExtensions.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>ApiMetadataPackageExtensions.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>10cf9138-e2fa-40a2-9599-11973c7e429d</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.IModeSpecFile</CorrelationId>
+      <ApplicationRelativeFilePath>Intent.Modelers.WebClient.imodspec</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>Intent.Modelers.WebClient.imodspec</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>10cf9138-e2fa-40a2-9599-11973c7e429d</ProjectId>
+      <CorrelationId>Intent.VisualStudio.Projects.CoreLibrary.CSProject#10cf9138-e2fa-40a2-9599-11973c7e429d</CorrelationId>
+      <ApplicationRelativeFilePath>Intent.Modules.Modelers.WebClient.csproj</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>Intent.Modules.Modelers.WebClient.csproj</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>9889b0d6-a618-4114-9cb0-c74498f7bbeb</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.DesignerSettings#93058b8a-4d1d-4f88-ac14-332c87666418</CorrelationId>
+      <ApplicationRelativeFilePath>modelers/Web Client Package.designer.settings</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>Web Client Package.designer.settings</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>9889b0d6-a618-4114-9cb0-c74498f7bbeb</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.DesignerConfig#f492faed-0665-4513-9853-5a230721786f</CorrelationId>
+      <ApplicationRelativeFilePath>modelers/Web Client.designer.config</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>Web Client.designer.config</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>10cf9138-e2fa-40a2-9599-11973c7e429d</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.ReadMe</CorrelationId>
+      <ApplicationRelativeFilePath>README.txt</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>README.txt</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+  </FileLogs>
+</outputLog>

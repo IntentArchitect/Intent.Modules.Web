@@ -60,4 +60,19 @@ namespace Intent.Angular.ApiAuthorization.Api
             return (_element != null ? _element.GetHashCode() : 0);
         }
     }
+
+    [IntentManaged(Mode.Fully)]
+    public static class LoginMenuModelExtensions
+    {
+
+        public static bool IsLoginMenuModel(this ICanBeReferencedType type)
+        {
+            return type != null && type is IElement element && element.SpecializationTypeId == LoginMenuModel.SpecializationTypeId;
+        }
+
+        public static LoginMenuModel ToLoginMenuModel(this ICanBeReferencedType type)
+        {
+            return type.IsLoginMenuModel() ? new LoginMenuModel((IElement)type) : null;
+        }
+    }
 }

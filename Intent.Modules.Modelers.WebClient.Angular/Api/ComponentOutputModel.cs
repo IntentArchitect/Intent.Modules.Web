@@ -62,4 +62,19 @@ namespace Intent.Modelers.WebClient.Angular.Api
             return (_element != null ? _element.GetHashCode() : 0);
         }
     }
+
+    [IntentManaged(Mode.Fully)]
+    public static class ComponentOutputModelExtensions
+    {
+
+        public static bool IsComponentOutputModel(this ICanBeReferencedType type)
+        {
+            return type != null && type is IElement element && element.SpecializationTypeId == ComponentOutputModel.SpecializationTypeId;
+        }
+
+        public static ComponentOutputModel ToComponentOutputModel(this ICanBeReferencedType type)
+        {
+            return type.IsComponentOutputModel() ? new ComponentOutputModel((IElement)type) : null;
+        }
+    }
 }

@@ -3,7 +3,7 @@
   <name>Templates</name>
   <display>Templates</display>
   <isAbstract>false</isAbstract>
-  <order>4</order>
+  <order>5</order>
   <genericTypes />
   <isMapped>false</isMapped>
   <parentFolderId>698215d3-bf76-4b81-b918-c0f9ad52f524</parentFolderId>
@@ -124,6 +124,20 @@
       <externalReference>Intent.ModuleBuilder</externalReference>
       <isAbstract>false</isAbstract>
       <order>7</order>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>48295970-02cd-460f-b07a-69ad383426c2</parentFolderId>
+      <packageId>9aba684d-f303-4f00-a6be-f1b75c8a92ea</packageId>
+      <packageName>Intent.Modules.Web</packageName>
+      <stereotypes />
+      <childElements />
+    </childElement>
+    <childElement id="c9d20da4-167f-4582-ade5-809036bb3038" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">
+      <name>Intent.ModuleBuilder.Templates.TemplateExtensions</name>
+      <display>Intent.ModuleBuilder.Templates.TemplateExtensions</display>
+      <externalReference>Intent.ModuleBuilder</externalReference>
+      <isAbstract>false</isAbstract>
+      <order>8</order>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>48295970-02cd-460f-b07a-69ad383426c2</parentFolderId>

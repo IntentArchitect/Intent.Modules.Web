@@ -71,4 +71,19 @@ namespace Intent.Modelers.WebClient.Angular.Api
 
         public string Comment => _element.Comment;
     }
+
+    [IntentManaged(Mode.Fully)]
+    public static class FormGroupControlModelExtensions
+    {
+
+        public static bool IsFormGroupControlModel(this ICanBeReferencedType type)
+        {
+            return type != null && type is IElement element && element.SpecializationTypeId == FormGroupControlModel.SpecializationTypeId;
+        }
+
+        public static FormGroupControlModel ToFormGroupControlModel(this ICanBeReferencedType type)
+        {
+            return type.IsFormGroupControlModel() ? new FormGroupControlModel((IElement)type) : null;
+        }
+    }
 }

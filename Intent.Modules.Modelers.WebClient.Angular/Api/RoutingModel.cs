@@ -73,4 +73,19 @@ namespace Intent.Modelers.WebClient.Angular.Api
 
         public string Comment => _element.Comment;
     }
+
+    [IntentManaged(Mode.Fully)]
+    public static class RoutingModelExtensions
+    {
+
+        public static bool IsRoutingModel(this ICanBeReferencedType type)
+        {
+            return type != null && type is IElement element && element.SpecializationTypeId == RoutingModel.SpecializationTypeId;
+        }
+
+        public static RoutingModel ToRoutingModel(this ICanBeReferencedType type)
+        {
+            return type.IsRoutingModel() ? new RoutingModel((IElement)type) : null;
+        }
+    }
 }

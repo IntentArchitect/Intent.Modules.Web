@@ -8,7 +8,7 @@ using Intent.RoslynWeaver.Attributes;
 
 namespace Intent.Angular.Layout.Api
 {
-    public static class ButtonControlModelExtensions
+    public static class ButtonControlModelStereotypeExtensions
     {
         public static ButtonSettings GetButtonSettings(this ButtonControlModel model)
         {
@@ -47,6 +47,23 @@ namespace Intent.Angular.Layout.Api
                     Value = value;
                 }
 
+                public TypeOptionsEnum AsEnum()
+                {
+                    switch (Value)
+                    {
+                        case "Button":
+                            return TypeOptionsEnum.Button;
+                        case "Submit":
+                            return TypeOptionsEnum.Submit;
+                        case "Reset":
+                            return TypeOptionsEnum.Reset;
+                        case "Menu":
+                            return TypeOptionsEnum.Menu;
+                        default:
+                            throw new ArgumentOutOfRangeException();
+                    }
+                }
+
                 public bool IsButton()
                 {
                     return Value == "Button";
@@ -65,6 +82,13 @@ namespace Intent.Angular.Layout.Api
                 }
             }
 
+            public enum TypeOptionsEnum
+            {
+                Button,
+                Submit,
+                Reset,
+                Menu
+            }
         }
 
     }

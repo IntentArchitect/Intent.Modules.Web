@@ -74,4 +74,19 @@ namespace Intent.Angular.Layout.Api
             return (_element != null ? _element.GetHashCode() : 0);
         }
     }
+
+    [IntentManaged(Mode.Fully)]
+    public static class NavbarModelExtensions
+    {
+
+        public static bool IsNavbarModel(this ICanBeReferencedType type)
+        {
+            return type != null && type is IElement element && element.SpecializationTypeId == NavbarModel.SpecializationTypeId;
+        }
+
+        public static NavbarModel ToNavbarModel(this ICanBeReferencedType type)
+        {
+            return type.IsNavbarModel() ? new NavbarModel((IElement)type) : null;
+        }
+    }
 }

@@ -62,4 +62,19 @@ namespace Intent.Angular.Layout.Api
             return (_element != null ? _element.GetHashCode() : 0);
         }
     }
+
+    [IntentManaged(Mode.Fully)]
+    public static class ButtonControlParameterModelExtensions
+    {
+
+        public static bool IsButtonControlParameterModel(this ICanBeReferencedType type)
+        {
+            return type != null && type is IElement element && element.SpecializationTypeId == ButtonControlParameterModel.SpecializationTypeId;
+        }
+
+        public static ButtonControlParameterModel ToButtonControlParameterModel(this ICanBeReferencedType type)
+        {
+            return type.IsButtonControlParameterModel() ? new ButtonControlParameterModel((IElement)type) : null;
+        }
+    }
 }

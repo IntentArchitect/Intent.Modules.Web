@@ -97,4 +97,19 @@ namespace Intent.Angular.Layout.Api
 
         public string Comment => _element.Comment;
     }
+
+    [IntentManaged(Mode.Fully)]
+    public static class ButtonControlModelExtensions
+    {
+
+        public static bool IsButtonControlModel(this ICanBeReferencedType type)
+        {
+            return type != null && type is IElement element && element.SpecializationTypeId == ButtonControlModel.SpecializationTypeId;
+        }
+
+        public static ButtonControlModel ToButtonControlModel(this ICanBeReferencedType type)
+        {
+            return type.IsButtonControlModel() ? new ButtonControlModel((IElement)type) : null;
+        }
+    }
 }

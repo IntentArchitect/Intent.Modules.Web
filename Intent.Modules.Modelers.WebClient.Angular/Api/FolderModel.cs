@@ -112,4 +112,19 @@ namespace Intent.Modelers.WebClient.Angular.Api
                     .ToList();
 
     }
+
+    [IntentManaged(Mode.Fully)]
+    public static class FolderModelExtensions
+    {
+
+        public static bool IsFolderModel(this ICanBeReferencedType type)
+        {
+            return type != null && type is IElement element && element.SpecializationTypeId == FolderModel.SpecializationTypeId;
+        }
+
+        public static FolderModel ToFolderModel(this ICanBeReferencedType type)
+        {
+            return type.IsFolderModel() ? new FolderModel((IElement)type) : null;
+        }
+    }
 }

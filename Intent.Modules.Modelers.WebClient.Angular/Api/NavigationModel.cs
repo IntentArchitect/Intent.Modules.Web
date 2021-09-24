@@ -69,7 +69,7 @@ namespace Intent.Modelers.WebClient.Angular.Api
     [IntentManaged(Mode.Fully)]
     public class NavigationSourceEndModel : NavigationEndModel
     {
-        public const string SpecializationTypeId = "6d2b2070-c1cb-4cd2-88b4-4e5f8414bd9e";
+        public const string SpecializationTypeId = "97a3de8a-c9bf-4cf2-bc0a-b8692b02211b";
 
         public NavigationSourceEndModel(IAssociationEnd associationEnd, NavigationModel association) : base(associationEnd, association)
         {
@@ -79,15 +79,15 @@ namespace Intent.Modelers.WebClient.Angular.Api
     [IntentManaged(Mode.Fully)]
     public class NavigationTargetEndModel : NavigationEndModel
     {
-        public const string SpecializationTypeId = "6d2b2070-c1cb-4cd2-88b4-4e5f8414bd9e";
+        public const string SpecializationTypeId = "2b191288-ecae-4743-b069-cbdd927ef349";
 
         public NavigationTargetEndModel(IAssociationEnd associationEnd, NavigationModel association) : base(associationEnd, association)
         {
         }
     }
 
-    [IntentManaged(Mode.Merge)]
-    public class NavigationEndModel : IAssociationEnd
+    [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
+    public class NavigationEndModel : ITypeReference, ICanBeReferencedType, IHasStereotypes
     {
         protected readonly IAssociationEnd _associationEnd;
         private readonly NavigationModel _association;
@@ -109,7 +109,6 @@ namespace Intent.Modelers.WebClient.Angular.Api
         public string SpecializationTypeId => _associationEnd.SpecializationTypeId;
         public string Name => _associationEnd.Name;
         public NavigationModel Association => _association;
-        IAssociation IAssociationEnd.Association => _association.InternalAssociation;
         public bool IsNavigable => _associationEnd.IsNavigable;
         public bool IsNullable => _associationEnd.TypeReference.IsNullable;
         public bool IsCollection => _associationEnd.TypeReference.IsCollection;
@@ -120,9 +119,9 @@ namespace Intent.Modelers.WebClient.Angular.Api
         public IPackage Package => _associationEnd.Package;
         public IEnumerable<IStereotype> Stereotypes => _associationEnd.Stereotypes;
 
-        IAssociationEnd IAssociationEnd.OtherEnd()
+        public NavigationEndModel OtherEnd()
         {
-            return this.Equals(_association.SourceEnd) ? (IAssociationEnd)_association.TargetEnd : (IAssociationEnd)_association.SourceEnd;
+            return this.Equals(_association.SourceEnd) ? (NavigationEndModel)_association.TargetEnd : (NavigationEndModel)_association.SourceEnd;
         }
 
         public bool IsTargetEnd()
@@ -168,6 +167,18 @@ namespace Intent.Modelers.WebClient.Angular.Api
             var route = routes.FirstOrDefault(x => x.TypeReference.Element.Id == Element.Id);
             return route;
         }
+
+        public IAssociation InternalAssociation => _association.InternalAssociation;
+
+        public IAssociationEnd InternalAssociationEnd => _associationEnd;
+
+        public IPackage Package => Element?.Package;
+
+        public string SpecializationType => _associationEnd.SpecializationType;
+
+        public string SpecializationTypeId => _associationEnd.SpecializationTypeId;
+
+        public ITypeReference TypeReference => this;
 
     }
 }

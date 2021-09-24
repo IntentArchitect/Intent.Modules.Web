@@ -30,11 +30,11 @@ namespace Intent.Modules.Angular.ServiceProxies.Decorators
         private List<string> _onInitStatements = new List<string>();
 
         [IntentManaged(Mode.Merge)]
-        public PopulateDataComponentDecorator(AngularComponentTsTemplate template, IApplication application, IMetadataManager metadataManager)
+        public PopulateDataComponentDecorator(AngularComponentTsTemplate template, IApplication application)
         {
             _template = template;
             _application = application;
-            _serviceProxies = metadataManager.WebClient(application).GetServiceProxyModels();
+            _serviceProxies = application.MetadataManager.WebClient(application).GetServiceProxyModels();
             if (!File.Exists(_template.GetMetadata().GetFilePath()))
             {
                 foreach (var model in _template.Model.Models)

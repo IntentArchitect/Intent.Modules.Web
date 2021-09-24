@@ -17,6 +17,7 @@
           <allowMultiple>true</allowMultiple>
         </option>
       </creationOptions>
+      <scriptOptions />
       <typeOrder>
         <type>Form Control</type>
       </typeOrder>
@@ -104,6 +105,7 @@
           </typeReferenceSetting>
           <typeOrder />
           <creationOptions />
+          <scriptOptions />
           <childElementSettings />
         </childElementSetting>
       </childElementSettings>
@@ -134,6 +136,7 @@
           <allowMultiple>true</allowMultiple>
         </option>
       </creationOptions>
+      <scriptOptions />
       <childElementSettings />
     </elementSetting>
     <elementSetting type="Form" typeId="8aee9b69-d02d-4ca8-b28a-6585508bd033">
@@ -171,6 +174,7 @@
           <allowMultiple>true</allowMultiple>
         </option>
       </creationOptions>
+      <scriptOptions />
       <mappingSettings>
         <defaultModeler>f492faed-0665-4513-9853-5a230721786f</defaultModeler>
         <optionsSource>lookup-element</optionsSource>
@@ -272,6 +276,7 @@
       <allowSetValue>false</allowSetValue>
       <typeOrder />
       <creationOptions />
+      <scriptOptions />
       <childElementSettings />
     </elementSetting>
     <elementSetting type="Navbar" typeId="990cd6f1-8840-419b-be75-4ec63f03f359">
@@ -309,6 +314,7 @@
           <allowMultiple>true</allowMultiple>
         </option>
       </creationOptions>
+      <scriptOptions />
       <childElementSettings />
     </elementSetting>
     <elementSetting type="Pagination Control" typeId="3faee16c-8605-4bb4-8566-06a555c929a3">
@@ -407,6 +413,7 @@
           <allowMultiple>true</allowMultiple>
         </option>
       </creationOptions>
+      <scriptOptions />
       <childElementSettings />
     </elementSetting>
     <elementSetting type="Table Control" typeId="e302d9ca-268e-4a98-ad8d-4434aefb9903">
@@ -435,6 +442,7 @@
           <allowMultiple>true</allowMultiple>
         </option>
       </creationOptions>
+      <scriptOptions />
       <mappingSettings>
         <defaultModeler>f492faed-0665-4513-9853-5a230721786f</defaultModeler>
         <optionsSource>lookup-element</optionsSource>
@@ -599,6 +607,7 @@
           <allowMultiple>true</allowMultiple>
         </option>
       </creationOptions>
+      <scriptOptions />
       <typeOrder>
         <type>Table Control</type>
         <type>Pagination Control</type>

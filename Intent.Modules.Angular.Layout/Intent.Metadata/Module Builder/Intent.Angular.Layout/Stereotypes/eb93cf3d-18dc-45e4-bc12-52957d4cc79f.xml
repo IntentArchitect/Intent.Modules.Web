@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<stereotypeDefinition id="eb93cf3d-18dc-45e4-bc12-52957d4cc79f">
+<stereotypeDefinition id="eb93cf3d-18dc-45e4-bc12-52957d4cc79f" version="3.1.0">
   <name>Select Control Settings</name>
   <targetMode>that-reference</targetMode>
-  <targetElements>
-    <element id="1db37bef-68b3-4128-8e92-b1c5853dca00">Select</element>
-    <element id="b76edc8d-ccac-4dea-81ed-353232ee5426">Multi-Select</element>
-  </targetElements>
+  <targetTypes />
+  <targetReferenceTypes>
+    <type id="1db37bef-68b3-4128-8e92-b1c5853dca00">Select</type>
+    <type id="b76edc8d-ccac-4dea-81ed-353232ee5426">Multi-Select</type>
+  </targetReferenceTypes>
   <applyMode>always</applyMode>
   <icon type="FontAwesome" source="cogs" />
   <displayIcon>false</displayIcon>

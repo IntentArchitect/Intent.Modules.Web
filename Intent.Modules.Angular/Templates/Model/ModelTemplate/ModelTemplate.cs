@@ -63,7 +63,7 @@ namespace Intent.Modules.Angular.Templates.Model.ModelTemplate
             this.Write("(dto: ");
             
             #line 14 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\Model\ModelTemplate\ModelTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(GetTypeName(Model.Mapping.Element.TypeReference)));
+            this.Write(this.ToStringHelper.ToStringWithCulture(GetTypeName(Model.Mapping)));
             
             #line default
             #line hidden

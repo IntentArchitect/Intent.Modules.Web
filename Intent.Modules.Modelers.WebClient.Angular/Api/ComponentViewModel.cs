@@ -78,4 +78,19 @@ namespace Intent.Modelers.WebClient.Angular.Api
                     .Select(x => new RouterOutletModel(x))
                     .SingleOrDefault();
     }
+
+    [IntentManaged(Mode.Fully)]
+    public static class ComponentViewModelExtensions
+    {
+
+        public static bool IsComponentViewModel(this ICanBeReferencedType type)
+        {
+            return type != null && type is IElement element && element.SpecializationTypeId == ComponentViewModel.SpecializationTypeId;
+        }
+
+        public static ComponentViewModel ToComponentViewModel(this ICanBeReferencedType type)
+        {
+            return type.IsComponentViewModel() ? new ComponentViewModel((IElement)type) : null;
+        }
+    }
 }

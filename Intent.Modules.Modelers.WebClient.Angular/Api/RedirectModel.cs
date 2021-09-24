@@ -65,4 +65,19 @@ namespace Intent.Modelers.WebClient.Angular.Api
 
         public string Comment => _element.Comment;
     }
+
+    [IntentManaged(Mode.Fully)]
+    public static class RedirectModelExtensions
+    {
+
+        public static bool IsRedirectModel(this ICanBeReferencedType type)
+        {
+            return type != null && type is IElement element && element.SpecializationTypeId == RedirectModel.SpecializationTypeId;
+        }
+
+        public static RedirectModel ToRedirectModel(this ICanBeReferencedType type)
+        {
+            return type.IsRedirectModel() ? new RedirectModel((IElement)type) : null;
+        }
+    }
 }

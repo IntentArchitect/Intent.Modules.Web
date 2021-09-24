@@ -98,7 +98,7 @@ namespace Intent.Modules.Angular.Layout.Decorators.Controls.Navbar
             
             #line 27 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular.Layout\Decorators\Controls\Navbar\NavbarTemplate.tt"
       else if (navItem.IsDropdown()) {
-            var dropdownModel = navItem.AsIsDropdownModel(); 
+            var dropdownModel = navItem.AsDropdownModel(); 
             
             #line default
             #line hidden

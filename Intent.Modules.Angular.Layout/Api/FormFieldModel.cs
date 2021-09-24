@@ -78,4 +78,19 @@ namespace Intent.Angular.Layout.Api
 
         public string Comment => _element.Comment;
     }
+
+    [IntentManaged(Mode.Fully)]
+    public static class FormFieldModelExtensions
+    {
+
+        public static bool IsFormFieldModel(this ICanBeReferencedType type)
+        {
+            return type != null && type is IElement element && element.SpecializationTypeId == FormFieldModel.SpecializationTypeId;
+        }
+
+        public static FormFieldModel ToFormFieldModel(this ICanBeReferencedType type)
+        {
+            return type.IsFormFieldModel() ? new FormFieldModel((IElement)type) : null;
+        }
+    }
 }

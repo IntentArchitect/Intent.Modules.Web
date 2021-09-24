@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<stereotypeDefinition id="abb75515-21f5-4675-9914-d0973f2aeb57">
+<stereotypeDefinition id="abb75515-21f5-4675-9914-d0973f2aeb57" version="3.1.0">
   <name>Button Settings</name>
   <targetMode>of-type</targetMode>
-  <targetElements>
-    <element id="13eca516-0628-4085-91c3-36d5eddda6c9">Button Control</element>
-  </targetElements>
+  <targetTypes>
+    <type id="13eca516-0628-4085-91c3-36d5eddda6c9">Button Control</type>
+  </targetTypes>
+  <targetReferenceTypes />
   <applyMode>always</applyMode>
   <icon type="FontAwesome" source="cogs" />
   <displayIcon>false</displayIcon>

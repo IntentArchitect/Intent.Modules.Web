@@ -98,4 +98,19 @@ namespace Intent.Angular.Layout.Api
 
         public string Comment => _element.Comment;
     }
+
+    [IntentManaged(Mode.Fully)]
+    public static class SectionModelExtensions
+    {
+
+        public static bool IsSectionModel(this ICanBeReferencedType type)
+        {
+            return type != null && type is IElement element && element.SpecializationTypeId == SectionModel.SpecializationTypeId;
+        }
+
+        public static SectionModel ToSectionModel(this ICanBeReferencedType type)
+        {
+            return type.IsSectionModel() ? new SectionModel((IElement)type) : null;
+        }
+    }
 }

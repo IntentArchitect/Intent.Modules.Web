@@ -25,7 +25,7 @@
       </li>
 <#      } #>
 <#      else if (navItem.IsDropdown()) {
-            var dropdownModel = navItem.AsIsDropdownModel(); #>
+            var dropdownModel = navItem.AsDropdownModel(); #>
       <li class="dropdown nav-item" dropdown intent-id="<#= navItem.Id #>">
         <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false" dropdownToggle><#= dropdownModel.Name #><span class="caret"></span>
         </a>

@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<stereotypeDefinition id="ede23670-71ce-42ef-ae7c-a37ff7ae46f3">
+<stereotypeDefinition id="ede23670-71ce-42ef-ae7c-a37ff7ae46f3" version="3.1.0">
   <name>Angular Service Settings</name>
   <targetMode>of-type</targetMode>
-  <targetElements>
-    <element id="d009e5af-adb7-45c5-921c-fe8e209b8aa2">Angular Service</element>
-  </targetElements>
+  <targetTypes>
+    <type id="d009e5af-adb7-45c5-921c-fe8e209b8aa2">Angular Service</type>
+  </targetTypes>
+  <targetReferenceTypes />
   <applyMode>always</applyMode>
   <icon type="FontAwesome" source="cogs" />
   <displayIcon>false</displayIcon>

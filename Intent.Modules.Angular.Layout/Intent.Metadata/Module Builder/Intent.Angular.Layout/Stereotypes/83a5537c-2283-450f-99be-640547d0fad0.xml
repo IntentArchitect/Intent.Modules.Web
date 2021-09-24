@@ -1,10 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<stereotypeDefinition id="83a5537c-2283-450f-99be-640547d0fad0">
+<stereotypeDefinition id="83a5537c-2283-450f-99be-640547d0fad0" version="3.1.0">
   <name>Link Settings</name>
   <targetMode>of-type</targetMode>
-  <targetElements>
-    <element id="b0127146-e571-4000-825e-e7a04e4a45d6">Link</element>
-  </targetElements>
+  <targetTypes>
+    <type id="b0127146-e571-4000-825e-e7a04e4a45d6">Link</type>
+  </targetTypes>
+  <targetReferenceTypes />
   <applyMode>always</applyMode>
   <icon type="FontAwesome" source="cogs" />
   <displayIcon>false</displayIcon>

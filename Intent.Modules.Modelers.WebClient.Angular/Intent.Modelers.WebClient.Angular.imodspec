@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <package>
   <id>Intent.Modelers.WebClient.Angular</id>
   <version>3.1.0</version>
@@ -23,4 +23,5 @@
     <install target="Web Client" src="modelers/Angular Core Types.designer.settings" externalReference="0a3786a7-f514-4ec3-88b9-7842744dbb3c" />
     <install target="Web Client;Module Builder" src="Intent.Metadata/Module Builder/Intent.Modelers.WebClient.Angular/Intent.Modelers.WebClient.Angular.pkg.config" externalReference="9cf8c5df-18a9-470e-a4fd-7e18d7050cd6" />
   </metadata>
+  <moduleSettings />
 </package>

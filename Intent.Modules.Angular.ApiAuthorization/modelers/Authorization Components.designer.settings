@@ -34,6 +34,7 @@
           <allowMultiple>true</allowMultiple>
         </option>
       </creationOptions>
+      <scriptOptions />
       <typeOrder>
         <type>Login Menu</type>
       </typeOrder>
@@ -49,6 +50,7 @@
           <allowMultiple>true</allowMultiple>
         </option>
       </creationOptions>
+      <scriptOptions />
       <typeOrder>
         <type>Login Menu</type>
       </typeOrder>
@@ -64,6 +66,7 @@
           <allowMultiple>true</allowMultiple>
         </option>
       </creationOptions>
+      <scriptOptions />
       <typeOrder>
         <type>Login Menu</type>
       </typeOrder>

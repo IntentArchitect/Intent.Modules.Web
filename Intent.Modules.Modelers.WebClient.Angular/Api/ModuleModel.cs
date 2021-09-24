@@ -138,4 +138,19 @@ namespace Intent.Modelers.WebClient.Angular.Api
                     .Select(x => new ResolverModel(x))
                     .ToList();
     }
+
+    [IntentManaged(Mode.Fully)]
+    public static class ModuleModelExtensions
+    {
+
+        public static bool IsModuleModel(this ICanBeReferencedType type)
+        {
+            return type != null && type is IElement element && element.SpecializationTypeId == ModuleModel.SpecializationTypeId;
+        }
+
+        public static ModuleModel ToModuleModel(this ICanBeReferencedType type)
+        {
+            return type.IsModuleModel() ? new ModuleModel((IElement)type) : null;
+        }
+    }
 }

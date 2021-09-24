@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <package>
   <id>Intent.Angular</id>
   <version>3.1.0</version>
@@ -85,4 +85,5 @@
     <install target="Web Client;Module Builder" src="Intent.Metadata/Module Builder/Intent.Angular/Intent.Angular.pkg.config" externalReference="a3deb341-dd4e-4f7f-99f5-2f198c1c251c" />
     <install target="Web Client" src="Intent.Metadata/Web Client/Intent.Angular.Types/Intent.Angular.Types.pkg.config" />
   </metadata>
+  <moduleSettings />
 </package>

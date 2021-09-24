@@ -20,6 +20,7 @@
           <allowMultiple>true</allowMultiple>
         </option>
       </creationOptions>
+      <scriptOptions />
       <typeOrder>
         <type>Service Proxy</type>
       </typeOrder>

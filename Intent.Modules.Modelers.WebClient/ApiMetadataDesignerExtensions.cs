@@ -11,7 +11,12 @@ namespace Intent.Modelers.WebClient.Api
     {
         public static IDesigner WebClient(this IMetadataManager metadataManager, IApplication application)
         {
-            return metadataManager.GetDesigner(application.Id, "Web Client");
+            return metadataManager.WebClient(application.Id);
+        }
+
+        public static IDesigner WebClient(this IMetadataManager metadataManager, string applicationId)
+        {
+            return metadataManager.GetDesigner(applicationId, "Web Client");
         }
 
     }

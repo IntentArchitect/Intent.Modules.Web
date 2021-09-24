@@ -90,12 +90,26 @@
       <stereotypes />
       <childElements />
     </childElement>
+    <childElement id="51c8505b-3c38-42c9-96a2-94a93322e782" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">
+      <name>Intent.ModuleBuilder.Templates.Api.ApiElementModelPartial</name>
+      <display>Intent.ModuleBuilder.Templates.Api.ApiElementModelPartial</display>
+      <externalReference>Intent.ModuleBuilder</externalReference>
+      <isAbstract>false</isAbstract>
+      <order>5</order>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>d463283f-3f3e-43e0-bb51-b135b172311c</parentFolderId>
+      <packageId>a9ad4760-d8e4-4591-a79b-16171936e4b6</packageId>
+      <packageName>Intent.Modules.Web</packageName>
+      <stereotypes />
+      <childElements />
+    </childElement>
     <childElement id="37e9f627-3624-49b9-a48f-5bf1e2093ebc" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">
       <name>Intent.ModuleBuilder.Templates.Api.ApiPackageExtensionModel</name>
       <display>Intent.ModuleBuilder.Templates.Api.ApiPackageExtensionModel</display>
       <externalReference>Intent.ModuleBuilder</externalReference>
       <isAbstract>false</isAbstract>
-      <order>5</order>
+      <order>6</order>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>d463283f-3f3e-43e0-bb51-b135b172311c</parentFolderId>
@@ -109,7 +123,7 @@
       <display>Intent.ModuleBuilder.Templates.Api.ApiPackageModel</display>
       <externalReference>Intent.ModuleBuilder</externalReference>
       <isAbstract>false</isAbstract>
-      <order>6</order>
+      <order>7</order>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>d463283f-3f3e-43e0-bb51-b135b172311c</parentFolderId>

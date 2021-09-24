@@ -116,4 +116,19 @@ namespace Intent.Angular.Layout.Api
 
         public string Comment => _element.Comment;
     }
+
+    [IntentManaged(Mode.Fully)]
+    public static class TableControlModelExtensions
+    {
+
+        public static bool IsTableControlModel(this ICanBeReferencedType type)
+        {
+            return type != null && type is IElement element && element.SpecializationTypeId == TableControlModel.SpecializationTypeId;
+        }
+
+        public static TableControlModel ToTableControlModel(this ICanBeReferencedType type)
+        {
+            return type.IsTableControlModel() ? new TableControlModel((IElement)type) : null;
+        }
+    }
 }

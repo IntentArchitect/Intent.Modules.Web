@@ -68,4 +68,19 @@ namespace Intent.Modelers.WebClient.Angular.Api
 
         public string Comment => _element.Comment;
     }
+
+    [IntentManaged(Mode.Fully)]
+    public static class AngularServiceModelExtensions
+    {
+
+        public static bool IsAngularServiceModel(this ICanBeReferencedType type)
+        {
+            return type != null && type is IElement element && element.SpecializationTypeId == AngularServiceModel.SpecializationTypeId;
+        }
+
+        public static AngularServiceModel ToAngularServiceModel(this ICanBeReferencedType type)
+        {
+            return type.IsAngularServiceModel() ? new AngularServiceModel((IElement)type) : null;
+        }
+    }
 }

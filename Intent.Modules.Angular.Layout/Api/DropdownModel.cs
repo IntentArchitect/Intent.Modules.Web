@@ -65,4 +65,19 @@ namespace Intent.Angular.Layout.Api
             return (_element != null ? _element.GetHashCode() : 0);
         }
     }
+
+    [IntentManaged(Mode.Fully)]
+    public static class DropdownModelExtensions
+    {
+
+        public static bool IsDropdownModel(this ICanBeReferencedType type)
+        {
+            return type != null && type is IElement element && element.SpecializationTypeId == DropdownModel.SpecializationTypeId;
+        }
+
+        public static DropdownModel ToDropdownModel(this ICanBeReferencedType type)
+        {
+            return type.IsDropdownModel() ? new DropdownModel((IElement)type) : null;
+        }
+    }
 }

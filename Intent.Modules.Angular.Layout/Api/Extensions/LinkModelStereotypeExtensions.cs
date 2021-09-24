@@ -8,7 +8,7 @@ using Intent.RoslynWeaver.Attributes;
 
 namespace Intent.Angular.Layout.Api
 {
-    public static class LinkModelExtensions
+    public static class LinkModelStereotypeExtensions
     {
         public static LinkSettings GetLinkSettings(this LinkModel model)
         {

@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<stereotypeDefinition id="6939babe-3de0-49f6-a299-58b947129a8d">
+<stereotypeDefinition id="6939babe-3de0-49f6-a299-58b947129a8d" version="3.1.0">
   <name>@Input</name>
   <targetMode>of-type</targetMode>
-  <targetElements />
+  <targetTypes />
+  <targetReferenceTypes />
   <applyMode>manually</applyMode>
   <icon type="UrlImagePath" source="./img/icons/common/StereotypeDef_256x.png" />
   <displayIcon>false</displayIcon>

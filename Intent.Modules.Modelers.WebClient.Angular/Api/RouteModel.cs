@@ -77,4 +77,19 @@ namespace Intent.Modelers.WebClient.Angular.Api
             .Select(x => new RouteParameterModel(x))
             .ToList();
     }
+
+    [IntentManaged(Mode.Fully)]
+    public static class RouteModelExtensions
+    {
+
+        public static bool IsRouteModel(this ICanBeReferencedType type)
+        {
+            return type != null && type is IElement element && element.SpecializationTypeId == RouteModel.SpecializationTypeId;
+        }
+
+        public static RouteModel ToRouteModel(this ICanBeReferencedType type)
+        {
+            return type.IsRouteModel() ? new RouteModel((IElement)type) : null;
+        }
+    }
 }

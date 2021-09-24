@@ -8,7 +8,7 @@ using Intent.RoslynWeaver.Attributes;
 
 namespace Intent.Angular.Layout.Api
 {
-    public static class TableControlModelExtensions
+    public static class TableControlModelStereotypeExtensions
     {
         public static TableSettings GetTableSettings(this TableControlModel model)
         {

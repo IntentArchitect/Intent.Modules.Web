@@ -71,4 +71,19 @@ namespace Intent.Modelers.WebClient.Angular.Api
 
         public string Comment => _element.Comment;
     }
+
+    [IntentManaged(Mode.Fully)]
+    public static class ModelDefinitionFieldModelExtensions
+    {
+
+        public static bool IsModelDefinitionFieldModel(this ICanBeReferencedType type)
+        {
+            return type != null && type is IElement element && element.SpecializationTypeId == ModelDefinitionFieldModel.SpecializationTypeId;
+        }
+
+        public static ModelDefinitionFieldModel ToModelDefinitionFieldModel(this ICanBeReferencedType type)
+        {
+            return type.IsModelDefinitionFieldModel() ? new ModelDefinitionFieldModel((IElement)type) : null;
+        }
+    }
 }

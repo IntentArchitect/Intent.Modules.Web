@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <package>
   <id>Intent.Angular.ServiceProxies</id>
   <version>3.1.0</version>
@@ -35,4 +35,5 @@
   <decorators>
     <decorator id="Intent.Angular.ServiceProxies.PopulateDataComponentDecorator" externalReference="0ea5db52-70fd-4918-b3d7-9e960c841f99" />
   </decorators>
+  <moduleSettings />
 </package>

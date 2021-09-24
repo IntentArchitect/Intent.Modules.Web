@@ -65,4 +65,19 @@ namespace Intent.Modelers.WebClient.Angular.Api
             return (_element != null ? _element.GetHashCode() : 0);
         }
     }
+
+    [IntentManaged(Mode.Fully)]
+    public static class ResolverModelExtensions
+    {
+
+        public static bool IsResolverModel(this ICanBeReferencedType type)
+        {
+            return type != null && type is IElement element && element.SpecializationTypeId == ResolverModel.SpecializationTypeId;
+        }
+
+        public static ResolverModel ToResolverModel(this ICanBeReferencedType type)
+        {
+            return type.IsResolverModel() ? new ResolverModel((IElement)type) : null;
+        }
+    }
 }

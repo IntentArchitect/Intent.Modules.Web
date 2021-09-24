@@ -62,4 +62,19 @@ namespace Intent.Modelers.WebClient.Angular.Api
 
         public ITypeReference TypeReference => _element.TypeReference;
     }
+
+    [IntentManaged(Mode.Fully)]
+    public static class DisplayComponentModelExtensions
+    {
+
+        public static bool IsDisplayComponentModel(this ICanBeReferencedType type)
+        {
+            return type != null && type is IElement element && element.SpecializationTypeId == DisplayComponentModel.SpecializationTypeId;
+        }
+
+        public static DisplayComponentModel ToDisplayComponentModel(this ICanBeReferencedType type)
+        {
+            return type.IsDisplayComponentModel() ? new DisplayComponentModel((IElement)type) : null;
+        }
+    }
 }

@@ -62,4 +62,19 @@ namespace Intent.Modelers.WebClient.Angular.Api
 
         public string Comment => _element.Comment;
     }
+
+    [IntentManaged(Mode.Fully)]
+    public static class CommandParameterModelExtensions
+    {
+
+        public static bool IsCommandParameterModel(this ICanBeReferencedType type)
+        {
+            return type != null && type is IElement element && element.SpecializationTypeId == CommandParameterModel.SpecializationTypeId;
+        }
+
+        public static CommandParameterModel ToCommandParameterModel(this ICanBeReferencedType type)
+        {
+            return type.IsCommandParameterModel() ? new CommandParameterModel((IElement)type) : null;
+        }
+    }
 }

@@ -62,4 +62,19 @@ namespace Intent.Modelers.WebClient.Angular.Api
             return (_element != null ? _element.GetHashCode() : 0);
         }
     }
+
+    [IntentManaged(Mode.Fully)]
+    public static class RouteParameterModelExtensions
+    {
+
+        public static bool IsRouteParameterModel(this ICanBeReferencedType type)
+        {
+            return type != null && type is IElement element && element.SpecializationTypeId == RouteParameterModel.SpecializationTypeId;
+        }
+
+        public static RouteParameterModel ToRouteParameterModel(this ICanBeReferencedType type)
+        {
+            return type.IsRouteParameterModel() ? new RouteParameterModel((IElement)type) : null;
+        }
+    }
 }

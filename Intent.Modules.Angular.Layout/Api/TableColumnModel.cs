@@ -76,4 +76,19 @@ namespace Intent.Angular.Layout.Api
 
         public string Comment => _element.Comment;
     }
+
+    [IntentManaged(Mode.Fully)]
+    public static class TableColumnModelExtensions
+    {
+
+        public static bool IsTableColumnModel(this ICanBeReferencedType type)
+        {
+            return type != null && type is IElement element && element.SpecializationTypeId == TableColumnModel.SpecializationTypeId;
+        }
+
+        public static TableColumnModel ToTableColumnModel(this ICanBeReferencedType type)
+        {
+            return type.IsTableColumnModel() ? new TableColumnModel((IElement)type) : null;
+        }
+    }
 }

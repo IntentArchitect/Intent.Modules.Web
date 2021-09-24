@@ -9,7 +9,7 @@ using Intent.RoslynWeaver.Attributes;
 
 namespace Intent.Angular.Api
 {
-    public static class AngularServiceModelExtensions
+    public static class AngularServiceModelStereotypeExtensions
     {
         public static AngularServiceSettings GetAngularServiceSettings(this AngularServiceModel model)
         {

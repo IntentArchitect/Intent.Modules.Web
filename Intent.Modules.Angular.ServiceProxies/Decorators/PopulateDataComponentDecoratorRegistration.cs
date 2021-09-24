@@ -12,20 +12,13 @@ namespace Intent.Modules.Angular.ServiceProxies.Decorators
     [Description(PopulateDataComponentDecorator.DecoratorId)]
     public class PopulateDataComponentDecoratorRegistration : DecoratorRegistration<AngularComponentTsTemplate, AngularComponentTsDecorator>
     {
-        private readonly IMetadataManager _metadataManager;
-
-        [IntentManaged(Mode.Ignore)]
-        public PopulateDataComponentDecoratorRegistration(IMetadataManager metadataManager)
-        {
-            _metadataManager = metadataManager;
-        }
+        public override string DecoratorId => PopulateDataComponentDecorator.DecoratorId;
 
         [IntentManaged(Mode.Ignore)]
         public override AngularComponentTsDecorator CreateDecoratorInstance(AngularComponentTsTemplate template, IApplication application)
         {
-            return new PopulateDataComponentDecorator(template, application, _metadataManager);
+            return new PopulateDataComponentDecorator(template, application);
         }
 
-        public override string DecoratorId => PopulateDataComponentDecorator.DecoratorId;
     }
 }

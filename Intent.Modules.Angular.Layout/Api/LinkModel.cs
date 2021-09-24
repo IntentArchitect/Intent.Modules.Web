@@ -60,4 +60,19 @@ namespace Intent.Angular.Layout.Api
             return (_element != null ? _element.GetHashCode() : 0);
         }
     }
+
+    [IntentManaged(Mode.Fully)]
+    public static class LinkModelExtensions
+    {
+
+        public static bool IsLinkModel(this ICanBeReferencedType type)
+        {
+            return type != null && type is IElement element && element.SpecializationTypeId == LinkModel.SpecializationTypeId;
+        }
+
+        public static LinkModel ToLinkModel(this ICanBeReferencedType type)
+        {
+            return type.IsLinkModel() ? new LinkModel((IElement)type) : null;
+        }
+    }
 }

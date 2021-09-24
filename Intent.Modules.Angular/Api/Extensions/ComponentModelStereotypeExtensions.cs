@@ -1,15 +1,15 @@
 using System;
 using Intent.Metadata.Models;
+using Intent.Modelers.WebClient.Angular.Api;
 using Intent.Modules.Common;
 using Intent.RoslynWeaver.Attributes;
-using Intent.Modelers.WebClient.Angular.Api;
 
 [assembly: DefaultIntentManaged(Mode.Fully)]
 [assembly: IntentTemplate("Intent.ModuleBuilder.Templates.Api.ApiElementModelExtensions", Version = "1.0")]
 
 namespace Intent.Angular.Api
 {
-    public static class ComponentModelExtensions
+    public static class ComponentModelStereotypeExtensions
     {
         public static AngularComponentSettings GetAngularComponentSettings(this ComponentModel model)
         {

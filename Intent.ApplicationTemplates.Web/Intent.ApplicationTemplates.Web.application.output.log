@@ -1,19 +1,19 @@
-<?xml version="1.0"?>
+<?xml version="1.0" encoding="utf-8"?>
 <outputLog xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <ApplicationId>6e7fc874-237a-45f0-a0b2-307a17ea65bf</ApplicationId>
   <FileLogs>
     <FileLog>
       <ProjectId>41dbb0b8-e41c-4861-8610-5c409a85ba14</ProjectId>
-      <SolutionRelativeFilePath>../Intent.ApplicationTemplates.Web/Intent.ApplicationTemplate.WebClient.Angular/metadata.iatspec</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Intent.ApplicationTemplate.WebClient.Angular/metadata.iatspec</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Intent.ApplicationTemplate.WebClient.Angular/metadata.iatspec</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
       <ProjectId>41dbb0b8-e41c-4861-8610-5c409a85ba14</ProjectId>
-      <SolutionRelativeFilePath>../Intent.ApplicationTemplates.Web/Intent.ApplicationTemplates.Web.csproj</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>Intent.ApplicationTemplates.Web.csproj</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Intent.ApplicationTemplates.Web.csproj</ProjectRelativeFilePath>
     </FileLog>
     <FileLog>
-      <SolutionRelativeFilePath>../Intent.Modules.Web.sln</SolutionRelativeFilePath>
+      <ApplicationRelativeFilePath>../Intent.Modules.Web.sln</ApplicationRelativeFilePath>
     </FileLog>
   </FileLogs>
 </outputLog>
