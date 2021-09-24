@@ -108,7 +108,7 @@ namespace Intent.Angular.Layout.Api
             return type != null && type is IElement element && element.SpecializationTypeId == SectionModel.SpecializationTypeId;
         }
 
-        public static SectionModel ToSectionModel(this ICanBeReferencedType type)
+        public static SectionModel AsSectionModel(this ICanBeReferencedType type)
         {
             return type.IsSectionModel() ? new SectionModel((IElement)type) : null;
         }

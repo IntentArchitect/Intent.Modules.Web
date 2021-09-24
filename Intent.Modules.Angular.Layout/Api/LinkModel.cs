@@ -70,7 +70,7 @@ namespace Intent.Angular.Layout.Api
             return type != null && type is IElement element && element.SpecializationTypeId == LinkModel.SpecializationTypeId;
         }
 
-        public static LinkModel ToLinkModel(this ICanBeReferencedType type)
+        public static LinkModel AsLinkModel(this ICanBeReferencedType type)
         {
             return type.IsLinkModel() ? new LinkModel((IElement)type) : null;
         }

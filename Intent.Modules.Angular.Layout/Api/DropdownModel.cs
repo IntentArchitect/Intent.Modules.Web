@@ -75,7 +75,7 @@ namespace Intent.Angular.Layout.Api
             return type != null && type is IElement element && element.SpecializationTypeId == DropdownModel.SpecializationTypeId;
         }
 
-        public static DropdownModel ToDropdownModel(this ICanBeReferencedType type)
+        public static DropdownModel AsDropdownModel(this ICanBeReferencedType type)
         {
             return type.IsDropdownModel() ? new DropdownModel((IElement)type) : null;
         }

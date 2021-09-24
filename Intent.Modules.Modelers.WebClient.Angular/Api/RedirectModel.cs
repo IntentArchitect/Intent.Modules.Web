@@ -75,7 +75,7 @@ namespace Intent.Modelers.WebClient.Angular.Api
             return type != null && type is IElement element && element.SpecializationTypeId == RedirectModel.SpecializationTypeId;
         }
 
-        public static RedirectModel ToRedirectModel(this ICanBeReferencedType type)
+        public static RedirectModel AsRedirectModel(this ICanBeReferencedType type)
         {
             return type.IsRedirectModel() ? new RedirectModel((IElement)type) : null;
         }

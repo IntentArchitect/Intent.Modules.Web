@@ -72,7 +72,7 @@ namespace Intent.Modelers.WebClient.Angular.Api
             return type != null && type is IElement element && element.SpecializationTypeId == DisplayComponentModel.SpecializationTypeId;
         }
 
-        public static DisplayComponentModel ToDisplayComponentModel(this ICanBeReferencedType type)
+        public static DisplayComponentModel AsDisplayComponentModel(this ICanBeReferencedType type)
         {
             return type.IsDisplayComponentModel() ? new DisplayComponentModel((IElement)type) : null;
         }

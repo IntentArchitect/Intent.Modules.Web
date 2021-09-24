@@ -72,7 +72,7 @@ namespace Intent.Modelers.WebClient.Angular.Api
             return type != null && type is IElement element && element.SpecializationTypeId == CommandParameterModel.SpecializationTypeId;
         }
 
-        public static CommandParameterModel ToCommandParameterModel(this ICanBeReferencedType type)
+        public static CommandParameterModel AsCommandParameterModel(this ICanBeReferencedType type)
         {
             return type.IsCommandParameterModel() ? new CommandParameterModel((IElement)type) : null;
         }

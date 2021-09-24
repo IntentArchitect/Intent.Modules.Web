@@ -70,7 +70,7 @@ namespace Intent.Angular.ApiAuthorization.Api
             return type != null && type is IElement element && element.SpecializationTypeId == LoginMenuModel.SpecializationTypeId;
         }
 
-        public static LoginMenuModel ToLoginMenuModel(this ICanBeReferencedType type)
+        public static LoginMenuModel AsLoginMenuModel(this ICanBeReferencedType type)
         {
             return type.IsLoginMenuModel() ? new LoginMenuModel((IElement)type) : null;
         }

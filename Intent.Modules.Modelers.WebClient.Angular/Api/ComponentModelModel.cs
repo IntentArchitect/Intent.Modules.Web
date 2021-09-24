@@ -81,7 +81,7 @@ namespace Intent.Modelers.WebClient.Angular.Api
             return type != null && type is IElement element && element.SpecializationTypeId == ComponentModelModel.SpecializationTypeId;
         }
 
-        public static ComponentModelModel ToComponentModelModel(this ICanBeReferencedType type)
+        public static ComponentModelModel AsComponentModelModel(this ICanBeReferencedType type)
         {
             return type.IsComponentModelModel() ? new ComponentModelModel((IElement)type) : null;
         }

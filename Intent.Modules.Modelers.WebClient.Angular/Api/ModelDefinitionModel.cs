@@ -99,7 +99,7 @@ namespace Intent.Modelers.WebClient.Angular.Api
             return type != null && type is IElement element && element.SpecializationTypeId == ModelDefinitionModel.SpecializationTypeId;
         }
 
-        public static ModelDefinitionModel ToModelDefinitionModel(this ICanBeReferencedType type)
+        public static ModelDefinitionModel AsModelDefinitionModel(this ICanBeReferencedType type)
         {
             return type.IsModelDefinitionModel() ? new ModelDefinitionModel((IElement)type) : null;
         }

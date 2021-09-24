@@ -122,7 +122,7 @@ namespace Intent.Modelers.WebClient.Angular.Api
             return type != null && type is IElement element && element.SpecializationTypeId == FolderModel.SpecializationTypeId;
         }
 
-        public static FolderModel ToFolderModel(this ICanBeReferencedType type)
+        public static FolderModel AsFolderModel(this ICanBeReferencedType type)
         {
             return type.IsFolderModel() ? new FolderModel((IElement)type) : null;
         }

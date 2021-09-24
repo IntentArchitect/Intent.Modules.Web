@@ -88,7 +88,7 @@ namespace Intent.Angular.Layout.Api
             return type != null && type is IElement element && element.SpecializationTypeId == FormFieldModel.SpecializationTypeId;
         }
 
-        public static FormFieldModel ToFormFieldModel(this ICanBeReferencedType type)
+        public static FormFieldModel AsFormFieldModel(this ICanBeReferencedType type)
         {
             return type.IsFormFieldModel() ? new FormFieldModel((IElement)type) : null;
         }

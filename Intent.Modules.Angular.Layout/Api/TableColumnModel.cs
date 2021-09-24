@@ -86,7 +86,7 @@ namespace Intent.Angular.Layout.Api
             return type != null && type is IElement element && element.SpecializationTypeId == TableColumnModel.SpecializationTypeId;
         }
 
-        public static TableColumnModel ToTableColumnModel(this ICanBeReferencedType type)
+        public static TableColumnModel AsTableColumnModel(this ICanBeReferencedType type)
         {
             return type.IsTableColumnModel() ? new TableColumnModel((IElement)type) : null;
         }

@@ -81,7 +81,7 @@ namespace Intent.Modelers.WebClient.Angular.Api
             return type != null && type is IElement element && element.SpecializationTypeId == FormGroupControlModel.SpecializationTypeId;
         }
 
-        public static FormGroupControlModel ToFormGroupControlModel(this ICanBeReferencedType type)
+        public static FormGroupControlModel AsFormGroupControlModel(this ICanBeReferencedType type)
         {
             return type.IsFormGroupControlModel() ? new FormGroupControlModel((IElement)type) : null;
         }

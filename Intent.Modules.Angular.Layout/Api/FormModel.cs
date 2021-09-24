@@ -110,7 +110,7 @@ namespace Intent.Angular.Layout.Api
             return type != null && type is IElement element && element.SpecializationTypeId == FormModel.SpecializationTypeId;
         }
 
-        public static FormModel ToFormModel(this ICanBeReferencedType type)
+        public static FormModel AsFormModel(this ICanBeReferencedType type)
         {
             return type.IsFormModel() ? new FormModel((IElement)type) : null;
         }

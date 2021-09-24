@@ -12,7 +12,6 @@ namespace Intent.Modules.Angular.ServiceProxies.Decorators
     [Description(PopulateDataComponentDecorator.DecoratorId)]
     public class PopulateDataComponentDecoratorRegistration : DecoratorRegistration<AngularComponentTsTemplate, AngularComponentTsDecorator>
     {
-        public override string DecoratorId => PopulateDataComponentDecorator.DecoratorId;
 
         [IntentManaged(Mode.Ignore)]
         public override AngularComponentTsDecorator CreateDecoratorInstance(AngularComponentTsTemplate template, IApplication application)
@@ -20,5 +19,6 @@ namespace Intent.Modules.Angular.ServiceProxies.Decorators
             return new PopulateDataComponentDecorator(template, application);
         }
 
+        public override string DecoratorId => PopulateDataComponentDecorator.DecoratorId;
     }
 }

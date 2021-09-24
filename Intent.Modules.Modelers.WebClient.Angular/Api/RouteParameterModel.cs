@@ -72,7 +72,7 @@ namespace Intent.Modelers.WebClient.Angular.Api
             return type != null && type is IElement element && element.SpecializationTypeId == RouteParameterModel.SpecializationTypeId;
         }
 
-        public static RouteParameterModel ToRouteParameterModel(this ICanBeReferencedType type)
+        public static RouteParameterModel AsRouteParameterModel(this ICanBeReferencedType type)
         {
             return type.IsRouteParameterModel() ? new RouteParameterModel((IElement)type) : null;
         }

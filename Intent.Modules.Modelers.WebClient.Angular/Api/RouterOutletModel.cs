@@ -70,7 +70,7 @@ namespace Intent.Modelers.WebClient.Angular.Api
             return type != null && type is IElement element && element.SpecializationTypeId == RouterOutletModel.SpecializationTypeId;
         }
 
-        public static RouterOutletModel ToRouterOutletModel(this ICanBeReferencedType type)
+        public static RouterOutletModel AsRouterOutletModel(this ICanBeReferencedType type)
         {
             return type.IsRouterOutletModel() ? new RouterOutletModel((IElement)type) : null;
         }

@@ -87,7 +87,7 @@ namespace Intent.Modelers.WebClient.Angular.Api
     }
 
     [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
-    public class NavigationEndModel : ITypeReference, ICanBeReferencedType, IHasStereotypes
+    public class NavigationEndModel : ITypeReference, IMetadataModel, IHasName, IHasStereotypes
     {
         protected readonly IAssociationEnd _associationEnd;
         private readonly NavigationModel _association;
@@ -115,8 +115,8 @@ namespace Intent.Modelers.WebClient.Angular.Api
         public ICanBeReferencedType Element => _associationEnd.TypeReference.Element;
         public IEnumerable<ITypeReference> GenericTypeParameters => _associationEnd.TypeReference.GenericTypeParameters;
         public string Comment => _associationEnd.Comment;
-        public ITypeReference TypeReference => _associationEnd.TypeReference;
-        public IPackage Package => _associationEnd.Package;
+        public ITypeReference TypeReference => this;
+        public IPackage Package => Element?.Package;
         public IEnumerable<IStereotype> Stereotypes => _associationEnd.Stereotypes;
 
         public NavigationEndModel OtherEnd()
@@ -171,14 +171,6 @@ namespace Intent.Modelers.WebClient.Angular.Api
         public IAssociation InternalAssociation => _association.InternalAssociation;
 
         public IAssociationEnd InternalAssociationEnd => _associationEnd;
-
-        public IPackage Package => Element?.Package;
-
-        public string SpecializationType => _associationEnd.SpecializationType;
-
-        public string SpecializationTypeId => _associationEnd.SpecializationTypeId;
-
-        public ITypeReference TypeReference => this;
 
     }
 }

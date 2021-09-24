@@ -107,7 +107,7 @@ namespace Intent.Angular.Layout.Api
             return type != null && type is IElement element && element.SpecializationTypeId == ButtonControlModel.SpecializationTypeId;
         }
 
-        public static ButtonControlModel ToButtonControlModel(this ICanBeReferencedType type)
+        public static ButtonControlModel AsButtonControlModel(this ICanBeReferencedType type)
         {
             return type.IsButtonControlModel() ? new ButtonControlModel((IElement)type) : null;
         }

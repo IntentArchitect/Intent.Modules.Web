@@ -84,7 +84,7 @@ namespace Intent.Angular.Layout.Api
             return type != null && type is IElement element && element.SpecializationTypeId == NavbarModel.SpecializationTypeId;
         }
 
-        public static NavbarModel ToNavbarModel(this ICanBeReferencedType type)
+        public static NavbarModel AsNavbarModel(this ICanBeReferencedType type)
         {
             return type.IsNavbarModel() ? new NavbarModel((IElement)type) : null;
         }

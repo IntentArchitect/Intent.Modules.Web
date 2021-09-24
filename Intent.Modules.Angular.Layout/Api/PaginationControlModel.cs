@@ -111,7 +111,7 @@ namespace Intent.Angular.Layout.Api
             return type != null && type is IElement element && element.SpecializationTypeId == PaginationControlModel.SpecializationTypeId;
         }
 
-        public static PaginationControlModel ToPaginationControlModel(this ICanBeReferencedType type)
+        public static PaginationControlModel AsPaginationControlModel(this ICanBeReferencedType type)
         {
             return type.IsPaginationControlModel() ? new PaginationControlModel((IElement)type) : null;
         }

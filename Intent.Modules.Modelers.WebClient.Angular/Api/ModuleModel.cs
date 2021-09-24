@@ -148,7 +148,7 @@ namespace Intent.Modelers.WebClient.Angular.Api
             return type != null && type is IElement element && element.SpecializationTypeId == ModuleModel.SpecializationTypeId;
         }
 
-        public static ModuleModel ToModuleModel(this ICanBeReferencedType type)
+        public static ModuleModel AsModuleModel(this ICanBeReferencedType type)
         {
             return type.IsModuleModel() ? new ModuleModel((IElement)type) : null;
         }

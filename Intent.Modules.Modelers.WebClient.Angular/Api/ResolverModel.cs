@@ -75,7 +75,7 @@ namespace Intent.Modelers.WebClient.Angular.Api
             return type != null && type is IElement element && element.SpecializationTypeId == ResolverModel.SpecializationTypeId;
         }
 
-        public static ResolverModel ToResolverModel(this ICanBeReferencedType type)
+        public static ResolverModel AsResolverModel(this ICanBeReferencedType type)
         {
             return type.IsResolverModel() ? new ResolverModel((IElement)type) : null;
         }

@@ -126,7 +126,7 @@ namespace Intent.Angular.Layout.Api
             return type != null && type is IElement element && element.SpecializationTypeId == TableControlModel.SpecializationTypeId;
         }
 
-        public static TableControlModel ToTableControlModel(this ICanBeReferencedType type)
+        public static TableControlModel AsTableControlModel(this ICanBeReferencedType type)
         {
             return type.IsTableControlModel() ? new TableControlModel((IElement)type) : null;
         }

@@ -96,7 +96,7 @@ namespace Intent.Modelers.WebClient.Angular.Api
             return type != null && type is IElement element && element.SpecializationTypeId == FormGroupDefinitionModel.SpecializationTypeId;
         }
 
-        public static FormGroupDefinitionModel ToFormGroupDefinitionModel(this ICanBeReferencedType type)
+        public static FormGroupDefinitionModel AsFormGroupDefinitionModel(this ICanBeReferencedType type)
         {
             return type.IsFormGroupDefinitionModel() ? new FormGroupDefinitionModel((IElement)type) : null;
         }

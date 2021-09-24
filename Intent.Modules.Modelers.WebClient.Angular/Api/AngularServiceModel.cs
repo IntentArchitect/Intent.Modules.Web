@@ -78,7 +78,7 @@ namespace Intent.Modelers.WebClient.Angular.Api
             return type != null && type is IElement element && element.SpecializationTypeId == AngularServiceModel.SpecializationTypeId;
         }
 
-        public static AngularServiceModel ToAngularServiceModel(this ICanBeReferencedType type)
+        public static AngularServiceModel AsAngularServiceModel(this ICanBeReferencedType type)
         {
             return type.IsAngularServiceModel() ? new AngularServiceModel((IElement)type) : null;
         }
