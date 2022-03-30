@@ -3,6 +3,11 @@
   <ApplicationId>1cecc65d-e804-4de6-a27f-e8e4ad0190d7</ApplicationId>
   <FileLogs>
     <FileLog>
+      <CorrelationId>Intent.VisualStudio.Projects.VisualStudio2015Solution#ad91f155-bad0-4aaf-97d6-d72d8d08f389</CorrelationId>
+      <ApplicationRelativeFilePath>../Intent.Modules.Web.sln</ApplicationRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
       <ProjectId>c9057d93-2617-44ca-9bd6-8ee166b881d1</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.Templates.Api.ApiElementModelExtensions#d009e5af-adb7-45c5-921c-fe8e209b8aa2</CorrelationId>
       <ApplicationRelativeFilePath>Api/Extensions/AngularServiceModelStereotypeExtensions.cs</ApplicationRelativeFilePath>
@@ -18,7 +23,7 @@
     </FileLog>
     <FileLog>
       <ProjectId>b79f286d-1129-41f9-bb0f-d266b180d3c2</ProjectId>
-      <CorrelationId>Intent.ModuleBuilder.IModeSpecFile</CorrelationId>
+      <CorrelationId>Intent.ModuleBuilder.IModSpecFile</CorrelationId>
       <ApplicationRelativeFilePath>Intent.Angular.imodspec</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Intent.Angular.imodspec</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>

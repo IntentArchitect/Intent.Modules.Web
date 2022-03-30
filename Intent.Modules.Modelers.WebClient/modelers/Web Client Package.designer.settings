@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<settings>
+<settings version="3.1.1">
   <id>93058b8a-4d1d-4f88-ac14-332c87666418</id>
   <name>Web Client Package</name>
   <designerReferences />
@@ -18,4 +18,5 @@
   <elementSettings />
   <elementExtensions />
   <associationSettings />
+  <associationExtensions />
 </settings>

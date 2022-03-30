@@ -24,7 +24,9 @@ namespace Intent.Modules.Angular.ServiceProxies.Decorators
         [IntentManaged(Mode.Fully)]
         public const string DecoratorId = "Intent.Angular.ServiceProxies.PopulateDataComponentDecorator";
 
+        [IntentManaged(Mode.Fully)]
         private readonly AngularComponentTsTemplate _template;
+        [IntentManaged(Mode.Fully)]
         private readonly IApplication _application;
         private readonly IList<ServiceProxyModel> _serviceProxies;
         private List<string> _onInitStatements = new List<string>();

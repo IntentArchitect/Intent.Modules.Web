@@ -11,20 +11,20 @@ using Intent.Metadata.WebApi.Api;
 using Intent.Modelers.Services.Api;
 using Intent.Modelers.Types.ServiceProxies.Api;
 using Intent.Modelers.WebClient.Angular.Api;
+using Intent.Modules.Angular.Templates;
 using Intent.Modules.Angular.Templates.Core.ApiServiceTemplate;
 using Intent.Modules.Angular.Templates.Module.AngularModuleTemplate;
 using Intent.Modules.Common;
 using Intent.Modules.Common.Plugins;
 using Intent.Modules.Common.Templates;
+using Intent.Modules.Common.Types.Api;
+using Intent.Modules.Common.TypeScript.Templates;
 using Intent.RoslynWeaver.Attributes;
 using Intent.Templates;
 using Intent.Utils;
-using Intent.Modules.Common.TypeScript.Templates;
-using Intent.Modules.Angular.Templates;
-using Intent.Modules.Common.Types.Api;
-using EnumModel = Intent.Modules.Common.Types.Api.EnumModel;
-using ProxyOperationModel = Intent.Modelers.Types.ServiceProxies.Api.OperationModel;
 using OperationModel = Intent.Modelers.Services.Api.OperationModel;
+using ProxyOperationModel = Intent.Modelers.Types.ServiceProxies.Api.OperationModel;
+using EnumModel = Intent.Modules.Common.Types.Api.EnumModel;
 using TypeDefinitionModel = Intent.Modules.Common.Types.Api.TypeDefinitionModel;
 
 [assembly: DefaultIntentManaged(Mode.Merge)]

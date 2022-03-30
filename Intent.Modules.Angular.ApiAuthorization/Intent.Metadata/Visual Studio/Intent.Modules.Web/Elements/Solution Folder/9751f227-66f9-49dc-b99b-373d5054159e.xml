@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="9751f227-66f9-49dc-b99b-373d5054159e" type="Solution Folder" typeId="0dc2b846-c968-49eb-99b7-8776919313a8">
+  <name>Angular</name>
+  <display>Angular</display>
+  <isAbstract>false</isAbstract>
+  <order>1</order>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>a9ad4760-d8e4-4591-a79b-16171936e4b6</parentFolderId>
+  <packageId>a9ad4760-d8e4-4591-a79b-16171936e4b6</packageId>
+  <packageName>Intent.Modules.Web</packageName>
+  <stereotypes />
+  <childElements />
+</class>

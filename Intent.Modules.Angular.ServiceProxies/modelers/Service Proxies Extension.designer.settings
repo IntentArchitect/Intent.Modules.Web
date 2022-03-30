@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<settings>
+<settings version="3.1.1">
   <id>d609adc5-ceab-4079-8201-c9d04c4b7303</id>
   <name>Service Proxies Extension</name>
   <designerReferences>
-    <designerReference id="8cf2b93d-9449-4e40-af62-12daf6f7e0f4" name="Service Proxy Types" module="Intent.Modelers.Types.ServiceProxies" type="reference" />
+    <designerReference id="8cf2b93d-9449-4e40-af62-12daf6f7e0f4" name="Service Proxy Types" module="Intent.Modelers.Types.ServiceProxies" />
   </designerReferences>
   <packageSettings />
   <packageExtensions />
@@ -24,7 +24,9 @@
       <typeOrder>
         <type>Service Proxy</type>
       </typeOrder>
+      <mappingSettings />
     </elementExtension>
   </elementExtensions>
   <associationSettings />
+  <associationExtensions />
 </settings>

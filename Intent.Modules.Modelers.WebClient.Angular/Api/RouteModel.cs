@@ -2,8 +2,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Intent.Metadata.Models;
-using Intent.RoslynWeaver.Attributes;
 using Intent.Modules.Common;
+using Intent.RoslynWeaver.Attributes;
 
 [assembly: DefaultIntentManaged(Mode.Fully)]
 [assembly: IntentTemplate("Intent.ModuleBuilder.Templates.Api.ApiElementModel", Version = "1.0")]
@@ -90,6 +90,16 @@ namespace Intent.Modelers.WebClient.Angular.Api
         public static RouteModel AsRouteModel(this ICanBeReferencedType type)
         {
             return type.IsRouteModel() ? new RouteModel((IElement)type) : null;
+        }
+
+        public static bool HasNewMappingSettingsMapping(this RouteModel type)
+        {
+            return type.Mapping?.MappingSettingsId == "3b7340dc-5622-4257-b3f4-75e6bd0fe526";
+        }
+
+        public static IElementMapping GetNewMappingSettingsMapping(this RouteModel type)
+        {
+            return type.HasNewMappingSettingsMapping() ? type.Mapping : null;
         }
     }
 }

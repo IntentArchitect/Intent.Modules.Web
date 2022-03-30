@@ -8,7 +8,7 @@
   <isMapped>false</isMapped>
   <parentFolderId>b79f286d-1129-41f9-bb0f-d266b180d3c2</parentFolderId>
   <packageId>ad91f155-bad0-4aaf-97d6-d72d8d08f389</packageId>
-  <packageName>Angular.VisualStudio</packageName>
+  <packageName>Intent.Modules.Web</packageName>
   <stereotypes>
     <stereotype stereotypeDefinitionId="61132551-825d-4c6e-b9f1-0f95249d08d4" name="Folder Options">
       <addedByDefault>true</addedByDefault>
@@ -29,7 +29,7 @@
       <isMapped>false</isMapped>
       <parentFolderId>e10c5473-8f0d-4feb-9f68-572ac62b4bc3</parentFolderId>
       <packageId>ad91f155-bad0-4aaf-97d6-d72d8d08f389</packageId>
-      <packageName>Angular.VisualStudio</packageName>
+      <packageName>Intent.Modules.Web</packageName>
       <stereotypes />
       <childElements />
     </childElement>
@@ -42,7 +42,7 @@
       <isMapped>false</isMapped>
       <parentFolderId>e10c5473-8f0d-4feb-9f68-572ac62b4bc3</parentFolderId>
       <packageId>ad91f155-bad0-4aaf-97d6-d72d8d08f389</packageId>
-      <packageName>Angular.VisualStudio</packageName>
+      <packageName>Intent.Modules.Web</packageName>
       <stereotypes />
       <childElements />
     </childElement>

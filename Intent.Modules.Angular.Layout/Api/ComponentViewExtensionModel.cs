@@ -3,10 +3,10 @@ using System.Collections.Generic;
 using System.Linq;
 using Intent.Angular.Api;
 using Intent.Metadata.Models;
-using Intent.RoslynWeaver.Attributes;
+using Intent.Modelers.WebClient.Angular.Api;
 using Intent.Modules.Angular.Api;
 using Intent.Modules.Common;
-using Intent.Modelers.WebClient.Angular.Api;
+using Intent.RoslynWeaver.Attributes;
 
 [assembly: DefaultIntentManaged(Mode.Fully)]
 [assembly: IntentTemplate("Intent.ModuleBuilder.Templates.Api.ApiElementExtensionModel", Version = "1.0")]

@@ -27,5 +27,14 @@ namespace Intent.Modelers.WebClient.Angular.Api
                 .ToList();
         }
 
+        [IntentManaged(Mode.Fully)]
+        public static IList<NavigationEndModel> NavigationEnds(this ComponentModel model)
+        {
+            return model.InternalElement.AssociatedElements
+                .Where(x => x.IsNavigationEndModel())
+                .Select(NavigationEndModel.Create)
+                .ToList();
+        }
+
     }
 }

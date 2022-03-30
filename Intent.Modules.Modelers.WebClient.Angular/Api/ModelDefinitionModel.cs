@@ -103,5 +103,15 @@ namespace Intent.Modelers.WebClient.Angular.Api
         {
             return type.IsModelDefinitionModel() ? new ModelDefinitionModel((IElement)type) : null;
         }
+
+        public static bool HasNewMappingSettingsMapping(this ModelDefinitionModel type)
+        {
+            return type.Mapping?.MappingSettingsId == "31b3d3a7-bf3c-4bb4-8b1d-9e18b6a8bcdd";
+        }
+
+        public static IElementMapping GetNewMappingSettingsMapping(this ModelDefinitionModel type)
+        {
+            return type.HasNewMappingSettingsMapping() ? type.Mapping : null;
+        }
     }
 }

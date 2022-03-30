@@ -2,9 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Intent.Metadata.Models;
+using Intent.Modules.Common;
 using Intent.Modules.Common.Templates;
 using Intent.RoslynWeaver.Attributes;
-using Intent.Modules.Common;
 
 [assembly: DefaultIntentManaged(Mode.Merge)]
 [assembly: IntentTemplate("Intent.ModuleBuilder.Templates.Api.ApiElementModel", Version = "1.0")]
@@ -129,6 +129,16 @@ namespace Intent.Angular.Layout.Api
         public static TableControlModel AsTableControlModel(this ICanBeReferencedType type)
         {
             return type.IsTableControlModel() ? new TableControlModel((IElement)type) : null;
+        }
+
+        public static bool HasNewMappingSettingsMapping(this TableControlModel type)
+        {
+            return type.Mapping?.MappingSettingsId == "510bf1dc-08d2-4184-9358-499b96e41586";
+        }
+
+        public static IElementMapping GetNewMappingSettingsMapping(this TableControlModel type)
+        {
+            return type.HasNewMappingSettingsMapping() ? type.Mapping : null;
         }
     }
 }

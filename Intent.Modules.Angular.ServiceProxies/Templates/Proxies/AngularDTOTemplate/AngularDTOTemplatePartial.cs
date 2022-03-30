@@ -5,13 +5,13 @@ using System.Text;
 using Intent.Angular.ServiceProxies.Api;
 using Intent.Engine;
 using Intent.Metadata.Models;
-using Intent.RoslynWeaver.Attributes;
-using Intent.Templates;
-using Intent.Modules.Common.TypeScript.Templates;
 using Intent.Modelers.Types.ServiceProxies.Api;
 using Intent.Modelers.WebClient.Angular.Api;
 using Intent.Modules.Common.Templates;
 using Intent.Modules.Common.Types.Api;
+using Intent.Modules.Common.TypeScript.Templates;
+using Intent.RoslynWeaver.Attributes;
+using Intent.Templates;
 
 [assembly: DefaultIntentManaged(Mode.Merge)]
 [assembly: IntentTemplate("Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial", Version = "1.0")]

@@ -98,6 +98,12 @@ namespace Intent.Modelers.WebClient.Angular.Api
             _association = association;
         }
 
+        public static NavigationEndModel Create(IAssociationEnd associationEnd)
+        {
+            var association = new NavigationModel(associationEnd.Association);
+            return association.TargetEnd.Id == associationEnd.Id ? (NavigationEndModel)association.TargetEnd : association.SourceEnd;
+        }
+
         [IntentManaged(Mode.Ignore)]
         public NavigationEndModel GetOtherEnd()
         {
@@ -172,5 +178,39 @@ namespace Intent.Modelers.WebClient.Angular.Api
 
         public IAssociationEnd InternalAssociationEnd => _associationEnd;
 
+    }
+
+    [IntentManaged(Mode.Fully)]
+    public static class NavigationEndModelExtensions
+    {
+        public static bool IsNavigationEndModel(this ICanBeReferencedType type)
+        {
+            return IsNavigationTargetEndModel(type) || IsNavigationSourceEndModel(type);
+        }
+
+        public static NavigationEndModel AsNavigationEndModel(this ICanBeReferencedType type)
+        {
+            return (NavigationEndModel)type.AsNavigationTargetEndModel() ?? (NavigationEndModel)type.AsNavigationSourceEndModel();
+        }
+
+        public static bool IsNavigationTargetEndModel(this ICanBeReferencedType type)
+        {
+            return type != null && type is IAssociationEnd associationEnd && associationEnd.SpecializationTypeId == NavigationTargetEndModel.SpecializationTypeId;
+        }
+
+        public static NavigationTargetEndModel AsNavigationTargetEndModel(this ICanBeReferencedType type)
+        {
+            return type.IsNavigationTargetEndModel() ? new NavigationModel(((IAssociationEnd)type).Association).TargetEnd : null;
+        }
+
+        public static bool IsNavigationSourceEndModel(this ICanBeReferencedType type)
+        {
+            return type != null && type is IAssociationEnd associationEnd && associationEnd.SpecializationTypeId == NavigationSourceEndModel.SpecializationTypeId;
+        }
+
+        public static NavigationSourceEndModel AsNavigationSourceEndModel(this ICanBeReferencedType type)
+        {
+            return type.IsNavigationSourceEndModel() ? new NavigationModel(((IAssociationEnd)type).Association).SourceEnd : null;
+        }
     }
 }

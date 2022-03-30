@@ -1,4 +1,6 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using Intent.Metadata.Models;
 using Intent.Modelers.WebClient.Angular.Api;
 using Intent.Modules.Common;
@@ -41,7 +43,7 @@ namespace Intent.Angular.Api
 
             public IElement[] InjectServices()
             {
-                return _stereotype.GetProperty<IElement[]>("Inject Services");
+                return _stereotype.GetProperty<IElement[]>("Inject Services") ?? new IElement[0];
             }
 
             public bool InOwnFolder()

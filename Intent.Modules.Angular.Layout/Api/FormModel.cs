@@ -114,5 +114,15 @@ namespace Intent.Angular.Layout.Api
         {
             return type.IsFormModel() ? new FormModel((IElement)type) : null;
         }
+
+        public static bool HasNewMappingSettingsMapping(this FormModel type)
+        {
+            return type.Mapping?.MappingSettingsId == "90a4b25a-0490-472c-aa00-12bb8ce93c99";
+        }
+
+        public static IElementMapping GetNewMappingSettingsMapping(this FormModel type)
+        {
+            return type.HasNewMappingSettingsMapping() ? type.Mapping : null;
+        }
     }
 }

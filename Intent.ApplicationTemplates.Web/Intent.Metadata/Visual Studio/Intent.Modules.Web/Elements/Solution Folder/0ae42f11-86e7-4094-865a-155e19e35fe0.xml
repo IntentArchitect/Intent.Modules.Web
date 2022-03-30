@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="0ae42f11-86e7-4094-865a-155e19e35fe0" type="Solution Folder" typeId="0dc2b846-c968-49eb-99b7-8776919313a8">
+  <name>ApplicationTemplates</name>
+  <display>ApplicationTemplates</display>
+  <isAbstract>false</isAbstract>
+  <order>1</order>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>57218969-9754-43b7-b90c-dae67207d7f8</parentFolderId>
+  <packageId>57218969-9754-43b7-b90c-dae67207d7f8</packageId>
+  <packageName>Intent.Modules.Web</packageName>
+  <stereotypes />
+  <childElements />
+</class>

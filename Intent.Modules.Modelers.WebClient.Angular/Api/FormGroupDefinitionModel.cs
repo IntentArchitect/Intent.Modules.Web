@@ -100,5 +100,15 @@ namespace Intent.Modelers.WebClient.Angular.Api
         {
             return type.IsFormGroupDefinitionModel() ? new FormGroupDefinitionModel((IElement)type) : null;
         }
+
+        public static bool HasNewMappingSettingsMapping(this FormGroupDefinitionModel type)
+        {
+            return type.Mapping?.MappingSettingsId == "3d511511-fce6-45ee-b3fb-836c06df5f97";
+        }
+
+        public static IElementMapping GetNewMappingSettingsMapping(this FormGroupDefinitionModel type)
+        {
+            return type.HasNewMappingSettingsMapping() ? type.Mapping : null;
+        }
     }
 }

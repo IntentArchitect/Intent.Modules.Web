@@ -1,17 +1,17 @@
 using System;
-using System.IO;
-using Intent.Metadata.Models;
-using Intent.Modules.Common;
-using Intent.Modules.Common.Templates;
-using Intent.RoslynWeaver.Attributes;
-using Intent.Engine;
-using Intent.Templates;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using Intent.Angular.Api;
-using Intent.Modules.Angular.Api;
+using Intent.Engine;
+using Intent.Metadata.Models;
 using Intent.Modelers.WebClient.Angular.Api;
+using Intent.Modules.Angular.Api;
+using Intent.Modules.Common;
+using Intent.Modules.Common.Templates;
 using Intent.Modules.Common.Types.Api;
+using Intent.RoslynWeaver.Attributes;
+using Intent.Templates;
 
 [assembly: DefaultIntentManaged(Mode.Merge)]
 [assembly: IntentTemplate("Intent.ModuleBuilder.ProjectItemTemplate.Partial", Version = "1.0")]

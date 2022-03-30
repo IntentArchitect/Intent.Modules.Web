@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using Intent.Metadata.Models;
 using Intent.Modelers.WebClient.Angular.Api;
+using Intent.Modules.Common;
 using Intent.Modules.Common.Templates;
 using Intent.RoslynWeaver.Attributes;
-using Intent.Modules.Common;
 
 [assembly: DefaultIntentManaged(Mode.Merge)]
 [assembly: IntentTemplate("Intent.ModuleBuilder.Templates.Api.ApiElementModel", Version = "1.0")]
@@ -110,6 +110,16 @@ namespace Intent.Angular.Layout.Api
         public static ButtonControlModel AsButtonControlModel(this ICanBeReferencedType type)
         {
             return type.IsButtonControlModel() ? new ButtonControlModel((IElement)type) : null;
+        }
+
+        public static bool HasNewMappingSettingsMapping(this ButtonControlModel type)
+        {
+            return type.Mapping?.MappingSettingsId == "67e826e4-cf1c-4554-ab6f-be922c2d6a9f";
+        }
+
+        public static IElementMapping GetNewMappingSettingsMapping(this ButtonControlModel type)
+        {
+            return type.HasNewMappingSettingsMapping() ? type.Mapping : null;
         }
     }
 }
