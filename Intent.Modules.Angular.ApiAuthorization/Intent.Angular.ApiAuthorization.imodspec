@@ -24,7 +24,7 @@
     <factoryExtension id="Intent.Angular.ApiAuthorization.NpmCliInstaller" externalReference="9578b7e3-07ee-40e8-a295-af3165d60fbf" />
   </factoryExtensions>
   <dependencies>
-    <dependency id="Intent.Common" version="3.3.0" />
+    <dependency id="Intent.Common" version="3.3.1" />
     <dependency id="Intent.Common.Types" version="3.3.0" />
     <dependency id="Intent.Angular" version="3.3.0" />
     <dependency id="Intent.Common.TypeScript" version="3.3.0" />
