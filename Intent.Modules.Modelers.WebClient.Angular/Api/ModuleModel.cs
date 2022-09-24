@@ -109,19 +109,19 @@ namespace Intent.Modelers.WebClient.Angular.Api
         string IFolder.Name => GetModuleName().ToKebabCase();
 
         public RoutingModel Routing => _element.ChildElements
-                    .Where(x => x.SpecializationType == RoutingModel.SpecializationType)
-                    .Select(x => new RoutingModel(x))
-                    .SingleOrDefault();
+            .GetElementsOfType(RoutingModel.SpecializationTypeId)
+            .Select(x => new RoutingModel(x))
+            .SingleOrDefault();
 
         public IList<ModuleModel> Modules => _element.ChildElements
-                    .GetElementsOfType(ModuleModel.SpecializationTypeId)
-                    .Select(x => new ModuleModel(x))
-                    .ToList();
+            .GetElementsOfType(ModuleModel.SpecializationTypeId)
+            .Select(x => new ModuleModel(x))
+            .ToList();
 
         public IList<FolderModel> Folders => _element.ChildElements
-                    .GetElementsOfType(FolderModel.SpecializationTypeId)
-                    .Select(x => new FolderModel(x))
-                    .ToList();
+            .GetElementsOfType(FolderModel.SpecializationTypeId)
+            .Select(x => new FolderModel(x))
+            .ToList();
 
         public ModuleModel GetParentModule()
         {
@@ -134,9 +134,9 @@ namespace Intent.Modelers.WebClient.Angular.Api
         }
 
         public IList<ResolverModel> Resolvers => _element.ChildElements
-                    .GetElementsOfType(ResolverModel.SpecializationTypeId)
-                    .Select(x => new ResolverModel(x))
-                    .ToList();
+            .GetElementsOfType(ResolverModel.SpecializationTypeId)
+            .Select(x => new ResolverModel(x))
+            .ToList();
     }
 
     [IntentManaged(Mode.Fully)]

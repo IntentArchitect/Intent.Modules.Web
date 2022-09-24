@@ -1,0 +1,48 @@
+<#@ template language="C#" inherits="TypeScriptTemplateBase<Intent.Modelers.WebClient.Angular.Api.ComponentModel, Intent.Modules.Angular.Templates.Component.AngularComponentTs.AngularComponentTsDecorator>" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="Intent.Modules.Common" #>
+<#@ import namespace="Intent.Modules.Common.Templates" #>
+<#@ import namespace="Intent.Modules.Common.TypeScript.Templates" #>
+<#@ import namespace="Intent.Modules.Angular.Api" #>
+<#@ import namespace="Intent.Modelers.WebClient.Angular.Api" #>
+<#@ import namespace="Intent.Modules.Angular.Templates.Module.AngularModule" #>
+import { Component, OnInit } from '@angular/core';<#= GetImports() #>
+
+@Component({
+  selector: '<#= GetSelector() #>',
+  templateUrl: './<#= ComponentName.ToKebabCase() #>.component.html',
+  styleUrls: ['./<#= ComponentName.ToKebabCase() #>.component.scss']
+})
+export class <#= ClassName #> implements OnInit {
+<#  foreach (var model in Model.Inputs) {#>
+  <#= model.Name #>: <#= GetTypeName(model.TypeReference)#>;
+<#  }#>
+<#  foreach (var model in Model.Outputs) {#>
+  @<#= this.UseType("Output", "@angular/core") #>() <#= model.Name #> = new <#= this.UseType("EventEmitter", "@angular/core") #><<#= GetTypeName(model.TypeReference)#>>();
+<#  }#>
+<#  foreach (var model in Model.Models) {#>
+  <#= model.Name #>: <#= GetTypeName(model.TypeReference)#>;
+<#  }#>
+
+  //@IntentCanAdd()
+  constructor(<#= GetConstructorParams() #>) { }
+
+  <#= this.IntentIgnoreDecorator() #>
+  ngOnInit() {<#= GetDecoratorsOutput(x => x.OnInit()) #>
+  }
+<#  foreach (var command in Model.Commands) {#>
+
+  <#= this.IntentIgnoreBodyDecorator() #>
+  <#= command.Name.ToCamelCase() #>(<#= GetParameters(command) #>): <#= GetReturnType(command) #> {
+    // write your business logic here for this command
+  }
+<#  }#>
+<#  foreach (var navigation in Model.NavigateToComponents().Where(x => x.IsNavigable)) {#>
+<#= GetNavigationCommand(navigation) #>
+<#  }#>
+<#  foreach (var navigation in Model.NavigateBackComponents().Where(x => x.IsNavigable)) {#>
+<#= GetNavigationCommand(navigation) #>
+<#  }#>
+}

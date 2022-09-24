@@ -3,12 +3,12 @@
   <name>AngularComponentTsDecorator</name>
   <display>AngularComponentTsDecorator</display>
   <isAbstract>false</isAbstract>
-  <order>1</order>
   <genericTypes />
   <isMapped>false</isMapped>
   <parentFolderId>aa06d3ae-2965-4101-8f8b-8db7da8a0146</parentFolderId>
   <packageId>a3deb341-dd4e-4f7f-99f5-2f198c1c251c</packageId>
   <packageName>Intent.Angular</packageName>
   <stereotypes />
+  <metadata />
   <childElements />
 </class>

@@ -19,6 +19,7 @@
       </properties>
     </stereotype>
   </stereotypes>
+  <metadata />
   <childElements>
     <childElement id="56bba968-7f5a-4a10-b202-5a23686167f1" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">
       <name>Intent.ModuleBuilder.Templates.Api.ApiAssociationModel</name>
@@ -32,6 +33,7 @@
       <packageId>ad91f155-bad0-4aaf-97d6-d72d8d08f389</packageId>
       <packageName>Intent.Modules.Web</packageName>
       <stereotypes />
+      <metadata />
       <childElements />
     </childElement>
     <childElement id="dd78959d-b707-46b0-b094-eacd28556895" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">
@@ -46,6 +48,7 @@
       <packageId>ad91f155-bad0-4aaf-97d6-d72d8d08f389</packageId>
       <packageName>Intent.Modules.Web</packageName>
       <stereotypes />
+      <metadata />
       <childElements />
     </childElement>
     <childElement id="7cfcf683-8161-46e8-901d-e0829b7de497" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">
@@ -60,6 +63,7 @@
       <packageId>ad91f155-bad0-4aaf-97d6-d72d8d08f389</packageId>
       <packageName>Intent.Modules.Web</packageName>
       <stereotypes />
+      <metadata />
       <childElements />
     </childElement>
     <childElement id="32eefe45-8645-4838-82d9-e2c3ab26bbe5" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">
@@ -74,6 +78,7 @@
       <packageId>ad91f155-bad0-4aaf-97d6-d72d8d08f389</packageId>
       <packageName>Intent.Modules.Web</packageName>
       <stereotypes />
+      <metadata />
       <childElements />
     </childElement>
     <childElement id="61b11e39-696c-4ad9-ae32-fe33da5c682f" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">
@@ -88,6 +93,7 @@
       <packageId>ad91f155-bad0-4aaf-97d6-d72d8d08f389</packageId>
       <packageName>Intent.Modules.Web</packageName>
       <stereotypes />
+      <metadata />
       <childElements />
     </childElement>
     <childElement id="82369e15-e166-4396-9a1b-3721dd4193ec" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">
@@ -102,6 +108,7 @@
       <packageId>ad91f155-bad0-4aaf-97d6-d72d8d08f389</packageId>
       <packageName>Intent.Modules.Web</packageName>
       <stereotypes />
+      <metadata />
       <childElements />
     </childElement>
   </childElements>

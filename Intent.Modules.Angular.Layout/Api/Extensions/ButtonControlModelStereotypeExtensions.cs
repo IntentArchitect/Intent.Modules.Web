@@ -23,6 +23,18 @@ namespace Intent.Angular.Layout.Api
             return model.HasStereotype("Button Settings");
         }
 
+        public static bool TryGetButtonSettings(this ButtonControlModel model, out ButtonSettings stereotype)
+        {
+            if (!HasButtonSettings(model))
+            {
+                stereotype = null;
+                return false;
+            }
+
+            stereotype = new ButtonSettings(model.GetStereotype("Button Settings"));
+            return true;
+        }
+
 
         public class ButtonSettings
         {

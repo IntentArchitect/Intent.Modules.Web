@@ -3,12 +3,13 @@
   <name>designers</name>
   <display>designers</display>
   <isAbstract>false</isAbstract>
-  <order>1</order>
+  <sort-children>by-type-then-by-name</sort-children>
   <genericTypes />
   <isMapped>false</isMapped>
   <parentFolderId>6acdce2e-cfb4-4988-beef-4ac087c6d857</parentFolderId>
   <packageId>6acdce2e-cfb4-4988-beef-4ac087c6d857</packageId>
   <packageName>Intent.Angular.ServiceProxies</packageName>
   <stereotypes />
+  <metadata />
   <childElements />
 </class>

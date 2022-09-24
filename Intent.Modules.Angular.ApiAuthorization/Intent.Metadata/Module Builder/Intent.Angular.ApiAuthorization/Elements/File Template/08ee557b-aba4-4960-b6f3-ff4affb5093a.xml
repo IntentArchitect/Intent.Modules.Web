@@ -3,7 +3,6 @@
   <name>GeneralApiAuthZipFileContent</name>
   <display>GeneralApiAuthZipFileContent: Custom</display>
   <isAbstract>false</isAbstract>
-  <order>2</order>
   <genericTypes />
   <typeReference id="f13d3310-8d20-4fc1-b09e-71515f961b2c">
     <typeId>d2931361-7cf0-4c79-9847-621c60886ef9</typeId>
@@ -44,5 +43,6 @@
       </properties>
     </stereotype>
   </stereotypes>
+  <metadata />
   <childElements />
 </class>

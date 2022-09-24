@@ -3,7 +3,7 @@
   <name>Button Control</name>
   <display>Button Control</display>
   <isAbstract>false</isAbstract>
-  <order>0</order>
+  <sort-children>by-type-then-manually</sort-children>
   <genericTypes />
   <isMapped>false</isMapped>
   <parentFolderId>d3c58ce6-a07c-47dc-8626-f73cf1d047e2</parentFolderId>
@@ -45,12 +45,13 @@
       </properties>
     </stereotype>
   </stereotypes>
+  <metadata />
   <childElements>
     <childElement id="67e826e4-cf1c-4554-ab6f-be922c2d6a9f" type="Mapping Settings" typeId="178c2f55-9ca1-484d-be43-a91bdd5554dc">
       <name>NewMappingSettings</name>
       <display>[mappings]: NewMappingSettings</display>
       <isAbstract>false</isAbstract>
-      <order>1</order>
+      <sort-children>by-type-then-by-name</sort-children>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>13eca516-0628-4085-91c3-36d5eddda6c9</parentFolderId>
@@ -74,12 +75,12 @@
           </properties>
         </stereotype>
       </stereotypes>
+      <metadata />
       <childElements>
         <childElement id="1969ef34-7539-4640-bfe9-c766d3a275b2" type="Element Mapping" typeId="4a16943b-702c-4fb0-bfcc-2afd98b8814c">
           <name>NewElementMapping</name>
           <display>[mapping]: Component Command -&gt; Button Control (Map to Type)</display>
           <isAbstract>false</isAbstract>
-          <order>0</order>
           <genericTypes />
           <isMapped>false</isMapped>
           <parentFolderId>67e826e4-cf1c-4554-ab6f-be922c2d6a9f</parentFolderId>
@@ -116,13 +117,13 @@
               </properties>
             </stereotype>
           </stereotypes>
+          <metadata />
           <childElements />
         </childElement>
         <childElement id="5b903efd-6997-4cca-b8d8-2d8050299b27" type="Element Mapping" typeId="4a16943b-702c-4fb0-bfcc-2afd98b8814c">
           <name>NewElementMapping</name>
           <display>[mapping]: NavigationSourceEnd -&gt; Button Control (Map to Type)</display>
           <isAbstract>false</isAbstract>
-          <order>1</order>
           <genericTypes />
           <isMapped>false</isMapped>
           <parentFolderId>67e826e4-cf1c-4554-ab6f-be922c2d6a9f</parentFolderId>
@@ -159,13 +160,13 @@
               </properties>
             </stereotype>
           </stereotypes>
+          <metadata />
           <childElements />
         </childElement>
         <childElement id="c6c128c8-d39e-4e22-a6b8-36cc4e7ef524" type="Element Mapping" typeId="4a16943b-702c-4fb0-bfcc-2afd98b8814c">
           <name>NewElementMapping</name>
           <display>[mapping]: NavigationTargetEnd -&gt; Button Control (Map to Type)</display>
           <isAbstract>false</isAbstract>
-          <order>2</order>
           <genericTypes />
           <isMapped>false</isMapped>
           <parentFolderId>67e826e4-cf1c-4554-ab6f-be922c2d6a9f</parentFolderId>
@@ -202,6 +203,7 @@
               </properties>
             </stereotype>
           </stereotypes>
+          <metadata />
           <childElements />
         </childElement>
       </childElements>

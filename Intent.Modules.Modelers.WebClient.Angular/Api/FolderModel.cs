@@ -97,19 +97,19 @@ namespace Intent.Modelers.WebClient.Angular.Api
         public string Comment => _element.Comment;
 
         public IList<EnumModel> Enums => _element.ChildElements
-                    .GetElementsOfType(EnumModel.SpecializationTypeId)
-                    .Select(x => new EnumModel(x))
-                    .ToList();
+            .GetElementsOfType(EnumModel.SpecializationTypeId)
+            .Select(x => new EnumModel(x))
+            .ToList();
 
         public IList<TypeDefinitionModel> TypeDefinitions => _element.ChildElements
-                    .GetElementsOfType(TypeDefinitionModel.SpecializationTypeId)
-                    .Select(x => new TypeDefinitionModel(x))
-                    .ToList();
+            .GetElementsOfType(TypeDefinitionModel.SpecializationTypeId)
+            .Select(x => new TypeDefinitionModel(x))
+            .ToList();
 
         public IList<ComponentModel> Components => _element.ChildElements
-                    .GetElementsOfType(ComponentModel.SpecializationTypeId)
-                    .Select(x => new ComponentModel(x))
-                    .ToList();
+            .GetElementsOfType(ComponentModel.SpecializationTypeId)
+            .Select(x => new ComponentModel(x))
+            .ToList();
 
     }
 

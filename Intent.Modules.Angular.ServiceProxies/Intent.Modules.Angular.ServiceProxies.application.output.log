@@ -4,12 +4,14 @@
   <FileLogs>
     <FileLog>
       <CorrelationId>Intent.VisualStudio.Projects.VisualStudio2015Solution#3480796b-a59d-4366-a8eb-bf9b1a49f521</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>../Intent.Modules.Web.sln</ApplicationRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>23b426b9-cb31-479c-8cad-e99c49ef3639</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.Templates.Api.ApiElementExtensionModel#4706eaba-1977-4fc1-900d-14f7691f5fc0</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Api/ModuleExtensionModel.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>ModuleExtensionModel.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
@@ -17,6 +19,7 @@
     <FileLog>
       <ProjectId>044396c8-ade8-4ce4-b0db-ffd860f3005b</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.Templates.TemplateDecorator#0ea5db52-70fd-4918-b3d7-9e960c841f99</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Decorators/PopulateDataComponentDecorator.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>PopulateDataComponentDecorator.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
@@ -24,6 +27,7 @@
     <FileLog>
       <ProjectId>044396c8-ade8-4ce4-b0db-ffd860f3005b</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.Templates.TemplateDecoratorRegistration#0ea5db52-70fd-4918-b3d7-9e960c841f99</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Decorators/PopulateDataComponentDecoratorRegistration.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>PopulateDataComponentDecoratorRegistration.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
@@ -31,6 +35,7 @@
     <FileLog>
       <ProjectId>6d139c9a-784d-48b9-a4af-e24859654dba</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.IModSpecFile</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Intent.Angular.ServiceProxies.imodspec</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Intent.Angular.ServiceProxies.imodspec</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
@@ -38,6 +43,7 @@
     <FileLog>
       <ProjectId>6d139c9a-784d-48b9-a4af-e24859654dba</ProjectId>
       <CorrelationId>Intent.VisualStudio.Projects.CoreLibrary.CSProject#6d139c9a-784d-48b9-a4af-e24859654dba</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Intent.Modules.Angular.ServiceProxies.csproj</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Intent.Modules.Angular.ServiceProxies.csproj</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
@@ -45,6 +51,7 @@
     <FileLog>
       <ProjectId>f699e443-db23-4c25-b7a4-2b2dc1235418</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.DesignerSettings#d609adc5-ceab-4079-8201-c9d04c4b7303</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>modelers/Service Proxies Extension.designer.settings</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Service Proxies Extension.designer.settings</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
@@ -52,6 +59,7 @@
     <FileLog>
       <ProjectId>6d139c9a-784d-48b9-a4af-e24859654dba</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.ReadMe</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>README.txt</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>README.txt</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
@@ -59,57 +67,73 @@
     <FileLog>
       <ProjectId>c08e0737-1abd-40fc-9366-f7dccdb55b11</ProjectId>
       <CorrelationId>ModuleBuilder.Typescript.Templates.TypescriptTemplate.PreProcessT4#eef9e3d9-2c85-4a55-bed7-988d51fa5c6f</CorrelationId>
-      <ApplicationRelativeFilePath>Templates/Proxies/AngularDTOTemplate/AngularDTOTemplate.cs</ApplicationRelativeFilePath>
-      <ProjectRelativeFilePath>Proxies/AngularDTOTemplate/AngularDTOTemplate.cs</ProjectRelativeFilePath>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>Templates/Proxies/AngularDTO/AngularDTOTemplate.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>Proxies/AngularDTO/AngularDTOTemplate.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>c08e0737-1abd-40fc-9366-f7dccdb55b11</ProjectId>
-      <CorrelationId>Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplate#eef9e3d9-2c85-4a55-bed7-988d51fa5c6f</CorrelationId>
-      <ApplicationRelativeFilePath>Templates/Proxies/AngularDTOTemplate/AngularDTOTemplate.tt</ApplicationRelativeFilePath>
-      <ProjectRelativeFilePath>Proxies/AngularDTOTemplate/AngularDTOTemplate.tt</ProjectRelativeFilePath>
+      <CorrelationId>Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplateT4#eef9e3d9-2c85-4a55-bed7-988d51fa5c6f</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>Templates/Proxies/AngularDTO/AngularDTOTemplate.tt</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>Proxies/AngularDTO/AngularDTOTemplate.tt</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>c08e0737-1abd-40fc-9366-f7dccdb55b11</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial#eef9e3d9-2c85-4a55-bed7-988d51fa5c6f</CorrelationId>
-      <ApplicationRelativeFilePath>Templates/Proxies/AngularDTOTemplate/AngularDTOTemplatePartial.cs</ApplicationRelativeFilePath>
-      <ProjectRelativeFilePath>Proxies/AngularDTOTemplate/AngularDTOTemplatePartial.cs</ProjectRelativeFilePath>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>Templates/Proxies/AngularDTO/AngularDTOTemplatePartial.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>Proxies/AngularDTO/AngularDTOTemplatePartial.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>c08e0737-1abd-40fc-9366-f7dccdb55b11</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.TemplateRegistration.FilePerModel#eef9e3d9-2c85-4a55-bed7-988d51fa5c6f</CorrelationId>
-      <ApplicationRelativeFilePath>Templates/Proxies/AngularDTOTemplate/AngularDTOTemplateRegistration.cs</ApplicationRelativeFilePath>
-      <ProjectRelativeFilePath>Proxies/AngularDTOTemplate/AngularDTOTemplateRegistration.cs</ProjectRelativeFilePath>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>Templates/Proxies/AngularDTO/AngularDTOTemplateRegistration.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>Proxies/AngularDTO/AngularDTOTemplateRegistration.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>c08e0737-1abd-40fc-9366-f7dccdb55b11</ProjectId>
       <CorrelationId>ModuleBuilder.Typescript.Templates.TypescriptTemplate.PreProcessT4#4ff46227-42ce-45ef-a5c1-057cb8501b76</CorrelationId>
-      <ApplicationRelativeFilePath>Templates/Proxies/AngularServiceProxyTemplate/AngularServiceProxyTemplate.cs</ApplicationRelativeFilePath>
-      <ProjectRelativeFilePath>Proxies/AngularServiceProxyTemplate/AngularServiceProxyTemplate.cs</ProjectRelativeFilePath>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>Templates/Proxies/AngularServiceProxy/AngularServiceProxyTemplate.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>Proxies/AngularServiceProxy/AngularServiceProxyTemplate.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>c08e0737-1abd-40fc-9366-f7dccdb55b11</ProjectId>
-      <CorrelationId>Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplate#4ff46227-42ce-45ef-a5c1-057cb8501b76</CorrelationId>
-      <ApplicationRelativeFilePath>Templates/Proxies/AngularServiceProxyTemplate/AngularServiceProxyTemplate.tt</ApplicationRelativeFilePath>
-      <ProjectRelativeFilePath>Proxies/AngularServiceProxyTemplate/AngularServiceProxyTemplate.tt</ProjectRelativeFilePath>
+      <CorrelationId>Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplateT4#4ff46227-42ce-45ef-a5c1-057cb8501b76</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>Templates/Proxies/AngularServiceProxy/AngularServiceProxyTemplate.tt</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>Proxies/AngularServiceProxy/AngularServiceProxyTemplate.tt</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>c08e0737-1abd-40fc-9366-f7dccdb55b11</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial#4ff46227-42ce-45ef-a5c1-057cb8501b76</CorrelationId>
-      <ApplicationRelativeFilePath>Templates/Proxies/AngularServiceProxyTemplate/AngularServiceProxyTemplatePartial.cs</ApplicationRelativeFilePath>
-      <ProjectRelativeFilePath>Proxies/AngularServiceProxyTemplate/AngularServiceProxyTemplatePartial.cs</ProjectRelativeFilePath>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>Templates/Proxies/AngularServiceProxy/AngularServiceProxyTemplatePartial.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>Proxies/AngularServiceProxy/AngularServiceProxyTemplatePartial.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>c08e0737-1abd-40fc-9366-f7dccdb55b11</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.TemplateRegistration.FilePerModel#4ff46227-42ce-45ef-a5c1-057cb8501b76</CorrelationId>
-      <ApplicationRelativeFilePath>Templates/Proxies/AngularServiceProxyTemplate/AngularServiceProxyTemplateRegistration.cs</ApplicationRelativeFilePath>
-      <ProjectRelativeFilePath>Proxies/AngularServiceProxyTemplate/AngularServiceProxyTemplateRegistration.cs</ProjectRelativeFilePath>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>Templates/Proxies/AngularServiceProxy/AngularServiceProxyTemplateRegistration.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>Proxies/AngularServiceProxy/AngularServiceProxyTemplateRegistration.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>c08e0737-1abd-40fc-9366-f7dccdb55b11</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.Templates.TemplateExtensions</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>Templates/TemplateExtensions.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>TemplateExtensions.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
   </FileLogs>

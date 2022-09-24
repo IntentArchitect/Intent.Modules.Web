@@ -3,7 +3,7 @@
   <name>Form Group Definition</name>
   <display>Form Group Definition</display>
   <isAbstract>false</isAbstract>
-  <order>3</order>
+  <sort-children>by-type-then-manually</sort-children>
   <genericTypes />
   <isMapped>false</isMapped>
   <parentFolderId>0a3786a7-f514-4ec3-88b9-7842744dbb3c</parentFolderId>
@@ -45,24 +45,25 @@
       </properties>
     </stereotype>
   </stereotypes>
+  <metadata />
   <childElements>
     <childElement id="529c7710-3cf5-44cf-9bee-c8bb35091092" type="Context Menu" typeId="d45e383d-90ba-4b64-aca7-34ca100cea21">
       <name>[context menu]</name>
       <display>[context menu]</display>
       <isAbstract>false</isAbstract>
-      <order>0</order>
+      <sort-children>by-type-then-manually</sort-children>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>71142b08-4d10-405b-a5bd-0620d329a992</parentFolderId>
       <packageId>9cf8c5df-18a9-470e-a4fd-7e18d7050cd6</packageId>
       <packageName>Intent.Modelers.WebClient.Angular</packageName>
       <stereotypes />
+      <metadata />
       <childElements>
         <childElement id="97986f50-d913-4a4f-b796-d8b44b087f00" type="Element Creation Option" typeId="5fa12f89-da1e-49c5-b8e9-427b22407f19">
           <name>New Field</name>
           <display>New Field: Form Group Control</display>
           <isAbstract>false</isAbstract>
-          <order>0</order>
           <genericTypes />
           <typeReference id="5a819ead-2993-4fde-8f58-da5407815de9">
             <typeId>b4e29ea5-b9a4-47eb-8214-c4cc5b46ee91</typeId>
@@ -95,6 +96,7 @@
               </properties>
             </stereotype>
           </stereotypes>
+          <metadata />
           <childElements />
         </childElement>
       </childElements>
@@ -103,7 +105,7 @@
       <name>NewMappingSettings</name>
       <display>[mappings]: NewMappingSettings</display>
       <isAbstract>false</isAbstract>
-      <order>2</order>
+      <sort-children>by-type-then-by-name</sort-children>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>71142b08-4d10-405b-a5bd-0620d329a992</parentFolderId>
@@ -127,12 +129,13 @@
           </properties>
         </stereotype>
       </stereotypes>
+      <metadata />
       <childElements>
         <childElement id="cc32e48d-6676-4eb8-b6dd-0d57af2b9566" type="Element Mapping" typeId="4a16943b-702c-4fb0-bfcc-2afd98b8814c">
           <name>NewElementMapping</name>
           <display>[mapping]: DTO -&gt; Form Group Definition (Map to Type)</display>
           <isAbstract>false</isAbstract>
-          <order>0</order>
+          <sort-children>by-type-then-by-name</sort-children>
           <genericTypes />
           <isMapped>false</isMapped>
           <parentFolderId>3d511511-fce6-45ee-b3fb-836c06df5f97</parentFolderId>
@@ -169,12 +172,12 @@
               </properties>
             </stereotype>
           </stereotypes>
+          <metadata />
           <childElements>
             <childElement id="822f7020-d58d-4a2a-85d7-ad8b4b168553" type="Element Mapping" typeId="4a16943b-702c-4fb0-bfcc-2afd98b8814c">
               <name>NewElementMapping</name>
               <display>[mapping]: DTO-Field -&gt; Form Group Control (Map to Type)</display>
               <isAbstract>false</isAbstract>
-              <order>0</order>
               <genericTypes />
               <isMapped>false</isMapped>
               <parentFolderId>cc32e48d-6676-4eb8-b6dd-0d57af2b9566</parentFolderId>
@@ -211,6 +214,7 @@
                   </properties>
                 </stereotype>
               </stereotypes>
+              <metadata />
               <childElements />
             </childElement>
           </childElements>

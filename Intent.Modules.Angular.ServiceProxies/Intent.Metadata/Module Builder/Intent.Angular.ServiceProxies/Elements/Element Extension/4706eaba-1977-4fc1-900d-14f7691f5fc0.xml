@@ -3,7 +3,7 @@
   <name>Module Extension</name>
   <display>Module Extension: Module</display>
   <isAbstract>false</isAbstract>
-  <order>1</order>
+  <sort-children>by-type-then-manually</sort-children>
   <genericTypes />
   <typeReference id="9f306fb2-a574-490a-bcbc-6d30a308f173">
     <typeId>cac14331-198a-4f9a-bbb9-171eb0bd4efe</typeId>
@@ -45,24 +45,25 @@
       </properties>
     </stereotype>
   </stereotypes>
+  <metadata />
   <childElements>
     <childElement id="d3ab5f74-d0c2-4ced-863c-dc17dafdaf03" type="Context Menu" typeId="d45e383d-90ba-4b64-aca7-34ca100cea21">
       <name>[context menu]</name>
       <display>[context menu]</display>
       <isAbstract>false</isAbstract>
-      <order>1</order>
+      <sort-children>by-type-then-manually</sort-children>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>4706eaba-1977-4fc1-900d-14f7691f5fc0</parentFolderId>
       <packageId>6acdce2e-cfb4-4988-beef-4ac087c6d857</packageId>
       <packageName>Intent.Angular.ServiceProxies</packageName>
       <stereotypes />
+      <metadata />
       <childElements>
         <childElement id="3a98cf41-ef0d-47cb-b234-d132004fd575" type="Element Creation Option" typeId="5fa12f89-da1e-49c5-b8e9-427b22407f19">
           <name>New Service Proxy</name>
           <display>New Service Proxy: Service Proxy</display>
           <isAbstract>false</isAbstract>
-          <order>0</order>
           <genericTypes />
           <typeReference id="f682ffb4-fe00-4405-a27a-03ee462871e0">
             <typeId>07d8d1a9-6b9f-4676-b7d3-8db06299e35c</typeId>
@@ -95,6 +96,7 @@
               </properties>
             </stereotype>
           </stereotypes>
+          <metadata />
           <childElements />
         </childElement>
       </childElements>

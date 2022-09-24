@@ -3,7 +3,6 @@
   <name>Login Menu</name>
   <display>Login Menu</display>
   <isAbstract>false</isAbstract>
-  <order>0</order>
   <genericTypes />
   <isMapped>false</isMapped>
   <parentFolderId>b03cd747-cd8a-49af-9959-be9f69cb96f0</parentFolderId>
@@ -45,5 +44,6 @@
       </properties>
     </stereotype>
   </stereotypes>
+  <metadata />
   <childElements />
 </class>

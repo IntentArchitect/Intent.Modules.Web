@@ -4,7 +4,7 @@ using System.IO;
 using Intent.Modules.Common.Plugins;
 using Intent.SoftwareFactory;
 using Intent.Engine;
-using Intent.Modules.Angular.Templates.Component.AngularComponentHtmlTemplate;
+using Intent.Modules.Angular.Templates.Component.AngularComponentHtml;
 using Intent.Modules.Common.Templates;
 using Intent.Plugins.FactoryExtensions;
 using Intent.Utils;

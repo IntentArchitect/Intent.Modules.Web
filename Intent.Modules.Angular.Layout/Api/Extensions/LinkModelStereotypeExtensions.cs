@@ -23,6 +23,18 @@ namespace Intent.Angular.Layout.Api
             return model.HasStereotype("Link Settings");
         }
 
+        public static bool TryGetLinkSettings(this LinkModel model, out LinkSettings stereotype)
+        {
+            if (!HasLinkSettings(model))
+            {
+                stereotype = null;
+                return false;
+            }
+
+            stereotype = new LinkSettings(model.GetStereotype("Link Settings"));
+            return true;
+        }
+
 
         public class LinkSettings
         {

@@ -3,7 +3,7 @@
   <name>Angular Core Types</name>
   <display>Angular Core Types</display>
   <isAbstract>false</isAbstract>
-  <order>0</order>
+  <sort-children>by-type-then-by-name</sort-children>
   <genericTypes />
   <isMapped>false</isMapped>
   <parentFolderId>e04f126a-0ce0-4d03-a67f-3c3178384d3d</parentFolderId>
@@ -20,5 +20,6 @@
       </properties>
     </stereotype>
   </stereotypes>
+  <metadata />
   <childElements />
 </class>

@@ -8,7 +8,7 @@ using Intent.Modules.Angular.Layout.Decorators.Controls.Navbar;
 using Intent.Modules.Angular.Layout.Decorators.Controls.PaginationControl;
 using Intent.Modules.Angular.Layout.Decorators.Controls.Section;
 using Intent.Modules.Angular.Layout.Decorators.Controls.TableControl;
-using Intent.Modules.Angular.Templates.Component.AngularComponentHtmlTemplate;
+using Intent.Modules.Angular.Templates.Component.AngularComponentHtml;
 using Intent.Modules.Angular.Templates.Component.Controls;
 using Intent.RoslynWeaver.Attributes;
 using Intent.Utils;

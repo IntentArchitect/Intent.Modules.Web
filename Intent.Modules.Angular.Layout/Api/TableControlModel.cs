@@ -110,9 +110,9 @@ namespace Intent.Angular.Layout.Api
         public const string SpecializationTypeId = "e302d9ca-268e-4a98-ad8d-4434aefb9903";
 
         public IList<TableColumnModel> Columns => _element.ChildElements
-                    .Where(x => x.SpecializationType == TableColumnModel.SpecializationType)
-                    .Select(x => new TableColumnModel(x))
-                    .ToList();
+            .GetElementsOfType(TableColumnModel.SpecializationTypeId)
+            .Select(x => new TableColumnModel(x))
+            .ToList();
 
         public string Comment => _element.Comment;
     }
@@ -131,14 +131,14 @@ namespace Intent.Angular.Layout.Api
             return type.IsTableControlModel() ? new TableControlModel((IElement)type) : null;
         }
 
-        public static bool HasNewMappingSettingsMapping(this TableControlModel type)
+        public static bool HasMapFromModelMapping(this TableControlModel type)
         {
             return type.Mapping?.MappingSettingsId == "510bf1dc-08d2-4184-9358-499b96e41586";
         }
 
-        public static IElementMapping GetNewMappingSettingsMapping(this TableControlModel type)
+        public static IElementMapping GetMapFromModelMapping(this TableControlModel type)
         {
-            return type.HasNewMappingSettingsMapping() ? type.Mapping : null;
+            return type.HasMapFromModelMapping() ? type.Mapping : null;
         }
     }
 }

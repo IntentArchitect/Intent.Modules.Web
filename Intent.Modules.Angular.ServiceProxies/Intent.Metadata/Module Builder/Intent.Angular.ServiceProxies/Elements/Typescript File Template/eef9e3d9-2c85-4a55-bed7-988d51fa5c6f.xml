@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <class id="eef9e3d9-2c85-4a55-bed7-988d51fa5c6f" type="Typescript File Template" typeId="e6e41d88-2829-41b6-a791-065d2bb44eb3">
-  <name>AngularDTOTemplate</name>
-  <display>AngularDTOTemplate: File Per Model</display>
+  <name>AngularDTO</name>
+  <display>AngularDTO: File Per Model</display>
   <isAbstract>false</isAbstract>
-  <order>0</order>
   <genericTypes />
   <typeReference id="58e338a5-e5cb-4e98-a363-ff8bac30c581">
     <typeId>99cb461f-ec82-4dde-a804-e3393a5e2a8d</typeId>
@@ -34,6 +33,15 @@
         <property name="1ac0fa39-ecea-48f8-92e4-41616a639586" display="Default Location" isActive="true" />
       </properties>
     </stereotype>
+    <stereotype stereotypeDefinitionId="8f73a680-1a9e-4df6-a396-759bb078a99e" name="TypeScript Template Settings">
+      <addedByDefault>true</addedByDefault>
+      <definitionPackageName>Intent.ModuleBuilder.TypeScript</definitionPackageName>
+      <definitionPackageId>4d484b1d-09d8-49e6-8e65-6811e4d28af9</definitionPackageId>
+      <properties>
+        <property name="902563d1-bd9c-406c-9781-88d5c6b48101" display="Templating Method" value="T4 Template" isActive="true" />
+      </properties>
+    </stereotype>
   </stereotypes>
+  <metadata />
   <childElements />
 </class>

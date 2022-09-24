@@ -19,6 +19,7 @@
       </properties>
     </stereotype>
   </stereotypes>
+  <metadata />
   <childElements>
     <childElement id="13de119d-7e20-409a-b9f4-c2877909a515" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">
       <name>Intent.ModuleBuilder.DesignerConfig</name>
@@ -32,6 +33,7 @@
       <packageId>a9ad4760-d8e4-4591-a79b-16171936e4b6</packageId>
       <packageName>Intent.Modules.Web</packageName>
       <stereotypes />
+      <metadata />
       <childElements />
     </childElement>
     <childElement id="fc3196c3-847a-4905-bf9f-64bff64a47ea" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">
@@ -46,6 +48,7 @@
       <packageId>a9ad4760-d8e4-4591-a79b-16171936e4b6</packageId>
       <packageName>Intent.Modules.Web</packageName>
       <stereotypes />
+      <metadata />
       <childElements />
     </childElement>
   </childElements>

@@ -3,7 +3,7 @@
   <name>Model Definition</name>
   <display>Model Definition</display>
   <isAbstract>false</isAbstract>
-  <order>4</order>
+  <sort-children>by-type-then-manually</sort-children>
   <genericTypes />
   <isMapped>false</isMapped>
   <parentFolderId>0a3786a7-f514-4ec3-88b9-7842744dbb3c</parentFolderId>
@@ -45,24 +45,25 @@
       </properties>
     </stereotype>
   </stereotypes>
+  <metadata />
   <childElements>
     <childElement id="18c85075-0c2b-4b44-8cff-00febe4ac085" type="Context Menu" typeId="d45e383d-90ba-4b64-aca7-34ca100cea21">
       <name>[context menu]</name>
       <display>[context menu]</display>
       <isAbstract>false</isAbstract>
-      <order>0</order>
+      <sort-children>by-type-then-manually</sort-children>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>bd3941b5-e3b3-4a40-96e6-b9c87cea0101</parentFolderId>
       <packageId>9cf8c5df-18a9-470e-a4fd-7e18d7050cd6</packageId>
       <packageName>Intent.Modelers.WebClient.Angular</packageName>
       <stereotypes />
+      <metadata />
       <childElements>
         <childElement id="4ee57d47-41f2-452a-8c62-e896a10ebc8f" type="Element Creation Option" typeId="5fa12f89-da1e-49c5-b8e9-427b22407f19">
           <name>Add Field</name>
           <display>Add Field: Model Definition Field</display>
           <isAbstract>false</isAbstract>
-          <order>0</order>
           <genericTypes />
           <typeReference id="cd587317-9be4-4e75-88b6-918c4dd7ff1b">
             <typeId>0dfc489c-7456-4a3d-a28b-50a633631a48</typeId>
@@ -95,6 +96,7 @@
               </properties>
             </stereotype>
           </stereotypes>
+          <metadata />
           <childElements />
         </childElement>
       </childElements>
@@ -103,7 +105,7 @@
       <name>NewMappingSettings</name>
       <display>[mappings]: NewMappingSettings</display>
       <isAbstract>false</isAbstract>
-      <order>2</order>
+      <sort-children>by-type-then-by-name</sort-children>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>bd3941b5-e3b3-4a40-96e6-b9c87cea0101</parentFolderId>
@@ -127,12 +129,13 @@
           </properties>
         </stereotype>
       </stereotypes>
+      <metadata />
       <childElements>
         <childElement id="394e14e3-1572-426a-b9da-337443c3dd75" type="Element Mapping" typeId="4a16943b-702c-4fb0-bfcc-2afd98b8814c">
           <name>NewElementMapping</name>
           <display>[mapping]: DTO -&gt; Model Definition (Map to Type)</display>
           <isAbstract>false</isAbstract>
-          <order>0</order>
+          <sort-children>by-type-then-by-name</sort-children>
           <genericTypes />
           <isMapped>false</isMapped>
           <parentFolderId>31b3d3a7-bf3c-4bb4-8b1d-9e18b6a8bcdd</parentFolderId>
@@ -169,12 +172,12 @@
               </properties>
             </stereotype>
           </stereotypes>
+          <metadata />
           <childElements>
             <childElement id="c5641347-726d-4153-abc9-8d5f9a9b4c93" type="Element Mapping" typeId="4a16943b-702c-4fb0-bfcc-2afd98b8814c">
               <name>NewElementMapping</name>
               <display>[mapping]: DTO-Field -&gt; Model Definition Field (Map to Type)</display>
               <isAbstract>false</isAbstract>
-              <order>0</order>
               <genericTypes />
               <isMapped>false</isMapped>
               <parentFolderId>394e14e3-1572-426a-b9da-337443c3dd75</parentFolderId>
@@ -211,6 +214,7 @@
                   </properties>
                 </stereotype>
               </stereotypes>
+              <metadata />
               <childElements />
             </childElement>
           </childElements>

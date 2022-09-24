@@ -3,7 +3,7 @@
   <name>Service Proxies Extension</name>
   <display>Service Proxies Extension</display>
   <isAbstract>false</isAbstract>
-  <order>0</order>
+  <sort-children>by-type-then-by-name</sort-children>
   <genericTypes />
   <isMapped>false</isMapped>
   <parentFolderId>a5a4bd86-de91-46ab-8d98-7d6ad8eaff31</parentFolderId>
@@ -20,12 +20,12 @@
       </properties>
     </stereotype>
   </stereotypes>
+  <metadata />
   <childElements>
     <childElement id="33adda79-daa5-438c-bea7-28400385ace6" type="Designer Reference" typeId="ace8c966-1a7f-487e-b21b-dd601e57f13f">
       <name>reference</name>
       <display>reference: Service Proxy Types</display>
       <isAbstract>false</isAbstract>
-      <order>0</order>
       <genericTypes />
       <typeReference id="1d8de6af-e99a-4ba8-b259-76f2cfea1e83">
         <typeId>8cf2b93d-9449-4e40-af62-12daf6f7e0f4</typeId>
@@ -43,6 +43,7 @@
       <packageId>6acdce2e-cfb4-4988-beef-4ac087c6d857</packageId>
       <packageName>Intent.Angular.ServiceProxies</packageName>
       <stereotypes />
+      <metadata />
       <childElements />
     </childElement>
   </childElements>

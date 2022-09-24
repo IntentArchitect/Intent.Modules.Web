@@ -3,7 +3,7 @@
   <name>Section Extension</name>
   <display>Section Extension: Section</display>
   <isAbstract>false</isAbstract>
-  <order>3</order>
+  <sort-children>by-type-then-manually</sort-children>
   <genericTypes />
   <typeReference id="f2edb12d-9c3f-46ad-8581-786e3247e328">
     <typeId>45072fbf-b34a-4625-b7ea-d5b1962a5b60</typeId>
@@ -45,24 +45,25 @@
       </properties>
     </stereotype>
   </stereotypes>
+  <metadata />
   <childElements>
     <childElement id="b3f8fbef-9255-4a0d-8e78-7c414ada2fa3" type="Context Menu" typeId="d45e383d-90ba-4b64-aca7-34ca100cea21">
       <name>[context menu]</name>
       <display>[context menu]</display>
       <isAbstract>false</isAbstract>
-      <order>1</order>
+      <sort-children>by-type-then-manually</sort-children>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>d7a42e98-3ee1-487b-8e69-8a589a6d434c</parentFolderId>
       <packageId>1e254a4c-2cb2-410c-a4d4-fcadd59c9353</packageId>
       <packageName>Intent.Angular.ApiAuthorization</packageName>
       <stereotypes />
+      <metadata />
       <childElements>
         <childElement id="d260c873-db9e-4862-a22a-42644320c0db" type="Element Creation Option" typeId="5fa12f89-da1e-49c5-b8e9-427b22407f19">
           <name>Add Login Menu</name>
           <display>Add Login Menu: Login Menu</display>
           <isAbstract>false</isAbstract>
-          <order>0</order>
           <genericTypes />
           <typeReference id="59ff319c-23ba-4fe8-b891-18d3e2bc0ab5">
             <typeId>fc108495-cb62-4a0a-8b3e-1b601a442da3</typeId>
@@ -95,6 +96,7 @@
               </properties>
             </stereotype>
           </stereotypes>
+          <metadata />
           <childElements />
         </childElement>
       </childElements>

@@ -3,7 +3,7 @@
   <name>Navbar</name>
   <display>Navbar</display>
   <isAbstract>false</isAbstract>
-  <order>5</order>
+  <sort-children>by-type-then-manually</sort-children>
   <genericTypes />
   <isMapped>false</isMapped>
   <parentFolderId>d3c58ce6-a07c-47dc-8626-f73cf1d047e2</parentFolderId>
@@ -45,24 +45,25 @@
       </properties>
     </stereotype>
   </stereotypes>
+  <metadata />
   <childElements>
     <childElement id="65e9133a-b9e1-44e3-af98-d05d0caa480b" type="Context Menu" typeId="d45e383d-90ba-4b64-aca7-34ca100cea21">
       <name>[context menu]</name>
       <display>[context menu]</display>
       <isAbstract>false</isAbstract>
-      <order>0</order>
+      <sort-children>by-type-then-manually</sort-children>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>990cd6f1-8840-419b-be75-4ec63f03f359</parentFolderId>
       <packageId>411a47ef-bf13-45dd-b800-7abf7eb9ac92</packageId>
       <packageName>Intent.Angular.Layout</packageName>
       <stereotypes />
+      <metadata />
       <childElements>
         <childElement id="9d9d01cd-4678-4cf1-8069-51f6b63dbb76" type="Element Creation Option" typeId="5fa12f89-da1e-49c5-b8e9-427b22407f19">
           <name>Add Link</name>
           <display>Add Link: Link</display>
           <isAbstract>false</isAbstract>
-          <order>0</order>
           <genericTypes />
           <typeReference id="80af9656-13cf-406c-9a95-67f47688401e">
             <typeId>b0127146-e571-4000-825e-e7a04e4a45d6</typeId>
@@ -95,13 +96,13 @@
               </properties>
             </stereotype>
           </stereotypes>
+          <metadata />
           <childElements />
         </childElement>
         <childElement id="3d8fd49b-c7ec-4436-88a2-d9204e0586d0" type="Element Creation Option" typeId="5fa12f89-da1e-49c5-b8e9-427b22407f19">
           <name>Add Dropdown</name>
           <display>Add Dropdown: Dropdown</display>
           <isAbstract>false</isAbstract>
-          <order>1</order>
           <genericTypes />
           <typeReference id="3e3a77e6-efea-4778-b89b-d6bcae919b62">
             <typeId>91610e3a-f0e4-4807-a1b3-4dc947fe13ac</typeId>
@@ -134,6 +135,7 @@
               </properties>
             </stereotype>
           </stereotypes>
+          <metadata />
           <childElements />
         </childElement>
       </childElements>

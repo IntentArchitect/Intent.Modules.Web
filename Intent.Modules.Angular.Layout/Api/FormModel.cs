@@ -96,9 +96,9 @@ namespace Intent.Angular.Layout.Api
         public string Comment => _element.Comment;
 
         public IList<SectionModel> Sections => _element.ChildElements
-                    .GetElementsOfType(SectionModel.SpecializationTypeId)
-                    .Select(x => new SectionModel(x))
-                    .ToList();
+            .GetElementsOfType(SectionModel.SpecializationTypeId)
+            .Select(x => new SectionModel(x))
+            .ToList();
     }
 
     [IntentManaged(Mode.Fully)]
@@ -115,14 +115,14 @@ namespace Intent.Angular.Layout.Api
             return type.IsFormModel() ? new FormModel((IElement)type) : null;
         }
 
-        public static bool HasNewMappingSettingsMapping(this FormModel type)
+        public static bool HasMapFromModelMapping(this FormModel type)
         {
             return type.Mapping?.MappingSettingsId == "90a4b25a-0490-472c-aa00-12bb8ce93c99";
         }
 
-        public static IElementMapping GetNewMappingSettingsMapping(this FormModel type)
+        public static IElementMapping GetMapFromModelMapping(this FormModel type)
         {
-            return type.HasNewMappingSettingsMapping() ? type.Mapping : null;
+            return type.HasMapFromModelMapping() ? type.Mapping : null;
         }
     }
 }

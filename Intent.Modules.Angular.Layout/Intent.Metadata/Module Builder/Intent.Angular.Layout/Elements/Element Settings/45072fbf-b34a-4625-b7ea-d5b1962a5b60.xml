@@ -3,7 +3,7 @@
   <name>Section</name>
   <display>Section</display>
   <isAbstract>false</isAbstract>
-  <order>7</order>
+  <sort-children>by-type-then-manually</sort-children>
   <genericTypes />
   <isMapped>false</isMapped>
   <parentFolderId>d3c58ce6-a07c-47dc-8626-f73cf1d047e2</parentFolderId>
@@ -45,24 +45,25 @@
       </properties>
     </stereotype>
   </stereotypes>
+  <metadata />
   <childElements>
     <childElement id="61e8bb50-2185-4519-910e-3b02401419d3" type="Context Menu" typeId="d45e383d-90ba-4b64-aca7-34ca100cea21">
       <name>[context menu]</name>
       <display>[context menu]</display>
       <isAbstract>false</isAbstract>
-      <order>0</order>
+      <sort-children>by-type-then-manually</sort-children>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>45072fbf-b34a-4625-b7ea-d5b1962a5b60</parentFolderId>
       <packageId>411a47ef-bf13-45dd-b800-7abf7eb9ac92</packageId>
       <packageName>Intent.Angular.Layout</packageName>
       <stereotypes />
+      <metadata />
       <childElements>
         <childElement id="e7b0fe62-a7b0-4700-91b5-79f304b345d8" type="Element Creation Option" typeId="5fa12f89-da1e-49c5-b8e9-427b22407f19">
           <name>New Table Control</name>
           <display>New Table Control: Table Control</display>
           <isAbstract>false</isAbstract>
-          <order>0</order>
           <genericTypes />
           <typeReference id="9cbc7b66-1a02-4ef4-9053-9f71884645a3">
             <typeId>e302d9ca-268e-4a98-ad8d-4434aefb9903</typeId>
@@ -95,13 +96,13 @@
               </properties>
             </stereotype>
           </stereotypes>
+          <metadata />
           <childElements />
         </childElement>
         <childElement id="82cfc93f-7869-48dc-b663-694427f70529" type="Element Creation Option" typeId="5fa12f89-da1e-49c5-b8e9-427b22407f19">
           <name>New Pagination Control</name>
           <display>New Pagination Control: Pagination Control</display>
           <isAbstract>false</isAbstract>
-          <order>1</order>
           <genericTypes />
           <typeReference id="c1d47c26-9319-481a-ae9e-d5f445aa1c6b">
             <typeId>3faee16c-8605-4bb4-8566-06a555c929a3</typeId>
@@ -134,13 +135,13 @@
               </properties>
             </stereotype>
           </stereotypes>
+          <metadata />
           <childElements />
         </childElement>
         <childElement id="282a5760-65e7-4cb0-b243-99e17c9fa24f" type="Element Creation Option" typeId="5fa12f89-da1e-49c5-b8e9-427b22407f19">
           <name>New Form</name>
           <display>New Form: Form</display>
           <isAbstract>false</isAbstract>
-          <order>2</order>
           <genericTypes />
           <typeReference id="6181da8d-b616-4c82-b652-fea5e5f4962c">
             <typeId>8aee9b69-d02d-4ca8-b28a-6585508bd033</typeId>
@@ -173,13 +174,13 @@
               </properties>
             </stereotype>
           </stereotypes>
+          <metadata />
           <childElements />
         </childElement>
         <childElement id="b08855f0-2d6f-48b1-a0a7-53919354d4cc" type="Element Creation Option" typeId="5fa12f89-da1e-49c5-b8e9-427b22407f19">
           <name>New Button Control</name>
           <display>New Button Control: Button Control</display>
           <isAbstract>false</isAbstract>
-          <order>3</order>
           <genericTypes />
           <typeReference id="d1d535a3-6e4d-4902-810e-1ed78d9971bf">
             <typeId>13eca516-0628-4085-91c3-36d5eddda6c9</typeId>
@@ -212,13 +213,13 @@
               </properties>
             </stereotype>
           </stereotypes>
+          <metadata />
           <childElements />
         </childElement>
         <childElement id="8e8a6b99-ad77-40a2-9d86-e19a07e00ea3" type="Element Creation Option" typeId="5fa12f89-da1e-49c5-b8e9-427b22407f19">
           <name>New Section</name>
           <display>New Section: Section</display>
           <isAbstract>false</isAbstract>
-          <order>4</order>
           <genericTypes />
           <typeReference id="8ea118f0-9d39-44a9-af11-c52033a7b240">
             <typeId>45072fbf-b34a-4625-b7ea-d5b1962a5b60</typeId>
@@ -251,6 +252,7 @@
               </properties>
             </stereotype>
           </stereotypes>
+          <metadata />
           <childElements />
         </childElement>
       </childElements>

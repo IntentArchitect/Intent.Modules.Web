@@ -1,6 +1,6 @@
 using System.ComponentModel;
 using Intent.Engine;
-using Intent.Modules.Angular.Templates.Component.AngularComponentTsTemplate;
+using Intent.Modules.Angular.Templates.Component.AngularComponentTs;
 using Intent.Modules.Common.Registrations;
 using Intent.RoslynWeaver.Attributes;
 

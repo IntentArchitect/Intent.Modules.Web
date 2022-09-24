@@ -24,6 +24,18 @@ namespace Intent.Angular.Api
             return model.HasStereotype("Angular Service Settings");
         }
 
+        public static bool TryGetAngularServiceSettings(this AngularServiceModel model, out AngularServiceSettings stereotype)
+        {
+            if (!HasAngularServiceSettings(model))
+            {
+                stereotype = null;
+                return false;
+            }
+
+            stereotype = new AngularServiceSettings(model.GetStereotype("Angular Service Settings"));
+            return true;
+        }
+
 
         public class AngularServiceSettings
         {

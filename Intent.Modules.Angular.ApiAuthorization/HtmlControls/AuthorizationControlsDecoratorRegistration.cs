@@ -1,5 +1,5 @@
 using Intent.Engine;
-using Intent.Modules.Angular.Templates.Component.AngularComponentHtmlTemplate;
+using Intent.Modules.Angular.Templates.Component.AngularComponentHtml;
 using Intent.Modules.Common.Registrations;
 
 namespace Intent.Modules.Angular.ApiAuthorization.HtmlControls

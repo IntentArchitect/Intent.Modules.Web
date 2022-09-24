@@ -1,7 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Text;
-using Intent.Modules.Angular.Templates.Shared.IntentDecoratorsTemplate;
+using Intent.Modules.Angular.Templates.Shared.IntentDecorators;
 using Intent.Modules.Common.TypeScript.Templates;
 
 namespace Intent.Modules.Angular.Templates

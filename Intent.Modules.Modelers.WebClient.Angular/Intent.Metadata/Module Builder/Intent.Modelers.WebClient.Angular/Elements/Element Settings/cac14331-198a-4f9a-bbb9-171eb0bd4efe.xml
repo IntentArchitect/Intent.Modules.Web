@@ -3,7 +3,7 @@
   <name>Module</name>
   <display>Module</display>
   <isAbstract>false</isAbstract>
-  <order>5</order>
+  <sort-children>by-type-then-manually</sort-children>
   <genericTypes />
   <isMapped>false</isMapped>
   <parentFolderId>0a3786a7-f514-4ec3-88b9-7842744dbb3c</parentFolderId>
@@ -45,24 +45,25 @@
       </properties>
     </stereotype>
   </stereotypes>
+  <metadata />
   <childElements>
     <childElement id="1a60a561-b486-45db-9b1d-70abf85b81a3" type="Context Menu" typeId="d45e383d-90ba-4b64-aca7-34ca100cea21">
       <name>[context menu]</name>
       <display>[context menu]</display>
       <isAbstract>false</isAbstract>
-      <order>0</order>
+      <sort-children>by-type-then-manually</sort-children>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>cac14331-198a-4f9a-bbb9-171eb0bd4efe</parentFolderId>
       <packageId>9cf8c5df-18a9-470e-a4fd-7e18d7050cd6</packageId>
       <packageName>Intent.Modelers.WebClient.Angular</packageName>
       <stereotypes />
+      <metadata />
       <childElements>
         <childElement id="89aee064-efda-4476-965b-9da09d09792b" type="Element Creation Option" typeId="5fa12f89-da1e-49c5-b8e9-427b22407f19">
           <name>Add Routing</name>
           <display>Add Routing: Routing</display>
           <isAbstract>false</isAbstract>
-          <order>0</order>
           <genericTypes />
           <typeReference id="6fb909c2-b980-4c99-9f38-44ce314d4b2a">
             <typeId>b548c3c2-a27d-4290-8d23-99d158bb8987</typeId>
@@ -95,13 +96,13 @@
               </properties>
             </stereotype>
           </stereotypes>
+          <metadata />
           <childElements />
         </childElement>
         <childElement id="7ffc37fb-f10c-4a3a-9402-24298048d7f8" type="Element Creation Option" typeId="5fa12f89-da1e-49c5-b8e9-427b22407f19">
           <name>New Component</name>
           <display>New Component: Component</display>
           <isAbstract>false</isAbstract>
-          <order>1</order>
           <genericTypes />
           <typeReference id="8c771579-9d2a-4bf2-8881-9fdfd25c0e90">
             <typeId>b1c481e1-e91e-4c29-9817-00ab9cad4b6b</typeId>
@@ -134,13 +135,13 @@
               </properties>
             </stereotype>
           </stereotypes>
+          <metadata />
           <childElements />
         </childElement>
         <childElement id="87e78268-334a-48ba-b240-ad564aa69204" type="Element Creation Option" typeId="5fa12f89-da1e-49c5-b8e9-427b22407f19">
           <name>New Module</name>
           <display>New Module: Module</display>
           <isAbstract>false</isAbstract>
-          <order>2</order>
           <genericTypes />
           <typeReference id="97cf9b31-9b09-43a0-98f9-9f73d133fc16">
             <typeId>cac14331-198a-4f9a-bbb9-171eb0bd4efe</typeId>
@@ -173,13 +174,13 @@
               </properties>
             </stereotype>
           </stereotypes>
+          <metadata />
           <childElements />
         </childElement>
         <childElement id="f2e3ad76-c7e9-4fad-ad94-32e435781e47" type="Element Creation Option" typeId="5fa12f89-da1e-49c5-b8e9-427b22407f19">
           <name>New Model Definition</name>
           <display>New Model Definition: Model Definition</display>
           <isAbstract>false</isAbstract>
-          <order>3</order>
           <genericTypes />
           <typeReference id="d8b2e0a6-8a76-4a55-8d0d-f441e395c325">
             <typeId>bd3941b5-e3b3-4a40-96e6-b9c87cea0101</typeId>
@@ -212,13 +213,13 @@
               </properties>
             </stereotype>
           </stereotypes>
+          <metadata />
           <childElements />
         </childElement>
         <childElement id="7fa6a9d7-a57d-4cdc-b75f-5ddd30793010" type="Element Creation Option" typeId="5fa12f89-da1e-49c5-b8e9-427b22407f19">
           <name>New Form Group</name>
           <display>New Form Group: Form Group Definition</display>
           <isAbstract>false</isAbstract>
-          <order>4</order>
           <genericTypes />
           <typeReference id="cad2fe9e-b1cb-4182-a087-58168cb60ef2">
             <typeId>71142b08-4d10-405b-a5bd-0620d329a992</typeId>
@@ -251,13 +252,13 @@
               </properties>
             </stereotype>
           </stereotypes>
+          <metadata />
           <childElements />
         </childElement>
         <childElement id="e5dc4313-7c4e-49a2-9093-8ea0965dd3cf" type="Element Creation Option" typeId="5fa12f89-da1e-49c5-b8e9-427b22407f19">
           <name>New Resolver</name>
           <display>New Resolver: Resolver</display>
           <isAbstract>false</isAbstract>
-          <order>5</order>
           <genericTypes />
           <typeReference id="e0a4c2b4-ad3b-4ce9-bdef-4b8a2cf2bb90">
             <typeId>8112a50c-9394-4e05-996b-0e57b40b3f46</typeId>
@@ -290,13 +291,13 @@
               </properties>
             </stereotype>
           </stereotypes>
+          <metadata />
           <childElements />
         </childElement>
         <childElement id="6923fec2-8edf-4840-a590-709cfdf21d3c" type="Element Creation Option" typeId="5fa12f89-da1e-49c5-b8e9-427b22407f19">
           <name>New Folder</name>
           <display>New Folder: Folder</display>
           <isAbstract>false</isAbstract>
-          <order>6</order>
           <genericTypes />
           <typeReference id="f050ebdb-56d8-489c-b123-19505d9bc991">
             <typeId>0b1c1dcb-8c31-4294-883c-a130345730d2</typeId>
@@ -329,6 +330,7 @@
               </properties>
             </stereotype>
           </stereotypes>
+          <metadata />
           <childElements />
         </childElement>
       </childElements>
@@ -337,19 +339,19 @@
       <name>NewElementEventSettings</name>
       <display>[events]</display>
       <isAbstract>false</isAbstract>
-      <order>4</order>
+      <sort-children>by-type-then-by-name</sort-children>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>cac14331-198a-4f9a-bbb9-171eb0bd4efe</parentFolderId>
       <packageId>9cf8c5df-18a9-470e-a4fd-7e18d7050cd6</packageId>
       <packageName>Intent.Modelers.WebClient.Angular</packageName>
       <stereotypes />
+      <metadata />
       <childElements>
         <childElement id="63afe7c9-c9bf-4768-a11f-da9ea1ec9a5c" type="Element Event Handler" typeId="0ef412e3-d15a-45d3-bcd3-f646165f2eb6">
           <name>On Created</name>
           <display>On Created: Script</display>
           <isAbstract>false</isAbstract>
-          <order>0</order>
           <genericTypes />
           <typeReference id="128afb58-d0ef-4c87-b210-947b034af0e7">
             <typeId>043eee26-1591-42ac-9f2c-fc911b070eb1</typeId>
@@ -376,6 +378,7 @@
               </properties>
             </stereotype>
           </stereotypes>
+          <metadata />
           <childElements />
         </childElement>
       </childElements>

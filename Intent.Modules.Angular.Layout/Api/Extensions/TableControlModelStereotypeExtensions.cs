@@ -23,6 +23,18 @@ namespace Intent.Angular.Layout.Api
             return model.HasStereotype("Table Settings");
         }
 
+        public static bool TryGetTableSettings(this TableControlModel model, out TableSettings stereotype)
+        {
+            if (!HasTableSettings(model))
+            {
+                stereotype = null;
+                return false;
+            }
+
+            stereotype = new TableSettings(model.GetStereotype("Table Settings"));
+            return true;
+        }
+
 
         public class TableSettings
         {

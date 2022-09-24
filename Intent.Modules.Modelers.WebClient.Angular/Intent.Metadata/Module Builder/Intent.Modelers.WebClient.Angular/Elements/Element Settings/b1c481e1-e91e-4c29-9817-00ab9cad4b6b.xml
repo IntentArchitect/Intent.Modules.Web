@@ -3,7 +3,7 @@
   <name>Component</name>
   <display>Component</display>
   <isAbstract>false</isAbstract>
-  <order>1</order>
+  <sort-children>by-type-then-manually</sort-children>
   <genericTypes />
   <isMapped>false</isMapped>
   <parentFolderId>0a3786a7-f514-4ec3-88b9-7842744dbb3c</parentFolderId>
@@ -45,24 +45,25 @@
       </properties>
     </stereotype>
   </stereotypes>
+  <metadata />
   <childElements>
     <childElement id="1477276d-8293-4b3e-8b5a-25082aa7a00b" type="Context Menu" typeId="d45e383d-90ba-4b64-aca7-34ca100cea21">
       <name>[context menu]</name>
       <display>[context menu]</display>
       <isAbstract>false</isAbstract>
-      <order>0</order>
+      <sort-children>by-type-then-manually</sort-children>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>b1c481e1-e91e-4c29-9817-00ab9cad4b6b</parentFolderId>
       <packageId>9cf8c5df-18a9-470e-a4fd-7e18d7050cd6</packageId>
       <packageName>Intent.Modelers.WebClient.Angular</packageName>
       <stereotypes />
+      <metadata />
       <childElements>
         <childElement id="caf4d278-a9b2-48b1-996d-a0a85c1b1052" type="Element Creation Option" typeId="5fa12f89-da1e-49c5-b8e9-427b22407f19">
           <name>Add Input</name>
           <display>Add Input: Component Input</display>
           <isAbstract>false</isAbstract>
-          <order>0</order>
           <genericTypes />
           <typeReference id="291abda5-c3b7-4a85-9603-e335f206e20e">
             <typeId>807bc2cd-cdba-482d-a47e-d2aa546200fc</typeId>
@@ -95,13 +96,13 @@
               </properties>
             </stereotype>
           </stereotypes>
+          <metadata />
           <childElements />
         </childElement>
         <childElement id="38f78904-7c9e-4597-a179-415e01694f0f" type="Element Creation Option" typeId="5fa12f89-da1e-49c5-b8e9-427b22407f19">
           <name>Add Output</name>
           <display>Add Output: Component Output</display>
           <isAbstract>false</isAbstract>
-          <order>1</order>
           <genericTypes />
           <typeReference id="b2c78e99-aaaa-4bc0-bd50-61d7f52171c4">
             <typeId>56a7ef0e-737e-4a62-8237-7541c0d56882</typeId>
@@ -134,13 +135,13 @@
               </properties>
             </stereotype>
           </stereotypes>
+          <metadata />
           <childElements />
         </childElement>
         <childElement id="4fedda05-bcdb-4e94-a593-441ed184ee9b" type="Element Creation Option" typeId="5fa12f89-da1e-49c5-b8e9-427b22407f19">
           <name>Add Model</name>
           <display>Add Model: Component Model</display>
           <isAbstract>false</isAbstract>
-          <order>2</order>
           <genericTypes />
           <typeReference id="e1461bf9-c162-4f51-8b4f-6f3a453b0223">
             <typeId>356fbe17-bc63-4e16-b915-feefbc063cbe</typeId>
@@ -173,13 +174,13 @@
               </properties>
             </stereotype>
           </stereotypes>
+          <metadata />
           <childElements />
         </childElement>
         <childElement id="0250eaa3-4d9b-49e5-9a51-64dc7dd80579" type="Element Creation Option" typeId="5fa12f89-da1e-49c5-b8e9-427b22407f19">
           <name>Add Command</name>
           <display>Add Command: Component Command</display>
           <isAbstract>false</isAbstract>
-          <order>3</order>
           <genericTypes />
           <typeReference id="3a34762f-d6d8-45f0-84ce-3595e2c16347">
             <typeId>d6739ffc-30e6-4170-a105-bf28e69aa578</typeId>
@@ -212,13 +213,13 @@
               </properties>
             </stereotype>
           </stereotypes>
+          <metadata />
           <childElements />
         </childElement>
         <childElement id="b10cfbbe-a864-410b-8301-d105a36d9779" type="Element Creation Option" typeId="5fa12f89-da1e-49c5-b8e9-427b22407f19">
           <name>Add View</name>
           <display>Add View: Component View</display>
           <isAbstract>false</isAbstract>
-          <order>4</order>
           <genericTypes />
           <typeReference id="e3401edf-e01b-4407-bf21-337d28775df6">
             <typeId>624513a6-cba8-4dde-8ebe-6b19f00f0364</typeId>
@@ -251,13 +252,13 @@
               </properties>
             </stereotype>
           </stereotypes>
+          <metadata />
           <childElements />
         </childElement>
         <childElement id="03f8adcf-d7d5-48df-b77b-820794b3f7f5" type="Element Creation Option" typeId="5fa12f89-da1e-49c5-b8e9-427b22407f19">
           <name>Add Model Definition</name>
           <display>Add Model Definition: Model Definition</display>
           <isAbstract>false</isAbstract>
-          <order>5</order>
           <genericTypes />
           <typeReference id="f1890e12-f2e8-49b7-9f70-2440042287d1">
             <typeId>bd3941b5-e3b3-4a40-96e6-b9c87cea0101</typeId>
@@ -290,13 +291,13 @@
               </properties>
             </stereotype>
           </stereotypes>
+          <metadata />
           <childElements />
         </childElement>
         <childElement id="fad5cc29-826b-449f-b414-4ab1e0438431" type="Association Creation Option" typeId="3dcfa78b-17ee-45b6-be03-8407d089ce76">
           <name>Add Navigation</name>
           <display>Add Navigation: Navigation</display>
           <isAbstract>false</isAbstract>
-          <order>6</order>
           <genericTypes />
           <typeReference id="1fbb06b7-7a64-4d76-a506-80cab8102b49">
             <typeId>6d2b2070-c1cb-4cd2-88b4-4e5f8414bd9e</typeId>
@@ -328,6 +329,7 @@
               </properties>
             </stereotype>
           </stereotypes>
+          <metadata />
           <childElements />
         </childElement>
       </childElements>
@@ -336,7 +338,7 @@
       <name>[visual]</name>
       <display>[visual]: Component</display>
       <isAbstract>false</isAbstract>
-      <order>6</order>
+      <sort-children>by-type-then-manually</sort-children>
       <genericTypes />
       <typeReference id="337233ae-4a53-4313-bdda-801d7007f895">
         <typeId>b1c481e1-e91e-4c29-9817-00ab9cad4b6b</typeId>
@@ -366,12 +368,12 @@
           </properties>
         </stereotype>
       </stereotypes>
+      <metadata />
       <childElements>
         <childElement id="50852fe6-197c-4bd4-9178-4a6b9d2aa3b2" type="Path Draw Settings" typeId="ac56c1f1-b259-4de8-acc9-ce0030ad4f99">
           <name>NewPathDrawSettings</name>
           <display>[draw path]: NewPathDrawSettings</display>
           <isAbstract>false</isAbstract>
-          <order>1</order>
           <genericTypes />
           <isMapped>false</isMapped>
           <parentFolderId>9197945e-4ef1-4815-8137-6e9001f5decb</parentFolderId>
@@ -392,13 +394,13 @@
               </properties>
             </stereotype>
           </stereotypes>
+          <metadata />
           <childElements />
         </childElement>
         <childElement id="a100fa49-6607-4ec6-82b6-2996df5dca86" type="Text Draw Settings" typeId="0250c934-455b-4bb6-b5d9-077c6e1ce72c">
           <name>[draw text]</name>
           <display>[draw text]: [draw text]</display>
           <isAbstract>false</isAbstract>
-          <order>2</order>
           <genericTypes />
           <isMapped>false</isMapped>
           <parentFolderId>9197945e-4ef1-4815-8137-6e9001f5decb</parentFolderId>
@@ -427,13 +429,14 @@
               </properties>
             </stereotype>
           </stereotypes>
+          <metadata />
           <childElements />
         </childElement>
         <childElement id="a5675c3d-2a38-4c09-9e8c-c03ffbca4882" type="Element Visual Settings" typeId="5eea5fba-15df-4971-8541-6f19bad4297d">
           <name>NewElementVisualSettings</name>
           <display>[visual]: Component Model</display>
           <isAbstract>false</isAbstract>
-          <order>3</order>
+          <sort-children>by-type-then-manually</sort-children>
           <genericTypes />
           <typeReference id="248241da-3120-4342-aefa-085b9d36e13e">
             <typeId>356fbe17-bc63-4e16-b915-feefbc063cbe</typeId>
@@ -463,12 +466,12 @@
               </properties>
             </stereotype>
           </stereotypes>
+          <metadata />
           <childElements>
             <childElement id="2af7cc8e-4d25-4985-991a-3abe107b245f" type="Path Draw Settings" typeId="ac56c1f1-b259-4de8-acc9-ce0030ad4f99">
               <name>NewPathDrawSettings</name>
               <display>[draw path]: NewPathDrawSettings</display>
               <isAbstract>false</isAbstract>
-              <order>1</order>
               <genericTypes />
               <isMapped>false</isMapped>
               <parentFolderId>a5675c3d-2a38-4c09-9e8c-c03ffbca4882</parentFolderId>
@@ -489,13 +492,13 @@
                   </properties>
                 </stereotype>
               </stereotypes>
+              <metadata />
               <childElements />
             </childElement>
             <childElement id="2a20201a-ad9b-4592-a646-3c2eeed101f7" type="Text Draw Settings" typeId="0250c934-455b-4bb6-b5d9-077c6e1ce72c">
               <name>[draw text]</name>
               <display>[draw text]: [draw text]</display>
               <isAbstract>false</isAbstract>
-              <order>2</order>
               <genericTypes />
               <isMapped>false</isMapped>
               <parentFolderId>a5675c3d-2a38-4c09-9e8c-c03ffbca4882</parentFolderId>
@@ -524,6 +527,7 @@
                   </properties>
                 </stereotype>
               </stereotypes>
+              <metadata />
               <childElements />
             </childElement>
           </childElements>
@@ -532,7 +536,7 @@
           <name>NewElementVisualSettings</name>
           <display>[visual]: Component Command</display>
           <isAbstract>false</isAbstract>
-          <order>4</order>
+          <sort-children>by-type-then-manually</sort-children>
           <genericTypes />
           <typeReference id="4c1ce2a9-74e2-4883-a20e-eaaf75c709d8">
             <typeId>d6739ffc-30e6-4170-a105-bf28e69aa578</typeId>
@@ -562,12 +566,12 @@
               </properties>
             </stereotype>
           </stereotypes>
+          <metadata />
           <childElements>
             <childElement id="2d3e9d2a-d1ec-4fab-8eb6-c13d527d530c" type="Path Draw Settings" typeId="ac56c1f1-b259-4de8-acc9-ce0030ad4f99">
               <name>NewPathDrawSettings</name>
               <display>[draw path]: NewPathDrawSettings</display>
               <isAbstract>false</isAbstract>
-              <order>1</order>
               <genericTypes />
               <isMapped>false</isMapped>
               <parentFolderId>1f69fe20-07aa-47c7-a856-f82f5e91f733</parentFolderId>
@@ -588,13 +592,13 @@
                   </properties>
                 </stereotype>
               </stereotypes>
+              <metadata />
               <childElements />
             </childElement>
             <childElement id="80d38603-fdb4-405b-ab7a-094b6f90b12d" type="Text Draw Settings" typeId="0250c934-455b-4bb6-b5d9-077c6e1ce72c">
               <name>[draw text]</name>
               <display>[draw text]: [draw text]</display>
               <isAbstract>false</isAbstract>
-              <order>2</order>
               <genericTypes />
               <isMapped>false</isMapped>
               <parentFolderId>1f69fe20-07aa-47c7-a856-f82f5e91f733</parentFolderId>
@@ -623,6 +627,7 @@
                   </properties>
                 </stereotype>
               </stereotypes>
+              <metadata />
               <childElements />
             </childElement>
           </childElements>
@@ -633,21 +638,21 @@
       <name>NewElementEventSettings</name>
       <display>[events]</display>
       <isAbstract>false</isAbstract>
-      <order>7</order>
+      <sort-children>by-type-then-by-name</sort-children>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>b1c481e1-e91e-4c29-9817-00ab9cad4b6b</parentFolderId>
       <packageId>9cf8c5df-18a9-470e-a4fd-7e18d7050cd6</packageId>
       <packageName>Intent.Modelers.WebClient.Angular</packageName>
       <stereotypes />
+      <metadata />
       <childElements>
-        <childElement id="18296813-bca4-47f6-88a2-aa0be4d0d31c" type="Element Event Handler" typeId="0ef412e3-d15a-45d3-bcd3-f646165f2eb6">
+        <childElement id="496d9a0f-c9fd-4518-aa9a-384937dc3ecd" type="Element Event Handler" typeId="0ef412e3-d15a-45d3-bcd3-f646165f2eb6">
           <name>On Created</name>
           <display>On Created: Script</display>
           <isAbstract>false</isAbstract>
-          <order>0</order>
           <genericTypes />
-          <typeReference id="6b3a5efe-0abb-47ac-bbb6-0f4a193a9d30">
+          <typeReference id="968cb261-b7a4-43ac-b02c-b193507cd57a">
             <typeId>043eee26-1591-42ac-9f2c-fc911b070eb1</typeId>
             <isNavigable>true</isNavigable>
             <isNullable>false</isNullable>
@@ -668,10 +673,11 @@
               <definitionPackageName>Intent.ModuleBuilder</definitionPackageName>
               <definitionPackageId>9972b2a9-b749-4bba-b5c8-824bf694c6ef</definitionPackageId>
               <properties>
-                <property name="73a4088f-626e-4d31-b0b2-113167f015b2" display="Script" value="createElement(&quot;Component View&quot;, &quot;[view]&quot;, context.id);" isActive="true" />
+                <property name="73a4088f-626e-4d31-b0b2-113167f015b2" display="Script" value="createElement(&quot;Component View&quot;, &quot;[view]&quot;, element.id);" isActive="true" />
               </properties>
             </stereotype>
           </stereotypes>
+          <metadata />
           <childElements />
         </childElement>
       </childElements>

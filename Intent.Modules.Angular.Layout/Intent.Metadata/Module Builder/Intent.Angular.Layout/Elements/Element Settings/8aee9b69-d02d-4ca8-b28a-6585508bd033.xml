@@ -3,7 +3,7 @@
   <name>Form</name>
   <display>Form</display>
   <isAbstract>false</isAbstract>
-  <order>2</order>
+  <sort-children>by-type-then-manually</sort-children>
   <genericTypes />
   <isMapped>false</isMapped>
   <parentFolderId>d3c58ce6-a07c-47dc-8626-f73cf1d047e2</parentFolderId>
@@ -45,24 +45,25 @@
       </properties>
     </stereotype>
   </stereotypes>
+  <metadata />
   <childElements>
     <childElement id="57759a64-b8d3-47fc-80a7-2c3b5639bd63" type="Context Menu" typeId="d45e383d-90ba-4b64-aca7-34ca100cea21">
       <name>[context menu]</name>
       <display>[context menu]</display>
       <isAbstract>false</isAbstract>
-      <order>0</order>
+      <sort-children>by-type-then-manually</sort-children>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>8aee9b69-d02d-4ca8-b28a-6585508bd033</parentFolderId>
       <packageId>411a47ef-bf13-45dd-b800-7abf7eb9ac92</packageId>
       <packageName>Intent.Angular.Layout</packageName>
       <stereotypes />
+      <metadata />
       <childElements>
         <childElement id="bb771a26-e38b-409b-99dd-b61addbc60cf" type="Element Creation Option" typeId="5fa12f89-da1e-49c5-b8e9-427b22407f19">
           <name>New Form Field</name>
           <display>New Form Field: Form Field</display>
           <isAbstract>false</isAbstract>
-          <order>0</order>
           <genericTypes />
           <typeReference id="ea83b119-f485-4d79-bc24-b1959f060e31">
             <typeId>1e3e3916-0cdb-45bb-a3b8-d7e01834cc36</typeId>
@@ -95,13 +96,13 @@
               </properties>
             </stereotype>
           </stereotypes>
+          <metadata />
           <childElements />
         </childElement>
         <childElement id="92110f8b-df29-4184-83ca-2e6ca2cc1acc" type="Element Creation Option" typeId="5fa12f89-da1e-49c5-b8e9-427b22407f19">
           <name>New Section</name>
           <display>New Section: Section</display>
           <isAbstract>false</isAbstract>
-          <order>1</order>
           <genericTypes />
           <typeReference id="e04809be-014d-4819-88f9-0246fce35784">
             <typeId>45072fbf-b34a-4625-b7ea-d5b1962a5b60</typeId>
@@ -134,15 +135,16 @@
               </properties>
             </stereotype>
           </stereotypes>
+          <metadata />
           <childElements />
         </childElement>
       </childElements>
     </childElement>
     <childElement id="90a4b25a-0490-472c-aa00-12bb8ce93c99" type="Mapping Settings" typeId="178c2f55-9ca1-484d-be43-a91bdd5554dc">
-      <name>NewMappingSettings</name>
-      <display>[mappings]: NewMappingSettings</display>
+      <name>Map from Model</name>
+      <display>[mappings]: Map from Model</display>
       <isAbstract>false</isAbstract>
-      <order>2</order>
+      <sort-children>by-type-then-by-name</sort-children>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>8aee9b69-d02d-4ca8-b28a-6585508bd033</parentFolderId>
@@ -154,7 +156,7 @@
           <definitionPackageName>Intent.ModuleBuilder</definitionPackageName>
           <definitionPackageId>9972b2a9-b749-4bba-b5c8-824bf694c6ef</definitionPackageId>
           <properties>
-            <property name="b986d2ea-50ff-4314-afc0-cb14ae7aad71" display="Shortcut" isActive="true" />
+            <property name="b986d2ea-50ff-4314-afc0-cb14ae7aad71" display="Shortcut" value="ctrl + shift + m" isActive="true" />
             <property name="d233d3f9-934a-4690-a476-778e0c4927ef" display="Default Designer" value="f492faed-0665-4513-9853-5a230721786f" isActive="true" />
             <property name="39d623e0-b8c5-4d23-8d78-75a7e2fa0c9d" display="Option Source" value="Lookup Element" isActive="true" />
             <property name="5bed7f14-ebd8-4055-be29-3a2f8407eb5d" display="Lookup Element Function" value="return getParent('Component').id" isActive="true" />
@@ -166,12 +168,13 @@
           </properties>
         </stereotype>
       </stereotypes>
+      <metadata />
       <childElements>
         <childElement id="eeb30624-b056-43ea-80ba-4debaa084cb2" type="Element Mapping" typeId="4a16943b-702c-4fb0-bfcc-2afd98b8814c">
           <name>NewElementMapping</name>
           <display>[mapping]: Component Model -&gt; Form (Traverse)</display>
           <isAbstract>false</isAbstract>
-          <order>0</order>
+          <sort-children>by-type-then-by-name</sort-children>
           <genericTypes />
           <isMapped>false</isMapped>
           <parentFolderId>90a4b25a-0490-472c-aa00-12bb8ce93c99</parentFolderId>
@@ -208,12 +211,12 @@
               </properties>
             </stereotype>
           </stereotypes>
+          <metadata />
           <childElements>
             <childElement id="9c631b3f-f3cf-422a-b16b-f218751bef31" type="Element Mapping" typeId="4a16943b-702c-4fb0-bfcc-2afd98b8814c">
               <name>NewElementMapping</name>
               <display>[mapping]: Model Definition Field -&gt; Form Field (Map to Type)</display>
               <isAbstract>false</isAbstract>
-              <order>0</order>
               <genericTypes />
               <isMapped>false</isMapped>
               <parentFolderId>eeb30624-b056-43ea-80ba-4debaa084cb2</parentFolderId>
@@ -250,13 +253,13 @@
                   </properties>
                 </stereotype>
               </stereotypes>
+              <metadata />
               <childElements />
             </childElement>
             <childElement id="3b64ef6d-24e0-4230-953f-9da734ad5bd3" type="Element Mapping" typeId="4a16943b-702c-4fb0-bfcc-2afd98b8814c">
               <name>NewElementMapping</name>
               <display>[mapping]: Form Group Control -&gt; Form Field (Map to Type)</display>
               <isAbstract>false</isAbstract>
-              <order>1</order>
               <genericTypes />
               <isMapped>false</isMapped>
               <parentFolderId>eeb30624-b056-43ea-80ba-4debaa084cb2</parentFolderId>
@@ -293,6 +296,7 @@
                   </properties>
                 </stereotype>
               </stereotypes>
+              <metadata />
               <childElements />
             </childElement>
           </childElements>

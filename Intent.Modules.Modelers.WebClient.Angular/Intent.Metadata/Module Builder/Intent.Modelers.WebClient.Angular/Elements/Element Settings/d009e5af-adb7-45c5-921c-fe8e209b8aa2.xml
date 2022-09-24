@@ -3,7 +3,6 @@
   <name>Angular Service</name>
   <display>Angular Service</display>
   <isAbstract>false</isAbstract>
-  <order>0</order>
   <genericTypes />
   <isMapped>false</isMapped>
   <parentFolderId>0a3786a7-f514-4ec3-88b9-7842744dbb3c</parentFolderId>
@@ -45,5 +44,6 @@
       </properties>
     </stereotype>
   </stereotypes>
+  <metadata />
   <childElements />
 </class>

@@ -13,6 +13,7 @@
   <displayAsAnnotation>false</displayAsAnnotation>
   <displayAsText>true</displayAsText>
   <autoAdd>false</autoAdd>
+  <allowMultipleApplies>false</allowMultipleApplies>
   <parentFolderId>a3deb341-dd4e-4f7f-99f5-2f198c1c251c</parentFolderId>
   <order>0</order>
   <packageId>a3deb341-dd4e-4f7f-99f5-2f198c1c251c</packageId>

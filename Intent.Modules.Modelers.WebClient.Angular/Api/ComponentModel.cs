@@ -95,14 +95,14 @@ namespace Intent.Modelers.WebClient.Angular.Api
         public const string SpecializationTypeId = "b1c481e1-e91e-4c29-9817-00ab9cad4b6b";
 
         public IList<ComponentInputModel> Inputs => _element.ChildElements
-                    .GetElementsOfType(ComponentInputModel.SpecializationTypeId)
-                    .Select(x => new ComponentInputModel(x))
-                    .ToList();
+            .GetElementsOfType(ComponentInputModel.SpecializationTypeId)
+            .Select(x => new ComponentInputModel(x))
+            .ToList();
 
         public IList<ComponentOutputModel> Outputs => _element.ChildElements
-                    .GetElementsOfType(ComponentOutputModel.SpecializationTypeId)
-                    .Select(x => new ComponentOutputModel(x))
-                    .ToList();
+            .GetElementsOfType(ComponentOutputModel.SpecializationTypeId)
+            .Select(x => new ComponentOutputModel(x))
+            .ToList();
 
     }
 

@@ -3,7 +3,7 @@
   <name>Angular Layout Extensions</name>
   <display>Angular Layout Extensions</display>
   <isAbstract>false</isAbstract>
-  <order>0</order>
+  <sort-children>by-type-then-by-name</sort-children>
   <genericTypes />
   <isMapped>false</isMapped>
   <parentFolderId>2003e5fc-edca-4ea3-8a4e-5035979355e1</parentFolderId>
@@ -20,5 +20,6 @@
       </properties>
     </stereotype>
   </stereotypes>
+  <metadata />
   <childElements />
 </class>

@@ -3,7 +3,7 @@
   <name>Pagination Control</name>
   <display>Pagination Control</display>
   <isAbstract>false</isAbstract>
-  <order>6</order>
+  <sort-children>by-type-then-manually</sort-children>
   <genericTypes />
   <isMapped>false</isMapped>
   <parentFolderId>d3c58ce6-a07c-47dc-8626-f73cf1d047e2</parentFolderId>
@@ -45,12 +45,13 @@
       </properties>
     </stereotype>
   </stereotypes>
+  <metadata />
   <childElements>
     <childElement id="74ef00c1-212d-44a8-aa30-2ff44eba556e" type="Mapping Settings" typeId="178c2f55-9ca1-484d-be43-a91bdd5554dc">
-      <name>NewMappingSettings</name>
-      <display>[mappings]: NewMappingSettings</display>
+      <name>Map from Model</name>
+      <display>[mappings]: Map from Model</display>
       <isAbstract>false</isAbstract>
-      <order>0</order>
+      <sort-children>by-type-then-by-name</sort-children>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>3faee16c-8605-4bb4-8566-06a555c929a3</parentFolderId>
@@ -62,7 +63,7 @@
           <definitionPackageName>Intent.ModuleBuilder</definitionPackageName>
           <definitionPackageId>9972b2a9-b749-4bba-b5c8-824bf694c6ef</definitionPackageId>
           <properties>
-            <property name="b986d2ea-50ff-4314-afc0-cb14ae7aad71" display="Shortcut" isActive="true" />
+            <property name="b986d2ea-50ff-4314-afc0-cb14ae7aad71" display="Shortcut" value="ctrl + shift + m" isActive="true" />
             <property name="d233d3f9-934a-4690-a476-778e0c4927ef" display="Default Designer" value="f492faed-0665-4513-9853-5a230721786f" isActive="true" />
             <property name="39d623e0-b8c5-4d23-8d78-75a7e2fa0c9d" display="Option Source" value="Lookup Element" isActive="true" />
             <property name="5bed7f14-ebd8-4055-be29-3a2f8407eb5d" display="Lookup Element Function" value="return getParent('Component').id" isActive="true" />
@@ -74,12 +75,12 @@
           </properties>
         </stereotype>
       </stereotypes>
+      <metadata />
       <childElements>
         <childElement id="0ce0fb70-8fef-4a1d-9b80-8b94b6a69452" type="Element Mapping" typeId="4a16943b-702c-4fb0-bfcc-2afd98b8814c">
           <name>NewElementMapping</name>
           <display>[mapping]: Component Model -&gt; Pagination Control (Map to Type)</display>
           <isAbstract>false</isAbstract>
-          <order>0</order>
           <genericTypes />
           <isMapped>false</isMapped>
           <parentFolderId>74ef00c1-212d-44a8-aa30-2ff44eba556e</parentFolderId>
@@ -116,6 +117,7 @@
               </properties>
             </stereotype>
           </stereotypes>
+          <metadata />
           <childElements />
         </childElement>
       </childElements>

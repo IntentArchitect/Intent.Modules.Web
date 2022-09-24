@@ -2,7 +2,7 @@ using Intent.Angular.ApiAuthorization.Api;
 using Intent.Angular.Layout.Api;
 using Intent.Modules.Angular.ApiAuthorization.HtmlControls.LoginMenu;
 using Intent.Modules.Angular.Layout.Decorators.Controls.Section;
-using Intent.Modules.Angular.Templates.Component.AngularComponentHtmlTemplate;
+using Intent.Modules.Angular.Templates.Component.AngularComponentHtml;
 using Intent.Modules.Angular.Templates.Component.Controls;
 using Intent.RoslynWeaver.Attributes;
 

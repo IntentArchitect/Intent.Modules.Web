@@ -182,7 +182,8 @@
       <scriptOptions />
       <mappingSettings>
         <mappingSetting id="90a4b25a-0490-472c-aa00-12bb8ce93c99">
-          <name>NewMappingSettings</name>
+          <name>Map from Model</name>
+          <shortcut>ctrl + shift + m</shortcut>
           <defaultModeler>f492faed-0665-4513-9853-5a230721786f</defaultModeler>
           <optionsSource>lookup-element</optionsSource>
           <lookupElementFunction>return getParent('Component').id</lookupElementFunction>
@@ -344,7 +345,8 @@
       <allowSetValue>false</allowSetValue>
       <mappingSettings>
         <mappingSetting id="74ef00c1-212d-44a8-aa30-2ff44eba556e">
-          <name>NewMappingSettings</name>
+          <name>Map from Model</name>
+          <shortcut>ctrl + shift + m</shortcut>
           <defaultModeler>f492faed-0665-4513-9853-5a230721786f</defaultModeler>
           <optionsSource>lookup-element</optionsSource>
           <lookupElementFunction>return getParent('Component').id</lookupElementFunction>
@@ -461,7 +463,8 @@
       <scriptOptions />
       <mappingSettings>
         <mappingSetting id="510bf1dc-08d2-4184-9358-499b96e41586">
-          <name>NewMappingSettings</name>
+          <name>Map from Model</name>
+          <shortcut>ctrl + shift + m</shortcut>
           <defaultModeler>f492faed-0665-4513-9853-5a230721786f</defaultModeler>
           <optionsSource>lookup-element</optionsSource>
           <lookupElementFunction>return getParent('Component').id</lookupElementFunction>

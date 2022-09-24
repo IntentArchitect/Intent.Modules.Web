@@ -116,14 +116,14 @@ namespace Intent.Angular.Layout.Api
             return type.IsPaginationControlModel() ? new PaginationControlModel((IElement)type) : null;
         }
 
-        public static bool HasNewMappingSettingsMapping(this PaginationControlModel type)
+        public static bool HasMapFromModelMapping(this PaginationControlModel type)
         {
             return type.Mapping?.MappingSettingsId == "74ef00c1-212d-44a8-aa30-2ff44eba556e";
         }
 
-        public static IElementMapping GetNewMappingSettingsMapping(this PaginationControlModel type)
+        public static IElementMapping GetMapFromModelMapping(this PaginationControlModel type)
         {
-            return type.HasNewMappingSettingsMapping() ? type.Mapping : null;
+            return type.HasMapFromModelMapping() ? type.Mapping : null;
         }
     }
 }

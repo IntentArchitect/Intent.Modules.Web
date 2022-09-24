@@ -3,6 +3,7 @@
   <name>Display Component</name>
   <display>Display Component</display>
   <isAbstract>false</isAbstract>
+  <sort-children>by-type-then-manually</sort-children>
   <order>1</order>
   <genericTypes />
   <isMapped>false</isMapped>
@@ -45,18 +46,19 @@
       </properties>
     </stereotype>
   </stereotypes>
+  <metadata />
   <childElements>
     <childElement id="09549e35-2940-4c11-82cd-d777a3316bd8" type="Context Menu" typeId="d45e383d-90ba-4b64-aca7-34ca100cea21">
       <name>[context menu]</name>
       <display>[context menu]</display>
       <isAbstract>false</isAbstract>
-      <order>0</order>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>866a90f7-4044-43b9-bb05-7270c7889796</parentFolderId>
       <packageId>9cf8c5df-18a9-470e-a4fd-7e18d7050cd6</packageId>
       <packageName>Intent.Modelers.WebClient.Angular</packageName>
       <stereotypes />
+      <metadata />
       <childElements />
     </childElement>
   </childElements>

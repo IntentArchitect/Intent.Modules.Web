@@ -3,7 +3,7 @@
   <name>Module Extension</name>
   <display>Module Extension: Module</display>
   <isAbstract>false</isAbstract>
-  <order>10</order>
+  <sort-children>by-type-then-manually</sort-children>
   <genericTypes />
   <typeReference id="b73a6259-c039-4e72-b139-b4ce6ed722ef">
     <typeId>cac14331-198a-4f9a-bbb9-171eb0bd4efe</typeId>
@@ -45,24 +45,25 @@
       </properties>
     </stereotype>
   </stereotypes>
+  <metadata />
   <childElements>
     <childElement id="84d57433-a765-4e9e-ad74-c413087a377e" type="Element Event Settings" typeId="3c628ab0-2407-4fb0-8507-ddde986cff2e">
       <name>NewElementEventSettings</name>
       <display>[events]</display>
       <isAbstract>false</isAbstract>
-      <order>1</order>
+      <sort-children>by-type-then-by-name</sort-children>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>39f08424-a591-4e93-b302-d7dd27360b4e</parentFolderId>
       <packageId>411a47ef-bf13-45dd-b800-7abf7eb9ac92</packageId>
       <packageName>Intent.Angular.Layout</packageName>
       <stereotypes />
+      <metadata />
       <childElements>
         <childElement id="95ce6b7c-3ebf-48b5-be88-1c92046ee634" type="Element Event Handler" typeId="0ef412e3-d15a-45d3-bcd3-f646165f2eb6">
           <name>On Created</name>
           <display>On Created: Script</display>
           <isAbstract>false</isAbstract>
-          <order>0</order>
           <genericTypes />
           <typeReference id="a6bb2e1f-6f61-4edf-a98a-e6b2f0f36365">
             <typeId>043eee26-1591-42ac-9f2c-fc911b070eb1</typeId>
@@ -89,6 +90,7 @@
               </properties>
             </stereotype>
           </stereotypes>
+          <metadata />
           <childElements />
         </childElement>
       </childElements>

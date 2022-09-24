@@ -1,6 +1,6 @@
 ﻿using Intent.Modelers.WebClient.Angular.Api;
 
-namespace Intent.Modules.Angular.Templates.Component.Controls.DisplayComponent
+namespace Intent.Modules.Angular.Templates.Component.Controls.RouterOutlet
 {
     public class RouterOutletTemplate : IControl
     {

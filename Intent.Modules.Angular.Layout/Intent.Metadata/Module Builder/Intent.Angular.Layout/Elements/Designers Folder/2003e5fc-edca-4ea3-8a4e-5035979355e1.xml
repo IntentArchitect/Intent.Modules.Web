@@ -3,12 +3,13 @@
   <name>designers</name>
   <display>designers</display>
   <isAbstract>false</isAbstract>
-  <order>1</order>
+  <sort-children>by-type-then-by-name</sort-children>
   <genericTypes />
   <isMapped>false</isMapped>
   <parentFolderId>411a47ef-bf13-45dd-b800-7abf7eb9ac92</parentFolderId>
   <packageId>411a47ef-bf13-45dd-b800-7abf7eb9ac92</packageId>
   <packageName>Intent.Angular.Layout</packageName>
   <stereotypes />
+  <metadata />
   <childElements />
 </class>

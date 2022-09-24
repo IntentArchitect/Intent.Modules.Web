@@ -3,6 +3,7 @@
   <name>Button Control Parameter</name>
   <display>Button Control Parameter</display>
   <isAbstract>false</isAbstract>
+  <sort-children>by-type-then-manually</sort-children>
   <order>0</order>
   <genericTypes />
   <isMapped>false</isMapped>
@@ -45,18 +46,19 @@
       </properties>
     </stereotype>
   </stereotypes>
+  <metadata />
   <childElements>
     <childElement id="79fd941e-9362-4ae7-a08f-fe557861d1fc" type="Context Menu" typeId="d45e383d-90ba-4b64-aca7-34ca100cea21">
       <name>[context menu]</name>
       <display>[context menu]</display>
       <isAbstract>false</isAbstract>
-      <order>0</order>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>8e6bf0e3-9f98-4143-9900-78815b2201db</parentFolderId>
       <packageId>411a47ef-bf13-45dd-b800-7abf7eb9ac92</packageId>
       <packageName>Intent.Angular.Layout</packageName>
       <stereotypes />
+      <metadata />
       <childElements />
     </childElement>
   </childElements>

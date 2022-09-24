@@ -3,7 +3,7 @@
   <name>Authorization Components</name>
   <display>Authorization Components</display>
   <isAbstract>false</isAbstract>
-  <order>0</order>
+  <sort-children>by-type-then-by-name</sort-children>
   <genericTypes />
   <isMapped>false</isMapped>
   <parentFolderId>17b1b425-739a-4811-af0e-a9bdbc7e405d</parentFolderId>
@@ -20,5 +20,6 @@
       </properties>
     </stereotype>
   </stereotypes>
+  <metadata />
   <childElements />
 </class>

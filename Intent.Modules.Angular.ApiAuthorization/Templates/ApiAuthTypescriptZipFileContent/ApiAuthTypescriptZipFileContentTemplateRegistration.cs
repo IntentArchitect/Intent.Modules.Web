@@ -28,14 +28,15 @@ namespace Intent.Modules.Angular.ApiAuthorization.Templates.ApiAuthTypescriptZip
 
         public string TemplateId => ApiAuthTypescriptZipFileContentTemplate.TemplateId;
 
-        public void DoRegistration(ITemplateInstanceRegistry registery, IApplication applicationManager)
+        [IntentManaged(Mode.Fully, Body = Mode.Ignore)]
+        public void DoRegistration(ITemplateInstanceRegistry registry, IApplication applicationManager)
         {
             ResourceHelper.ApiAuthFileContents(archive =>
             {
                 foreach (var entry in archive.Entries.Where(p => p.Name != string.Empty
                     && Path.GetExtension(p.Name) == ".ts"))
                 {
-                    registery.RegisterTemplate(TemplateId, project => new ApiAuthTypescriptZipFileContentTemplate(
+                    registry.RegisterTemplate(TemplateId, project => new ApiAuthTypescriptZipFileContentTemplate(
                         outputTarget: project,
                         model: new ZipEntry
                         {

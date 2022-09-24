@@ -4,12 +4,14 @@
   <FileLogs>
     <FileLog>
       <CorrelationId>Intent.VisualStudio.Projects.VisualStudio2015Solution#57218969-9754-43b7-b90c-dae67207d7f8</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>../Intent.Modules.Web.sln</ApplicationRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>41dbb0b8-e41c-4861-8610-5c409a85ba14</ProjectId>
       <CorrelationId>Intent.ApplicationTemplate.Builder.Templates.IatSpecFile#7549551c-d51c-4f10-acc3-0924aac2c894</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Intent.ApplicationTemplate.WebClient.Angular/metadata.iatspec</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Intent.ApplicationTemplate.WebClient.Angular/metadata.iatspec</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
@@ -17,6 +19,7 @@
     <FileLog>
       <ProjectId>41dbb0b8-e41c-4861-8610-5c409a85ba14</ProjectId>
       <CorrelationId>Intent.VisualStudio.Projects.CoreLibrary.CSProject#41dbb0b8-e41c-4861-8610-5c409a85ba14</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Intent.ApplicationTemplates.Web.csproj</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Intent.ApplicationTemplates.Web.csproj</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>

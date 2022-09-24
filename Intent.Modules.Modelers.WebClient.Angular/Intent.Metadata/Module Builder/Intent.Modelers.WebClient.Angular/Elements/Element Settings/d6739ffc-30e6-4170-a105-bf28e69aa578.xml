@@ -3,6 +3,7 @@
   <name>Component Command</name>
   <display>Component Command</display>
   <isAbstract>false</isAbstract>
+  <sort-children>by-type-then-manually</sort-children>
   <order>3</order>
   <genericTypes />
   <isMapped>false</isMapped>
@@ -45,24 +46,25 @@
       </properties>
     </stereotype>
   </stereotypes>
+  <metadata />
   <childElements>
     <childElement id="41d45535-5728-4ea8-adb8-7e9dada95d0e" type="Context Menu" typeId="d45e383d-90ba-4b64-aca7-34ca100cea21">
       <name>[context menu]</name>
       <display>[context menu]</display>
       <isAbstract>false</isAbstract>
-      <order>0</order>
+      <sort-children>by-type-then-manually</sort-children>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>d6739ffc-30e6-4170-a105-bf28e69aa578</parentFolderId>
       <packageId>9cf8c5df-18a9-470e-a4fd-7e18d7050cd6</packageId>
       <packageName>Intent.Modelers.WebClient.Angular</packageName>
       <stereotypes />
+      <metadata />
       <childElements>
         <childElement id="3feceaff-65df-4c11-8971-6666ed9dcc5e" type="Element Creation Option" typeId="5fa12f89-da1e-49c5-b8e9-427b22407f19">
           <name>Add Parameter</name>
           <display>Add Parameter: Command Parameter</display>
           <isAbstract>false</isAbstract>
-          <order>0</order>
           <genericTypes />
           <typeReference id="4bbc638f-e784-44f2-9c0c-512e42c1d73d">
             <typeId>4a1ce2a9-e79f-4e93-96af-24b44728ecbc</typeId>
@@ -95,6 +97,7 @@
               </properties>
             </stereotype>
           </stereotypes>
+          <metadata />
           <childElements />
         </childElement>
       </childElements>

@@ -1,15 +1,15 @@
-using Intent.Engine;
-using Intent.Modules.Angular.ApiAuthorization.Resources;
-using Intent.Registrations;
-using Intent.RoslynWeaver.Attributes;
-using System.IO;
-using System.Linq;
-using Intent.Metadata.Models;
-using Intent.Modules.Common;
-using Intent.Modules.Common.Registrations;
-using Intent.Templates;
 using System;
 using System.Collections.Generic;
+using System.IO;
+using System.Linq;
+using Intent.Engine;
+using Intent.Metadata.Models;
+using Intent.Modules.Angular.ApiAuthorization.Resources;
+using Intent.Modules.Common;
+using Intent.Modules.Common.Registrations;
+using Intent.Registrations;
+using Intent.RoslynWeaver.Attributes;
+using Intent.Templates;
 
 [assembly: DefaultIntentManaged(Mode.Merge)]
 [assembly: IntentTemplate("Intent.ModuleBuilder.TemplateRegistration.Custom", Version = "1.0")]
@@ -28,14 +28,15 @@ namespace Intent.Modules.Angular.ApiAuthorization.Templates.GeneralApiAuthZipFil
 
         public string TemplateId => GeneralApiAuthZipFileContentTemplate.TemplateId;
 
-        public void DoRegistration(ITemplateInstanceRegistry registery, IApplication applicationManager)
+        [IntentManaged(Mode.Fully, Body = Mode.Ignore)]
+        public void DoRegistration(ITemplateInstanceRegistry registry, IApplication applicationManager)
         {
             ResourceHelper.ApiAuthFileContents(archive =>
             {
                 foreach (var entry in archive.Entries.Where(p => p.Name != string.Empty
                     && Path.GetExtension(p.Name) != ".ts"))
                 {
-                    registery.RegisterTemplate(TemplateId, project => new GeneralApiAuthZipFileContentTemplate(
+                    registry.RegisterTemplate(TemplateId, project => new GeneralApiAuthZipFileContentTemplate(
                         outputTarget: project,
                         model: new ZipEntry
                         {

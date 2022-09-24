@@ -3,6 +3,7 @@
   <name>[diagram]</name>
   <display>[diagram]</display>
   <isAbstract>false</isAbstract>
+  <sort-children>by-type-then-by-name</sort-children>
   <order>3</order>
   <genericTypes />
   <isMapped>false</isMapped>
@@ -10,24 +11,25 @@
   <packageId>9cf8c5df-18a9-470e-a4fd-7e18d7050cd6</packageId>
   <packageName>Intent.Modelers.WebClient.Angular</packageName>
   <stereotypes />
+  <metadata />
   <childElements>
     <childElement id="6b66194c-93c1-4507-b166-f6a24b15c01b" type="Context Menu" typeId="d45e383d-90ba-4b64-aca7-34ca100cea21">
       <name>[context menu]</name>
       <display>[context menu]</display>
       <isAbstract>false</isAbstract>
-      <order>0</order>
+      <sort-children>by-type-then-manually</sort-children>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>7e73d75a-360c-48a2-870f-61ce78558a26</parentFolderId>
       <packageId>9cf8c5df-18a9-470e-a4fd-7e18d7050cd6</packageId>
       <packageName>Intent.Modelers.WebClient.Angular</packageName>
       <stereotypes />
+      <metadata />
       <childElements>
         <childElement id="2b498c92-bf1a-4bfd-b771-8d64646e1cf3" type="Element Creation Option" typeId="5fa12f89-da1e-49c5-b8e9-427b22407f19">
           <name>New Component</name>
           <display>New Component: Component</display>
           <isAbstract>false</isAbstract>
-          <order>0</order>
           <genericTypes />
           <typeReference id="4b44aac4-6d63-4068-8c41-197ff0d1c412">
             <typeId>b1c481e1-e91e-4c29-9817-00ab9cad4b6b</typeId>
@@ -60,6 +62,7 @@
               </properties>
             </stereotype>
           </stereotypes>
+          <metadata />
           <childElements />
         </childElement>
       </childElements>

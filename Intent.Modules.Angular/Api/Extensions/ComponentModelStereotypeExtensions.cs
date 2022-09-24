@@ -24,6 +24,18 @@ namespace Intent.Angular.Api
             return model.HasStereotype("Angular Component Settings");
         }
 
+        public static bool TryGetAngularComponentSettings(this ComponentModel model, out AngularComponentSettings stereotype)
+        {
+            if (!HasAngularComponentSettings(model))
+            {
+                stereotype = null;
+                return false;
+            }
+
+            stereotype = new AngularComponentSettings(model.GetStereotype("Angular Component Settings"));
+            return true;
+        }
+
 
         public class AngularComponentSettings
         {

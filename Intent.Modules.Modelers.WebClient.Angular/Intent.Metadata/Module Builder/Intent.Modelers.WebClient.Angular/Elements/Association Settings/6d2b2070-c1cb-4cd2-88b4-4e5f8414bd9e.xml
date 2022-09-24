@@ -3,19 +3,19 @@
   <name>Navigation</name>
   <display>Navigation</display>
   <isAbstract>false</isAbstract>
-  <order>6</order>
+  <sort-children>by-type-then-by-name</sort-children>
   <genericTypes />
   <isMapped>false</isMapped>
   <parentFolderId>0a3786a7-f514-4ec3-88b9-7842744dbb3c</parentFolderId>
   <packageId>9cf8c5df-18a9-470e-a4fd-7e18d7050cd6</packageId>
   <packageName>Intent.Modelers.WebClient.Angular</packageName>
   <stereotypes />
+  <metadata />
   <childElements>
     <childElement id="97a3de8a-c9bf-4cf2-bc0a-b8692b02211b" type="Association Source End Settings" typeId="32aac8b7-3eac-4a15-87cb-7fb98fdfdf37">
       <name>NavigationSourceEnd</name>
       <display>NavigationSourceEnd</display>
       <isAbstract>false</isAbstract>
-      <order>0</order>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>6d2b2070-c1cb-4cd2-88b4-4e5f8414bd9e</parentFolderId>
@@ -41,13 +41,13 @@
           </properties>
         </stereotype>
       </stereotypes>
+      <metadata />
       <childElements />
     </childElement>
     <childElement id="2b191288-ecae-4743-b069-cbdd927ef349" type="Association Destination End Settings" typeId="c4c61fdc-464d-41d2-8e0e-5a734d588302">
       <name>NavigationTargetEnd</name>
       <display>NavigationTargetEnd</display>
       <isAbstract>false</isAbstract>
-      <order>1</order>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>6d2b2070-c1cb-4cd2-88b4-4e5f8414bd9e</parentFolderId>
@@ -73,13 +73,14 @@
           </properties>
         </stereotype>
       </stereotypes>
+      <metadata />
       <childElements />
     </childElement>
     <childElement id="1ce1f617-893c-43ba-938a-e70cfcf231fe" type="Association Visual Settings" typeId="153a4063-82a1-4515-87f1-44c189004fad">
       <name>[visual]</name>
       <display>[visual]</display>
       <isAbstract>false</isAbstract>
-      <order>2</order>
+      <sort-children>by-type-then-manually</sort-children>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>6d2b2070-c1cb-4cd2-88b4-4e5f8414bd9e</parentFolderId>
@@ -97,12 +98,12 @@
           </properties>
         </stereotype>
       </stereotypes>
+      <metadata />
       <childElements>
         <childElement id="541bfc49-fdc2-4613-818a-3c30286e1497" type="Association Source End Visual Settings" typeId="77fdd377-950a-46e4-8d25-ab3c962d6105">
           <name>[source]</name>
           <display>[source]</display>
           <isAbstract>false</isAbstract>
-          <order>0</order>
           <genericTypes />
           <isMapped>false</isMapped>
           <parentFolderId>1ce1f617-893c-43ba-938a-e70cfcf231fe</parentFolderId>
@@ -143,13 +144,13 @@
               </properties>
             </stereotype>
           </stereotypes>
+          <metadata />
           <childElements />
         </childElement>
         <childElement id="b131f288-4d08-4fac-b1cb-fc7f5e291847" type="Association Destination End Visual Settings" typeId="b59113a4-209c-45d6-b395-352362864fd1">
           <name>[desintation]</name>
           <display>[destination]</display>
           <isAbstract>false</isAbstract>
-          <order>1</order>
           <genericTypes />
           <isMapped>false</isMapped>
           <parentFolderId>1ce1f617-893c-43ba-938a-e70cfcf231fe</parentFolderId>
@@ -190,6 +191,7 @@
               </properties>
             </stereotype>
           </stereotypes>
+          <metadata />
           <childElements />
         </childElement>
       </childElements>

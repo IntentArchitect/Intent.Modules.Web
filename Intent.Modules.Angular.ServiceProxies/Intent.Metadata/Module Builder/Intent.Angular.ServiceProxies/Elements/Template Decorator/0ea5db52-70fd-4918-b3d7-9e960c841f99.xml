@@ -3,7 +3,6 @@
   <name>PopulateDataComponentDecorator</name>
   <display>PopulateDataComponentDecorator: AngularComponentTsDecorator</display>
   <isAbstract>false</isAbstract>
-  <order>3</order>
   <genericTypes />
   <typeReference id="262b0501-52c1-4bb4-b4c6-c2f2a324d6c6">
     <typeId>b1c75969-a89e-41c6-a4b1-3283dc6b84ff</typeId>
@@ -21,5 +20,6 @@
   <packageId>6acdce2e-cfb4-4988-beef-4ac087c6d857</packageId>
   <packageName>Intent.Angular.ServiceProxies</packageName>
   <stereotypes />
+  <metadata />
   <childElements />
 </class>

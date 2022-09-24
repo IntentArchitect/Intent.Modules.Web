@@ -3,6 +3,7 @@
   <name>Route</name>
   <display>Route</display>
   <isAbstract>false</isAbstract>
+  <sort-children>by-type-then-manually</sort-children>
   <order>2</order>
   <genericTypes />
   <isMapped>false</isMapped>
@@ -45,24 +46,25 @@
       </properties>
     </stereotype>
   </stereotypes>
+  <metadata />
   <childElements>
     <childElement id="05636d91-aa4e-455f-8ff6-d3453d0b195d" type="Context Menu" typeId="d45e383d-90ba-4b64-aca7-34ca100cea21">
       <name>[context menu]</name>
       <display>[context menu]</display>
       <isAbstract>false</isAbstract>
-      <order>0</order>
+      <sort-children>by-type-then-manually</sort-children>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>9094f807-b330-4af8-be8d-bc7955035b94</parentFolderId>
       <packageId>9cf8c5df-18a9-470e-a4fd-7e18d7050cd6</packageId>
       <packageName>Intent.Modelers.WebClient.Angular</packageName>
       <stereotypes />
+      <metadata />
       <childElements>
         <childElement id="204b5563-58b8-45e3-acb4-3f0d469010e5" type="Element Creation Option" typeId="5fa12f89-da1e-49c5-b8e9-427b22407f19">
           <name>Add Parameter</name>
           <display>Add Parameter: Route Parameter</display>
           <isAbstract>false</isAbstract>
-          <order>0</order>
           <genericTypes />
           <typeReference id="1fa1ad85-c16a-450c-aa37-1d57b165c25d">
             <typeId>2e770bf6-0f58-4806-8fdc-1477360b74e9</typeId>
@@ -95,6 +97,7 @@
               </properties>
             </stereotype>
           </stereotypes>
+          <metadata />
           <childElements />
         </childElement>
       </childElements>
@@ -103,7 +106,7 @@
       <name>NewMappingSettings</name>
       <display>[mappings]: NewMappingSettings</display>
       <isAbstract>false</isAbstract>
-      <order>2</order>
+      <sort-children>by-type-then-by-name</sort-children>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>9094f807-b330-4af8-be8d-bc7955035b94</parentFolderId>
@@ -127,12 +130,13 @@
           </properties>
         </stereotype>
       </stereotypes>
+      <metadata />
       <childElements>
         <childElement id="15f8797b-5364-44db-bbc2-3c97342338f9" type="Element Mapping" typeId="4a16943b-702c-4fb0-bfcc-2afd98b8814c">
           <name>NewElementMapping</name>
           <display>[mapping]: Component -&gt; Route (Map to Type)</display>
           <isAbstract>false</isAbstract>
-          <order>0</order>
+          <sort-children>by-type-then-by-name</sort-children>
           <genericTypes />
           <isMapped>false</isMapped>
           <parentFolderId>3b7340dc-5622-4257-b3f4-75e6bd0fe526</parentFolderId>
@@ -169,12 +173,12 @@
               </properties>
             </stereotype>
           </stereotypes>
+          <metadata />
           <childElements>
             <childElement id="c615984a-17e1-4681-af96-77059b33ffa0" type="Element Mapping" typeId="4a16943b-702c-4fb0-bfcc-2afd98b8814c">
               <name>NewElementMapping</name>
               <display>[mapping]: Component Input -&gt; Route Parameter (Map to Type)</display>
               <isAbstract>false</isAbstract>
-              <order>0</order>
               <genericTypes />
               <isMapped>false</isMapped>
               <parentFolderId>15f8797b-5364-44db-bbc2-3c97342338f9</parentFolderId>
@@ -211,6 +215,7 @@
                   </properties>
                 </stereotype>
               </stereotypes>
+              <metadata />
               <childElements />
             </childElement>
           </childElements>

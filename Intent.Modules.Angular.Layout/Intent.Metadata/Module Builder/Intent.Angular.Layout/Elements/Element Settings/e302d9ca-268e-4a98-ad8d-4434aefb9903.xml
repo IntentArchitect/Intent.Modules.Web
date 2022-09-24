@@ -3,7 +3,7 @@
   <name>Table Control</name>
   <display>Table Control</display>
   <isAbstract>false</isAbstract>
-  <order>8</order>
+  <sort-children>by-type-then-manually</sort-children>
   <genericTypes />
   <isMapped>false</isMapped>
   <parentFolderId>d3c58ce6-a07c-47dc-8626-f73cf1d047e2</parentFolderId>
@@ -45,24 +45,25 @@
       </properties>
     </stereotype>
   </stereotypes>
+  <metadata />
   <childElements>
     <childElement id="57756582-4ea3-48ab-9e9c-1c2ce5b5b94a" type="Context Menu" typeId="d45e383d-90ba-4b64-aca7-34ca100cea21">
       <name>[context menu]</name>
       <display>[context menu]</display>
       <isAbstract>false</isAbstract>
-      <order>0</order>
+      <sort-children>by-type-then-manually</sort-children>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>e302d9ca-268e-4a98-ad8d-4434aefb9903</parentFolderId>
       <packageId>411a47ef-bf13-45dd-b800-7abf7eb9ac92</packageId>
       <packageName>Intent.Angular.Layout</packageName>
       <stereotypes />
+      <metadata />
       <childElements>
         <childElement id="29ba5cdc-edf5-470a-96d5-b9d5cb8fc6ae" type="Element Creation Option" typeId="5fa12f89-da1e-49c5-b8e9-427b22407f19">
           <name>Add Column</name>
           <display>Add Column: Table Column</display>
           <isAbstract>false</isAbstract>
-          <order>0</order>
           <genericTypes />
           <typeReference id="e6eb9ce7-9c6a-43f1-8057-c0bbc4353a94">
             <typeId>6837f6c2-f098-45df-8be4-900036b73e25</typeId>
@@ -95,15 +96,16 @@
               </properties>
             </stereotype>
           </stereotypes>
+          <metadata />
           <childElements />
         </childElement>
       </childElements>
     </childElement>
     <childElement id="510bf1dc-08d2-4184-9358-499b96e41586" type="Mapping Settings" typeId="178c2f55-9ca1-484d-be43-a91bdd5554dc">
-      <name>NewMappingSettings</name>
-      <display>[mappings]: NewMappingSettings</display>
+      <name>Map from Model</name>
+      <display>[mappings]: Map from Model</display>
       <isAbstract>false</isAbstract>
-      <order>2</order>
+      <sort-children>by-type-then-by-name</sort-children>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>e302d9ca-268e-4a98-ad8d-4434aefb9903</parentFolderId>
@@ -115,7 +117,7 @@
           <definitionPackageName>Intent.ModuleBuilder</definitionPackageName>
           <definitionPackageId>9972b2a9-b749-4bba-b5c8-824bf694c6ef</definitionPackageId>
           <properties>
-            <property name="b986d2ea-50ff-4314-afc0-cb14ae7aad71" display="Shortcut" isActive="true" />
+            <property name="b986d2ea-50ff-4314-afc0-cb14ae7aad71" display="Shortcut" value="ctrl + shift + m" isActive="true" />
             <property name="d233d3f9-934a-4690-a476-778e0c4927ef" display="Default Designer" value="f492faed-0665-4513-9853-5a230721786f" isActive="true" />
             <property name="39d623e0-b8c5-4d23-8d78-75a7e2fa0c9d" display="Option Source" value="Lookup Element" isActive="true" />
             <property name="5bed7f14-ebd8-4055-be29-3a2f8407eb5d" display="Lookup Element Function" value="return getParent('Component').id" isActive="true" />
@@ -127,12 +129,13 @@
           </properties>
         </stereotype>
       </stereotypes>
+      <metadata />
       <childElements>
         <childElement id="7c808d5d-c6b5-4478-8df0-a95dc939ef11" type="Element Mapping" typeId="4a16943b-702c-4fb0-bfcc-2afd98b8814c">
           <name>NewElementMapping</name>
           <display>[mapping]: Component Model -&gt; [None] (Traverse)</display>
           <isAbstract>false</isAbstract>
-          <order>0</order>
+          <sort-children>by-type-then-by-name</sort-children>
           <genericTypes />
           <isMapped>false</isMapped>
           <parentFolderId>510bf1dc-08d2-4184-9358-499b96e41586</parentFolderId>
@@ -169,12 +172,13 @@
               </properties>
             </stereotype>
           </stereotypes>
+          <metadata />
           <childElements>
             <childElement id="c3360961-3eb7-4377-a387-f265c73fa65f" type="Element Mapping" typeId="4a16943b-702c-4fb0-bfcc-2afd98b8814c">
               <name>NewElementMapping</name>
               <display>[mapping]: Model Definition Field -&gt; Table Control (Traverse)</display>
               <isAbstract>false</isAbstract>
-              <order>0</order>
+              <sort-children>by-type-then-by-name</sort-children>
               <genericTypes />
               <isMapped>false</isMapped>
               <parentFolderId>7c808d5d-c6b5-4478-8df0-a95dc939ef11</parentFolderId>
@@ -211,12 +215,12 @@
                   </properties>
                 </stereotype>
               </stereotypes>
+              <metadata />
               <childElements>
                 <childElement id="7a509075-49fe-471f-90b5-fcd84e45e613" type="Element Mapping" typeId="4a16943b-702c-4fb0-bfcc-2afd98b8814c">
                   <name>NewElementMapping</name>
                   <display>[mapping]: Model Definition Field -&gt; Table Column (Map to Type)</display>
                   <isAbstract>false</isAbstract>
-                  <order>0</order>
                   <genericTypes />
                   <isMapped>false</isMapped>
                   <parentFolderId>c3360961-3eb7-4377-a387-f265c73fa65f</parentFolderId>
@@ -253,6 +257,7 @@
                       </properties>
                     </stereotype>
                   </stereotypes>
+                  <metadata />
                   <childElements />
                 </childElement>
               </childElements>
@@ -261,7 +266,7 @@
               <name>NewElementMapping</name>
               <display>[mapping]: DTO-Field -&gt; Table Control (Traverse)</display>
               <isAbstract>false</isAbstract>
-              <order>1</order>
+              <sort-children>by-type-then-by-name</sort-children>
               <genericTypes />
               <isMapped>false</isMapped>
               <parentFolderId>7c808d5d-c6b5-4478-8df0-a95dc939ef11</parentFolderId>
@@ -298,12 +303,12 @@
                   </properties>
                 </stereotype>
               </stereotypes>
+              <metadata />
               <childElements>
                 <childElement id="819085e3-cb8d-4a74-bc61-bc170385a4b1" type="Element Mapping" typeId="4a16943b-702c-4fb0-bfcc-2afd98b8814c">
                   <name>NewElementMapping</name>
                   <display>[mapping]: DTO-Field -&gt; Table Column (Map to Type)</display>
                   <isAbstract>false</isAbstract>
-                  <order>0</order>
                   <genericTypes />
                   <isMapped>false</isMapped>
                   <parentFolderId>144bea54-c425-4bf2-a0c1-9106b789878a</parentFolderId>
@@ -340,6 +345,7 @@
                       </properties>
                     </stereotype>
                   </stereotypes>
+                  <metadata />
                   <childElements />
                 </childElement>
               </childElements>
@@ -350,7 +356,7 @@
           <name>NewElementMapping</name>
           <display>[mapping]: Component Model -&gt; Table Control (Traverse)</display>
           <isAbstract>false</isAbstract>
-          <order>1</order>
+          <sort-children>by-type-then-by-name</sort-children>
           <genericTypes />
           <isMapped>false</isMapped>
           <parentFolderId>510bf1dc-08d2-4184-9358-499b96e41586</parentFolderId>
@@ -387,12 +393,12 @@
               </properties>
             </stereotype>
           </stereotypes>
+          <metadata />
           <childElements>
             <childElement id="6cc930f2-3bda-49b7-a3c8-6ae7d49c9de0" type="Element Mapping" typeId="4a16943b-702c-4fb0-bfcc-2afd98b8814c">
               <name>NewElementMapping</name>
               <display>[mapping]: Model Definition Field -&gt; Table Column (Map to Type)</display>
               <isAbstract>false</isAbstract>
-              <order>0</order>
               <genericTypes />
               <isMapped>false</isMapped>
               <parentFolderId>aba6038e-8ff6-4311-9192-1abeb4d42504</parentFolderId>
@@ -429,13 +435,13 @@
                   </properties>
                 </stereotype>
               </stereotypes>
+              <metadata />
               <childElements />
             </childElement>
             <childElement id="e35fc91a-4390-438c-a681-3aea014d2b5c" type="Element Mapping" typeId="4a16943b-702c-4fb0-bfcc-2afd98b8814c">
               <name>NewElementMapping</name>
               <display>[mapping]: DTO-Field -&gt; Table Column (Map to Type)</display>
               <isAbstract>false</isAbstract>
-              <order>1</order>
               <genericTypes />
               <isMapped>false</isMapped>
               <parentFolderId>aba6038e-8ff6-4311-9192-1abeb4d42504</parentFolderId>
@@ -472,6 +478,7 @@
                   </properties>
                 </stereotype>
               </stereotypes>
+              <metadata />
               <childElements />
             </childElement>
           </childElements>

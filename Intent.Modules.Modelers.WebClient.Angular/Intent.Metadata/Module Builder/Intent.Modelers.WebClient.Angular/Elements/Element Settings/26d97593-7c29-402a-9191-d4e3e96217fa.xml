@@ -3,6 +3,7 @@
   <name>Router Outlet</name>
   <display>Router Outlet</display>
   <isAbstract>false</isAbstract>
+  <sort-children>by-type-then-manually</sort-children>
   <order>2</order>
   <genericTypes />
   <isMapped>false</isMapped>
@@ -45,18 +46,19 @@
       </properties>
     </stereotype>
   </stereotypes>
+  <metadata />
   <childElements>
     <childElement id="3700369d-a25b-4330-b2d0-b579a50e28e6" type="Context Menu" typeId="d45e383d-90ba-4b64-aca7-34ca100cea21">
       <name>[context menu]</name>
       <display>[context menu]</display>
       <isAbstract>false</isAbstract>
-      <order>0</order>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>26d97593-7c29-402a-9191-d4e3e96217fa</parentFolderId>
       <packageId>9cf8c5df-18a9-470e-a4fd-7e18d7050cd6</packageId>
       <packageName>Intent.Modelers.WebClient.Angular</packageName>
       <stereotypes />
+      <metadata />
       <childElements />
     </childElement>
   </childElements>

@@ -3,7 +3,7 @@
   <name>Angular Web App</name>
   <display>Angular Web App: Web Client</display>
   <isAbstract>false</isAbstract>
-  <order>7</order>
+  <sort-children>by-type-then-by-name</sort-children>
   <genericTypes />
   <typeReference id="e511005a-f36f-4bf7-8613-401407884a44">
     <typeId>911c35b4-4ba3-404c-a0c6-e5258e53333a</typeId>
@@ -21,24 +21,25 @@
   <packageId>9cf8c5df-18a9-470e-a4fd-7e18d7050cd6</packageId>
   <packageName>Intent.Modelers.WebClient.Angular</packageName>
   <stereotypes />
+  <metadata />
   <childElements>
     <childElement id="e33fb04a-8c57-44a5-b961-24bdf504eee2" type="Context Menu" typeId="d45e383d-90ba-4b64-aca7-34ca100cea21">
       <name>[context menu]</name>
       <display>[context menu]</display>
       <isAbstract>false</isAbstract>
-      <order>1</order>
+      <sort-children>by-type-then-manually</sort-children>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>dba0b59e-2904-4ae3-b04a-a5c034aaf195</parentFolderId>
       <packageId>9cf8c5df-18a9-470e-a4fd-7e18d7050cd6</packageId>
       <packageName>Intent.Modelers.WebClient.Angular</packageName>
       <stereotypes />
+      <metadata />
       <childElements>
         <childElement id="17d45c27-f55b-4bd7-abcc-8584d5402d78" type="Element Creation Option" typeId="5fa12f89-da1e-49c5-b8e9-427b22407f19">
           <name>Add Root Module</name>
           <display>Add Root Module: Module</display>
           <isAbstract>false</isAbstract>
-          <order>0</order>
           <genericTypes />
           <typeReference id="dbaf20a4-a955-4153-937d-3af84ce5c508">
             <typeId>cac14331-198a-4f9a-bbb9-171eb0bd4efe</typeId>
@@ -71,13 +72,13 @@
               </properties>
             </stereotype>
           </stereotypes>
+          <metadata />
           <childElements />
         </childElement>
         <childElement id="b737847e-f6fa-4f8a-8188-61d5287e16cd" type="Element Creation Option" typeId="5fa12f89-da1e-49c5-b8e9-427b22407f19">
           <name>New Type-Definition</name>
           <display>New Type-Definition: Type-Definition</display>
           <isAbstract>false</isAbstract>
-          <order>1</order>
           <genericTypes />
           <typeReference id="bf5134f4-3bee-4f8d-9fa2-87c4ef0175a2">
             <typeId>d4e577cd-ad05-4180-9a2e-fff4ddea0e1e</typeId>
@@ -110,13 +111,13 @@
               </properties>
             </stereotype>
           </stereotypes>
+          <metadata />
           <childElements />
         </childElement>
         <childElement id="58b779ce-5974-4a58-b3ef-2b42c98ee93e" type="Element Creation Option" typeId="5fa12f89-da1e-49c5-b8e9-427b22407f19">
           <name>New Enum</name>
           <display>New Enum: Enum</display>
           <isAbstract>false</isAbstract>
-          <order>2</order>
           <genericTypes />
           <typeReference id="699fdb5d-7795-45c1-8446-e07d0439cb3b">
             <typeId>85fba0e9-9161-4c85-a603-a229ef312beb</typeId>
@@ -149,13 +150,13 @@
               </properties>
             </stereotype>
           </stereotypes>
+          <metadata />
           <childElements />
         </childElement>
         <childElement id="2a1b23aa-ae12-404c-94a4-23b39b0cc755" type="Stereotype-Definition Creation Option" typeId="0c721d5d-7721-414c-adaf-4c9f5c5531a9">
           <name>New Stereotype-Definition</name>
           <display>New Stereotype-Definition: Stereotype-Definition</display>
           <isAbstract>false</isAbstract>
-          <order>3</order>
           <genericTypes />
           <typeReference id="14024b3d-c7e2-4443-a749-299fee44837b">
             <typeId>54eff27b-2dfc-4853-8498-1a2c4700e385</typeId>
@@ -188,6 +189,7 @@
               </properties>
             </stereotype>
           </stereotypes>
+          <metadata />
           <childElements />
         </childElement>
       </childElements>
@@ -196,19 +198,19 @@
       <name>NewElementEventSettings</name>
       <display>[events]</display>
       <isAbstract>false</isAbstract>
-      <order>2</order>
+      <sort-children>by-type-then-by-name</sort-children>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>dba0b59e-2904-4ae3-b04a-a5c034aaf195</parentFolderId>
       <packageId>9cf8c5df-18a9-470e-a4fd-7e18d7050cd6</packageId>
       <packageName>Intent.Modelers.WebClient.Angular</packageName>
       <stereotypes />
+      <metadata />
       <childElements>
         <childElement id="1626c827-d33c-4736-a197-fad110495781" type="Element Event Handler" typeId="0ef412e3-d15a-45d3-bcd3-f646165f2eb6">
           <name>On Created</name>
           <display>On Created: Script</display>
           <isAbstract>false</isAbstract>
-          <order>0</order>
           <genericTypes />
           <typeReference id="1767c2b9-fd66-483c-88dc-dd970767104a">
             <typeId>043eee26-1591-42ac-9f2c-fc911b070eb1</typeId>
@@ -235,6 +237,7 @@
               </properties>
             </stereotype>
           </stereotypes>
+          <metadata />
           <childElements />
         </childElement>
       </childElements>

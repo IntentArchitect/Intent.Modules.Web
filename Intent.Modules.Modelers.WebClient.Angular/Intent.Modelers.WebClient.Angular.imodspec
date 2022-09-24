@@ -1,7 +1,7 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <package>
   <id>Intent.Modelers.WebClient.Angular</id>
-  <version>3.3.0</version>
+  <version>3.3.1-pre.0</version>
   <supportedClientVersions>[3.3.0-pre.0, 4.0.0)</supportedClientVersions>
   <summary>A custom module for Intent.Modules.Web.</summary>
   <description>A custom module for Intent.Modules.Web.</description>
@@ -11,9 +11,9 @@
   <decorators></decorators>
   <factoryExtensions></factoryExtensions>
   <dependencies>
-    <dependency id="Intent.Common" version="3.3.1" />
-    <dependency id="Intent.Common.Types" version="3.3.0" />
-    <dependency id="Intent.Modelers.Services" version="3.3.0" />
+    <dependency id="Intent.Common" version="3.3.10" />
+    <dependency id="Intent.Common.Types" version="3.3.1" />
+    <dependency id="Intent.Modelers.Services" version="3.3.5" />
     <dependency id="Intent.Modelers.WebClient" version="3.3.0" />
   </dependencies>
   <files>
@@ -25,4 +25,5 @@
     <install target="Web Client;Module Builder" src="Intent.Metadata/Module Builder/Intent.Modelers.WebClient.Angular/Intent.Modelers.WebClient.Angular.pkg.config" externalReference="9cf8c5df-18a9-470e-a4fd-7e18d7050cd6" />
   </metadata>
   <moduleSettings />
+  <moduleSettingsExtensions />
 </package>

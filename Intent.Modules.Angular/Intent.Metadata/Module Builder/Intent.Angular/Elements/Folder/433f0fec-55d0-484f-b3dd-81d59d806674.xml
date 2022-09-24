@@ -3,12 +3,13 @@
   <name>Environment</name>
   <display>Environment</display>
   <isAbstract>false</isAbstract>
-  <order>3</order>
+  <sort-children>by-type-then-by-name</sort-children>
   <genericTypes />
   <isMapped>false</isMapped>
   <parentFolderId>a3deb341-dd4e-4f7f-99f5-2f198c1c251c</parentFolderId>
   <packageId>a3deb341-dd4e-4f7f-99f5-2f198c1c251c</packageId>
   <packageName>Intent.Angular</packageName>
   <stereotypes />
+  <metadata />
   <childElements />
 </class>

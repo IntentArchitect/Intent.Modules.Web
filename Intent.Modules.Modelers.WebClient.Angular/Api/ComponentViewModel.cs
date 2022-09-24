@@ -69,14 +69,14 @@ namespace Intent.Modelers.WebClient.Angular.Api
         public string Comment => _element.Comment;
 
         public IList<DisplayComponentModel> DisplayComponents => _element.ChildElements
-                    .GetElementsOfType(DisplayComponentModel.SpecializationTypeId)
-                    .Select(x => new DisplayComponentModel(x))
-                    .ToList();
+            .GetElementsOfType(DisplayComponentModel.SpecializationTypeId)
+            .Select(x => new DisplayComponentModel(x))
+            .ToList();
 
         public RouterOutletModel RouterOutlet => _element.ChildElements
-                    .GetElementsOfType(RouterOutletModel.SpecializationTypeId)
-                    .Select(x => new RouterOutletModel(x))
-                    .SingleOrDefault();
+            .GetElementsOfType(RouterOutletModel.SpecializationTypeId)
+            .Select(x => new RouterOutletModel(x))
+            .SingleOrDefault();
     }
 
     [IntentManaged(Mode.Fully)]
