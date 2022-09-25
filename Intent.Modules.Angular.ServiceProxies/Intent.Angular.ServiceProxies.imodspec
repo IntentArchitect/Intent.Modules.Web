@@ -10,11 +10,11 @@
   <templates>
     <template id="Intent.Angular.ServiceProxies.Proxies.AngularDTO" externalReference="eef9e3d9-2c85-4a55-bed7-988d51fa5c6f">
       <role>Front End</role>
-      <location></location>
+      <location>src</location>
     </template>
     <template id="Intent.Angular.ServiceProxies.Proxies.AngularServiceProxy" externalReference="4ff46227-42ce-45ef-a5c1-057cb8501b76">
       <role>Front End</role>
-      <location></location>
+      <location>src</location>
     </template>
   </templates>
   <dependencies>

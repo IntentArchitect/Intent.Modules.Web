@@ -176,7 +176,7 @@
           <childElements>
             <childElement id="c3360961-3eb7-4377-a387-f265c73fa65f" type="Element Mapping" typeId="4a16943b-702c-4fb0-bfcc-2afd98b8814c">
               <name>NewElementMapping</name>
-              <display>[mapping]: Model Definition Field -&gt; Table Control (Traverse)</display>
+              <display>[mapping]: Model Definition Field -&gt; Table Control (Map to Type)</display>
               <isAbstract>false</isAbstract>
               <sort-children>by-type-then-by-name</sort-children>
               <genericTypes />
@@ -190,7 +190,7 @@
                   <definitionPackageName>Intent.ModuleBuilder</definitionPackageName>
                   <definitionPackageId>9972b2a9-b749-4bba-b5c8-824bf694c6ef</definitionPackageId>
                   <properties>
-                    <property name="d87242ea-697e-4ab6-b9f9-f48e9af2d3af" display="Child Mapping Mode" value="Traverse" isActive="true" />
+                    <property name="d87242ea-697e-4ab6-b9f9-f48e9af2d3af" display="Child Mapping Mode" value="Map to Type" isActive="true" />
                     <property name="0b8166de-1c91-41d3-ae3f-155687be6220" display="To Type" value="e302d9ca-268e-4a98-ad8d-4434aefb9903" isActive="true" />
                     <property name="f87c0289-fb95-46aa-a06d-3599e312324a" display="Use Mapping Settings" isActive="true" />
                   </properties>
@@ -264,7 +264,7 @@
             </childElement>
             <childElement id="144bea54-c425-4bf2-a0c1-9106b789878a" type="Element Mapping" typeId="4a16943b-702c-4fb0-bfcc-2afd98b8814c">
               <name>NewElementMapping</name>
-              <display>[mapping]: DTO-Field -&gt; Table Control (Traverse)</display>
+              <display>[mapping]: DTO-Field -&gt; Table Control (Map to Type)</display>
               <isAbstract>false</isAbstract>
               <sort-children>by-type-then-by-name</sort-children>
               <genericTypes />
@@ -278,7 +278,7 @@
                   <definitionPackageName>Intent.ModuleBuilder</definitionPackageName>
                   <definitionPackageId>9972b2a9-b749-4bba-b5c8-824bf694c6ef</definitionPackageId>
                   <properties>
-                    <property name="d87242ea-697e-4ab6-b9f9-f48e9af2d3af" display="Child Mapping Mode" value="Traverse" isActive="true" />
+                    <property name="d87242ea-697e-4ab6-b9f9-f48e9af2d3af" display="Child Mapping Mode" value="Map to Type" isActive="true" />
                     <property name="0b8166de-1c91-41d3-ae3f-155687be6220" display="To Type" value="e302d9ca-268e-4a98-ad8d-4434aefb9903" isActive="true" />
                     <property name="f87c0289-fb95-46aa-a06d-3599e312324a" display="Use Mapping Settings" isActive="true" />
                   </properties>
@@ -354,7 +354,7 @@
         </childElement>
         <childElement id="aba6038e-8ff6-4311-9192-1abeb4d42504" type="Element Mapping" typeId="4a16943b-702c-4fb0-bfcc-2afd98b8814c">
           <name>NewElementMapping</name>
-          <display>[mapping]: Component Model -&gt; Table Control (Traverse)</display>
+          <display>[mapping]: Component Model -&gt; Table Control (Map to Type)</display>
           <isAbstract>false</isAbstract>
           <sort-children>by-type-then-by-name</sort-children>
           <genericTypes />
@@ -368,7 +368,7 @@
               <definitionPackageName>Intent.ModuleBuilder</definitionPackageName>
               <definitionPackageId>9972b2a9-b749-4bba-b5c8-824bf694c6ef</definitionPackageId>
               <properties>
-                <property name="d87242ea-697e-4ab6-b9f9-f48e9af2d3af" display="Child Mapping Mode" value="Traverse" isActive="true" />
+                <property name="d87242ea-697e-4ab6-b9f9-f48e9af2d3af" display="Child Mapping Mode" value="Map to Type" isActive="true" />
                 <property name="0b8166de-1c91-41d3-ae3f-155687be6220" display="To Type" value="e302d9ca-268e-4a98-ad8d-4434aefb9903" isActive="true" />
                 <property name="f87c0289-fb95-46aa-a06d-3599e312324a" display="Use Mapping Settings" isActive="true" />
               </properties>

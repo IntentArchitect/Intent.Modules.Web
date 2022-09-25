@@ -33,8 +33,8 @@ namespace Intent.Modules.Angular.Templates.Component.AngularComponentTs
         {
             AddTypeSource(ModelTemplate.TemplateId);
             AddTypeSource(FormGroupTemplate.TemplateId);
-            AddTypeSource("Intent.Angular.ServiceProxies.Proxies.AngularDTOTemplate");
-            AddTypeSource("Intent.Angular.ServiceProxies.Proxies.AngularServiceProxyTemplate");
+            AddTypeSource("Intent.Angular.ServiceProxies.Proxies.AngularDTO");
+            AddTypeSource("Intent.Angular.ServiceProxies.Proxies.AngularServiceProxy");
             _injectedServices = Model.GetAngularComponentSettings().InjectServices()?.Where(x => x.SpecializationTypeId == AngularServiceModel.SpecializationTypeId)
                 .Select(x => (x.Name.ToCamelCase(), this.UseType(x.Name, new AngularServiceModel(x).GetAngularServiceSettings().Location())))
                 .ToList() ?? new List<(string, string)>();

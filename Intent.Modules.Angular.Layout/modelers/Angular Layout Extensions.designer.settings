@@ -486,7 +486,7 @@
                     <isCollection>true</isCollection>
                     <hasChildren p11:nil="true" xmlns:p11="http://www.w3.org/2001/XMLSchema-instance" />
                   </criteria>
-                  <mapTo specializationType="Table Control" childMappingMode="traverse" />
+                  <mapTo specializationType="Table Control" childMappingMode="map-to-child" />
                   <behaviour autoSelectChildren="true" />
                   <childMappings>
                     <mapping id="7a509075-49fe-471f-90b5-fcd84e45e613">
@@ -507,7 +507,7 @@
                     <isCollection>true</isCollection>
                     <hasChildren p11:nil="true" xmlns:p11="http://www.w3.org/2001/XMLSchema-instance" />
                   </criteria>
-                  <mapTo specializationType="Table Control" childMappingMode="traverse" />
+                  <mapTo specializationType="Table Control" childMappingMode="map-to-child" />
                   <behaviour autoSelectChildren="true" />
                   <childMappings>
                     <mapping id="819085e3-cb8d-4a74-bc61-bc170385a4b1">
@@ -530,7 +530,7 @@
                 <isCollection>true</isCollection>
                 <hasChildren p9:nil="true" xmlns:p9="http://www.w3.org/2001/XMLSchema-instance" />
               </criteria>
-              <mapTo specializationType="Table Control" childMappingMode="traverse" />
+              <mapTo specializationType="Table Control" childMappingMode="map-to-child" />
               <behaviour autoSelectChildren="true" />
               <childMappings>
                 <mapping id="6cc930f2-3bda-49b7-a3c8-6ae7d49c9de0">

@@ -24,8 +24,8 @@ namespace Intent.Modules.Angular.Templates.Module.AngularResolver
         public AngularResolverTemplate(IOutputTarget outputTarget, Intent.Modelers.WebClient.Angular.Api.ResolverModel model) : base(TemplateId, outputTarget, model)
         {
             AddTypeSource(ModelTemplate.TemplateId);
-            AddTypeSource("Intent.Angular.ServiceProxies.Proxies.AngularDTOTemplate");
-            AddTypeSource("Intent.Angular.ServiceProxies.Proxies.AngularServiceProxyTemplate");
+            AddTypeSource("Intent.Angular.ServiceProxies.Proxies.AngularDTO");
+            AddTypeSource("Intent.Angular.ServiceProxies.Proxies.AngularServiceProxy");
         }
 
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]

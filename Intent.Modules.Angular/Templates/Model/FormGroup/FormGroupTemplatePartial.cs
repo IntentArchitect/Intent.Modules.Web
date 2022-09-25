@@ -29,7 +29,7 @@ namespace Intent.Modules.Angular.Templates.Model.FormGroup
             //       the representative of a model type, and this would not be necessary. Using the hierarchy of the OutputTargets could
             //       make the discovery of the type predictable. Food for thought.
             //AddTypeSource(AngularDTOTemplate.TemplateId);
-            AddTypeSource("Intent.Angular.ServiceProxies.Proxies.AngularDTOTemplate");
+            AddTypeSource("Intent.Angular.ServiceProxies.Proxies.AngularDTO");
         }
 
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]
