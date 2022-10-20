@@ -3,7 +3,7 @@
   <name>Web Client</name>
   <display>Web Client</display>
   <isAbstract>false</isAbstract>
-  <order>0</order>
+  <sort-children>by-type-then-by-name</sort-children>
   <genericTypes />
   <isMapped>false</isMapped>
   <parentFolderId>cacb935b-34a6-415d-ba5e-d39f7d1a570c</parentFolderId>
@@ -26,7 +26,6 @@
       <name>reference</name>
       <display>reference: Web Client Package</display>
       <isAbstract>false</isAbstract>
-      <order>0</order>
       <genericTypes />
       <typeReference id="91f40355-b509-4e21-8a18-c7b117922572">
         <typeId>93058b8a-4d1d-4f88-ac14-332c87666418</typeId>
@@ -51,7 +50,6 @@
       <name>reference</name>
       <display>reference: Common Types</display>
       <isAbstract>false</isAbstract>
-      <order>1</order>
       <genericTypes />
       <typeReference id="329e6592-974b-451e-a7db-391fca251d2d">
         <typeId>55d06096-83fe-4acf-86ef-586d254e5170</typeId>

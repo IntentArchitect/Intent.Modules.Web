@@ -3,7 +3,7 @@
   <name>Web Client</name>
   <display>Web Client</display>
   <isAbstract>false</isAbstract>
-  <order>0</order>
+  <sort-children>by-type-then-by-name</sort-children>
   <genericTypes />
   <isMapped>false</isMapped>
   <parentFolderId>93058b8a-4d1d-4f88-ac14-332c87666418</parentFolderId>
@@ -27,7 +27,6 @@
       <name>[context menu]</name>
       <display>[context menu]</display>
       <isAbstract>false</isAbstract>
-      <order>0</order>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>911c35b4-4ba3-404c-a0c6-e5258e53333a</parentFolderId>

@@ -3,7 +3,7 @@
   <name>Web Client Package</name>
   <display>Web Client Package</display>
   <isAbstract>false</isAbstract>
-  <order>1</order>
+  <sort-children>by-type-then-by-name</sort-children>
   <genericTypes />
   <isMapped>false</isMapped>
   <parentFolderId>cacb935b-34a6-415d-ba5e-d39f7d1a570c</parentFolderId>
