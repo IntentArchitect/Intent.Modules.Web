@@ -1,7 +1,7 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <package>
   <id>Intent.Modelers.WebClient</id>
-  <version>3.3.2-pre.0</version>
+  <version>3.3.2</version>
   <supportedClientVersions>[3.3.0-pre.0, 4.0.0)</supportedClientVersions>
   <summary>Modeler for describing Web clients that interact with a backend service API</summary>
   <description>Modeler for describing Web clients that interact with a backend service API</description>
