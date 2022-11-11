@@ -57,9 +57,9 @@ export class TestPeopleClient {
 
   public getWithQueryParam(idParam: string): Observable<PersonDTO> {
     let url = `/api/people/getwithqueryparam`;
-        //url = `${url}?idParam=${idParam}`;
     let httpParams = new HttpParams()
-      .set("idParam", idParam);
+      .set("idParam", idParam)
+    ;
     return this.apiService.get(url, httpParams)
       .pipe(map((response: any) => {
         return response;
@@ -76,7 +76,6 @@ export class TestPeopleClient {
 
   public postWithFormParam(param1: string, param2: string): Observable<boolean> {
     let url = `/api/people/postwithformparam`;
-        //url = `${url}?param1=${param1}&param2=${param2}`;
     let formData: FormData = new FormData();
     formData.append("param1", param1);
     formData.append("param2", param2);
@@ -88,10 +87,10 @@ export class TestPeopleClient {
 
   public postWithHeaderParam(param: string): Observable<boolean> {
     let url = `/api/people/postwithheaderparam`;
-        //url = `${url}?param=${param}`;
     let headers = new HttpHeaders()
-      .append("MY_HEADER", param);
-    return this.apiService.post(url, null, null, headers)
+      .append("MY_HEADER", param)
+    ;
+    return this.apiService.post(url, {}, null, headers)
       .pipe(map((response: any) => {
         return response;
       }));
@@ -107,24 +106,7 @@ export class TestPeopleClient {
 
   public getWithPrimitiveResultInt(): Observable<number> {
     let url = `/api/people/getwithprimitiveresultint`;
-    return this.apiService.get(url, null, null, "text")
-      .pipe(map((response: string) => {
-        if (response.startsWith("\"") || response.startsWith("'")) { response = response.substring(1, response.length - 2); }
-        return Number(response);
-      }));
-  }
-
-  public getWithPrimitiveResultBool(): Observable<boolean> {
-    let url = `/api/people/getwithprimitiveresultbool`;
-    return this.apiService.get(url, null, null, "text")
-      .pipe(map((response: any) => {
-        return Boolean(response);
-      }));
-  }
-
-  public getWithPrimitiveResultStr(): Observable<string> {
-    let url = `/api/people/getwithprimitiveresultstr`;
-    return this.apiService.get(url, null, null, "text")
+    return this.apiService.get(url)
       .pipe(map((response: any) => {
         return response;
       }));
@@ -138,6 +120,14 @@ export class TestPeopleClient {
       }));
   }
 
+  public getWithPrimitiveResultBool(): Observable<boolean> {
+    let url = `/api/people/getwithprimitiveresultbool`;
+    return this.apiService.get(url)
+      .pipe(map((response: any) => {
+        return response;
+      }));
+  }
+
   public getWithPrimitiveResultWrapBool(): Observable<boolean> {
     let url = `/api/people/getwithprimitiveresultwrapbool`;
     return this.apiService.get(url)
@@ -146,10 +136,34 @@ export class TestPeopleClient {
       }));
   }
 
+  public getWithPrimitiveResultStr(): Observable<string> {
+    let url = `/api/people/getwithprimitiveresultstr`;
+    return this.apiService.get(url, null, null, 'text')
+      .pipe(map((response: any) => {
+        return response;
+      }));
+  }
+
   public getWithPrimitiveResultWrapStr(): Observable<string> {
     let url = `/api/people/getwithprimitiveresultwrapstr`;
     return this.apiService.get(url)
       .pipe(map((response: JsonResponse<string>) => {
+        return response.value;
+      }));
+  }
+
+  public getWithPrimitiveResultDate(): Observable<Date> {
+    let url = `/api/people/getwithprimitiveresultdate`;
+    return this.apiService.get(url)
+      .pipe(map((response: any) => {
+        return response;
+      }));
+  }
+
+  public getWithPrimitiveResultWrapDate(): Observable<Date> {
+    let url = `/api/people/getwithprimitiveresultwrapdate`;
+    return this.apiService.get(url)
+      .pipe(map((response: JsonResponse<Date>) => {
         return response.value;
       }));
   }

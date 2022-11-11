@@ -122,5 +122,13 @@
       <ProjectRelativeFilePath>intent.decorators.ts</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
+    <FileLog>
+      <ProjectId>2d31c2f6-6afe-46f4-b857-2a0ade847282</ProjectId>
+      <CorrelationId>Intent.Angular.ServiceProxies.Proxies.JsonResponse</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>../../AngularTest/src/json-response.ts</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>json-response.ts</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
   </FileLogs>
 </outputLog>

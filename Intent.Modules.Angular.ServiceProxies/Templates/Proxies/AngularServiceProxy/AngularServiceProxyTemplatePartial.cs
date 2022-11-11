@@ -131,42 +131,58 @@ namespace Intent.Modules.Angular.ServiceProxies.Templates.Proxies.AngularService
 
             exprBuilder.Append("(url");
 
+            var arguments = new List<string>();
+            
             if (ServiceMetadataQueries.GetFormUrlEncodedParameters(operation).Any())
             {
-                exprBuilder.Append(", formData");
+                arguments.Add("formData");
             }
             else if (ServiceMetadataQueries.GetBodyParameter(this, operation) != null)
             {
                 var bodyParam = ServiceMetadataQueries.GetBodyParameter(this, operation);
-                exprBuilder.Append($", {bodyParam.Name.ToCamelCase()}");
+                arguments.Add($"{bodyParam.Name.ToCamelCase()}");
+            }
+            else if (GetHttpVerb(operation) is HttpVerb.PUT or HttpVerb.POST)
+            {
+                arguments.Add("{}");
             }
 
             if (ServiceMetadataQueries.GetQueryParameters(this, operation).Any())
             {
-                exprBuilder.Append(", httpParams");
+                arguments.Add("httpParams");
             }
             else
             {
-                exprBuilder.Append(", null");
+                arguments.Add("null");
             }
 
             if (ServiceMetadataQueries.GetHeaderParameters(operation).Any())
             {
-                exprBuilder.Append(", headers");
+                arguments.Add("headers");
             }
             else
             {
-                exprBuilder.Append(", null");
+                arguments.Add("null");
             }
 
             if (operation.ReturnType != null && ShouldReadAsRawText(operation))
             {
-                exprBuilder.Append(@", 'text'");
+                arguments.Add("'text'");
             }
-            else
+
+            for (var index = arguments.Count - 1; index >= 0; index--)
             {
-                exprBuilder.Append(@", 'json'");
+                var current = arguments[index];
+                if (current == "null")
+                {
+                    arguments.RemoveAt(index);
+                    continue;
+                }
+
+                break;
             }
+
+            exprBuilder.Append((arguments.Any() ? ", " : string.Empty) + string.Join(", ", arguments));
 
             exprBuilder.Append(")");
             
@@ -175,8 +191,9 @@ namespace Intent.Modules.Angular.ServiceProxies.Templates.Proxies.AngularService
 
         private bool ShouldReadAsRawText(ServiceOperationModel operation)
         {
-            return (!HasWrappedReturnType(operation) && operation.ReturnType.HasStringType() && !operation.ReturnType.IsCollection)
-                || (IsReturnTypePrimitive(operation));
+            // Interestingly the Angular HttpClient can successfully parse a primitive type
+            // provided it is not a plain string.
+            return (!HasWrappedReturnType(operation) && operation.ReturnType.HasStringType() && !operation.ReturnType.IsCollection);
         }
 
         private bool HasWrappedReturnType(ServiceOperationModel operationModel)
@@ -213,21 +230,7 @@ namespace Intent.Modules.Angular.ServiceProxies.Templates.Proxies.AngularService
         {
             var statements = new List<string>();
 
-            if (operation.ReturnType != null && ShouldReadAsRawText(operation))
-            {
-                statements.Add(@"if (response.startsWith(""\"""") || response.startsWith(""'"")) { response = response.substring(1, response.length - 2); }");
-
-                var conversionFunction = GetConversionFunction(operation);
-                if (string.IsNullOrEmpty(conversionFunction))
-                {
-                    statements.Add($"return response;");
-                }
-                else
-                {
-                    statements.Add($"return {conversionFunction}(response);");
-                }
-            }
-            else if (operation.ReturnType != null && HasWrappedReturnType(operation))
+            if (operation.ReturnType != null && HasWrappedReturnType(operation))
             {
                 statements.Add($"return response.value;");
             }
@@ -239,11 +242,6 @@ namespace Intent.Modules.Angular.ServiceProxies.Templates.Proxies.AngularService
             const string newLine = @"
         ";
             return string.Join(newLine, statements);
-        }
-
-        private string GetConversionFunction(ServiceOperationModel operation)
-        {
-            return GetTypeName(operation.ReturnType).ToPascalCase();
         }
 
         private string GetPreDataServiceCallStatements(ServiceOperationModel operation)

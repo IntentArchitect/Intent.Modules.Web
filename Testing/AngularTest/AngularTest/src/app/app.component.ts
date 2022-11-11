@@ -37,9 +37,11 @@ export class AppComponent implements OnInit {
           this.client.getWithPrimitiveResultInt(),
           this.client.getWithPrimitiveResultBool(),
           this.client.getWithPrimitiveResultStr(),
+          this.client.getWithPrimitiveResultDate(),
           this.client.getWithPrimitiveResultWrapInt(),
           this.client.getWithPrimitiveResultWrapBool(),
-          this.client.getWithPrimitiveResultWrapStr()
+          this.client.getWithPrimitiveResultWrapStr(),
+          this.client.getWithPrimitiveResultWrapDate()
         ];
         from(calls)
           .pipe(concatAll())

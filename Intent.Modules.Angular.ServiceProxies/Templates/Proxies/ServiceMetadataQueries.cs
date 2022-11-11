@@ -44,8 +44,10 @@ public static class ServiceMetadataQueries
             serviceRoute = $"api{(!string.IsNullOrWhiteSpace(serviceName) ? "/" : string.Empty)}{serviceName}";
         }
 
+        serviceRoute = serviceRoute.ToLower();
+
         var operationRoute = GetRoute(operation) ?? string.Empty;
-        operationRoute = operationRoute.Replace("[action]", operation.Name);
+        operationRoute = operationRoute.Replace("[action]", operation.Name).ToLower();
         if (!string.IsNullOrWhiteSpace(operationRoute))
         {
             foreach (var parameter in operation.Parameters)
@@ -57,7 +59,7 @@ public static class ServiceMetadataQueries
             }
         }
 
-        return $"{serviceRoute.ToLower()}{(!string.IsNullOrWhiteSpace(operationRoute) ? "/" : string.Empty)}{operationRoute.ToLower()}";
+        return $"{serviceRoute}{(!string.IsNullOrWhiteSpace(operationRoute) ? "/" : string.Empty)}{operationRoute}";
     }
 
     public static IReadOnlyCollection<ParameterModel> GetQueryParameters(IntentTemplateBase template, OperationModel operation)
