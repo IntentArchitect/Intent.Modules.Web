@@ -38,7 +38,7 @@ namespace Intent.Modules.Angular.ServiceProxies.Templates.Proxies.AngularDTO
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]
         public override IEnumerable<ServiceProxyDTOModel> GetModels(IApplication application)
         {
-            return _metadataManager.WebClient(application).GetServiceProxyDTOModels();
+            return _metadataManager.WebClient(application).GetProxyMappedServiceDTOModels();
         }
 
 

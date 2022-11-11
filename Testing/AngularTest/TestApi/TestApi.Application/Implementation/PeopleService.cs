@@ -136,6 +136,18 @@ namespace TestApi.Application.Implementation
             return "Wrapped Primitive string value";
         }
 
+        [IntentManaged(Mode.Fully, Body = Mode.Ignore)]
+        public async Task<DateTime> GetWithPrimitiveResultDate()
+        {
+            return DateTime.Now;
+        }
+
+        [IntentManaged(Mode.Fully, Body = Mode.Ignore)]
+        public async Task<DateTime> GetWithPrimitiveResultWrapDate()
+        {
+            return DateTime.UtcNow;
+        }
+
         public void Dispose()
         {
         }

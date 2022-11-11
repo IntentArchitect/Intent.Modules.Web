@@ -18,13 +18,13 @@ export class <#= ClassName #> {
     private apiService: <#= ApiServiceClassName #>
   ) {
   }
-<#  foreach (var operation in Model.Operations) { #>
+<#  foreach (var operation in Model.MappedService.Operations) { #>
 
   public <#= operation.Name.ToCamelCase() #>(<#= GetParameterDefinitions(operation)#>): Observable<<#= GetReturnType(operation)#>> {
-    let url = `<#= GetPath(operation) #>`;<#= GetUpdateUrl(operation)#>
+    let url = `<#= GetRelativeUri(operation) #>`;<#= GetPreDataServiceCallStatements(operation) #>
     return this.apiService.<#= GetDataServiceCall(operation)#>
-      .pipe(map((response: any) => {
-        return response;
+      .pipe(map((response: <#= GetApiResponseType(operation) #>) => {
+        <#= GetApiResponseExpression(operation) #>
       }));
   }
 <#  } #>

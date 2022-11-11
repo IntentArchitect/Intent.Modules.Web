@@ -958,5 +958,75 @@
       <metadata />
       <childElements />
     </childElement>
+    <childElement id="350219fd-d714-4d90-b763-0ac20c47042f" type="Operation" typeId="e030c97a-e066-40a7-8188-808c275df3cb">
+      <name>GetWithPrimitiveResultDate</name>
+      <display>GetWithPrimitiveResultDate(): datetime</display>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <typeReference id="b4b656ab-eaf6-4255-a453-cff5541859db">
+        <typeId>a4107c29-7851-4121-9416-cf1236908f1e</typeId>
+        <isNavigable>true</isNavigable>
+        <isNullable>false</isNullable>
+        <isCollection>false</isCollection>
+        <isRequired>true</isRequired>
+        <typePackageName>Intent.Common.Types</typePackageName>
+        <typePackageId>870ad967-cbd4-4ea9-b86d-9c3a5d55ea67</typePackageId>
+        <stereotypes />
+        <genericTypeParameters />
+      </typeReference>
+      <isMapped>false</isMapped>
+      <parentFolderId>732d1073-6c95-453a-b415-80cda1866495</parentFolderId>
+      <packageId>ea777a2a-96bd-4d4f-9167-ed2f5c3b5b96</packageId>
+      <packageName>TestApi.Services</packageName>
+      <stereotypes>
+        <stereotype stereotypeDefinitionId="b4581ed2-42ec-4ae2-83dd-dcdd5f0837b6" name="Http Settings">
+          <addedByDefault>true</addedByDefault>
+          <definitionPackageName>Intent.Metadata.WebApi</definitionPackageName>
+          <definitionPackageId>0011387a-b122-45d7-9cdb-8e21b315ab9f</definitionPackageId>
+          <properties>
+            <property name="801c3e61-4431-4d81-93fa-7e57d33cb3fa" display="Verb" value="GET" isActive="true" />
+            <property name="5dd3e07d-76eb-45d4-9956-4325fb068acc" display="Route" value="[action]" isActive="true" />
+            <property name="4490e212-1e99-43ce-b3dd-048ed2a6bae8" display="Return Type Mediatype" value="Default" isActive="true" />
+          </properties>
+        </stereotype>
+      </stereotypes>
+      <metadata />
+      <childElements />
+    </childElement>
+    <childElement id="50ee0a26-350c-4d5b-be38-ee6ddaf6484c" type="Operation" typeId="e030c97a-e066-40a7-8188-808c275df3cb">
+      <name>GetWithPrimitiveResultWrapDate</name>
+      <display>GetWithPrimitiveResultWrapDate(): datetime</display>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <typeReference id="a6926876-f2d0-4834-8f98-361653e74dd4">
+        <typeId>a4107c29-7851-4121-9416-cf1236908f1e</typeId>
+        <isNavigable>true</isNavigable>
+        <isNullable>false</isNullable>
+        <isCollection>false</isCollection>
+        <isRequired>true</isRequired>
+        <typePackageName>Intent.Common.Types</typePackageName>
+        <typePackageId>870ad967-cbd4-4ea9-b86d-9c3a5d55ea67</typePackageId>
+        <stereotypes />
+        <genericTypeParameters />
+      </typeReference>
+      <isMapped>false</isMapped>
+      <parentFolderId>732d1073-6c95-453a-b415-80cda1866495</parentFolderId>
+      <packageId>ea777a2a-96bd-4d4f-9167-ed2f5c3b5b96</packageId>
+      <packageName>TestApi.Services</packageName>
+      <stereotypes>
+        <stereotype stereotypeDefinitionId="b4581ed2-42ec-4ae2-83dd-dcdd5f0837b6" name="Http Settings">
+          <addedByDefault>true</addedByDefault>
+          <definitionPackageName>Intent.Metadata.WebApi</definitionPackageName>
+          <definitionPackageId>0011387a-b122-45d7-9cdb-8e21b315ab9f</definitionPackageId>
+          <properties>
+            <property name="801c3e61-4431-4d81-93fa-7e57d33cb3fa" display="Verb" value="GET" isActive="true" />
+            <property name="5dd3e07d-76eb-45d4-9956-4325fb068acc" display="Route" value="[action]" isActive="true" />
+            <property name="4490e212-1e99-43ce-b3dd-048ed2a6bae8" display="Return Type Mediatype" value="application/json" isActive="true" />
+          </properties>
+        </stereotype>
+      </stereotypes>
+      <metadata />
+      <childElements />
+    </childElement>
   </childElements>
 </class>

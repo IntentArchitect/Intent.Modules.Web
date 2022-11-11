@@ -1,12 +1,10 @@
 import { Injectable } from '@angular/core';
-
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 import { PersonCreateDTO } from './models/person-create.dto';
 import { PersonDTO } from './models/person.dto';
 import { PersonUpdateDTO } from './models/person-update.dto';
 import { ApiService } from './../core/api.service';
-import { IntentIgnore } from 'src/intent.decorators';
 import { HttpHeaders, HttpParams } from '@angular/common/http';
 import { JsonResponse } from './json-response';
 
@@ -57,7 +55,6 @@ export class TestPeopleClient {
       }));
   }
 
-  @IntentIgnore()
   public getWithQueryParam(idParam: string): Observable<PersonDTO> {
     let url = `/api/people/getwithqueryparam`;
         //url = `${url}?idParam=${idParam}`;
@@ -77,7 +74,6 @@ export class TestPeopleClient {
       }));
   }
 
-  @IntentIgnore()
   public postWithFormParam(param1: string, param2: string): Observable<boolean> {
     let url = `/api/people/postwithformparam`;
         //url = `${url}?param1=${param1}&param2=${param2}`;
@@ -90,7 +86,6 @@ export class TestPeopleClient {
       }));
   }
 
-  @IntentIgnore()
   public postWithHeaderParam(param: string): Observable<boolean> {
     let url = `/api/people/postwithheaderparam`;
         //url = `${url}?param=${param}`;
@@ -110,16 +105,15 @@ export class TestPeopleClient {
       }));
   }
 
-  @IntentIgnore()
   public getWithPrimitiveResultInt(): Observable<number> {
     let url = `/api/people/getwithprimitiveresultint`;
     return this.apiService.get(url, null, null, "text")
-      .pipe(map((response: any) => {
+      .pipe(map((response: string) => {
+        if (response.startsWith("\"") || response.startsWith("'")) { response = response.substring(1, response.length - 2); }
         return Number(response);
       }));
   }
 
-  @IntentIgnore()
   public getWithPrimitiveResultBool(): Observable<boolean> {
     let url = `/api/people/getwithprimitiveresultbool`;
     return this.apiService.get(url, null, null, "text")
@@ -136,7 +130,6 @@ export class TestPeopleClient {
       }));
   }
 
-  @IntentIgnore()
   public getWithPrimitiveResultWrapInt(): Observable<number> {
     let url = `/api/people/getwithprimitiveresultwrapint`;
     return this.apiService.get(url)
@@ -145,7 +138,6 @@ export class TestPeopleClient {
       }));
   }
 
-  @IntentIgnore()
   public getWithPrimitiveResultWrapBool(): Observable<boolean> {
     let url = `/api/people/getwithprimitiveresultwrapbool`;
     return this.apiService.get(url)

@@ -130,6 +130,38 @@
     </FileLog>
     <FileLog>
       <ProjectId>c08e0737-1abd-40fc-9366-f7dccdb55b11</ProjectId>
+      <CorrelationId>ModuleBuilder.Typescript.Templates.TypescriptTemplate.PreProcessT4#541fb796-1d01-4577-a7f7-5e6895a41e71</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>Templates/Proxies/JsonResponse/JsonResponseTemplate.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>Proxies/JsonResponse/JsonResponseTemplate.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>c08e0737-1abd-40fc-9366-f7dccdb55b11</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplateT4#541fb796-1d01-4577-a7f7-5e6895a41e71</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>Templates/Proxies/JsonResponse/JsonResponseTemplate.tt</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>Proxies/JsonResponse/JsonResponseTemplate.tt</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>c08e0737-1abd-40fc-9366-f7dccdb55b11</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial#541fb796-1d01-4577-a7f7-5e6895a41e71</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>Templates/Proxies/JsonResponse/JsonResponseTemplatePartial.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>Proxies/JsonResponse/JsonResponseTemplatePartial.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>c08e0737-1abd-40fc-9366-f7dccdb55b11</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.TemplateRegistration.SingleFileNoModel#541fb796-1d01-4577-a7f7-5e6895a41e71</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>Templates/Proxies/JsonResponse/JsonResponseTemplateRegistration.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>Proxies/JsonResponse/JsonResponseTemplateRegistration.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>c08e0737-1abd-40fc-9366-f7dccdb55b11</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.Templates.TemplateExtensions</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/TemplateExtensions.cs</ApplicationRelativeFilePath>

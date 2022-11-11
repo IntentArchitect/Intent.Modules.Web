@@ -393,6 +393,50 @@ namespace TestApi.Api.Controllers
             return Ok(new JsonResponse<string>(result));
         }
 
+        /// <summary>
+        /// </summary>
+        /// <response code="200">Returns the specified DateTime.</response>
+        /// <response code="404">Can't find an DateTime with the parameters provided.</response>
+        [HttpGet("[action]")]
+        [ProducesResponseType(typeof(DateTime), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<ActionResult<DateTime>> GetWithPrimitiveResultDate(CancellationToken cancellationToken)
+        {
+            var result = default(DateTime);
+
+            using (var transaction = new TransactionScope(TransactionScopeOption.Required,
+                new TransactionOptions() { IsolationLevel = IsolationLevel.ReadCommitted }, TransactionScopeAsyncFlowOption.Enabled))
+            {
+
+                result = await _appService.GetWithPrimitiveResultDate();
+
+            }
+            return Ok(result);
+        }
+
+        /// <summary>
+        /// </summary>
+        /// <response code="200">Returns the specified DateTime.</response>
+        /// <response code="404">Can't find an DateTime with the parameters provided.</response>
+        [HttpGet("[action]")]
+        [ProducesResponseType(typeof(JsonResponse<DateTime>), StatusCodes.Status200OK)]
+        [ProducesResponseType(StatusCodes.Status404NotFound)]
+        [ProducesResponseType(StatusCodes.Status500InternalServerError)]
+        public async Task<ActionResult<DateTime>> GetWithPrimitiveResultWrapDate(CancellationToken cancellationToken)
+        {
+            var result = default(DateTime);
+
+            using (var transaction = new TransactionScope(TransactionScopeOption.Required,
+                new TransactionOptions() { IsolationLevel = IsolationLevel.ReadCommitted }, TransactionScopeAsyncFlowOption.Enabled))
+            {
+
+                result = await _appService.GetWithPrimitiveResultWrapDate();
+
+            }
+            return Ok(new JsonResponse<DateTime>(result));
+        }
+
 
     }
 }

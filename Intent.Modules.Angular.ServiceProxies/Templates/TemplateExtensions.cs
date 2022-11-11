@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Intent.Modules.Angular.ServiceProxies.Templates.Proxies.AngularDTO;
 using Intent.Modules.Angular.ServiceProxies.Templates.Proxies.AngularServiceProxy;
+using Intent.Modules.Angular.ServiceProxies.Templates.Proxies.JsonResponse;
 using Intent.Modules.Common.Templates;
 using Intent.RoslynWeaver.Attributes;
 
@@ -30,6 +31,11 @@ namespace Intent.Modules.Angular.ServiceProxies.Templates
         public static string GetAngularServiceProxyName(this IntentTemplateBase template, Intent.Modelers.Types.ServiceProxies.Api.ServiceProxyModel model)
         {
             return template.GetTypeName(AngularServiceProxyTemplate.TemplateId, model);
+        }
+
+        public static string GetJsonResponseName<T>(this IntentTemplateBase<T> template)
+        {
+            return template.GetTypeName(JsonResponseTemplate.TemplateId);
         }
 
     }

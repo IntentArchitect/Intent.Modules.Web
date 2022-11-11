@@ -1,31 +1,24 @@
 using System;
 using System.Collections.Generic;
-using System.Data;
 using System.IO;
 using System.Linq;
-using Intent.Angular.Api;
+using System.Text;
 using Intent.Angular.ServiceProxies.Api;
 using Intent.Engine;
-using Intent.Metadata.Models;
 using Intent.Metadata.WebApi.Api;
-using Intent.Modelers.Services.Api;
 using Intent.Modelers.Types.ServiceProxies.Api;
 using Intent.Modelers.WebClient.Angular.Api;
 using Intent.Modules.Angular.ServiceProxies.Templates.Proxies.AngularDTO;
 using Intent.Modules.Angular.Templates;
 using Intent.Modules.Angular.Templates.Core.ApiService;
 using Intent.Modules.Common;
-using Intent.Modules.Common.Plugins;
 using Intent.Modules.Common.Templates;
-using Intent.Modules.Common.Types.Api;
 using Intent.Modules.Common.TypeScript.Templates;
 using Intent.RoslynWeaver.Attributes;
 using Intent.Templates;
 using Intent.Utils;
-using OperationModel = Intent.Modelers.Services.Api.OperationModel;
+using ServiceOperationModel = Intent.Modelers.Services.Api.OperationModel;
 using ProxyOperationModel = Intent.Modelers.Types.ServiceProxies.Api.OperationModel;
-using EnumModel = Intent.Modules.Common.Types.Api.EnumModel;
-using TypeDefinitionModel = Intent.Modules.Common.Types.Api.TypeDefinitionModel;
 
 [assembly: DefaultIntentManaged(Mode.Merge)]
 [assembly: IntentTemplate("Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial", Version = "1.0")]
@@ -41,6 +34,7 @@ namespace Intent.Modules.Angular.ServiceProxies.Templates.Proxies.AngularService
         [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
         public AngularServiceProxyTemplate(IOutputTarget outputTarget, Intent.Modelers.Types.ServiceProxies.Api.ServiceProxyModel model) : base(TemplateId, outputTarget, model)
         {
+            ServiceMetadataQueries.Validate(this, model);
             AddTypeSource(AngularDTOTemplate.TemplateId);
 
             if (Model.MappedService == null)
@@ -55,6 +49,17 @@ namespace Intent.Modules.Angular.ServiceProxies.Templates.Proxies.AngularService
                     Logging.Log.Warning($"Operation [{operation.Name}] on {ServiceProxyModel.SpecializationType} [{Model.Name}] is not mapped to an underlying Service Operation");
                 }
             }
+        }
+        
+        [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]
+        public override ITemplateFileConfig GetTemplateFileConfig()
+        {
+            return new TypeScriptFileConfig(
+                overwriteBehaviour: OverwriteBehaviour.Always,
+                fileName: $"{Model.Name.ToKebabCase()}.service",
+                relativeLocation: $"{string.Join("/", Model.GetModule().InternalElement.GetFolderPath(additionalFolders: Model.GetModule().GetModuleName().ToKebabCase()))}",
+                className: "${Model.Name}"
+            );
         }
 
         public string ApiServiceClassName => GetTypeName(ApiServiceTemplate.TemplateId);
@@ -73,7 +78,7 @@ namespace Intent.Modules.Angular.ServiceProxies.Templates.Proxies.AngularService
                 moduleId: Model.GetModule().Id));
         }
 
-        private string GetReturnType(ProxyOperationModel operation)
+        private string GetReturnType(ServiceOperationModel operation)
         {
             if (operation.ReturnType == null)
             {
@@ -83,104 +88,208 @@ namespace Intent.Modules.Angular.ServiceProxies.Templates.Proxies.AngularService
             return GetTypeName(operation.ReturnType);
         }
 
-        private string GetParameterDefinitions(ProxyOperationModel operation)
+        private string GetParameterDefinitions(ServiceOperationModel operation)
         {
             return string.Join(", ", operation.Parameters.Select(x => x.Name.ToCamelCase() + (x.TypeReference.IsNullable ? "?" : "") + ": " + Types.Get(x.TypeReference, "{0}[]")));
         }
 
-        private string GetUpdateUrl(ProxyOperationModel operation)
+        private string GetDataServiceCall(ServiceOperationModel operation)
         {
-            var mappedOperation = new OperationModel((IElement)operation.Mapping.Element);
-            if (mappedOperation?.Parameters.Count != operation.Parameters.Count)
-            {
-                throw new Exception($"Different number of properties for mapped operation [{operation.Name}] on {ServiceProxyModel.SpecializationType} [{Model.Name}]");
-            }
+            var exprBuilder = new StringBuilder();
 
-            var path = GetPath(operation);
-            var urlParameters = mappedOperation.Parameters.Where(x => !IsComplexObject(x.Type.Element) &&
-                                                                      !path.Contains($"${{{x.Name.ToCamelCase()}}}")).ToList();
-            if (!urlParameters.Any())
-            {
-                return "";
-            }
-
-            return $@"
-        url = `${{url}}?{string.Join("&", urlParameters.Select((x, index) => $"{x.Name.ToCamelCase()}=${{{operation.Parameters[index].Name.ToCamelCase()}}}"))}`;";
-        }
-
-        private bool IsComplexObject(ICanBeReferencedType element)
-        {
-            return element.SpecializationTypeId != TypeDefinitionModel.SpecializationTypeId &&
-                   element.SpecializationTypeId != EnumModel.SpecializationTypeId;
-        }
-
-        private string GetDataServiceCall(ProxyOperationModel operation)
-        {
             switch (GetHttpVerb(operation))
             {
                 case HttpVerb.GET:
-                    return $"get(url)";
+                    exprBuilder.Append("get");
+                    break;
                 case HttpVerb.POST:
-                    return $"post(url, {operation.Parameters.FirstOrDefault(x => IsComplexObject(x.TypeReference.Element))?.Name.ToCamelCase() ?? "null"})";
+                    if (ServiceMetadataQueries.GetFormUrlEncodedParameters(operation).Any())
+                    {
+                        exprBuilder.Append("postWithFormData");
+                    }
+                    else
+                    {
+                        exprBuilder.Append("post");
+                    }
+                    break;
                 case HttpVerb.PUT:
-                    return $"put(url, {operation.Parameters.FirstOrDefault(x => IsComplexObject(x.TypeReference.Element))?.Name.ToCamelCase() ?? "null"})";
+                    if (ServiceMetadataQueries.GetFormUrlEncodedParameters(operation).Any())
+                    {
+                        exprBuilder.Append("putWithFormData");
+                    }
+                    else
+                    {
+                        exprBuilder.Append("put");
+                    }
+                    break;
                 case HttpVerb.DELETE:
-                    return $"delete(url)";
+                    exprBuilder.Append("delete");
+                    break;
                 default:
                     throw new ArgumentOutOfRangeException();
             }
-        }
 
-        [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]
-        public override ITemplateFileConfig GetTemplateFileConfig()
-        {
-            return new TypeScriptFileConfig(
-                overwriteBehaviour: OverwriteBehaviour.Always,
-                fileName: $"{Model.Name.ToKebabCase()}.service",
-                relativeLocation: $"{string.Join("/", Model.GetModule().InternalElement.GetFolderPath(additionalFolders: Model.GetModule().GetModuleName().ToKebabCase()))}",
-                className: "${Model.Name}"
-            );
-        }
+            exprBuilder.Append("(url");
 
-        private HttpVerb GetHttpVerb(ProxyOperationModel operation)
-        {
-            return Enum.TryParse(operation.MappedOperation.GetHttpSettings().Verb().Value, out HttpVerb verbEnum) ? verbEnum : HttpVerb.POST;
-        }
-
-        private string GetPath(ProxyOperationModel operation)
-        {
-            var servicePath = Model.MappedService.GetHttpServiceSettings()?.Route()?.ToLower()
-                .Replace("[controller]", Model.MappedService.Name.ToLower().RemoveSuffix("controller", "service")) ?? $"api/{Model.MappedService.Name.ToLower().RemoveSuffix("controller", "service")}";
-            var operationPath = operation.MappedOperation.GetHttpSettings()?.Route()?.ToLower()
-                .Replace("[action]", operation.MappedOperation.Name.ToLower());
-            if (!string.IsNullOrWhiteSpace(operationPath))
+            if (ServiceMetadataQueries.GetFormUrlEncodedParameters(operation).Any())
             {
-                foreach (var parameter in operation.Parameters)
+                exprBuilder.Append(", formData");
+            }
+            else if (ServiceMetadataQueries.GetBodyParameter(this, operation) != null)
+            {
+                var bodyParam = ServiceMetadataQueries.GetBodyParameter(this, operation);
+                exprBuilder.Append($", {bodyParam.Name.ToCamelCase()}");
+            }
+
+            if (ServiceMetadataQueries.GetQueryParameters(this, operation).Any())
+            {
+                exprBuilder.Append(", httpParams");
+            }
+            else
+            {
+                exprBuilder.Append(", null");
+            }
+
+            if (ServiceMetadataQueries.GetHeaderParameters(operation).Any())
+            {
+                exprBuilder.Append(", headers");
+            }
+            else
+            {
+                exprBuilder.Append(", null");
+            }
+
+            if (operation.ReturnType != null && ShouldReadAsRawText(operation))
+            {
+                exprBuilder.Append(@", 'text'");
+            }
+            else
+            {
+                exprBuilder.Append(@", 'json'");
+            }
+
+            exprBuilder.Append(")");
+            
+            return exprBuilder.ToString();
+        }
+
+        private bool ShouldReadAsRawText(ServiceOperationModel operation)
+        {
+            return (!HasWrappedReturnType(operation) && operation.ReturnType.HasStringType() && !operation.ReturnType.IsCollection)
+                || (IsReturnTypePrimitive(operation));
+        }
+
+        private bool HasWrappedReturnType(ServiceOperationModel operationModel)
+        {
+            return ServiceMetadataQueries.HasJsonWrappedReturnType(operationModel);
+        }
+
+        private bool IsReturnTypePrimitive(ServiceOperationModel operation)
+        {
+            return GetTypeInfo(operation.ReturnType).IsPrimitive && !operation.ReturnType.IsCollection;
+        }
+
+        private HttpVerb GetHttpVerb(ServiceOperationModel operation)
+        {
+            return Enum.TryParse(operation.GetHttpSettings().Verb().Value, out HttpVerb verbEnum) ? verbEnum : HttpVerb.POST;
+        }
+
+        private string GetRelativeUri(ServiceOperationModel operation)
+        {
+            var relativeUri = ServiceMetadataQueries.GetRelativeUri(operation);
+            return "/" + relativeUri;
+        }
+        
+        private string GetApiResponseType(ServiceOperationModel operation)
+        {
+            if (HasWrappedReturnType(operation))
+            {
+                return $"JsonResponse<{GetTypeName(operation.ReturnType)}>";
+            }
+            return "any";
+        }
+
+        private string GetApiResponseExpression(ServiceOperationModel operation)
+        {
+            var statements = new List<string>();
+
+            if (operation.ReturnType != null && ShouldReadAsRawText(operation))
+            {
+                statements.Add(@"if (response.startsWith(""\"""") || response.startsWith(""'"")) { response = response.substring(1, response.length - 2); }");
+
+                var conversionFunction = GetConversionFunction(operation);
+                if (string.IsNullOrEmpty(conversionFunction))
                 {
-                    //var routeElements = operationPath.Split("/", StringSplitOptions.RemoveEmptyEntries);
-                    //if (routeElements.Any(x => x.Contains('{') 
-                    //                           && x.Contains('}')
-                    //                           && x.Split(new[] {'{', '}'}, StringSplitOptions.RemoveEmptyEntries).Any(i => i == parameter.Name.ToCamelCase())))
-                    //{
-                    if (operationPath.Contains($"{{{parameter.Name}}}", StringComparison.InvariantCultureIgnoreCase))
-                    {
-                        operationPath = operationPath.Replace($"{{{parameter.Name}}}", $"${{{parameter.Name.ToCamelCase()}}}", StringComparison.InvariantCultureIgnoreCase);
-                    }
-                    //}
-                    //var startIndex = operationPath.IndexOf($"{{{parameter.Name}", StringComparison.InvariantCultureIgnoreCase);
-                    //if (startIndex != -1)
-                    //{
-                    //    var endIndex = operationPath.IndexOf("}", startIndex, StringComparison.InvariantCultureIgnoreCase);
-                    //    if (endIndex != -1)
-                    //    {
-                    //        operationPath = operationPath.Remove(startIndex, endIndex - startIndex + 1);
-                    //        operationPath = operationPath.Insert(startIndex, $"${{{parameter.Name.ToCamelCase()}}}");
-                    //    }
-                    //}
+                    statements.Add($"return response;");
+                }
+                else
+                {
+                    statements.Add($"return {conversionFunction}(response);");
+                }
+            }
+            else if (operation.ReturnType != null && HasWrappedReturnType(operation))
+            {
+                statements.Add($"return response.value;");
+            }
+            else
+            {
+                statements.Add($"return response;");
+            }
+
+            const string newLine = @"
+        ";
+            return string.Join(newLine, statements);
+        }
+
+        private string GetConversionFunction(ServiceOperationModel operation)
+        {
+            return GetTypeName(operation.ReturnType).ToPascalCase();
+        }
+
+        private string GetPreDataServiceCallStatements(ServiceOperationModel operation)
+        {
+            var statements = new List<string>();
+
+            var queryParams = ServiceMetadataQueries.GetQueryParameters(this, operation);
+            if (queryParams.Any())
+            {
+                statements.Add("let httpParams = new HttpParams()");
+                foreach (var queryParam in queryParams)
+                {
+                    statements.Add($@"  .set(""{queryParam.Name.ToCamelCase()}"", {queryParam.Name.ToCamelCase()})");
+                }
+                statements.Add(";");
+            }
+
+            var formDataFields = ServiceMetadataQueries.GetFormUrlEncodedParameters(operation);
+            if (formDataFields.Any())
+            {
+                statements.Add("let formData: FormData = new FormData();");
+                foreach (var field in formDataFields)
+                {
+                    statements.Add($@"formData.append(""{field.Name.ToCamelCase()}"", {field.Name.ToCamelCase()});");
                 }
             }
 
-            return string.IsNullOrWhiteSpace(operationPath) ? $"/{servicePath}" : $"/{servicePath}/{operationPath}";
+            var headerFields = ServiceMetadataQueries.GetHeaderParameters(operation);
+            if (headerFields.Any())
+            {
+                statements.Add("let headers = new HttpHeaders()");
+                foreach (var header in headerFields)
+                {
+                    statements.Add($@"  .append(""{header.HeaderName}"", {header.Parameter.Name.ToCamelCase()})");
+                }
+                statements.Add(";");
+            }
+            
+            if (!statements.Any())
+            {
+                return string.Empty;
+            }
+            
+            const string newLine = @"
+    ";
+            return newLine + string.Join(newLine, statements);
         }
     }
 

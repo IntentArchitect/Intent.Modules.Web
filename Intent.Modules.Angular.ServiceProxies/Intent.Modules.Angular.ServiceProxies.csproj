@@ -1,16 +1,16 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
     <Version>3.3.2</Version>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Intent.Modules.Common" Version="3.3.10" />
+    <PackageReference Include="Intent.Modules.Common" Version="3.3.11" />
     <PackageReference Include="Intent.Modules.Common.TypeScript" Version="3.3.2" />
-    <PackageReference Include="Intent.Modules.Metadata.WebApi" Version="3.3.0" />
-    <PackageReference Include="Intent.Modules.Modelers.Services" Version="3.3.0" />
-    <PackageReference Include="Intent.Modules.Modelers.Types.ServiceProxies" Version="3.3.0" />
+    <PackageReference Include="Intent.Modules.Metadata.WebApi" Version="3.3.10" />
+    <PackageReference Include="Intent.Modules.Modelers.Services" Version="3.3.5" />
+    <PackageReference Include="Intent.Modules.Modelers.Types.ServiceProxies" Version="3.3.6" />
     <PackageReference Include="Intent.Packager" Version="3.3.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -35,6 +35,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>AngularServiceProxyTemplate.tt</DependentUpon>
     </Compile>
+    <Compile Update="Templates\Proxies\JsonResponse\JsonResponseTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>JsonResponseTemplate.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
@@ -45,6 +50,10 @@
     <None Update="Templates\Proxies\AngularServiceProxy\AngularServiceProxyTemplate.tt">
       <LastGenOutput>AngularServiceProxyTemplate.cs</LastGenOutput>
       <Generator>TextTemplatingFilePreprocessor</Generator>
+    </None>
+    <None Update="Templates\Proxies\JsonResponse\JsonResponseTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>JsonResponseTemplate.cs</LastGenOutput>
     </None>
   </ItemGroup>
 

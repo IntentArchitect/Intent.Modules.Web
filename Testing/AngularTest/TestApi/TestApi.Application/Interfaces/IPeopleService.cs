@@ -45,5 +45,9 @@ namespace TestApi.Application.Interfaces
 
         Task<string> GetWithPrimitiveResultWrapStr();
 
+        Task<DateTime> GetWithPrimitiveResultDate();
+
+        Task<DateTime> GetWithPrimitiveResultWrapDate();
+
     }
 }
