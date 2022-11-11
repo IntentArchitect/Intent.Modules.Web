@@ -1,0 +1,865 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="7cb72fa4-1566-42bb-be18-c560bad6170b" type="Service Proxy" typeId="07d8d1a9-6b9f-4676-b7d3-8db06299e35c">
+  <name>TestPeopleClient</name>
+  <display>TestPeopleClient</display>
+  <isAbstract>false</isAbstract>
+  <sort-children>by-type-then-manually</sort-children>
+  <genericTypes />
+  <isMapped>true</isMapped>
+  <mappedClass>
+    <applicationId>6e046b41-43de-4e77-8a54-f74cfe74ebf9</applicationId>
+    <metadataId>81104ae6-2bc5-4bae-b05a-f987b0372d81</metadataId>
+    <mappingSettingsId>df491bea-8a85-4bc9-a93d-41b7abb80ffb</mappingSettingsId>
+    <autoSyncTypeReference>true</autoSyncTypeReference>
+    <mappedPath>
+      <target id="732d1073-6c95-453a-b415-80cda1866495" name="PeopleService" type="element" specialization="Service" />
+    </mappedPath>
+  </mappedClass>
+  <parentFolderId>9a21026f-48ba-4c1b-a021-499ff6d143fd</parentFolderId>
+  <packageId>5fe1e7d1-7cce-477d-8a46-17b8b7274125</packageId>
+  <packageName>Web Client</packageName>
+  <stereotypes />
+  <metadata />
+  <childElements>
+    <childElement id="e627aa51-a687-4a05-82b7-7bca1524870b" type="Operation" typeId="aee6811e-b2f6-4562-a8eb-502029f63bc8">
+      <name>Create</name>
+      <display>Create(dto: PersonCreateDTO): guid</display>
+      <isAbstract>false</isAbstract>
+      <sort-children>by-type-then-manually</sort-children>
+      <genericTypes />
+      <typeReference id="5bf978d1-2b60-4338-b1a5-1d6e572e09b1">
+        <typeId>6b649125-18ea-48fd-a6ba-0bfff0d8f488</typeId>
+        <isNavigable>true</isNavigable>
+        <isNullable>false</isNullable>
+        <isCollection>false</isCollection>
+        <isRequired>true</isRequired>
+        <typePackageName>Intent.Common.Types</typePackageName>
+        <typePackageId>870ad967-cbd4-4ea9-b86d-9c3a5d55ea67</typePackageId>
+        <stereotypes />
+        <genericTypeParameters />
+      </typeReference>
+      <isMapped>true</isMapped>
+      <mappedClass>
+        <mappingSettingsId>df491bea-8a85-4bc9-a93d-41b7abb80ffb</mappingSettingsId>
+        <autoSyncTypeReference>true</autoSyncTypeReference>
+        <mappedPath>
+          <target id="a8671ee0-bd26-444f-975d-6192df772797" name="Create" type="element" specialization="Operation" />
+        </mappedPath>
+      </mappedClass>
+      <parentFolderId>7cb72fa4-1566-42bb-be18-c560bad6170b</parentFolderId>
+      <packageId>5fe1e7d1-7cce-477d-8a46-17b8b7274125</packageId>
+      <packageName>Web Client</packageName>
+      <stereotypes />
+      <metadata />
+      <childElements>
+        <childElement id="e91e929c-2616-4c0a-a8ba-a0941fa10e83" type="Parameter" typeId="f11273c1-217f-4f42-b690-3d8b488f95a8">
+          <name>dto</name>
+          <display>dto: PersonCreateDTO</display>
+          <isAbstract>false</isAbstract>
+          <genericTypes />
+          <typeReference id="48ed2c7d-ee03-4f2f-9ebb-afb2e4bce3ef">
+            <typeId>ea1bc810-405b-41e8-bb4d-81f27a0ddec1</typeId>
+            <isNavigable>true</isNavigable>
+            <isNullable>false</isNullable>
+            <isCollection>false</isCollection>
+            <isRequired>true</isRequired>
+            <typePackageName>TestApi.Services</typePackageName>
+            <typePackageId>ea777a2a-96bd-4d4f-9167-ed2f5c3b5b96</typePackageId>
+            <stereotypes />
+            <genericTypeParameters />
+          </typeReference>
+          <isMapped>true</isMapped>
+          <mappedClass>
+            <mappingSettingsId>df491bea-8a85-4bc9-a93d-41b7abb80ffb</mappingSettingsId>
+            <autoSyncTypeReference>true</autoSyncTypeReference>
+            <mappedPath>
+              <target id="11a125d4-8bfe-403f-95ea-ecf15089125a" name="dto" type="element" specialization="Parameter" />
+            </mappedPath>
+          </mappedClass>
+          <parentFolderId>e627aa51-a687-4a05-82b7-7bca1524870b</parentFolderId>
+          <packageId>5fe1e7d1-7cce-477d-8a46-17b8b7274125</packageId>
+          <packageName>Web Client</packageName>
+          <stereotypes />
+          <metadata />
+          <childElements />
+        </childElement>
+      </childElements>
+    </childElement>
+    <childElement id="8dd88307-6cf0-4a9a-a113-1d0e9528da9b" type="Operation" typeId="aee6811e-b2f6-4562-a8eb-502029f63bc8">
+      <name>FindById</name>
+      <display>FindById(id: guid): PersonDTO</display>
+      <isAbstract>false</isAbstract>
+      <sort-children>by-type-then-manually</sort-children>
+      <genericTypes />
+      <typeReference id="3b87fba5-b1da-410e-b7c6-48a53e095c1b">
+        <typeId>9776420f-07fc-414d-b745-4a0dea8dcf72</typeId>
+        <isNavigable>true</isNavigable>
+        <isNullable>false</isNullable>
+        <isCollection>false</isCollection>
+        <isRequired>true</isRequired>
+        <typePackageName>TestApi.Services</typePackageName>
+        <typePackageId>ea777a2a-96bd-4d4f-9167-ed2f5c3b5b96</typePackageId>
+        <stereotypes />
+        <genericTypeParameters />
+      </typeReference>
+      <isMapped>true</isMapped>
+      <mappedClass>
+        <mappingSettingsId>df491bea-8a85-4bc9-a93d-41b7abb80ffb</mappingSettingsId>
+        <autoSyncTypeReference>true</autoSyncTypeReference>
+        <mappedPath>
+          <target id="0c51eca3-a42e-42d7-bdb0-cb78fefa875f" name="FindById" type="element" specialization="Operation" />
+        </mappedPath>
+      </mappedClass>
+      <parentFolderId>7cb72fa4-1566-42bb-be18-c560bad6170b</parentFolderId>
+      <packageId>5fe1e7d1-7cce-477d-8a46-17b8b7274125</packageId>
+      <packageName>Web Client</packageName>
+      <stereotypes />
+      <metadata />
+      <childElements>
+        <childElement id="5ccfd595-cfe1-4615-9be9-10a163f243c9" type="Parameter" typeId="f11273c1-217f-4f42-b690-3d8b488f95a8">
+          <name>id</name>
+          <display>id: guid</display>
+          <isAbstract>false</isAbstract>
+          <genericTypes />
+          <typeReference id="a56448ae-1fd3-4da8-a633-a03d60a21388">
+            <typeId>6b649125-18ea-48fd-a6ba-0bfff0d8f488</typeId>
+            <isNavigable>true</isNavigable>
+            <isNullable>false</isNullable>
+            <isCollection>false</isCollection>
+            <isRequired>true</isRequired>
+            <typePackageName>Intent.Common.Types</typePackageName>
+            <typePackageId>870ad967-cbd4-4ea9-b86d-9c3a5d55ea67</typePackageId>
+            <stereotypes />
+            <genericTypeParameters />
+          </typeReference>
+          <isMapped>true</isMapped>
+          <mappedClass>
+            <mappingSettingsId>df491bea-8a85-4bc9-a93d-41b7abb80ffb</mappingSettingsId>
+            <autoSyncTypeReference>true</autoSyncTypeReference>
+            <mappedPath>
+              <target id="0e09bf87-d513-4bd0-9dc9-879e7e7665a6" name="id" type="element" specialization="Parameter" />
+            </mappedPath>
+          </mappedClass>
+          <parentFolderId>8dd88307-6cf0-4a9a-a113-1d0e9528da9b</parentFolderId>
+          <packageId>5fe1e7d1-7cce-477d-8a46-17b8b7274125</packageId>
+          <packageName>Web Client</packageName>
+          <stereotypes />
+          <metadata />
+          <childElements />
+        </childElement>
+      </childElements>
+    </childElement>
+    <childElement id="7acce137-377b-4716-bbce-018a66bff984" type="Operation" typeId="aee6811e-b2f6-4562-a8eb-502029f63bc8">
+      <name>FindAll</name>
+      <display>FindAll(): PersonDTO[*]</display>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <typeReference id="7cba4228-6b9d-4f20-944b-2cc8702a1a60">
+        <typeId>9776420f-07fc-414d-b745-4a0dea8dcf72</typeId>
+        <isNavigable>true</isNavigable>
+        <isNullable>false</isNullable>
+        <isCollection>true</isCollection>
+        <isRequired>true</isRequired>
+        <typePackageName>TestApi.Services</typePackageName>
+        <typePackageId>ea777a2a-96bd-4d4f-9167-ed2f5c3b5b96</typePackageId>
+        <stereotypes />
+        <genericTypeParameters />
+      </typeReference>
+      <isMapped>true</isMapped>
+      <mappedClass>
+        <mappingSettingsId>df491bea-8a85-4bc9-a93d-41b7abb80ffb</mappingSettingsId>
+        <autoSyncTypeReference>true</autoSyncTypeReference>
+        <mappedPath>
+          <target id="aa214f65-0d8a-40b6-bb76-a2bded35019e" name="FindAll" type="element" specialization="Operation" />
+        </mappedPath>
+      </mappedClass>
+      <parentFolderId>7cb72fa4-1566-42bb-be18-c560bad6170b</parentFolderId>
+      <packageId>5fe1e7d1-7cce-477d-8a46-17b8b7274125</packageId>
+      <packageName>Web Client</packageName>
+      <stereotypes />
+      <metadata />
+      <childElements />
+    </childElement>
+    <childElement id="5bd73dc9-dac7-44a3-8d67-347b62f66d9c" type="Operation" typeId="aee6811e-b2f6-4562-a8eb-502029f63bc8">
+      <name>Update</name>
+      <display>Update(id: guid, dto: PersonUpdateDTO): void</display>
+      <isAbstract>false</isAbstract>
+      <sort-children>by-type-then-manually</sort-children>
+      <genericTypes />
+      <typeReference id="8767f35a-0992-41a5-b9ac-722f3b128f84">
+        <isNavigable>true</isNavigable>
+        <isNullable>false</isNullable>
+        <isCollection>false</isCollection>
+        <isRequired>true</isRequired>
+        <stereotypes />
+        <genericTypeParameters />
+      </typeReference>
+      <isMapped>true</isMapped>
+      <mappedClass>
+        <mappingSettingsId>df491bea-8a85-4bc9-a93d-41b7abb80ffb</mappingSettingsId>
+        <autoSyncTypeReference>true</autoSyncTypeReference>
+        <mappedPath>
+          <target id="b0ab3792-d9dc-407b-ad2b-b35935602624" name="Update" type="element" specialization="Operation" />
+        </mappedPath>
+      </mappedClass>
+      <parentFolderId>7cb72fa4-1566-42bb-be18-c560bad6170b</parentFolderId>
+      <packageId>5fe1e7d1-7cce-477d-8a46-17b8b7274125</packageId>
+      <packageName>Web Client</packageName>
+      <stereotypes />
+      <metadata />
+      <childElements>
+        <childElement id="d605ef7e-c311-4a3d-b10d-0dfc549c5812" type="Parameter" typeId="f11273c1-217f-4f42-b690-3d8b488f95a8">
+          <name>id</name>
+          <display>id: guid</display>
+          <isAbstract>false</isAbstract>
+          <genericTypes />
+          <typeReference id="b5241b07-f079-4a55-af86-96cd833b7134">
+            <typeId>6b649125-18ea-48fd-a6ba-0bfff0d8f488</typeId>
+            <isNavigable>true</isNavigable>
+            <isNullable>false</isNullable>
+            <isCollection>false</isCollection>
+            <isRequired>true</isRequired>
+            <typePackageName>Intent.Common.Types</typePackageName>
+            <typePackageId>870ad967-cbd4-4ea9-b86d-9c3a5d55ea67</typePackageId>
+            <stereotypes />
+            <genericTypeParameters />
+          </typeReference>
+          <isMapped>true</isMapped>
+          <mappedClass>
+            <mappingSettingsId>df491bea-8a85-4bc9-a93d-41b7abb80ffb</mappingSettingsId>
+            <autoSyncTypeReference>true</autoSyncTypeReference>
+            <mappedPath>
+              <target id="a39cae17-e5b2-40f1-854e-c8c1951b787d" name="id" type="element" specialization="Parameter" />
+            </mappedPath>
+          </mappedClass>
+          <parentFolderId>5bd73dc9-dac7-44a3-8d67-347b62f66d9c</parentFolderId>
+          <packageId>5fe1e7d1-7cce-477d-8a46-17b8b7274125</packageId>
+          <packageName>Web Client</packageName>
+          <stereotypes />
+          <metadata />
+          <childElements />
+        </childElement>
+        <childElement id="f781f0b3-fe51-4e31-8fb9-63c9c537ad5b" type="Parameter" typeId="f11273c1-217f-4f42-b690-3d8b488f95a8">
+          <name>dto</name>
+          <display>dto: PersonUpdateDTO</display>
+          <isAbstract>false</isAbstract>
+          <genericTypes />
+          <typeReference id="e18e943a-366b-466b-8a55-509b4f627fc3">
+            <typeId>9ba8a0b9-38a9-485c-ac3e-c80fe58ba802</typeId>
+            <isNavigable>true</isNavigable>
+            <isNullable>false</isNullable>
+            <isCollection>false</isCollection>
+            <isRequired>true</isRequired>
+            <typePackageName>TestApi.Services</typePackageName>
+            <typePackageId>ea777a2a-96bd-4d4f-9167-ed2f5c3b5b96</typePackageId>
+            <stereotypes />
+            <genericTypeParameters />
+          </typeReference>
+          <isMapped>true</isMapped>
+          <mappedClass>
+            <mappingSettingsId>df491bea-8a85-4bc9-a93d-41b7abb80ffb</mappingSettingsId>
+            <autoSyncTypeReference>true</autoSyncTypeReference>
+            <mappedPath>
+              <target id="1799bbbe-53e1-4330-920c-53d492136ace" name="dto" type="element" specialization="Parameter" />
+            </mappedPath>
+          </mappedClass>
+          <parentFolderId>5bd73dc9-dac7-44a3-8d67-347b62f66d9c</parentFolderId>
+          <packageId>5fe1e7d1-7cce-477d-8a46-17b8b7274125</packageId>
+          <packageName>Web Client</packageName>
+          <stereotypes />
+          <metadata />
+          <childElements />
+        </childElement>
+      </childElements>
+    </childElement>
+    <childElement id="0bfa3be4-1e93-4a22-98ec-52668f089ef3" type="Operation" typeId="aee6811e-b2f6-4562-a8eb-502029f63bc8">
+      <name>Delete</name>
+      <display>Delete(id: guid): void</display>
+      <isAbstract>false</isAbstract>
+      <sort-children>by-type-then-manually</sort-children>
+      <genericTypes />
+      <typeReference id="f9547cf9-9997-4a66-a53f-d5ca87571f48">
+        <isNavigable>true</isNavigable>
+        <isNullable>false</isNullable>
+        <isCollection>false</isCollection>
+        <isRequired>true</isRequired>
+        <stereotypes />
+        <genericTypeParameters />
+      </typeReference>
+      <isMapped>true</isMapped>
+      <mappedClass>
+        <mappingSettingsId>df491bea-8a85-4bc9-a93d-41b7abb80ffb</mappingSettingsId>
+        <autoSyncTypeReference>true</autoSyncTypeReference>
+        <mappedPath>
+          <target id="2a577ad0-9fd2-4a0e-b3cc-8866397c4edc" name="Delete" type="element" specialization="Operation" />
+        </mappedPath>
+      </mappedClass>
+      <parentFolderId>7cb72fa4-1566-42bb-be18-c560bad6170b</parentFolderId>
+      <packageId>5fe1e7d1-7cce-477d-8a46-17b8b7274125</packageId>
+      <packageName>Web Client</packageName>
+      <stereotypes />
+      <metadata />
+      <childElements>
+        <childElement id="7f66ba8d-9a81-437e-8459-bd9d71cb31eb" type="Parameter" typeId="f11273c1-217f-4f42-b690-3d8b488f95a8">
+          <name>id</name>
+          <display>id: guid</display>
+          <isAbstract>false</isAbstract>
+          <genericTypes />
+          <typeReference id="a263237d-287e-4de9-8716-d3ae47f15f39">
+            <typeId>6b649125-18ea-48fd-a6ba-0bfff0d8f488</typeId>
+            <isNavigable>true</isNavigable>
+            <isNullable>false</isNullable>
+            <isCollection>false</isCollection>
+            <isRequired>true</isRequired>
+            <typePackageName>Intent.Common.Types</typePackageName>
+            <typePackageId>870ad967-cbd4-4ea9-b86d-9c3a5d55ea67</typePackageId>
+            <stereotypes />
+            <genericTypeParameters />
+          </typeReference>
+          <isMapped>true</isMapped>
+          <mappedClass>
+            <mappingSettingsId>df491bea-8a85-4bc9-a93d-41b7abb80ffb</mappingSettingsId>
+            <autoSyncTypeReference>true</autoSyncTypeReference>
+            <mappedPath>
+              <target id="47107ad8-faa9-4fd5-a7cf-ca561d1da971" name="id" type="element" specialization="Parameter" />
+            </mappedPath>
+          </mappedClass>
+          <parentFolderId>0bfa3be4-1e93-4a22-98ec-52668f089ef3</parentFolderId>
+          <packageId>5fe1e7d1-7cce-477d-8a46-17b8b7274125</packageId>
+          <packageName>Web Client</packageName>
+          <stereotypes />
+          <metadata />
+          <childElements />
+        </childElement>
+      </childElements>
+    </childElement>
+    <childElement id="6fb121ad-4c92-4113-a3f4-95beb70c469e" type="Operation" typeId="aee6811e-b2f6-4562-a8eb-502029f63bc8">
+      <name>GetWithQueryParam</name>
+      <display>GetWithQueryParam(idParam: guid): PersonDTO</display>
+      <isAbstract>false</isAbstract>
+      <sort-children>by-type-then-manually</sort-children>
+      <genericTypes />
+      <typeReference id="52550364-de90-4ebb-8d46-d147526a50eb">
+        <typeId>9776420f-07fc-414d-b745-4a0dea8dcf72</typeId>
+        <isNavigable>true</isNavigable>
+        <isNullable>false</isNullable>
+        <isCollection>false</isCollection>
+        <isRequired>true</isRequired>
+        <typePackageName>TestApi.Services</typePackageName>
+        <typePackageId>ea777a2a-96bd-4d4f-9167-ed2f5c3b5b96</typePackageId>
+        <stereotypes />
+        <genericTypeParameters />
+      </typeReference>
+      <isMapped>true</isMapped>
+      <mappedClass>
+        <mappingSettingsId>df491bea-8a85-4bc9-a93d-41b7abb80ffb</mappingSettingsId>
+        <autoSyncTypeReference>true</autoSyncTypeReference>
+        <mappedPath>
+          <target id="086d4b66-ae68-43b9-a4ea-8ed94b7841c9" name="GetWithQueryParam" type="element" specialization="Operation" />
+        </mappedPath>
+      </mappedClass>
+      <parentFolderId>7cb72fa4-1566-42bb-be18-c560bad6170b</parentFolderId>
+      <packageId>5fe1e7d1-7cce-477d-8a46-17b8b7274125</packageId>
+      <packageName>Web Client</packageName>
+      <stereotypes />
+      <metadata />
+      <childElements>
+        <childElement id="cc7e1e9a-8110-448a-b3fb-998ba536e061" type="Parameter" typeId="f11273c1-217f-4f42-b690-3d8b488f95a8">
+          <name>idParam</name>
+          <display>idParam: guid</display>
+          <isAbstract>false</isAbstract>
+          <genericTypes />
+          <typeReference id="f7ead3ad-95d5-4296-b511-682809d969ff">
+            <typeId>6b649125-18ea-48fd-a6ba-0bfff0d8f488</typeId>
+            <isNavigable>true</isNavigable>
+            <isNullable>false</isNullable>
+            <isCollection>false</isCollection>
+            <isRequired>true</isRequired>
+            <typePackageName>Intent.Common.Types</typePackageName>
+            <typePackageId>870ad967-cbd4-4ea9-b86d-9c3a5d55ea67</typePackageId>
+            <stereotypes />
+            <genericTypeParameters />
+          </typeReference>
+          <isMapped>true</isMapped>
+          <mappedClass>
+            <mappingSettingsId>df491bea-8a85-4bc9-a93d-41b7abb80ffb</mappingSettingsId>
+            <autoSyncTypeReference>true</autoSyncTypeReference>
+            <mappedPath>
+              <target id="05d3bdd6-4747-4deb-a258-edac9d651fca" name="idParam" type="element" specialization="Parameter" />
+            </mappedPath>
+          </mappedClass>
+          <parentFolderId>6fb121ad-4c92-4113-a3f4-95beb70c469e</parentFolderId>
+          <packageId>5fe1e7d1-7cce-477d-8a46-17b8b7274125</packageId>
+          <packageName>Web Client</packageName>
+          <stereotypes />
+          <metadata />
+          <childElements />
+        </childElement>
+      </childElements>
+    </childElement>
+    <childElement id="f25fb8f0-e35b-492a-8a22-d885c7d24fd7" type="Operation" typeId="aee6811e-b2f6-4562-a8eb-502029f63bc8">
+      <name>GetWithRouteParam</name>
+      <display>GetWithRouteParam(routeId: guid): PersonDTO</display>
+      <isAbstract>false</isAbstract>
+      <sort-children>by-type-then-manually</sort-children>
+      <genericTypes />
+      <typeReference id="a517c2d8-5e44-443d-b900-f8526826d717">
+        <typeId>9776420f-07fc-414d-b745-4a0dea8dcf72</typeId>
+        <isNavigable>true</isNavigable>
+        <isNullable>false</isNullable>
+        <isCollection>false</isCollection>
+        <isRequired>true</isRequired>
+        <typePackageName>TestApi.Services</typePackageName>
+        <typePackageId>ea777a2a-96bd-4d4f-9167-ed2f5c3b5b96</typePackageId>
+        <stereotypes />
+        <genericTypeParameters />
+      </typeReference>
+      <isMapped>true</isMapped>
+      <mappedClass>
+        <mappingSettingsId>df491bea-8a85-4bc9-a93d-41b7abb80ffb</mappingSettingsId>
+        <autoSyncTypeReference>true</autoSyncTypeReference>
+        <mappedPath>
+          <target id="fe115dbc-f612-4168-9b8b-296debd7821d" name="GetWithRouteParam" type="element" specialization="Operation" />
+        </mappedPath>
+      </mappedClass>
+      <parentFolderId>7cb72fa4-1566-42bb-be18-c560bad6170b</parentFolderId>
+      <packageId>5fe1e7d1-7cce-477d-8a46-17b8b7274125</packageId>
+      <packageName>Web Client</packageName>
+      <stereotypes />
+      <metadata />
+      <childElements>
+        <childElement id="55728f5e-3e8f-4780-9ad6-a9dde8be80be" type="Parameter" typeId="f11273c1-217f-4f42-b690-3d8b488f95a8">
+          <name>routeId</name>
+          <display>routeId: guid</display>
+          <isAbstract>false</isAbstract>
+          <genericTypes />
+          <typeReference id="c93799ca-5182-464c-bede-9cefd15d489b">
+            <typeId>6b649125-18ea-48fd-a6ba-0bfff0d8f488</typeId>
+            <isNavigable>true</isNavigable>
+            <isNullable>false</isNullable>
+            <isCollection>false</isCollection>
+            <isRequired>true</isRequired>
+            <typePackageName>Intent.Common.Types</typePackageName>
+            <typePackageId>870ad967-cbd4-4ea9-b86d-9c3a5d55ea67</typePackageId>
+            <stereotypes />
+            <genericTypeParameters />
+          </typeReference>
+          <isMapped>true</isMapped>
+          <mappedClass>
+            <mappingSettingsId>df491bea-8a85-4bc9-a93d-41b7abb80ffb</mappingSettingsId>
+            <autoSyncTypeReference>true</autoSyncTypeReference>
+            <mappedPath>
+              <target id="8cbd2c5f-07f4-4bf8-81ce-057d1813daa4" name="routeId" type="element" specialization="Parameter" />
+            </mappedPath>
+          </mappedClass>
+          <parentFolderId>f25fb8f0-e35b-492a-8a22-d885c7d24fd7</parentFolderId>
+          <packageId>5fe1e7d1-7cce-477d-8a46-17b8b7274125</packageId>
+          <packageName>Web Client</packageName>
+          <stereotypes />
+          <metadata />
+          <childElements />
+        </childElement>
+      </childElements>
+    </childElement>
+    <childElement id="9d6b6a77-a71a-484e-81df-4043725ece06" type="Operation" typeId="aee6811e-b2f6-4562-a8eb-502029f63bc8">
+      <name>PostWithFormParam</name>
+      <display>PostWithFormParam(param1: string, param2: string): void</display>
+      <isAbstract>false</isAbstract>
+      <sort-children>by-type-then-manually</sort-children>
+      <genericTypes />
+      <typeReference id="b882a3ca-ddc3-472b-b19c-01f9efd9d599">
+        <isNavigable>true</isNavigable>
+        <isNullable>false</isNullable>
+        <isCollection>false</isCollection>
+        <isRequired>true</isRequired>
+        <stereotypes />
+        <genericTypeParameters />
+      </typeReference>
+      <isMapped>true</isMapped>
+      <mappedClass>
+        <mappingSettingsId>df491bea-8a85-4bc9-a93d-41b7abb80ffb</mappingSettingsId>
+        <autoSyncTypeReference>true</autoSyncTypeReference>
+        <mappedPath>
+          <target id="08cdc698-fd17-412e-986e-93ac6026da90" name="PostWithFormParam" type="element" specialization="Operation" />
+        </mappedPath>
+      </mappedClass>
+      <parentFolderId>7cb72fa4-1566-42bb-be18-c560bad6170b</parentFolderId>
+      <packageId>5fe1e7d1-7cce-477d-8a46-17b8b7274125</packageId>
+      <packageName>Web Client</packageName>
+      <stereotypes />
+      <metadata />
+      <childElements>
+        <childElement id="0af3ecb2-7e3c-43c6-adf5-0184278f1482" type="Parameter" typeId="f11273c1-217f-4f42-b690-3d8b488f95a8">
+          <name>param1</name>
+          <display>param1: string</display>
+          <isAbstract>false</isAbstract>
+          <genericTypes />
+          <typeReference id="3ed701a1-aff6-4ea1-98a0-4fff09b2c57e">
+            <typeId>d384db9c-a279-45e1-801e-e4e8099625f2</typeId>
+            <isNavigable>true</isNavigable>
+            <isNullable>false</isNullable>
+            <isCollection>false</isCollection>
+            <isRequired>true</isRequired>
+            <typePackageName>Intent.Common.Types</typePackageName>
+            <typePackageId>870ad967-cbd4-4ea9-b86d-9c3a5d55ea67</typePackageId>
+            <stereotypes />
+            <genericTypeParameters />
+          </typeReference>
+          <isMapped>true</isMapped>
+          <mappedClass>
+            <mappingSettingsId>df491bea-8a85-4bc9-a93d-41b7abb80ffb</mappingSettingsId>
+            <autoSyncTypeReference>true</autoSyncTypeReference>
+            <mappedPath>
+              <target id="d782128f-74bc-4011-9d19-dc827a5c956f" name="param1" type="element" specialization="Parameter" />
+            </mappedPath>
+          </mappedClass>
+          <parentFolderId>9d6b6a77-a71a-484e-81df-4043725ece06</parentFolderId>
+          <packageId>5fe1e7d1-7cce-477d-8a46-17b8b7274125</packageId>
+          <packageName>Web Client</packageName>
+          <stereotypes />
+          <metadata />
+          <childElements />
+        </childElement>
+        <childElement id="a50b386e-6ad6-46f0-9502-f124a4a30be9" type="Parameter" typeId="f11273c1-217f-4f42-b690-3d8b488f95a8">
+          <name>param2</name>
+          <display>param2: string</display>
+          <isAbstract>false</isAbstract>
+          <genericTypes />
+          <typeReference id="33b68dbb-d3ec-4e93-8f81-dab8eaa8799f">
+            <typeId>d384db9c-a279-45e1-801e-e4e8099625f2</typeId>
+            <isNavigable>true</isNavigable>
+            <isNullable>false</isNullable>
+            <isCollection>false</isCollection>
+            <isRequired>true</isRequired>
+            <typePackageName>Intent.Common.Types</typePackageName>
+            <typePackageId>870ad967-cbd4-4ea9-b86d-9c3a5d55ea67</typePackageId>
+            <stereotypes />
+            <genericTypeParameters />
+          </typeReference>
+          <isMapped>true</isMapped>
+          <mappedClass>
+            <mappingSettingsId>df491bea-8a85-4bc9-a93d-41b7abb80ffb</mappingSettingsId>
+            <autoSyncTypeReference>true</autoSyncTypeReference>
+            <mappedPath>
+              <target id="70c3e9fc-4c63-450d-a416-39286506546b" name="param2" type="element" specialization="Parameter" />
+            </mappedPath>
+          </mappedClass>
+          <parentFolderId>9d6b6a77-a71a-484e-81df-4043725ece06</parentFolderId>
+          <packageId>5fe1e7d1-7cce-477d-8a46-17b8b7274125</packageId>
+          <packageName>Web Client</packageName>
+          <stereotypes />
+          <metadata />
+          <childElements />
+        </childElement>
+      </childElements>
+    </childElement>
+    <childElement id="4a599e55-4f0f-4756-86ba-cd73401b46ca" type="Operation" typeId="aee6811e-b2f6-4562-a8eb-502029f63bc8">
+      <name>PostWithHeaderParam</name>
+      <display>PostWithHeaderParam(param: string): void</display>
+      <isAbstract>false</isAbstract>
+      <sort-children>by-type-then-manually</sort-children>
+      <genericTypes />
+      <typeReference id="b8bcbe83-718b-4da2-8ff1-6a632f82c401">
+        <isNavigable>true</isNavigable>
+        <isNullable>false</isNullable>
+        <isCollection>false</isCollection>
+        <isRequired>true</isRequired>
+        <stereotypes />
+        <genericTypeParameters />
+      </typeReference>
+      <isMapped>true</isMapped>
+      <mappedClass>
+        <mappingSettingsId>df491bea-8a85-4bc9-a93d-41b7abb80ffb</mappingSettingsId>
+        <autoSyncTypeReference>true</autoSyncTypeReference>
+        <mappedPath>
+          <target id="4edeff8b-9b0e-4489-b4fb-0a1fba21306a" name="PostWithHeaderParam" type="element" specialization="Operation" />
+        </mappedPath>
+      </mappedClass>
+      <parentFolderId>7cb72fa4-1566-42bb-be18-c560bad6170b</parentFolderId>
+      <packageId>5fe1e7d1-7cce-477d-8a46-17b8b7274125</packageId>
+      <packageName>Web Client</packageName>
+      <stereotypes />
+      <metadata />
+      <childElements>
+        <childElement id="50aa8e1f-50fd-4e06-9a5b-a6dff9f13998" type="Parameter" typeId="f11273c1-217f-4f42-b690-3d8b488f95a8">
+          <name>param</name>
+          <display>param: string</display>
+          <isAbstract>false</isAbstract>
+          <genericTypes />
+          <typeReference id="e07f3f43-59e2-416c-b374-9e194453e364">
+            <typeId>d384db9c-a279-45e1-801e-e4e8099625f2</typeId>
+            <isNavigable>true</isNavigable>
+            <isNullable>false</isNullable>
+            <isCollection>false</isCollection>
+            <isRequired>true</isRequired>
+            <typePackageName>Intent.Common.Types</typePackageName>
+            <typePackageId>870ad967-cbd4-4ea9-b86d-9c3a5d55ea67</typePackageId>
+            <stereotypes />
+            <genericTypeParameters />
+          </typeReference>
+          <isMapped>true</isMapped>
+          <mappedClass>
+            <mappingSettingsId>df491bea-8a85-4bc9-a93d-41b7abb80ffb</mappingSettingsId>
+            <autoSyncTypeReference>true</autoSyncTypeReference>
+            <mappedPath>
+              <target id="512d69ed-522b-4443-b9dc-e9ac39c643e3" name="param" type="element" specialization="Parameter" />
+            </mappedPath>
+          </mappedClass>
+          <parentFolderId>4a599e55-4f0f-4756-86ba-cd73401b46ca</parentFolderId>
+          <packageId>5fe1e7d1-7cce-477d-8a46-17b8b7274125</packageId>
+          <packageName>Web Client</packageName>
+          <stereotypes />
+          <metadata />
+          <childElements />
+        </childElement>
+      </childElements>
+    </childElement>
+    <childElement id="5551f5fe-a5cd-401c-9ab8-ef8b57f5e115" type="Operation" typeId="aee6811e-b2f6-4562-a8eb-502029f63bc8">
+      <name>PostWithBodyParam</name>
+      <display>PostWithBodyParam(param: PersonUpdateDTO): void</display>
+      <isAbstract>false</isAbstract>
+      <sort-children>by-type-then-manually</sort-children>
+      <genericTypes />
+      <typeReference id="000eeaae-8864-473c-a32c-005a18ca526e">
+        <isNavigable>true</isNavigable>
+        <isNullable>false</isNullable>
+        <isCollection>false</isCollection>
+        <isRequired>true</isRequired>
+        <stereotypes />
+        <genericTypeParameters />
+      </typeReference>
+      <isMapped>true</isMapped>
+      <mappedClass>
+        <mappingSettingsId>df491bea-8a85-4bc9-a93d-41b7abb80ffb</mappingSettingsId>
+        <autoSyncTypeReference>true</autoSyncTypeReference>
+        <mappedPath>
+          <target id="5024576b-eb49-47f4-a2c5-7dc0e087c4aa" name="PostWithBodyParam" type="element" specialization="Operation" />
+        </mappedPath>
+      </mappedClass>
+      <parentFolderId>7cb72fa4-1566-42bb-be18-c560bad6170b</parentFolderId>
+      <packageId>5fe1e7d1-7cce-477d-8a46-17b8b7274125</packageId>
+      <packageName>Web Client</packageName>
+      <stereotypes />
+      <metadata />
+      <childElements>
+        <childElement id="4f73fd69-7219-4165-bcd5-3ef7fbe0a651" type="Parameter" typeId="f11273c1-217f-4f42-b690-3d8b488f95a8">
+          <name>param</name>
+          <display>param: PersonUpdateDTO</display>
+          <isAbstract>false</isAbstract>
+          <genericTypes />
+          <typeReference id="5eb00e14-62ee-41a4-bd21-91a336dfb018">
+            <typeId>9ba8a0b9-38a9-485c-ac3e-c80fe58ba802</typeId>
+            <isNavigable>true</isNavigable>
+            <isNullable>false</isNullable>
+            <isCollection>false</isCollection>
+            <isRequired>true</isRequired>
+            <typePackageName>TestApi.Services</typePackageName>
+            <typePackageId>ea777a2a-96bd-4d4f-9167-ed2f5c3b5b96</typePackageId>
+            <stereotypes />
+            <genericTypeParameters />
+          </typeReference>
+          <isMapped>true</isMapped>
+          <mappedClass>
+            <mappingSettingsId>df491bea-8a85-4bc9-a93d-41b7abb80ffb</mappingSettingsId>
+            <autoSyncTypeReference>true</autoSyncTypeReference>
+            <mappedPath>
+              <target id="f4e49b55-4914-4c4e-b94e-8c3ed83b697d" name="param" type="element" specialization="Parameter" />
+            </mappedPath>
+          </mappedClass>
+          <parentFolderId>5551f5fe-a5cd-401c-9ab8-ef8b57f5e115</parentFolderId>
+          <packageId>5fe1e7d1-7cce-477d-8a46-17b8b7274125</packageId>
+          <packageName>Web Client</packageName>
+          <stereotypes />
+          <metadata />
+          <childElements />
+        </childElement>
+      </childElements>
+    </childElement>
+    <childElement id="f76d5fb5-e878-4c80-8452-ba93f23e99c8" type="Operation" typeId="aee6811e-b2f6-4562-a8eb-502029f63bc8">
+      <name>GetWithPrimitiveResultInt</name>
+      <display>GetWithPrimitiveResultInt(): int</display>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <typeReference id="93069c47-53ab-483b-8f8f-1b95991fa9ab">
+        <typeId>fb0a362d-e9e2-40de-b6ff-5ce8167cbe74</typeId>
+        <isNavigable>true</isNavigable>
+        <isNullable>false</isNullable>
+        <isCollection>false</isCollection>
+        <isRequired>true</isRequired>
+        <typePackageName>Intent.Common.Types</typePackageName>
+        <typePackageId>870ad967-cbd4-4ea9-b86d-9c3a5d55ea67</typePackageId>
+        <stereotypes />
+        <genericTypeParameters />
+      </typeReference>
+      <isMapped>true</isMapped>
+      <mappedClass>
+        <mappingSettingsId>df491bea-8a85-4bc9-a93d-41b7abb80ffb</mappingSettingsId>
+        <autoSyncTypeReference>true</autoSyncTypeReference>
+        <mappedPath>
+          <target id="62c615a5-16e9-496a-9ea3-f529f63c66ab" name="GetWithPrimitiveResultInt" type="element" specialization="Operation" />
+        </mappedPath>
+      </mappedClass>
+      <parentFolderId>7cb72fa4-1566-42bb-be18-c560bad6170b</parentFolderId>
+      <packageId>5fe1e7d1-7cce-477d-8a46-17b8b7274125</packageId>
+      <packageName>Web Client</packageName>
+      <stereotypes />
+      <metadata />
+      <childElements />
+    </childElement>
+    <childElement id="c686eb9a-8038-4f69-bef4-031877563ed5" type="Operation" typeId="aee6811e-b2f6-4562-a8eb-502029f63bc8">
+      <name>GetWithPrimitiveResultBool</name>
+      <display>GetWithPrimitiveResultBool(): bool</display>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <typeReference id="a8f9eaf0-a381-4d29-9d89-97a763c92a6e">
+        <typeId>e6f92b09-b2c5-4536-8270-a4d9e5bbd930</typeId>
+        <isNavigable>true</isNavigable>
+        <isNullable>false</isNullable>
+        <isCollection>false</isCollection>
+        <isRequired>true</isRequired>
+        <typePackageName>Intent.Common.Types</typePackageName>
+        <typePackageId>870ad967-cbd4-4ea9-b86d-9c3a5d55ea67</typePackageId>
+        <stereotypes />
+        <genericTypeParameters />
+      </typeReference>
+      <isMapped>true</isMapped>
+      <mappedClass>
+        <mappingSettingsId>df491bea-8a85-4bc9-a93d-41b7abb80ffb</mappingSettingsId>
+        <autoSyncTypeReference>true</autoSyncTypeReference>
+        <mappedPath>
+          <target id="1459a9cc-2ca8-43c3-96e0-a7fb30469f5e" name="GetWithPrimitiveResultBool" type="element" specialization="Operation" />
+        </mappedPath>
+      </mappedClass>
+      <parentFolderId>7cb72fa4-1566-42bb-be18-c560bad6170b</parentFolderId>
+      <packageId>5fe1e7d1-7cce-477d-8a46-17b8b7274125</packageId>
+      <packageName>Web Client</packageName>
+      <stereotypes />
+      <metadata />
+      <childElements />
+    </childElement>
+    <childElement id="751f46cd-68d7-494f-b16d-b62c7ab8d3b0" type="Operation" typeId="aee6811e-b2f6-4562-a8eb-502029f63bc8">
+      <name>GetWithPrimitiveResultStr</name>
+      <display>GetWithPrimitiveResultStr(): string</display>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <typeReference id="095d1df6-c6af-4929-8fc3-e336b23e019a">
+        <typeId>d384db9c-a279-45e1-801e-e4e8099625f2</typeId>
+        <isNavigable>true</isNavigable>
+        <isNullable>false</isNullable>
+        <isCollection>false</isCollection>
+        <isRequired>true</isRequired>
+        <typePackageName>Intent.Common.Types</typePackageName>
+        <typePackageId>870ad967-cbd4-4ea9-b86d-9c3a5d55ea67</typePackageId>
+        <stereotypes />
+        <genericTypeParameters />
+      </typeReference>
+      <isMapped>true</isMapped>
+      <mappedClass>
+        <mappingSettingsId>df491bea-8a85-4bc9-a93d-41b7abb80ffb</mappingSettingsId>
+        <autoSyncTypeReference>true</autoSyncTypeReference>
+        <mappedPath>
+          <target id="88aee0cc-13cb-4e5b-8227-f2d4fffab223" name="GetWithPrimitiveResultStr" type="element" specialization="Operation" />
+        </mappedPath>
+      </mappedClass>
+      <parentFolderId>7cb72fa4-1566-42bb-be18-c560bad6170b</parentFolderId>
+      <packageId>5fe1e7d1-7cce-477d-8a46-17b8b7274125</packageId>
+      <packageName>Web Client</packageName>
+      <stereotypes />
+      <metadata />
+      <childElements />
+    </childElement>
+    <childElement id="ccd7e05a-5f9a-42b3-afd2-d9413a570846" type="Operation" typeId="aee6811e-b2f6-4562-a8eb-502029f63bc8">
+      <name>GetWithPrimitiveResultWrapInt</name>
+      <display>GetWithPrimitiveResultWrapInt(): int</display>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <typeReference id="0a5b3a00-46ec-4a6c-8c98-c99233b70e7b">
+        <typeId>fb0a362d-e9e2-40de-b6ff-5ce8167cbe74</typeId>
+        <isNavigable>true</isNavigable>
+        <isNullable>false</isNullable>
+        <isCollection>false</isCollection>
+        <isRequired>true</isRequired>
+        <typePackageName>Intent.Common.Types</typePackageName>
+        <typePackageId>870ad967-cbd4-4ea9-b86d-9c3a5d55ea67</typePackageId>
+        <stereotypes />
+        <genericTypeParameters />
+      </typeReference>
+      <isMapped>true</isMapped>
+      <mappedClass>
+        <mappingSettingsId>df491bea-8a85-4bc9-a93d-41b7abb80ffb</mappingSettingsId>
+        <autoSyncTypeReference>true</autoSyncTypeReference>
+        <mappedPath>
+          <target id="24c8f1f2-e803-4eb5-b971-4ee8b1993125" name="GetWithPrimitiveResultWrapInt" type="element" specialization="Operation" />
+        </mappedPath>
+      </mappedClass>
+      <parentFolderId>7cb72fa4-1566-42bb-be18-c560bad6170b</parentFolderId>
+      <packageId>5fe1e7d1-7cce-477d-8a46-17b8b7274125</packageId>
+      <packageName>Web Client</packageName>
+      <stereotypes />
+      <metadata />
+      <childElements />
+    </childElement>
+    <childElement id="48cfc1a6-f5af-4a05-b385-711fd740b9d8" type="Operation" typeId="aee6811e-b2f6-4562-a8eb-502029f63bc8">
+      <name>GetWithPrimitiveResultWrapBool</name>
+      <display>GetWithPrimitiveResultWrapBool(): bool</display>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <typeReference id="e062e1dc-3974-4236-99d7-d0ef8ae00c13">
+        <typeId>e6f92b09-b2c5-4536-8270-a4d9e5bbd930</typeId>
+        <isNavigable>true</isNavigable>
+        <isNullable>false</isNullable>
+        <isCollection>false</isCollection>
+        <isRequired>true</isRequired>
+        <typePackageName>Intent.Common.Types</typePackageName>
+        <typePackageId>870ad967-cbd4-4ea9-b86d-9c3a5d55ea67</typePackageId>
+        <stereotypes />
+        <genericTypeParameters />
+      </typeReference>
+      <isMapped>true</isMapped>
+      <mappedClass>
+        <mappingSettingsId>df491bea-8a85-4bc9-a93d-41b7abb80ffb</mappingSettingsId>
+        <autoSyncTypeReference>true</autoSyncTypeReference>
+        <mappedPath>
+          <target id="a84f14bf-c597-406d-8d48-9675d0533614" name="GetWithPrimitiveResultWrapBool" type="element" specialization="Operation" />
+        </mappedPath>
+      </mappedClass>
+      <parentFolderId>7cb72fa4-1566-42bb-be18-c560bad6170b</parentFolderId>
+      <packageId>5fe1e7d1-7cce-477d-8a46-17b8b7274125</packageId>
+      <packageName>Web Client</packageName>
+      <stereotypes />
+      <metadata />
+      <childElements />
+    </childElement>
+    <childElement id="70ad8a85-5627-489a-8035-ca4ea6dd3527" type="Operation" typeId="aee6811e-b2f6-4562-a8eb-502029f63bc8">
+      <name>GetWithPrimitiveResultWrapStr</name>
+      <display>GetWithPrimitiveResultWrapStr(): string</display>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <typeReference id="599c1475-32fe-446a-a574-68f27873dff2">
+        <typeId>d384db9c-a279-45e1-801e-e4e8099625f2</typeId>
+        <isNavigable>true</isNavigable>
+        <isNullable>false</isNullable>
+        <isCollection>false</isCollection>
+        <isRequired>true</isRequired>
+        <typePackageName>Intent.Common.Types</typePackageName>
+        <typePackageId>870ad967-cbd4-4ea9-b86d-9c3a5d55ea67</typePackageId>
+        <stereotypes />
+        <genericTypeParameters />
+      </typeReference>
+      <isMapped>true</isMapped>
+      <mappedClass>
+        <mappingSettingsId>df491bea-8a85-4bc9-a93d-41b7abb80ffb</mappingSettingsId>
+        <autoSyncTypeReference>true</autoSyncTypeReference>
+        <mappedPath>
+          <target id="af33d21f-3ee2-4c93-aba3-5bffcf11e1fc" name="GetWithPrimitiveResultWrapStr" type="element" specialization="Operation" />
+        </mappedPath>
+      </mappedClass>
+      <parentFolderId>7cb72fa4-1566-42bb-be18-c560bad6170b</parentFolderId>
+      <packageId>5fe1e7d1-7cce-477d-8a46-17b8b7274125</packageId>
+      <packageName>Web Client</packageName>
+      <stereotypes />
+      <metadata />
+      <childElements />
+    </childElement>
+  </childElements>
+</class>

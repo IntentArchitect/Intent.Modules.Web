@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="020e2dfd-7f6b-4350-86d4-2bec89df7649" type="Role" typeId="8663c9f9-2852-45e7-aaa1-0883a2e6f1da">
+  <name>Front End</name>
+  <isAbstract>false</isAbstract>
+  <order>1</order>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>92ed229d-a2e1-4ab9-9416-9e2b21803257</parentFolderId>
+  <stereotypes />
+  <metadata />
+  <childElements />
+</class>

@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="9a21026f-48ba-4c1b-a021-499ff6d143fd" type="Module" typeId="cac14331-198a-4f9a-bbb9-171eb0bd4efe">
+  <name>HttpClientModule</name>
+  <display>HttpClientModule</display>
+  <isAbstract>false</isAbstract>
+  <sort-children>by-type-then-by-name</sort-children>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>0175cdc7-59b4-4d0f-a9fe-6620acd76485</parentFolderId>
+  <packageId>5fe1e7d1-7cce-477d-8a46-17b8b7274125</packageId>
+  <packageName>Web Client</packageName>
+  <diagram />
+  <stereotypes />
+  <metadata />
+  <childElements>
+    <childElement id="bba7e10e-521f-4bf2-8f4c-2d3d8a1bc791" type="Routing" typeId="b548c3c2-a27d-4290-8d23-99d158bb8987">
+      <name>[routing]</name>
+      <display>[routing]</display>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>9a21026f-48ba-4c1b-a021-499ff6d143fd</parentFolderId>
+      <packageId>5fe1e7d1-7cce-477d-8a46-17b8b7274125</packageId>
+      <packageName>Web Client</packageName>
+      <stereotypes />
+      <metadata />
+      <childElements />
+    </childElement>
+  </childElements>
+</class>

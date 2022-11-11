@@ -248,3 +248,4 @@ ModelManifest.xml
 !*.application.output.log
 .intent/
 .idea/
+.angular/
