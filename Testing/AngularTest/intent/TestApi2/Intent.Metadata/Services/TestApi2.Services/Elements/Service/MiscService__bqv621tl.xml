@@ -1,0 +1,993 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="79b25a9b-db93-4113-b3f1-684e40cae356" type="Service" typeId="b16578a5-27b1-4047-a8df-f0b783d706bd">
+  <name>MiscService</name>
+  <display>MiscService</display>
+  <isAbstract>false</isAbstract>
+  <sort-children>by-type-then-manually</sort-children>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>7d81d5fe-ea02-4db3-970a-e81b312e9581</parentFolderId>
+  <packageId>7d81d5fe-ea02-4db3-970a-e81b312e9581</packageId>
+  <packageName>TestApi2.Services</packageName>
+  <stereotypes>
+    <stereotype stereotypeDefinitionId="824d3c4c-8e15-4413-afb7-6bcd372fe557" name="CORS Settings">
+      <addedByDefault>true</addedByDefault>
+      <definitionPackageName>Intent.Java.Spring.Cors</definitionPackageName>
+      <definitionPackageId>697b3afa-5cbc-4332-8476-351bd64446b9</definitionPackageId>
+      <properties>
+        <property name="470eec96-2dc7-4a8b-833b-55c25e797a82" display="Allow Cross Origin Requests" value="false" isActive="true" />
+      </properties>
+    </stereotype>
+    <stereotype stereotypeDefinitionId="8f2e2594-a9c7-4f55-9a44-692ea96957e6" name="OpenAPI Settings">
+      <addedByDefault>true</addedByDefault>
+      <definitionPackageName>Intent.Java.SpringFox.Swagger</definitionPackageName>
+      <definitionPackageId>4b22ec37-52ac-434e-ba59-14b5677ea03b</definitionPackageId>
+      <properties>
+        <property name="d5177eb6-5af1-4150-82d2-54ac4c1d975c" display="Security Requirement" isActive="true" />
+      </properties>
+    </stereotype>
+    <stereotype stereotypeDefinitionId="c29224ec-d473-4b95-ad4a-ec55c676c4fd" name="Http Service Settings">
+      <addedByDefault>true</addedByDefault>
+      <definitionPackageName>Intent.Metadata.WebApi</definitionPackageName>
+      <definitionPackageId>0011387a-b122-45d7-9cdb-8e21b315ab9f</definitionPackageId>
+      <properties>
+        <property name="1e223bd0-7a72-435a-8741-a612d88e4a12" display="Route" value="" isActive="true" />
+      </properties>
+    </stereotype>
+  </stereotypes>
+  <metadata />
+  <childElements>
+    <childElement id="9b0546ea-f07f-4f5d-bfd4-71b5f7baa04a" type="Operation" typeId="e030c97a-e066-40a7-8188-808c275df3cb">
+      <name>GetWithQueryParam</name>
+      <display>GetWithQueryParam(idParam: guid): PersonDTO</display>
+      <isAbstract>false</isAbstract>
+      <sort-children>by-type-then-manually</sort-children>
+      <genericTypes />
+      <typeReference id="0816e066-ceba-4548-938c-6332bbbc594f">
+        <typeId>ef641285-f385-4a20-bb1c-225d5314f8a6</typeId>
+        <isNavigable>true</isNavigable>
+        <isNullable>false</isNullable>
+        <isCollection>false</isCollection>
+        <isRequired>true</isRequired>
+        <typePackageName>TestApi2.Services</typePackageName>
+        <typePackageId>7d81d5fe-ea02-4db3-970a-e81b312e9581</typePackageId>
+        <stereotypes />
+        <genericTypeParameters />
+      </typeReference>
+      <isMapped>false</isMapped>
+      <parentFolderId>79b25a9b-db93-4113-b3f1-684e40cae356</parentFolderId>
+      <packageId>7d81d5fe-ea02-4db3-970a-e81b312e9581</packageId>
+      <packageName>TestApi2.Services</packageName>
+      <stereotypes>
+        <stereotype stereotypeDefinitionId="b4581ed2-42ec-4ae2-83dd-dcdd5f0837b6" name="Http Settings">
+          <addedByDefault>true</addedByDefault>
+          <definitionPackageName>Intent.Metadata.WebApi</definitionPackageName>
+          <definitionPackageId>0011387a-b122-45d7-9cdb-8e21b315ab9f</definitionPackageId>
+          <properties>
+            <property name="801c3e61-4431-4d81-93fa-7e57d33cb3fa" display="Verb" value="GET" isActive="true" />
+            <property name="5dd3e07d-76eb-45d4-9956-4325fb068acc" display="Route" value="getwithqueryparam" isActive="true" />
+            <property name="4490e212-1e99-43ce-b3dd-048ed2a6bae8" display="Return Type Mediatype" value="Default" isActive="true" />
+          </properties>
+        </stereotype>
+        <stereotype stereotypeDefinitionId="8f2e2594-a9c7-4f55-9a44-692ea96957e6" name="OpenAPI Settings">
+          <addedByDefault>true</addedByDefault>
+          <definitionPackageName>Intent.Java.SpringFox.Swagger</definitionPackageName>
+          <definitionPackageId>4b22ec37-52ac-434e-ba59-14b5677ea03b</definitionPackageId>
+          <properties>
+            <property name="d5177eb6-5af1-4150-82d2-54ac4c1d975c" display="Security Requirement" isActive="true" />
+          </properties>
+        </stereotype>
+        <stereotype stereotypeDefinitionId="824d3c4c-8e15-4413-afb7-6bcd372fe557" name="CORS Settings">
+          <addedByDefault>true</addedByDefault>
+          <definitionPackageName>Intent.Java.Spring.Cors</definitionPackageName>
+          <definitionPackageId>697b3afa-5cbc-4332-8476-351bd64446b9</definitionPackageId>
+          <properties>
+            <property name="470eec96-2dc7-4a8b-833b-55c25e797a82" display="Allow Cross Origin Requests" value="false" isActive="true" />
+          </properties>
+        </stereotype>
+      </stereotypes>
+      <metadata />
+      <childElements>
+        <childElement id="feae9a7a-79d9-486f-8765-b784ce895b21" type="Parameter" typeId="00208d20-469d-41cb-8501-768fd5eb796b">
+          <name>idParam</name>
+          <display>in : idParam: guid</display>
+          <isAbstract>false</isAbstract>
+          <genericTypes />
+          <typeReference id="320c6a80-586b-47c2-a0a1-d39edeb0fdae">
+            <typeId>6b649125-18ea-48fd-a6ba-0bfff0d8f488</typeId>
+            <isNavigable>true</isNavigable>
+            <isNullable>false</isNullable>
+            <isCollection>false</isCollection>
+            <isRequired>true</isRequired>
+            <typePackageName>Intent.Common.Types</typePackageName>
+            <typePackageId>870ad967-cbd4-4ea9-b86d-9c3a5d55ea67</typePackageId>
+            <stereotypes />
+            <genericTypeParameters />
+          </typeReference>
+          <isMapped>false</isMapped>
+          <parentFolderId>9b0546ea-f07f-4f5d-bfd4-71b5f7baa04a</parentFolderId>
+          <packageId>7d81d5fe-ea02-4db3-970a-e81b312e9581</packageId>
+          <packageName>TestApi2.Services</packageName>
+          <stereotypes>
+            <stereotype stereotypeDefinitionId="d01df110-1208-4af8-a913-92a49d219552" name="Parameter Settings">
+              <addedByDefault>true</addedByDefault>
+              <definitionPackageName>Intent.Metadata.WebApi</definitionPackageName>
+              <definitionPackageId>0011387a-b122-45d7-9cdb-8e21b315ab9f</definitionPackageId>
+              <properties>
+                <property name="d2630e0f-f930-404f-b453-1e8052a712f5" display="Source" value="From Query" isActive="true" />
+                <property name="7a331e9b-f13c-4b33-9013-bd59b4a4999c" display="Header Name" isActive="false" />
+              </properties>
+            </stereotype>
+          </stereotypes>
+          <metadata />
+          <childElements />
+        </childElement>
+      </childElements>
+    </childElement>
+    <childElement id="74c08748-5352-4e79-8273-e6517df1398e" type="Operation" typeId="e030c97a-e066-40a7-8188-808c275df3cb">
+      <name>GetWithRouteParam</name>
+      <display>GetWithRouteParam(routeId: guid): PersonDTO</display>
+      <isAbstract>false</isAbstract>
+      <sort-children>by-type-then-manually</sort-children>
+      <genericTypes />
+      <typeReference id="508e8521-462f-4035-aca9-f5ee12db4a62">
+        <typeId>ef641285-f385-4a20-bb1c-225d5314f8a6</typeId>
+        <isNavigable>true</isNavigable>
+        <isNullable>false</isNullable>
+        <isCollection>false</isCollection>
+        <isRequired>true</isRequired>
+        <typePackageName>TestApi2.Services</typePackageName>
+        <typePackageId>7d81d5fe-ea02-4db3-970a-e81b312e9581</typePackageId>
+        <stereotypes />
+        <genericTypeParameters />
+      </typeReference>
+      <isMapped>false</isMapped>
+      <parentFolderId>79b25a9b-db93-4113-b3f1-684e40cae356</parentFolderId>
+      <packageId>7d81d5fe-ea02-4db3-970a-e81b312e9581</packageId>
+      <packageName>TestApi2.Services</packageName>
+      <stereotypes>
+        <stereotype stereotypeDefinitionId="b4581ed2-42ec-4ae2-83dd-dcdd5f0837b6" name="Http Settings">
+          <addedByDefault>true</addedByDefault>
+          <definitionPackageName>Intent.Metadata.WebApi</definitionPackageName>
+          <definitionPackageId>0011387a-b122-45d7-9cdb-8e21b315ab9f</definitionPackageId>
+          <properties>
+            <property name="801c3e61-4431-4d81-93fa-7e57d33cb3fa" display="Verb" value="GET" isActive="true" />
+            <property name="5dd3e07d-76eb-45d4-9956-4325fb068acc" display="Route" value="getwithrouteparam/{routeId}" isActive="true" />
+            <property name="4490e212-1e99-43ce-b3dd-048ed2a6bae8" display="Return Type Mediatype" value="Default" isActive="true" />
+          </properties>
+        </stereotype>
+        <stereotype stereotypeDefinitionId="8f2e2594-a9c7-4f55-9a44-692ea96957e6" name="OpenAPI Settings">
+          <addedByDefault>true</addedByDefault>
+          <definitionPackageName>Intent.Java.SpringFox.Swagger</definitionPackageName>
+          <definitionPackageId>4b22ec37-52ac-434e-ba59-14b5677ea03b</definitionPackageId>
+          <properties>
+            <property name="d5177eb6-5af1-4150-82d2-54ac4c1d975c" display="Security Requirement" isActive="true" />
+          </properties>
+        </stereotype>
+        <stereotype stereotypeDefinitionId="824d3c4c-8e15-4413-afb7-6bcd372fe557" name="CORS Settings">
+          <addedByDefault>true</addedByDefault>
+          <definitionPackageName>Intent.Java.Spring.Cors</definitionPackageName>
+          <definitionPackageId>697b3afa-5cbc-4332-8476-351bd64446b9</definitionPackageId>
+          <properties>
+            <property name="470eec96-2dc7-4a8b-833b-55c25e797a82" display="Allow Cross Origin Requests" value="false" isActive="true" />
+          </properties>
+        </stereotype>
+      </stereotypes>
+      <metadata />
+      <childElements>
+        <childElement id="3b5d9795-6212-4e42-841c-18a90fc78198" type="Parameter" typeId="00208d20-469d-41cb-8501-768fd5eb796b">
+          <name>routeId</name>
+          <display>in : routeId: guid</display>
+          <isAbstract>false</isAbstract>
+          <genericTypes />
+          <typeReference id="881d4232-4b3e-487c-96b2-4ab70c3e0ce4">
+            <typeId>6b649125-18ea-48fd-a6ba-0bfff0d8f488</typeId>
+            <isNavigable>true</isNavigable>
+            <isNullable>false</isNullable>
+            <isCollection>false</isCollection>
+            <isRequired>true</isRequired>
+            <typePackageName>Intent.Common.Types</typePackageName>
+            <typePackageId>870ad967-cbd4-4ea9-b86d-9c3a5d55ea67</typePackageId>
+            <stereotypes />
+            <genericTypeParameters />
+          </typeReference>
+          <isMapped>false</isMapped>
+          <parentFolderId>74c08748-5352-4e79-8273-e6517df1398e</parentFolderId>
+          <packageId>7d81d5fe-ea02-4db3-970a-e81b312e9581</packageId>
+          <packageName>TestApi2.Services</packageName>
+          <stereotypes>
+            <stereotype stereotypeDefinitionId="d01df110-1208-4af8-a913-92a49d219552" name="Parameter Settings">
+              <addedByDefault>true</addedByDefault>
+              <definitionPackageName>Intent.Metadata.WebApi</definitionPackageName>
+              <definitionPackageId>0011387a-b122-45d7-9cdb-8e21b315ab9f</definitionPackageId>
+              <properties>
+                <property name="d2630e0f-f930-404f-b453-1e8052a712f5" display="Source" value="From Route" isActive="true" />
+                <property name="7a331e9b-f13c-4b33-9013-bd59b4a4999c" display="Header Name" isActive="false" />
+              </properties>
+            </stereotype>
+          </stereotypes>
+          <metadata />
+          <childElements />
+        </childElement>
+      </childElements>
+    </childElement>
+    <childElement id="89ec3f24-c95d-4c8f-ae7c-ff5c60b87c39" type="Operation" typeId="e030c97a-e066-40a7-8188-808c275df3cb">
+      <name>PostWithHeaderParam</name>
+      <display>PostWithHeaderParam(param: string): void</display>
+      <isAbstract>false</isAbstract>
+      <sort-children>by-type-then-manually</sort-children>
+      <genericTypes />
+      <typeReference id="38e4db50-78ab-4c96-be28-f3d66fde701f">
+        <isNavigable>true</isNavigable>
+        <isNullable>false</isNullable>
+        <isCollection>false</isCollection>
+        <isRequired>true</isRequired>
+        <stereotypes />
+        <genericTypeParameters />
+      </typeReference>
+      <isMapped>false</isMapped>
+      <parentFolderId>79b25a9b-db93-4113-b3f1-684e40cae356</parentFolderId>
+      <packageId>7d81d5fe-ea02-4db3-970a-e81b312e9581</packageId>
+      <packageName>TestApi2.Services</packageName>
+      <stereotypes>
+        <stereotype stereotypeDefinitionId="b4581ed2-42ec-4ae2-83dd-dcdd5f0837b6" name="Http Settings">
+          <addedByDefault>true</addedByDefault>
+          <definitionPackageName>Intent.Metadata.WebApi</definitionPackageName>
+          <definitionPackageId>0011387a-b122-45d7-9cdb-8e21b315ab9f</definitionPackageId>
+          <properties>
+            <property name="801c3e61-4431-4d81-93fa-7e57d33cb3fa" display="Verb" value="POST" isActive="true" />
+            <property name="5dd3e07d-76eb-45d4-9956-4325fb068acc" display="Route" value="postwithheaderparam" isActive="true" />
+            <property name="4490e212-1e99-43ce-b3dd-048ed2a6bae8" display="Return Type Mediatype" value="Default" isActive="true" />
+          </properties>
+        </stereotype>
+        <stereotype stereotypeDefinitionId="8f2e2594-a9c7-4f55-9a44-692ea96957e6" name="OpenAPI Settings">
+          <addedByDefault>true</addedByDefault>
+          <definitionPackageName>Intent.Java.SpringFox.Swagger</definitionPackageName>
+          <definitionPackageId>4b22ec37-52ac-434e-ba59-14b5677ea03b</definitionPackageId>
+          <properties>
+            <property name="d5177eb6-5af1-4150-82d2-54ac4c1d975c" display="Security Requirement" isActive="true" />
+          </properties>
+        </stereotype>
+        <stereotype stereotypeDefinitionId="824d3c4c-8e15-4413-afb7-6bcd372fe557" name="CORS Settings">
+          <addedByDefault>true</addedByDefault>
+          <definitionPackageName>Intent.Java.Spring.Cors</definitionPackageName>
+          <definitionPackageId>697b3afa-5cbc-4332-8476-351bd64446b9</definitionPackageId>
+          <properties>
+            <property name="470eec96-2dc7-4a8b-833b-55c25e797a82" display="Allow Cross Origin Requests" value="false" isActive="true" />
+          </properties>
+        </stereotype>
+      </stereotypes>
+      <metadata />
+      <childElements>
+        <childElement id="1566ff53-48cd-42a8-a581-b22005a5da9c" type="Parameter" typeId="00208d20-469d-41cb-8501-768fd5eb796b">
+          <name>param</name>
+          <display>in : param: string</display>
+          <isAbstract>false</isAbstract>
+          <genericTypes />
+          <typeReference id="2d66094b-7ec3-44b5-9999-077d8a806259">
+            <typeId>d384db9c-a279-45e1-801e-e4e8099625f2</typeId>
+            <isNavigable>true</isNavigable>
+            <isNullable>false</isNullable>
+            <isCollection>false</isCollection>
+            <isRequired>true</isRequired>
+            <typePackageName>Intent.Common.Types</typePackageName>
+            <typePackageId>870ad967-cbd4-4ea9-b86d-9c3a5d55ea67</typePackageId>
+            <stereotypes />
+            <genericTypeParameters />
+          </typeReference>
+          <isMapped>false</isMapped>
+          <parentFolderId>89ec3f24-c95d-4c8f-ae7c-ff5c60b87c39</parentFolderId>
+          <packageId>7d81d5fe-ea02-4db3-970a-e81b312e9581</packageId>
+          <packageName>TestApi2.Services</packageName>
+          <stereotypes>
+            <stereotype stereotypeDefinitionId="d01df110-1208-4af8-a913-92a49d219552" name="Parameter Settings">
+              <addedByDefault>true</addedByDefault>
+              <definitionPackageName>Intent.Metadata.WebApi</definitionPackageName>
+              <definitionPackageId>0011387a-b122-45d7-9cdb-8e21b315ab9f</definitionPackageId>
+              <properties>
+                <property name="d2630e0f-f930-404f-b453-1e8052a712f5" display="Source" value="From Header" isActive="true" />
+                <property name="7a331e9b-f13c-4b33-9013-bd59b4a4999c" display="Header Name" value="MY_HEADER" isActive="true" />
+              </properties>
+            </stereotype>
+          </stereotypes>
+          <metadata />
+          <childElements />
+        </childElement>
+      </childElements>
+    </childElement>
+    <childElement id="0450d6a4-a136-47c9-80a9-ad71e58c2e3b" type="Operation" typeId="e030c97a-e066-40a7-8188-808c275df3cb">
+      <name>PostWithBodyParam</name>
+      <display>PostWithBodyParam(param: PersonUpdateDTO): void</display>
+      <isAbstract>false</isAbstract>
+      <sort-children>by-type-then-manually</sort-children>
+      <genericTypes />
+      <typeReference id="1fb4fc3c-897d-4479-9b1b-7cdc4d4b0527">
+        <isNavigable>true</isNavigable>
+        <isNullable>false</isNullable>
+        <isCollection>false</isCollection>
+        <isRequired>true</isRequired>
+        <stereotypes />
+        <genericTypeParameters />
+      </typeReference>
+      <isMapped>false</isMapped>
+      <parentFolderId>79b25a9b-db93-4113-b3f1-684e40cae356</parentFolderId>
+      <packageId>7d81d5fe-ea02-4db3-970a-e81b312e9581</packageId>
+      <packageName>TestApi2.Services</packageName>
+      <stereotypes>
+        <stereotype stereotypeDefinitionId="b4581ed2-42ec-4ae2-83dd-dcdd5f0837b6" name="Http Settings">
+          <addedByDefault>true</addedByDefault>
+          <definitionPackageName>Intent.Metadata.WebApi</definitionPackageName>
+          <definitionPackageId>0011387a-b122-45d7-9cdb-8e21b315ab9f</definitionPackageId>
+          <properties>
+            <property name="801c3e61-4431-4d81-93fa-7e57d33cb3fa" display="Verb" value="POST" isActive="true" />
+            <property name="5dd3e07d-76eb-45d4-9956-4325fb068acc" display="Route" value="postwithbodyparam" isActive="true" />
+            <property name="4490e212-1e99-43ce-b3dd-048ed2a6bae8" display="Return Type Mediatype" value="Default" isActive="true" />
+          </properties>
+        </stereotype>
+        <stereotype stereotypeDefinitionId="8f2e2594-a9c7-4f55-9a44-692ea96957e6" name="OpenAPI Settings">
+          <addedByDefault>true</addedByDefault>
+          <definitionPackageName>Intent.Java.SpringFox.Swagger</definitionPackageName>
+          <definitionPackageId>4b22ec37-52ac-434e-ba59-14b5677ea03b</definitionPackageId>
+          <properties>
+            <property name="d5177eb6-5af1-4150-82d2-54ac4c1d975c" display="Security Requirement" isActive="true" />
+          </properties>
+        </stereotype>
+        <stereotype stereotypeDefinitionId="824d3c4c-8e15-4413-afb7-6bcd372fe557" name="CORS Settings">
+          <addedByDefault>true</addedByDefault>
+          <definitionPackageName>Intent.Java.Spring.Cors</definitionPackageName>
+          <definitionPackageId>697b3afa-5cbc-4332-8476-351bd64446b9</definitionPackageId>
+          <properties>
+            <property name="470eec96-2dc7-4a8b-833b-55c25e797a82" display="Allow Cross Origin Requests" value="false" isActive="true" />
+          </properties>
+        </stereotype>
+      </stereotypes>
+      <metadata />
+      <childElements>
+        <childElement id="390834fd-a141-43b1-bf08-c8ac226825cc" type="Parameter" typeId="00208d20-469d-41cb-8501-768fd5eb796b">
+          <name>param</name>
+          <display>in : param: PersonUpdateDTO</display>
+          <isAbstract>false</isAbstract>
+          <genericTypes />
+          <typeReference id="9e6436af-0304-48b0-8f3f-9df1fe091846">
+            <typeId>43a37481-8055-494c-b749-944a1cb46bb6</typeId>
+            <isNavigable>true</isNavigable>
+            <isNullable>false</isNullable>
+            <isCollection>false</isCollection>
+            <isRequired>true</isRequired>
+            <typePackageName>TestApi2.Services</typePackageName>
+            <typePackageId>7d81d5fe-ea02-4db3-970a-e81b312e9581</typePackageId>
+            <stereotypes />
+            <genericTypeParameters />
+          </typeReference>
+          <isMapped>false</isMapped>
+          <parentFolderId>0450d6a4-a136-47c9-80a9-ad71e58c2e3b</parentFolderId>
+          <packageId>7d81d5fe-ea02-4db3-970a-e81b312e9581</packageId>
+          <packageName>TestApi2.Services</packageName>
+          <stereotypes>
+            <stereotype stereotypeDefinitionId="d01df110-1208-4af8-a913-92a49d219552" name="Parameter Settings">
+              <addedByDefault>true</addedByDefault>
+              <definitionPackageName>Intent.Metadata.WebApi</definitionPackageName>
+              <definitionPackageId>0011387a-b122-45d7-9cdb-8e21b315ab9f</definitionPackageId>
+              <properties>
+                <property name="d2630e0f-f930-404f-b453-1e8052a712f5" display="Source" value="From Body" isActive="true" />
+                <property name="7a331e9b-f13c-4b33-9013-bd59b4a4999c" display="Header Name" isActive="false" />
+              </properties>
+            </stereotype>
+          </stereotypes>
+          <metadata />
+          <childElements />
+        </childElement>
+      </childElements>
+    </childElement>
+    <childElement id="6ab281d6-24ca-4c2c-9e75-7c34a729b436" type="Operation" typeId="e030c97a-e066-40a7-8188-808c275df3cb">
+      <name>GetWithPrimitiveResultInt</name>
+      <display>GetWithPrimitiveResultInt(): int</display>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <typeReference id="6dc77262-1fbe-40c9-8282-9762877e630a">
+        <typeId>fb0a362d-e9e2-40de-b6ff-5ce8167cbe74</typeId>
+        <isNavigable>true</isNavigable>
+        <isNullable>false</isNullable>
+        <isCollection>false</isCollection>
+        <isRequired>true</isRequired>
+        <typePackageName>Intent.Common.Types</typePackageName>
+        <typePackageId>870ad967-cbd4-4ea9-b86d-9c3a5d55ea67</typePackageId>
+        <stereotypes />
+        <genericTypeParameters />
+      </typeReference>
+      <isMapped>false</isMapped>
+      <parentFolderId>79b25a9b-db93-4113-b3f1-684e40cae356</parentFolderId>
+      <packageId>7d81d5fe-ea02-4db3-970a-e81b312e9581</packageId>
+      <packageName>TestApi2.Services</packageName>
+      <stereotypes>
+        <stereotype stereotypeDefinitionId="b4581ed2-42ec-4ae2-83dd-dcdd5f0837b6" name="Http Settings">
+          <addedByDefault>true</addedByDefault>
+          <definitionPackageName>Intent.Metadata.WebApi</definitionPackageName>
+          <definitionPackageId>0011387a-b122-45d7-9cdb-8e21b315ab9f</definitionPackageId>
+          <properties>
+            <property name="801c3e61-4431-4d81-93fa-7e57d33cb3fa" display="Verb" value="GET" isActive="true" />
+            <property name="5dd3e07d-76eb-45d4-9956-4325fb068acc" display="Route" value="getwithprimitiveresultint" isActive="true" />
+            <property name="4490e212-1e99-43ce-b3dd-048ed2a6bae8" display="Return Type Mediatype" value="Default" isActive="true" />
+          </properties>
+        </stereotype>
+        <stereotype stereotypeDefinitionId="8f2e2594-a9c7-4f55-9a44-692ea96957e6" name="OpenAPI Settings">
+          <addedByDefault>true</addedByDefault>
+          <definitionPackageName>Intent.Java.SpringFox.Swagger</definitionPackageName>
+          <definitionPackageId>4b22ec37-52ac-434e-ba59-14b5677ea03b</definitionPackageId>
+          <properties>
+            <property name="d5177eb6-5af1-4150-82d2-54ac4c1d975c" display="Security Requirement" isActive="true" />
+          </properties>
+        </stereotype>
+        <stereotype stereotypeDefinitionId="824d3c4c-8e15-4413-afb7-6bcd372fe557" name="CORS Settings">
+          <addedByDefault>true</addedByDefault>
+          <definitionPackageName>Intent.Java.Spring.Cors</definitionPackageName>
+          <definitionPackageId>697b3afa-5cbc-4332-8476-351bd64446b9</definitionPackageId>
+          <properties>
+            <property name="470eec96-2dc7-4a8b-833b-55c25e797a82" display="Allow Cross Origin Requests" value="false" isActive="true" />
+          </properties>
+        </stereotype>
+      </stereotypes>
+      <metadata />
+      <childElements />
+    </childElement>
+    <childElement id="286ef36e-284f-4276-9150-5999fb8a68a1" type="Operation" typeId="e030c97a-e066-40a7-8188-808c275df3cb">
+      <name>GetWithPrimitiveResultWrapInt</name>
+      <display>GetWithPrimitiveResultWrapInt(): int</display>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <typeReference id="a2ec04bf-5a87-4dfb-9300-d711f9737486">
+        <typeId>fb0a362d-e9e2-40de-b6ff-5ce8167cbe74</typeId>
+        <isNavigable>true</isNavigable>
+        <isNullable>false</isNullable>
+        <isCollection>false</isCollection>
+        <isRequired>true</isRequired>
+        <typePackageName>Intent.Common.Types</typePackageName>
+        <typePackageId>870ad967-cbd4-4ea9-b86d-9c3a5d55ea67</typePackageId>
+        <stereotypes />
+        <genericTypeParameters />
+      </typeReference>
+      <isMapped>false</isMapped>
+      <parentFolderId>79b25a9b-db93-4113-b3f1-684e40cae356</parentFolderId>
+      <packageId>7d81d5fe-ea02-4db3-970a-e81b312e9581</packageId>
+      <packageName>TestApi2.Services</packageName>
+      <stereotypes>
+        <stereotype stereotypeDefinitionId="b4581ed2-42ec-4ae2-83dd-dcdd5f0837b6" name="Http Settings">
+          <addedByDefault>true</addedByDefault>
+          <definitionPackageName>Intent.Metadata.WebApi</definitionPackageName>
+          <definitionPackageId>0011387a-b122-45d7-9cdb-8e21b315ab9f</definitionPackageId>
+          <properties>
+            <property name="801c3e61-4431-4d81-93fa-7e57d33cb3fa" display="Verb" value="GET" isActive="true" />
+            <property name="5dd3e07d-76eb-45d4-9956-4325fb068acc" display="Route" value="getwithprimitiveresultwrapint" isActive="true" />
+            <property name="4490e212-1e99-43ce-b3dd-048ed2a6bae8" display="Return Type Mediatype" value="application/json" isActive="true" />
+          </properties>
+        </stereotype>
+        <stereotype stereotypeDefinitionId="8f2e2594-a9c7-4f55-9a44-692ea96957e6" name="OpenAPI Settings">
+          <addedByDefault>true</addedByDefault>
+          <definitionPackageName>Intent.Java.SpringFox.Swagger</definitionPackageName>
+          <definitionPackageId>4b22ec37-52ac-434e-ba59-14b5677ea03b</definitionPackageId>
+          <properties>
+            <property name="d5177eb6-5af1-4150-82d2-54ac4c1d975c" display="Security Requirement" isActive="true" />
+          </properties>
+        </stereotype>
+        <stereotype stereotypeDefinitionId="824d3c4c-8e15-4413-afb7-6bcd372fe557" name="CORS Settings">
+          <addedByDefault>true</addedByDefault>
+          <definitionPackageName>Intent.Java.Spring.Cors</definitionPackageName>
+          <definitionPackageId>697b3afa-5cbc-4332-8476-351bd64446b9</definitionPackageId>
+          <properties>
+            <property name="470eec96-2dc7-4a8b-833b-55c25e797a82" display="Allow Cross Origin Requests" value="false" isActive="true" />
+          </properties>
+        </stereotype>
+      </stereotypes>
+      <metadata />
+      <childElements />
+    </childElement>
+    <childElement id="b899d576-f0d0-4ab2-8490-053bb1eae2ee" type="Operation" typeId="e030c97a-e066-40a7-8188-808c275df3cb">
+      <name>GetWithPrimitiveResultBool</name>
+      <display>GetWithPrimitiveResultBool(): bool</display>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <typeReference id="7506b192-0e7b-44d8-b863-a61a2db711b8">
+        <typeId>e6f92b09-b2c5-4536-8270-a4d9e5bbd930</typeId>
+        <isNavigable>true</isNavigable>
+        <isNullable>false</isNullable>
+        <isCollection>false</isCollection>
+        <isRequired>true</isRequired>
+        <typePackageName>Intent.Common.Types</typePackageName>
+        <typePackageId>870ad967-cbd4-4ea9-b86d-9c3a5d55ea67</typePackageId>
+        <stereotypes />
+        <genericTypeParameters />
+      </typeReference>
+      <isMapped>false</isMapped>
+      <parentFolderId>79b25a9b-db93-4113-b3f1-684e40cae356</parentFolderId>
+      <packageId>7d81d5fe-ea02-4db3-970a-e81b312e9581</packageId>
+      <packageName>TestApi2.Services</packageName>
+      <stereotypes>
+        <stereotype stereotypeDefinitionId="b4581ed2-42ec-4ae2-83dd-dcdd5f0837b6" name="Http Settings">
+          <addedByDefault>true</addedByDefault>
+          <definitionPackageName>Intent.Metadata.WebApi</definitionPackageName>
+          <definitionPackageId>0011387a-b122-45d7-9cdb-8e21b315ab9f</definitionPackageId>
+          <properties>
+            <property name="801c3e61-4431-4d81-93fa-7e57d33cb3fa" display="Verb" value="GET" isActive="true" />
+            <property name="5dd3e07d-76eb-45d4-9956-4325fb068acc" display="Route" value="getwithprimitiveresultbool" isActive="true" />
+            <property name="4490e212-1e99-43ce-b3dd-048ed2a6bae8" display="Return Type Mediatype" value="Default" isActive="true" />
+          </properties>
+        </stereotype>
+        <stereotype stereotypeDefinitionId="8f2e2594-a9c7-4f55-9a44-692ea96957e6" name="OpenAPI Settings">
+          <addedByDefault>true</addedByDefault>
+          <definitionPackageName>Intent.Java.SpringFox.Swagger</definitionPackageName>
+          <definitionPackageId>4b22ec37-52ac-434e-ba59-14b5677ea03b</definitionPackageId>
+          <properties>
+            <property name="d5177eb6-5af1-4150-82d2-54ac4c1d975c" display="Security Requirement" isActive="true" />
+          </properties>
+        </stereotype>
+        <stereotype stereotypeDefinitionId="824d3c4c-8e15-4413-afb7-6bcd372fe557" name="CORS Settings">
+          <addedByDefault>true</addedByDefault>
+          <definitionPackageName>Intent.Java.Spring.Cors</definitionPackageName>
+          <definitionPackageId>697b3afa-5cbc-4332-8476-351bd64446b9</definitionPackageId>
+          <properties>
+            <property name="470eec96-2dc7-4a8b-833b-55c25e797a82" display="Allow Cross Origin Requests" value="false" isActive="true" />
+          </properties>
+        </stereotype>
+      </stereotypes>
+      <metadata />
+      <childElements />
+    </childElement>
+    <childElement id="11948859-df49-4158-83bd-60447dd63605" type="Operation" typeId="e030c97a-e066-40a7-8188-808c275df3cb">
+      <name>GetWithPrimitiveResultWrapBool</name>
+      <display>GetWithPrimitiveResultWrapBool(): bool</display>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <typeReference id="d6bafcf5-c0cb-4c37-bc18-72ab9784dc80">
+        <typeId>e6f92b09-b2c5-4536-8270-a4d9e5bbd930</typeId>
+        <isNavigable>true</isNavigable>
+        <isNullable>false</isNullable>
+        <isCollection>false</isCollection>
+        <isRequired>true</isRequired>
+        <typePackageName>Intent.Common.Types</typePackageName>
+        <typePackageId>870ad967-cbd4-4ea9-b86d-9c3a5d55ea67</typePackageId>
+        <stereotypes />
+        <genericTypeParameters />
+      </typeReference>
+      <isMapped>false</isMapped>
+      <parentFolderId>79b25a9b-db93-4113-b3f1-684e40cae356</parentFolderId>
+      <packageId>7d81d5fe-ea02-4db3-970a-e81b312e9581</packageId>
+      <packageName>TestApi2.Services</packageName>
+      <stereotypes>
+        <stereotype stereotypeDefinitionId="b4581ed2-42ec-4ae2-83dd-dcdd5f0837b6" name="Http Settings">
+          <addedByDefault>true</addedByDefault>
+          <definitionPackageName>Intent.Metadata.WebApi</definitionPackageName>
+          <definitionPackageId>0011387a-b122-45d7-9cdb-8e21b315ab9f</definitionPackageId>
+          <properties>
+            <property name="801c3e61-4431-4d81-93fa-7e57d33cb3fa" display="Verb" value="GET" isActive="true" />
+            <property name="5dd3e07d-76eb-45d4-9956-4325fb068acc" display="Route" value="getwithprimitiveresultwrapbool" isActive="true" />
+            <property name="4490e212-1e99-43ce-b3dd-048ed2a6bae8" display="Return Type Mediatype" value="application/json" isActive="true" />
+          </properties>
+        </stereotype>
+        <stereotype stereotypeDefinitionId="8f2e2594-a9c7-4f55-9a44-692ea96957e6" name="OpenAPI Settings">
+          <addedByDefault>true</addedByDefault>
+          <definitionPackageName>Intent.Java.SpringFox.Swagger</definitionPackageName>
+          <definitionPackageId>4b22ec37-52ac-434e-ba59-14b5677ea03b</definitionPackageId>
+          <properties>
+            <property name="d5177eb6-5af1-4150-82d2-54ac4c1d975c" display="Security Requirement" isActive="true" />
+          </properties>
+        </stereotype>
+        <stereotype stereotypeDefinitionId="824d3c4c-8e15-4413-afb7-6bcd372fe557" name="CORS Settings">
+          <addedByDefault>true</addedByDefault>
+          <definitionPackageName>Intent.Java.Spring.Cors</definitionPackageName>
+          <definitionPackageId>697b3afa-5cbc-4332-8476-351bd64446b9</definitionPackageId>
+          <properties>
+            <property name="470eec96-2dc7-4a8b-833b-55c25e797a82" display="Allow Cross Origin Requests" value="false" isActive="true" />
+          </properties>
+        </stereotype>
+      </stereotypes>
+      <metadata />
+      <childElements />
+    </childElement>
+    <childElement id="d179a8ef-e73e-4756-a1ba-e7573dc3ce60" type="Operation" typeId="e030c97a-e066-40a7-8188-808c275df3cb">
+      <name>GetWithPrimitiveResultStr</name>
+      <display>GetWithPrimitiveResultStr(): string</display>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <typeReference id="efbae1ad-4d69-427a-8a06-d0b740e56337">
+        <typeId>d384db9c-a279-45e1-801e-e4e8099625f2</typeId>
+        <isNavigable>true</isNavigable>
+        <isNullable>false</isNullable>
+        <isCollection>false</isCollection>
+        <isRequired>true</isRequired>
+        <typePackageName>Intent.Common.Types</typePackageName>
+        <typePackageId>870ad967-cbd4-4ea9-b86d-9c3a5d55ea67</typePackageId>
+        <stereotypes />
+        <genericTypeParameters />
+      </typeReference>
+      <isMapped>false</isMapped>
+      <parentFolderId>79b25a9b-db93-4113-b3f1-684e40cae356</parentFolderId>
+      <packageId>7d81d5fe-ea02-4db3-970a-e81b312e9581</packageId>
+      <packageName>TestApi2.Services</packageName>
+      <stereotypes>
+        <stereotype stereotypeDefinitionId="b4581ed2-42ec-4ae2-83dd-dcdd5f0837b6" name="Http Settings">
+          <addedByDefault>true</addedByDefault>
+          <definitionPackageName>Intent.Metadata.WebApi</definitionPackageName>
+          <definitionPackageId>0011387a-b122-45d7-9cdb-8e21b315ab9f</definitionPackageId>
+          <properties>
+            <property name="801c3e61-4431-4d81-93fa-7e57d33cb3fa" display="Verb" value="GET" isActive="true" />
+            <property name="5dd3e07d-76eb-45d4-9956-4325fb068acc" display="Route" value="getwithprimitiveresultstr" isActive="true" />
+            <property name="4490e212-1e99-43ce-b3dd-048ed2a6bae8" display="Return Type Mediatype" value="Default" isActive="true" />
+          </properties>
+        </stereotype>
+        <stereotype stereotypeDefinitionId="8f2e2594-a9c7-4f55-9a44-692ea96957e6" name="OpenAPI Settings">
+          <addedByDefault>true</addedByDefault>
+          <definitionPackageName>Intent.Java.SpringFox.Swagger</definitionPackageName>
+          <definitionPackageId>4b22ec37-52ac-434e-ba59-14b5677ea03b</definitionPackageId>
+          <properties>
+            <property name="d5177eb6-5af1-4150-82d2-54ac4c1d975c" display="Security Requirement" isActive="true" />
+          </properties>
+        </stereotype>
+        <stereotype stereotypeDefinitionId="824d3c4c-8e15-4413-afb7-6bcd372fe557" name="CORS Settings">
+          <addedByDefault>true</addedByDefault>
+          <definitionPackageName>Intent.Java.Spring.Cors</definitionPackageName>
+          <definitionPackageId>697b3afa-5cbc-4332-8476-351bd64446b9</definitionPackageId>
+          <properties>
+            <property name="470eec96-2dc7-4a8b-833b-55c25e797a82" display="Allow Cross Origin Requests" value="false" isActive="true" />
+          </properties>
+        </stereotype>
+      </stereotypes>
+      <metadata />
+      <childElements />
+    </childElement>
+    <childElement id="936e86a9-4c52-45b5-ac8a-d3f422a6a649" type="Operation" typeId="e030c97a-e066-40a7-8188-808c275df3cb">
+      <name>GetWithPrimitiveResultWrapStr</name>
+      <display>GetWithPrimitiveResultWrapStr(): string</display>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <typeReference id="e8668e47-b7b2-44a6-aee2-2674d4f7f698">
+        <typeId>d384db9c-a279-45e1-801e-e4e8099625f2</typeId>
+        <isNavigable>true</isNavigable>
+        <isNullable>false</isNullable>
+        <isCollection>false</isCollection>
+        <isRequired>true</isRequired>
+        <typePackageName>Intent.Common.Types</typePackageName>
+        <typePackageId>870ad967-cbd4-4ea9-b86d-9c3a5d55ea67</typePackageId>
+        <stereotypes />
+        <genericTypeParameters />
+      </typeReference>
+      <isMapped>false</isMapped>
+      <parentFolderId>79b25a9b-db93-4113-b3f1-684e40cae356</parentFolderId>
+      <packageId>7d81d5fe-ea02-4db3-970a-e81b312e9581</packageId>
+      <packageName>TestApi2.Services</packageName>
+      <stereotypes>
+        <stereotype stereotypeDefinitionId="b4581ed2-42ec-4ae2-83dd-dcdd5f0837b6" name="Http Settings">
+          <addedByDefault>true</addedByDefault>
+          <definitionPackageName>Intent.Metadata.WebApi</definitionPackageName>
+          <definitionPackageId>0011387a-b122-45d7-9cdb-8e21b315ab9f</definitionPackageId>
+          <properties>
+            <property name="801c3e61-4431-4d81-93fa-7e57d33cb3fa" display="Verb" value="GET" isActive="true" />
+            <property name="5dd3e07d-76eb-45d4-9956-4325fb068acc" display="Route" value="getwithprimitiveresultwrapstr" isActive="true" />
+            <property name="4490e212-1e99-43ce-b3dd-048ed2a6bae8" display="Return Type Mediatype" value="application/json" isActive="true" />
+          </properties>
+        </stereotype>
+        <stereotype stereotypeDefinitionId="8f2e2594-a9c7-4f55-9a44-692ea96957e6" name="OpenAPI Settings">
+          <addedByDefault>true</addedByDefault>
+          <definitionPackageName>Intent.Java.SpringFox.Swagger</definitionPackageName>
+          <definitionPackageId>4b22ec37-52ac-434e-ba59-14b5677ea03b</definitionPackageId>
+          <properties>
+            <property name="d5177eb6-5af1-4150-82d2-54ac4c1d975c" display="Security Requirement" isActive="true" />
+          </properties>
+        </stereotype>
+        <stereotype stereotypeDefinitionId="824d3c4c-8e15-4413-afb7-6bcd372fe557" name="CORS Settings">
+          <addedByDefault>true</addedByDefault>
+          <definitionPackageName>Intent.Java.Spring.Cors</definitionPackageName>
+          <definitionPackageId>697b3afa-5cbc-4332-8476-351bd64446b9</definitionPackageId>
+          <properties>
+            <property name="470eec96-2dc7-4a8b-833b-55c25e797a82" display="Allow Cross Origin Requests" value="false" isActive="true" />
+          </properties>
+        </stereotype>
+      </stereotypes>
+      <metadata />
+      <childElements />
+    </childElement>
+    <childElement id="43b3555e-7ed8-404d-8a93-3dc7356f5ab6" type="Operation" typeId="e030c97a-e066-40a7-8188-808c275df3cb">
+      <name>GetWithPrimitiveResultDate</name>
+      <display>GetWithPrimitiveResultDate(): datetime</display>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <typeReference id="97d4b99b-7060-4dc4-810a-0e466dba9296">
+        <typeId>a4107c29-7851-4121-9416-cf1236908f1e</typeId>
+        <isNavigable>true</isNavigable>
+        <isNullable>false</isNullable>
+        <isCollection>false</isCollection>
+        <isRequired>true</isRequired>
+        <typePackageName>Intent.Common.Types</typePackageName>
+        <typePackageId>870ad967-cbd4-4ea9-b86d-9c3a5d55ea67</typePackageId>
+        <stereotypes />
+        <genericTypeParameters />
+      </typeReference>
+      <isMapped>false</isMapped>
+      <parentFolderId>79b25a9b-db93-4113-b3f1-684e40cae356</parentFolderId>
+      <packageId>7d81d5fe-ea02-4db3-970a-e81b312e9581</packageId>
+      <packageName>TestApi2.Services</packageName>
+      <stereotypes>
+        <stereotype stereotypeDefinitionId="b4581ed2-42ec-4ae2-83dd-dcdd5f0837b6" name="Http Settings">
+          <addedByDefault>true</addedByDefault>
+          <definitionPackageName>Intent.Metadata.WebApi</definitionPackageName>
+          <definitionPackageId>0011387a-b122-45d7-9cdb-8e21b315ab9f</definitionPackageId>
+          <properties>
+            <property name="801c3e61-4431-4d81-93fa-7e57d33cb3fa" display="Verb" value="GET" isActive="true" />
+            <property name="5dd3e07d-76eb-45d4-9956-4325fb068acc" display="Route" value="getwithprimitiveresultdate" isActive="true" />
+            <property name="4490e212-1e99-43ce-b3dd-048ed2a6bae8" display="Return Type Mediatype" value="Default" isActive="true" />
+          </properties>
+        </stereotype>
+        <stereotype stereotypeDefinitionId="8f2e2594-a9c7-4f55-9a44-692ea96957e6" name="OpenAPI Settings">
+          <addedByDefault>true</addedByDefault>
+          <definitionPackageName>Intent.Java.SpringFox.Swagger</definitionPackageName>
+          <definitionPackageId>4b22ec37-52ac-434e-ba59-14b5677ea03b</definitionPackageId>
+          <properties>
+            <property name="d5177eb6-5af1-4150-82d2-54ac4c1d975c" display="Security Requirement" isActive="true" />
+          </properties>
+        </stereotype>
+        <stereotype stereotypeDefinitionId="824d3c4c-8e15-4413-afb7-6bcd372fe557" name="CORS Settings">
+          <addedByDefault>true</addedByDefault>
+          <definitionPackageName>Intent.Java.Spring.Cors</definitionPackageName>
+          <definitionPackageId>697b3afa-5cbc-4332-8476-351bd64446b9</definitionPackageId>
+          <properties>
+            <property name="470eec96-2dc7-4a8b-833b-55c25e797a82" display="Allow Cross Origin Requests" value="false" isActive="true" />
+          </properties>
+        </stereotype>
+      </stereotypes>
+      <metadata />
+      <childElements />
+    </childElement>
+    <childElement id="c0a78838-4d60-418f-b494-e1341fd3e2bc" type="Operation" typeId="e030c97a-e066-40a7-8188-808c275df3cb">
+      <name>GetWithPrimitiveResultWrapDate</name>
+      <display>GetWithPrimitiveResultWrapDate(): datetime</display>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <typeReference id="7ccd237d-84ba-4856-9ac2-c5b64bc7a8bc">
+        <typeId>a4107c29-7851-4121-9416-cf1236908f1e</typeId>
+        <isNavigable>true</isNavigable>
+        <isNullable>false</isNullable>
+        <isCollection>false</isCollection>
+        <isRequired>true</isRequired>
+        <typePackageName>Intent.Common.Types</typePackageName>
+        <typePackageId>870ad967-cbd4-4ea9-b86d-9c3a5d55ea67</typePackageId>
+        <stereotypes />
+        <genericTypeParameters />
+      </typeReference>
+      <isMapped>false</isMapped>
+      <parentFolderId>79b25a9b-db93-4113-b3f1-684e40cae356</parentFolderId>
+      <packageId>7d81d5fe-ea02-4db3-970a-e81b312e9581</packageId>
+      <packageName>TestApi2.Services</packageName>
+      <stereotypes>
+        <stereotype stereotypeDefinitionId="b4581ed2-42ec-4ae2-83dd-dcdd5f0837b6" name="Http Settings">
+          <addedByDefault>true</addedByDefault>
+          <definitionPackageName>Intent.Metadata.WebApi</definitionPackageName>
+          <definitionPackageId>0011387a-b122-45d7-9cdb-8e21b315ab9f</definitionPackageId>
+          <properties>
+            <property name="801c3e61-4431-4d81-93fa-7e57d33cb3fa" display="Verb" value="GET" isActive="true" />
+            <property name="5dd3e07d-76eb-45d4-9956-4325fb068acc" display="Route" value="getwithprimitiveresultwrapdate" isActive="true" />
+            <property name="4490e212-1e99-43ce-b3dd-048ed2a6bae8" display="Return Type Mediatype" value="application/json" isActive="true" />
+          </properties>
+        </stereotype>
+        <stereotype stereotypeDefinitionId="8f2e2594-a9c7-4f55-9a44-692ea96957e6" name="OpenAPI Settings">
+          <addedByDefault>true</addedByDefault>
+          <definitionPackageName>Intent.Java.SpringFox.Swagger</definitionPackageName>
+          <definitionPackageId>4b22ec37-52ac-434e-ba59-14b5677ea03b</definitionPackageId>
+          <properties>
+            <property name="d5177eb6-5af1-4150-82d2-54ac4c1d975c" display="Security Requirement" isActive="true" />
+          </properties>
+        </stereotype>
+        <stereotype stereotypeDefinitionId="824d3c4c-8e15-4413-afb7-6bcd372fe557" name="CORS Settings">
+          <addedByDefault>true</addedByDefault>
+          <definitionPackageName>Intent.Java.Spring.Cors</definitionPackageName>
+          <definitionPackageId>697b3afa-5cbc-4332-8476-351bd64446b9</definitionPackageId>
+          <properties>
+            <property name="470eec96-2dc7-4a8b-833b-55c25e797a82" display="Allow Cross Origin Requests" value="false" isActive="true" />
+          </properties>
+        </stereotype>
+      </stereotypes>
+      <metadata />
+      <childElements />
+    </childElement>
+    <childElement id="bcdc9b9b-4021-49d7-84de-50668bf31326" type="Operation" typeId="e030c97a-e066-40a7-8188-808c275df3cb">
+      <name>PostDateParam</name>
+      <display>PostDateParam(date: date, datetime: datetime): void</display>
+      <isAbstract>false</isAbstract>
+      <sort-children>by-type-then-manually</sort-children>
+      <genericTypes />
+      <typeReference id="5d9a71c5-30b9-4d06-9dce-6324d89d2d08">
+        <isNavigable>true</isNavigable>
+        <isNullable>false</isNullable>
+        <isCollection>false</isCollection>
+        <isRequired>true</isRequired>
+        <stereotypes />
+        <genericTypeParameters />
+      </typeReference>
+      <isMapped>false</isMapped>
+      <parentFolderId>79b25a9b-db93-4113-b3f1-684e40cae356</parentFolderId>
+      <packageId>7d81d5fe-ea02-4db3-970a-e81b312e9581</packageId>
+      <packageName>TestApi2.Services</packageName>
+      <stereotypes>
+        <stereotype stereotypeDefinitionId="b4581ed2-42ec-4ae2-83dd-dcdd5f0837b6" name="Http Settings">
+          <addedByDefault>true</addedByDefault>
+          <definitionPackageName>Intent.Metadata.WebApi</definitionPackageName>
+          <definitionPackageId>0011387a-b122-45d7-9cdb-8e21b315ab9f</definitionPackageId>
+          <properties>
+            <property name="801c3e61-4431-4d81-93fa-7e57d33cb3fa" display="Verb" value="POST" isActive="true" />
+            <property name="5dd3e07d-76eb-45d4-9956-4325fb068acc" display="Route" value="postdateparam" isActive="true" />
+            <property name="4490e212-1e99-43ce-b3dd-048ed2a6bae8" display="Return Type Mediatype" value="Default" isActive="true" />
+          </properties>
+        </stereotype>
+        <stereotype stereotypeDefinitionId="824d3c4c-8e15-4413-afb7-6bcd372fe557" name="CORS Settings">
+          <addedByDefault>true</addedByDefault>
+          <definitionPackageName>Intent.Java.Spring.Cors</definitionPackageName>
+          <definitionPackageId>697b3afa-5cbc-4332-8476-351bd64446b9</definitionPackageId>
+          <properties>
+            <property name="470eec96-2dc7-4a8b-833b-55c25e797a82" display="Allow Cross Origin Requests" value="false" isActive="true" />
+          </properties>
+        </stereotype>
+        <stereotype stereotypeDefinitionId="8f2e2594-a9c7-4f55-9a44-692ea96957e6" name="OpenAPI Settings">
+          <addedByDefault>true</addedByDefault>
+          <definitionPackageName>Intent.Java.SpringFox.Swagger</definitionPackageName>
+          <definitionPackageId>4b22ec37-52ac-434e-ba59-14b5677ea03b</definitionPackageId>
+          <properties>
+            <property name="d5177eb6-5af1-4150-82d2-54ac4c1d975c" display="Security Requirement" isActive="true" />
+          </properties>
+        </stereotype>
+      </stereotypes>
+      <metadata />
+      <childElements>
+        <childElement id="923dad07-7118-410d-8c35-83f875404f19" type="Parameter" typeId="00208d20-469d-41cb-8501-768fd5eb796b">
+          <name>date</name>
+          <display>in : date: date</display>
+          <isAbstract>false</isAbstract>
+          <genericTypes />
+          <typeReference id="26f759b9-e427-48d4-94a0-be9ffbe21245">
+            <typeId>1fbaa056-b666-4f25-b8fd-76fe3165acc8</typeId>
+            <isNavigable>true</isNavigable>
+            <isNullable>false</isNullable>
+            <isCollection>false</isCollection>
+            <isRequired>true</isRequired>
+            <typePackageName>Intent.Common.Types</typePackageName>
+            <typePackageId>870ad967-cbd4-4ea9-b86d-9c3a5d55ea67</typePackageId>
+            <stereotypes />
+            <genericTypeParameters />
+          </typeReference>
+          <isMapped>false</isMapped>
+          <parentFolderId>bcdc9b9b-4021-49d7-84de-50668bf31326</parentFolderId>
+          <packageId>7d81d5fe-ea02-4db3-970a-e81b312e9581</packageId>
+          <packageName>TestApi2.Services</packageName>
+          <stereotypes>
+            <stereotype stereotypeDefinitionId="d01df110-1208-4af8-a913-92a49d219552" name="Parameter Settings">
+              <addedByDefault>true</addedByDefault>
+              <definitionPackageName>Intent.Metadata.WebApi</definitionPackageName>
+              <definitionPackageId>0011387a-b122-45d7-9cdb-8e21b315ab9f</definitionPackageId>
+              <properties>
+                <property name="d2630e0f-f930-404f-b453-1e8052a712f5" display="Source" value="From Query" isActive="true" />
+                <property name="7a331e9b-f13c-4b33-9013-bd59b4a4999c" display="Header Name" isActive="false" />
+              </properties>
+            </stereotype>
+          </stereotypes>
+          <metadata />
+          <childElements />
+        </childElement>
+        <childElement id="515dee54-2927-4ee1-862c-b6cfe3bbf90c" type="Parameter" typeId="00208d20-469d-41cb-8501-768fd5eb796b">
+          <name>datetime</name>
+          <display>in : datetime: datetime</display>
+          <isAbstract>false</isAbstract>
+          <genericTypes />
+          <typeReference id="26493e1c-1fec-411f-843f-fa84c4c35d55">
+            <typeId>a4107c29-7851-4121-9416-cf1236908f1e</typeId>
+            <isNavigable>true</isNavigable>
+            <isNullable>false</isNullable>
+            <isCollection>false</isCollection>
+            <isRequired>true</isRequired>
+            <typePackageName>Intent.Common.Types</typePackageName>
+            <typePackageId>870ad967-cbd4-4ea9-b86d-9c3a5d55ea67</typePackageId>
+            <stereotypes />
+            <genericTypeParameters />
+          </typeReference>
+          <isMapped>false</isMapped>
+          <parentFolderId>bcdc9b9b-4021-49d7-84de-50668bf31326</parentFolderId>
+          <packageId>7d81d5fe-ea02-4db3-970a-e81b312e9581</packageId>
+          <packageName>TestApi2.Services</packageName>
+          <stereotypes>
+            <stereotype stereotypeDefinitionId="d01df110-1208-4af8-a913-92a49d219552" name="Parameter Settings">
+              <addedByDefault>true</addedByDefault>
+              <definitionPackageName>Intent.Metadata.WebApi</definitionPackageName>
+              <definitionPackageId>0011387a-b122-45d7-9cdb-8e21b315ab9f</definitionPackageId>
+              <properties>
+                <property name="d2630e0f-f930-404f-b453-1e8052a712f5" display="Source" value="From Query" isActive="true" />
+                <property name="7a331e9b-f13c-4b33-9013-bd59b4a4999c" display="Header Name" isActive="false" />
+              </properties>
+            </stereotype>
+          </stereotypes>
+          <metadata />
+          <childElements />
+        </childElement>
+      </childElements>
+    </childElement>
+    <childElement id="07e457b7-f7e8-4fc0-832a-27500938598c" type="Operation" typeId="e030c97a-e066-40a7-8188-808c275df3cb">
+      <name>PostDateParamDto</name>
+      <display>PostDateParamDto(dto: DateDTO): void</display>
+      <isAbstract>false</isAbstract>
+      <sort-children>by-type-then-manually</sort-children>
+      <genericTypes />
+      <typeReference id="79a87d37-8e99-43a7-9317-c91a48ab0545">
+        <isNavigable>true</isNavigable>
+        <isNullable>false</isNullable>
+        <isCollection>false</isCollection>
+        <isRequired>true</isRequired>
+        <stereotypes />
+        <genericTypeParameters />
+      </typeReference>
+      <isMapped>false</isMapped>
+      <parentFolderId>79b25a9b-db93-4113-b3f1-684e40cae356</parentFolderId>
+      <packageId>7d81d5fe-ea02-4db3-970a-e81b312e9581</packageId>
+      <packageName>TestApi2.Services</packageName>
+      <stereotypes>
+        <stereotype stereotypeDefinitionId="b4581ed2-42ec-4ae2-83dd-dcdd5f0837b6" name="Http Settings">
+          <addedByDefault>true</addedByDefault>
+          <definitionPackageName>Intent.Metadata.WebApi</definitionPackageName>
+          <definitionPackageId>0011387a-b122-45d7-9cdb-8e21b315ab9f</definitionPackageId>
+          <properties>
+            <property name="801c3e61-4431-4d81-93fa-7e57d33cb3fa" display="Verb" value="POST" isActive="true" />
+            <property name="5dd3e07d-76eb-45d4-9956-4325fb068acc" display="Route" value="postdateparamdto" isActive="true" />
+            <property name="4490e212-1e99-43ce-b3dd-048ed2a6bae8" display="Return Type Mediatype" value="Default" isActive="true" />
+          </properties>
+        </stereotype>
+        <stereotype stereotypeDefinitionId="824d3c4c-8e15-4413-afb7-6bcd372fe557" name="CORS Settings">
+          <addedByDefault>true</addedByDefault>
+          <definitionPackageName>Intent.Java.Spring.Cors</definitionPackageName>
+          <definitionPackageId>697b3afa-5cbc-4332-8476-351bd64446b9</definitionPackageId>
+          <properties>
+            <property name="470eec96-2dc7-4a8b-833b-55c25e797a82" display="Allow Cross Origin Requests" value="false" isActive="true" />
+          </properties>
+        </stereotype>
+        <stereotype stereotypeDefinitionId="8f2e2594-a9c7-4f55-9a44-692ea96957e6" name="OpenAPI Settings">
+          <addedByDefault>true</addedByDefault>
+          <definitionPackageName>Intent.Java.SpringFox.Swagger</definitionPackageName>
+          <definitionPackageId>4b22ec37-52ac-434e-ba59-14b5677ea03b</definitionPackageId>
+          <properties>
+            <property name="d5177eb6-5af1-4150-82d2-54ac4c1d975c" display="Security Requirement" isActive="true" />
+          </properties>
+        </stereotype>
+      </stereotypes>
+      <metadata />
+      <childElements>
+        <childElement id="a6b93d31-11ca-432a-bb24-7614511b4dd2" type="Parameter" typeId="00208d20-469d-41cb-8501-768fd5eb796b">
+          <name>dto</name>
+          <display>in : dto: DateDTO</display>
+          <isAbstract>false</isAbstract>
+          <genericTypes />
+          <typeReference id="a6083547-a615-47ee-8666-76f7071034b7">
+            <typeId>1096bd2b-6bc9-4969-966c-b9f1f7bdd0eb</typeId>
+            <isNavigable>true</isNavigable>
+            <isNullable>false</isNullable>
+            <isCollection>false</isCollection>
+            <isRequired>true</isRequired>
+            <typePackageName>TestApi2.Services</typePackageName>
+            <typePackageId>7d81d5fe-ea02-4db3-970a-e81b312e9581</typePackageId>
+            <stereotypes />
+            <genericTypeParameters />
+          </typeReference>
+          <isMapped>false</isMapped>
+          <parentFolderId>07e457b7-f7e8-4fc0-832a-27500938598c</parentFolderId>
+          <packageId>7d81d5fe-ea02-4db3-970a-e81b312e9581</packageId>
+          <packageName>TestApi2.Services</packageName>
+          <stereotypes>
+            <stereotype stereotypeDefinitionId="d01df110-1208-4af8-a913-92a49d219552" name="Parameter Settings">
+              <addedByDefault>true</addedByDefault>
+              <definitionPackageName>Intent.Metadata.WebApi</definitionPackageName>
+              <definitionPackageId>0011387a-b122-45d7-9cdb-8e21b315ab9f</definitionPackageId>
+              <properties>
+                <property name="d2630e0f-f930-404f-b453-1e8052a712f5" display="Source" value="Default" isActive="true" />
+                <property name="7a331e9b-f13c-4b33-9013-bd59b4a4999c" display="Header Name" isActive="false" />
+              </properties>
+            </stereotype>
+          </stereotypes>
+          <metadata />
+          <childElements />
+        </childElement>
+      </childElements>
+    </childElement>
+  </childElements>
+</class>

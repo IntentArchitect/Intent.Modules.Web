@@ -76,6 +76,22 @@
     </FileLog>
     <FileLog>
       <ProjectId>2d31c2f6-6afe-46f4-b857-2a0ade847282</ProjectId>
+      <CorrelationId>Intent.Angular.ServiceProxies.Proxies.AngularServiceProxy#b8a86fb9-8e3e-49a5-b0ae-cbd72bb8d25d</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>../../AngularTest/src/app/http-client/misc-client.service.ts</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>app/http-client/misc-client.service.ts</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>2d31c2f6-6afe-46f4-b857-2a0ade847282</ProjectId>
+      <CorrelationId>Intent.Angular.ServiceProxies.Proxies.AngularDTO#16f343fb-7857-4811-a52c-caeda92fba60</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>../../AngularTest/src/app/http-client/models/date.dto.ts</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>app/http-client/models/date.dto.ts</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>2d31c2f6-6afe-46f4-b857-2a0ade847282</ProjectId>
       <CorrelationId>Intent.Angular.ServiceProxies.Proxies.AngularDTO#ea1bc810-405b-41e8-bb4d-81f27a0ddec1</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>../../AngularTest/src/app/http-client/models/person-create.dto.ts</ApplicationRelativeFilePath>

@@ -191,9 +191,9 @@ namespace Intent.Modules.Angular.ServiceProxies.Templates.Proxies.AngularService
 
         private bool ShouldReadAsRawText(ServiceOperationModel operation)
         {
-            // Interestingly the Angular HttpClient can successfully parse a primitive type
-            // provided it is not a plain string.
-            return (!HasWrappedReturnType(operation) && operation.ReturnType.HasStringType() && !operation.ReturnType.IsCollection);
+            
+            return (!HasWrappedReturnType(operation) && IsReturnTypePrimitive(operation)) 
+                || (!HasWrappedReturnType(operation) && operation.ReturnType.HasStringType() && !operation.ReturnType.IsCollection);
         }
 
         private bool HasWrappedReturnType(ServiceOperationModel operationModel)
@@ -221,7 +221,7 @@ namespace Intent.Modules.Angular.ServiceProxies.Templates.Proxies.AngularService
         {
             if (HasWrappedReturnType(operation))
             {
-                return $"JsonResponse<{GetTypeName(operation.ReturnType)}>";
+                return $"{this.GetJsonResponseName()}<{GetTypeName(operation.ReturnType)}>";
             }
             return "any";
         }
@@ -230,7 +230,12 @@ namespace Intent.Modules.Angular.ServiceProxies.Templates.Proxies.AngularService
         {
             var statements = new List<string>();
 
-            if (operation.ReturnType != null && HasWrappedReturnType(operation))
+            if (operation.ReturnType != null && ShouldReadAsRawText(operation))
+            {
+                statements.Add(@"if (response && (response.startsWith(""\"""") || response.startsWith(""'""))) { response = response.substring(1, response.length - 1); }");
+                statements.Add($"return response;");
+            }
+            else if (operation.ReturnType != null && HasWrappedReturnType(operation))
             {
                 statements.Add($"return response.value;");
             }
@@ -251,9 +256,14 @@ namespace Intent.Modules.Angular.ServiceProxies.Templates.Proxies.AngularService
             var queryParams = ServiceMetadataQueries.GetQueryParameters(this, operation);
             if (queryParams.Any())
             {
-                statements.Add("let httpParams = new HttpParams()");
+                statements.Add($"let httpParams = new {UseType("HttpParams", "@angular/common/http")}()");
                 foreach (var queryParam in queryParams)
                 {
+                    if (queryParam.Type.Element.Name == "date" || queryParam.Type.Element.Name == "datetime")
+                    {
+                        statements.Add($@"  .set(""{queryParam.Name.ToCamelCase()}"", {queryParam.Name.ToCamelCase()}.toISOString())");
+                        continue;
+                    }
                     statements.Add($@"  .set(""{queryParam.Name.ToCamelCase()}"", {queryParam.Name.ToCamelCase()})");
                 }
                 statements.Add(";");
@@ -262,7 +272,7 @@ namespace Intent.Modules.Angular.ServiceProxies.Templates.Proxies.AngularService
             var formDataFields = ServiceMetadataQueries.GetFormUrlEncodedParameters(operation);
             if (formDataFields.Any())
             {
-                statements.Add("let formData: FormData = new FormData();");
+                statements.Add($"let formData: FormData = new {UseType("FormData", "@angular/common/http")}();");
                 foreach (var field in formDataFields)
                 {
                     statements.Add($@"formData.append(""{field.Name.ToCamelCase()}"", {field.Name.ToCamelCase()});");
@@ -272,7 +282,7 @@ namespace Intent.Modules.Angular.ServiceProxies.Templates.Proxies.AngularService
             var headerFields = ServiceMetadataQueries.GetHeaderParameters(operation);
             if (headerFields.Any())
             {
-                statements.Add("let headers = new HttpHeaders()");
+                statements.Add($"let headers = new {UseType("HttpHeaders", "@angular/common/http")}()");
                 foreach (var header in headerFields)
                 {
                     statements.Add($@"  .append(""{header.HeaderName}"", {header.Parameter.Name.ToCamelCase()})");
@@ -288,6 +298,12 @@ namespace Intent.Modules.Angular.ServiceProxies.Templates.Proxies.AngularService
             const string newLine = @"
     ";
             return newLine + string.Join(newLine, statements);
+        }
+        
+        private string UseType(string type, string location)
+        {
+            this.AddImport(type, location);
+            return type;
         }
     }
 

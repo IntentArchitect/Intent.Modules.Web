@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="202dcdba-387e-43cd-84ef-e712e2bb5065" type="Folder" typeId="4d95d53a-8855-4f35-aa82-e312643f5c5f">
+  <name>typeorm</name>
+  <display>typeorm</display>
+  <isAbstract>false</isAbstract>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>49f74493-c411-45f6-b91c-d16b61a3a72a</parentFolderId>
+  <stereotypes />
+  <metadata />
+  <childElements>
+    <childElement id="c16b3ed4-d269-4e73-bd6b-c341a0fa855a" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+      <name>Intent.NodeJS.TypeORM.TypeOrmExDecorator</name>
+      <display>Intent.NodeJS.TypeORM.TypeOrmExDecorator</display>
+      <externalReference>Intent.NodeJS.TypeORM</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>202dcdba-387e-43cd-84ef-e712e2bb5065</parentFolderId>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
+      <childElements />
+    </childElement>
+    <childElement id="007065c1-8cc1-4759-b7bf-4f6558abffc2" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+      <name>Intent.NodeJS.TypeORM.TypeOrmExModule</name>
+      <display>Intent.NodeJS.TypeORM.TypeOrmExModule</display>
+      <externalReference>Intent.NodeJS.TypeORM</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>202dcdba-387e-43cd-84ef-e712e2bb5065</parentFolderId>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
+      <childElements />
+    </childElement>
+  </childElements>
+</class>

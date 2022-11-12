@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="b0b5ca3e-90c9-412e-9063-f3eccb42aaf4" type="Folder" typeId="4d95d53a-8855-4f35-aa82-e312643f5c5f">
+  <name>People</name>
+  <display>People</display>
+  <isAbstract>false</isAbstract>
+  <sort-children>by-type-then-by-name</sort-children>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>7d81d5fe-ea02-4db3-970a-e81b312e9581</parentFolderId>
+  <packageId>7d81d5fe-ea02-4db3-970a-e81b312e9581</packageId>
+  <packageName>TestApi2.Services</packageName>
+  <stereotypes />
+  <metadata />
+  <childElements />
+</class>

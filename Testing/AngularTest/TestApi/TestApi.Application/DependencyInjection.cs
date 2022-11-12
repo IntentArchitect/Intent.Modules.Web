@@ -15,6 +15,7 @@ namespace TestApi.Application
         public static IServiceCollection AddApplication(this IServiceCollection services)
         {
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
+            services.AddTransient<IMiscService, MiscService>();
             services.AddTransient<IPeopleService, PeopleService>();
             return services;
         }

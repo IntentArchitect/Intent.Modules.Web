@@ -6,9 +6,11 @@
   <iconType>UrlImagePath</iconType>
   <metadataRelativePath>Intent.Metadata</metadataRelativePath>
   <modulesCacheRelativePath>.intent/modules</modulesCacheRelativePath>
-  <lastUsedApplicationTemplate id="Intent.ApplicationTemplate.WebClient.Angular" version="3.3.1" />
+  <lastUsedApplicationTemplate id="Intent.ApplicationTemplate.NestJS.Web" version="3.3.5" />
   <applications>
     <application id="d3a3a29c-f364-4f56-b5e7-6b21bca6a0eb" name="AngularTest" relativePath="AngularTest/AngularTest.application.config" />
     <application id="6e046b41-43de-4e77-8a54-f74cfe74ebf9" name="TestApi" relativePath="TestApi/TestApi.application.config" />
+    <application id="3971ed16-5311-4cf4-9b1a-bf4551ccd2f6" name="TestApi2" relativePath="TestApi2/TestApi2.application.config" />
+    <application id="b2743df9-5034-4e4a-ae2a-2f5f13fa4ee7" name="TestApi3" relativePath="TestApi3/TestApi3.application.config" />
   </applications>
 </solution>

@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="bd6d7351-0ea0-4cdc-849f-faebc44d1db7" type="Diagram" typeId="4d66fecd-e9b8-436f-aa50-c59040ad0879">
+  <name>Default Diagram</name>
+  <display>Default Diagram</display>
+  <externalReference>9adaaba2-3f70-4a37-ba4b-b5909386cf0e</externalReference>
+  <isAbstract>false</isAbstract>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>d2248567-5d0f-4bb7-a871-57d23acfb773</parentFolderId>
+  <packageId>d2248567-5d0f-4bb7-a871-57d23acfb773</packageId>
+  <packageName>TestApi3.Domain</packageName>
+  <diagram>
+    <targetPackageId>d2248567-5d0f-4bb7-a871-57d23acfb773</targetPackageId>
+  </diagram>
+  <stereotypes />
+  <metadata />
+  <childElements />
+</class>

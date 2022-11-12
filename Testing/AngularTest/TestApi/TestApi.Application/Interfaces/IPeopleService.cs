@@ -23,31 +23,5 @@ namespace TestApi.Application.Interfaces
 
         Task Delete(Guid id);
 
-        Task<PersonDTO> GetWithQueryParam(Guid idParam);
-
-        Task<PersonDTO> GetWithRouteParam(Guid routeId);
-
-        Task PostWithFormParam(string param1, string param2);
-
-        Task PostWithHeaderParam(string param);
-
-        Task PostWithBodyParam(PersonUpdateDTO param);
-
-        Task<int> GetWithPrimitiveResultInt();
-
-        Task<int> GetWithPrimitiveResultWrapInt();
-
-        Task<bool> GetWithPrimitiveResultBool();
-
-        Task<bool> GetWithPrimitiveResultWrapBool();
-
-        Task<string> GetWithPrimitiveResultStr();
-
-        Task<string> GetWithPrimitiveResultWrapStr();
-
-        Task<DateTime> GetWithPrimitiveResultDate();
-
-        Task<DateTime> GetWithPrimitiveResultWrapDate();
-
     }
 }

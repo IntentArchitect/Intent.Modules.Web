@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="16f343fb-7857-4811-a52c-caeda92fba60" type="DTO" typeId="fee0edca-4aa0-4f77-a524-6bbd84e78734">
+  <name>DateDTO</name>
+  <display>DateDTO</display>
+  <isAbstract>false</isAbstract>
+  <sort-children>by-type-then-manually</sort-children>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>7e588ec7-c9d2-4c87-a554-3f87a35cdf1e</parentFolderId>
+  <packageId>ea777a2a-96bd-4d4f-9167-ed2f5c3b5b96</packageId>
+  <packageName>TestApi.Services</packageName>
+  <stereotypes />
+  <metadata />
+  <childElements>
+    <childElement id="5a9b353d-e43d-4934-a6f4-02d435407838" type="DTO-Field" typeId="7baed1fd-469b-4980-8fd9-4cefb8331eb2">
+      <name>Date</name>
+      <display>Date: date</display>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <typeReference id="b4139852-95d1-4963-9249-196a8bedd818">
+        <typeId>1fbaa056-b666-4f25-b8fd-76fe3165acc8</typeId>
+        <isNavigable>true</isNavigable>
+        <isNullable>false</isNullable>
+        <isCollection>false</isCollection>
+        <isRequired>true</isRequired>
+        <typePackageName>Intent.Common.Types</typePackageName>
+        <typePackageId>870ad967-cbd4-4ea9-b86d-9c3a5d55ea67</typePackageId>
+        <stereotypes />
+        <genericTypeParameters />
+      </typeReference>
+      <isMapped>false</isMapped>
+      <parentFolderId>16f343fb-7857-4811-a52c-caeda92fba60</parentFolderId>
+      <packageId>ea777a2a-96bd-4d4f-9167-ed2f5c3b5b96</packageId>
+      <packageName>TestApi.Services</packageName>
+      <stereotypes />
+      <metadata />
+      <childElements />
+    </childElement>
+    <childElement id="e428454d-b8aa-4b5f-9897-d0f196dfe322" type="DTO-Field" typeId="7baed1fd-469b-4980-8fd9-4cefb8331eb2">
+      <name>DateTime</name>
+      <display>DateTime: datetime</display>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <typeReference id="38ad5f23-6d7e-4541-a86d-260f202dbeae">
+        <typeId>a4107c29-7851-4121-9416-cf1236908f1e</typeId>
+        <isNavigable>true</isNavigable>
+        <isNullable>false</isNullable>
+        <isCollection>false</isCollection>
+        <isRequired>true</isRequired>
+        <typePackageName>Intent.Common.Types</typePackageName>
+        <typePackageId>870ad967-cbd4-4ea9-b86d-9c3a5d55ea67</typePackageId>
+        <stereotypes />
+        <genericTypeParameters />
+      </typeReference>
+      <isMapped>false</isMapped>
+      <parentFolderId>16f343fb-7857-4811-a52c-caeda92fba60</parentFolderId>
+      <packageId>ea777a2a-96bd-4d4f-9167-ed2f5c3b5b96</packageId>
+      <packageName>TestApi.Services</packageName>
+      <stereotypes />
+      <metadata />
+      <childElements />
+    </childElement>
+  </childElements>
+</class>

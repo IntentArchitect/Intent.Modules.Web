@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="43a37481-8055-494c-b749-944a1cb46bb6" type="DTO" typeId="fee0edca-4aa0-4f77-a524-6bbd84e78734">
+  <name>PersonUpdateDTO</name>
+  <display>PersonUpdateDTO</display>
+  <isAbstract>false</isAbstract>
+  <sort-children>by-type-then-manually</sort-children>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>b0b5ca3e-90c9-412e-9063-f3eccb42aaf4</parentFolderId>
+  <packageId>7d81d5fe-ea02-4db3-970a-e81b312e9581</packageId>
+  <packageName>TestApi2.Services</packageName>
+  <stereotypes />
+  <metadata />
+  <childElements>
+    <childElement id="42a933d3-55aa-4f67-830b-8de2ac6910d7" type="DTO-Field" typeId="7baed1fd-469b-4980-8fd9-4cefb8331eb2">
+      <name>Name</name>
+      <display>Name: string</display>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <typeReference id="26dbb7f7-bbfb-4742-82a6-7511a0920537">
+        <typeId>d384db9c-a279-45e1-801e-e4e8099625f2</typeId>
+        <isNavigable>true</isNavigable>
+        <isNullable>false</isNullable>
+        <isCollection>false</isCollection>
+        <isRequired>true</isRequired>
+        <typePackageName>Intent.Common.Types</typePackageName>
+        <typePackageId>870ad967-cbd4-4ea9-b86d-9c3a5d55ea67</typePackageId>
+        <stereotypes />
+        <genericTypeParameters />
+      </typeReference>
+      <isMapped>false</isMapped>
+      <parentFolderId>43a37481-8055-494c-b749-944a1cb46bb6</parentFolderId>
+      <packageId>7d81d5fe-ea02-4db3-970a-e81b312e9581</packageId>
+      <packageName>TestApi2.Services</packageName>
+      <stereotypes>
+        <stereotype stereotypeDefinitionId="2ec1d83e-7980-435c-b8ac-8ba4f3c5d5ea" name="Validations">
+          <addedByDefault>true</addedByDefault>
+          <definitionPackageName>Intent.Java.SpringBoot.Validation</definitionPackageName>
+          <definitionPackageId>5fbac7a8-1f34-4e1a-a4c2-75234de5bd69</definitionPackageId>
+          <properties>
+            <property name="f291c52d-91f0-441f-9bdb-9f4b5e76645d" display="AssertFalse" value="false" isActive="false" />
+            <property name="9ee651af-d1d6-4d9c-b362-6be88cf27bfb" display="AssertTrue" value="false" isActive="false" />
+            <property name="49322ec6-a86f-48a6-bbc4-1e9a7325917d" display="DecimalMax" isActive="false" />
+            <property name="30683d9e-bdf2-44bc-842b-06e6e0084668" display="DecimalMax Inclusive" value="false" isActive="false" />
+            <property name="e68ceb92-bb4b-409d-9705-1cdbb9f286d8" display="DecimalMin" isActive="false" />
+            <property name="f0030114-4021-443e-8eb5-8a7efb3b6aa3" display="DecimalMin Inclusive" value="false" isActive="false" />
+            <property name="f1ea5799-6a14-498b-9298-b41ac8cca2f8" display="Digits Integer" isActive="false" />
+            <property name="da47f870-edf8-4980-88b4-483e0cfd3a3a" display="Digits Fraction" isActive="false" />
+            <property name="9426f2ea-b0c7-4940-9474-3fae5b955d03" display="Future" value="false" isActive="false" />
+            <property name="e02dd137-d34f-4c50-8429-48d156175975" display="Max" isActive="false" />
+            <property name="14d771fe-d256-4c7d-93aa-b21b1874a1cc" display="Min" isActive="false" />
+            <property name="565243d8-e039-4910-8134-51f8d8d09503" display="NotNull" value="false" isActive="true" />
+            <property name="670a84f0-7008-4fbb-97b8-e171123a6caa" display="Null" value="false" isActive="true" />
+            <property name="b996e4ae-0115-4fdf-9dcd-a00e1717e3b9" display="Past" value="false" isActive="false" />
+            <property name="d0869c2d-e946-4c94-9963-e90a8cc2f51e" display="Pattern" isActive="true" />
+            <property name="8c5f3979-b801-41f4-bfe5-331137a62217" display="Pattern Flags" isActive="false" />
+            <property name="7433e66d-75a7-4ace-b1ae-45d9ad6cfabb" display="Size Min" isActive="true" />
+            <property name="10ad374f-e7fc-4f5c-9842-7f7915822088" display="Size Max" isActive="true" />
+          </properties>
+        </stereotype>
+      </stereotypes>
+      <metadata />
+      <childElements />
+    </childElement>
+  </childElements>
+</class>

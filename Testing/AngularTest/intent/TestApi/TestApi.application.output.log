@@ -28,6 +28,14 @@
     </FileLog>
     <FileLog>
       <ProjectId>fd640d85-4eab-4733-8afc-cccdd62240b0</ProjectId>
+      <CorrelationId>Intent.AspNetCore.Controllers.Controller#f2c0d453-e417-4736-a3a1-30122dbb28aa</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>../../TestApi/TestApi.Api/Controllers/MiscController.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>MiscController.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>fd640d85-4eab-4733-8afc-cccdd62240b0</ProjectId>
       <CorrelationId>Intent.AspNetCore.Controllers.Controller#732d1073-6c95-453a-b415-80cda1866495</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>../../TestApi/TestApi.Api/Controllers/PeopleController.cs</ApplicationRelativeFilePath>
@@ -124,6 +132,14 @@
     </FileLog>
     <FileLog>
       <ProjectId>7dea082d-55b3-449c-bfed-ef1dec54b6e9</ProjectId>
+      <CorrelationId>Intent.Application.ServiceImplementations.ServiceImplementation#f2c0d453-e417-4736-a3a1-30122dbb28aa</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>../../TestApi/TestApi.Application/Implementation/MiscService.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>MiscService.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>7dea082d-55b3-449c-bfed-ef1dec54b6e9</ProjectId>
       <CorrelationId>Intent.Application.ServiceImplementations.ServiceImplementation#732d1073-6c95-453a-b415-80cda1866495</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>../../TestApi/TestApi.Application/Implementation/PeopleService.cs</ApplicationRelativeFilePath>
@@ -132,10 +148,26 @@
     </FileLog>
     <FileLog>
       <ProjectId>173e6b52-9203-4913-b3c4-9abf4a4967da</ProjectId>
+      <CorrelationId>Intent.Application.Contracts.ServiceContract#f2c0d453-e417-4736-a3a1-30122dbb28aa</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>../../TestApi/TestApi.Application/Interfaces/IMiscService.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>IMiscService.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>173e6b52-9203-4913-b3c4-9abf4a4967da</ProjectId>
       <CorrelationId>Intent.Application.Contracts.ServiceContract#732d1073-6c95-453a-b415-80cda1866495</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>../../TestApi/TestApi.Application/Interfaces/IPeopleService.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>IPeopleService.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>65aeccc4-23e9-491d-8c4d-0757f917a29a</ProjectId>
+      <CorrelationId>Intent.Application.Dtos.DtoModel#16f343fb-7857-4811-a52c-caeda92fba60</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>../../TestApi/TestApi.Application/Misc/DateDTO.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>Misc/DateDTO.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>

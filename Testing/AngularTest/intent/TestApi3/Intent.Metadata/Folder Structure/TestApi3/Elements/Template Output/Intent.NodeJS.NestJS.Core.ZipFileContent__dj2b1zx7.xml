@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="aef721b5-1a05-465e-b31b-748cc13a3c2f" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+  <name>Intent.NodeJS.NestJS.Core.ZipFileContent</name>
+  <display>Intent.NodeJS.NestJS.Core.ZipFileContent</display>
+  <externalReference>Intent.NodeJS.NestJS.Core</externalReference>
+  <isAbstract>false</isAbstract>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>d9031fcf-9fec-4700-9555-f3e3cefaa7c9</parentFolderId>
+  <stereotypes />
+  <metadata>
+    <entry key="status" value="assigned" />
+  </metadata>
+  <childElements />
+</class>

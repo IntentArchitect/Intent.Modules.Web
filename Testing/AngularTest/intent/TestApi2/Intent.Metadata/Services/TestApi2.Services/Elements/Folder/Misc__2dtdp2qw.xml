@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="28fceb22-9f24-4de9-9ec5-5fb276b4aab9" type="Folder" typeId="4d95d53a-8855-4f35-aa82-e312643f5c5f">
+  <name>Misc</name>
+  <display>Misc</display>
+  <isAbstract>false</isAbstract>
+  <sort-children>by-type-then-by-name</sort-children>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>7d81d5fe-ea02-4db3-970a-e81b312e9581</parentFolderId>
+  <packageId>7d81d5fe-ea02-4db3-970a-e81b312e9581</packageId>
+  <packageName>TestApi2.Services</packageName>
+  <stereotypes />
+  <metadata />
+  <childElements />
+</class>

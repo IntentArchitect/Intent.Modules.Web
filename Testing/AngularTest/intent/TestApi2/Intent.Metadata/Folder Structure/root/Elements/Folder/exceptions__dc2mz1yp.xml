@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="70c3cdb2-055a-4dc1-be89-7fcddfd8a7cc" type="Folder" typeId="4d95d53a-8855-4f35-aa82-e312643f5c5f">
+  <name>exceptions</name>
+  <display>exceptions</display>
+  <isAbstract>false</isAbstract>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>a0760f64-96de-44a9-847d-85720bb224b0</parentFolderId>
+  <stereotypes />
+  <metadata />
+  <childElements>
+    <childElement id="09ea0e47-49b8-42dc-8144-89f16c8d4d99" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+      <name>Intent.Java.Services.ExceptionType</name>
+      <display>Intent.Java.Services.ExceptionType</display>
+      <externalReference>Intent.Java.Services</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>70c3cdb2-055a-4dc1-be89-7fcddfd8a7cc</parentFolderId>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
+      <childElements />
+    </childElement>
+  </childElements>
+</class>
