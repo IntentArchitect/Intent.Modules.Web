@@ -58,7 +58,7 @@ export class MiscClient {
     let url = `/api/misc/getwithprimitiveresultint`;
     return this.apiService.get(url, null, null, 'text')
       .pipe(map((response: any) => {
-        if (response && (response.startsWith("\"") || response.startsWith("'"))) { response = response.substring(1, response.length - 2); }
+        if (response && (response.startsWith("\"") || response.startsWith("'"))) { response = response.substring(1, response.length - 1); }
         return response;
       }));
   }
@@ -75,7 +75,7 @@ export class MiscClient {
     let url = `/api/misc/getwithprimitiveresultbool`;
     return this.apiService.get(url, null, null, 'text')
       .pipe(map((response: any) => {
-        if (response && (response.startsWith("\"") || response.startsWith("'"))) { response = response.substring(1, response.length - 2); }
+        if (response && (response.startsWith("\"") || response.startsWith("'"))) { response = response.substring(1, response.length - 1); }
         return response;
       }));
   }
@@ -92,7 +92,7 @@ export class MiscClient {
     let url = `/api/misc/getwithprimitiveresultstr`;
     return this.apiService.get(url, null, null, 'text')
       .pipe(map((response: any) => {
-        if (response && (response.startsWith("\"") || response.startsWith("'"))) { response = response.substring(1, response.length - 2); }
+        if (response && (response.startsWith("\"") || response.startsWith("'"))) { response = response.substring(1, response.length - 1); }
         return response;
       }));
   }
@@ -109,7 +109,7 @@ export class MiscClient {
     let url = `/api/misc/getwithprimitiveresultdate`;
     return this.apiService.get(url, null, null, 'text')
       .pipe(map((response: any) => {
-        if (response && (response.startsWith("\"") || response.startsWith("'"))) { response = response.substring(1, response.length - 2); }
+        if (response && (response.startsWith("\"") || response.startsWith("'"))) { response = response.substring(1, response.length - 1); }
         return response;
       }));
   }
