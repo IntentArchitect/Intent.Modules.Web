@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <applicationTemplate>
   <id>Intent.ApplicationTemplate.WebClient.Angular</id>
-  <version>3.3.4</version>
-  <supportedClientVersions>[3.3.0-pre.0, 4.0.0)</supportedClientVersions>
+  <version>3.3.5</version>
+  <supportedClientVersions>[3.3.0-pre.0, 5.0.0)</supportedClientVersions>
   <displayName>Angular Web Client</displayName>
   <shortDescription>Standalone Angular 8 web client.</shortDescription>
   <authors>Intent Architect</authors>
