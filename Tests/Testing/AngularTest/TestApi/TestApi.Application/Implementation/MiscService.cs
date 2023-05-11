@@ -36,13 +36,13 @@ namespace TestApi.Application.Implementation
         [IntentManaged(Mode.Fully, Body = Mode.Ignore)]
         public async Task PostWithHeaderParam(string param)
         {
-            
+
         }
 
         [IntentManaged(Mode.Fully, Body = Mode.Ignore)]
         public async Task PostWithBodyParam(PersonUpdateDTO param)
         {
-            
+
         }
 
         [IntentManaged(Mode.Fully, Body = Mode.Ignore)]
@@ -96,13 +96,13 @@ namespace TestApi.Application.Implementation
         [IntentManaged(Mode.Fully, Body = Mode.Ignore)]
         public async Task PostDateParam(DateTime date, DateTime datetime)
         {
-            
+
         }
 
         [IntentManaged(Mode.Fully, Body = Mode.Ignore)]
         public async Task PostDateParamDto(DateDTO dto)
         {
-            
+
         }
 
         public void Dispose()
