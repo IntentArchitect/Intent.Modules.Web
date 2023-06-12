@@ -44,7 +44,7 @@ namespace Intent.Modules.Angular.Templates.Component.AngularComponentCss
 
         public string ModuleName { get; private set; }
 
-        public override void OnCreated()
+        public override void AfterTemplateRegistration()
         {
             var moduleTemplate = OutputTarget.FindTemplateInstance<AngularModuleTemplate>(AngularModuleTemplate.TemplateId, Model.Module);
             ModuleName = moduleTemplate.ModuleName;

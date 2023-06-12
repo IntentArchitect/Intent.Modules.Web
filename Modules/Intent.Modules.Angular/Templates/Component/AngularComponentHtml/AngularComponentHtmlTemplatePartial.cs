@@ -63,9 +63,9 @@ namespace Intent.Modules.Angular.Templates.Component.AngularComponentHtml
 
         public string ModuleName { get; private set; }
 
-        public override void OnCreated()
+        public override void AfterTemplateRegistration()
         {
-            base.OnCreated();
+            base.AfterTemplateRegistration();
             var moduleTemplate = GetTemplate<AngularModuleTemplate>(AngularModuleTemplate.TemplateId, Model.Module);
             ModuleName = moduleTemplate.ModuleName;
         }
