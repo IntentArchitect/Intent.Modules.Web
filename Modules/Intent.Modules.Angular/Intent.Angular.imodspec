@@ -1,7 +1,7 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <package>
   <id>Intent.Angular</id>
-  <version>3.4.3-pre.0</version>
+  <version>4.0.0-alpha.0</version>
   <supportedClientVersions>[3.3.0-pre.0, 5.0.0-a)</supportedClientVersions>
   <summary>Experimental Angular automation systems</summary>
   <description>Experimental Angular automation systems</description>
@@ -30,6 +30,10 @@
       <location>src/app/core</location>
     </template>
     <template id="Intent.Angular.Environment.Environment" externalReference="e7ea472f-5ef5-453b-8df6-4fb3569b9e07">
+      <role>Front End</role>
+      <location>src/environments</location>
+    </template>
+    <template id="Intent.Angular.Environment.EnvironmentDotDevelopment" externalReference="ab83c9fd-68ca-498b-82d2-89ac149b3e28">
       <role>Front End</role>
       <location>src/environments</location>
     </template>

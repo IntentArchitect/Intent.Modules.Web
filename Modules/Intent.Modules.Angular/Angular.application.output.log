@@ -250,6 +250,38 @@
     </FileLog>
     <FileLog>
       <ProjectId>abc98339-4259-4d28-82ae-502ba6cdc8b2</ProjectId>
+      <CorrelationId>ModuleBuilder.Typescript.Templates.TypescriptTemplate.PreProcessT4#ab83c9fd-68ca-498b-82d2-89ac149b3e28</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>Templates/Environment/EnvironmentDotDevelopment/EnvironmentDotDevelopmentTemplate.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>Environment/EnvironmentDotDevelopment/EnvironmentDotDevelopmentTemplate.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>abc98339-4259-4d28-82ae-502ba6cdc8b2</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplateT4#ab83c9fd-68ca-498b-82d2-89ac149b3e28</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>Templates/Environment/EnvironmentDotDevelopment/EnvironmentDotDevelopmentTemplate.tt</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>Environment/EnvironmentDotDevelopment/EnvironmentDotDevelopmentTemplate.tt</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>abc98339-4259-4d28-82ae-502ba6cdc8b2</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial#ab83c9fd-68ca-498b-82d2-89ac149b3e28</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>Templates/Environment/EnvironmentDotDevelopment/EnvironmentDotDevelopmentTemplatePartial.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>Environment/EnvironmentDotDevelopment/EnvironmentDotDevelopmentTemplatePartial.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>abc98339-4259-4d28-82ae-502ba6cdc8b2</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.TemplateRegistration.SingleFileNoModel#ab83c9fd-68ca-498b-82d2-89ac149b3e28</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>Templates/Environment/EnvironmentDotDevelopment/EnvironmentDotDevelopmentTemplateRegistration.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>Environment/EnvironmentDotDevelopment/EnvironmentDotDevelopmentTemplateRegistration.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>abc98339-4259-4d28-82ae-502ba6cdc8b2</ProjectId>
       <CorrelationId>ModuleBuilder.Typescript.Templates.TypescriptTemplate.PreProcessT4#fc84fb37-d9ec-4459-a3e1-e165eec1ca0e</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/Model/FormGroup/FormGroupTemplate.cs</ApplicationRelativeFilePath>

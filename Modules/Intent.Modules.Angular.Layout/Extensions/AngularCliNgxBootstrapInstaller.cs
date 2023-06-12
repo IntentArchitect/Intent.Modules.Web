@@ -16,43 +16,45 @@ namespace Intent.Modules.Angular
     public class AngularCliNgxBootstrapInstaller : FactoryExtensionBase, IExecutionLifeCycle
     {
         public override int Order => 200;
-        
-        public void OnStep(IApplication application, string step)
-        {
-            if (step == ExecutionLifeCycleSteps.BeforeTemplateExecution)
-            {
-                var outputTarget = CliCommand.GetFrontEndOutputTarget(application);
-                if (outputTarget == null)
-                {
-                    Logging.Log.Warning("Could not find a location to install ngx-bootstrap. Ensure that a Web Client package has been created.");
-                    return;
-                }
-                if (!IsNgxBootrapInstalled(outputTarget.Location))
-                {
-                    Logging.Log.Info($"Installing Ngx-Bootstrap into Angular app at location [{outputTarget.Location}]");
-                    CliCommand.Run(outputTarget.Location, $@"ng add ngx-bootstrap");
-                    CliCommand.Run(outputTarget.Location, $@"npm i ngx-bootstrap@5.3.2"); // Ensure this version
 
-                    var appComponent = application.FindTemplateInstance(AngularComponentHtmlTemplate.TemplateId, t => t.GetMetadata().FileName == "app.component");
-                    if (appComponent != null)
+        protected override void OnBeforeTemplateExecution(IApplication application)
+        {
+            base.OnBeforeTemplateExecution(application);
+
+            var outputTarget = CliCommand.GetFrontEndOutputTarget(application);
+            if (outputTarget == null)
+            {
+                Logging.Log.Warning("Could not find a location to install ngx-bootstrap. Ensure that a Web Client package has been created.");
+                return;
+            }
+            if (!IsNgxBootstrapInstalled(outputTarget.Location))
+            {
+                Logging.Log.Info($"Installing Ngx-Bootstrap into Angular app at location [{outputTarget.Location}]");
+
+                // Needed to force it to use legacy peer deps which is required for 10.0.2 with Angular 16.
+                CliCommand.Run(outputTarget.Location, "echo legacy-peer-deps=true > .npmrc");
+                CliCommand.Run(outputTarget.Location, $@"ng add ngx-bootstrap@10.2.0");
+                CliCommand.Run(outputTarget.Location, $@"npm i ngx-bootstrap@10.2.0 --save-dev");
+
+                var appComponent = application.FindTemplateInstance(AngularComponentHtmlTemplate.TemplateId, t => t.GetMetadata().FileName == "app.component");
+                if (appComponent != null)
+                {
+                    if (File.Exists(appComponent.GetMetadata().GetFilePath()))
                     {
-                        if (File.Exists(appComponent.GetMetadata().GetFilePath()))
-                        {
-                            Logging.Log.Info($"Overriding app.component.html file.");
-                            File.WriteAllText(appComponent.GetMetadata().GetFilePath(), "");
-                        }
+                        Logging.Log.Info($"Overriding app.component.html file.");
+                        File.WriteAllText(appComponent.GetMetadata().GetFilePath(), "");
                     }
                 }
-                else
-                {
-                    Logging.Log.Info("Ngx-Bootstrap app already installed. Skipping installation");
-                }
+            }
+            else
+            {
+                Logging.Log.Info("Ngx-Bootstrap app already installed. Skipping installation");
             }
         }
 
         public override string Id => "Intent.Angular.CLIInstaller";
 
-        public bool IsNgxBootrapInstalled(string appLocation)
+        public bool IsNgxBootstrapInstalled(string appLocation)
         {
             if (!File.Exists($@"{appLocation}/package.json"))
             {

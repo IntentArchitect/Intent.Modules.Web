@@ -17,6 +17,11 @@ namespace Intent.Modules.Angular.Layout.Decorators.Controls.Navbar
                 moduleId: "AppModule",
                 dependency: "CollapseModule.forRoot()",
                 import: "import { CollapseModule } from 'ngx-bootstrap/collapse';"));
+            application.EventDispatcher.Publish(new AngularComponentFieldRequiredEvent(
+                element: model.InternalElement,
+                name: "isCollapsed",
+                type: "boolean",
+                defaultValue: "false"));
         }
 
         public NavbarModel Model { get; }

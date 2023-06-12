@@ -7,7 +7,7 @@
 //     the code is regenerated.
 // </auto-generated>
 // ------------------------------------------------------------------------------
-namespace Intent.Modules.Angular.Templates.Environment.Environment
+namespace Intent.Modules.Angular.Templates.Environment.EnvironmentDotDevelopment
 {
     using System.Collections.Generic;
     using System.Linq;
@@ -20,9 +20,9 @@ namespace Intent.Modules.Angular.Templates.Environment.Environment
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Environment\Environment\EnvironmentTemplate.tt"
+    #line 1 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Environment\EnvironmentDotDevelopment\EnvironmentDotDevelopmentTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "17.0.0.0")]
-    public partial class EnvironmentTemplate : TypeScriptTemplateBase<object>
+    public partial class EnvironmentDotDevelopmentTemplate : TypeScriptTemplateBase<object>
     {
 #line hidden
         /// <summary>
@@ -32,7 +32,7 @@ namespace Intent.Modules.Angular.Templates.Environment.Environment
         {
             this.Write("//@IntentCanAdd()\r\nexport const environment = {");
             
-            #line 9 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Environment\Environment\EnvironmentTemplate.tt"
+            #line 9 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Environment\EnvironmentDotDevelopment\EnvironmentDotDevelopmentTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(GetEnvironmentVariables()));
             
             #line default

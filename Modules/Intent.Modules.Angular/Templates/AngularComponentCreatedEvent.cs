@@ -1,3 +1,5 @@
+using Intent.Metadata.Models;
+
 namespace Intent.Modules.Angular.Templates
 {
     public static class AngularModuleCreatedEvent
@@ -83,6 +85,22 @@ namespace Intent.Modules.Angular.Templates
             DefaultValue = defaultValue;
         }
         public string VariableKey { get; }
+        public string DefaultValue { get; }
+    }
+
+    public class AngularComponentFieldRequiredEvent
+    {
+        public AngularComponentFieldRequiredEvent(IElement element, string name, string type, string defaultValue)
+        {
+            Element = element;
+            Name = name;
+            Type = type;
+            DefaultValue = defaultValue;
+        }
+
+        public IElement Element { get; }
+        public string Name { get; }
+        public string Type { get; }
         public string DefaultValue { get; }
     }
 }

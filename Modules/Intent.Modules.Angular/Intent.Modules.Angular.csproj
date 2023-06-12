@@ -1,9 +1,9 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
-    <Version>3.4.3-pre.0</Version>
+    <Version>4.0.0-alpha.0</Version>
   </PropertyGroup>
 
   <ItemGroup>
@@ -74,6 +74,10 @@
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>AngularResolverTemplate.cs</LastGenOutput>
     </None>
+    <None Update="Templates\Environment\EnvironmentDotDevelopment\EnvironmentDotDevelopmentTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>EnvironmentDotDevelopmentTemplate.cs</LastGenOutput>
+    </None>
   </ItemGroup>
 
   <ItemGroup>
@@ -140,6 +144,11 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>IntentDecoratorsTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Templates\Environment\EnvironmentDotDevelopment\EnvironmentDotDevelopmentTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>EnvironmentDotDevelopmentTemplate.tt</DependentUpon>
     </Compile>
   </ItemGroup>
 

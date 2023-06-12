@@ -3,6 +3,7 @@ using Intent.Modules.Angular.Templates.Component.AngularComponentTs;
 using Intent.Modules.Angular.Templates.Core.ApiService;
 using Intent.Modules.Angular.Templates.Core.CoreModule;
 using Intent.Modules.Angular.Templates.Environment.Environment;
+using Intent.Modules.Angular.Templates.Environment.EnvironmentDotDevelopment;
 using Intent.Modules.Angular.Templates.Model.FormGroup;
 using Intent.Modules.Angular.Templates.Model.Model;
 using Intent.Modules.Angular.Templates.Module.AngularModule;
@@ -73,6 +74,11 @@ namespace Intent.Modules.Angular.Templates
         public static string GetEnvironmentName<T>(this IntentTemplateBase<T> template)
         {
             return template.GetTypeName(EnvironmentTemplate.TemplateId);
+        }
+
+        public static string GetEnvironmentDotDevelopmentName<T>(this IntentTemplateBase<T> template)
+        {
+            return template.GetTypeName(EnvironmentDotDevelopmentTemplate.TemplateId);
         }
 
         public static string GetFormGroupName<T>(this IntentTemplateBase<T> template) where T : Intent.Modelers.WebClient.Angular.Api.FormGroupDefinitionModel

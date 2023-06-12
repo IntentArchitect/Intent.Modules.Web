@@ -16,6 +16,9 @@ import { Component, OnInit } from '@angular/core';<#= GetImports() #>
   styleUrls: ['./<#= ComponentName.ToKebabCase() #>.component.scss']
 })
 export class <#= ClassName #> implements OnInit {
+<#  foreach (var field in _fields) {#>
+  <#= field.Name #>: <#= field.Type #> = <#= field.DefaultValue #>;
+<#  }#>
 <#  foreach (var model in Model.Inputs) {#>
   <#= model.Name #>: <#= GetTypeName(model.TypeReference)#>;
 <#  }#>

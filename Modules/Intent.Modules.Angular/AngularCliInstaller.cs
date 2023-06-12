@@ -18,7 +18,7 @@ namespace Intent.Modules.Angular
     public class AngularCliInstaller : FactoryExtensionBase, IExecutionLifeCycle
     {
         private readonly IMetadataManager _metadataManager;
-        private IList<CliInstallationRequest> _installationRequests = new List<CliInstallationRequest>();
+        private readonly IList<CliInstallationRequest> _installationRequests = new List<CliInstallationRequest>();
         public override int Order => 100;
 
         public AngularCliInstaller(IMetadataManager metadataManager)
@@ -26,44 +26,46 @@ namespace Intent.Modules.Angular
             _metadataManager = metadataManager;
         }
 
-        public void OnStep(IApplication application, string step)
+        protected override void OnAfterMetadataLoad(IApplication application)
         {
-            if (step == ExecutionLifeCycleSteps.AfterMetadataLoad)
+            base.OnAfterMetadataLoad(application);
+
+            if (!_metadataManager.WebClient(application).GetModuleModels().Any(x => x.IsRootModule() && x.Name == "AppModule"))
             {
-                if (!_metadataManager.WebClient(application).GetModuleModels().Any(x => x.IsRootModule() && x.Name == "AppModule"))
-                {
-                    throw new Exception("No Web Client Package found. Create a new Package and Root Module 'AppModule' in the Web Client designer.");
-                }
-                application.EventDispatcher.Subscribe<CliInstallationRequest>(request => _installationRequests.Add(request));
+                throw new Exception("No Web Client Package found. Create a new Package and Root Module 'AppModule' in the Web Client designer.");
             }
-            if (step == ExecutionLifeCycleSteps.BeforeTemplateExecution)
+            application.EventDispatcher.Subscribe<CliInstallationRequest>(request => _installationRequests.Add(request));
+        }
+
+        protected override void OnBeforeTemplateExecution(IApplication application)
+        {
+            base.OnBeforeTemplateExecution(application);
+
+            var outputTarget = CliCommand.GetFrontEndOutputTarget(application);
+            if (outputTarget == null)
             {
-                var outputTarget = CliCommand.GetFrontEndOutputTarget(application);
-                if (outputTarget == null)
-                {
-                    Logging.Log.Warning("Could not find a location to install Angular application. Ensure that a Web Client package has been created.");
-                    return;
-                }
-                if (!AngularInstalled(application))
-                {
+                Logging.Log.Warning("Could not find a location to install Angular application. Ensure that a Web Client package has been created.");
+                return;
+            }
 
-                    Logging.Log.Info($"Installing Angular into project: [{ outputTarget.Name }]");
-                    CliCommand.Run(outputTarget.Location, $@"npm i @angular/cli@8 --save-dev"); // Ensure this version - typescript fix
-                    // add --skipInstall to skip running the npm i
-                    CliCommand.Run(outputTarget.Location, $@"ng new {application.Name} --directory=. --skipGit --style=scss --interactive=false --force=true");
-                    CliCommand.Run(outputTarget.Location, $@"npm i @types/node@8.10.52"); // Ensure this version - typescript fix
-                }
-                else
-                {
-                    Logging.Log.Info("Angular app already installed. Skipping Angular CLI installation");
-                }
+            if (!AngularInstalled(application))
+            {
+                Logging.Log.Info($"Installing Angular into project: [{outputTarget.Name}]");
+                CliCommand.Run(outputTarget.Location, $"ng new {application.Name} --directory=. --skip-git --style=scss --interactive=false --force=true");
+                CliCommand.Run(outputTarget.Location, "ng add @cypress/schematic --interactive=false --skip-confirmation=true --force=true");
+                CliCommand.Run(outputTarget.Location, "npm i @cypress/schematic --save-dev");
+                CliCommand.Run(outputTarget.Location, "ng generate environments");
+            }
+            else
+            {
+                Logging.Log.Info("Angular app already installed. Skipping Angular CLI installation");
+            }
 
-                foreach (var installationRequest in _installationRequests)
+            foreach (var installationRequest in _installationRequests)
+            {
+                if (!IsPackageInstalled(application, installationRequest.NpmPackageName))
                 {
-                    if (!IsPackageInstalled(application, installationRequest.NpmPackageName))
-                    {
-                        CliCommand.Run(outputTarget.Location, $"{installationRequest.Command}");
-                    }
+                    CliCommand.Run(outputTarget.Location, $"{installationRequest.Command}");
                 }
             }
         }

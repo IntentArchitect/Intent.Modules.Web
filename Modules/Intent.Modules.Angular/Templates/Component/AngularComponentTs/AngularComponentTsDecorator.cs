@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using System.Linq;
 using HtmlAgilityPack;
 using Intent.RoslynWeaver.Attributes;
 using Intent.Templates;
@@ -13,5 +15,7 @@ namespace Intent.Modules.Angular.Templates.Component.AngularComponentTs
         public int Priority { get; protected set; } = 0;
 
         public virtual string OnInit() => null;
+
+        public virtual IEnumerable<string> GetFields() => Enumerable.Empty<string>();
     }
 }

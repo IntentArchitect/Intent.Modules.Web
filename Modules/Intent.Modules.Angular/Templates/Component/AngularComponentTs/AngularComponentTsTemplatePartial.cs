@@ -27,6 +27,7 @@ namespace Intent.Modules.Angular.Templates.Component.AngularComponentTs
     {
         [IntentManaged(Mode.Fully)]
         public const string TemplateId = "Intent.Angular.Component.AngularComponentTs";
+        private readonly List<(string Name, string Type, string DefaultValue)> _fields = new();
 
         [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
         public AngularComponentTsTemplate(IOutputTarget outputTarget, Intent.Modelers.WebClient.Angular.Api.ComponentModel model) : base(TemplateId, outputTarget, model)
@@ -38,6 +39,28 @@ namespace Intent.Modules.Angular.Templates.Component.AngularComponentTs
             _injectedServices = Model.GetAngularComponentSettings().InjectServices()?.Where(x => x.SpecializationTypeId == AngularServiceModel.SpecializationTypeId)
                 .Select(x => (x.Name.ToCamelCase(), this.UseType(x.Name, new AngularServiceModel(x).GetAngularServiceSettings().Location())))
                 .ToList() ?? new List<(string, string)>();
+            ExecutionContext.EventDispatcher.Subscribe<AngularComponentFieldRequiredEvent>(OnAngularComponentFieldRequiredEvent);
+        }
+
+        private void OnAngularComponentFieldRequiredEvent(AngularComponentFieldRequiredEvent @event)
+        {
+            var element = @event.Element;
+            do
+            {
+                if (element.Id == Model.Id)
+                {
+                    break;
+                }
+
+                element = element.ParentElement;
+                if (element == null)
+                {
+                    return;
+                }
+            } while (true);
+
+            _fields.Add((@event.Name, @event.Type, @event.DefaultValue));
+
         }
 
         public string ComponentName
