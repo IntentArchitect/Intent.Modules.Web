@@ -6,6 +6,7 @@ using Intent.Modules.Common.TypeScript.Templates;
 using Intent.RoslynWeaver.Attributes;
 using Intent.Templates;
 using Intent.Modelers.Types.ServiceProxies.Api;
+using Intent.Modules.Metadata.WebApi.Models;
 
 [assembly: DefaultIntentManaged(Mode.Merge)]
 [assembly: IntentTemplate("Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial", Version = "1.0")]
@@ -38,7 +39,8 @@ namespace Intent.Modules.Angular.ServiceProxies.Templates.Proxies.JsonResponse
                 .MetadataManager
                 .WebClient(ExecutionContext.GetApplicationConfig().Id)
                 .GetServiceProxyModels()
-                .SelectMany(s => s.MappedService.Operations)
+                .SelectMany(s => s.Operations)
+                .Select(x => HttpEndpointModelFactory.GetEndpoint(x.InternalElement))
                 .Any(ServiceMetadataQueries.HasJsonWrappedReturnType);
         }
     }

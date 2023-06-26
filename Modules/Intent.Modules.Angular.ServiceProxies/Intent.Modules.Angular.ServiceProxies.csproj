@@ -6,10 +6,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Templates\Proxies\AngularServiceProxy\AngularServiceProxyTemplate.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="Templates\Proxies\AngularServiceProxy\AngularServiceProxyTemplate.tt" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Intent.Modules.Common" Version="3.4.1" />
-    <PackageReference Include="Intent.Modules.Common.TypeScript" Version="3.3.2" />
-    <PackageReference Include="Intent.Modules.Metadata.WebApi" Version="3.3.10" />
-    <PackageReference Include="Intent.Modules.Modelers.Services" Version="3.3.5" />
+    <PackageReference Include="Intent.Modules.Common.TypeScript" Version="3.4.3-pre.0" />
+    <PackageReference Include="Intent.Modules.Metadata.WebApi" Version="4.1.1" />
+    <PackageReference Include="Intent.Modules.Modelers.Services" Version="3.4.2" />
     <PackageReference Include="Intent.Modules.Modelers.Types.ServiceProxies" Version="3.3.6" />
     <PackageReference Include="Intent.Packager" Version="3.4.0">
       <PrivateAssets>all</PrivateAssets>
@@ -30,11 +38,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>AngularDTOTemplate.tt</DependentUpon>
     </Compile>
-    <Compile Update="Templates\Proxies\AngularServiceProxy\AngularServiceProxyTemplate.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>AngularServiceProxyTemplate.tt</DependentUpon>
-    </Compile>
     <Compile Update="Templates\Proxies\JsonResponse\JsonResponseTemplate.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -45,10 +48,6 @@
   <ItemGroup>
     <None Update="Templates\Proxies\AngularDTO\AngularDTOTemplate.tt">
       <LastGenOutput>AngularDTOTemplate.cs</LastGenOutput>
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-    </None>
-    <None Update="Templates\Proxies\AngularServiceProxy\AngularServiceProxyTemplate.tt">
-      <LastGenOutput>AngularServiceProxyTemplate.cs</LastGenOutput>
       <Generator>TextTemplatingFilePreprocessor</Generator>
     </None>
     <None Update="Templates\Proxies\JsonResponse\JsonResponseTemplate.tt">

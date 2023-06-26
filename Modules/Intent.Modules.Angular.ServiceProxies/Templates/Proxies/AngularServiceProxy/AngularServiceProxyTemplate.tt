@@ -17,10 +17,10 @@ export class <#= ClassName #> {
   constructor(
     private apiService: <#= ApiServiceClassName #>
   ) {
-  }
+Observable  }
 <#  foreach (var operation in Model.MappedService.Operations) { #>
 
-  public <#= operation.Name.ToCamelCase() #>(<#= GetParameterDefinitions(operation)#>): Observable<<#= GetReturnType(operation)#>> {
+  public <#= operation.Name.ToCamelCase() #>(<#= GetParameterDefinitions(operation)#>): <<#= GetReturnType(operation)#>> {
     let url = `<#= GetRelativeUri(operation) #>`;<#= GetPreDataServiceCallStatements(operation) #>
     return this.apiService.<#= GetDataServiceCall(operation)#>
       .pipe(map((response: <#= GetApiResponseType(operation) #>) => {

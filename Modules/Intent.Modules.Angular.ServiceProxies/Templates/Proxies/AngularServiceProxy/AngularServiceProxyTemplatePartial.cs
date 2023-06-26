@@ -13,12 +13,14 @@ using Intent.Modules.Angular.Templates;
 using Intent.Modules.Angular.Templates.Core.ApiService;
 using Intent.Modules.Common;
 using Intent.Modules.Common.Templates;
+using Intent.Modules.Common.TypeScript.Builder;
 using Intent.Modules.Common.TypeScript.Templates;
 using Intent.RoslynWeaver.Attributes;
 using Intent.Templates;
 using Intent.Utils;
 using ServiceOperationModel = Intent.Modelers.Services.Api.OperationModel;
 using ProxyOperationModel = Intent.Modelers.Types.ServiceProxies.Api.OperationModel;
+using Intent.Modules.Metadata.WebApi.Models;
 
 [assembly: DefaultIntentManaged(Mode.Merge)]
 [assembly: IntentTemplate("Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial", Version = "1.0")]
@@ -26,7 +28,7 @@ using ProxyOperationModel = Intent.Modelers.Types.ServiceProxies.Api.OperationMo
 namespace Intent.Modules.Angular.ServiceProxies.Templates.Proxies.AngularServiceProxy
 {
     [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
-    partial class AngularServiceProxyTemplate : TypeScriptTemplateBase<Intent.Modelers.Types.ServiceProxies.Api.ServiceProxyModel>
+    public class AngularServiceProxyTemplate : TypeScriptTemplateBase<Intent.Modelers.Types.ServiceProxies.Api.ServiceProxyModel>, ITypescriptFileBuilderTemplate
     {
         [IntentManaged(Mode.Fully)]
         public const string TemplateId = "Intent.Angular.ServiceProxies.Proxies.AngularServiceProxy";
@@ -34,23 +36,74 @@ namespace Intent.Modules.Angular.ServiceProxies.Templates.Proxies.AngularService
         [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
         public AngularServiceProxyTemplate(IOutputTarget outputTarget, Intent.Modelers.Types.ServiceProxies.Api.ServiceProxyModel model) : base(TemplateId, outputTarget, model)
         {
-            ServiceMetadataQueries.Validate(this, model);
+            //ServiceMetadataQueries.Validate(this, model);
             AddTypeSource(AngularDTOTemplate.TemplateId);
 
-            if (Model.MappedService == null)
-            {
-                Logging.Log.Warning($"{ServiceProxyModel.SpecializationType} [{Model.Name}] is not mapped to an underlying Service");
-            }
-
-            foreach (var operation in Model.Operations)
-            {
-                if (!operation.IsMapped || operation.Mapping == null)
+            TypescriptFile = new TypescriptFile($"{string.Join("/", Model.GetModule().InternalElement.GetFolderPath(additionalFolders: Model.GetModule().GetModuleName().ToKebabCase()))}")
+                .AddClass(Model.Name, @class =>
                 {
-                    Logging.Log.Warning($"Operation [{operation.Name}] on {ServiceProxyModel.SpecializationType} [{Model.Name}] is not mapped to an underlying Service Operation");
-                }
-            }
+                    @class.AddDecorator(UseType("Injectable", "@angular/core"));
+                    @class.AddConstructor(ctor =>
+                    {
+                        ctor.AddParameter("apiService", this.GetApiServiceName(), param => param.WithPrivateFieldAssignment());
+                    });
+
+                    foreach (var operation in Model.Operations)
+                    {
+                        var endpoint = HttpEndpointModelFactory.GetEndpoint(operation.InternalElement);
+                        if (endpoint is null)
+                        {
+                            Logging.Log.Warning($"Operation [{operation.Name}] on {ServiceProxyModel.SpecializationType} [{Model.Name}] is not mapped to an Http-exposed service");
+                            continue;
+                        }
+                        AddOperationMethod(@class, operation.Name.ToCamelCase(), endpoint);
+                    }
+
+                    if (!model.Operations.Any())
+                    {
+                        var endpoints = Model.GetMappedEndpoints();
+                        foreach (var endpoint in endpoints)
+                        {
+                            AddOperationMethod(@class, endpoint.Name.ToCamelCase(), endpoint);
+                        }
+                    }
+                });
+
+            //if (Model.MappedService == null)
+            //{
+            //    Logging.Log.Warning($"{ServiceProxyModel.SpecializationType} [{Model.Name}] is not mapped to an underlying Service");
+            //}
+
+            //foreach (var operation in Model.Operations)
+            //{
+            //    if (!operation.IsMapped || operation.Mapping == null)
+            //    {
+            //        Logging.Log.Warning($"Operation [{operation.Name}] on {ServiceProxyModel.SpecializationType} [{Model.Name}] is not mapped to an underlying Service Operation");
+            //    }
+            //}
         }
-        
+
+        private void AddOperationMethod(TypescriptClass @class, string name, IHttpEndpointModel endpoint)
+        {
+            @class.AddMethod(name, $"{UseType("Observable", "rxjs")}<{GetReturnType(endpoint)}>", method =>
+            {
+                method.Public();
+                foreach (var input in endpoint.Inputs)
+                {
+                    method.AddParameter(input.Name.ToCamelCase(), GetTypeName(input.TypeReference));
+                }
+
+                method.AddStatement($"let url = `/{endpoint.Route.Replace("{", "${")}`;");
+                method.AddStatements(GetPreDataServiceCallStatements(endpoint));
+                method.AddStatement($@"return this.apiService.{GetDataServiceCall(endpoint)}
+      .pipe({UseType("map", "rxjs/operators")}((response: {GetApiResponseType(endpoint)}) => {{
+        {GetApiResponseExpression(endpoint)}
+      }}));");
+            });
+        }
+
+        public TypescriptFile TypescriptFile { get; }
+
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]
         public override ITemplateFileConfig GetTemplateFileConfig()
         {
@@ -60,6 +113,11 @@ namespace Intent.Modules.Angular.ServiceProxies.Templates.Proxies.AngularService
                 relativeLocation: $"{string.Join("/", Model.GetModule().InternalElement.GetFolderPath(additionalFolders: Model.GetModule().GetModuleName().ToKebabCase()))}",
                 className: "${Model.Name}"
             );
+        }
+
+        public override string TransformText()
+        {
+            return TypescriptFile.ToString();
         }
 
         public string ApiServiceClassName => GetTypeName(ApiServiceTemplate.TemplateId);
@@ -78,7 +136,7 @@ namespace Intent.Modules.Angular.ServiceProxies.Templates.Proxies.AngularService
                 moduleId: Model.GetModule().Id));
         }
 
-        private string GetReturnType(ServiceOperationModel operation)
+        private string GetReturnType(IHttpEndpointModel operation)
         {
             if (operation.ReturnType == null)
             {
@@ -93,17 +151,17 @@ namespace Intent.Modules.Angular.ServiceProxies.Templates.Proxies.AngularService
             return string.Join(", ", operation.Parameters.Select(x => x.Name.ToCamelCase() + (x.TypeReference.IsNullable ? "?" : "") + ": " + Types.Get(x.TypeReference, "{0}[]")));
         }
 
-        private string GetDataServiceCall(ServiceOperationModel operation)
+        private string GetDataServiceCall(IHttpEndpointModel operation)
         {
             var exprBuilder = new StringBuilder();
 
-            switch (GetHttpVerb(operation))
+            switch (operation.Verb)
             {
-                case HttpVerb.GET:
+                case HttpVerb.Get:
                     exprBuilder.Append("get");
                     break;
-                case HttpVerb.POST:
-                    if (ServiceMetadataQueries.GetFormUrlEncodedParameters(operation).Any())
+                case HttpVerb.Post:
+                    if (operation.Inputs.Any(x => x.Source == HttpInputSource.FromForm))
                     {
                         exprBuilder.Append("postWithFormData");
                     }
@@ -112,8 +170,8 @@ namespace Intent.Modules.Angular.ServiceProxies.Templates.Proxies.AngularService
                         exprBuilder.Append("post");
                     }
                     break;
-                case HttpVerb.PUT:
-                    if (ServiceMetadataQueries.GetFormUrlEncodedParameters(operation).Any())
+                case HttpVerb.Put:
+                    if (operation.Inputs.Any(x => x.Source == HttpInputSource.FromForm))
                     {
                         exprBuilder.Append("putWithFormData");
                     }
@@ -122,7 +180,7 @@ namespace Intent.Modules.Angular.ServiceProxies.Templates.Proxies.AngularService
                         exprBuilder.Append("put");
                     }
                     break;
-                case HttpVerb.DELETE:
+                case HttpVerb.Delete:
                     exprBuilder.Append("delete");
                     break;
                 default:
@@ -133,21 +191,21 @@ namespace Intent.Modules.Angular.ServiceProxies.Templates.Proxies.AngularService
 
             var arguments = new List<string>();
             
-            if (ServiceMetadataQueries.GetFormUrlEncodedParameters(operation).Any())
+            if (operation.Inputs.Any(x => x.Source == HttpInputSource.FromForm))
             {
                 arguments.Add("formData");
             }
-            else if (ServiceMetadataQueries.GetBodyParameter(this, operation) != null)
+            else if (operation.Inputs.FirstOrDefault(x => x.Source == HttpInputSource.FromBody) != null)
             {
-                var bodyParam = ServiceMetadataQueries.GetBodyParameter(this, operation);
+                var bodyParam = operation.Inputs.First(x => x.Source == HttpInputSource.FromBody);
                 arguments.Add($"{bodyParam.Name.ToCamelCase()}");
             }
-            else if (GetHttpVerb(operation) is HttpVerb.PUT or HttpVerb.POST)
+            else if (operation.Verb is HttpVerb.Put or HttpVerb.Post)
             {
                 arguments.Add("{}");
             }
 
-            if (ServiceMetadataQueries.GetQueryParameters(this, operation).Any())
+            if (operation.Inputs.Any(x => x.Source == HttpInputSource.FromQuery))
             {
                 arguments.Add("httpParams");
             }
@@ -156,7 +214,7 @@ namespace Intent.Modules.Angular.ServiceProxies.Templates.Proxies.AngularService
                 arguments.Add("null");
             }
 
-            if (ServiceMetadataQueries.GetHeaderParameters(operation).Any())
+            if (operation.Inputs.Any(x => x.Source == HttpInputSource.FromHeader))
             {
                 arguments.Add("headers");
             }
@@ -189,53 +247,53 @@ namespace Intent.Modules.Angular.ServiceProxies.Templates.Proxies.AngularService
             return exprBuilder.ToString();
         }
 
-        private bool ShouldReadAsRawText(ServiceOperationModel operation)
+        private bool ShouldReadAsRawText(IHttpEndpointModel operation)
         {
             
             return (!HasWrappedReturnType(operation) && IsReturnTypePrimitive(operation)) 
                 || (!HasWrappedReturnType(operation) && operation.ReturnType.HasStringType() && !operation.ReturnType.IsCollection);
         }
 
-        private bool HasWrappedReturnType(ServiceOperationModel operationModel)
+        private bool HasWrappedReturnType(IHttpEndpointModel operationModel)
         {
             return ServiceMetadataQueries.HasJsonWrappedReturnType(operationModel);
         }
 
-        private bool IsReturnTypePrimitive(ServiceOperationModel operation)
+        private bool IsReturnTypePrimitive(IHttpEndpointModel operation)
         {
             return GetTypeInfo(operation.ReturnType).IsPrimitive && !operation.ReturnType.IsCollection;
         }
 
         private HttpVerb GetHttpVerb(ServiceOperationModel operation)
         {
-            return Enum.TryParse(operation.GetHttpSettings().Verb().Value, out HttpVerb verbEnum) ? verbEnum : HttpVerb.POST;
+            return Enum.TryParse(operation.GetHttpSettings().Verb().Value, out HttpVerb verbEnum) ? verbEnum : HttpVerb.Post;
         }
 
-        private string GetRelativeUri(ServiceOperationModel operation)
-        {
-            var relativeUri = ServiceMetadataQueries.GetRelativeUri(operation);
-            return "/" + relativeUri;
-        }
+        //private string GetRelativeUri(ServiceOperationModel operation)
+        //{
+        //    var relativeUri = ServiceMetadataQueries.GetRelativeUri(operation);
+        //    return "/" + relativeUri;
+        //}
         
-        private string GetApiResponseType(ServiceOperationModel operation)
+        private string GetApiResponseType(IHttpEndpointModel endpoint)
         {
-            if (HasWrappedReturnType(operation))
+            if (HasWrappedReturnType(endpoint))
             {
-                return $"{this.GetJsonResponseName()}<{GetTypeName(operation.ReturnType)}>";
+                return $"{this.GetJsonResponseName()}<{GetTypeName(endpoint.ReturnType)}>";
             }
             return "any";
         }
 
-        private string GetApiResponseExpression(ServiceOperationModel operation)
+        private string GetApiResponseExpression(IHttpEndpointModel endpoint)
         {
             var statements = new List<string>();
 
-            if (operation.ReturnType != null && ShouldReadAsRawText(operation))
+            if (endpoint.ReturnType != null && ShouldReadAsRawText(endpoint))
             {
                 statements.Add(@"if (response && (response.startsWith(""\"""") || response.startsWith(""'""))) { response = response.substring(1, response.length - 1); }");
                 statements.Add($"return response;");
             }
-            else if (operation.ReturnType != null && HasWrappedReturnType(operation))
+            else if (endpoint.ReturnType != null && HasWrappedReturnType(endpoint))
             {
                 statements.Add($"return response.value;");
             }
@@ -249,17 +307,17 @@ namespace Intent.Modules.Angular.ServiceProxies.Templates.Proxies.AngularService
             return string.Join(newLine, statements);
         }
 
-        private string GetPreDataServiceCallStatements(ServiceOperationModel operation)
+        private List<string> GetPreDataServiceCallStatements(IHttpEndpointModel operation)
         {
             var statements = new List<string>();
 
-            var queryParams = ServiceMetadataQueries.GetQueryParameters(this, operation);
+            var queryParams = operation.Inputs.Where(x => x.Source == HttpInputSource.FromQuery).ToList();
             if (queryParams.Any())
             {
                 statements.Add($"let httpParams = new {UseType("HttpParams", "@angular/common/http")}()");
                 foreach (var queryParam in queryParams)
                 {
-                    if (queryParam.Type.Element.Name == "date" || queryParam.Type.Element.Name == "datetime")
+                    if (queryParam.TypeReference.Element.Name == "date" || queryParam.TypeReference.Element.Name == "datetime")
                     {
                         statements.Add($@"  .set(""{queryParam.Name.ToCamelCase()}"", {queryParam.Name.ToCamelCase()}.toISOString())");
                         continue;
@@ -269,7 +327,7 @@ namespace Intent.Modules.Angular.ServiceProxies.Templates.Proxies.AngularService
                 statements.Add(";");
             }
 
-            var formDataFields = ServiceMetadataQueries.GetFormUrlEncodedParameters(operation);
+            var formDataFields = operation.Inputs.Where(x => x.Source == HttpInputSource.FromForm).ToList();
             if (formDataFields.Any())
             {
                 statements.Add($"let formData: FormData = new {UseType("FormData", "@angular/common/http")}();");
@@ -279,25 +337,23 @@ namespace Intent.Modules.Angular.ServiceProxies.Templates.Proxies.AngularService
                 }
             }
 
-            var headerFields = ServiceMetadataQueries.GetHeaderParameters(operation);
+            var headerFields = operation.Inputs.Where(x => x.Source == HttpInputSource.FromHeader).ToList();
             if (headerFields.Any())
             {
                 statements.Add($"let headers = new {UseType("HttpHeaders", "@angular/common/http")}()");
                 foreach (var header in headerFields)
                 {
-                    statements.Add($@"  .append(""{header.HeaderName}"", {header.Parameter.Name.ToCamelCase()})");
+                    statements.Add($@"  .append(""{header.HeaderName}"", {header.Name.ToCamelCase()})");
                 }
                 statements.Add(";");
             }
             
             if (!statements.Any())
             {
-                return string.Empty;
+                return new List<string>();
             }
             
-            const string newLine = @"
-    ";
-            return newLine + string.Join(newLine, statements);
+            return statements;
         }
         
         private string UseType(string type, string location)
@@ -305,13 +361,6 @@ namespace Intent.Modules.Angular.ServiceProxies.Templates.Proxies.AngularService
             this.AddImport(type, location);
             return type;
         }
-    }
 
-    internal enum HttpVerb
-    {
-        GET,
-        POST,
-        PUT,
-        DELETE
     }
 }
