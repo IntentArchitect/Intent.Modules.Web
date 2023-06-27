@@ -41,6 +41,7 @@ namespace Intent.Modules.Angular.ServiceProxies.Templates.Proxies.JsonResponse
                 .GetServiceProxyModels()
                 .SelectMany(s => s.Operations)
                 .Select(x => HttpEndpointModelFactory.GetEndpoint(x.InternalElement))
+                .Where(x => x != null)
                 .Any(ServiceMetadataQueries.HasJsonWrappedReturnType);
         }
     }

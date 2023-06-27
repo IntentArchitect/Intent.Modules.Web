@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using Intent.Angular.ServiceProxies.Api;
 using Intent.Engine;
+using Intent.Metadata.Models;
 using Intent.Metadata.WebApi.Api;
 using Intent.Modelers.Types.ServiceProxies.Api;
 using Intent.Modelers.WebClient.Angular.Api;
@@ -50,7 +51,7 @@ namespace Intent.Modules.Angular.ServiceProxies.Templates.Proxies.AngularService
 
                     foreach (var operation in Model.Operations)
                     {
-                        var endpoint = HttpEndpointModelFactory.GetEndpoint(operation.InternalElement);
+                        var endpoint = HttpEndpointModelFactory.GetEndpoint((IElement)operation.Mapping.Element);
                         if (endpoint is null)
                         {
                             Logging.Log.Warning($"Operation [{operation.Name}] on {ServiceProxyModel.SpecializationType} [{Model.Name}] is not mapped to an Http-exposed service");
@@ -211,7 +212,7 @@ namespace Intent.Modules.Angular.ServiceProxies.Templates.Proxies.AngularService
             }
             else
             {
-                arguments.Add("null");
+                arguments.Add("undefined");
             }
 
             if (operation.Inputs.Any(x => x.Source == HttpInputSource.FromHeader))
@@ -220,7 +221,7 @@ namespace Intent.Modules.Angular.ServiceProxies.Templates.Proxies.AngularService
             }
             else
             {
-                arguments.Add("null");
+                arguments.Add("undefined");
             }
 
             if (operation.ReturnType != null && ShouldReadAsRawText(operation))
@@ -231,7 +232,7 @@ namespace Intent.Modules.Angular.ServiceProxies.Templates.Proxies.AngularService
             for (var index = arguments.Count - 1; index >= 0; index--)
             {
                 var current = arguments[index];
-                if (current == "null")
+                if (current == "undefined")
                 {
                     arguments.RemoveAt(index);
                     continue;
