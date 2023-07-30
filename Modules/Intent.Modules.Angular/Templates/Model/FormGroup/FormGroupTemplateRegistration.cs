@@ -28,9 +28,10 @@ namespace Intent.Modules.Angular.Templates.Model.FormGroup
 
         public override string TemplateId => FormGroupTemplate.TemplateId;
 
-        public override ITemplate CreateTemplateInstance(IOutputTarget project, FormGroupDefinitionModel model)
+        [IntentManaged(Mode.Fully)]
+        public override ITemplate CreateTemplateInstance(IOutputTarget outputTarget, FormGroupDefinitionModel model)
         {
-            return new FormGroupTemplate(project, model);
+            return new FormGroupTemplate(outputTarget, model);
         }
 
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]

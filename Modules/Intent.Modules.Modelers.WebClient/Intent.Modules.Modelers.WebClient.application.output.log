@@ -10,6 +10,14 @@
     </FileLog>
     <FileLog>
       <ProjectId>d0e72d48-eabc-4818-9d3e-3dcf185a39af</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.Templates.Api.ApiElementExtensionModel#c75e8804-594c-42cf-95ed-43f2b7138985</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>Api/ServiceProxyExtensionsModel.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>ServiceProxyExtensionsModel.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>d0e72d48-eabc-4818-9d3e-3dcf185a39af</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.Templates.Api.ApiPackageModel#911c35b4-4ba3-404c-a0c6-e5258e53333a</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Api/WebClientModel.cs</ApplicationRelativeFilePath>

@@ -11,7 +11,7 @@ namespace Intent.Modules.Angular.ApiAuthorization.Templates
 {
     public static class TemplateExtensions
     {
-        public static string GetApiAuthTypescriptZipFileContentName<T>(this IntentTemplateBase<T> template)
+        public static string GetApiAuthTypescriptZipFileContentName(this IIntentTemplate template)
         {
             return template.GetTypeName(ApiAuthTypescriptZipFileContentTemplate.TemplateId);
         }

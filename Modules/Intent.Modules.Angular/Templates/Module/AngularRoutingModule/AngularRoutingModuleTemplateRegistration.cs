@@ -28,9 +28,10 @@ namespace Intent.Modules.Angular.Templates.Module.AngularRoutingModule
 
         public override string TemplateId => AngularRoutingModuleTemplate.TemplateId;
 
-        public override ITemplate CreateTemplateInstance(IOutputTarget project, RoutingModel model)
+        [IntentManaged(Mode.Fully)]
+        public override ITemplate CreateTemplateInstance(IOutputTarget outputTarget, RoutingModel model)
         {
-            return new AngularRoutingModuleTemplate(project, model);
+            return new AngularRoutingModuleTemplate(outputTarget, model);
         }
 
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]

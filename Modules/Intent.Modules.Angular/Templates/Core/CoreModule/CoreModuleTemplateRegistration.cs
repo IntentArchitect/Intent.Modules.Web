@@ -18,9 +18,10 @@ namespace Intent.Modules.Angular.Templates.Core.CoreModule
     {
         public override string TemplateId => CoreModuleTemplate.TemplateId;
 
-        public override ITemplate CreateTemplateInstance(IOutputTarget project)
+        [IntentManaged(Mode.Fully)]
+        public override ITemplate CreateTemplateInstance(IOutputTarget outputTarget)
         {
-            return new CoreModuleTemplate(project, null);
+            return new CoreModuleTemplate(outputTarget);
         }
     }
 }

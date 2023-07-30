@@ -98,22 +98,6 @@
     </FileLog>
     <FileLog>
       <ProjectId>c08e0737-1abd-40fc-9366-f7dccdb55b11</ProjectId>
-      <CorrelationId>ModuleBuilder.Typescript.Templates.TypescriptTemplate.PreProcessT4#4ff46227-42ce-45ef-a5c1-057cb8501b76</CorrelationId>
-      <OverwriteBehaviour>always</OverwriteBehaviour>
-      <ApplicationRelativeFilePath>Templates/Proxies/AngularServiceProxy/AngularServiceProxyTemplate.cs</ApplicationRelativeFilePath>
-      <ProjectRelativeFilePath>Proxies/AngularServiceProxy/AngularServiceProxyTemplate.cs</ProjectRelativeFilePath>
-      <IsIgnored>false</IsIgnored>
-    </FileLog>
-    <FileLog>
-      <ProjectId>c08e0737-1abd-40fc-9366-f7dccdb55b11</ProjectId>
-      <CorrelationId>Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplateT4#4ff46227-42ce-45ef-a5c1-057cb8501b76</CorrelationId>
-      <OverwriteBehaviour>always</OverwriteBehaviour>
-      <ApplicationRelativeFilePath>Templates/Proxies/AngularServiceProxy/AngularServiceProxyTemplate.tt</ApplicationRelativeFilePath>
-      <ProjectRelativeFilePath>Proxies/AngularServiceProxy/AngularServiceProxyTemplate.tt</ProjectRelativeFilePath>
-      <IsIgnored>false</IsIgnored>
-    </FileLog>
-    <FileLog>
-      <ProjectId>c08e0737-1abd-40fc-9366-f7dccdb55b11</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial#4ff46227-42ce-45ef-a5c1-057cb8501b76</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/Proxies/AngularServiceProxy/AngularServiceProxyTemplatePartial.cs</ApplicationRelativeFilePath>

@@ -17,6 +17,11 @@ namespace Intent.Modelers.WebClient.Api
                 .ToList();
         }
 
+        public static bool IsWebClientModel(this IPackage package)
+        {
+            return package?.SpecializationTypeId == WebClientModel.SpecializationTypeId;
+        }
+
 
     }
 }

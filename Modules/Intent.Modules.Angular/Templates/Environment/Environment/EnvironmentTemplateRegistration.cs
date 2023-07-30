@@ -18,10 +18,10 @@ namespace Intent.Modules.Angular.Templates.Environment.Environment
     {
         public override string TemplateId => EnvironmentTemplate.TemplateId;
 
-        public override ITemplate CreateTemplateInstance(IOutputTarget project)
+        [IntentManaged(Mode.Fully)]
+        public override ITemplate CreateTemplateInstance(IOutputTarget outputTarget)
         {
-
-            return new EnvironmentTemplate(project, null);
+            return new EnvironmentTemplate(outputTarget);
         }
     }
 }

@@ -28,9 +28,10 @@ namespace Intent.Modules.Angular.Templates.Model.Model
 
         public override string TemplateId => ModelTemplate.TemplateId;
 
-        public override ITemplate CreateTemplateInstance(IOutputTarget project, ModelDefinitionModel model)
+        [IntentManaged(Mode.Fully)]
+        public override ITemplate CreateTemplateInstance(IOutputTarget outputTarget, ModelDefinitionModel model)
         {
-            return new ModelTemplate(project, model);
+            return new ModelTemplate(outputTarget, model);
         }
 
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]

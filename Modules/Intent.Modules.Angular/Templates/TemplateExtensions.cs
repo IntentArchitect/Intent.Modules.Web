@@ -21,89 +21,89 @@ namespace Intent.Modules.Angular.Templates
 {
     public static class TemplateExtensions
     {
-        public static string GetAngularComponentTsName<T>(this IntentTemplateBase<T> template) where T : Intent.Modelers.WebClient.Angular.Api.ComponentModel
+        public static string GetAngularComponentTsName<T>(this IIntentTemplate<T> template) where T : Intent.Modelers.WebClient.Angular.Api.ComponentModel
         {
             return template.GetTypeName(AngularComponentTsTemplate.TemplateId, template.Model);
         }
 
-        public static string GetAngularComponentTsName(this IntentTemplateBase template, Intent.Modelers.WebClient.Angular.Api.ComponentModel model)
+        public static string GetAngularComponentTsName(this IIntentTemplate template, Intent.Modelers.WebClient.Angular.Api.ComponentModel model)
         {
             return template.GetTypeName(AngularComponentTsTemplate.TemplateId, model);
         }
 
-        public static string GetAngularModuleName<T>(this IntentTemplateBase<T> template) where T : Intent.Modelers.WebClient.Angular.Api.ModuleModel
-        {
-            return template.GetTypeName(AngularModuleTemplate.TemplateId, template.Model);
-        }
-
-        public static string GetAngularModuleName(this IntentTemplateBase template, Intent.Modelers.WebClient.Angular.Api.ModuleModel model)
-        {
-            return template.GetTypeName(AngularModuleTemplate.TemplateId, model);
-        }
-
-        public static string GetAngularResolverName<T>(this IntentTemplateBase<T> template) where T : Intent.Modelers.WebClient.Angular.Api.ResolverModel
-        {
-            return template.GetTypeName(AngularResolverTemplate.TemplateId, template.Model);
-        }
-
-        public static string GetAngularResolverName(this IntentTemplateBase template, Intent.Modelers.WebClient.Angular.Api.ResolverModel model)
-        {
-            return template.GetTypeName(AngularResolverTemplate.TemplateId, model);
-        }
-
-        public static string GetAngularRoutingModuleName<T>(this IntentTemplateBase<T> template) where T : Intent.Modelers.WebClient.Angular.Api.RoutingModel
-        {
-            return template.GetTypeName(AngularRoutingModuleTemplate.TemplateId, template.Model);
-        }
-
-        public static string GetAngularRoutingModuleName(this IntentTemplateBase template, Intent.Modelers.WebClient.Angular.Api.RoutingModel model)
-        {
-            return template.GetTypeName(AngularRoutingModuleTemplate.TemplateId, model);
-        }
-
-        public static string GetApiServiceName<T>(this IntentTemplateBase<T> template)
+        public static string GetApiServiceName(this IIntentTemplate template)
         {
             return template.GetTypeName(ApiServiceTemplate.TemplateId);
         }
 
-        public static string GetCoreModuleName<T>(this IntentTemplateBase<T> template)
+        public static string GetCoreModuleName(this IIntentTemplate template)
         {
             return template.GetTypeName(CoreModuleTemplate.TemplateId);
         }
 
-        public static string GetEnvironmentName<T>(this IntentTemplateBase<T> template)
+        public static string GetEnvironmentName(this IIntentTemplate template)
         {
             return template.GetTypeName(EnvironmentTemplate.TemplateId);
         }
 
-        public static string GetEnvironmentDotDevelopmentName<T>(this IntentTemplateBase<T> template)
+        public static string GetEnvironmentDotDevelopmentName(this IIntentTemplate template)
         {
             return template.GetTypeName(EnvironmentDotDevelopmentTemplate.TemplateId);
         }
 
-        public static string GetFormGroupName<T>(this IntentTemplateBase<T> template) where T : Intent.Modelers.WebClient.Angular.Api.FormGroupDefinitionModel
+        public static string GetFormGroupName<T>(this IIntentTemplate<T> template) where T : Intent.Modelers.WebClient.Angular.Api.FormGroupDefinitionModel
         {
             return template.GetTypeName(FormGroupTemplate.TemplateId, template.Model);
         }
 
-        public static string GetFormGroupName(this IntentTemplateBase template, Intent.Modelers.WebClient.Angular.Api.FormGroupDefinitionModel model)
+        public static string GetFormGroupName(this IIntentTemplate template, Intent.Modelers.WebClient.Angular.Api.FormGroupDefinitionModel model)
         {
             return template.GetTypeName(FormGroupTemplate.TemplateId, model);
         }
 
-        public static string GetIntentDecoratorsName<T>(this IntentTemplateBase<T> template)
-        {
-            return template.GetTypeName(IntentDecoratorsTemplate.TemplateId);
-        }
-
-        public static string GetModelName<T>(this IntentTemplateBase<T> template) where T : Intent.Modelers.WebClient.Angular.Api.ModelDefinitionModel
+        public static string GetModelName<T>(this IIntentTemplate<T> template) where T : Intent.Modelers.WebClient.Angular.Api.ModelDefinitionModel
         {
             return template.GetTypeName(ModelTemplate.TemplateId, template.Model);
         }
 
-        public static string GetModelName(this IntentTemplateBase template, Intent.Modelers.WebClient.Angular.Api.ModelDefinitionModel model)
+        public static string GetModelName(this IIntentTemplate template, Intent.Modelers.WebClient.Angular.Api.ModelDefinitionModel model)
         {
             return template.GetTypeName(ModelTemplate.TemplateId, model);
+        }
+
+        public static string GetAngularModuleName<T>(this IIntentTemplate<T> template) where T : Intent.Modelers.WebClient.Angular.Api.ModuleModel
+        {
+            return template.GetTypeName(AngularModuleTemplate.TemplateId, template.Model);
+        }
+
+        public static string GetAngularModuleName(this IIntentTemplate template, Intent.Modelers.WebClient.Angular.Api.ModuleModel model)
+        {
+            return template.GetTypeName(AngularModuleTemplate.TemplateId, model);
+        }
+
+        public static string GetAngularResolverName<T>(this IIntentTemplate<T> template) where T : Intent.Modelers.WebClient.Angular.Api.ResolverModel
+        {
+            return template.GetTypeName(AngularResolverTemplate.TemplateId, template.Model);
+        }
+
+        public static string GetAngularResolverName(this IIntentTemplate template, Intent.Modelers.WebClient.Angular.Api.ResolverModel model)
+        {
+            return template.GetTypeName(AngularResolverTemplate.TemplateId, model);
+        }
+
+        public static string GetAngularRoutingModuleName<T>(this IIntentTemplate<T> template) where T : Intent.Modelers.WebClient.Angular.Api.RoutingModel
+        {
+            return template.GetTypeName(AngularRoutingModuleTemplate.TemplateId, template.Model);
+        }
+
+        public static string GetAngularRoutingModuleName(this IIntentTemplate template, Intent.Modelers.WebClient.Angular.Api.RoutingModel model)
+        {
+            return template.GetTypeName(AngularRoutingModuleTemplate.TemplateId, model);
+        }
+
+        public static string GetIntentDecoratorsName(this IIntentTemplate template)
+        {
+            return template.GetTypeName(IntentDecoratorsTemplate.TemplateId);
         }
 
     }

@@ -20,16 +20,19 @@ namespace Intent.Modelers.WebClient.Angular.Api
         {
         }
 
+        [IntentManaged(Mode.Fully)]
         public IList<EnumModel> Enums => UnderlyingPackage.ChildElements
             .GetElementsOfType(EnumModel.SpecializationTypeId)
             .Select(x => new EnumModel(x))
             .ToList();
 
+        [IntentManaged(Mode.Fully)]
         public IList<TypeDefinitionModel> TypeDefinitions => UnderlyingPackage.ChildElements
             .GetElementsOfType(TypeDefinitionModel.SpecializationTypeId)
             .Select(x => new TypeDefinitionModel(x))
             .ToList();
 
+        [IntentManaged(Mode.Fully)]
         public ModuleModel RootModule => UnderlyingPackage.ChildElements
             .GetElementsOfType(ModuleModel.SpecializationTypeId)
             .Select(x => new ModuleModel(x))

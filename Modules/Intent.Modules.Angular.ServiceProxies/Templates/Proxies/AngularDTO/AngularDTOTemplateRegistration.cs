@@ -30,9 +30,10 @@ namespace Intent.Modules.Angular.ServiceProxies.Templates.Proxies.AngularDTO
 
         public override string TemplateId => AngularDTOTemplate.TemplateId;
 
-        public override ITemplate CreateTemplateInstance(IOutputTarget project, ServiceProxyDTOModel model)
+        [IntentManaged(Mode.Fully)]
+        public override ITemplate CreateTemplateInstance(IOutputTarget outputTarget, ServiceProxyDTOModel model)
         {
-            return new AngularDTOTemplate(project, model);
+            return new AngularDTOTemplate(outputTarget, model);
         }
 
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]

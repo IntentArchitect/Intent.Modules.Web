@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="9e0cbb2c-b602-4900-ac93-8197457d25f4" type="Component" typeId="b1c481e1-e91e-4c29-9817-00ab9cad4b6b">
+  <name>AppComponent</name>
+  <display>AppComponent</display>
+  <isAbstract>false</isAbstract>
+  <sort-children>by-type-then-manually</sort-children>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>be0d5f06-adc3-445d-adfb-d25272693854</parentFolderId>
+  <packageId>634ec990-5ebf-4b14-b316-08567aa305bc</packageId>
+  <packageName>Web Client</packageName>
+  <stereotypes>
+    <stereotype stereotypeDefinitionId="ded6918f-81c2-4097-bdbe-48ec0fb84b7b" name="Angular Component Settings">
+      <addedByDefault>true</addedByDefault>
+      <definitionPackageName>Intent.Angular</definitionPackageName>
+      <definitionPackageId>a3deb341-dd4e-4f7f-99f5-2f198c1c251c</definitionPackageId>
+      <properties>
+        <property name="fb7aa637-1748-45fc-852d-084cf0d6d5de" display="Selector" value="app-root" isActive="true" />
+        <property name="861d6123-3795-4065-a58d-526a04e833ba" display="Inject Services" isActive="true" />
+        <property name="f9710a21-4db0-4fff-a61f-09761a5cc0b8" display="In Own Folder" value="false" isActive="true" />
+      </properties>
+    </stereotype>
+  </stereotypes>
+  <metadata />
+  <childElements>
+    <childElement id="55bebbff-bf61-4356-b8e3-d51b7c70f60a" type="Component View" typeId="624513a6-cba8-4dde-8ebe-6b19f00f0364">
+      <name>[view]</name>
+      <display>[view]</display>
+      <isAbstract>false</isAbstract>
+      <sort-children>manually</sort-children>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>9e0cbb2c-b602-4900-ac93-8197457d25f4</parentFolderId>
+      <packageId>634ec990-5ebf-4b14-b316-08567aa305bc</packageId>
+      <packageName>Web Client</packageName>
+      <stereotypes />
+      <metadata />
+      <childElements>
+        <childElement id="f9565aff-ea78-44b9-9b8c-b541fb87beea" type="Navbar" typeId="990cd6f1-8840-419b-be75-4ec63f03f359">
+          <name>Navbar</name>
+          <display>Navbar</display>
+          <isAbstract>false</isAbstract>
+          <genericTypes />
+          <isMapped>false</isMapped>
+          <parentFolderId>55bebbff-bf61-4356-b8e3-d51b7c70f60a</parentFolderId>
+          <packageId>634ec990-5ebf-4b14-b316-08567aa305bc</packageId>
+          <packageName>Web Client</packageName>
+          <stereotypes />
+          <metadata />
+          <childElements />
+        </childElement>
+        <childElement id="1f6061fc-e3b3-4421-befa-5af7325566ef" type="Router Outlet" typeId="26d97593-7c29-402a-9191-d4e3e96217fa">
+          <name>[router-outlet]</name>
+          <display>[router-outlet]</display>
+          <isAbstract>false</isAbstract>
+          <genericTypes />
+          <isMapped>false</isMapped>
+          <parentFolderId>55bebbff-bf61-4356-b8e3-d51b7c70f60a</parentFolderId>
+          <packageId>634ec990-5ebf-4b14-b316-08567aa305bc</packageId>
+          <packageName>Web Client</packageName>
+          <stereotypes />
+          <metadata />
+          <childElements />
+        </childElement>
+      </childElements>
+    </childElement>
+  </childElements>
+</class>

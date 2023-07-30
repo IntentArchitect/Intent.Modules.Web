@@ -18,9 +18,10 @@ namespace Intent.Modules.Angular.Templates.Core.ApiService
     {
         public override string TemplateId => ApiServiceTemplate.TemplateId;
 
-        public override ITemplate CreateTemplateInstance(IOutputTarget project)
+        [IntentManaged(Mode.Fully)]
+        public override ITemplate CreateTemplateInstance(IOutputTarget outputTarget)
         {
-            return new ApiServiceTemplate(project, null);
+            return new ApiServiceTemplate(outputTarget);
         }
     }
 }

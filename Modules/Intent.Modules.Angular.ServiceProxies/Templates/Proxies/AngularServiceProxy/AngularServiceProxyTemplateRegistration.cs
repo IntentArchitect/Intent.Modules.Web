@@ -29,9 +29,10 @@ namespace Intent.Modules.Angular.ServiceProxies.Templates.Proxies.AngularService
 
         public override string TemplateId => AngularServiceProxyTemplate.TemplateId;
 
-        public override ITemplate CreateTemplateInstance(IOutputTarget project, ServiceProxyModel model)
+        [IntentManaged(Mode.Fully)]
+        public override ITemplate CreateTemplateInstance(IOutputTarget outputTarget, ServiceProxyModel model)
         {
-            return new AngularServiceProxyTemplate(project, model);
+            return new AngularServiceProxyTemplate(outputTarget, model);
         }
 
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]

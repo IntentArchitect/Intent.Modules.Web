@@ -19,6 +19,7 @@ namespace Intent.Angular.Layout.Api
         {
         }
 
+        [IntentManaged(Mode.Fully)]
         public IList<FormControlModel> FormControlTypes => UnderlyingPackage.ChildElements
             .GetElementsOfType(FormControlModel.SpecializationTypeId)
             .Select(x => new FormControlModel(x))

@@ -18,9 +18,10 @@ namespace Intent.Modules.Angular.Templates.Shared.IntentDecorators
     {
         public override string TemplateId => IntentDecoratorsTemplate.TemplateId;
 
-        public override ITemplate CreateTemplateInstance(IOutputTarget project)
+        [IntentManaged(Mode.Fully)]
+        public override ITemplate CreateTemplateInstance(IOutputTarget outputTarget)
         {
-            return new IntentDecoratorsTemplate(project, null);
+            return new IntentDecoratorsTemplate(outputTarget);
         }
     }
 }

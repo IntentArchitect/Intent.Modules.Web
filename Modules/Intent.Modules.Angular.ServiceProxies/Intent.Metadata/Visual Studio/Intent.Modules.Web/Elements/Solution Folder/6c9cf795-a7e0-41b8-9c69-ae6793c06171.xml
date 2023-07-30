@@ -3,7 +3,7 @@
   <name>Angular</name>
   <display>Angular</display>
   <isAbstract>false</isAbstract>
-  <order>1</order>
+  <sort-children>by-type-then-by-name</sort-children>
   <genericTypes />
   <isMapped>false</isMapped>
   <parentFolderId>3480796b-a59d-4366-a8eb-bf9b1a49f521</parentFolderId>

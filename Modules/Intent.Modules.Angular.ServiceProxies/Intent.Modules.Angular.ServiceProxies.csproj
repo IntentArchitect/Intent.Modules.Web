@@ -1,24 +1,16 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
-    <Version>3.4.2</Version>
+    <Version>3.5.0-alpha.0</Version>
   </PropertyGroup>
-
-  <ItemGroup>
-    <Compile Remove="Templates\Proxies\AngularServiceProxy\AngularServiceProxyTemplate.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Remove="Templates\Proxies\AngularServiceProxy\AngularServiceProxyTemplate.tt" />
-  </ItemGroup>
 
   <ItemGroup>
     <PackageReference Include="Intent.Modules.Common" Version="3.4.1" />
     <PackageReference Include="Intent.Modules.Common.TypeScript" Version="3.4.3-pre.0" />
     <PackageReference Include="Intent.Modules.Metadata.WebApi" Version="4.1.1" />
     <PackageReference Include="Intent.Modules.Modelers.Services" Version="3.4.2" />
-    <PackageReference Include="Intent.Modules.Modelers.Types.ServiceProxies" Version="3.3.6" />
+    <PackageReference Include="Intent.Modules.Modelers.Types.ServiceProxies" Version="4.1.0-pre.1" />
     <PackageReference Include="Intent.Packager" Version="3.4.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>

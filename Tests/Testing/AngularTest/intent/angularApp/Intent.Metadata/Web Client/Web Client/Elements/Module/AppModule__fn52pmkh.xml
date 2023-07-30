@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="be0d5f06-adc3-445d-adfb-d25272693854" type="Module" typeId="cac14331-198a-4f9a-bbb9-171eb0bd4efe">
+  <name>AppModule</name>
+  <display>AppModule</display>
+  <isAbstract>false</isAbstract>
+  <sort-children>by-type-then-by-name</sort-children>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>634ec990-5ebf-4b14-b316-08567aa305bc</parentFolderId>
+  <packageId>634ec990-5ebf-4b14-b316-08567aa305bc</packageId>
+  <packageName>Web Client</packageName>
+  <diagram />
+  <stereotypes />
+  <metadata />
+  <childElements>
+    <childElement id="bf97efa4-0f5b-41d8-9149-0505ff8e84a4" type="Routing" typeId="b548c3c2-a27d-4290-8d23-99d158bb8987">
+      <name>[routing]</name>
+      <display>[routing]</display>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>be0d5f06-adc3-445d-adfb-d25272693854</parentFolderId>
+      <packageId>634ec990-5ebf-4b14-b316-08567aa305bc</packageId>
+      <packageName>Web Client</packageName>
+      <stereotypes />
+      <metadata />
+      <childElements />
+    </childElement>
+  </childElements>
+</class>

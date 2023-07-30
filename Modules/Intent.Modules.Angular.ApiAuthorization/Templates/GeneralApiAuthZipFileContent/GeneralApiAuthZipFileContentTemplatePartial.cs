@@ -29,6 +29,7 @@ namespace Intent.Modules.Angular.ApiAuthorization.Templates.GeneralApiAuthZipFil
             _zipEntry = (ZipEntry)model;
         }
 
+        [IntentManaged(Mode.Fully, Body = Mode.Ignore)]
         public override ITemplateFileConfig GetTemplateFileConfig()
         {
             string filename;
@@ -48,6 +49,7 @@ namespace Intent.Modules.Angular.ApiAuthorization.Templates.GeneralApiAuthZipFil
             );
         }
 
+        [IntentManaged(Mode.Fully, Body = Mode.Ignore)]
         public override string TransformText()
         {
             return _zipEntry.Content;

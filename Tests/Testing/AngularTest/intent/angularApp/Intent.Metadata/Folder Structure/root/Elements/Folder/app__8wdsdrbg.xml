@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="e83f8c80-9fea-4e98-9dcf-78e48c58c5e1" type="Folder" typeId="4d95d53a-8855-4f35-aa82-e312643f5c5f">
+  <name>app</name>
+  <display>app</display>
+  <isAbstract>false</isAbstract>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>6ce75da5-28ec-4529-9ac7-43c47fdc5ae8</parentFolderId>
+  <stereotypes />
+  <metadata />
+  <childElements>
+    <childElement id="18128b01-bc99-45bc-87af-3749a80977e9" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+      <name>Intent.Angular.ApiAuthorization.ApiAuthTypescriptZipFileContent</name>
+      <display>Intent.Angular.ApiAuthorization.ApiAuthTypescriptZipFileContent</display>
+      <externalReference>Intent.Angular.ApiAuthorization</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>e83f8c80-9fea-4e98-9dcf-78e48c58c5e1</parentFolderId>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
+      <childElements />
+    </childElement>
+    <childElement id="1cc7ea4b-1ee7-47bf-9606-91cc21771aff" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+      <name>Intent.Angular.ApiAuthorization.GeneralApiAuthZipFileContent</name>
+      <display>Intent.Angular.ApiAuthorization.GeneralApiAuthZipFileContent</display>
+      <externalReference>Intent.Angular.ApiAuthorization</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>e83f8c80-9fea-4e98-9dcf-78e48c58c5e1</parentFolderId>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
+      <childElements />
+    </childElement>
+  </childElements>
+</class>

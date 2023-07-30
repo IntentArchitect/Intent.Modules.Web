@@ -13,27 +13,27 @@ namespace Intent.Modules.Angular.ServiceProxies.Templates
 {
     public static class TemplateExtensions
     {
-        public static string GetAngularDTOName<T>(this IntentTemplateBase<T> template) where T : Intent.Modelers.Types.ServiceProxies.Api.ServiceProxyDTOModel
+        public static string GetAngularDTOName<T>(this IIntentTemplate<T> template) where T : Intent.Modelers.Types.ServiceProxies.Api.ServiceProxyDTOModel
         {
             return template.GetTypeName(AngularDTOTemplate.TemplateId, template.Model);
         }
 
-        public static string GetAngularDTOName(this IntentTemplateBase template, Intent.Modelers.Types.ServiceProxies.Api.ServiceProxyDTOModel model)
+        public static string GetAngularDTOName(this IIntentTemplate template, Intent.Modelers.Types.ServiceProxies.Api.ServiceProxyDTOModel model)
         {
             return template.GetTypeName(AngularDTOTemplate.TemplateId, model);
         }
 
-        public static string GetAngularServiceProxyName<T>(this IntentTemplateBase<T> template) where T : Intent.Modelers.Types.ServiceProxies.Api.ServiceProxyModel
+        public static string GetAngularServiceProxyName<T>(this IIntentTemplate<T> template) where T : Intent.Modelers.Types.ServiceProxies.Api.ServiceProxyModel
         {
             return template.GetTypeName(AngularServiceProxyTemplate.TemplateId, template.Model);
         }
 
-        public static string GetAngularServiceProxyName(this IntentTemplateBase template, Intent.Modelers.Types.ServiceProxies.Api.ServiceProxyModel model)
+        public static string GetAngularServiceProxyName(this IIntentTemplate template, Intent.Modelers.Types.ServiceProxies.Api.ServiceProxyModel model)
         {
             return template.GetTypeName(AngularServiceProxyTemplate.TemplateId, model);
         }
 
-        public static string GetJsonResponseName<T>(this IntentTemplateBase<T> template)
+        public static string GetJsonResponseName(this IIntentTemplate template)
         {
             return template.GetTypeName(JsonResponseTemplate.TemplateId);
         }

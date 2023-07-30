@@ -27,6 +27,7 @@ namespace Intent.Modules.Angular.Templates.Module.AngularResolver
 
         public override string TemplateId => AngularResolverTemplate.TemplateId;
 
+        [IntentManaged(Mode.Fully)]
         public override ITemplate CreateTemplateInstance(IOutputTarget outputTarget, ResolverModel model)
         {
             return new AngularResolverTemplate(outputTarget, model);

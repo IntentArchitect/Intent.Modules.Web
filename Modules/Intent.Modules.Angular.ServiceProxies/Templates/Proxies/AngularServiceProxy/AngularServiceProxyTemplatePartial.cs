@@ -16,12 +16,12 @@ using Intent.Modules.Common;
 using Intent.Modules.Common.Templates;
 using Intent.Modules.Common.TypeScript.Builder;
 using Intent.Modules.Common.TypeScript.Templates;
+using Intent.Modules.Metadata.WebApi.Models;
 using Intent.RoslynWeaver.Attributes;
 using Intent.Templates;
 using Intent.Utils;
 using ServiceOperationModel = Intent.Modelers.Services.Api.OperationModel;
 using ProxyOperationModel = Intent.Modelers.Types.ServiceProxies.Api.OperationModel;
-using Intent.Modules.Metadata.WebApi.Models;
 
 [assembly: DefaultIntentManaged(Mode.Merge)]
 [assembly: IntentTemplate("Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial", Version = "1.0")]
@@ -29,7 +29,7 @@ using Intent.Modules.Metadata.WebApi.Models;
 namespace Intent.Modules.Angular.ServiceProxies.Templates.Proxies.AngularServiceProxy
 {
     [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
-    public class AngularServiceProxyTemplate : TypeScriptTemplateBase<Intent.Modelers.Types.ServiceProxies.Api.ServiceProxyModel>, ITypescriptFileBuilderTemplate
+    public partial class AngularServiceProxyTemplate : TypeScriptTemplateBase<Intent.Modelers.Types.ServiceProxies.Api.ServiceProxyModel>, ITypescriptFileBuilderTemplate
     {
         [IntentManaged(Mode.Fully)]
         public const string TemplateId = "Intent.Angular.ServiceProxies.Proxies.AngularServiceProxy";
@@ -191,7 +191,7 @@ namespace Intent.Modules.Angular.ServiceProxies.Templates.Proxies.AngularService
             exprBuilder.Append("(url");
 
             var arguments = new List<string>();
-            
+
             if (operation.Inputs.Any(x => x.Source == HttpInputSource.FromForm))
             {
                 arguments.Add("formData");
@@ -244,14 +244,14 @@ namespace Intent.Modules.Angular.ServiceProxies.Templates.Proxies.AngularService
             exprBuilder.Append((arguments.Any() ? ", " : string.Empty) + string.Join(", ", arguments));
 
             exprBuilder.Append(")");
-            
+
             return exprBuilder.ToString();
         }
 
         private bool ShouldReadAsRawText(IHttpEndpointModel operation)
         {
-            
-            return (!HasWrappedReturnType(operation) && IsReturnTypePrimitive(operation)) 
+
+            return (!HasWrappedReturnType(operation) && IsReturnTypePrimitive(operation))
                 || (!HasWrappedReturnType(operation) && operation.ReturnType.HasStringType() && !operation.ReturnType.IsCollection);
         }
 
@@ -275,7 +275,7 @@ namespace Intent.Modules.Angular.ServiceProxies.Templates.Proxies.AngularService
         //    var relativeUri = ServiceMetadataQueries.GetRelativeUri(operation);
         //    return "/" + relativeUri;
         //}
-        
+
         private string GetApiResponseType(IHttpEndpointModel endpoint)
         {
             if (HasWrappedReturnType(endpoint))
@@ -348,15 +348,15 @@ namespace Intent.Modules.Angular.ServiceProxies.Templates.Proxies.AngularService
                 }
                 statements.Add(";");
             }
-            
+
             if (!statements.Any())
             {
                 return new List<string>();
             }
-            
+
             return statements;
         }
-        
+
         private string UseType(string type, string location)
         {
             this.AddImport(type, location);

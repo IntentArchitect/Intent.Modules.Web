@@ -18,6 +18,7 @@ namespace Intent.Modules.Angular.Templates.Environment.EnvironmentDotDevelopment
     {
         public override string TemplateId => EnvironmentDotDevelopmentTemplate.TemplateId;
 
+        [IntentManaged(Mode.Fully)]
         public override ITemplate CreateTemplateInstance(IOutputTarget outputTarget)
         {
             return new EnvironmentDotDevelopmentTemplate(outputTarget);
