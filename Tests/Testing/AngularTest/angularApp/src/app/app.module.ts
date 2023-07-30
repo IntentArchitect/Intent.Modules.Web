@@ -6,6 +6,7 @@ import { CollapseModule } from 'ngx-bootstrap/collapse';
 import { BrowserModule } from '@angular/platform-browser';
 
 import { AppComponent } from './app.component';
+import { IntegrationService } from './integration-service.service';
 import { IntentIgnore, IntentMerge } from './intent/intent.decorators';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CoreModule } from './core/core.module';
@@ -18,7 +19,8 @@ import { AppRoutingModule } from './app-routing.module';
     AppComponent
   ],
   providers: [
-    { provide: HTTP_INTERCEPTORS, useClass: AuthorizeInterceptor, multi: true }
+    { provide: HTTP_INTERCEPTORS, useClass: AuthorizeInterceptor, multi: true },
+    IntegrationService
   ],
   imports: [
     BrowserModule,

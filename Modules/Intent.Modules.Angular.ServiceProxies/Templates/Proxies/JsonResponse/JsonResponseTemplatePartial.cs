@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using Intent.Engine;
+using Intent.Metadata.Models;
 using Intent.Modelers.Types.ServiceProxies.Api;
 using Intent.Modelers.WebClient.Api;
 using Intent.Modules.Common.Templates;
@@ -41,8 +42,9 @@ namespace Intent.Modules.Angular.ServiceProxies.Templates.Proxies.JsonResponse
                 .WebClient(ExecutionContext.GetApplicationConfig().Id)
                 .GetServiceProxyModels()
                 .SelectMany(s => s.Operations)
-                .Select(x => HttpEndpointModelFactory.GetEndpoint(x.InternalElement))
-                .Where(x => x != null)
+                .Where(x => x.InternalElement?.MappedElement?.Element is not null)
+                .Select(x => HttpEndpointModelFactory.GetEndpoint((IElement)x.InternalElement.MappedElement.Element))
+                .Where(x => x is not null)
                 .Any(ServiceMetadataQueries.HasJsonWrappedReturnType);
         }
     }

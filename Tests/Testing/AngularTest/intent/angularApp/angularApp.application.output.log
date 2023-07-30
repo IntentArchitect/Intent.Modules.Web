@@ -206,11 +206,27 @@
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
+      <ProjectId>6ce75da5-28ec-4529-9ac7-43c47fdc5ae8</ProjectId>
+      <CorrelationId>Intent.Angular.ServiceProxies.Proxies.AngularServiceProxy#55b2bf41-85d7-462e-a94d-40df425360fa</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>../../angularApp/src/app/integration-service.service.ts</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>app/integration-service.service.ts</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
       <ProjectId>e184b898-7a95-419d-998f-0621e1f3a311</ProjectId>
       <CorrelationId>Intent.Angular.Shared.IntentDecorators</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>../../angularApp/src/app/intent/intent.decorators.ts</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>intent.decorators.ts</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>6ce75da5-28ec-4529-9ac7-43c47fdc5ae8</ProjectId>
+      <CorrelationId>Intent.Angular.ServiceProxies.Proxies.AngularDTO#5c28c5cd-2655-45dd-b425-475830635a92</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>../../angularApp/src/app/models/custom.dto.ts</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>app/models/custom.dto.ts</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
@@ -227,6 +243,14 @@
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>../../angularApp/src/environments/environment.ts</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>environment.ts</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>6ce75da5-28ec-4529-9ac7-43c47fdc5ae8</ProjectId>
+      <CorrelationId>Intent.Angular.ServiceProxies.Proxies.JsonResponse</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>../../angularApp/src/json-response.ts</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>json-response.ts</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
   </FileLogs>

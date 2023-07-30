@@ -43,6 +43,7 @@ namespace Intent.Modules.Angular.ServiceProxies.Templates.Proxies.AngularService
             TypescriptFile = new TypescriptFile($"{string.Join("/", Model.GetModule().InternalElement.GetFolderPath(additionalFolders: Model.GetModule().GetModuleName().ToKebabCase()))}")
                 .AddClass(Model.Name, @class =>
                 {
+                    @class.Export();
                     @class.AddDecorator(UseType("Injectable", "@angular/core"));
                     @class.AddConstructor(ctor =>
                     {
@@ -331,10 +332,10 @@ namespace Intent.Modules.Angular.ServiceProxies.Templates.Proxies.AngularService
             var formDataFields = operation.Inputs.Where(x => x.Source == HttpInputSource.FromForm).ToList();
             if (formDataFields.Any())
             {
-                statements.Add($"let formData: FormData = new {UseType("FormData", "@angular/common/http")}();");
+                statements.Add($"let formData: FormData = new FormData();");
                 foreach (var field in formDataFields)
                 {
-                    statements.Add($@"formData.append(""{field.Name.ToCamelCase()}"", {field.Name.ToCamelCase()});");
+                    statements.Add($@"formData.append(""{field.Name.ToCamelCase()}"", {field.Name.ToCamelCase()}{(!field.TypeReference.HasStringType() ? ".toString()" : "")});");
                 }
             }
 
