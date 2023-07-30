@@ -1,5 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { IntentIgnore } from './intent/intent.decorators';
+import { IntegrationService } from './integration-service.service';
+import { Observable, concatAll, from } from 'rxjs';
+import { CustomDTO } from './models/custom.dto';
 
 @Component({
   selector: 'app-root',
@@ -10,9 +13,31 @@ export class AppComponent implements OnInit {
   isCollapsed: boolean = false;
 
   //@IntentCanAdd()
-  constructor() { }
+  constructor(private integrationService: IntegrationService) { }
 
   @IntentIgnore()
   ngOnInit() {
+  }
+
+  @IntentIgnore()
+  public performServiceCalls() : Observable<string | number | void | string[] | CustomDTO> {
+
+    let calls = [
+      this.integrationService.queryParamOp("param 1", 42),
+      this.integrationService.headerParamOp("param 1"),
+      this.integrationService.formParamOp("param 1", 42),
+      this.integrationService.routeParamOp("param 1"),
+      this.integrationService.bodyParamOp({referenceNumber: "refnumber_1234"}),
+      this.integrationService.getWrappedPrimitiveGuid(),
+      this.integrationService.getWrappedPrimitiveString(),
+      this.integrationService.getWrappedPrimitiveInt(),
+      this.integrationService.getPrimitiveGuid(),
+      this.integrationService.getPrimitiveString(),
+      this.integrationService.getPrimitiveInt(),
+      this.integrationService.getPrimitiveStringList(),
+      this.integrationService.getInvoiceOpWithReturnTypeWrapped()
+    ];
+    return from(calls)
+      .pipe(concatAll());
   }
 }

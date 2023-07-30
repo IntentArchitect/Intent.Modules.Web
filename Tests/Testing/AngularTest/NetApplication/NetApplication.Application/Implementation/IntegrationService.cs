@@ -14,6 +14,12 @@ namespace NetApplication.Application.Implementation
     [IntentManaged(Mode.Merge)]
     public class IntegrationService : IIntegrationService
     {
+        public const string ReferenceNumber = "refnumber_1234";
+        public const string DefaultString = "string value";
+        public const int DefaultInt = 55;
+        public const string ExceptionMessage = "Some exception message";
+        public static readonly Guid DefaultGuid = Guid.Parse("b7698947-5237-4686-9571-442335426771");
+
         [IntentManaged(Mode.Fully, Body = Mode.Ignore)]
         public IntegrationService()
         {
@@ -22,91 +28,86 @@ namespace NetApplication.Application.Implementation
         [IntentManaged(Mode.Fully, Body = Mode.Ignore)]
         public async Task<CustomDTO> QueryParamOp(string param1, int param2, CancellationToken cancellationToken = default)
         {
-            throw new NotImplementedException("Write your implementation for this service here...");
+            return CustomDTO.Create(ReferenceNumber);
         }
 
         [IntentManaged(Mode.Fully, Body = Mode.Ignore)]
         public async Task HeaderParamOp(string param1, CancellationToken cancellationToken = default)
         {
-            throw new NotImplementedException("Write your implementation for this service here...");
         }
 
         [IntentManaged(Mode.Fully, Body = Mode.Ignore)]
         public async Task FormParamOp(string param1, int param2, CancellationToken cancellationToken = default)
         {
-            throw new NotImplementedException("Write your implementation for this service here...");
         }
 
         [IntentManaged(Mode.Fully, Body = Mode.Ignore)]
         public async Task RouteParamOp(string param1, CancellationToken cancellationToken = default)
         {
-            throw new NotImplementedException("Write your implementation for this service here...");
         }
 
         [IntentManaged(Mode.Fully, Body = Mode.Ignore)]
         public async Task BodyParamOp(CustomDTO param1, CancellationToken cancellationToken = default)
         {
-            throw new NotImplementedException("Write your implementation for this service here...");
         }
 
         [IntentManaged(Mode.Fully, Body = Mode.Ignore)]
         public async Task ThrowsException(CancellationToken cancellationToken = default)
         {
-            throw new NotImplementedException("Write your implementation for this service here...");
+            throw new Exception(ExceptionMessage);
         }
 
         [IntentManaged(Mode.Fully, Body = Mode.Ignore)]
         public async Task<Guid> GetWrappedPrimitiveGuid(CancellationToken cancellationToken = default)
         {
-            throw new NotImplementedException("Write your implementation for this service here...");
+            return DefaultGuid;
         }
 
         [IntentManaged(Mode.Fully, Body = Mode.Ignore)]
         public async Task<string> GetWrappedPrimitiveString(CancellationToken cancellationToken = default)
         {
-            throw new NotImplementedException("Write your implementation for this service here...");
+            return DefaultString;
         }
 
         [IntentManaged(Mode.Fully, Body = Mode.Ignore)]
         public async Task<int> GetWrappedPrimitiveInt(CancellationToken cancellationToken = default)
         {
-            throw new NotImplementedException("Write your implementation for this service here...");
+            return DefaultInt;
         }
 
         [IntentManaged(Mode.Fully, Body = Mode.Ignore)]
         public async Task<Guid> GetPrimitiveGuid(CancellationToken cancellationToken = default)
         {
-            throw new NotImplementedException("Write your implementation for this service here...");
+            return DefaultGuid;
         }
 
         [IntentManaged(Mode.Fully, Body = Mode.Ignore)]
         public async Task<string> GetPrimitiveString(CancellationToken cancellationToken = default)
         {
-            throw new NotImplementedException("Write your implementation for this service here...");
+            return DefaultString;
         }
 
         [IntentManaged(Mode.Fully, Body = Mode.Ignore)]
         public async Task<int> GetPrimitiveInt(CancellationToken cancellationToken = default)
         {
-            throw new NotImplementedException("Write your implementation for this service here...");
+            return DefaultInt;
         }
 
         [IntentManaged(Mode.Fully, Body = Mode.Ignore)]
         public async Task<List<string>> GetPrimitiveStringList(CancellationToken cancellationToken = default)
         {
-            throw new NotImplementedException("Write your implementation for this service here...");
+            return new List<string> { DefaultString };
         }
 
         [IntentManaged(Mode.Fully, Body = Mode.Ignore)]
         public async Task NonHttpSettingsOperation(CancellationToken cancellationToken = default)
         {
-            throw new NotImplementedException("Write your implementation for this service here...");
         }
 
         [IntentManaged(Mode.Fully, Body = Mode.Ignore)]
         public async Task<CustomDTO> GetInvoiceOpWithReturnTypeWrapped(CancellationToken cancellationToken = default)
         {
-            throw new NotImplementedException("Write your implementation for this service here...");
+            return CustomDTO.Create(ReferenceNumber);
         }
 
         public void Dispose()

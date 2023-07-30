@@ -6,22 +6,17 @@ describe('AppComponent', () => {
     declarations: [AppComponent]
   }));
 
-  it('should create the app', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app).toBeTruthy();
-  });
 
-  it(`should have as title 'angularApp'`, () => {
+  it('should invoke backend', async () => {
     const fixture = TestBed.createComponent(AppComponent);
-    const app = fixture.componentInstance;
-    expect(app.title).toEqual('angularApp');
-  });
-
-  it('should render title', () => {
-    const fixture = TestBed.createComponent(AppComponent);
-    fixture.detectChanges();
-    const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('.content span')?.textContent).toContain('angularApp app is running!');
+    let observables = fixture.componentInstance.performServiceCalls();
+    let done = false;
+    observables.subscribe(res => {
+      console.log(res);
+      done = true;
+    });
+    while(!done){
+      
+    }
   });
 });
