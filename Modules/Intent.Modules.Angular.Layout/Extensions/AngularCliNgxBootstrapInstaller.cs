@@ -64,7 +64,8 @@ namespace Intent.Modules.Angular
             {
                 JsonSerializer serializer = new JsonSerializer();
                 var packageFile = (dynamic)serializer.Deserialize(new JsonTextReader(file));
-                return packageFile.dependencies["ngx-bootstrap"] != null;
+                return packageFile.dependencies["ngx-bootstrap"] is not null ||
+                       packageFile.devDependencies["ngx-bootstrap"] is not null;
             }
         }
     }
