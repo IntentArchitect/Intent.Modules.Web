@@ -36,6 +36,14 @@
     </FileLog>
     <FileLog>
       <ProjectId>ef4cd25f-1482-4660-be05-c35ed28689e0</ProjectId>
+      <CorrelationId>Intent.AspNetCore.Cors.CorsConfiguration</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>../../NetApplication/NetApplication.Api/Configuration/CorsConfiguration.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>CorsConfiguration.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>ef4cd25f-1482-4660-be05-c35ed28689e0</ProjectId>
       <CorrelationId>Intent.AspNetCore.ProblemDetailsConfiguration</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>../../NetApplication/NetApplication.Api/Configuration/ProblemDetailsConfiguration.cs</ApplicationRelativeFilePath>

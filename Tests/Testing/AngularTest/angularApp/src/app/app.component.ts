@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { IntentIgnore } from './intent/intent.decorators';
 import { IntegrationService } from './integration-service.service';
-import { Observable, concatAll, from } from 'rxjs';
+import { Observable, forkJoin } from 'rxjs';
 import { CustomDTO } from './models/custom.dto';
 
 @Component({
@@ -20,7 +20,7 @@ export class AppComponent implements OnInit {
   }
 
   @IntentIgnore()
-  public performServiceCalls() : Observable<string | number | void | string[] | CustomDTO> {
+  public performSuccessfulServiceCalls() : Observable<(string | number | void | string[] | CustomDTO)[]> {
 
     let calls = [
       this.integrationService.queryParamOp("param 1", 42),
@@ -37,7 +37,11 @@ export class AppComponent implements OnInit {
       this.integrationService.getPrimitiveStringList(),
       this.integrationService.getInvoiceOpWithReturnTypeWrapped()
     ];
-    return from(calls)
-      .pipe(concatAll());
+    return forkJoin(calls);
+  }
+
+  @IntentIgnore()
+  public performFailedServiceCall() : Observable<void> {
+    return this.integrationService.throwsException();
   }
 }

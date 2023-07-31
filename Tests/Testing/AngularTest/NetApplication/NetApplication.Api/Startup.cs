@@ -40,6 +40,7 @@ namespace NetApplication.Api
                 });
             services.AddApplication();
             services.ConfigureApplicationSecurity(Configuration);
+            services.ConfigureCors(Configuration);
             services.ConfigureProblemDetails();
             services.ConfigureApiVersioning();
             services.AddInfrastructure(Configuration);
@@ -60,6 +61,7 @@ namespace NetApplication.Api
             app.UseRouting();
             app.UseAuthentication();
             app.UseAuthorization();
+            app.UseCors();
             app.UseEndpoints(endpoints =>
             {
                 endpoints.MapControllers();

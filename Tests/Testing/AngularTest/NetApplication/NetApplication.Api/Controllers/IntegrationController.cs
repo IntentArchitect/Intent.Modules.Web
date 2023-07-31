@@ -21,7 +21,6 @@ using NetApplication.Domain.Common.Interfaces;
 namespace NetApplication.Api.Controllers
 {
     [ApiController]
-    [Authorize]
     [Route("api/[controller]")]
     public class IntegrationController : ControllerBase
     {
@@ -42,14 +41,10 @@ namespace NetApplication.Api.Controllers
         /// </summary>
         /// <response code="200">Returns the specified CustomDTO.</response>
         /// <response code="400">One or more validation errors have occurred.</response>
-        /// <response code="401">Unauthorized request.</response>
-        /// <response code="403">Forbidden request.</response>
         /// <response code="404">Can't find an CustomDTO with the parameters provided.</response>
         [HttpGet("[action]")]
         [ProducesResponseType(typeof(CustomDTO), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
-        [ProducesResponseType(StatusCodes.Status403Forbidden)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
         public async Task<ActionResult<CustomDTO>> QueryParamOp(
@@ -66,13 +61,9 @@ namespace NetApplication.Api.Controllers
         /// </summary>
         /// <response code="201">Successfully created.</response>
         /// <response code="400">One or more validation errors have occurred.</response>
-        /// <response code="401">Unauthorized request.</response>
-        /// <response code="403">Forbidden request.</response>
         [HttpPost("[action]")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
-        [ProducesResponseType(StatusCodes.Status403Forbidden)]
         [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
         public async Task<ActionResult> HeaderParamOp(
             [FromHeader(Name = "MY-HEADER")] string param1,
@@ -92,13 +83,9 @@ namespace NetApplication.Api.Controllers
         /// </summary>
         /// <response code="201">Successfully created.</response>
         /// <response code="400">One or more validation errors have occurred.</response>
-        /// <response code="401">Unauthorized request.</response>
-        /// <response code="403">Forbidden request.</response>
         [HttpPost("[action]")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
-        [ProducesResponseType(StatusCodes.Status403Forbidden)]
         [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
         public async Task<ActionResult> FormParamOp(
             [FromForm] string param1,
@@ -119,13 +106,9 @@ namespace NetApplication.Api.Controllers
         /// </summary>
         /// <response code="201">Successfully created.</response>
         /// <response code="400">One or more validation errors have occurred.</response>
-        /// <response code="401">Unauthorized request.</response>
-        /// <response code="403">Forbidden request.</response>
         [HttpPost("[action]/{param1}")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
-        [ProducesResponseType(StatusCodes.Status403Forbidden)]
         [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
         public async Task<ActionResult> RouteParamOp(
             [FromRoute] string param1,
@@ -145,13 +128,9 @@ namespace NetApplication.Api.Controllers
         /// </summary>
         /// <response code="201">Successfully created.</response>
         /// <response code="400">One or more validation errors have occurred.</response>
-        /// <response code="401">Unauthorized request.</response>
-        /// <response code="403">Forbidden request.</response>
         [HttpPost("[action]")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
-        [ProducesResponseType(StatusCodes.Status403Forbidden)]
         [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
         public async Task<ActionResult> BodyParamOp(
             [FromBody] CustomDTO param1,
@@ -171,12 +150,8 @@ namespace NetApplication.Api.Controllers
         /// <summary>
         /// </summary>
         /// <response code="201">Successfully created.</response>
-        /// <response code="401">Unauthorized request.</response>
-        /// <response code="403">Forbidden request.</response>
         [HttpPost("[action]")]
         [ProducesResponseType(StatusCodes.Status201Created)]
-        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
-        [ProducesResponseType(StatusCodes.Status403Forbidden)]
         [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
         public async Task<ActionResult> ThrowsException(CancellationToken cancellationToken = default)
         {
@@ -193,14 +168,10 @@ namespace NetApplication.Api.Controllers
         /// <summary>
         /// </summary>
         /// <response code="200">Returns the specified Guid.</response>
-        /// <response code="401">Unauthorized request.</response>
-        /// <response code="403">Forbidden request.</response>
         /// <response code="404">Can't find an Guid with the parameters provided.</response>
         [HttpGet("[action]")]
         [Produces(MediaTypeNames.Application.Json)]
         [ProducesResponseType(typeof(JsonResponse<Guid>), StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
-        [ProducesResponseType(StatusCodes.Status403Forbidden)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
         public async Task<ActionResult<Guid>> GetWrappedPrimitiveGuid(CancellationToken cancellationToken = default)
@@ -213,14 +184,10 @@ namespace NetApplication.Api.Controllers
         /// <summary>
         /// </summary>
         /// <response code="200">Returns the specified string.</response>
-        /// <response code="401">Unauthorized request.</response>
-        /// <response code="403">Forbidden request.</response>
         /// <response code="404">Can't find an string with the parameters provided.</response>
         [HttpGet("[action]")]
         [Produces(MediaTypeNames.Application.Json)]
         [ProducesResponseType(typeof(JsonResponse<string>), StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
-        [ProducesResponseType(StatusCodes.Status403Forbidden)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
         public async Task<ActionResult<string>> GetWrappedPrimitiveString(CancellationToken cancellationToken = default)
@@ -233,14 +200,10 @@ namespace NetApplication.Api.Controllers
         /// <summary>
         /// </summary>
         /// <response code="200">Returns the specified int.</response>
-        /// <response code="401">Unauthorized request.</response>
-        /// <response code="403">Forbidden request.</response>
         /// <response code="404">Can't find an int with the parameters provided.</response>
         [HttpGet("[action]")]
         [Produces(MediaTypeNames.Application.Json)]
         [ProducesResponseType(typeof(JsonResponse<int>), StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
-        [ProducesResponseType(StatusCodes.Status403Forbidden)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
         public async Task<ActionResult<int>> GetWrappedPrimitiveInt(CancellationToken cancellationToken = default)
@@ -253,13 +216,9 @@ namespace NetApplication.Api.Controllers
         /// <summary>
         /// </summary>
         /// <response code="200">Returns the specified Guid.</response>
-        /// <response code="401">Unauthorized request.</response>
-        /// <response code="403">Forbidden request.</response>
         /// <response code="404">Can't find an Guid with the parameters provided.</response>
         [HttpGet("[action]")]
         [ProducesResponseType(typeof(Guid), StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
-        [ProducesResponseType(StatusCodes.Status403Forbidden)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
         public async Task<ActionResult<Guid>> GetPrimitiveGuid(CancellationToken cancellationToken = default)
@@ -272,13 +231,9 @@ namespace NetApplication.Api.Controllers
         /// <summary>
         /// </summary>
         /// <response code="200">Returns the specified string.</response>
-        /// <response code="401">Unauthorized request.</response>
-        /// <response code="403">Forbidden request.</response>
         /// <response code="404">Can't find an string with the parameters provided.</response>
         [HttpGet("[action]")]
         [ProducesResponseType(typeof(string), StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
-        [ProducesResponseType(StatusCodes.Status403Forbidden)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
         public async Task<ActionResult<string>> GetPrimitiveString(CancellationToken cancellationToken = default)
@@ -291,13 +246,9 @@ namespace NetApplication.Api.Controllers
         /// <summary>
         /// </summary>
         /// <response code="200">Returns the specified int.</response>
-        /// <response code="401">Unauthorized request.</response>
-        /// <response code="403">Forbidden request.</response>
         /// <response code="404">Can't find an int with the parameters provided.</response>
         [HttpGet("[action]")]
         [ProducesResponseType(typeof(int), StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
-        [ProducesResponseType(StatusCodes.Status403Forbidden)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
         public async Task<ActionResult<int>> GetPrimitiveInt(CancellationToken cancellationToken = default)
@@ -310,12 +261,8 @@ namespace NetApplication.Api.Controllers
         /// <summary>
         /// </summary>
         /// <response code="200">Returns the specified List&lt;string&gt;.</response>
-        /// <response code="401">Unauthorized request.</response>
-        /// <response code="403">Forbidden request.</response>
         [HttpGet("[action]")]
         [ProducesResponseType(typeof(List<string>), StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
-        [ProducesResponseType(StatusCodes.Status403Forbidden)]
         [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
         public async Task<ActionResult<List<string>>> GetPrimitiveStringList(CancellationToken cancellationToken = default)
         {
@@ -327,14 +274,10 @@ namespace NetApplication.Api.Controllers
         /// <summary>
         /// </summary>
         /// <response code="200">Returns the specified CustomDTO.</response>
-        /// <response code="401">Unauthorized request.</response>
-        /// <response code="403">Forbidden request.</response>
         /// <response code="404">Can't find an CustomDTO with the parameters provided.</response>
         [HttpGet("[action]")]
         [Produces(MediaTypeNames.Application.Json)]
         [ProducesResponseType(typeof(CustomDTO), StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status401Unauthorized)]
-        [ProducesResponseType(StatusCodes.Status403Forbidden)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
         public async Task<ActionResult<CustomDTO>> GetInvoiceOpWithReturnTypeWrapped(CancellationToken cancellationToken = default)

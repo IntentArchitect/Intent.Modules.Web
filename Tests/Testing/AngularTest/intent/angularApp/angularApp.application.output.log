@@ -14,7 +14,7 @@
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>../../angularApp/src/app/api-authorization/api-authorization.module.spec.ts</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>api-authorization/api-authorization.module.spec.ts</ProjectRelativeFilePath>
-      <IsIgnored>false</IsIgnored>
+      <IsIgnored>true</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>e83f8c80-9fea-4e98-9dcf-78e48c58c5e1</ProjectId>
@@ -28,7 +28,7 @@
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>../../angularApp/src/app/api-authorization/authorize.guard.spec.ts</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>api-authorization/authorize.guard.spec.ts</ProjectRelativeFilePath>
-      <IsIgnored>false</IsIgnored>
+      <IsIgnored>true</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>e83f8c80-9fea-4e98-9dcf-78e48c58c5e1</ProjectId>
@@ -42,7 +42,7 @@
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>../../angularApp/src/app/api-authorization/authorize.interceptor.spec.ts</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>api-authorization/authorize.interceptor.spec.ts</ProjectRelativeFilePath>
-      <IsIgnored>false</IsIgnored>
+      <IsIgnored>true</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>e83f8c80-9fea-4e98-9dcf-78e48c58c5e1</ProjectId>
@@ -56,7 +56,7 @@
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>../../angularApp/src/app/api-authorization/authorize.service.spec.ts</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>api-authorization/authorize.service.spec.ts</ProjectRelativeFilePath>
-      <IsIgnored>false</IsIgnored>
+      <IsIgnored>true</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>e83f8c80-9fea-4e98-9dcf-78e48c58c5e1</ProjectId>
@@ -84,7 +84,7 @@
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>../../angularApp/src/app/api-authorization/login-menu/login-menu.component.spec.ts</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>api-authorization/login-menu/login-menu.component.spec.ts</ProjectRelativeFilePath>
-      <IsIgnored>false</IsIgnored>
+      <IsIgnored>true</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>e83f8c80-9fea-4e98-9dcf-78e48c58c5e1</ProjectId>
@@ -112,7 +112,7 @@
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>../../angularApp/src/app/api-authorization/login/login.component.spec.ts</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>api-authorization/login/login.component.spec.ts</ProjectRelativeFilePath>
-      <IsIgnored>false</IsIgnored>
+      <IsIgnored>true</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>e83f8c80-9fea-4e98-9dcf-78e48c58c5e1</ProjectId>
@@ -140,7 +140,7 @@
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>../../angularApp/src/app/api-authorization/logout/logout.component.spec.ts</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>api-authorization/logout/logout.component.spec.ts</ProjectRelativeFilePath>
-      <IsIgnored>false</IsIgnored>
+      <IsIgnored>true</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>e83f8c80-9fea-4e98-9dcf-78e48c58c5e1</ProjectId>
