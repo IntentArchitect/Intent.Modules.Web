@@ -12,7 +12,7 @@
     <mappingSettingsId>df491bea-8a85-4bc9-a93d-41b7abb80ffb</mappingSettingsId>
     <autoSyncTypeReference>true</autoSyncTypeReference>
     <mappedPath>
-      <target id="b4c0a9ad-6fac-41e3-98b7-13db589d43ad" name="IntegrationService" type="element" specialization="Service" />
+      <target id="ebe879b2-a2bb-4cdd-b861-2d057c0698ba" name="IntegrationService" type="element" specialization="Service" />
     </mappedPath>
   </mappedClass>
   <parentFolderId>be0d5f06-adc3-445d-adfb-d25272693854</parentFolderId>
@@ -21,12 +21,12 @@
   <stereotypes />
   <metadata />
   <childElements>
-    <childElement id="d1dac72b-541e-4afd-ad01-49b3a6700647" type="Operation" typeId="aee6811e-b2f6-4562-a8eb-502029f63bc8">
+    <childElement id="fd8bdac4-1ed5-4b3f-8a45-9ec91664d086" type="Operation" typeId="aee6811e-b2f6-4562-a8eb-502029f63bc8">
       <name>QueryParamOp</name>
       <display>QueryParamOp(): CustomDTO</display>
       <isAbstract>false</isAbstract>
       <genericTypes />
-      <typeReference id="40d971f9-8977-4d61-a104-181f59ad5b04">
+      <typeReference id="2ebde15d-2554-4882-b9be-a028110af6c5">
         <typeId>5c28c5cd-2655-45dd-b425-475830635a92</typeId>
         <isNavigable>true</isNavigable>
         <isNullable>false</isNullable>
@@ -42,7 +42,7 @@
         <mappingSettingsId>df491bea-8a85-4bc9-a93d-41b7abb80ffb</mappingSettingsId>
         <autoSyncTypeReference>true</autoSyncTypeReference>
         <mappedPath>
-          <target id="bb0b73a3-7368-44b4-9cc6-4267ecbb9baa" name="QueryParamOp" type="element" specialization="Operation" />
+          <target id="125b9928-1f67-4f95-a9d6-9bbab850a0e9" name="QueryParamOp" type="element" specialization="Operation" />
         </mappedPath>
       </mappedClass>
       <parentFolderId>55b2bf41-85d7-462e-a94d-40df425360fa</parentFolderId>
@@ -52,12 +52,12 @@
       <metadata />
       <childElements />
     </childElement>
-    <childElement id="ee58c72b-bf02-4cd5-a3b9-1476f7cc3ef8" type="Operation" typeId="aee6811e-b2f6-4562-a8eb-502029f63bc8">
+    <childElement id="b3b9cb68-1fdf-40df-a7c2-d55693dd28ad" type="Operation" typeId="aee6811e-b2f6-4562-a8eb-502029f63bc8">
       <name>HeaderParamOp</name>
       <display>HeaderParamOp(): void</display>
       <isAbstract>false</isAbstract>
       <genericTypes />
-      <typeReference id="86fc6eee-766e-4d80-95e3-a9932b207461">
+      <typeReference id="5d39526e-4eec-45e3-ae03-a59bdd87bced">
         <isNavigable>true</isNavigable>
         <isNullable>false</isNullable>
         <isCollection>false</isCollection>
@@ -70,7 +70,7 @@
         <mappingSettingsId>df491bea-8a85-4bc9-a93d-41b7abb80ffb</mappingSettingsId>
         <autoSyncTypeReference>true</autoSyncTypeReference>
         <mappedPath>
-          <target id="b129a36b-4542-4407-912b-9c5fca8a513c" name="HeaderParamOp" type="element" specialization="Operation" />
+          <target id="845144ef-2568-464d-b219-369f704c0594" name="HeaderParamOp" type="element" specialization="Operation" />
         </mappedPath>
       </mappedClass>
       <parentFolderId>55b2bf41-85d7-462e-a94d-40df425360fa</parentFolderId>
@@ -80,12 +80,12 @@
       <metadata />
       <childElements />
     </childElement>
-    <childElement id="b5769fe2-0ba6-4f86-99b8-e4a275647fdd" type="Operation" typeId="aee6811e-b2f6-4562-a8eb-502029f63bc8">
+    <childElement id="dc61e123-6d90-4066-9fd5-d8bfda93642a" type="Operation" typeId="aee6811e-b2f6-4562-a8eb-502029f63bc8">
       <name>RouteParamOp</name>
       <display>RouteParamOp(): void</display>
       <isAbstract>false</isAbstract>
       <genericTypes />
-      <typeReference id="c69348ae-2a1b-4c55-870a-0c68e12e5b6e">
+      <typeReference id="07ed4350-927b-4f30-afb6-08673f0834c3">
         <isNavigable>true</isNavigable>
         <isNullable>false</isNullable>
         <isCollection>false</isCollection>
@@ -98,7 +98,7 @@
         <mappingSettingsId>df491bea-8a85-4bc9-a93d-41b7abb80ffb</mappingSettingsId>
         <autoSyncTypeReference>true</autoSyncTypeReference>
         <mappedPath>
-          <target id="30246d21-fda5-4d74-ac7d-633cc024fe3a" name="RouteParamOp" type="element" specialization="Operation" />
+          <target id="64949e95-dda7-4948-89b2-71532050f1fb" name="RouteParamOp" type="element" specialization="Operation" />
         </mappedPath>
       </mappedClass>
       <parentFolderId>55b2bf41-85d7-462e-a94d-40df425360fa</parentFolderId>
@@ -108,12 +108,12 @@
       <metadata />
       <childElements />
     </childElement>
-    <childElement id="24e9be76-a0aa-4c17-8920-8a578e48f061" type="Operation" typeId="aee6811e-b2f6-4562-a8eb-502029f63bc8">
+    <childElement id="65b9da58-c9b6-4827-aa92-85a7a5e9fe3c" type="Operation" typeId="aee6811e-b2f6-4562-a8eb-502029f63bc8">
       <name>BodyParamOp</name>
       <display>BodyParamOp(): void</display>
       <isAbstract>false</isAbstract>
       <genericTypes />
-      <typeReference id="0b1fc3d7-ab3b-41d8-9795-023f0f2d85af">
+      <typeReference id="9da08891-b9da-4c79-bf5d-04279f6ca397">
         <isNavigable>true</isNavigable>
         <isNullable>false</isNullable>
         <isCollection>false</isCollection>
@@ -126,7 +126,7 @@
         <mappingSettingsId>df491bea-8a85-4bc9-a93d-41b7abb80ffb</mappingSettingsId>
         <autoSyncTypeReference>true</autoSyncTypeReference>
         <mappedPath>
-          <target id="ff703ce0-fe92-44c8-80e7-0ce94139de40" name="BodyParamOp" type="element" specialization="Operation" />
+          <target id="9d525b9e-2510-4961-b0c6-7eb112266975" name="BodyParamOp" type="element" specialization="Operation" />
         </mappedPath>
       </mappedClass>
       <parentFolderId>55b2bf41-85d7-462e-a94d-40df425360fa</parentFolderId>
@@ -136,12 +136,12 @@
       <metadata />
       <childElements />
     </childElement>
-    <childElement id="886a629d-04a3-4549-ade3-13ea060ac1ef" type="Operation" typeId="aee6811e-b2f6-4562-a8eb-502029f63bc8">
+    <childElement id="80180eef-4145-4326-ad15-e4d759524172" type="Operation" typeId="aee6811e-b2f6-4562-a8eb-502029f63bc8">
       <name>ThrowsException</name>
       <display>ThrowsException(): void</display>
       <isAbstract>false</isAbstract>
       <genericTypes />
-      <typeReference id="8332be5b-f47e-4917-9524-62361f967310">
+      <typeReference id="10553c44-b54e-4d99-9f22-18c4185218a0">
         <isNavigable>true</isNavigable>
         <isNullable>false</isNullable>
         <isCollection>false</isCollection>
@@ -154,7 +154,7 @@
         <mappingSettingsId>df491bea-8a85-4bc9-a93d-41b7abb80ffb</mappingSettingsId>
         <autoSyncTypeReference>true</autoSyncTypeReference>
         <mappedPath>
-          <target id="50a616c8-7bd0-40cd-b6b7-4400872a88e2" name="ThrowsException" type="element" specialization="Operation" />
+          <target id="a2a94680-4a92-4e33-97d6-e1d48fdac81c" name="ThrowsException" type="element" specialization="Operation" />
         </mappedPath>
       </mappedClass>
       <parentFolderId>55b2bf41-85d7-462e-a94d-40df425360fa</parentFolderId>
@@ -164,12 +164,12 @@
       <metadata />
       <childElements />
     </childElement>
-    <childElement id="27d5f1cf-f770-4df2-9a24-fc6526a3636e" type="Operation" typeId="aee6811e-b2f6-4562-a8eb-502029f63bc8">
+    <childElement id="8e8cca8b-ad84-4bb3-a278-9e717821b4ac" type="Operation" typeId="aee6811e-b2f6-4562-a8eb-502029f63bc8">
       <name>GetWrappedPrimitiveGuid</name>
       <display>GetWrappedPrimitiveGuid(): guid</display>
       <isAbstract>false</isAbstract>
       <genericTypes />
-      <typeReference id="2de8004c-72e5-40c7-8584-357df9c818b9">
+      <typeReference id="85593830-e874-4814-8b90-8d757eda0380">
         <typeId>6b649125-18ea-48fd-a6ba-0bfff0d8f488</typeId>
         <isNavigable>true</isNavigable>
         <isNullable>false</isNullable>
@@ -185,7 +185,7 @@
         <mappingSettingsId>df491bea-8a85-4bc9-a93d-41b7abb80ffb</mappingSettingsId>
         <autoSyncTypeReference>true</autoSyncTypeReference>
         <mappedPath>
-          <target id="9572395a-9e93-4b98-ae34-4e3b740f86b9" name="GetWrappedPrimitiveGuid" type="element" specialization="Operation" />
+          <target id="5277eb5c-c750-46cf-8a20-59143a31fe6e" name="GetWrappedPrimitiveGuid" type="element" specialization="Operation" />
         </mappedPath>
       </mappedClass>
       <parentFolderId>55b2bf41-85d7-462e-a94d-40df425360fa</parentFolderId>
@@ -195,12 +195,12 @@
       <metadata />
       <childElements />
     </childElement>
-    <childElement id="e4f987a0-17bc-413e-aa41-d88aebb495cf" type="Operation" typeId="aee6811e-b2f6-4562-a8eb-502029f63bc8">
+    <childElement id="e3788cdf-4660-4a42-881a-747e3856dcff" type="Operation" typeId="aee6811e-b2f6-4562-a8eb-502029f63bc8">
       <name>GetWrappedPrimitiveString</name>
       <display>GetWrappedPrimitiveString(): string</display>
       <isAbstract>false</isAbstract>
       <genericTypes />
-      <typeReference id="c990dbf2-1a82-4890-bd25-a4909bc1a81d">
+      <typeReference id="88d86230-85e0-46d9-84bc-fc49b05c6a03">
         <typeId>d384db9c-a279-45e1-801e-e4e8099625f2</typeId>
         <isNavigable>true</isNavigable>
         <isNullable>false</isNullable>
@@ -216,7 +216,7 @@
         <mappingSettingsId>df491bea-8a85-4bc9-a93d-41b7abb80ffb</mappingSettingsId>
         <autoSyncTypeReference>true</autoSyncTypeReference>
         <mappedPath>
-          <target id="6d739876-3f1b-411c-aa4d-28bd48139e07" name="GetWrappedPrimitiveString" type="element" specialization="Operation" />
+          <target id="4cddb2f6-5925-426d-9075-12396b69727e" name="GetWrappedPrimitiveString" type="element" specialization="Operation" />
         </mappedPath>
       </mappedClass>
       <parentFolderId>55b2bf41-85d7-462e-a94d-40df425360fa</parentFolderId>
@@ -226,12 +226,12 @@
       <metadata />
       <childElements />
     </childElement>
-    <childElement id="2dbf7f8a-acf2-4f00-8ba9-8c8859c8dfff" type="Operation" typeId="aee6811e-b2f6-4562-a8eb-502029f63bc8">
+    <childElement id="b9f8f552-5137-4925-9875-2467fb6d5a93" type="Operation" typeId="aee6811e-b2f6-4562-a8eb-502029f63bc8">
       <name>GetWrappedPrimitiveInt</name>
       <display>GetWrappedPrimitiveInt(): int</display>
       <isAbstract>false</isAbstract>
       <genericTypes />
-      <typeReference id="fc26e3ca-7dd4-4c06-b374-2612fb137395">
+      <typeReference id="00a65f0e-b211-4739-b9ee-a92e51146d76">
         <typeId>fb0a362d-e9e2-40de-b6ff-5ce8167cbe74</typeId>
         <isNavigable>true</isNavigable>
         <isNullable>false</isNullable>
@@ -247,7 +247,7 @@
         <mappingSettingsId>df491bea-8a85-4bc9-a93d-41b7abb80ffb</mappingSettingsId>
         <autoSyncTypeReference>true</autoSyncTypeReference>
         <mappedPath>
-          <target id="e0c23eb8-be06-4b68-aa5e-768155e491ea" name="GetWrappedPrimitiveInt" type="element" specialization="Operation" />
+          <target id="43d3ff6e-2f81-4a0c-b0cf-afacc36f8b5a" name="GetWrappedPrimitiveInt" type="element" specialization="Operation" />
         </mappedPath>
       </mappedClass>
       <parentFolderId>55b2bf41-85d7-462e-a94d-40df425360fa</parentFolderId>
@@ -257,12 +257,12 @@
       <metadata />
       <childElements />
     </childElement>
-    <childElement id="95fa7d2d-1905-4b3f-9254-36de005a61c6" type="Operation" typeId="aee6811e-b2f6-4562-a8eb-502029f63bc8">
+    <childElement id="fc5ffff7-f172-43e9-93b5-0f045d3fa307" type="Operation" typeId="aee6811e-b2f6-4562-a8eb-502029f63bc8">
       <name>GetPrimitiveGuid</name>
       <display>GetPrimitiveGuid(): guid</display>
       <isAbstract>false</isAbstract>
       <genericTypes />
-      <typeReference id="9dca1c89-78f5-4618-b0c0-2c1aa1b3d402">
+      <typeReference id="22bd466e-e0ef-45e3-a6ae-8c8d502a3b5b">
         <typeId>6b649125-18ea-48fd-a6ba-0bfff0d8f488</typeId>
         <isNavigable>true</isNavigable>
         <isNullable>false</isNullable>
@@ -278,7 +278,7 @@
         <mappingSettingsId>df491bea-8a85-4bc9-a93d-41b7abb80ffb</mappingSettingsId>
         <autoSyncTypeReference>true</autoSyncTypeReference>
         <mappedPath>
-          <target id="df2facc2-ad15-43df-b1e4-217fdd631742" name="GetPrimitiveGuid" type="element" specialization="Operation" />
+          <target id="62effb63-2d59-4c9f-8b94-758abfcb50a7" name="GetPrimitiveGuid" type="element" specialization="Operation" />
         </mappedPath>
       </mappedClass>
       <parentFolderId>55b2bf41-85d7-462e-a94d-40df425360fa</parentFolderId>
@@ -288,12 +288,12 @@
       <metadata />
       <childElements />
     </childElement>
-    <childElement id="e98e95b6-600d-4633-83e2-9b09552e9bc3" type="Operation" typeId="aee6811e-b2f6-4562-a8eb-502029f63bc8">
+    <childElement id="fe9c7557-6848-48a2-b34f-08b30d97b142" type="Operation" typeId="aee6811e-b2f6-4562-a8eb-502029f63bc8">
       <name>GetPrimitiveString</name>
       <display>GetPrimitiveString(): string</display>
       <isAbstract>false</isAbstract>
       <genericTypes />
-      <typeReference id="66cdb663-7fe6-4eab-a75c-00761a9b0695">
+      <typeReference id="82f75c2e-1327-44b4-8528-829bbec8a5c5">
         <typeId>d384db9c-a279-45e1-801e-e4e8099625f2</typeId>
         <isNavigable>true</isNavigable>
         <isNullable>false</isNullable>
@@ -309,7 +309,7 @@
         <mappingSettingsId>df491bea-8a85-4bc9-a93d-41b7abb80ffb</mappingSettingsId>
         <autoSyncTypeReference>true</autoSyncTypeReference>
         <mappedPath>
-          <target id="302f9576-4c23-49b3-8b4d-6f55e5403c7e" name="GetPrimitiveString" type="element" specialization="Operation" />
+          <target id="d78eba1d-3eb8-4bdb-9efe-01e8a6cbb6b4" name="GetPrimitiveString" type="element" specialization="Operation" />
         </mappedPath>
       </mappedClass>
       <parentFolderId>55b2bf41-85d7-462e-a94d-40df425360fa</parentFolderId>
@@ -319,12 +319,12 @@
       <metadata />
       <childElements />
     </childElement>
-    <childElement id="090c506d-8763-4b30-8ed1-d4f48b34defc" type="Operation" typeId="aee6811e-b2f6-4562-a8eb-502029f63bc8">
+    <childElement id="af6824e1-01b4-41f5-b94a-a5945722b621" type="Operation" typeId="aee6811e-b2f6-4562-a8eb-502029f63bc8">
       <name>GetPrimitiveInt</name>
       <display>GetPrimitiveInt(): int</display>
       <isAbstract>false</isAbstract>
       <genericTypes />
-      <typeReference id="7c9bca4e-162d-4eb2-bb00-3905bb372645">
+      <typeReference id="1c5c7e32-6610-4005-8c77-ed8e1450d4e9">
         <typeId>fb0a362d-e9e2-40de-b6ff-5ce8167cbe74</typeId>
         <isNavigable>true</isNavigable>
         <isNullable>false</isNullable>
@@ -340,7 +340,7 @@
         <mappingSettingsId>df491bea-8a85-4bc9-a93d-41b7abb80ffb</mappingSettingsId>
         <autoSyncTypeReference>true</autoSyncTypeReference>
         <mappedPath>
-          <target id="d946680a-3c33-48c5-9f42-5e63434e0f74" name="GetPrimitiveInt" type="element" specialization="Operation" />
+          <target id="b9d7272d-374d-4dfc-90fc-2b50d688271a" name="GetPrimitiveInt" type="element" specialization="Operation" />
         </mappedPath>
       </mappedClass>
       <parentFolderId>55b2bf41-85d7-462e-a94d-40df425360fa</parentFolderId>
@@ -350,12 +350,12 @@
       <metadata />
       <childElements />
     </childElement>
-    <childElement id="a48ddd93-50e2-47bf-92af-cda898f560a2" type="Operation" typeId="aee6811e-b2f6-4562-a8eb-502029f63bc8">
+    <childElement id="03cd4b5e-8689-45fd-b9c6-6869db81600f" type="Operation" typeId="aee6811e-b2f6-4562-a8eb-502029f63bc8">
       <name>GetPrimitiveStringList</name>
       <display>GetPrimitiveStringList(): string[*]</display>
       <isAbstract>false</isAbstract>
       <genericTypes />
-      <typeReference id="a8dfabf2-7e35-4327-985d-0f96f79f66d5">
+      <typeReference id="919df918-6d41-4c3e-b404-337d35de5c3c">
         <typeId>d384db9c-a279-45e1-801e-e4e8099625f2</typeId>
         <isNavigable>true</isNavigable>
         <isNullable>false</isNullable>
@@ -371,7 +371,7 @@
         <mappingSettingsId>df491bea-8a85-4bc9-a93d-41b7abb80ffb</mappingSettingsId>
         <autoSyncTypeReference>true</autoSyncTypeReference>
         <mappedPath>
-          <target id="f9304d03-cfb1-410f-bc91-c6d24bdbd878" name="GetPrimitiveStringList" type="element" specialization="Operation" />
+          <target id="3394c0b8-3480-42e9-bc65-39918b4850fe" name="GetPrimitiveStringList" type="element" specialization="Operation" />
         </mappedPath>
       </mappedClass>
       <parentFolderId>55b2bf41-85d7-462e-a94d-40df425360fa</parentFolderId>
@@ -381,12 +381,12 @@
       <metadata />
       <childElements />
     </childElement>
-    <childElement id="801efeea-157c-47b9-90fa-071e5243af57" type="Operation" typeId="aee6811e-b2f6-4562-a8eb-502029f63bc8">
+    <childElement id="1b844a8b-f7ef-432b-b343-03faf4c51d98" type="Operation" typeId="aee6811e-b2f6-4562-a8eb-502029f63bc8">
       <name>GetInvoiceOpWithReturnTypeWrapped</name>
       <display>GetInvoiceOpWithReturnTypeWrapped(): CustomDTO</display>
       <isAbstract>false</isAbstract>
       <genericTypes />
-      <typeReference id="c8cca6be-a022-4095-bdc7-29a67df87b76">
+      <typeReference id="92952dc0-8d98-4339-9dfd-ecc3c58d518d">
         <typeId>5c28c5cd-2655-45dd-b425-475830635a92</typeId>
         <isNavigable>true</isNavigable>
         <isNullable>false</isNullable>
@@ -402,35 +402,7 @@
         <mappingSettingsId>df491bea-8a85-4bc9-a93d-41b7abb80ffb</mappingSettingsId>
         <autoSyncTypeReference>true</autoSyncTypeReference>
         <mappedPath>
-          <target id="987fcdec-a419-4b9e-afd0-ce2426544e34" name="GetInvoiceOpWithReturnTypeWrapped" type="element" specialization="Operation" />
-        </mappedPath>
-      </mappedClass>
-      <parentFolderId>55b2bf41-85d7-462e-a94d-40df425360fa</parentFolderId>
-      <packageId>634ec990-5ebf-4b14-b316-08567aa305bc</packageId>
-      <packageName>Web Client</packageName>
-      <stereotypes />
-      <metadata />
-      <childElements />
-    </childElement>
-    <childElement id="a0998369-eee1-4a28-bc64-d6f5b9b59b15" type="Operation" typeId="aee6811e-b2f6-4562-a8eb-502029f63bc8">
-      <name>FormParamOp</name>
-      <display>FormParamOp(): void</display>
-      <isAbstract>false</isAbstract>
-      <genericTypes />
-      <typeReference id="da80d56f-8c7e-4fe5-9031-04fdf152473a">
-        <isNavigable>true</isNavigable>
-        <isNullable>false</isNullable>
-        <isCollection>false</isCollection>
-        <isRequired>true</isRequired>
-        <stereotypes />
-        <genericTypeParameters />
-      </typeReference>
-      <isMapped>true</isMapped>
-      <mappedClass>
-        <mappingSettingsId>df491bea-8a85-4bc9-a93d-41b7abb80ffb</mappingSettingsId>
-        <autoSyncTypeReference>true</autoSyncTypeReference>
-        <mappedPath>
-          <target id="45a6bca7-c137-44a8-9f96-161d9b0bc85b" name="FormParamOp" type="element" specialization="Operation" />
+          <target id="b5e43063-5800-40bc-a220-d310d85077e7" name="GetInvoiceOpWithReturnTypeWrapped" type="element" specialization="Operation" />
         </mappedPath>
       </mappedClass>
       <parentFolderId>55b2bf41-85d7-462e-a94d-40df425360fa</parentFolderId>

@@ -1,0 +1,667 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="cf536ca1-687f-4c9c-8903-ee32ffaf93d7" type="Service" typeId="b16578a5-27b1-4047-a8df-f0b783d706bd">
+  <name>IntegrationService</name>
+  <display>IntegrationService</display>
+  <isAbstract>false</isAbstract>
+  <sort-children>by-type-then-manually</sort-children>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>83cfdd2f-167f-4c4f-a12d-0a65bb680db5</parentFolderId>
+  <packageId>83cfdd2f-167f-4c4f-a12d-0a65bb680db5</packageId>
+  <packageName>NestJSApplication.Services</packageName>
+  <stereotypes>
+    <stereotype stereotypeDefinitionId="c29224ec-d473-4b95-ad4a-ec55c676c4fd" name="Http Service Settings">
+      <addedByDefault>false</addedByDefault>
+      <definitionPackageName>Intent.Metadata.WebApi</definitionPackageName>
+      <definitionPackageId>0011387a-b122-45d7-9cdb-8e21b315ab9f</definitionPackageId>
+      <properties>
+        <property name="1e223bd0-7a72-435a-8741-a612d88e4a12" display="Route" value="api/integration" isActive="true" />
+      </properties>
+    </stereotype>
+  </stereotypes>
+  <metadata />
+  <childElements>
+    <childElement id="bbc9b7b3-a061-4fa3-b6a7-3db97268c00c" type="Operation" typeId="e030c97a-e066-40a7-8188-808c275df3cb">
+      <name>QueryParamOp</name>
+      <display>QueryParamOp(param1: string, param2: int): CustomDTO</display>
+      <isAbstract>false</isAbstract>
+      <sort-children>by-type-then-manually</sort-children>
+      <genericTypes />
+      <typeReference id="5ca7a066-6fc1-4fd1-8a98-55e78bde8d80">
+        <typeId>a218e281-3407-42a9-9165-6b3012000b92</typeId>
+        <isNavigable>true</isNavigable>
+        <isNullable>false</isNullable>
+        <isCollection>false</isCollection>
+        <isRequired>true</isRequired>
+        <typePackageName>NestJSApplication.Services</typePackageName>
+        <typePackageId>83cfdd2f-167f-4c4f-a12d-0a65bb680db5</typePackageId>
+        <stereotypes />
+        <genericTypeParameters />
+      </typeReference>
+      <isMapped>false</isMapped>
+      <parentFolderId>cf536ca1-687f-4c9c-8903-ee32ffaf93d7</parentFolderId>
+      <packageId>83cfdd2f-167f-4c4f-a12d-0a65bb680db5</packageId>
+      <packageName>NestJSApplication.Services</packageName>
+      <stereotypes>
+        <stereotype stereotypeDefinitionId="b4581ed2-42ec-4ae2-83dd-dcdd5f0837b6" name="Http Settings">
+          <addedByDefault>false</addedByDefault>
+          <definitionPackageName>Intent.Metadata.WebApi</definitionPackageName>
+          <definitionPackageId>0011387a-b122-45d7-9cdb-8e21b315ab9f</definitionPackageId>
+          <properties>
+            <property name="801c3e61-4431-4d81-93fa-7e57d33cb3fa" display="Verb" value="GET" isActive="true" />
+            <property name="5dd3e07d-76eb-45d4-9956-4325fb068acc" display="Route" value="query-param-op" isActive="true" />
+            <property name="4490e212-1e99-43ce-b3dd-048ed2a6bae8" display="Return Type Mediatype" value="Default" isActive="true" />
+          </properties>
+        </stereotype>
+      </stereotypes>
+      <metadata />
+      <childElements>
+        <childElement id="89ceea7f-1b0b-4cea-a0c8-f5cd5c5196dd" type="Parameter" typeId="00208d20-469d-41cb-8501-768fd5eb796b">
+          <name>param1</name>
+          <display>in : param1: string</display>
+          <isAbstract>false</isAbstract>
+          <genericTypes />
+          <typeReference id="0a21af47-f629-4a3e-827a-8012a4622ce5">
+            <typeId>d384db9c-a279-45e1-801e-e4e8099625f2</typeId>
+            <isNavigable>true</isNavigable>
+            <isNullable>false</isNullable>
+            <isCollection>false</isCollection>
+            <isRequired>true</isRequired>
+            <typePackageName>Intent.Common.Types</typePackageName>
+            <typePackageId>870ad967-cbd4-4ea9-b86d-9c3a5d55ea67</typePackageId>
+            <stereotypes />
+            <genericTypeParameters />
+          </typeReference>
+          <isMapped>false</isMapped>
+          <parentFolderId>bbc9b7b3-a061-4fa3-b6a7-3db97268c00c</parentFolderId>
+          <packageId>83cfdd2f-167f-4c4f-a12d-0a65bb680db5</packageId>
+          <packageName>NestJSApplication.Services</packageName>
+          <stereotypes>
+            <stereotype stereotypeDefinitionId="d01df110-1208-4af8-a913-92a49d219552" name="Parameter Settings">
+              <addedByDefault>true</addedByDefault>
+              <definitionPackageName>Intent.Metadata.WebApi</definitionPackageName>
+              <definitionPackageId>0011387a-b122-45d7-9cdb-8e21b315ab9f</definitionPackageId>
+              <properties>
+                <property name="d2630e0f-f930-404f-b453-1e8052a712f5" display="Source" value="From Query" isActive="true" />
+                <property name="7a331e9b-f13c-4b33-9013-bd59b4a4999c" display="Header Name" isActive="false" />
+              </properties>
+            </stereotype>
+          </stereotypes>
+          <metadata />
+          <childElements />
+        </childElement>
+        <childElement id="06e9d77e-491a-4151-a666-318d7f8ca221" type="Parameter" typeId="00208d20-469d-41cb-8501-768fd5eb796b">
+          <name>param2</name>
+          <display>in : param2: int</display>
+          <isAbstract>false</isAbstract>
+          <genericTypes />
+          <typeReference id="b494fe4a-64ed-4c9b-a036-12b50ec4946a">
+            <typeId>fb0a362d-e9e2-40de-b6ff-5ce8167cbe74</typeId>
+            <isNavigable>true</isNavigable>
+            <isNullable>false</isNullable>
+            <isCollection>false</isCollection>
+            <isRequired>true</isRequired>
+            <typePackageName>Intent.Common.Types</typePackageName>
+            <typePackageId>870ad967-cbd4-4ea9-b86d-9c3a5d55ea67</typePackageId>
+            <stereotypes />
+            <genericTypeParameters />
+          </typeReference>
+          <isMapped>false</isMapped>
+          <parentFolderId>bbc9b7b3-a061-4fa3-b6a7-3db97268c00c</parentFolderId>
+          <packageId>83cfdd2f-167f-4c4f-a12d-0a65bb680db5</packageId>
+          <packageName>NestJSApplication.Services</packageName>
+          <stereotypes>
+            <stereotype stereotypeDefinitionId="d01df110-1208-4af8-a913-92a49d219552" name="Parameter Settings">
+              <addedByDefault>true</addedByDefault>
+              <definitionPackageName>Intent.Metadata.WebApi</definitionPackageName>
+              <definitionPackageId>0011387a-b122-45d7-9cdb-8e21b315ab9f</definitionPackageId>
+              <properties>
+                <property name="d2630e0f-f930-404f-b453-1e8052a712f5" display="Source" value="From Query" isActive="true" />
+                <property name="7a331e9b-f13c-4b33-9013-bd59b4a4999c" display="Header Name" isActive="false" />
+              </properties>
+            </stereotype>
+          </stereotypes>
+          <metadata />
+          <childElements />
+        </childElement>
+      </childElements>
+    </childElement>
+    <childElement id="24871be6-7d1f-4105-9f2c-d0e7dda1a6f9" type="Operation" typeId="e030c97a-e066-40a7-8188-808c275df3cb">
+      <name>HeaderParamOp</name>
+      <display>HeaderParamOp(param1: string): void</display>
+      <isAbstract>false</isAbstract>
+      <sort-children>by-type-then-manually</sort-children>
+      <genericTypes />
+      <typeReference id="be15f3e0-6a20-45c2-ab49-29c118dd7c6a">
+        <isNavigable>true</isNavigable>
+        <isNullable>false</isNullable>
+        <isCollection>false</isCollection>
+        <isRequired>true</isRequired>
+        <stereotypes />
+        <genericTypeParameters />
+      </typeReference>
+      <isMapped>false</isMapped>
+      <parentFolderId>cf536ca1-687f-4c9c-8903-ee32ffaf93d7</parentFolderId>
+      <packageId>83cfdd2f-167f-4c4f-a12d-0a65bb680db5</packageId>
+      <packageName>NestJSApplication.Services</packageName>
+      <stereotypes>
+        <stereotype stereotypeDefinitionId="b4581ed2-42ec-4ae2-83dd-dcdd5f0837b6" name="Http Settings">
+          <addedByDefault>false</addedByDefault>
+          <definitionPackageName>Intent.Metadata.WebApi</definitionPackageName>
+          <definitionPackageId>0011387a-b122-45d7-9cdb-8e21b315ab9f</definitionPackageId>
+          <properties>
+            <property name="801c3e61-4431-4d81-93fa-7e57d33cb3fa" display="Verb" value="POST" isActive="true" />
+            <property name="5dd3e07d-76eb-45d4-9956-4325fb068acc" display="Route" value="header-param-op" isActive="true" />
+            <property name="4490e212-1e99-43ce-b3dd-048ed2a6bae8" display="Return Type Mediatype" value="Default" isActive="true" />
+          </properties>
+        </stereotype>
+      </stereotypes>
+      <metadata />
+      <childElements>
+        <childElement id="d6640ab8-9cb5-4529-994a-e29c382685f9" type="Parameter" typeId="00208d20-469d-41cb-8501-768fd5eb796b">
+          <name>param1</name>
+          <display>in : param1: string</display>
+          <isAbstract>false</isAbstract>
+          <genericTypes />
+          <typeReference id="399785e7-733d-4a92-86f5-3c87f1eb88f3">
+            <typeId>d384db9c-a279-45e1-801e-e4e8099625f2</typeId>
+            <isNavigable>true</isNavigable>
+            <isNullable>false</isNullable>
+            <isCollection>false</isCollection>
+            <isRequired>true</isRequired>
+            <typePackageName>Intent.Common.Types</typePackageName>
+            <typePackageId>870ad967-cbd4-4ea9-b86d-9c3a5d55ea67</typePackageId>
+            <stereotypes />
+            <genericTypeParameters />
+          </typeReference>
+          <isMapped>false</isMapped>
+          <parentFolderId>24871be6-7d1f-4105-9f2c-d0e7dda1a6f9</parentFolderId>
+          <packageId>83cfdd2f-167f-4c4f-a12d-0a65bb680db5</packageId>
+          <packageName>NestJSApplication.Services</packageName>
+          <stereotypes>
+            <stereotype stereotypeDefinitionId="d01df110-1208-4af8-a913-92a49d219552" name="Parameter Settings">
+              <addedByDefault>true</addedByDefault>
+              <definitionPackageName>Intent.Metadata.WebApi</definitionPackageName>
+              <definitionPackageId>0011387a-b122-45d7-9cdb-8e21b315ab9f</definitionPackageId>
+              <properties>
+                <property name="d2630e0f-f930-404f-b453-1e8052a712f5" display="Source" value="From Header" isActive="true" />
+                <property name="7a331e9b-f13c-4b33-9013-bd59b4a4999c" display="Header Name" value="MY-HEADER" isActive="true" />
+              </properties>
+            </stereotype>
+          </stereotypes>
+          <metadata />
+          <childElements />
+        </childElement>
+      </childElements>
+    </childElement>
+    <childElement id="f476188a-d335-4dd9-8176-529750079f54" type="Operation" typeId="e030c97a-e066-40a7-8188-808c275df3cb">
+      <name>RouteParamOp</name>
+      <display>RouteParamOp(param1: string): void</display>
+      <isAbstract>false</isAbstract>
+      <sort-children>by-type-then-manually</sort-children>
+      <genericTypes />
+      <typeReference id="83e3cbd3-f014-4ab8-a57b-d1177e0ed727">
+        <isNavigable>true</isNavigable>
+        <isNullable>false</isNullable>
+        <isCollection>false</isCollection>
+        <isRequired>true</isRequired>
+        <stereotypes />
+        <genericTypeParameters />
+      </typeReference>
+      <isMapped>false</isMapped>
+      <parentFolderId>cf536ca1-687f-4c9c-8903-ee32ffaf93d7</parentFolderId>
+      <packageId>83cfdd2f-167f-4c4f-a12d-0a65bb680db5</packageId>
+      <packageName>NestJSApplication.Services</packageName>
+      <stereotypes>
+        <stereotype stereotypeDefinitionId="b4581ed2-42ec-4ae2-83dd-dcdd5f0837b6" name="Http Settings">
+          <addedByDefault>false</addedByDefault>
+          <definitionPackageName>Intent.Metadata.WebApi</definitionPackageName>
+          <definitionPackageId>0011387a-b122-45d7-9cdb-8e21b315ab9f</definitionPackageId>
+          <properties>
+            <property name="801c3e61-4431-4d81-93fa-7e57d33cb3fa" display="Verb" value="POST" isActive="true" />
+            <property name="5dd3e07d-76eb-45d4-9956-4325fb068acc" display="Route" value="route-param-op/{param1}" isActive="true" />
+            <property name="4490e212-1e99-43ce-b3dd-048ed2a6bae8" display="Return Type Mediatype" value="Default" isActive="true" />
+          </properties>
+        </stereotype>
+      </stereotypes>
+      <metadata />
+      <childElements>
+        <childElement id="fbc6fcaa-e85a-4c64-8338-bf6ba7ba5dda" type="Parameter" typeId="00208d20-469d-41cb-8501-768fd5eb796b">
+          <name>param1</name>
+          <display>in : param1: string</display>
+          <isAbstract>false</isAbstract>
+          <genericTypes />
+          <typeReference id="1a558e11-ff63-4f57-ac3c-b1924a70e676">
+            <typeId>d384db9c-a279-45e1-801e-e4e8099625f2</typeId>
+            <isNavigable>true</isNavigable>
+            <isNullable>false</isNullable>
+            <isCollection>false</isCollection>
+            <isRequired>true</isRequired>
+            <typePackageName>Intent.Common.Types</typePackageName>
+            <typePackageId>870ad967-cbd4-4ea9-b86d-9c3a5d55ea67</typePackageId>
+            <stereotypes />
+            <genericTypeParameters />
+          </typeReference>
+          <isMapped>false</isMapped>
+          <parentFolderId>f476188a-d335-4dd9-8176-529750079f54</parentFolderId>
+          <packageId>83cfdd2f-167f-4c4f-a12d-0a65bb680db5</packageId>
+          <packageName>NestJSApplication.Services</packageName>
+          <stereotypes>
+            <stereotype stereotypeDefinitionId="d01df110-1208-4af8-a913-92a49d219552" name="Parameter Settings">
+              <addedByDefault>true</addedByDefault>
+              <definitionPackageName>Intent.Metadata.WebApi</definitionPackageName>
+              <definitionPackageId>0011387a-b122-45d7-9cdb-8e21b315ab9f</definitionPackageId>
+              <properties>
+                <property name="d2630e0f-f930-404f-b453-1e8052a712f5" display="Source" value="From Route" isActive="true" />
+                <property name="7a331e9b-f13c-4b33-9013-bd59b4a4999c" display="Header Name" isActive="false" />
+              </properties>
+            </stereotype>
+          </stereotypes>
+          <metadata />
+          <childElements />
+        </childElement>
+      </childElements>
+    </childElement>
+    <childElement id="dfe4e8a7-f121-409d-8899-c61118b2cc30" type="Operation" typeId="e030c97a-e066-40a7-8188-808c275df3cb">
+      <name>BodyParamOp</name>
+      <display>BodyParamOp(param1: CustomDTO): void</display>
+      <isAbstract>false</isAbstract>
+      <sort-children>by-type-then-manually</sort-children>
+      <genericTypes />
+      <typeReference id="53d497ff-579a-434c-b96f-d0050a2c12d5">
+        <isNavigable>true</isNavigable>
+        <isNullable>false</isNullable>
+        <isCollection>false</isCollection>
+        <isRequired>true</isRequired>
+        <stereotypes />
+        <genericTypeParameters />
+      </typeReference>
+      <isMapped>false</isMapped>
+      <parentFolderId>cf536ca1-687f-4c9c-8903-ee32ffaf93d7</parentFolderId>
+      <packageId>83cfdd2f-167f-4c4f-a12d-0a65bb680db5</packageId>
+      <packageName>NestJSApplication.Services</packageName>
+      <stereotypes>
+        <stereotype stereotypeDefinitionId="b4581ed2-42ec-4ae2-83dd-dcdd5f0837b6" name="Http Settings">
+          <addedByDefault>false</addedByDefault>
+          <definitionPackageName>Intent.Metadata.WebApi</definitionPackageName>
+          <definitionPackageId>0011387a-b122-45d7-9cdb-8e21b315ab9f</definitionPackageId>
+          <properties>
+            <property name="801c3e61-4431-4d81-93fa-7e57d33cb3fa" display="Verb" value="POST" isActive="true" />
+            <property name="5dd3e07d-76eb-45d4-9956-4325fb068acc" display="Route" value="body-param-op" isActive="true" />
+            <property name="4490e212-1e99-43ce-b3dd-048ed2a6bae8" display="Return Type Mediatype" value="Default" isActive="true" />
+          </properties>
+        </stereotype>
+      </stereotypes>
+      <metadata />
+      <childElements>
+        <childElement id="6c7c4a83-05ca-4759-a742-5bcedebfb733" type="Parameter" typeId="00208d20-469d-41cb-8501-768fd5eb796b">
+          <name>param1</name>
+          <display>in : param1: CustomDTO</display>
+          <isAbstract>false</isAbstract>
+          <genericTypes />
+          <typeReference id="e093e1e5-2fca-4c2d-85e6-c6b48f307e54">
+            <typeId>a218e281-3407-42a9-9165-6b3012000b92</typeId>
+            <isNavigable>true</isNavigable>
+            <isNullable>false</isNullable>
+            <isCollection>false</isCollection>
+            <isRequired>true</isRequired>
+            <typePackageName>NestJSApplication.Services</typePackageName>
+            <typePackageId>83cfdd2f-167f-4c4f-a12d-0a65bb680db5</typePackageId>
+            <stereotypes />
+            <genericTypeParameters />
+          </typeReference>
+          <isMapped>false</isMapped>
+          <parentFolderId>dfe4e8a7-f121-409d-8899-c61118b2cc30</parentFolderId>
+          <packageId>83cfdd2f-167f-4c4f-a12d-0a65bb680db5</packageId>
+          <packageName>NestJSApplication.Services</packageName>
+          <stereotypes>
+            <stereotype stereotypeDefinitionId="d01df110-1208-4af8-a913-92a49d219552" name="Parameter Settings">
+              <addedByDefault>true</addedByDefault>
+              <definitionPackageName>Intent.Metadata.WebApi</definitionPackageName>
+              <definitionPackageId>0011387a-b122-45d7-9cdb-8e21b315ab9f</definitionPackageId>
+              <properties>
+                <property name="d2630e0f-f930-404f-b453-1e8052a712f5" display="Source" value="From Body" isActive="true" />
+                <property name="7a331e9b-f13c-4b33-9013-bd59b4a4999c" display="Header Name" isActive="false" />
+              </properties>
+            </stereotype>
+          </stereotypes>
+          <metadata />
+          <childElements />
+        </childElement>
+      </childElements>
+    </childElement>
+    <childElement id="904f364c-4ca3-4a33-b4f1-a0e0461106dc" type="Operation" typeId="e030c97a-e066-40a7-8188-808c275df3cb">
+      <name>ThrowsException</name>
+      <display>ThrowsException(): void</display>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <typeReference id="e6916870-e7c2-4716-9707-7e13d38782cc">
+        <isNavigable>true</isNavigable>
+        <isNullable>false</isNullable>
+        <isCollection>false</isCollection>
+        <isRequired>true</isRequired>
+        <stereotypes />
+        <genericTypeParameters />
+      </typeReference>
+      <isMapped>false</isMapped>
+      <parentFolderId>cf536ca1-687f-4c9c-8903-ee32ffaf93d7</parentFolderId>
+      <packageId>83cfdd2f-167f-4c4f-a12d-0a65bb680db5</packageId>
+      <packageName>NestJSApplication.Services</packageName>
+      <stereotypes>
+        <stereotype stereotypeDefinitionId="b4581ed2-42ec-4ae2-83dd-dcdd5f0837b6" name="Http Settings">
+          <addedByDefault>false</addedByDefault>
+          <definitionPackageName>Intent.Metadata.WebApi</definitionPackageName>
+          <definitionPackageId>0011387a-b122-45d7-9cdb-8e21b315ab9f</definitionPackageId>
+          <properties>
+            <property name="801c3e61-4431-4d81-93fa-7e57d33cb3fa" display="Verb" value="POST" isActive="true" />
+            <property name="5dd3e07d-76eb-45d4-9956-4325fb068acc" display="Route" value="throws-exception" isActive="true" />
+            <property name="4490e212-1e99-43ce-b3dd-048ed2a6bae8" display="Return Type Mediatype" value="Default" isActive="true" />
+          </properties>
+        </stereotype>
+      </stereotypes>
+      <metadata />
+      <childElements />
+    </childElement>
+    <childElement id="62aa1e55-3e3b-4d0f-bb8d-3b95bb6743d8" type="Operation" typeId="e030c97a-e066-40a7-8188-808c275df3cb">
+      <name>GetWrappedPrimitiveGuid</name>
+      <display>GetWrappedPrimitiveGuid(): guid</display>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <typeReference id="4a96c8de-c44d-476f-80cb-4ff66408fb34">
+        <typeId>6b649125-18ea-48fd-a6ba-0bfff0d8f488</typeId>
+        <isNavigable>true</isNavigable>
+        <isNullable>false</isNullable>
+        <isCollection>false</isCollection>
+        <isRequired>true</isRequired>
+        <typePackageName>Intent.Common.Types</typePackageName>
+        <typePackageId>870ad967-cbd4-4ea9-b86d-9c3a5d55ea67</typePackageId>
+        <stereotypes />
+        <genericTypeParameters />
+      </typeReference>
+      <isMapped>false</isMapped>
+      <parentFolderId>cf536ca1-687f-4c9c-8903-ee32ffaf93d7</parentFolderId>
+      <packageId>83cfdd2f-167f-4c4f-a12d-0a65bb680db5</packageId>
+      <packageName>NestJSApplication.Services</packageName>
+      <stereotypes>
+        <stereotype stereotypeDefinitionId="b4581ed2-42ec-4ae2-83dd-dcdd5f0837b6" name="Http Settings">
+          <addedByDefault>false</addedByDefault>
+          <definitionPackageName>Intent.Metadata.WebApi</definitionPackageName>
+          <definitionPackageId>0011387a-b122-45d7-9cdb-8e21b315ab9f</definitionPackageId>
+          <properties>
+            <property name="801c3e61-4431-4d81-93fa-7e57d33cb3fa" display="Verb" value="GET" isActive="true" />
+            <property name="5dd3e07d-76eb-45d4-9956-4325fb068acc" display="Route" value="wrapped-primitive-guid" isActive="true" />
+            <property name="4490e212-1e99-43ce-b3dd-048ed2a6bae8" display="Return Type Mediatype" value="application/json" isActive="true" />
+          </properties>
+        </stereotype>
+      </stereotypes>
+      <metadata />
+      <childElements />
+    </childElement>
+    <childElement id="9ef5cfbd-39c7-4493-abd3-de07d9e9335b" type="Operation" typeId="e030c97a-e066-40a7-8188-808c275df3cb">
+      <name>GetWrappedPrimitiveString</name>
+      <display>GetWrappedPrimitiveString(): string</display>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <typeReference id="5f64f4b0-e87a-417c-9441-98ed2101badd">
+        <typeId>d384db9c-a279-45e1-801e-e4e8099625f2</typeId>
+        <isNavigable>true</isNavigable>
+        <isNullable>false</isNullable>
+        <isCollection>false</isCollection>
+        <isRequired>true</isRequired>
+        <typePackageName>Intent.Common.Types</typePackageName>
+        <typePackageId>870ad967-cbd4-4ea9-b86d-9c3a5d55ea67</typePackageId>
+        <stereotypes />
+        <genericTypeParameters />
+      </typeReference>
+      <isMapped>false</isMapped>
+      <parentFolderId>cf536ca1-687f-4c9c-8903-ee32ffaf93d7</parentFolderId>
+      <packageId>83cfdd2f-167f-4c4f-a12d-0a65bb680db5</packageId>
+      <packageName>NestJSApplication.Services</packageName>
+      <stereotypes>
+        <stereotype stereotypeDefinitionId="b4581ed2-42ec-4ae2-83dd-dcdd5f0837b6" name="Http Settings">
+          <addedByDefault>false</addedByDefault>
+          <definitionPackageName>Intent.Metadata.WebApi</definitionPackageName>
+          <definitionPackageId>0011387a-b122-45d7-9cdb-8e21b315ab9f</definitionPackageId>
+          <properties>
+            <property name="801c3e61-4431-4d81-93fa-7e57d33cb3fa" display="Verb" value="GET" isActive="true" />
+            <property name="5dd3e07d-76eb-45d4-9956-4325fb068acc" display="Route" value="wrapped-primitive-string" isActive="true" />
+            <property name="4490e212-1e99-43ce-b3dd-048ed2a6bae8" display="Return Type Mediatype" value="application/json" isActive="true" />
+          </properties>
+        </stereotype>
+      </stereotypes>
+      <metadata />
+      <childElements />
+    </childElement>
+    <childElement id="c514ec9b-e8da-4db6-a7d0-bb2dbe692b90" type="Operation" typeId="e030c97a-e066-40a7-8188-808c275df3cb">
+      <name>GetWrappedPrimitiveInt</name>
+      <display>GetWrappedPrimitiveInt(): int</display>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <typeReference id="98a3302c-c366-4f6b-8121-79aec2cbd3cb">
+        <typeId>fb0a362d-e9e2-40de-b6ff-5ce8167cbe74</typeId>
+        <isNavigable>true</isNavigable>
+        <isNullable>false</isNullable>
+        <isCollection>false</isCollection>
+        <isRequired>true</isRequired>
+        <typePackageName>Intent.Common.Types</typePackageName>
+        <typePackageId>870ad967-cbd4-4ea9-b86d-9c3a5d55ea67</typePackageId>
+        <stereotypes />
+        <genericTypeParameters />
+      </typeReference>
+      <isMapped>false</isMapped>
+      <parentFolderId>cf536ca1-687f-4c9c-8903-ee32ffaf93d7</parentFolderId>
+      <packageId>83cfdd2f-167f-4c4f-a12d-0a65bb680db5</packageId>
+      <packageName>NestJSApplication.Services</packageName>
+      <stereotypes>
+        <stereotype stereotypeDefinitionId="b4581ed2-42ec-4ae2-83dd-dcdd5f0837b6" name="Http Settings">
+          <addedByDefault>false</addedByDefault>
+          <definitionPackageName>Intent.Metadata.WebApi</definitionPackageName>
+          <definitionPackageId>0011387a-b122-45d7-9cdb-8e21b315ab9f</definitionPackageId>
+          <properties>
+            <property name="801c3e61-4431-4d81-93fa-7e57d33cb3fa" display="Verb" value="GET" isActive="true" />
+            <property name="5dd3e07d-76eb-45d4-9956-4325fb068acc" display="Route" value="wrapped-primitive-int" isActive="true" />
+            <property name="4490e212-1e99-43ce-b3dd-048ed2a6bae8" display="Return Type Mediatype" value="application/json" isActive="true" />
+          </properties>
+        </stereotype>
+      </stereotypes>
+      <metadata />
+      <childElements />
+    </childElement>
+    <childElement id="8abed13e-cb9f-49f9-9d4a-64a8e7e3b3bb" type="Operation" typeId="e030c97a-e066-40a7-8188-808c275df3cb">
+      <name>GetPrimitiveGuid</name>
+      <display>GetPrimitiveGuid(): guid</display>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <typeReference id="5b7c31fc-f03a-470b-ae39-ae4badedc945">
+        <typeId>6b649125-18ea-48fd-a6ba-0bfff0d8f488</typeId>
+        <isNavigable>true</isNavigable>
+        <isNullable>false</isNullable>
+        <isCollection>false</isCollection>
+        <isRequired>true</isRequired>
+        <typePackageName>Intent.Common.Types</typePackageName>
+        <typePackageId>870ad967-cbd4-4ea9-b86d-9c3a5d55ea67</typePackageId>
+        <stereotypes />
+        <genericTypeParameters />
+      </typeReference>
+      <isMapped>false</isMapped>
+      <parentFolderId>cf536ca1-687f-4c9c-8903-ee32ffaf93d7</parentFolderId>
+      <packageId>83cfdd2f-167f-4c4f-a12d-0a65bb680db5</packageId>
+      <packageName>NestJSApplication.Services</packageName>
+      <stereotypes>
+        <stereotype stereotypeDefinitionId="b4581ed2-42ec-4ae2-83dd-dcdd5f0837b6" name="Http Settings">
+          <addedByDefault>false</addedByDefault>
+          <definitionPackageName>Intent.Metadata.WebApi</definitionPackageName>
+          <definitionPackageId>0011387a-b122-45d7-9cdb-8e21b315ab9f</definitionPackageId>
+          <properties>
+            <property name="801c3e61-4431-4d81-93fa-7e57d33cb3fa" display="Verb" value="GET" isActive="true" />
+            <property name="5dd3e07d-76eb-45d4-9956-4325fb068acc" display="Route" value="primitive-guid" isActive="true" />
+            <property name="4490e212-1e99-43ce-b3dd-048ed2a6bae8" display="Return Type Mediatype" value="Default" isActive="true" />
+          </properties>
+        </stereotype>
+      </stereotypes>
+      <metadata />
+      <childElements />
+    </childElement>
+    <childElement id="91317569-0e50-42fc-ae9b-0ac1c7227c73" type="Operation" typeId="e030c97a-e066-40a7-8188-808c275df3cb">
+      <name>GetPrimitiveString</name>
+      <display>GetPrimitiveString(): string</display>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <typeReference id="57fb0319-bed7-4ab8-bf40-589693b8d31a">
+        <typeId>d384db9c-a279-45e1-801e-e4e8099625f2</typeId>
+        <isNavigable>true</isNavigable>
+        <isNullable>false</isNullable>
+        <isCollection>false</isCollection>
+        <isRequired>true</isRequired>
+        <typePackageName>Intent.Common.Types</typePackageName>
+        <typePackageId>870ad967-cbd4-4ea9-b86d-9c3a5d55ea67</typePackageId>
+        <stereotypes />
+        <genericTypeParameters />
+      </typeReference>
+      <isMapped>false</isMapped>
+      <parentFolderId>cf536ca1-687f-4c9c-8903-ee32ffaf93d7</parentFolderId>
+      <packageId>83cfdd2f-167f-4c4f-a12d-0a65bb680db5</packageId>
+      <packageName>NestJSApplication.Services</packageName>
+      <stereotypes>
+        <stereotype stereotypeDefinitionId="b4581ed2-42ec-4ae2-83dd-dcdd5f0837b6" name="Http Settings">
+          <addedByDefault>false</addedByDefault>
+          <definitionPackageName>Intent.Metadata.WebApi</definitionPackageName>
+          <definitionPackageId>0011387a-b122-45d7-9cdb-8e21b315ab9f</definitionPackageId>
+          <properties>
+            <property name="801c3e61-4431-4d81-93fa-7e57d33cb3fa" display="Verb" value="GET" isActive="true" />
+            <property name="5dd3e07d-76eb-45d4-9956-4325fb068acc" display="Route" value="primitive-string" isActive="true" />
+            <property name="4490e212-1e99-43ce-b3dd-048ed2a6bae8" display="Return Type Mediatype" value="Default" isActive="true" />
+          </properties>
+        </stereotype>
+      </stereotypes>
+      <metadata />
+      <childElements />
+    </childElement>
+    <childElement id="f18db983-e4d4-4b2a-88c5-1e6cad275929" type="Operation" typeId="e030c97a-e066-40a7-8188-808c275df3cb">
+      <name>GetPrimitiveInt</name>
+      <display>GetPrimitiveInt(): int</display>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <typeReference id="d5fd9233-0711-4566-959d-6d36b4a27280">
+        <typeId>fb0a362d-e9e2-40de-b6ff-5ce8167cbe74</typeId>
+        <isNavigable>true</isNavigable>
+        <isNullable>false</isNullable>
+        <isCollection>false</isCollection>
+        <isRequired>true</isRequired>
+        <typePackageName>Intent.Common.Types</typePackageName>
+        <typePackageId>870ad967-cbd4-4ea9-b86d-9c3a5d55ea67</typePackageId>
+        <stereotypes />
+        <genericTypeParameters />
+      </typeReference>
+      <isMapped>false</isMapped>
+      <parentFolderId>cf536ca1-687f-4c9c-8903-ee32ffaf93d7</parentFolderId>
+      <packageId>83cfdd2f-167f-4c4f-a12d-0a65bb680db5</packageId>
+      <packageName>NestJSApplication.Services</packageName>
+      <stereotypes>
+        <stereotype stereotypeDefinitionId="b4581ed2-42ec-4ae2-83dd-dcdd5f0837b6" name="Http Settings">
+          <addedByDefault>false</addedByDefault>
+          <definitionPackageName>Intent.Metadata.WebApi</definitionPackageName>
+          <definitionPackageId>0011387a-b122-45d7-9cdb-8e21b315ab9f</definitionPackageId>
+          <properties>
+            <property name="801c3e61-4431-4d81-93fa-7e57d33cb3fa" display="Verb" value="GET" isActive="true" />
+            <property name="5dd3e07d-76eb-45d4-9956-4325fb068acc" display="Route" value="primitive-int" isActive="true" />
+            <property name="4490e212-1e99-43ce-b3dd-048ed2a6bae8" display="Return Type Mediatype" value="Default" isActive="true" />
+          </properties>
+        </stereotype>
+      </stereotypes>
+      <metadata />
+      <childElements />
+    </childElement>
+    <childElement id="a6271bfe-8378-4e96-ba29-d3db363fc86c" type="Operation" typeId="e030c97a-e066-40a7-8188-808c275df3cb">
+      <name>GetPrimitiveStringList</name>
+      <display>GetPrimitiveStringList(): string[*]</display>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <typeReference id="56a25f76-010e-4cbe-8e8a-5d982a2a010f">
+        <typeId>d384db9c-a279-45e1-801e-e4e8099625f2</typeId>
+        <isNavigable>true</isNavigable>
+        <isNullable>false</isNullable>
+        <isCollection>true</isCollection>
+        <isRequired>true</isRequired>
+        <typePackageName>Intent.Common.Types</typePackageName>
+        <typePackageId>870ad967-cbd4-4ea9-b86d-9c3a5d55ea67</typePackageId>
+        <stereotypes />
+        <genericTypeParameters />
+      </typeReference>
+      <isMapped>false</isMapped>
+      <parentFolderId>cf536ca1-687f-4c9c-8903-ee32ffaf93d7</parentFolderId>
+      <packageId>83cfdd2f-167f-4c4f-a12d-0a65bb680db5</packageId>
+      <packageName>NestJSApplication.Services</packageName>
+      <stereotypes>
+        <stereotype stereotypeDefinitionId="b4581ed2-42ec-4ae2-83dd-dcdd5f0837b6" name="Http Settings">
+          <addedByDefault>false</addedByDefault>
+          <definitionPackageName>Intent.Metadata.WebApi</definitionPackageName>
+          <definitionPackageId>0011387a-b122-45d7-9cdb-8e21b315ab9f</definitionPackageId>
+          <properties>
+            <property name="801c3e61-4431-4d81-93fa-7e57d33cb3fa" display="Verb" value="GET" isActive="true" />
+            <property name="5dd3e07d-76eb-45d4-9956-4325fb068acc" display="Route" value="primitive-string-list" isActive="true" />
+            <property name="4490e212-1e99-43ce-b3dd-048ed2a6bae8" display="Return Type Mediatype" value="Default" isActive="true" />
+          </properties>
+        </stereotype>
+      </stereotypes>
+      <metadata />
+      <childElements />
+    </childElement>
+    <childElement id="eec76f2b-626a-4f16-b458-29e188deeb69" type="Operation" typeId="e030c97a-e066-40a7-8188-808c275df3cb">
+      <name>NonHttpSettingsOperation</name>
+      <display>NonHttpSettingsOperation(): void</display>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <typeReference id="2d24b734-b340-420e-8914-138260f1c0e5">
+        <isNavigable>true</isNavigable>
+        <isNullable>false</isNullable>
+        <isCollection>false</isCollection>
+        <isRequired>true</isRequired>
+        <stereotypes />
+        <genericTypeParameters />
+      </typeReference>
+      <isMapped>false</isMapped>
+      <parentFolderId>cf536ca1-687f-4c9c-8903-ee32ffaf93d7</parentFolderId>
+      <packageId>83cfdd2f-167f-4c4f-a12d-0a65bb680db5</packageId>
+      <packageName>NestJSApplication.Services</packageName>
+      <stereotypes />
+      <metadata />
+      <childElements />
+    </childElement>
+    <childElement id="44ba5784-1044-4fde-8e70-3d4756028dba" type="Operation" typeId="e030c97a-e066-40a7-8188-808c275df3cb">
+      <name>GetInvoiceOpWithReturnTypeWrapped</name>
+      <display>GetInvoiceOpWithReturnTypeWrapped(): CustomDTO</display>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <typeReference id="6d16df72-849f-436a-a8fe-b8f8a764fbaf">
+        <typeId>a218e281-3407-42a9-9165-6b3012000b92</typeId>
+        <isNavigable>true</isNavigable>
+        <isNullable>false</isNullable>
+        <isCollection>false</isCollection>
+        <isRequired>true</isRequired>
+        <typePackageName>NestJSApplication.Services</typePackageName>
+        <typePackageId>83cfdd2f-167f-4c4f-a12d-0a65bb680db5</typePackageId>
+        <stereotypes />
+        <genericTypeParameters />
+      </typeReference>
+      <isMapped>false</isMapped>
+      <parentFolderId>cf536ca1-687f-4c9c-8903-ee32ffaf93d7</parentFolderId>
+      <packageId>83cfdd2f-167f-4c4f-a12d-0a65bb680db5</packageId>
+      <packageName>NestJSApplication.Services</packageName>
+      <stereotypes>
+        <stereotype stereotypeDefinitionId="b4581ed2-42ec-4ae2-83dd-dcdd5f0837b6" name="Http Settings">
+          <addedByDefault>false</addedByDefault>
+          <definitionPackageName>Intent.Metadata.WebApi</definitionPackageName>
+          <definitionPackageId>0011387a-b122-45d7-9cdb-8e21b315ab9f</definitionPackageId>
+          <properties>
+            <property name="801c3e61-4431-4d81-93fa-7e57d33cb3fa" display="Verb" value="GET" isActive="true" />
+            <property name="5dd3e07d-76eb-45d4-9956-4325fb068acc" display="Route" value="invoice-op-with-return-type-wrapped" isActive="true" />
+            <property name="4490e212-1e99-43ce-b3dd-048ed2a6bae8" display="Return Type Mediatype" value="application/json" isActive="true" />
+          </properties>
+        </stereotype>
+      </stereotypes>
+      <metadata />
+      <childElements />
+    </childElement>
+  </childElements>
+</class>

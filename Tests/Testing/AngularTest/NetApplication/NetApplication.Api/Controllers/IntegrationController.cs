@@ -42,7 +42,7 @@ namespace NetApplication.Api.Controllers
         /// <response code="200">Returns the specified CustomDTO.</response>
         /// <response code="400">One or more validation errors have occurred.</response>
         /// <response code="404">Can't find an CustomDTO with the parameters provided.</response>
-        [HttpGet("[action]")]
+        [HttpGet("query-param-op")]
         [ProducesResponseType(typeof(CustomDTO), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -61,7 +61,7 @@ namespace NetApplication.Api.Controllers
         /// </summary>
         /// <response code="201">Successfully created.</response>
         /// <response code="400">One or more validation errors have occurred.</response>
-        [HttpPost("[action]")]
+        [HttpPost("header-param-op")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
@@ -83,30 +83,7 @@ namespace NetApplication.Api.Controllers
         /// </summary>
         /// <response code="201">Successfully created.</response>
         /// <response code="400">One or more validation errors have occurred.</response>
-        [HttpPost("[action]")]
-        [ProducesResponseType(StatusCodes.Status201Created)]
-        [ProducesResponseType(StatusCodes.Status400BadRequest)]
-        [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
-        public async Task<ActionResult> FormParamOp(
-            [FromForm] string param1,
-            [FromForm] int param2,
-            CancellationToken cancellationToken = default)
-        {
-            using (var transaction = new TransactionScope(TransactionScopeOption.Required,
-                new TransactionOptions() { IsolationLevel = IsolationLevel.ReadCommitted }, TransactionScopeAsyncFlowOption.Enabled))
-            {
-                await _appService.FormParamOp(param1, param2, cancellationToken);
-                await _unitOfWork.SaveChangesAsync(cancellationToken);
-                transaction.Complete();
-            }
-            return Created(string.Empty, null);
-        }
-
-        /// <summary>
-        /// </summary>
-        /// <response code="201">Successfully created.</response>
-        /// <response code="400">One or more validation errors have occurred.</response>
-        [HttpPost("[action]/{param1}")]
+        [HttpPost("route-param-op/{param1}")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
@@ -128,7 +105,7 @@ namespace NetApplication.Api.Controllers
         /// </summary>
         /// <response code="201">Successfully created.</response>
         /// <response code="400">One or more validation errors have occurred.</response>
-        [HttpPost("[action]")]
+        [HttpPost("body-param-op")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
         [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
@@ -150,7 +127,7 @@ namespace NetApplication.Api.Controllers
         /// <summary>
         /// </summary>
         /// <response code="201">Successfully created.</response>
-        [HttpPost("[action]")]
+        [HttpPost("throws-exception")]
         [ProducesResponseType(StatusCodes.Status201Created)]
         [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
         public async Task<ActionResult> ThrowsException(CancellationToken cancellationToken = default)
@@ -169,7 +146,7 @@ namespace NetApplication.Api.Controllers
         /// </summary>
         /// <response code="200">Returns the specified Guid.</response>
         /// <response code="404">Can't find an Guid with the parameters provided.</response>
-        [HttpGet("[action]")]
+        [HttpGet("wrapped-primitive-guid")]
         [Produces(MediaTypeNames.Application.Json)]
         [ProducesResponseType(typeof(JsonResponse<Guid>), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -185,7 +162,7 @@ namespace NetApplication.Api.Controllers
         /// </summary>
         /// <response code="200">Returns the specified string.</response>
         /// <response code="404">Can't find an string with the parameters provided.</response>
-        [HttpGet("[action]")]
+        [HttpGet("wrapped-primitive-string")]
         [Produces(MediaTypeNames.Application.Json)]
         [ProducesResponseType(typeof(JsonResponse<string>), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -201,7 +178,7 @@ namespace NetApplication.Api.Controllers
         /// </summary>
         /// <response code="200">Returns the specified int.</response>
         /// <response code="404">Can't find an int with the parameters provided.</response>
-        [HttpGet("[action]")]
+        [HttpGet("wrapped-primitive-int")]
         [Produces(MediaTypeNames.Application.Json)]
         [ProducesResponseType(typeof(JsonResponse<int>), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
@@ -217,7 +194,7 @@ namespace NetApplication.Api.Controllers
         /// </summary>
         /// <response code="200">Returns the specified Guid.</response>
         /// <response code="404">Can't find an Guid with the parameters provided.</response>
-        [HttpGet("[action]")]
+        [HttpGet("primitive-guid")]
         [ProducesResponseType(typeof(Guid), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
@@ -232,7 +209,7 @@ namespace NetApplication.Api.Controllers
         /// </summary>
         /// <response code="200">Returns the specified string.</response>
         /// <response code="404">Can't find an string with the parameters provided.</response>
-        [HttpGet("[action]")]
+        [HttpGet("primitive-string")]
         [ProducesResponseType(typeof(string), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
@@ -247,7 +224,7 @@ namespace NetApplication.Api.Controllers
         /// </summary>
         /// <response code="200">Returns the specified int.</response>
         /// <response code="404">Can't find an int with the parameters provided.</response>
-        [HttpGet("[action]")]
+        [HttpGet("primitive-int")]
         [ProducesResponseType(typeof(int), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
@@ -261,7 +238,7 @@ namespace NetApplication.Api.Controllers
         /// <summary>
         /// </summary>
         /// <response code="200">Returns the specified List&lt;string&gt;.</response>
-        [HttpGet("[action]")]
+        [HttpGet("primitive-string-list")]
         [ProducesResponseType(typeof(List<string>), StatusCodes.Status200OK)]
         [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
         public async Task<ActionResult<List<string>>> GetPrimitiveStringList(CancellationToken cancellationToken = default)
@@ -275,7 +252,7 @@ namespace NetApplication.Api.Controllers
         /// </summary>
         /// <response code="200">Returns the specified CustomDTO.</response>
         /// <response code="404">Can't find an CustomDTO with the parameters provided.</response>
-        [HttpGet("[action]")]
+        [HttpGet("invoice-op-with-return-type-wrapped")]
         [Produces(MediaTypeNames.Application.Json)]
         [ProducesResponseType(typeof(CustomDTO), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status404NotFound)]

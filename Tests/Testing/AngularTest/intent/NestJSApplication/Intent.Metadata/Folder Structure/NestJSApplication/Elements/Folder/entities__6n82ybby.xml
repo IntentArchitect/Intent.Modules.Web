@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="0a8d4560-327a-4f62-a0f4-2e235831b978" type="Folder" typeId="4d95d53a-8855-4f35-aa82-e312643f5c5f">
+  <name>entities</name>
+  <display>entities</display>
+  <isAbstract>false</isAbstract>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>91b60e92-801b-4ccb-88e8-8fa50b4c6bcb</parentFolderId>
+  <stereotypes />
+  <metadata />
+  <childElements>
+    <childElement id="92cc4ccd-87b2-4b74-8ec7-8268a8fc4ba3" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+      <name>Intent.NodeJS.Domain.Entity</name>
+      <display>Intent.NodeJS.Domain.Entity</display>
+      <externalReference>Intent.NodeJS.Domain</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>0a8d4560-327a-4f62-a0f4-2e235831b978</parentFolderId>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
+      <childElements />
+    </childElement>
+  </childElements>
+</class>

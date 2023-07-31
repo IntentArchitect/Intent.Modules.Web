@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="97be7ccc-b1c8-4e8e-8d8d-880d0930b5d5" type="Folder" typeId="4d95d53a-8855-4f35-aa82-e312643f5c5f">
+  <name>enums</name>
+  <display>enums</display>
+  <isAbstract>false</isAbstract>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>91b60e92-801b-4ccb-88e8-8fa50b4c6bcb</parentFolderId>
+  <stereotypes />
+  <metadata />
+  <childElements>
+    <childElement id="8c55c0ed-e9e2-4cb7-b6c8-843bf1fa0b5e" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+      <name>Intent.NodeJS.Domain.Enum</name>
+      <display>Intent.NodeJS.Domain.Enum</display>
+      <externalReference>Intent.NodeJS.Domain</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>97be7ccc-b1c8-4e8e-8d8d-880d0930b5d5</parentFolderId>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
+      <childElements />
+    </childElement>
+  </childElements>
+</class>

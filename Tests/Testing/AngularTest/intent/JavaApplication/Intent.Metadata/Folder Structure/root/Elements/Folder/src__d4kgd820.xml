@@ -1,0 +1,345 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="0d7ac2af-effb-4396-9fad-ddb22ec6f0e5" type="Folder" typeId="4d95d53a-8855-4f35-aa82-e312643f5c5f">
+  <name>src</name>
+  <externalReference>4340b86c-cbb5-412f-8227-38d7ec4b83ca</externalReference>
+  <isAbstract>false</isAbstract>
+  <order>1</order>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>a74d0bf7-608a-43e5-8273-e8fbcf248fe4</parentFolderId>
+  <stereotypes />
+  <metadata />
+  <childElements>
+    <childElement id="d811e54c-33d9-4329-9163-652685caa019" type="Folder" typeId="4d95d53a-8855-4f35-aa82-e312643f5c5f">
+      <name>main</name>
+      <externalReference>a8d60b7f-ad97-464d-ae2b-5997205a684e</externalReference>
+      <isAbstract>false</isAbstract>
+      <order>1</order>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>0d7ac2af-effb-4396-9fad-ddb22ec6f0e5</parentFolderId>
+      <stereotypes />
+      <metadata />
+      <childElements>
+        <childElement id="fe2996b0-3bc1-4863-8bbd-5193d182fd56" type="Folder" typeId="4d95d53a-8855-4f35-aa82-e312643f5c5f">
+          <name>java</name>
+          <externalReference>a8fff636-8ce8-48cf-88ff-dca5db9d57f4</externalReference>
+          <isAbstract>false</isAbstract>
+          <order>1</order>
+          <genericTypes />
+          <isMapped>false</isMapped>
+          <parentFolderId>d811e54c-33d9-4329-9163-652685caa019</parentFolderId>
+          <stereotypes />
+          <metadata />
+          <childElements>
+            <childElement id="4011f96a-1e0e-46ba-a422-cc1d45317b67" type="Folder" typeId="4d95d53a-8855-4f35-aa82-e312643f5c5f">
+              <name>com</name>
+              <externalReference>60e9d8fb-e1af-466e-a754-afcb5f6664e8</externalReference>
+              <isAbstract>false</isAbstract>
+              <order>1</order>
+              <genericTypes />
+              <isMapped>false</isMapped>
+              <parentFolderId>fe2996b0-3bc1-4863-8bbd-5193d182fd56</parentFolderId>
+              <stereotypes />
+              <metadata />
+              <childElements>
+                <childElement id="e4c9378a-4b3d-4fad-8fd4-76d976c07dd7" type="Folder" typeId="4d95d53a-8855-4f35-aa82-e312643f5c5f">
+                  <name>AngularTest</name>
+                  <externalReference>ccecf323-5f4d-4195-b47a-45f264eeb0ac</externalReference>
+                  <isAbstract>false</isAbstract>
+                  <order>1</order>
+                  <genericTypes />
+                  <isMapped>false</isMapped>
+                  <parentFolderId>4011f96a-1e0e-46ba-a422-cc1d45317b67</parentFolderId>
+                  <stereotypes />
+                  <metadata />
+                  <childElements>
+                    <childElement id="dbdae4b0-882e-489b-8c8e-1b6b8923c33b" type="Folder" typeId="4d95d53a-8855-4f35-aa82-e312643f5c5f">
+                      <name>JavaApplication</name>
+                      <externalReference>d9187998-c1d2-40b6-836b-263c442d3723</externalReference>
+                      <isAbstract>false</isAbstract>
+                      <order>1</order>
+                      <genericTypes />
+                      <isMapped>false</isMapped>
+                      <parentFolderId>e4c9378a-4b3d-4fad-8fd4-76d976c07dd7</parentFolderId>
+                      <stereotypes />
+                      <metadata />
+                      <childElements>
+                        <childElement id="4052110e-49c3-4fe4-8e84-e00b1f9f547e" type="Folder" typeId="4d95d53a-8855-4f35-aa82-e312643f5c5f">
+                          <name>application</name>
+                          <externalReference>acb89909-044e-4485-ab3d-ac5f0f1a95ec</externalReference>
+                          <isAbstract>false</isAbstract>
+                          <order>1</order>
+                          <genericTypes />
+                          <isMapped>false</isMapped>
+                          <parentFolderId>dbdae4b0-882e-489b-8c8e-1b6b8923c33b</parentFolderId>
+                          <stereotypes />
+                          <metadata />
+                          <childElements>
+                            <childElement id="2d5100c3-2f36-4a25-88ad-7adbd5c0da6b" type="Role" typeId="8663c9f9-2852-45e7-aaa1-0883a2e6f1da">
+                              <name>Application</name>
+                              <externalReference>8d0b1980-861b-4326-ba2f-c55740c5a9d9</externalReference>
+                              <isAbstract>false</isAbstract>
+                              <order>1</order>
+                              <genericTypes />
+                              <isMapped>false</isMapped>
+                              <parentFolderId>4052110e-49c3-4fe4-8e84-e00b1f9f547e</parentFolderId>
+                              <stereotypes />
+                              <metadata />
+                              <childElements />
+                            </childElement>
+                          </childElements>
+                        </childElement>
+                        <childElement id="3120a416-5f1d-4e48-b313-1e90940fe05a" type="Folder" typeId="4d95d53a-8855-4f35-aa82-e312643f5c5f">
+                          <name>data</name>
+                          <externalReference>42928175-7ec8-46e6-a05d-4e92f9ad01b1</externalReference>
+                          <isAbstract>false</isAbstract>
+                          <order>2</order>
+                          <genericTypes />
+                          <isMapped>false</isMapped>
+                          <parentFolderId>dbdae4b0-882e-489b-8c8e-1b6b8923c33b</parentFolderId>
+                          <stereotypes />
+                          <metadata />
+                          <childElements>
+                            <childElement id="e047c0b0-0ace-40b9-932d-25becd0cb393" type="Role" typeId="8663c9f9-2852-45e7-aaa1-0883a2e6f1da">
+                              <name>Data</name>
+                              <externalReference>a6fdd101-3ded-414f-9e2c-0ce4a52a5437</externalReference>
+                              <isAbstract>false</isAbstract>
+                              <order>1</order>
+                              <genericTypes />
+                              <isMapped>false</isMapped>
+                              <parentFolderId>3120a416-5f1d-4e48-b313-1e90940fe05a</parentFolderId>
+                              <stereotypes />
+                              <metadata />
+                              <childElements />
+                            </childElement>
+                            <childElement id="e0fa97a3-ff41-415c-8003-1ff3ca39a70f" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+                              <name>Intent.Java.Spring.Data.Repositories.EntityRepository</name>
+                              <display>Intent.Java.Spring.Data.Repositories.EntityRepository</display>
+                              <externalReference>Intent.Java.Spring.Data.Repositories</externalReference>
+                              <isAbstract>false</isAbstract>
+                              <genericTypes />
+                              <isMapped>false</isMapped>
+                              <parentFolderId>3120a416-5f1d-4e48-b313-1e90940fe05a</parentFolderId>
+                              <stereotypes />
+                              <metadata>
+                                <entry key="status" value="assigned" />
+                              </metadata>
+                              <childElements />
+                            </childElement>
+                          </childElements>
+                        </childElement>
+                        <childElement id="98872a04-601d-4735-a18b-c9f26f588f72" type="Folder" typeId="4d95d53a-8855-4f35-aa82-e312643f5c5f">
+                          <name>domain</name>
+                          <externalReference>07f4851b-3996-4b65-963c-ca6a87cb00dc</externalReference>
+                          <isAbstract>false</isAbstract>
+                          <order>3</order>
+                          <genericTypes />
+                          <isMapped>false</isMapped>
+                          <parentFolderId>dbdae4b0-882e-489b-8c8e-1b6b8923c33b</parentFolderId>
+                          <stereotypes />
+                          <metadata />
+                          <childElements>
+                            <childElement id="0d9c6545-3933-4f93-865e-8f06b4524883" type="Role" typeId="8663c9f9-2852-45e7-aaa1-0883a2e6f1da">
+                              <name>Domain</name>
+                              <externalReference>fb61de22-23eb-4dd4-9f84-3dd274bfe3d5</externalReference>
+                              <isAbstract>false</isAbstract>
+                              <order>1</order>
+                              <genericTypes />
+                              <isMapped>false</isMapped>
+                              <parentFolderId>98872a04-601d-4735-a18b-c9f26f588f72</parentFolderId>
+                              <stereotypes />
+                              <metadata />
+                              <childElements />
+                            </childElement>
+                          </childElements>
+                        </childElement>
+                        <childElement id="ffe46147-b2b1-4556-b40b-09fc77e1cbce" type="Folder" typeId="4d95d53a-8855-4f35-aa82-e312643f5c5f">
+                          <name>intent</name>
+                          <externalReference>1b13861b-eb93-44c6-9c4a-c1ff8f321b3d</externalReference>
+                          <isAbstract>false</isAbstract>
+                          <order>4</order>
+                          <genericTypes />
+                          <isMapped>false</isMapped>
+                          <parentFolderId>dbdae4b0-882e-489b-8c8e-1b6b8923c33b</parentFolderId>
+                          <stereotypes />
+                          <metadata />
+                          <childElements>
+                            <childElement id="23c17974-73dc-4d20-ab21-cef9217955c6" type="Role" typeId="8663c9f9-2852-45e7-aaa1-0883a2e6f1da">
+                              <name>Intent.Annotations</name>
+                              <externalReference>83e37cdf-a43d-4ff3-b66a-85094cef254a</externalReference>
+                              <isAbstract>false</isAbstract>
+                              <order>1</order>
+                              <genericTypes />
+                              <isMapped>false</isMapped>
+                              <parentFolderId>ffe46147-b2b1-4556-b40b-09fc77e1cbce</parentFolderId>
+                              <stereotypes />
+                              <metadata />
+                              <childElements />
+                            </childElement>
+                            <childElement id="ecbe6c56-0c00-4bc9-9495-b1bd6ad7ccc3" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+                              <name>Intent.Java.Weaving.Annotations.IntentCanAdd</name>
+                              <display>Intent.Java.Weaving.Annotations.IntentCanAdd</display>
+                              <externalReference>Intent.Java.Weaving.Annotations</externalReference>
+                              <isAbstract>false</isAbstract>
+                              <genericTypes />
+                              <isMapped>false</isMapped>
+                              <parentFolderId>ffe46147-b2b1-4556-b40b-09fc77e1cbce</parentFolderId>
+                              <stereotypes />
+                              <metadata>
+                                <entry key="status" value="assigned" />
+                              </metadata>
+                              <childElements />
+                            </childElement>
+                            <childElement id="c62af41e-a4b8-4ec6-8c72-8dedb1ca3f31" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+                              <name>Intent.Java.Weaving.Annotations.IntentCanRemove</name>
+                              <display>Intent.Java.Weaving.Annotations.IntentCanRemove</display>
+                              <externalReference>Intent.Java.Weaving.Annotations</externalReference>
+                              <isAbstract>false</isAbstract>
+                              <genericTypes />
+                              <isMapped>false</isMapped>
+                              <parentFolderId>ffe46147-b2b1-4556-b40b-09fc77e1cbce</parentFolderId>
+                              <stereotypes />
+                              <metadata>
+                                <entry key="status" value="assigned" />
+                              </metadata>
+                              <childElements />
+                            </childElement>
+                            <childElement id="1333e69a-9c4c-4528-b7c6-1cba82831b10" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+                              <name>Intent.Java.Weaving.Annotations.IntentCanUpdate</name>
+                              <display>Intent.Java.Weaving.Annotations.IntentCanUpdate</display>
+                              <externalReference>Intent.Java.Weaving.Annotations</externalReference>
+                              <isAbstract>false</isAbstract>
+                              <genericTypes />
+                              <isMapped>false</isMapped>
+                              <parentFolderId>ffe46147-b2b1-4556-b40b-09fc77e1cbce</parentFolderId>
+                              <stereotypes />
+                              <metadata>
+                                <entry key="status" value="assigned" />
+                              </metadata>
+                              <childElements />
+                            </childElement>
+                            <childElement id="418bed13-772e-4f33-ace0-e90374284863" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+                              <name>Intent.Java.Weaving.Annotations.IntentIgnore</name>
+                              <display>Intent.Java.Weaving.Annotations.IntentIgnore</display>
+                              <externalReference>Intent.Java.Weaving.Annotations</externalReference>
+                              <isAbstract>false</isAbstract>
+                              <genericTypes />
+                              <isMapped>false</isMapped>
+                              <parentFolderId>ffe46147-b2b1-4556-b40b-09fc77e1cbce</parentFolderId>
+                              <stereotypes />
+                              <metadata>
+                                <entry key="status" value="assigned" />
+                              </metadata>
+                              <childElements />
+                            </childElement>
+                            <childElement id="167691a8-34d7-4643-a2f5-b7da9784c242" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+                              <name>Intent.Java.Weaving.Annotations.IntentIgnoreBody</name>
+                              <display>Intent.Java.Weaving.Annotations.IntentIgnoreBody</display>
+                              <externalReference>Intent.Java.Weaving.Annotations</externalReference>
+                              <isAbstract>false</isAbstract>
+                              <genericTypes />
+                              <isMapped>false</isMapped>
+                              <parentFolderId>ffe46147-b2b1-4556-b40b-09fc77e1cbce</parentFolderId>
+                              <stereotypes />
+                              <metadata>
+                                <entry key="status" value="assigned" />
+                              </metadata>
+                              <childElements />
+                            </childElement>
+                            <childElement id="00e9edb4-493c-49d3-9392-21e343d59cb1" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+                              <name>Intent.Java.Weaving.Annotations.IntentManage</name>
+                              <display>Intent.Java.Weaving.Annotations.IntentManage</display>
+                              <externalReference>Intent.Java.Weaving.Annotations</externalReference>
+                              <isAbstract>false</isAbstract>
+                              <genericTypes />
+                              <isMapped>false</isMapped>
+                              <parentFolderId>ffe46147-b2b1-4556-b40b-09fc77e1cbce</parentFolderId>
+                              <stereotypes />
+                              <metadata>
+                                <entry key="status" value="assigned" />
+                              </metadata>
+                              <childElements />
+                            </childElement>
+                            <childElement id="224f1ea8-a59b-4bb3-bf9b-3e30861c6ac6" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+                              <name>Intent.Java.Weaving.Annotations.IntentManageClass</name>
+                              <display>Intent.Java.Weaving.Annotations.IntentManageClass</display>
+                              <externalReference>Intent.Java.Weaving.Annotations</externalReference>
+                              <isAbstract>false</isAbstract>
+                              <genericTypes />
+                              <isMapped>false</isMapped>
+                              <parentFolderId>ffe46147-b2b1-4556-b40b-09fc77e1cbce</parentFolderId>
+                              <stereotypes />
+                              <metadata>
+                                <entry key="status" value="assigned" />
+                              </metadata>
+                              <childElements />
+                            </childElement>
+                            <childElement id="63b59d71-ad37-43e6-aba6-e24aa7b53e99" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+                              <name>Intent.Java.Weaving.Annotations.IntentMerge</name>
+                              <display>Intent.Java.Weaving.Annotations.IntentMerge</display>
+                              <externalReference>Intent.Java.Weaving.Annotations</externalReference>
+                              <isAbstract>false</isAbstract>
+                              <genericTypes />
+                              <isMapped>false</isMapped>
+                              <parentFolderId>ffe46147-b2b1-4556-b40b-09fc77e1cbce</parentFolderId>
+                              <stereotypes />
+                              <metadata>
+                                <entry key="status" value="assigned" />
+                              </metadata>
+                              <childElements />
+                            </childElement>
+                            <childElement id="cb4bfa2f-fd12-417f-a687-7a38482504c2" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+                              <name>Intent.Java.Weaving.Annotations.ModeEnum</name>
+                              <display>Intent.Java.Weaving.Annotations.ModeEnum</display>
+                              <externalReference>Intent.Java.Weaving.Annotations</externalReference>
+                              <isAbstract>false</isAbstract>
+                              <genericTypes />
+                              <isMapped>false</isMapped>
+                              <parentFolderId>ffe46147-b2b1-4556-b40b-09fc77e1cbce</parentFolderId>
+                              <stereotypes />
+                              <metadata>
+                                <entry key="status" value="assigned" />
+                              </metadata>
+                              <childElements />
+                            </childElement>
+                          </childElements>
+                        </childElement>
+                        <childElement id="69c85215-bfaa-4b3e-92b5-a913994dc795" type="Role" typeId="8663c9f9-2852-45e7-aaa1-0883a2e6f1da">
+                          <name>Startup</name>
+                          <externalReference>357d0b07-49c7-4b72-8e21-33434415b152</externalReference>
+                          <isAbstract>false</isAbstract>
+                          <order>5</order>
+                          <genericTypes />
+                          <isMapped>false</isMapped>
+                          <parentFolderId>dbdae4b0-882e-489b-8c8e-1b6b8923c33b</parentFolderId>
+                          <stereotypes />
+                          <metadata />
+                          <childElements />
+                        </childElement>
+                        <childElement id="f62ca960-150b-43a7-a270-a0e9b9faddd7" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+                          <name>Intent.Java.SpringBoot.Application</name>
+                          <display>Intent.Java.SpringBoot.Application</display>
+                          <externalReference>Intent.Java.SpringBoot</externalReference>
+                          <isAbstract>false</isAbstract>
+                          <genericTypes />
+                          <isMapped>false</isMapped>
+                          <parentFolderId>dbdae4b0-882e-489b-8c8e-1b6b8923c33b</parentFolderId>
+                          <stereotypes />
+                          <metadata>
+                            <entry key="status" value="assigned" />
+                          </metadata>
+                          <childElements />
+                        </childElement>
+                      </childElements>
+                    </childElement>
+                  </childElements>
+                </childElement>
+              </childElements>
+            </childElement>
+          </childElements>
+        </childElement>
+      </childElements>
+    </childElement>
+  </childElements>
+</class>

@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="bfdd167b-f418-4358-9c6c-291a2192fe04" type="Exception Type" typeId="625e3f28-5e29-4cd3-92e6-9a111dbbb32c">
+  <name>TestException</name>
+  <display>TestException</display>
+  <isAbstract>false</isAbstract>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>7b9d2f02-5397-47e6-94f5-5bcec5e74fc7</parentFolderId>
+  <packageId>66c7452c-e801-4e16-96d3-6d016aa9c5a9</packageId>
+  <packageName>JavaApplication.Services</packageName>
+  <stereotypes>
+    <stereotype stereotypeDefinitionId="7b4f7447-6cc6-46b1-b3b0-ea8c442a72eb" name="Exception Settings">
+      <addedByDefault>true</addedByDefault>
+      <definitionPackageName>Intent.Java.Services</definitionPackageName>
+      <definitionPackageId>e3481ac6-e429-4423-8eba-b5b1bc890f1b</definitionPackageId>
+      <properties>
+        <property name="a1f602c6-14cc-4be1-83dc-a0a4032a817c" display="Is External" value="false" isActive="true" />
+        <property name="643b9ffb-f812-4db7-8368-f0d0faff90a3" display="Package" isActive="false" />
+      </properties>
+    </stereotype>
+    <stereotype stereotypeDefinitionId="05d3f924-e9c7-4ce1-b8f4-f29bc8e7993e" name="Checked Exception Handling">
+      <addedByDefault>true</addedByDefault>
+      <definitionPackageName>Intent.Java.SpringBoot</definitionPackageName>
+      <definitionPackageId>27f3b2d0-b9e5-47da-bece-d305c33b5945</definitionPackageId>
+      <properties>
+        <property name="995740c3-93e6-401a-b2d9-5e91c3d00886" display="Http Response Status" value="INTERNAL_SERVER_ERROR (500)" isActive="true" />
+        <property name="4372c9e8-2e2e-4c0d-bae9-3b4f09686940" display="Log" value="true" isActive="true" />
+      </properties>
+    </stereotype>
+  </stereotypes>
+  <metadata />
+  <childElements />
+</class>

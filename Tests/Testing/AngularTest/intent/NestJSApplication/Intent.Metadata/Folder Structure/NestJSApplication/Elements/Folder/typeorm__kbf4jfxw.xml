@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="c342d7fa-23c3-43af-b233-c97796478d41" type="Folder" typeId="4d95d53a-8855-4f35-aa82-e312643f5c5f">
+  <name>typeorm</name>
+  <display>typeorm</display>
+  <isAbstract>false</isAbstract>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>182f9e58-c87c-4b22-a13a-2b6823d0fd91</parentFolderId>
+  <stereotypes />
+  <metadata />
+  <childElements>
+    <childElement id="e672da4c-10e2-49a0-a9b7-363b0e75af8d" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+      <name>Intent.NodeJS.TypeORM.BasicAuditingSubscriber</name>
+      <display>Intent.NodeJS.TypeORM.BasicAuditingSubscriber</display>
+      <externalReference>Intent.NodeJS.TypeORM</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>c342d7fa-23c3-43af-b233-c97796478d41</parentFolderId>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
+      <childElements />
+    </childElement>
+    <childElement id="b6af7db0-1d48-4d14-9908-9a90d621c4cc" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+      <name>Intent.NodeJS.TypeORM.TypeOrmExDecorator</name>
+      <display>Intent.NodeJS.TypeORM.TypeOrmExDecorator</display>
+      <externalReference>Intent.NodeJS.TypeORM</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>c342d7fa-23c3-43af-b233-c97796478d41</parentFolderId>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
+      <childElements />
+    </childElement>
+    <childElement id="510b5e8c-c26b-4249-b2c2-b56c41599a43" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+      <name>Intent.NodeJS.TypeORM.TypeOrmExModule</name>
+      <display>Intent.NodeJS.TypeORM.TypeOrmExModule</display>
+      <externalReference>Intent.NodeJS.TypeORM</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>c342d7fa-23c3-43af-b233-c97796478d41</parentFolderId>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
+      <childElements />
+    </childElement>
+  </childElements>
+</class>

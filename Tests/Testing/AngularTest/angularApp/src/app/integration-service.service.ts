@@ -13,7 +13,7 @@ export class IntegrationService {
   }
 
   public queryParamOp(param1: string, param2: number): Observable<CustomDTO> {
-    let url = `/api/integration/queryparamop`;
+    let url = `/api/integration/query-param-op`;
     let httpParams = new HttpParams()
     .set("param1", param1)
     .set("param2", param2)
@@ -25,7 +25,7 @@ export class IntegrationService {
   }
 
   public headerParamOp(param1: string): Observable<void> {
-    let url = `/api/integration/headerparamop`;
+    let url = `/api/integration/header-param-op`;
     let headers = new HttpHeaders()
     .append("MY-HEADER", param1)
     ;
@@ -37,7 +37,7 @@ export class IntegrationService {
   }
 
   public routeParamOp(param1: string): Observable<void> {
-    let url = `/api/integration/routeparamop/${param1}`;
+    let url = `/api/integration/route-param-op/${param1}`;
     return this.apiService.post(url, {}, undefined, undefined, 'text')
       .pipe(map((response: any) => {
         if (response && (response.startsWith("\"") || response.startsWith("'"))) { response = response.substring(1, response.length - 1); }
@@ -46,7 +46,7 @@ export class IntegrationService {
   }
 
   public bodyParamOp(param1: CustomDTO): Observable<void> {
-    let url = `/api/integration/bodyparamop`;
+    let url = `/api/integration/body-param-op`;
     return this.apiService.post(url, param1, undefined, undefined, 'text')
       .pipe(map((response: any) => {
         if (response && (response.startsWith("\"") || response.startsWith("'"))) { response = response.substring(1, response.length - 1); }
@@ -55,7 +55,7 @@ export class IntegrationService {
   }
 
   public throwsException(): Observable<void> {
-    let url = `/api/integration/throwsexception`;
+    let url = `/api/integration/throws-exception`;
     return this.apiService.post(url, {}, undefined, undefined, 'text')
       .pipe(map((response: any) => {
         if (response && (response.startsWith("\"") || response.startsWith("'"))) { response = response.substring(1, response.length - 1); }
@@ -64,7 +64,7 @@ export class IntegrationService {
   }
 
   public getWrappedPrimitiveGuid(): Observable<string> {
-    let url = `/api/integration/getwrappedprimitiveguid`;
+    let url = `/api/integration/wrapped-primitive-guid`;
     return this.apiService.get(url)
       .pipe(map((response: JsonResponse<string>) => {
         return response.value;
@@ -72,7 +72,7 @@ export class IntegrationService {
   }
 
   public getWrappedPrimitiveString(): Observable<string> {
-    let url = `/api/integration/getwrappedprimitivestring`;
+    let url = `/api/integration/wrapped-primitive-string`;
     return this.apiService.get(url)
       .pipe(map((response: JsonResponse<string>) => {
         return response.value;
@@ -80,7 +80,7 @@ export class IntegrationService {
   }
 
   public getWrappedPrimitiveInt(): Observable<number> {
-    let url = `/api/integration/getwrappedprimitiveint`;
+    let url = `/api/integration/wrapped-primitive-int`;
     return this.apiService.get(url)
       .pipe(map((response: JsonResponse<number>) => {
         return response.value;
@@ -88,7 +88,7 @@ export class IntegrationService {
   }
 
   public getPrimitiveGuid(): Observable<string> {
-    let url = `/api/integration/getprimitiveguid`;
+    let url = `/api/integration/primitive-guid`;
     return this.apiService.get(url, undefined, undefined, 'text')
       .pipe(map((response: any) => {
         if (response && (response.startsWith("\"") || response.startsWith("'"))) { response = response.substring(1, response.length - 1); }
@@ -97,7 +97,7 @@ export class IntegrationService {
   }
 
   public getPrimitiveString(): Observable<string> {
-    let url = `/api/integration/getprimitivestring`;
+    let url = `/api/integration/primitive-string`;
     return this.apiService.get(url, undefined, undefined, 'text')
       .pipe(map((response: any) => {
         if (response && (response.startsWith("\"") || response.startsWith("'"))) { response = response.substring(1, response.length - 1); }
@@ -106,7 +106,7 @@ export class IntegrationService {
   }
 
   public getPrimitiveInt(): Observable<number> {
-    let url = `/api/integration/getprimitiveint`;
+    let url = `/api/integration/primitive-int`;
     return this.apiService.get(url, undefined, undefined, 'text')
       .pipe(map((response: any) => {
         if (response && (response.startsWith("\"") || response.startsWith("'"))) { response = response.substring(1, response.length - 1); }
@@ -115,7 +115,7 @@ export class IntegrationService {
   }
 
   public getPrimitiveStringList(): Observable<string[]> {
-    let url = `/api/integration/getprimitivestringlist`;
+    let url = `/api/integration/primitive-string-list`;
     return this.apiService.get(url)
       .pipe(map((response: any) => {
         return response;
@@ -123,22 +123,10 @@ export class IntegrationService {
   }
 
   public getInvoiceOpWithReturnTypeWrapped(): Observable<CustomDTO> {
-    let url = `/api/integration/getinvoiceopwithreturntypewrapped`;
+    let url = `/api/integration/invoice-op-with-return-type-wrapped`;
     return this.apiService.get(url)
       .pipe(map((response: JsonResponse<CustomDTO>) => {
         return response.value;
-      }));
-  }
-
-  public formParamOp(param1: string, param2: number): Observable<void> {
-    let url = `/api/integration/formparamop`;
-    let formData: FormData = new FormData();
-    formData.append("param1", param1);
-    formData.append("param2", param2.toString());
-    return this.apiService.postWithFormData(url, formData, undefined, undefined, 'text')
-      .pipe(map((response: any) => {
-        if (response && (response.startsWith("\"") || response.startsWith("'"))) { response = response.substring(1, response.length - 1); }
-        return response;
       }));
   }
 }

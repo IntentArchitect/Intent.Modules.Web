@@ -14,7 +14,6 @@ namespace NetApplication.Application.Interfaces
     {
         Task<CustomDTO> QueryParamOp(string param1, int param2, CancellationToken cancellationToken = default);
         Task HeaderParamOp(string param1, CancellationToken cancellationToken = default);
-        Task FormParamOp(string param1, int param2, CancellationToken cancellationToken = default);
         Task RouteParamOp(string param1, CancellationToken cancellationToken = default);
         Task BodyParamOp(CustomDTO param1, CancellationToken cancellationToken = default);
         Task ThrowsException(CancellationToken cancellationToken = default);

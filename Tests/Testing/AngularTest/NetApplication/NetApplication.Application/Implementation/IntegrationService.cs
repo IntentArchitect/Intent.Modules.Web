@@ -19,6 +19,8 @@ namespace NetApplication.Application.Implementation
         public const int DefaultInt = 55;
         public const string ExceptionMessage = "Some exception message";
         public static readonly Guid DefaultGuid = Guid.Parse("b7698947-5237-4686-9571-442335426771");
+        public const string Param1Value = "param 1";
+        public const int Param2Value = 42;
 
         [IntentManaged(Mode.Fully, Body = Mode.Ignore)]
         public IntegrationService()
@@ -28,27 +30,42 @@ namespace NetApplication.Application.Implementation
         [IntentManaged(Mode.Fully, Body = Mode.Ignore)]
         public async Task<CustomDTO> QueryParamOp(string param1, int param2, CancellationToken cancellationToken = default)
         {
+            if (param1 != Param1Value)
+            {
+                throw new ArgumentException($@"{nameof(param1)} is not ""{Param1Value}"" but is ""{param1}""");
+            }
+            if (param2 != Param2Value)
+            {
+                throw new ArgumentException($@"{nameof(param2)} is not ""{Param2Value}"" but is ""{param2}""");
+            }
             return CustomDTO.Create(ReferenceNumber);
         }
 
         [IntentManaged(Mode.Fully, Body = Mode.Ignore)]
         public async Task HeaderParamOp(string param1, CancellationToken cancellationToken = default)
         {
-        }
-
-        [IntentManaged(Mode.Fully, Body = Mode.Ignore)]
-        public async Task FormParamOp(string param1, int param2, CancellationToken cancellationToken = default)
-        {
+            if (param1 != Param1Value)
+            {
+                throw new ArgumentException($@"{nameof(param1)} is not ""{Param1Value}"" but is ""{param1}""");
+            }
         }
 
         [IntentManaged(Mode.Fully, Body = Mode.Ignore)]
         public async Task RouteParamOp(string param1, CancellationToken cancellationToken = default)
         {
+            if (param1 != Param1Value)
+            {
+                throw new ArgumentException($@"{nameof(param1)} is not ""{Param1Value}"" but is ""{param1}""");
+            }
         }
 
         [IntentManaged(Mode.Fully, Body = Mode.Ignore)]
         public async Task BodyParamOp(CustomDTO param1, CancellationToken cancellationToken = default)
         {
+            if (param1.ReferenceNumber != ReferenceNumber)
+            {
+                throw new ArgumentException($@"{nameof(param1.ReferenceNumber)} is not ""{ReferenceNumber}"" but is ""{param1.ReferenceNumber}""");
+            }
         }
 
         [IntentManaged(Mode.Fully, Body = Mode.Ignore)]

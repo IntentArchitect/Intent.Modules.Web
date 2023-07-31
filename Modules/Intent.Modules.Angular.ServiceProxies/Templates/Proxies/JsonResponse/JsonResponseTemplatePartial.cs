@@ -18,8 +18,7 @@ namespace Intent.Modules.Angular.ServiceProxies.Templates.Proxies.JsonResponse
     [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
     partial class JsonResponseTemplate : TypeScriptTemplateBase<object>
     {
-        [IntentManaged(Mode.Fully)]
-        public const string TemplateId = "Intent.Angular.ServiceProxies.Proxies.JsonResponse";
+        [IntentManaged(Mode.Fully)] public const string TemplateId = "Intent.Angular.ServiceProxies.Proxies.JsonResponse";
 
         [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
         public JsonResponseTemplate(IOutputTarget outputTarget, object model = null) : base(TemplateId, outputTarget, model)
@@ -37,13 +36,27 @@ namespace Intent.Modules.Angular.ServiceProxies.Templates.Proxies.JsonResponse
 
         public override bool CanRunTemplate()
         {
-            return ExecutionContext
+            var proxyModels = ExecutionContext
                 .MetadataManager
                 .WebClient(ExecutionContext.GetApplicationConfig().Id)
-                .GetServiceProxyModels()
+                .GetServiceProxyModels();
+
+            var proxyOperations = proxyModels
                 .SelectMany(s => s.Operations)
-                .Where(x => x.InternalElement?.MappedElement?.Element is not null)
-                .Select(x => HttpEndpointModelFactory.GetEndpoint((IElement)x.InternalElement.MappedElement.Element))
+                .ToArray();
+
+            if (proxyOperations.Length > 0)
+            {
+                return proxyOperations
+                    .Where(x => x.InternalElement?.MappedElement?.Element is not null)
+                    .Select(x => HttpEndpointModelFactory.GetEndpoint((IElement)x.InternalElement.MappedElement.Element))
+                    .Where(x => x is not null)
+                    .Any(ServiceMetadataQueries.HasJsonWrappedReturnType);
+            }
+
+            return proxyModels
+                .SelectMany(s => s.MappedService.Operations)
+                .Select(x => HttpEndpointModelFactory.GetEndpoint(x.InternalElement))
                 .Where(x => x is not null)
                 .Any(ServiceMetadataQueries.HasJsonWrappedReturnType);
         }

@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="462804e3-701f-4f2a-951d-ac55760aa09a" type="Folder" typeId="4d95d53a-8855-4f35-aa82-e312643f5c5f">
+  <name>guards</name>
+  <display>guards</display>
+  <isAbstract>false</isAbstract>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>8b7cdc68-ec6e-43b0-8e24-e25b99271cd1</parentFolderId>
+  <stereotypes />
+  <metadata />
+  <childElements>
+    <childElement id="95f2d943-d737-456f-bc9b-a55650940ce0" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+      <name>Intent.NodeJS.NestJS.Authentication.Auth.Guards.JwtAuthGuard</name>
+      <display>Intent.NodeJS.NestJS.Authentication.Auth.Guards.JwtAuthGuard</display>
+      <externalReference>Intent.NodeJS.NestJS.Authentication</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>462804e3-701f-4f2a-951d-ac55760aa09a</parentFolderId>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
+      <childElements />
+    </childElement>
+    <childElement id="aad98015-e5f3-4982-b743-e9968a0dd668" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+      <name>Intent.NodeJS.NestJS.Authentication.Auth.Guards.LocalAuthGuard</name>
+      <display>Intent.NodeJS.NestJS.Authentication.Auth.Guards.LocalAuthGuard</display>
+      <externalReference>Intent.NodeJS.NestJS.Authentication</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>462804e3-701f-4f2a-951d-ac55760aa09a</parentFolderId>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
+      <childElements />
+    </childElement>
+    <childElement id="d6015776-9345-439d-8930-7d53aca1c7f8" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+      <name>Intent.NodeJS.NestJS.Authentication.Auth.Guards.PublicDecorator</name>
+      <display>Intent.NodeJS.NestJS.Authentication.Auth.Guards.PublicDecorator</display>
+      <externalReference>Intent.NodeJS.NestJS.Authentication</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>462804e3-701f-4f2a-951d-ac55760aa09a</parentFolderId>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
+      <childElements />
+    </childElement>
+    <childElement id="753bf444-63fc-4b46-8332-a341b6330314" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+      <name>Intent.NodeJS.NestJS.Authorization.RolesGuard</name>
+      <display>Intent.NodeJS.NestJS.Authorization.RolesGuard</display>
+      <externalReference>Intent.NodeJS.NestJS.Authorization</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>462804e3-701f-4f2a-951d-ac55760aa09a</parentFolderId>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
+      <childElements />
+    </childElement>
+  </childElements>
+</class>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="bcf9a721-f5e9-4657-b522-a90acbd98abf" type="Folder" typeId="4d95d53a-8855-4f35-aa82-e312643f5c5f">
+  <name>strategies</name>
+  <display>strategies</display>
+  <isAbstract>false</isAbstract>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>8b7cdc68-ec6e-43b0-8e24-e25b99271cd1</parentFolderId>
+  <stereotypes />
+  <metadata />
+  <childElements>
+    <childElement id="dc72336c-e8ff-4a9d-83c7-e6ea623d25cb" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+      <name>Intent.NodeJS.NestJS.Authentication.Auth.Strategies.JwtStrategy</name>
+      <display>Intent.NodeJS.NestJS.Authentication.Auth.Strategies.JwtStrategy</display>
+      <externalReference>Intent.NodeJS.NestJS.Authentication</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>bcf9a721-f5e9-4657-b522-a90acbd98abf</parentFolderId>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
+      <childElements />
+    </childElement>
+    <childElement id="2180d1ac-8d91-46b2-a3d6-6c5ca4f4f283" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+      <name>Intent.NodeJS.NestJS.Authentication.Auth.Strategies.LocalStrategy</name>
+      <display>Intent.NodeJS.NestJS.Authentication.Auth.Strategies.LocalStrategy</display>
+      <externalReference>Intent.NodeJS.NestJS.Authentication</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>bcf9a721-f5e9-4657-b522-a90acbd98abf</parentFolderId>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
+      <childElements />
+    </childElement>
+  </childElements>
+</class>

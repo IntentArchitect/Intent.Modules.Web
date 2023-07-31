@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="9c28e12d-551d-4456-87f7-97d6ccfe6381" type="Folder" typeId="4d95d53a-8855-4f35-aa82-e312643f5c5f">
+  <name>Integration</name>
+  <display>Integration</display>
+  <isAbstract>false</isAbstract>
+  <sort-children>by-type-then-by-name</sort-children>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>83cfdd2f-167f-4c4f-a12d-0a65bb680db5</parentFolderId>
+  <packageId>83cfdd2f-167f-4c4f-a12d-0a65bb680db5</packageId>
+  <packageName>NestJSApplication.Services</packageName>
+  <stereotypes />
+  <metadata />
+  <childElements />
+</class>

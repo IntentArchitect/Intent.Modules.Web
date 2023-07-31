@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="19b31331-ac05-4a07-9368-3938b5816a98" type="Role" typeId="8663c9f9-2852-45e7-aaa1-0883a2e6f1da">
+  <name>Root</name>
+  <display>Root</display>
+  <externalReference>a48ad737-4022-4667-8958-129d7e442959</externalReference>
+  <isAbstract>false</isAbstract>
+  <order>2</order>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>b122ea6c-7f7f-4917-8548-066afb97552f</parentFolderId>
+  <stereotypes />
+  <metadata />
+  <childElements />
+</class>

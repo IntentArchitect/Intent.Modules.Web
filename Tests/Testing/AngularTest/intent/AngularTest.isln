@@ -6,9 +6,11 @@
   <iconType>UrlImagePath</iconType>
   <metadataRelativePath>Intent.Metadata</metadataRelativePath>
   <modulesCacheRelativePath>.intent/modules</modulesCacheRelativePath>
-  <lastUsedApplicationTemplate id="Intent.ApplicationTemplate.AspNetCore6.0.CleanArchitecture" version="4.2.16" />
+  <lastUsedApplicationTemplate id="Intent.ApplicationTemplate.NestJS.Web" version="3.4.1" />
   <applications>
     <application id="00914bae-0287-4383-8d4e-5ae4591c7a91" name="angularApp" relativePath="angularApp/angularApp.application.config" />
     <application id="537b3a33-dc26-4e92-8d8c-99951c8f912c" name="NetApplication" relativePath="NetApplication/NetApplication.application.config" />
+    <application id="7510940e-4d4d-49bf-8086-8353ca131d36" name="JavaApplication" relativePath="JavaApplication/JavaApplication.application.config" />
+    <application id="121dbd73-3294-4b02-8c5a-34c59a478a2e" name="NestJSApplication" relativePath="NestJSApplication/NestJSApplication.application.config" />
   </applications>
 </solution>
