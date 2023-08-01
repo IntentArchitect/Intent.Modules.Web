@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="dbdae4b0-882e-489b-8c8e-1b6b8923c33b" type="Folder" typeId="4d95d53a-8855-4f35-aa82-e312643f5c5f">
+  <name>JavaApplication</name>
+  <display>JavaApplication</display>
+  <externalReference>d9187998-c1d2-40b6-836b-263c442d3723</externalReference>
+  <isAbstract>false</isAbstract>
+  <sort-children>by-type-then-by-name</sort-children>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>e4c9378a-4b3d-4fad-8fd4-76d976c07dd7</parentFolderId>
+  <packageId>a74d0bf7-608a-43e5-8273-e8fbcf248fe4</packageId>
+  <packageName>root</packageName>
+  <stereotypes />
+  <metadata />
+  <childElements>
+    <childElement id="f62ca960-150b-43a7-a270-a0e9b9faddd7" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+      <name>Intent.Java.SpringBoot.Application</name>
+      <display>Intent.Java.SpringBoot.Application</display>
+      <externalReference>Intent.Java.SpringBoot</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>dbdae4b0-882e-489b-8c8e-1b6b8923c33b</parentFolderId>
+      <packageId>a74d0bf7-608a-43e5-8273-e8fbcf248fe4</packageId>
+      <packageName>root</packageName>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
+      <childElements />
+    </childElement>
+    <childElement id="69c85215-bfaa-4b3e-92b5-a913994dc795" type="Role" typeId="8663c9f9-2852-45e7-aaa1-0883a2e6f1da">
+      <name>Startup</name>
+      <display>Startup</display>
+      <externalReference>357d0b07-49c7-4b72-8e21-33434415b152</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>dbdae4b0-882e-489b-8c8e-1b6b8923c33b</parentFolderId>
+      <packageId>a74d0bf7-608a-43e5-8273-e8fbcf248fe4</packageId>
+      <packageName>root</packageName>
+      <stereotypes />
+      <metadata />
+      <childElements />
+    </childElement>
+  </childElements>
+</class>

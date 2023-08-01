@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="4052110e-49c3-4fe4-8e84-e00b1f9f547e" type="Folder" typeId="4d95d53a-8855-4f35-aa82-e312643f5c5f">
+  <name>application</name>
+  <display>application</display>
+  <externalReference>acb89909-044e-4485-ab3d-ac5f0f1a95ec</externalReference>
+  <isAbstract>false</isAbstract>
+  <sort-children>by-type-then-by-name</sort-children>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>dbdae4b0-882e-489b-8c8e-1b6b8923c33b</parentFolderId>
+  <packageId>a74d0bf7-608a-43e5-8273-e8fbcf248fe4</packageId>
+  <packageName>root</packageName>
+  <stereotypes />
+  <metadata />
+  <childElements>
+    <childElement id="2d5100c3-2f36-4a25-88ad-7adbd5c0da6b" type="Role" typeId="8663c9f9-2852-45e7-aaa1-0883a2e6f1da">
+      <name>Application</name>
+      <display>Application</display>
+      <externalReference>8d0b1980-861b-4326-ba2f-c55740c5a9d9</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>4052110e-49c3-4fe4-8e84-e00b1f9f547e</parentFolderId>
+      <packageId>a74d0bf7-608a-43e5-8273-e8fbcf248fe4</packageId>
+      <packageName>root</packageName>
+      <stereotypes />
+      <metadata />
+      <childElements />
+    </childElement>
+  </childElements>
+</class>

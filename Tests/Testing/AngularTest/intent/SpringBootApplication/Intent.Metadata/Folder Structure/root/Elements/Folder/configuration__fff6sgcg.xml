@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="3f995dc2-da6a-4a3a-822d-9c7532742d43" type="Folder" typeId="4d95d53a-8855-4f35-aa82-e312643f5c5f">
+  <name>configuration</name>
+  <display>configuration</display>
+  <isAbstract>false</isAbstract>
+  <sort-children>by-type-then-by-name</sort-children>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>dbdae4b0-882e-489b-8c8e-1b6b8923c33b</parentFolderId>
+  <packageId>a74d0bf7-608a-43e5-8273-e8fbcf248fe4</packageId>
+  <packageName>root</packageName>
+  <stereotypes />
+  <metadata />
+  <childElements>
+    <childElement id="8829a780-16b1-4721-a4d8-0f12a0d8e974" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+      <name>Intent.Java.ModelMapper.ModelMapperBean</name>
+      <display>Intent.Java.ModelMapper.ModelMapperBean</display>
+      <externalReference>Intent.Java.ModelMapper</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>3f995dc2-da6a-4a3a-822d-9c7532742d43</parentFolderId>
+      <packageId>a74d0bf7-608a-43e5-8273-e8fbcf248fe4</packageId>
+      <packageName>root</packageName>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
+      <childElements />
+    </childElement>
+    <childElement id="dad39aa5-6e73-47a3-85b8-c5f036e06149" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+      <name>Intent.Java.Spring.Cors.CorsConfig</name>
+      <display>Intent.Java.Spring.Cors.CorsConfig</display>
+      <externalReference>Intent.Java.Spring.Cors</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>3f995dc2-da6a-4a3a-822d-9c7532742d43</parentFolderId>
+      <packageId>a74d0bf7-608a-43e5-8273-e8fbcf248fe4</packageId>
+      <packageName>root</packageName>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
+      <childElements />
+    </childElement>
+  </childElements>
+</class>

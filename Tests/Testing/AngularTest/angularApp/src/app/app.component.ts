@@ -26,7 +26,7 @@ export class AppComponent implements OnInit {
       this.integrationService.queryParamOp("param 1", 42),
       this.integrationService.headerParamOp("param 1"),
       this.integrationService.routeParamOp("param 1"),
-      this.integrationService.bodyParamOp({referenceNumber: "refnumber_1234"}),
+      this.integrationService.bodyParamOp({ReferenceNumber: "refnumber_1234"}),
       this.integrationService.getWrappedPrimitiveGuid(),
       this.integrationService.getWrappedPrimitiveString(),
       this.integrationService.getWrappedPrimitiveInt(),

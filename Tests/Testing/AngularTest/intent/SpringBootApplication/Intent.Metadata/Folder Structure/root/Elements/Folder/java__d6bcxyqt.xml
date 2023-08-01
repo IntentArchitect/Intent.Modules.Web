@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="fe2996b0-3bc1-4863-8bbd-5193d182fd56" type="Folder" typeId="4d95d53a-8855-4f35-aa82-e312643f5c5f">
+  <name>java</name>
+  <display>java</display>
+  <externalReference>a8fff636-8ce8-48cf-88ff-dca5db9d57f4</externalReference>
+  <isAbstract>false</isAbstract>
+  <sort-children>by-type-then-by-name</sort-children>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>d811e54c-33d9-4329-9163-652685caa019</parentFolderId>
+  <packageId>a74d0bf7-608a-43e5-8273-e8fbcf248fe4</packageId>
+  <packageName>root</packageName>
+  <stereotypes />
+  <metadata />
+  <childElements />
+</class>

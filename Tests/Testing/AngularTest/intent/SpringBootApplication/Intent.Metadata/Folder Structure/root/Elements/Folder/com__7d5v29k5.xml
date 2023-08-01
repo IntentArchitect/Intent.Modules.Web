@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="4011f96a-1e0e-46ba-a422-cc1d45317b67" type="Folder" typeId="4d95d53a-8855-4f35-aa82-e312643f5c5f">
+  <name>com</name>
+  <display>com</display>
+  <externalReference>60e9d8fb-e1af-466e-a754-afcb5f6664e8</externalReference>
+  <isAbstract>false</isAbstract>
+  <sort-children>by-type-then-by-name</sort-children>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>fe2996b0-3bc1-4863-8bbd-5193d182fd56</parentFolderId>
+  <packageId>a74d0bf7-608a-43e5-8273-e8fbcf248fe4</packageId>
+  <packageName>root</packageName>
+  <stereotypes />
+  <metadata />
+  <childElements />
+</class>
