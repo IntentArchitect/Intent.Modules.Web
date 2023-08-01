@@ -1,3 +1,3 @@
 export interface CustomDTO {
-    ReferenceNumber: string;
+    referenceNumber: string;
 }

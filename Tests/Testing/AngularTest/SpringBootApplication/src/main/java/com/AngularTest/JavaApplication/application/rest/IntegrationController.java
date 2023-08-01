@@ -68,7 +68,7 @@ public class IntegrationController {
     @ApiResponses(value = {
         @ApiResponse(responseCode = "201", description = "Successfully created."),
         @ApiResponse(responseCode = "400", description = "One or more validation errors have occurred.") })
-    public void BodyParamOp(@Valid @Parameter(required = true)  CustomDTO param1) {
+    public void BodyParamOp(@Valid @Parameter(required = true) @RequestBody CustomDTO param1) {
         integrationService.BodyParamOp(param1);
     }
 

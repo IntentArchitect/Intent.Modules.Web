@@ -41,7 +41,7 @@
         <isNullable>false</isNullable>
         <isCollection>false</isCollection>
         <isRequired>true</isRequired>
-        <typePackageName>JavaApplication.Services</typePackageName>
+        <typePackageName>SpringBootApplication.Services</typePackageName>
         <typePackageId>66c7452c-e801-4e16-96d3-6d016aa9c5a9</typePackageId>
         <stereotypes />
         <genericTypeParameters />
@@ -345,7 +345,7 @@
             <isNullable>false</isNullable>
             <isCollection>false</isCollection>
             <isRequired>true</isRequired>
-            <typePackageName>JavaApplication.Services</typePackageName>
+            <typePackageName>SpringBootApplication.Services</typePackageName>
             <typePackageId>66c7452c-e801-4e16-96d3-6d016aa9c5a9</typePackageId>
             <stereotypes />
             <genericTypeParameters />
@@ -421,7 +421,7 @@
             <isNullable>false</isNullable>
             <isCollection>false</isCollection>
             <isRequired>true</isRequired>
-            <typePackageName>JavaApplication.Services</typePackageName>
+            <typePackageName>SpringBootApplication.Services</typePackageName>
             <typePackageId>66c7452c-e801-4e16-96d3-6d016aa9c5a9</typePackageId>
             <stereotypes />
             <genericTypeParameters />
@@ -778,7 +778,7 @@
         <isNullable>false</isNullable>
         <isCollection>false</isCollection>
         <isRequired>true</isRequired>
-        <typePackageName>JavaApplication.Services</typePackageName>
+        <typePackageName>SpringBootApplication.Services</typePackageName>
         <typePackageId>66c7452c-e801-4e16-96d3-6d016aa9c5a9</typePackageId>
         <stereotypes />
         <genericTypeParameters />

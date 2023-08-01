@@ -45,7 +45,7 @@ async function performSuccessfulServiceCalls(url: string) {
   let aggregateObservable = fixture.componentInstance.performSuccessfulServiceCalls();
   let fetchedResults = await lastValueFrom(aggregateObservable);
   expect(fetchedResults).toEqual([
-    { ReferenceNumber: 'refnumber_1234' }, '', '', '', 'b7698947-5237-4686-9571-442335426771', 'string value', 55, 'b7698947-5237-4686-9571-442335426771', 'string value', '55', ['string value'], undefined
+    { referenceNumber: 'refnumber_1234' }, '', '', '', 'b7698947-5237-4686-9571-442335426771', 'string value', 55, 'b7698947-5237-4686-9571-442335426771', 'string value', '55', ['string value'], undefined
   ]);
 }
 
