@@ -2,7 +2,9 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Intent.Metadata.Models;
+using Intent.Modelers.Types.ServiceProxies.Api;
 using Intent.Modules.Common;
+using Intent.Modules.Common.Types.Api;
 using Intent.RoslynWeaver.Attributes;
 
 [assembly: DefaultIntentManaged(Mode.Fully)]
@@ -32,6 +34,21 @@ namespace Intent.Modelers.WebClient.Api
         public string Name => UnderlyingPackage.Name;
         public IEnumerable<IStereotype> Stereotypes => UnderlyingPackage.Stereotypes;
         public string FileLocation => UnderlyingPackage.FileLocation;
+
+        public IList<FolderModel> Folders => UnderlyingPackage.ChildElements
+            .GetElementsOfType(FolderModel.SpecializationTypeId)
+            .Select(x => new FolderModel(x))
+            .ToList();
+
+        public IList<ServiceProxyModel> ServiceProxies => UnderlyingPackage.ChildElements
+            .GetElementsOfType(ServiceProxyModel.SpecializationTypeId)
+            .Select(x => new ServiceProxyModel(x))
+            .ToList();
+
+        public IList<TypeDefinitionModel> Types => UnderlyingPackage.ChildElements
+            .GetElementsOfType(TypeDefinitionModel.SpecializationTypeId)
+            .Select(x => new TypeDefinitionModel(x))
+            .ToList();
 
     }
 }

@@ -9,14 +9,6 @@
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
-      <ProjectId>23b426b9-cb31-479c-8cad-e99c49ef3639</ProjectId>
-      <CorrelationId>Intent.ModuleBuilder.Templates.Api.ApiElementExtensionModel#4706eaba-1977-4fc1-900d-14f7691f5fc0</CorrelationId>
-      <OverwriteBehaviour>always</OverwriteBehaviour>
-      <ApplicationRelativeFilePath>Api/ModuleExtensionModel.cs</ApplicationRelativeFilePath>
-      <ProjectRelativeFilePath>ModuleExtensionModel.cs</ProjectRelativeFilePath>
-      <IsIgnored>false</IsIgnored>
-    </FileLog>
-    <FileLog>
       <ProjectId>044396c8-ade8-4ce4-b0db-ffd860f3005b</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.Templates.TemplateDecorator#0ea5db52-70fd-4918-b3d7-9e960c841f99</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
@@ -46,14 +38,6 @@
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Intent.Modules.Angular.ServiceProxies.csproj</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Intent.Modules.Angular.ServiceProxies.csproj</ProjectRelativeFilePath>
-      <IsIgnored>false</IsIgnored>
-    </FileLog>
-    <FileLog>
-      <ProjectId>f699e443-db23-4c25-b7a4-2b2dc1235418</ProjectId>
-      <CorrelationId>Intent.ModuleBuilder.DesignerSettings#d609adc5-ceab-4079-8201-c9d04c4b7303</CorrelationId>
-      <OverwriteBehaviour>always</OverwriteBehaviour>
-      <ApplicationRelativeFilePath>modelers/Service Proxies Extension.designer.settings</ApplicationRelativeFilePath>
-      <ProjectRelativeFilePath>Service Proxies Extension.designer.settings</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>

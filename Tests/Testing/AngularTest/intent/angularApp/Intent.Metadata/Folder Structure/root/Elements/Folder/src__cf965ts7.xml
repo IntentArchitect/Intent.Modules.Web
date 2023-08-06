@@ -121,7 +121,7 @@
       </metadata>
       <childElements />
     </childElement>
-    <childElement id="f465ac2b-9ea7-4744-a342-b51d60213bea" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+    <childElement id="cdc51b3f-c025-4aad-b007-81b5e4192cc2" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
       <name>Intent.Angular.ServiceProxies.Proxies.AngularDTO</name>
       <display>Intent.Angular.ServiceProxies.Proxies.AngularDTO</display>
       <externalReference>Intent.Angular.ServiceProxies</externalReference>
@@ -135,7 +135,7 @@
       </metadata>
       <childElements />
     </childElement>
-    <childElement id="ce518cd0-e145-4c2c-b6b1-1e259a35d7a9" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+    <childElement id="76c36347-8cc2-4657-9d1d-fa5b26445d63" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
       <name>Intent.Angular.ServiceProxies.Proxies.AngularServiceProxy</name>
       <display>Intent.Angular.ServiceProxies.Proxies.AngularServiceProxy</display>
       <externalReference>Intent.Angular.ServiceProxies</externalReference>
@@ -149,7 +149,7 @@
       </metadata>
       <childElements />
     </childElement>
-    <childElement id="4aae30c2-9df4-4a49-88ff-008d33d30d38" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+    <childElement id="c187ad74-69d6-4856-a957-8bfe63d817e7" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
       <name>Intent.Angular.ServiceProxies.Proxies.JsonResponse</name>
       <display>Intent.Angular.ServiceProxies.Proxies.JsonResponse</display>
       <externalReference>Intent.Angular.ServiceProxies</externalReference>

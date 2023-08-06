@@ -70,5 +70,29 @@
       <metadata />
       <childElements />
     </childElement>
+    <childElement id="bf8d7f93-086c-4d5a-8c7f-1f02884b52e0" type="Designer Reference" typeId="ace8c966-1a7f-487e-b21b-dd601e57f13f">
+      <name>reference</name>
+      <display>reference: Service Proxy Types</display>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <typeReference id="e7c1be16-78fe-4b28-a760-f746dded6b7a">
+        <typeId>8cf2b93d-9449-4e40-af62-12daf6f7e0f4</typeId>
+        <isNavigable>true</isNavigable>
+        <isNullable>false</isNullable>
+        <isCollection>false</isCollection>
+        <isRequired>true</isRequired>
+        <typePackageName>Intent.Modelers.Types.ServiceProxies</typePackageName>
+        <typePackageId>b58a9e76-55b8-45ec-a22b-bcdfcb6fd833</typePackageId>
+        <stereotypes />
+        <genericTypeParameters />
+      </typeReference>
+      <isMapped>false</isMapped>
+      <parentFolderId>f492faed-0665-4513-9853-5a230721786f</parentFolderId>
+      <packageId>2024876e-119b-4386-bc63-18e575f4e416</packageId>
+      <packageName>Intent.Modelers.WebClient</packageName>
+      <stereotypes />
+      <metadata />
+      <childElements />
+    </childElement>
   </childElements>
 </class>
