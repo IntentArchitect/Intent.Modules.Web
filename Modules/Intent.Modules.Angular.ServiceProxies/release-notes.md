@@ -1,3 +1,7 @@
+### Version 4.0.0
+
+- Updated to use latest Service Proxy modules.
+
 ### Version 3.4.2
 
 - Updated dependencies and supported client versions to prevent warnings when used with Intent Architect 4.x.

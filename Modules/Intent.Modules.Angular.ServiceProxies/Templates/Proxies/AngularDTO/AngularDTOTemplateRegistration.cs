@@ -10,6 +10,7 @@ using Intent.Modelers.WebClient.Api;
 using Intent.Modules.Angular.Api;
 using Intent.Modules.Common;
 using Intent.Modules.Common.Registrations;
+using Intent.Modules.Modelers.Types.ServiceProxies;
 using Intent.RoslynWeaver.Attributes;
 using Intent.Templates;
 
@@ -19,7 +20,7 @@ using Intent.Templates;
 namespace Intent.Modules.Angular.ServiceProxies.Templates.Proxies.AngularDTO
 {
     [IntentManaged(Mode.Merge, Body = Mode.Merge, Signature = Mode.Fully)]
-    public class AngularDTOTemplateRegistration : FilePerModelTemplateRegistration<ServiceProxyDTOModel>
+    public class AngularDTOTemplateRegistration : FilePerModelTemplateRegistration<DTOModel>
     {
         private readonly IMetadataManager _metadataManager;
 
@@ -31,15 +32,15 @@ namespace Intent.Modules.Angular.ServiceProxies.Templates.Proxies.AngularDTO
         public override string TemplateId => AngularDTOTemplate.TemplateId;
 
         [IntentManaged(Mode.Fully)]
-        public override ITemplate CreateTemplateInstance(IOutputTarget outputTarget, ServiceProxyDTOModel model)
+        public override ITemplate CreateTemplateInstance(IOutputTarget outputTarget, DTOModel model)
         {
             return new AngularDTOTemplate(outputTarget, model);
         }
 
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]
-        public override IEnumerable<ServiceProxyDTOModel> GetModels(IApplication application)
+        public override IEnumerable<DTOModel> GetModels(IApplication application)
         {
-            return _metadataManager.WebClient(application).GetProxyMappedServiceDTOModels();
+            return _metadataManager.WebClient(application).GetMappedServiceProxyDTOModels();
         }
 
 

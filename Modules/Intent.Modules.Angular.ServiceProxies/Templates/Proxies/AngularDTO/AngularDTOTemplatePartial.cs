@@ -5,6 +5,7 @@ using System.Text;
 using Intent.Angular.ServiceProxies.Api;
 using Intent.Engine;
 using Intent.Metadata.Models;
+using Intent.Modelers.Services.Api;
 using Intent.Modelers.Types.ServiceProxies.Api;
 using Intent.Modelers.WebClient.Angular.Api;
 using Intent.Modules.Common.Templates;
@@ -19,13 +20,13 @@ using Intent.Templates;
 namespace Intent.Modules.Angular.ServiceProxies.Templates.Proxies.AngularDTO
 {
     [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
-    partial class AngularDTOTemplate : TypeScriptTemplateBase<Intent.Modelers.Types.ServiceProxies.Api.ServiceProxyDTOModel>
+    partial class AngularDTOTemplate : TypeScriptTemplateBase<Intent.Modelers.Services.Api.DTOModel>
     {
         [IntentManaged(Mode.Fully)]
         public const string TemplateId = "Intent.Angular.ServiceProxies.Proxies.AngularDTO";
 
         [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
-        public AngularDTOTemplate(IOutputTarget outputTarget, Intent.Modelers.Types.ServiceProxies.Api.ServiceProxyDTOModel model) : base(TemplateId, outputTarget, model)
+        public AngularDTOTemplate(IOutputTarget outputTarget, Intent.Modelers.Services.Api.DTOModel model) : base(TemplateId, outputTarget, model)
         {
             AddTypeSource(TemplateId);
         }

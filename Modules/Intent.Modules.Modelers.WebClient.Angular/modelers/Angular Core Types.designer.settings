@@ -20,8 +20,18 @@
           <specializationType>Enum</specializationType>
           <specializationTypeId>85fba0e9-9161-4c85-a603-a229ef312beb</specializationTypeId>
           <text>New Enum</text>
+          <shortcut>ctrl + shift + e</shortcut>
           <defaultName>NewEnum</defaultName>
           <icon type="UrlImagePath" source="./img/icons/uml/Enumeration_256x.png" />
+          <allowMultiple>true</allowMultiple>
+        </option>
+        <option type="element">
+          <specializationType>Type-Definition</specializationType>
+          <specializationTypeId>d4e577cd-ad05-4180-9a2e-fff4ddea0e1e</specializationTypeId>
+          <text>New Type</text>
+          <shortcut>ctrl + shift + t</shortcut>
+          <defaultName>NewType</defaultName>
+          <icon type="UrlImagePath" source="./img/icons/uml/DataType_256x.png" />
           <allowMultiple>true</allowMultiple>
         </option>
         <option type="stereotype-definition">
@@ -37,6 +47,7 @@
       <typeOrder>
         <type>Module</type>
         <type>Enum</type>
+        <type>Type-Definition</type>
         <type>Stereotype-Definition</type>
       </typeOrder>
     </packageExtension>

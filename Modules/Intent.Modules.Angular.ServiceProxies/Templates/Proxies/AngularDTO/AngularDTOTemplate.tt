@@ -1,4 +1,4 @@
-<#@ template language="C#" inherits="TypeScriptTemplateBase<Intent.Modelers.Types.ServiceProxies.Api.ServiceProxyDTOModel>" #>
+<#@ template language="C#" inherits="TypeScriptTemplateBase<Intent.Modelers.Services.Api.DTOModel>" #>
 <#@ assembly name="System.Core" #>
 <#@ import namespace="System.Collections.Generic" #>
 <#@ import namespace="System.Linq" #>

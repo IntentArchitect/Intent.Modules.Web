@@ -13,12 +13,12 @@ namespace Intent.Modules.Angular.ServiceProxies.Templates
 {
     public static class TemplateExtensions
     {
-        public static string GetAngularDTOName<T>(this IIntentTemplate<T> template) where T : Intent.Modelers.Types.ServiceProxies.Api.ServiceProxyDTOModel
+        public static string GetAngularDTOName<T>(this IIntentTemplate<T> template) where T : Intent.Modelers.Services.Api.DTOModel
         {
             return template.GetTypeName(AngularDTOTemplate.TemplateId, template.Model);
         }
 
-        public static string GetAngularDTOName(this IIntentTemplate template, Intent.Modelers.Types.ServiceProxies.Api.ServiceProxyDTOModel model)
+        public static string GetAngularDTOName(this IIntentTemplate template, Intent.Modelers.Services.Api.DTOModel model)
         {
             return template.GetTypeName(AngularDTOTemplate.TemplateId, model);
         }

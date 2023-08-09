@@ -214,7 +214,7 @@
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Intent.Modelers.WebClient.Angular.imodspec</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Intent.Modelers.WebClient.Angular.imodspec</ProjectRelativeFilePath>
-      <IsIgnored>false</IsIgnored>
+      <IsIgnored>true</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>698215d3-bf76-4b81-b918-c0f9ad52f524</ProjectId>

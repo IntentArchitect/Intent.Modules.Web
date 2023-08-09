@@ -30,7 +30,7 @@
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Intent.Angular.ServiceProxies.imodspec</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Intent.Angular.ServiceProxies.imodspec</ProjectRelativeFilePath>
-      <IsIgnored>false</IsIgnored>
+      <IsIgnored>true</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>6d139c9a-784d-48b9-a4af-e24859654dba</ProjectId>
