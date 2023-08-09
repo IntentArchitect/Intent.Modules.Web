@@ -222,14 +222,6 @@
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
-      <ProjectId>6ce75da5-28ec-4529-9ac7-43c47fdc5ae8</ProjectId>
-      <CorrelationId>Intent.Angular.ServiceProxies.Proxies.AngularDTO#5c28c5cd-2655-45dd-b425-475830635a92</CorrelationId>
-      <OverwriteBehaviour>always</OverwriteBehaviour>
-      <ApplicationRelativeFilePath>../../angularApp/src/app/models/custom.dto.ts</ApplicationRelativeFilePath>
-      <ProjectRelativeFilePath>app/models/custom.dto.ts</ProjectRelativeFilePath>
-      <IsIgnored>false</IsIgnored>
-    </FileLog>
-    <FileLog>
       <ProjectId>a2a02835-faa3-4f1c-a5d2-77dac9b93687</ProjectId>
       <CorrelationId>Intent.Angular.Environment.EnvironmentDotDevelopment</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
@@ -251,6 +243,14 @@
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>../../angularApp/src/json-response.ts</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>json-response.ts</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>6ce75da5-28ec-4529-9ac7-43c47fdc5ae8</ProjectId>
+      <CorrelationId>Intent.Angular.ServiceProxies.Proxies.AngularDTO#5c28c5cd-2655-45dd-b425-475830635a92</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>../../angularApp/src/models/net-application/services/integration/custom.dto.ts</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>models/net-application/services/integration/custom.dto.ts</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
   </FileLogs>

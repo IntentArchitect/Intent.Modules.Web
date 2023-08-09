@@ -1,4 +1,4 @@
-import { CustomDTO } from './models/custom.dto';
+import { CustomDTO } from './../models/net-application/services/integration/custom.dto';
 import { ApiService } from './core/api.service';
 import { JsonResponse } from './../json-response';
 import { Injectable } from '@angular/core';

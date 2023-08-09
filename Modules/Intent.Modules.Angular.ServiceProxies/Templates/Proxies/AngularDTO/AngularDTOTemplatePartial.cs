@@ -1,15 +1,6 @@
-using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using Intent.Angular.ServiceProxies.Api;
 using Intent.Engine;
-using Intent.Metadata.Models;
-using Intent.Modelers.Services.Api;
-using Intent.Modelers.Types.ServiceProxies.Api;
-using Intent.Modelers.WebClient.Angular.Api;
 using Intent.Modules.Common.Templates;
-using Intent.Modules.Common.Types.Api;
 using Intent.Modules.Common.TypeScript.Templates;
 using Intent.RoslynWeaver.Attributes;
 using Intent.Templates;
@@ -39,7 +30,7 @@ namespace Intent.Modules.Angular.ServiceProxies.Templates.Proxies.AngularDTO
             return new TypeScriptFileConfig(
                 overwriteBehaviour: OverwriteBehaviour.Always,
                 fileName: $"{Model.Name.ToKebabCase().RemoveSuffix("-dto")}.dto",
-                relativeLocation: $"{string.Join("/", Model.GetModule().InternalElement.GetFolderPath(Model.GetModule().GetModuleName().ToKebabCase(), "models"))}",
+                relativeLocation: this.GetPackageBasedRelativeLocation(new[] { "models" }),
                 className: $"{Model.Name}"
             );
         }
