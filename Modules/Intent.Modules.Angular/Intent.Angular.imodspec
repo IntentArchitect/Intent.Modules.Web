@@ -1,7 +1,7 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <package>
   <id>Intent.Angular</id>
-  <version>4.0.0-alpha.2</version>
+  <version>4.0.0-alpha.3</version>
   <supportedClientVersions>[3.3.0-pre.0, 5.0.0-a)</supportedClientVersions>
   <summary>Experimental Angular automation systems</summary>
   <description>Experimental Angular automation systems</description>
@@ -61,6 +61,10 @@
       <role>Front End</role>
       <location>src/app/intent</location>
     </template>
+    <template id="Intent.Modules.Angular.Templates.StaticContentTemplateRegistrations.InitialFilesStaticContentTemplateRegistration" externalReference="77c0d8b5-42a9-4bcf-9cdd-deb9e6e1a745">
+      <role>Front End</role>
+      <location></location>
+    </template>
   </templates>
   <decorators>
     <decorator id="Angular.AngularComponentHtmlTemplate.PagedSearchDecorator" />
@@ -76,13 +80,16 @@
     </detect>
   </interoperability>
   <dependencies>
-    <dependency id="Intent.Common" version="3.4.1" />
+    <dependency id="Intent.Common" version="3.4.3" />
     <dependency id="Intent.Common.Html" version="3.3.5" />
     <dependency id="Intent.Common.Types" version="3.3.9" />
     <dependency id="Intent.Common.TypeScript" version="3.4.2" />
-    <dependency id="Intent.Modelers.Services" version="3.4.6" />
-    <dependency id="Intent.Modelers.WebClient" version="3.3.4" />
-    <dependency id="Intent.Modelers.WebClient.Angular" version="3.3.4" />
+    <dependency id="Intent.Modelers.Domain" version="3.4.6" />
+    <dependency id="Intent.Modelers.Services" version="3.4.7" />
+    <dependency id="Intent.Modelers.Services.CQRS" version="4.0.2" />
+    <dependency id="Intent.Modelers.Types.ServiceProxies" version="5.0.0" />
+    <dependency id="Intent.Modelers.WebClient" version="4.0.0" />
+    <dependency id="Intent.Modelers.WebClient.Angular" version="4.0.0-alpha.1" />
   </dependencies>
   <files>
     <file src="$outDir$/$id$.dll" />

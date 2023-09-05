@@ -34,7 +34,6 @@ namespace Intent.Modules.Angular.Templates.Module.AngularModule
             if (Model.IsRootModule())
             {
                 _angularImports.Add(this.UseType("BrowserModule", "@angular/platform-browser"));
-                _angularImports.Add(this.UseType("BrowserAnimationsModule", "@angular/platform-browser/animations"));
                 _components.Add(this.UseType("AppComponent", "./app.component"));
             }
             else
@@ -96,12 +95,8 @@ namespace Intent.Modules.Angular.Templates.Module.AngularModule
             {
                 return "";
             }
-            return $"{System.Environment.NewLine}" + string.Join($"{System.Environment.NewLine}", _imports) + $"{System.Environment.NewLine}  ";
-        }
 
-        public bool HasComponents()
-        {
-            return _components.Any();
+            return $"{System.Environment.NewLine}" + string.Join($"{System.Environment.NewLine}", _imports) + $"{System.Environment.NewLine}  ";
         }
 
         public string GetComponents()
@@ -110,12 +105,8 @@ namespace Intent.Modules.Angular.Templates.Module.AngularModule
             {
                 return "";
             }
-            return $"{System.Environment.NewLine}    " + string.Join($",{System.Environment.NewLine}    ", _components) + $"{System.Environment.NewLine}  ";
-        }
 
-        public bool HasProviders()
-        {
-            return _providers.Any();
+            return $"{System.Environment.NewLine}    " + string.Join($",{System.Environment.NewLine}    ", _components) + $"{System.Environment.NewLine}  ";
         }
 
         public string GetProviders()
@@ -124,6 +115,7 @@ namespace Intent.Modules.Angular.Templates.Module.AngularModule
             {
                 return "";
             }
+
             return $"{System.Environment.NewLine}    " + string.Join($",{System.Environment.NewLine}    ", _providers) + $"{System.Environment.NewLine}  ";
         }
 
@@ -149,7 +141,7 @@ namespace Intent.Modules.Angular.Templates.Module.AngularModule
                 return "";
             }
             return @"
-    " + string.Join($@",
+    " + string.Join(@",
     ", _angularImports) + @"
   ";
         }
@@ -162,40 +154,6 @@ namespace Intent.Modules.Angular.Templates.Module.AngularModule
                 fileName: $"{ModuleName.ToKebabCase()}.module",
                 relativeLocation: $"{string.Join("/", Model.GetParentFolderNames().Concat(new[] { ModuleName.ToKebabCase() }))}",
                 className: "${ModuleName}Module");
-        }
-    }
-
-    internal class AngularComponentInfo
-    {
-        public AngularComponentInfo(string componentName, string location)
-        {
-            ComponentName = componentName;
-            Location = location;
-        }
-
-        public string ComponentName { get; set; }
-        public string Location { get; set; }
-
-        public override string ToString()
-        {
-            return $"Component: {ComponentName} - {Location}";
-        }
-    }
-
-    internal class AngularProviderInfo
-    {
-        public AngularProviderInfo(string providerName, string location)
-        {
-            ProviderName = providerName;
-            Location = location;
-        }
-
-        public string ProviderName { get; set; }
-        public string Location { get; set; }
-
-        public override string ToString()
-        {
-            return $"Provider: {ProviderName} - {Location}";
         }
     }
 

@@ -80,14 +80,9 @@ namespace Intent.Modules.Angular.Templates.Module.AngularRoutingModule
 
         private string GetNgModuleImports()
         {
-            if (Model.Module.IsRootModule())
-            {
-                AddImport("PreloadAllModules", "@angular/router");
-                return $@"RouterModule.forRoot(routes, {{
-    preloadingStrategy: PreloadAllModules
-  }})";
-            }
-            return @"RouterModule.forChild(routes)";
+            return Model.Module.IsRootModule()
+                ? "RouterModule.forRoot(routes)"
+                : "RouterModule.forChild(routes)";
         }
     }
 }

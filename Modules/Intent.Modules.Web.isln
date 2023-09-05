@@ -14,5 +14,6 @@
     <application id="89c7df59-3ece-4e22-ac0d-d612722c811c" name="Modelers.WebClient.Angular" relativePath="Intent.Modules.Modelers.WebClient.Angular/Intent.Modules.Modelers.WebClient.Angular.application.config" />
     <application id="6e7fc874-237a-45f0-a0b2-307a17ea65bf" name="Intent.ApplicationTemplates.Web" relativePath="Intent.ApplicationTemplates.Web/Intent.ApplicationTemplates.Web.application.config" />
     <application id="fe241e7f-8588-40fa-86be-f9fb01a88e36" name="Angular.ApiAuthorization" relativePath="Intent.Modules.Angular.ApiAuthorization/Angular.ApiAuthorization.application.config" />
+    <application id="313207ec-3d56-472e-888a-f593c3ffbe92" name="Intent.Modules.Angular.Metadata" relativePath="Intent.Modules.Angular.Metadata/Intent.Modules.Angular.Metadata.application.config" />
   </applications>
 </solution>

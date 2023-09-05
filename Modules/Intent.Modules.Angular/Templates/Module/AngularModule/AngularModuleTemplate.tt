@@ -10,10 +10,8 @@ import { NgModule } from '@angular/core';<#= GetImports() #>
 <#= this.IntentMergeDecorator() #>
 @NgModule({
   declarations: [<#= GetComponents() #>],
-<#  if (HasProviders()) { #>
-  providers: [<#= GetProviders() #>],
-<#  } #>
-  imports: [<#= GetAngularImports() #>]<#= Model.IsRootModule() ? @",
+  imports: [<#= GetAngularImports() #>],
+  providers: [<#= GetProviders() #>]<#= Model.IsRootModule() ? @",
   bootstrap: [AppComponent]" : "" #>
 })
 export class <#= ClassName #> { }
