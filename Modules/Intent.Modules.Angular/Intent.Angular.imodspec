@@ -69,9 +69,7 @@
   <decorators>
     <decorator id="Angular.AngularComponentHtmlTemplate.PagedSearchDecorator" />
   </decorators>
-  <factoryExtensions>
-    <factoryExtension id="Intent.Angular.CLIInstaller" />
-  </factoryExtensions>
+  <factoryExtensions />
   <interoperability>
     <detect id="Intent.AspNetCore">
       <install>
