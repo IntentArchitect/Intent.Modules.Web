@@ -163,5 +163,33 @@
       </metadata>
       <childElements />
     </childElement>
+    <childElement id="2543e0b2-4746-41dc-9ff2-97d950a7b9f8" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+      <name>Intent.Angular.Core.Index</name>
+      <display>Intent.Angular.Core.Index</display>
+      <externalReference>Intent.Angular</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>6ce75da5-28ec-4529-9ac7-43c47fdc5ae8</parentFolderId>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
+      <childElements />
+    </childElement>
+    <childElement id="1fd01df3-4f5f-4e35-8fb8-f5f3b7ba087d" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+      <name>Intent.Angular.Core.StylesDotScssFile</name>
+      <display>Intent.Angular.Core.StylesDotScssFile</display>
+      <externalReference>Intent.Angular</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>6ce75da5-28ec-4529-9ac7-43c47fdc5ae8</parentFolderId>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
+      <childElements />
+    </childElement>
   </childElements>
 </class>

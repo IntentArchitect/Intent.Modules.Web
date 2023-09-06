@@ -14,7 +14,7 @@
       <ProjectId>dbdae4b0-882e-489b-8c8e-1b6b8923c33b</ProjectId>
       <CorrelationId>Intent.Java.SpringBoot.Application</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
-      <ApplicationRelativeFilePath>../../SpringBootApplication/src/main/java/com/AngularTest/SpringBootApplication/Application.java</ApplicationRelativeFilePath>
+      <ApplicationRelativeFilePath>../../SpringBootApplication/src/main/java/com/AngularTest/JavaApplication/Application.java</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Application.java</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
@@ -22,7 +22,7 @@
       <ProjectId>f428cb2e-14d7-4162-bb9c-309e86ef7aa3</ProjectId>
       <CorrelationId>Intent.Java.Services.DataTransferModel#8a8ddaae-5dfe-432d-bf46-745ff090904b</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
-      <ApplicationRelativeFilePath>../../SpringBootApplication/src/main/java/com/AngularTest/SpringBootApplication/application/models/Integration/CustomDTO.java</ApplicationRelativeFilePath>
+      <ApplicationRelativeFilePath>../../SpringBootApplication/src/main/java/com/AngularTest/JavaApplication/application/models/Integration/CustomDTO.java</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Integration/CustomDTO.java</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
@@ -30,7 +30,7 @@
       <ProjectId>b4024d12-3f83-41e9-bd2d-8c3f86bed502</ProjectId>
       <CorrelationId>Intent.Java.SpringBoot.RestController#424298e9-9be5-44c7-ae01-293ebd034e57</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
-      <ApplicationRelativeFilePath>../../SpringBootApplication/src/main/java/com/AngularTest/SpringBootApplication/application/rest/IntegrationController.java</ApplicationRelativeFilePath>
+      <ApplicationRelativeFilePath>../../SpringBootApplication/src/main/java/com/AngularTest/JavaApplication/application/rest/IntegrationController.java</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>IntegrationController.java</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
@@ -38,7 +38,7 @@
       <ProjectId>b4024d12-3f83-41e9-bd2d-8c3f86bed502</ProjectId>
       <CorrelationId>Intent.Java.SpringBoot.JsonResponse</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
-      <ApplicationRelativeFilePath>../../SpringBootApplication/src/main/java/com/AngularTest/SpringBootApplication/application/rest/JsonResponse.java</ApplicationRelativeFilePath>
+      <ApplicationRelativeFilePath>../../SpringBootApplication/src/main/java/com/AngularTest/JavaApplication/application/rest/JsonResponse.java</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>JsonResponse.java</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
@@ -46,7 +46,7 @@
       <ProjectId>b4024d12-3f83-41e9-bd2d-8c3f86bed502</ProjectId>
       <CorrelationId>Intent.Java.SpringBoot.Validation.RestResponseEntityExceptionHandler</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
-      <ApplicationRelativeFilePath>../../SpringBootApplication/src/main/java/com/AngularTest/SpringBootApplication/application/rest/RestResponseEntityExceptionHandler.java</ApplicationRelativeFilePath>
+      <ApplicationRelativeFilePath>../../SpringBootApplication/src/main/java/com/AngularTest/JavaApplication/application/rest/RestResponseEntityExceptionHandler.java</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>RestResponseEntityExceptionHandler.java</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
@@ -54,7 +54,7 @@
       <ProjectId>c5475e8a-24d2-4a30-ac31-7e7b591ede6d</ProjectId>
       <CorrelationId>Intent.Java.Services.ServiceImplementation#424298e9-9be5-44c7-ae01-293ebd034e57</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
-      <ApplicationRelativeFilePath>../../SpringBootApplication/src/main/java/com/AngularTest/SpringBootApplication/application/services/impl/IntegrationServiceImpl.java</ApplicationRelativeFilePath>
+      <ApplicationRelativeFilePath>../../SpringBootApplication/src/main/java/com/AngularTest/JavaApplication/application/services/impl/IntegrationServiceImpl.java</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>IntegrationServiceImpl.java</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
@@ -62,7 +62,7 @@
       <ProjectId>02d1b9ad-f188-4557-ad72-e0c7f2cfc0fc</ProjectId>
       <CorrelationId>Intent.Java.Services.ServiceInterface#424298e9-9be5-44c7-ae01-293ebd034e57</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
-      <ApplicationRelativeFilePath>../../SpringBootApplication/src/main/java/com/AngularTest/SpringBootApplication/application/services/IntegrationService.java</ApplicationRelativeFilePath>
+      <ApplicationRelativeFilePath>../../SpringBootApplication/src/main/java/com/AngularTest/JavaApplication/application/services/IntegrationService.java</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>IntegrationService.java</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
@@ -70,7 +70,7 @@
       <ProjectId>3f995dc2-da6a-4a3a-822d-9c7532742d43</ProjectId>
       <CorrelationId>Intent.Java.Spring.Cors.CorsConfig</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
-      <ApplicationRelativeFilePath>../../SpringBootApplication/src/main/java/com/AngularTest/SpringBootApplication/configuration/CorsConfig.java</ApplicationRelativeFilePath>
+      <ApplicationRelativeFilePath>../../SpringBootApplication/src/main/java/com/AngularTest/JavaApplication/configuration/CorsConfig.java</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>CorsConfig.java</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
@@ -78,7 +78,7 @@
       <ProjectId>3f995dc2-da6a-4a3a-822d-9c7532742d43</ProjectId>
       <CorrelationId>Intent.Java.ModelMapper.ModelMapperBean</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
-      <ApplicationRelativeFilePath>../../SpringBootApplication/src/main/java/com/AngularTest/SpringBootApplication/configuration/ModelMapperBean.java</ApplicationRelativeFilePath>
+      <ApplicationRelativeFilePath>../../SpringBootApplication/src/main/java/com/AngularTest/JavaApplication/configuration/ModelMapperBean.java</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>ModelMapperBean.java</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
@@ -86,7 +86,7 @@
       <ProjectId>907286b2-48a0-4044-b8f7-9eb529776e51</ProjectId>
       <CorrelationId>Intent.Java.Services.ExceptionType#bfdd167b-f418-4358-9c6c-291a2192fe04</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
-      <ApplicationRelativeFilePath>../../SpringBootApplication/src/main/java/com/AngularTest/SpringBootApplication/exceptions/Integration/TestException.java</ApplicationRelativeFilePath>
+      <ApplicationRelativeFilePath>../../SpringBootApplication/src/main/java/com/AngularTest/JavaApplication/exceptions/Integration/TestException.java</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Integration/TestException.java</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
@@ -94,7 +94,7 @@
       <ProjectId>ffe46147-b2b1-4556-b40b-09fc77e1cbce</ProjectId>
       <CorrelationId>Intent.Java.Weaving.Annotations.IntentCanAdd</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
-      <ApplicationRelativeFilePath>../../SpringBootApplication/src/main/java/com/AngularTest/SpringBootApplication/intent/IntentCanAdd.java</ApplicationRelativeFilePath>
+      <ApplicationRelativeFilePath>../../SpringBootApplication/src/main/java/com/AngularTest/JavaApplication/intent/IntentCanAdd.java</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>IntentCanAdd.java</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
@@ -102,7 +102,7 @@
       <ProjectId>ffe46147-b2b1-4556-b40b-09fc77e1cbce</ProjectId>
       <CorrelationId>Intent.Java.Weaving.Annotations.IntentCanRemove</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
-      <ApplicationRelativeFilePath>../../SpringBootApplication/src/main/java/com/AngularTest/SpringBootApplication/intent/IntentCanRemove.java</ApplicationRelativeFilePath>
+      <ApplicationRelativeFilePath>../../SpringBootApplication/src/main/java/com/AngularTest/JavaApplication/intent/IntentCanRemove.java</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>IntentCanRemove.java</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
@@ -110,7 +110,7 @@
       <ProjectId>ffe46147-b2b1-4556-b40b-09fc77e1cbce</ProjectId>
       <CorrelationId>Intent.Java.Weaving.Annotations.IntentCanUpdate</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
-      <ApplicationRelativeFilePath>../../SpringBootApplication/src/main/java/com/AngularTest/SpringBootApplication/intent/IntentCanUpdate.java</ApplicationRelativeFilePath>
+      <ApplicationRelativeFilePath>../../SpringBootApplication/src/main/java/com/AngularTest/JavaApplication/intent/IntentCanUpdate.java</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>IntentCanUpdate.java</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
@@ -118,7 +118,7 @@
       <ProjectId>ffe46147-b2b1-4556-b40b-09fc77e1cbce</ProjectId>
       <CorrelationId>Intent.Java.Weaving.Annotations.IntentIgnore</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
-      <ApplicationRelativeFilePath>../../SpringBootApplication/src/main/java/com/AngularTest/SpringBootApplication/intent/IntentIgnore.java</ApplicationRelativeFilePath>
+      <ApplicationRelativeFilePath>../../SpringBootApplication/src/main/java/com/AngularTest/JavaApplication/intent/IntentIgnore.java</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>IntentIgnore.java</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
@@ -126,7 +126,7 @@
       <ProjectId>ffe46147-b2b1-4556-b40b-09fc77e1cbce</ProjectId>
       <CorrelationId>Intent.Java.Weaving.Annotations.IntentIgnoreBody</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
-      <ApplicationRelativeFilePath>../../SpringBootApplication/src/main/java/com/AngularTest/SpringBootApplication/intent/IntentIgnoreBody.java</ApplicationRelativeFilePath>
+      <ApplicationRelativeFilePath>../../SpringBootApplication/src/main/java/com/AngularTest/JavaApplication/intent/IntentIgnoreBody.java</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>IntentIgnoreBody.java</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
@@ -134,7 +134,7 @@
       <ProjectId>ffe46147-b2b1-4556-b40b-09fc77e1cbce</ProjectId>
       <CorrelationId>Intent.Java.Weaving.Annotations.IntentManage</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
-      <ApplicationRelativeFilePath>../../SpringBootApplication/src/main/java/com/AngularTest/SpringBootApplication/intent/IntentManage.java</ApplicationRelativeFilePath>
+      <ApplicationRelativeFilePath>../../SpringBootApplication/src/main/java/com/AngularTest/JavaApplication/intent/IntentManage.java</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>IntentManage.java</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
@@ -142,7 +142,7 @@
       <ProjectId>ffe46147-b2b1-4556-b40b-09fc77e1cbce</ProjectId>
       <CorrelationId>Intent.Java.Weaving.Annotations.IntentManageClass</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
-      <ApplicationRelativeFilePath>../../SpringBootApplication/src/main/java/com/AngularTest/SpringBootApplication/intent/IntentManageClass.java</ApplicationRelativeFilePath>
+      <ApplicationRelativeFilePath>../../SpringBootApplication/src/main/java/com/AngularTest/JavaApplication/intent/IntentManageClass.java</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>IntentManageClass.java</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
@@ -150,7 +150,7 @@
       <ProjectId>ffe46147-b2b1-4556-b40b-09fc77e1cbce</ProjectId>
       <CorrelationId>Intent.Java.Weaving.Annotations.IntentMerge</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
-      <ApplicationRelativeFilePath>../../SpringBootApplication/src/main/java/com/AngularTest/SpringBootApplication/intent/IntentMerge.java</ApplicationRelativeFilePath>
+      <ApplicationRelativeFilePath>../../SpringBootApplication/src/main/java/com/AngularTest/JavaApplication/intent/IntentMerge.java</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>IntentMerge.java</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
@@ -158,7 +158,7 @@
       <ProjectId>ffe46147-b2b1-4556-b40b-09fc77e1cbce</ProjectId>
       <CorrelationId>Intent.Java.Weaving.Annotations.ModeEnum</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
-      <ApplicationRelativeFilePath>../../SpringBootApplication/src/main/java/com/AngularTest/SpringBootApplication/intent/Mode.java</ApplicationRelativeFilePath>
+      <ApplicationRelativeFilePath>../../SpringBootApplication/src/main/java/com/AngularTest/JavaApplication/intent/Mode.java</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Mode.java</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>

@@ -41,7 +41,7 @@ namespace NetApplication.Api.Controllers
         /// </summary>
         /// <response code="200">Returns the specified CustomDTO.</response>
         /// <response code="400">One or more validation errors have occurred.</response>
-        /// <response code="404">Can't find an CustomDTO with the parameters provided.</response>
+        /// <response code="404">No CustomDTO could be found with the provided parameters.</response>
         [HttpGet("query-param-op")]
         [ProducesResponseType(typeof(CustomDTO), StatusCodes.Status200OK)]
         [ProducesResponseType(StatusCodes.Status400BadRequest)]
@@ -54,7 +54,7 @@ namespace NetApplication.Api.Controllers
         {
             var result = default(CustomDTO);
             result = await _appService.QueryParamOp(param1, param2, cancellationToken);
-            return result != null ? Ok(result) : NotFound();
+            return result == null ? NotFound() : Ok(result);
         }
 
         /// <summary>
@@ -145,94 +145,82 @@ namespace NetApplication.Api.Controllers
         /// <summary>
         /// </summary>
         /// <response code="200">Returns the specified Guid.</response>
-        /// <response code="404">Can't find an Guid with the parameters provided.</response>
         [HttpGet("wrapped-primitive-guid")]
         [Produces(MediaTypeNames.Application.Json)]
         [ProducesResponseType(typeof(JsonResponse<Guid>), StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
-        public async Task<ActionResult<Guid>> GetWrappedPrimitiveGuid(CancellationToken cancellationToken = default)
+        public async Task<ActionResult<JsonResponse<Guid>>> GetWrappedPrimitiveGuid(CancellationToken cancellationToken = default)
         {
             var result = default(Guid);
             result = await _appService.GetWrappedPrimitiveGuid(cancellationToken);
-            return new JsonResponse<Guid>(result) != null ? Ok(new JsonResponse<Guid>(result)) : NotFound();
+            return Ok(new JsonResponse<Guid>(result));
         }
 
         /// <summary>
         /// </summary>
         /// <response code="200">Returns the specified string.</response>
-        /// <response code="404">Can't find an string with the parameters provided.</response>
         [HttpGet("wrapped-primitive-string")]
         [Produces(MediaTypeNames.Application.Json)]
         [ProducesResponseType(typeof(JsonResponse<string>), StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
-        public async Task<ActionResult<string>> GetWrappedPrimitiveString(CancellationToken cancellationToken = default)
+        public async Task<ActionResult<JsonResponse<string>>> GetWrappedPrimitiveString(CancellationToken cancellationToken = default)
         {
             var result = default(string);
             result = await _appService.GetWrappedPrimitiveString(cancellationToken);
-            return new JsonResponse<string>(result) != null ? Ok(new JsonResponse<string>(result)) : NotFound();
+            return Ok(new JsonResponse<string>(result));
         }
 
         /// <summary>
         /// </summary>
         /// <response code="200">Returns the specified int.</response>
-        /// <response code="404">Can't find an int with the parameters provided.</response>
         [HttpGet("wrapped-primitive-int")]
         [Produces(MediaTypeNames.Application.Json)]
         [ProducesResponseType(typeof(JsonResponse<int>), StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
-        public async Task<ActionResult<int>> GetWrappedPrimitiveInt(CancellationToken cancellationToken = default)
+        public async Task<ActionResult<JsonResponse<int>>> GetWrappedPrimitiveInt(CancellationToken cancellationToken = default)
         {
             var result = default(int);
             result = await _appService.GetWrappedPrimitiveInt(cancellationToken);
-            return new JsonResponse<int>(result) != null ? Ok(new JsonResponse<int>(result)) : NotFound();
+            return Ok(new JsonResponse<int>(result));
         }
 
         /// <summary>
         /// </summary>
         /// <response code="200">Returns the specified Guid.</response>
-        /// <response code="404">Can't find an Guid with the parameters provided.</response>
         [HttpGet("primitive-guid")]
         [ProducesResponseType(typeof(Guid), StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
         public async Task<ActionResult<Guid>> GetPrimitiveGuid(CancellationToken cancellationToken = default)
         {
             var result = default(Guid);
             result = await _appService.GetPrimitiveGuid(cancellationToken);
-            return result != null ? Ok(result) : NotFound();
+            return Ok(result);
         }
 
         /// <summary>
         /// </summary>
         /// <response code="200">Returns the specified string.</response>
-        /// <response code="404">Can't find an string with the parameters provided.</response>
         [HttpGet("primitive-string")]
         [ProducesResponseType(typeof(string), StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
         public async Task<ActionResult<string>> GetPrimitiveString(CancellationToken cancellationToken = default)
         {
             var result = default(string);
             result = await _appService.GetPrimitiveString(cancellationToken);
-            return result != null ? Ok(result) : NotFound();
+            return Ok(result);
         }
 
         /// <summary>
         /// </summary>
         /// <response code="200">Returns the specified int.</response>
-        /// <response code="404">Can't find an int with the parameters provided.</response>
         [HttpGet("primitive-int")]
         [ProducesResponseType(typeof(int), StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
         public async Task<ActionResult<int>> GetPrimitiveInt(CancellationToken cancellationToken = default)
         {
             var result = default(int);
             result = await _appService.GetPrimitiveInt(cancellationToken);
-            return result != null ? Ok(result) : NotFound();
+            return Ok(result);
         }
 
         /// <summary>
@@ -251,17 +239,15 @@ namespace NetApplication.Api.Controllers
         /// <summary>
         /// </summary>
         /// <response code="200">Returns the specified CustomDTO.</response>
-        /// <response code="404">Can't find an CustomDTO with the parameters provided.</response>
         [HttpGet("invoice-op-with-return-type-wrapped")]
         [Produces(MediaTypeNames.Application.Json)]
         [ProducesResponseType(typeof(CustomDTO), StatusCodes.Status200OK)]
-        [ProducesResponseType(StatusCodes.Status404NotFound)]
         [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
         public async Task<ActionResult<CustomDTO>> GetInvoiceOpWithReturnTypeWrapped(CancellationToken cancellationToken = default)
         {
             var result = default(CustomDTO);
             result = await _appService.GetInvoiceOpWithReturnTypeWrapped(cancellationToken);
-            return result != null ? Ok(result) : NotFound();
+            return Ok(result);
         }
     }
 }

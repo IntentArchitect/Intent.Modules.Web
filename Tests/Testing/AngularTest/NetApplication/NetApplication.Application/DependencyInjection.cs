@@ -3,6 +3,7 @@ using AutoMapper;
 using FluentValidation;
 using Intent.RoslynWeaver.Attributes;
 using MediatR;
+using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using NetApplication.Application.Common.Behaviours;
 using NetApplication.Application.Implementation;
@@ -15,7 +16,7 @@ namespace NetApplication.Application
 {
     public static class DependencyInjection
     {
-        public static IServiceCollection AddApplication(this IServiceCollection services)
+        public static IServiceCollection AddApplication(this IServiceCollection services, IConfiguration configuration)
         {
             services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
             services.AddMediatR(cfg =>

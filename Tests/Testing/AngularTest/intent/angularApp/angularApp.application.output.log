@@ -3,6 +3,70 @@
   <ApplicationId>00914bae-0287-4383-8d4e-5ae4591c7a91</ApplicationId>
   <FileLogs>
     <FileLog>
+      <ProjectId>c597d308-cc11-4841-9439-7b85ded4f379</ProjectId>
+      <CorrelationId>Intent.Modules.Angular.Templates.StaticContentTemplateRegistrations.InitialFilesStaticContentTemplateRegistration#.editorconfig</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>../../angularApp/.editorconfig</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>.editorconfig</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>c597d308-cc11-4841-9439-7b85ded4f379</ProjectId>
+      <CorrelationId>Intent.Modules.Angular.Templates.StaticContentTemplateRegistrations.InitialFilesStaticContentTemplateRegistration#.gitignore</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>../../angularApp/.gitignore</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>.gitignore</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>c597d308-cc11-4841-9439-7b85ded4f379</ProjectId>
+      <CorrelationId>Intent.Modules.Angular.Templates.StaticContentTemplateRegistrations.InitialFilesStaticContentTemplateRegistration#.vscode/extensions.json</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>../../angularApp/.vscode/extensions.json</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>.vscode/extensions.json</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>c597d308-cc11-4841-9439-7b85ded4f379</ProjectId>
+      <CorrelationId>Intent.Modules.Angular.Templates.StaticContentTemplateRegistrations.InitialFilesStaticContentTemplateRegistration#.vscode/launch.json</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>../../angularApp/.vscode/launch.json</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>.vscode/launch.json</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>c597d308-cc11-4841-9439-7b85ded4f379</ProjectId>
+      <CorrelationId>Intent.Modules.Angular.Templates.StaticContentTemplateRegistrations.InitialFilesStaticContentTemplateRegistration#.vscode/tasks.json</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>../../angularApp/.vscode/tasks.json</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>.vscode/tasks.json</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>c597d308-cc11-4841-9439-7b85ded4f379</ProjectId>
+      <CorrelationId>Intent.Angular.Core.AngularDotJsonFile</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>../../angularApp/angular.json</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>angular.json</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>c597d308-cc11-4841-9439-7b85ded4f379</ProjectId>
+      <CorrelationId>Intent.Npm.PackageJsonFile</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>../../angularApp/package.json</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>package.json</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>c597d308-cc11-4841-9439-7b85ded4f379</ProjectId>
+      <CorrelationId>Intent.Modules.Angular.Templates.StaticContentTemplateRegistrations.InitialFilesStaticContentTemplateRegistration#README.md</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>../../angularApp/README.md</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>README.md</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
       <ProjectId>e83f8c80-9fea-4e98-9dcf-78e48c58c5e1</ProjectId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>../../angularApp/src/app/api-authorization/api-authorization.constants.ts</ApplicationRelativeFilePath>
@@ -222,6 +286,14 @@
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
+      <ProjectId>c597d308-cc11-4841-9439-7b85ded4f379</ProjectId>
+      <CorrelationId>Intent.Modules.Angular.Templates.StaticContentTemplateRegistrations.InitialFilesStaticContentTemplateRegistration#src/assets/.gitkeep</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>../../angularApp/src/assets/.gitkeep</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>src/assets/.gitkeep</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
       <ProjectId>a2a02835-faa3-4f1c-a5d2-77dac9b93687</ProjectId>
       <CorrelationId>Intent.Angular.Environment.EnvironmentDotDevelopment</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
@@ -238,6 +310,22 @@
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
+      <ProjectId>c597d308-cc11-4841-9439-7b85ded4f379</ProjectId>
+      <CorrelationId>Intent.Modules.Angular.Templates.StaticContentTemplateRegistrations.InitialFilesStaticContentTemplateRegistration#src/favicon.ico</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>../../angularApp/src/favicon.ico</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>src/favicon.ico</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>6ce75da5-28ec-4529-9ac7-43c47fdc5ae8</ProjectId>
+      <CorrelationId>Intent.Angular.Core.Index</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>../../angularApp/src/index.html</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>index.html</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
       <ProjectId>6ce75da5-28ec-4529-9ac7-43c47fdc5ae8</ProjectId>
       <CorrelationId>Intent.Angular.ServiceProxies.Proxies.JsonResponse</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
@@ -246,11 +334,51 @@
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
+      <ProjectId>c597d308-cc11-4841-9439-7b85ded4f379</ProjectId>
+      <CorrelationId>Intent.Modules.Angular.Templates.StaticContentTemplateRegistrations.InitialFilesStaticContentTemplateRegistration#src/main.ts</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>../../angularApp/src/main.ts</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>src/main.ts</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
       <ProjectId>6ce75da5-28ec-4529-9ac7-43c47fdc5ae8</ProjectId>
       <CorrelationId>Intent.Angular.ServiceProxies.Proxies.AngularDTO#5c28c5cd-2655-45dd-b425-475830635a92</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>../../angularApp/src/models/net-application/services/integration/custom.dto.ts</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>models/net-application/services/integration/custom.dto.ts</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>6ce75da5-28ec-4529-9ac7-43c47fdc5ae8</ProjectId>
+      <CorrelationId>Intent.Angular.Core.StylesDotScssFile</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>../../angularApp/src/styles.scss</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>styles.scss</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>c597d308-cc11-4841-9439-7b85ded4f379</ProjectId>
+      <CorrelationId>Intent.Modules.Angular.Templates.StaticContentTemplateRegistrations.InitialFilesStaticContentTemplateRegistration#tsconfig.app.json</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>../../angularApp/tsconfig.app.json</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>tsconfig.app.json</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>c597d308-cc11-4841-9439-7b85ded4f379</ProjectId>
+      <CorrelationId>Intent.Modules.Angular.Templates.StaticContentTemplateRegistrations.InitialFilesStaticContentTemplateRegistration#tsconfig.json</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>../../angularApp/tsconfig.json</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>tsconfig.json</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>c597d308-cc11-4841-9439-7b85ded4f379</ProjectId>
+      <CorrelationId>Intent.Modules.Angular.Templates.StaticContentTemplateRegistrations.InitialFilesStaticContentTemplateRegistration#tsconfig.spec.json</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>../../angularApp/tsconfig.spec.json</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>tsconfig.spec.json</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
   </FileLogs>

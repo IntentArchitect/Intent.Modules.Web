@@ -1,0 +1,17 @@
+<div class="" intent-manage="add remove" intent-id="container">
+
+  <nav class="navbar navbar-expand-lg navbar-light bg-light" role="navigation" intent-manage="" intent-id="f9565aff-ea78-44b9-9b8c-b541fb87beea">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#"><span>angularApp</span></a>
+    </div>
+    <button class="navbar-toggler" type="button" (click)="isCollapsed = !isCollapsed" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" [collapse]="isCollapsed">
+      <ul class="nav navbar-nav" intent-manage="" intent-id="navbar-nav">
+      </ul>
+    </div>
+  </nav>
+
+  <router-outlet></router-outlet>
+</div>

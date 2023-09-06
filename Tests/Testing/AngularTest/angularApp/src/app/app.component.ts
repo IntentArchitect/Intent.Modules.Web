@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { IntentIgnore } from './intent/intent.decorators';
 import { IntegrationService } from './integration-service.service';
 import { Observable, forkJoin } from 'rxjs';
-import { CustomDTO } from './models/custom.dto';
+import { CustomDTO } from '../models/net-application/services/integration/custom.dto';
 
 @Component({
   selector: 'app-root',
