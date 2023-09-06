@@ -49,14 +49,6 @@
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
-      <ProjectId>139cbb36-978e-4638-acde-c4ee8b1ca524</ProjectId>
-      <CorrelationId>Intent.ModuleBuilder.Templates.FactoryExtension#9578b7e3-07ee-40e8-a295-af3165d60fbf</CorrelationId>
-      <OverwriteBehaviour>always</OverwriteBehaviour>
-      <ApplicationRelativeFilePath>FactoryExtensions/NpmCliInstaller.cs</ApplicationRelativeFilePath>
-      <ProjectRelativeFilePath>NpmCliInstaller.cs</ProjectRelativeFilePath>
-      <IsIgnored>false</IsIgnored>
-    </FileLog>
-    <FileLog>
       <ProjectId>0b4155ba-8b36-4eb9-a383-2d23ee7113a3</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.IModSpecFile</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>

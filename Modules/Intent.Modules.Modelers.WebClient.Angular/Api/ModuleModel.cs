@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Intent.Metadata.Models;
+using Intent.Modelers.Types.ServiceProxies.Api;
 using Intent.Modules.Common;
 using Intent.Modules.Common.Templates;
 using Intent.Modules.Common.Types.Api;
@@ -121,6 +122,11 @@ namespace Intent.Modelers.WebClient.Angular.Api
         public IList<FolderModel> Folders => _element.ChildElements
             .GetElementsOfType(FolderModel.SpecializationTypeId)
             .Select(x => new FolderModel(x))
+            .ToList();
+
+        public IList<ServiceProxyModel> ServiceProxies => _element.ChildElements
+            .GetElementsOfType(ServiceProxyModel.SpecializationTypeId)
+            .Select(x => new ServiceProxyModel(x))
             .ToList();
 
         public ModuleModel GetParentModule()

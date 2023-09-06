@@ -65,24 +65,26 @@ namespace Intent.Modules.Angular.ApiAuthorization.Templates.ApiAuthTypescriptZip
         {
             if (!_hasBeenPublished)
             {
-                OutputTarget.Application.EventDispatcher.Publish(new AngularImportDependencyRequiredEvent(
+                AddDependency(new NpmPackageDependency("oidc-client", "1.11.5"));
+
+                ExecutionContext.EventDispatcher.Publish(new AngularImportDependencyRequiredEvent(
                     moduleId: "AppModule",
                     dependency: "ApiAuthorizationModule",
                     import: "import { ApiAuthorizationModule } from './api-authorization/api-authorization.module';"));
 
-                OutputTarget.Application.EventDispatcher.Publish(new AngularImportDependencyRequiredEvent(
+                ExecutionContext.EventDispatcher.Publish(new AngularImportDependencyRequiredEvent(
                     moduleId: "AppModule",
                     dependency: "HttpClientModule",
                     import: "import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';"));
 
-                OutputTarget.Application.EventDispatcher.Publish(new AngularCustomProviderRequiredEvent(
+                ExecutionContext.EventDispatcher.Publish(new AngularCustomProviderRequiredEvent(
                     moduleId: "AppModule",
                     provide: "HTTP_INTERCEPTORS",
                     useClass: "AuthorizeInterceptor",
                     multi: true,
                     import: "import { AuthorizeInterceptor } from './api-authorization/authorize.interceptor';"));
 
-                OutputTarget.Application.EventDispatcher.Publish(new AngularConfigVariableRequiredEvent("auth", $@"{{
+                ExecutionContext.EventDispatcher.Publish(new AngularConfigVariableRequiredEvent("auth", $@"{{
     authority: 'https://localhost:{_stsPort}',
     client_id: 'Auth_Code_Client',
     redirect_uri: window.location.origin + '/authentication/login-callback',
@@ -93,6 +95,8 @@ namespace Intent.Modules.Angular.ApiAuthorization.Templates.ApiAuthTypescriptZip
 
                 _hasBeenPublished = true;
             }
+
+            base.BeforeTemplateExecution();
         }
     }
 }

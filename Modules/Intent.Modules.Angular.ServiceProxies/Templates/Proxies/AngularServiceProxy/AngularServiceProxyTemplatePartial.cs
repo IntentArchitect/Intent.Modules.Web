@@ -40,7 +40,7 @@ namespace Intent.Modules.Angular.ServiceProxies.Templates.Proxies.AngularService
             //ServiceMetadataQueries.Validate(this, model);
             AddTypeSource(AngularDTOTemplate.TemplateId);
 
-            TypescriptFile = new TypescriptFile($"{string.Join("/", Model.GetModule().InternalElement.GetFolderPath(additionalFolders: Model.GetModule().GetModuleName().ToKebabCase()))}")
+            TypescriptFile = new TypescriptFile($"{string.Join("/", Model.GetModule(ExecutionContext).InternalElement.GetFolderPath(additionalFolders: Model.GetModule(ExecutionContext).GetModuleName().ToKebabCase()))}")
                 .AddClass(Model.Name, @class =>
                 {
                     @class.Export();
@@ -112,7 +112,7 @@ namespace Intent.Modules.Angular.ServiceProxies.Templates.Proxies.AngularService
             return new TypeScriptFileConfig(
                 overwriteBehaviour: OverwriteBehaviour.Always,
                 fileName: $"{Model.Name.ToKebabCase()}.service",
-                relativeLocation: $"{string.Join("/", Model.GetModule().InternalElement.GetFolderPath(additionalFolders: Model.GetModule().GetModuleName().ToKebabCase()))}",
+                relativeLocation: $"{string.Join("/", Model.GetModule(ExecutionContext).InternalElement.GetFolderPath(additionalFolders: Model.GetModule(ExecutionContext).GetModuleName().ToKebabCase()))}",
                 className: "${Model.Name}"
             );
         }
@@ -135,7 +135,7 @@ namespace Intent.Modules.Angular.ServiceProxies.Templates.Proxies.AngularService
             ExecutionContext.EventDispatcher.Publish(new AngularServiceProxyCreatedEvent(
                 templateId: TemplateId,
                 modelId: Model.Id,
-                moduleId: Model.GetModule().Id));
+                moduleId: Model.GetModule(ExecutionContext).Id));
         }
 
         private string GetReturnType(IHttpEndpointModel operation)

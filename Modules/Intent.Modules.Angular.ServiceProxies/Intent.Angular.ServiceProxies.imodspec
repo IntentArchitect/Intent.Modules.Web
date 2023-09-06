@@ -24,7 +24,7 @@
   </templates>
   <dependencies>
     <dependency id="Intent.Angular" version="4.0.0-alpha.1" />
-    <dependency id="Intent.Common" version="3.4.1" />
+    <dependency id="Intent.Common" version="3.4.3" />
     <dependency id="Intent.Common.Types" version="3.3.9" />
     <dependency id="Intent.Common.TypeScript" version="3.4.2" />
     <dependency id="Intent.Metadata.WebApi" version="4.2.5" />
