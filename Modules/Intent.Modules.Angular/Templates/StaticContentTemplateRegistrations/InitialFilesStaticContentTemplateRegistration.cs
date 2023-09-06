@@ -28,11 +28,5 @@ namespace Intent.Modules.Angular.Templates.StaticContentTemplateRegistrations
             ["AppNameCamelCased"] = outputTarget.ApplicationName().ToCamelCase(),
             ["AppNameKebabCased"] = outputTarget.ApplicationName().ToKebabCase(),
         };
-
-        protected override ITemplate CreateTemplate(IOutputTarget outputTarget, string fileFullPath, string fileRelativePath,
-            OverwriteBehaviour defaultOverwriteBehaviour)
-        {
-            return base.CreateTemplate(outputTarget, fileFullPath, fileRelativePath, OverwriteBehaviour.OnceOff);
-        }
     }
 }

@@ -9,6 +9,9 @@ using Intent.Modules.Common.Templates;
 using Intent.Plugins.FactoryExtensions;
 using Intent.Utils;
 using Newtonsoft.Json;
+using System.Linq;
+using Intent.Modules.Angular.Templates.Core.StylesDotScssFile;
+using Intent.Modules.Common.TypeScript.Templates;
 
 namespace Intent.Modules.Angular
 {
@@ -21,7 +24,7 @@ namespace Intent.Modules.Angular
         {
             base.OnBeforeTemplateExecution(application);
 
-            var outputTarget = CliCommand.GetFrontEndOutputTarget(application);
+            var outputTarget = application.OutputTargets.FirstOrDefault(x => x.HasRole("Front End"));
             if (outputTarget == null)
             {
                 Logging.Log.Warning("Could not find a location to install ngx-bootstrap. Ensure that a Web Client package has been created.");
@@ -31,10 +34,10 @@ namespace Intent.Modules.Angular
             {
                 Logging.Log.Info($"Installing Ngx-Bootstrap into Angular app at location [{outputTarget.Location}]");
 
-                // Needed to force it to use legacy peer deps which is required for 10.0.2 with Angular 16.
-                CliCommand.Run(outputTarget.Location, "echo legacy-peer-deps=true > .npmrc");
-                CliCommand.Run(outputTarget.Location, $@"ng add ngx-bootstrap@10.2.0");
-                CliCommand.Run(outputTarget.Location, $@"npm i ngx-bootstrap@10.2.0 --save-dev");
+                application.EventDispatcher.Publish(new NpmPackageDependency("bootstrap", "^5.2.3"));
+                application.EventDispatcher.Publish(new NpmPackageDependency("ngx-bootstrap", "^11.0.2"));
+                application.EventDispatcher.Publish(new StyleRequest("@import \"./node_modules/bootstrap/scss/bootstrap\";"));
+                application.EventDispatcher.Publish(new StyleRequest("@import \"node_modules/ngx-bootstrap/datepicker/bs-datepicker\";"));
 
                 var appComponent = application.FindTemplateInstance(AngularComponentHtmlTemplate.TemplateId, t => t.GetMetadata().FileName == "app.component");
                 if (appComponent != null)

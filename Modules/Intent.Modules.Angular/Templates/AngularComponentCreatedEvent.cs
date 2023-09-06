@@ -1,3 +1,4 @@
+using System;
 using Intent.Metadata.Models;
 
 namespace Intent.Modules.Angular.Templates
@@ -50,6 +51,11 @@ namespace Intent.Modules.Angular.Templates
     {
         public AngularImportDependencyRequiredEvent(string moduleId, string dependency, string import)
         {
+            if (import.TrimEnd(';').TrimEnd()[^1] is not ('\'' or '\"'))
+            {
+                throw new Exception("Missing quotes in import source, this is unsupported.");
+            }
+
             ModuleId = moduleId;
             Dependency = dependency;
             Import = import;

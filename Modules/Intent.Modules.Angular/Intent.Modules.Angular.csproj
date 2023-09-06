@@ -1,7 +1,7 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <TargetFramework>net6.0</TargetFramework>
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
     <Version>4.0.0-alpha.3</Version>
   </PropertyGroup>
@@ -15,7 +15,8 @@
   <ItemGroup>
     <PackageReference Include="Intent.Modules.Common" Version="3.4.3" />
     <PackageReference Include="Intent.Modules.Common.Html" Version="3.3.0" />
-    <PackageReference Include="Intent.Modules.Common.TypeScript" Version="3.3.2" />
+    <PackageReference Include="Intent.Modules.Common.TypeScript" Version="3.4.2" />
+    <PackageReference Include="Intent.Modules.Npm" Version="3.3.5" />
     <PackageReference Include="Intent.Packager" Version="3.4.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -23,7 +24,7 @@
     <PackageReference Include="Intent.RoslynWeaver.Attributes" Version="2.1.1" />
     <PackageReference Include="Intent.SoftwareFactory.SDK" Version="3.4.2" />
     <PackageReference Include="Mono.TextTemplating" Version="2.0.4" />
-    <PackageReference Include="Newtonsoft.Json" Version="11.0.2" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 
   <ItemGroup>
@@ -83,6 +84,10 @@
     <None Update="Templates\Environment\EnvironmentDotDevelopment\EnvironmentDotDevelopmentTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>EnvironmentDotDevelopmentTemplate.cs</LastGenOutput>
+    </None>
+    <None Update="Templates\Core\Index\IndexTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>IndexTemplate.cs</LastGenOutput>
     </None>
   </ItemGroup>
 
@@ -155,6 +160,11 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>EnvironmentDotDevelopmentTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Templates\Core\Index\IndexTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>IndexTemplate.tt</DependentUpon>
     </Compile>
   </ItemGroup>
 

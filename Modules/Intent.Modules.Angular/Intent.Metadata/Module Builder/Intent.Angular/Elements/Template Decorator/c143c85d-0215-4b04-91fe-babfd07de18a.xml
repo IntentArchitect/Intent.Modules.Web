@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="c143c85d-0215-4b04-91fe-babfd07de18a" type="Template Decorator" typeId="f0f46278-29ea-42bd-9206-0e7034f623bc">
+  <name>PackageDotJsonDecorator</name>
+  <display>PackageDotJsonDecorator: PackageJsonFileDecorator</display>
+  <isAbstract>false</isAbstract>
+  <genericTypes />
+  <typeReference id="d5d9610e-9085-4014-9e45-02ec9be42e70">
+    <typeId>129beed7-fe68-4951-bc66-545b77026c03</typeId>
+    <isNavigable>true</isNavigable>
+    <isNullable>false</isNullable>
+    <isCollection>false</isCollection>
+    <isRequired>true</isRequired>
+    <typePackageName>Intent.Npm</typePackageName>
+    <typePackageId>3a099241-6946-4914-b1b6-e25d168a36d1</typePackageId>
+    <stereotypes />
+    <genericTypeParameters />
+  </typeReference>
+  <isMapped>false</isMapped>
+  <parentFolderId>a3deb341-dd4e-4f7f-99f5-2f198c1c251c</parentFolderId>
+  <packageId>a3deb341-dd4e-4f7f-99f5-2f198c1c251c</packageId>
+  <packageName>Intent.Angular</packageName>
+  <stereotypes />
+  <metadata />
+  <childElements />
+</class>

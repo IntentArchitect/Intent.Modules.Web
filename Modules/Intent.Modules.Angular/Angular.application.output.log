@@ -33,6 +33,22 @@
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
+      <ProjectId>15622f4b-90a8-4ed6-917d-7266257d8932</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.Templates.TemplateDecorator#c143c85d-0215-4b04-91fe-babfd07de18a</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>Decorators/PackageDotJsonDecorator.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>PackageDotJsonDecorator.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>15622f4b-90a8-4ed6-917d-7266257d8932</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.Templates.TemplateDecoratorRegistration#c143c85d-0215-4b04-91fe-babfd07de18a</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>Decorators/PackageDotJsonDecoratorRegistration.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>PackageDotJsonDecoratorRegistration.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
       <ProjectId>b79f286d-1129-41f9-bb0f-d266b180d3c2</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.IModSpecFile</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
@@ -154,6 +170,30 @@
     </FileLog>
     <FileLog>
       <ProjectId>abc98339-4259-4d28-82ae-502ba6cdc8b2</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.Templates.FileTemplateStringInterpolation#d15f9ddb-72df-4868-888d-2c1732a40571</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>Templates/Core/AngularDotJsonFile/AngularDotJsonFileTemplate.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>Core/AngularDotJsonFile/AngularDotJsonFileTemplate.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>abc98339-4259-4d28-82ae-502ba6cdc8b2</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.ProjectItemTemplate.Partial#d15f9ddb-72df-4868-888d-2c1732a40571</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>Templates/Core/AngularDotJsonFile/AngularDotJsonFileTemplatePartial.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>Core/AngularDotJsonFile/AngularDotJsonFileTemplatePartial.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>abc98339-4259-4d28-82ae-502ba6cdc8b2</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.TemplateRegistration.SingleFileNoModel#d15f9ddb-72df-4868-888d-2c1732a40571</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>Templates/Core/AngularDotJsonFile/AngularDotJsonFileTemplateRegistration.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>Core/AngularDotJsonFile/AngularDotJsonFileTemplateRegistration.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>abc98339-4259-4d28-82ae-502ba6cdc8b2</ProjectId>
       <CorrelationId>ModuleBuilder.Typescript.Templates.TypescriptTemplate.PreProcessT4#ce096dec-3721-4a3d-9d36-038c7448e74c</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/Core/ApiService/ApiServiceTemplate.cs</ApplicationRelativeFilePath>
@@ -214,6 +254,62 @@
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/Core/CoreModule/CoreModuleTemplateRegistration.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Core/CoreModule/CoreModuleTemplateRegistration.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>abc98339-4259-4d28-82ae-502ba6cdc8b2</ProjectId>
+      <CorrelationId>ModuleBuilder.Html.Templates.HtmlFileTemplate.T4Template.PreProcessed#181fbac7-d209-4cd9-9caa-cc0dff5b8c9a</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>Templates/Core/Index/IndexTemplate.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>Core/Index/IndexTemplate.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>abc98339-4259-4d28-82ae-502ba6cdc8b2</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.Html.Templates.HtmlFileTemplate#181fbac7-d209-4cd9-9caa-cc0dff5b8c9a</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>Templates/Core/Index/IndexTemplate.tt</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>Core/Index/IndexTemplate.tt</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>abc98339-4259-4d28-82ae-502ba6cdc8b2</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.Html.Templates.HtmlFileTemplatePartial#181fbac7-d209-4cd9-9caa-cc0dff5b8c9a</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>Templates/Core/Index/IndexTemplatePartial.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>Core/Index/IndexTemplatePartial.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>abc98339-4259-4d28-82ae-502ba6cdc8b2</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.TemplateRegistration.SingleFileNoModel#181fbac7-d209-4cd9-9caa-cc0dff5b8c9a</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>Templates/Core/Index/IndexTemplateRegistration.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>Core/Index/IndexTemplateRegistration.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>abc98339-4259-4d28-82ae-502ba6cdc8b2</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.Templates.FileTemplateStringInterpolation#60e945cb-40f1-4164-a2db-0445960789ec</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>Templates/Core/StylesDotScssFile/StylesDotScssFileTemplate.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>Core/StylesDotScssFile/StylesDotScssFileTemplate.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>abc98339-4259-4d28-82ae-502ba6cdc8b2</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.ProjectItemTemplate.Partial#60e945cb-40f1-4164-a2db-0445960789ec</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>Templates/Core/StylesDotScssFile/StylesDotScssFileTemplatePartial.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>Core/StylesDotScssFile/StylesDotScssFileTemplatePartial.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>abc98339-4259-4d28-82ae-502ba6cdc8b2</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.TemplateRegistration.SingleFileNoModel#60e945cb-40f1-4164-a2db-0445960789ec</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>Templates/Core/StylesDotScssFile/StylesDotScssFileTemplateRegistration.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>Core/StylesDotScssFile/StylesDotScssFileTemplateRegistration.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>

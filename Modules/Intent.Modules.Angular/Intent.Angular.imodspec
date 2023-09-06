@@ -21,6 +21,10 @@
       <role>Front End</role>
       <location>src</location>
     </template>
+    <template id="Intent.Angular.Core.AngularDotJsonFile" externalReference="d15f9ddb-72df-4868-888d-2c1732a40571">
+      <role>Front End</role>
+      <location></location>
+    </template>
     <template id="Intent.Angular.Core.ApiService" externalReference="ce096dec-3721-4a3d-9d36-038c7448e74c">
       <role>Front End</role>
       <location>src/app/core</location>
@@ -28,6 +32,14 @@
     <template id="Intent.Angular.Core.CoreModule" externalReference="ba59d6a8-a629-4feb-9e5b-c3498b89e9ec">
       <role>Front End</role>
       <location>src/app/core</location>
+    </template>
+    <template id="Intent.Angular.Core.Index" externalReference="181fbac7-d209-4cd9-9caa-cc0dff5b8c9a">
+      <role>Front End</role>
+      <location>src</location>
+    </template>
+    <template id="Intent.Angular.Core.StylesDotScssFile" externalReference="60e945cb-40f1-4164-a2db-0445960789ec">
+      <role>Front End</role>
+      <location>src</location>
     </template>
     <template id="Intent.Angular.Environment.Environment" externalReference="e7ea472f-5ef5-453b-8df6-4fb3569b9e07">
       <role>Front End</role>
@@ -68,6 +80,7 @@
   </templates>
   <decorators>
     <decorator id="Angular.AngularComponentHtmlTemplate.PagedSearchDecorator" />
+    <decorator id="Intent.Angular.PackageDotJsonDecorator" externalReference="c143c85d-0215-4b04-91fe-babfd07de18a" />
   </decorators>
   <factoryExtensions />
   <interoperability>
@@ -88,6 +101,7 @@
     <dependency id="Intent.Modelers.Types.ServiceProxies" version="5.0.0" />
     <dependency id="Intent.Modelers.WebClient" version="4.0.0" />
     <dependency id="Intent.Modelers.WebClient.Angular" version="4.0.0-alpha.1" />
+    <dependency id="Intent.Npm" version="3.3.5" />
   </dependencies>
   <files>
     <file src="$outDir$/$id$.dll" />
