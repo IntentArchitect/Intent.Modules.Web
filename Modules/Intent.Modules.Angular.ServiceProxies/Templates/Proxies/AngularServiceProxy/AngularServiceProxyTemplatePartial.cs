@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -89,13 +90,15 @@ namespace Intent.Modules.Angular.ServiceProxies.Templates.Proxies.AngularService
         {
             @class.AddMethod(name, $"{UseType("Observable", "rxjs")}<{GetReturnType(endpoint)}>", method =>
             {
+                var url = endpoint.Route.Replace("{", "${");
                 method.Public();
                 foreach (var input in endpoint.Inputs)
                 {
                     method.AddParameter(input.Name.ToCamelCase(), GetTypeName(input.TypeReference));
+                    url = url.Replace($"${{{input.Name.ToLowerInvariant()}}}", $"${{{input.Name.ToCamelCase()}}}");
                 }
 
-                method.AddStatement($"let url = `/{endpoint.Route.Replace("{", "${")}`;");
+                method.AddStatement($"let url = `/{url}`;");
                 method.AddStatements(GetPreDataServiceCallStatements(endpoint));
                 method.AddStatement($@"return this.apiService.{GetDataServiceCall(endpoint)}
       .pipe({UseType("map", "rxjs/operators")}((response: {GetApiResponseType(endpoint)}) => {{
