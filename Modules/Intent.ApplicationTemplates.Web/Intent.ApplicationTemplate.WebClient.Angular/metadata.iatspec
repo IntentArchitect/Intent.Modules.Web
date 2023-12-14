@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <applicationTemplate>
   <id>Intent.ApplicationTemplate.WebClient.Angular</id>
-  <version>3.3.12</version>
+  <version>3.3.13</version>
   <supportedClientVersions>[3.3.0-pre.0, 5.0.0)</supportedClientVersions>
   <displayName>Angular Web Client</displayName>
   <shortDescription>Standalone Angular web client.</shortDescription>
@@ -27,7 +27,7 @@
               <includedByDefault>true</includedByDefault>
               <required>true</required>
             </module>
-            <module id="Intent.OutputTargets.Folders" version="3.4.0-pre.1" metadataOnly="false">
+            <module id="Intent.OutputTargets.Folders" version="3.4.0" metadataOnly="false">
               <includedByDefault>true</includedByDefault>
               <required>true</required>
             </module>
