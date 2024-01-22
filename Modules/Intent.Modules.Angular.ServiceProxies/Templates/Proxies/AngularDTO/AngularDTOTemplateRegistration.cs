@@ -42,7 +42,5 @@ namespace Intent.Modules.Angular.ServiceProxies.Templates.Proxies.AngularDTO
         {
             return _metadataManager.WebClient(application).GetMappedServiceProxyDTOModels();
         }
-
-
     }
 }
