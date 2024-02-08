@@ -55,7 +55,7 @@ public static class ServiceMetadataQueries
     //        {
     //            if (operationRoute.Contains($"{{{parameter.Name}}}", StringComparison.InvariantCultureIgnoreCase))
     //            {
-    //                operationRoute = operationRoute.Replace($"{{{parameter.Name}}}", $"${{{parameter.Name.ToCamelCase()}}}", StringComparison.InvariantCultureIgnoreCase);
+    //                operationRoute = operationRoute.Replace($"{{{parameter.Name}}}", $"${{{parameter.Name.ToCamelCase(true)}}}", StringComparison.InvariantCultureIgnoreCase);
     //            }
     //        }
     //    }
@@ -75,7 +75,7 @@ public static class ServiceMetadataQueries
     //    return operation.Parameters
     //        .Where(p => GetSource(operation, p).IsFromQuery() == true ||
     //                    (template.GetTypeInfo(p.TypeReference).IsPrimitive && GetSource(operation, p).IsDefault() &&
-    //                     !route.Contains($"{{{p.Name.ToCamelCase()}}}")))
+    //                     !route.Contains($"{{{p.Name.ToCamelCase(true)}}}")))
     //        .ToArray();
     //}
 

@@ -45,9 +45,9 @@ namespace Intent.Modules.Angular.ServiceProxies.Decorators
                     var operation = service?.Operations.FirstOrDefault(x => MatchesOperationReturnType(x, model.TypeReference) && x.Parameters.Count == 0);
                     if (service != null && operation != null)
                     {
-                        _template.InjectService(service.Name.ToCamelCase(), _template.GetTypeName(AngularServiceProxyTemplate.TemplateId, service));
-                        _onInitStatements.Add($@"this.{service.Name.ToCamelCase()}.{operation.Name.ToCamelCase()}()
-      .subscribe(result => this.{model.Name.ToCamelCase()} = result);");
+                        _template.InjectService(service.Name.ToCamelCase(true), _template.GetTypeName(AngularServiceProxyTemplate.TemplateId, service));
+                        _onInitStatements.Add($@"this.{service.Name.ToCamelCase(true)}.{operation.Name.ToCamelCase(true)}()
+      .subscribe(result => this.{model.Name.ToCamelCase(true)} = result);");
                     }
                 }
             }

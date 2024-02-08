@@ -59,7 +59,7 @@ namespace Intent.Modules.Angular.ServiceProxies.Templates.Proxies.AngularService
                             Logging.Log.Warning($"Operation [{operation.Name}] on {ServiceProxyModel.SpecializationType} [{Model.Name}] is not mapped to an Http-exposed service");
                             continue;
                         }
-                        AddOperationMethod(@class, operation.Name.ToCamelCase(), endpoint);
+                        AddOperationMethod(@class, operation.Name.ToCamelCase(true), endpoint);
                     }
 
                     if (!model.Operations.Any())
@@ -67,7 +67,7 @@ namespace Intent.Modules.Angular.ServiceProxies.Templates.Proxies.AngularService
                         var endpoints = Model.GetMappedEndpoints();
                         foreach (var endpoint in endpoints)
                         {
-                            AddOperationMethod(@class, endpoint.Name.ToCamelCase(), endpoint);
+                            AddOperationMethod(@class, endpoint.Name.ToCamelCase(true), endpoint);
                         }
                     }
                 });
@@ -94,8 +94,8 @@ namespace Intent.Modules.Angular.ServiceProxies.Templates.Proxies.AngularService
                 method.Public();
                 foreach (var input in endpoint.Inputs)
                 {
-                    method.AddParameter(input.Name.ToCamelCase(), GetTypeName(input.TypeReference));
-                    url = url.Replace($"${{{input.Name.ToLowerInvariant()}}}", $"${{{input.Name.ToCamelCase()}}}");
+                    method.AddParameter(input.Name.ToCamelCase(true), GetTypeName(input.TypeReference));
+                    url = url.Replace($"${{{input.Name.ToLowerInvariant()}}}", $"${{{input.Name.ToCamelCase(true)}}}");
                 }
 
                 method.AddStatement($"let url = `/{url}`;");
@@ -153,7 +153,7 @@ namespace Intent.Modules.Angular.ServiceProxies.Templates.Proxies.AngularService
 
         private string GetParameterDefinitions(ServiceOperationModel operation)
         {
-            return string.Join(", ", operation.Parameters.Select(x => x.Name.ToCamelCase() + (x.TypeReference.IsNullable ? "?" : "") + ": " + Types.Get(x.TypeReference, "{0}[]")));
+            return string.Join(", ", operation.Parameters.Select(x => x.Name.ToCamelCase(true) + (x.TypeReference.IsNullable ? "?" : "") + ": " + Types.Get(x.TypeReference, "{0}[]")));
         }
 
         private string GetDataServiceCall(IHttpEndpointModel operation)
@@ -203,7 +203,7 @@ namespace Intent.Modules.Angular.ServiceProxies.Templates.Proxies.AngularService
             else if (operation.Inputs.FirstOrDefault(x => x.Source == HttpInputSource.FromBody) != null)
             {
                 var bodyParam = operation.Inputs.First(x => x.Source == HttpInputSource.FromBody);
-                arguments.Add($"{bodyParam.Name.ToCamelCase()}");
+                arguments.Add($"{bodyParam.Name.ToCamelCase(true)}");
             }
             else if (operation.Verb is HttpVerb.Put or HttpVerb.Post)
             {
@@ -324,10 +324,10 @@ namespace Intent.Modules.Angular.ServiceProxies.Templates.Proxies.AngularService
                 {
                     if (queryParam.TypeReference.Element.Name == "date" || queryParam.TypeReference.Element.Name == "datetime")
                     {
-                        statements.Add($@"  .set(""{queryParam.Name.ToCamelCase()}"", {queryParam.Name.ToCamelCase()}.toISOString())");
+                        statements.Add($@"  .set(""{queryParam.Name.ToCamelCase(true)}"", {queryParam.Name.ToCamelCase(true)}.toISOString())");
                         continue;
                     }
-                    statements.Add($@"  .set(""{queryParam.Name.ToCamelCase()}"", {queryParam.Name.ToCamelCase()})");
+                    statements.Add($@"  .set(""{queryParam.Name.ToCamelCase(true)}"", {queryParam.Name.ToCamelCase(true)})");
                 }
                 statements.Add(";");
             }
@@ -338,7 +338,7 @@ namespace Intent.Modules.Angular.ServiceProxies.Templates.Proxies.AngularService
                 statements.Add($"let formData: FormData = new FormData();");
                 foreach (var field in formDataFields)
                 {
-                    statements.Add($@"formData.append(""{field.Name.ToCamelCase()}"", {field.Name.ToCamelCase()}{(!field.TypeReference.HasStringType() ? ".toString()" : "")});");
+                    statements.Add($@"formData.append(""{field.Name.ToCamelCase(true)}"", {field.Name.ToCamelCase(true)}{(!field.TypeReference.HasStringType() ? ".toString()" : "")});");
                 }
             }
 
@@ -348,7 +348,7 @@ namespace Intent.Modules.Angular.ServiceProxies.Templates.Proxies.AngularService
                 statements.Add($"let headers = new {UseType("HttpHeaders", "@angular/common/http")}()");
                 foreach (var header in headerFields)
                 {
-                    statements.Add($@"  .append(""{header.HeaderName}"", {header.Name.ToCamelCase()})");
+                    statements.Add($@"  .append(""{header.HeaderName}"", {header.Name.ToCamelCase(true)})");
                 }
                 statements.Add(";");
             }
