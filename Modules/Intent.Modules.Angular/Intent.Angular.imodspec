@@ -95,6 +95,8 @@
     <dependency id="Intent.Common.Html" version="4.0.0-pre.0" />
     <dependency id="Intent.Common.Types" version="3.3.9" />
     <dependency id="Intent.Common.TypeScript" version="4.0.0-pre.0" />
+    <dependency id="Intent.Code.Weaving.Html" version="1.0.0" />
+    <dependency id="Intent.Code.Weaving.TypeScript" version="1.0.0" />
     <dependency id="Intent.Modelers.Domain" version="3.4.6" />
     <dependency id="Intent.Modelers.Services" version="3.4.7" />
     <dependency id="Intent.Modelers.Services.CQRS" version="4.0.2" />
