@@ -4,7 +4,6 @@ import com.AngularTest.JavaApplication.application.models.Integration.CustomDTO;
 import java.util.UUID;
 import com.AngularTest.JavaApplication.exceptions.Integration.TestException;
 
-
 public interface IntegrationService {
     CustomDTO QueryParamOp(String param1, int param2);
 

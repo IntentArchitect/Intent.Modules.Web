@@ -16,7 +16,6 @@
       <display>NetApplication.Api</display>
       <externalReference>5f9b980c-8d87-479d-8ae3-40d830777dc8</externalReference>
       <isAbstract>false</isAbstract>
-      <order>1</order>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>d95bc6fe-214d-4957-990f-d41f991b1e29</parentFolderId>
@@ -60,7 +59,6 @@
           <display>ClientApp</display>
           <externalReference>060a63b7-71dc-488a-8c31-3e0e32c9e87d</externalReference>
           <isAbstract>false</isAbstract>
-          <order>1</order>
           <genericTypes />
           <isMapped>false</isMapped>
           <parentFolderId>07d957ac-c44e-4d5c-bf38-8e9ae1768a6d</parentFolderId>
@@ -81,7 +79,6 @@
               <display>Front End</display>
               <externalReference>164d4bd8-c4f0-4ca1-baa1-2549cc348c20</externalReference>
               <isAbstract>false</isAbstract>
-              <order>1</order>
               <genericTypes />
               <isMapped>false</isMapped>
               <parentFolderId>cdd5bbe0-0194-493f-93e6-f320f1ae1f27</parentFolderId>
@@ -96,7 +93,6 @@
           <display>Distribution</display>
           <externalReference>cf2c3d03-b17f-40c1-93c5-64129341f35e</externalReference>
           <isAbstract>false</isAbstract>
-          <order>2</order>
           <genericTypes />
           <isMapped>false</isMapped>
           <parentFolderId>07d957ac-c44e-4d5c-bf38-8e9ae1768a6d</parentFolderId>
@@ -109,7 +105,6 @@
           <display>Startup</display>
           <externalReference>904efe78-bfc4-4bfd-903b-725f593b9b22</externalReference>
           <isAbstract>false</isAbstract>
-          <order>3</order>
           <genericTypes />
           <isMapped>false</isMapped>
           <parentFolderId>07d957ac-c44e-4d5c-bf38-8e9ae1768a6d</parentFolderId>

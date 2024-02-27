@@ -10,8 +10,8 @@ import org.springframework.beans.factory.annotation.Value;
 
 @Configuration
 public class CorsConfig {
-    @Value("${cors.origin}")
-    private String origin;
+    @Value("${cors.origins}")
+    private String[] origins;
     @Bean
     @IntentIgnoreBody
     public WebMvcConfigurer corsConfigurer() {

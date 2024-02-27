@@ -16,7 +16,6 @@
       <display>NetApplication.Infrastructure</display>
       <externalReference>6c18c234-6c17-4288-a6e4-a95e3ba5037d</externalReference>
       <isAbstract>false</isAbstract>
-      <order>1</order>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>9c378f5d-18b0-4bcb-953c-61ff7fda871a</parentFolderId>
@@ -60,7 +59,6 @@
           <display>Infrastructure</display>
           <externalReference>85686dd2-fb9f-4b8f-886e-2be24d503492</externalReference>
           <isAbstract>false</isAbstract>
-          <order>1</order>
           <genericTypes />
           <isMapped>false</isMapped>
           <parentFolderId>36a5bbcb-92da-4535-bb84-debaa8995ba8</parentFolderId>
@@ -73,7 +71,6 @@
           <display>Repository.Implementation</display>
           <externalReference>352eeda5-4ba6-45bd-be6b-e4e730503ddc</externalReference>
           <isAbstract>false</isAbstract>
-          <order>2</order>
           <genericTypes />
           <isMapped>false</isMapped>
           <parentFolderId>36a5bbcb-92da-4535-bb84-debaa8995ba8</parentFolderId>

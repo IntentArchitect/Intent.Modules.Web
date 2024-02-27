@@ -16,7 +16,6 @@
       <display>NetApplication.Application</display>
       <externalReference>09ef8fd4-6e2c-4344-8918-b9b43bd24d5f</externalReference>
       <isAbstract>false</isAbstract>
-      <order>1</order>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>27ce9156-26d2-47c0-8c9e-f5cb1ea1920a</parentFolderId>
@@ -60,7 +59,6 @@
           <display>Application</display>
           <externalReference>1be18753-0bf3-4e0b-b5d7-800fc5b49272</externalReference>
           <isAbstract>false</isAbstract>
-          <order>1</order>
           <genericTypes />
           <isMapped>false</isMapped>
           <parentFolderId>cff1407e-306d-40e7-8ca1-4103f9791379</parentFolderId>

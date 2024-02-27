@@ -16,7 +16,6 @@
       <display>domain</display>
       <externalReference>0d4eff9c-99a6-4e8e-8987-cca341b9d476</externalReference>
       <isAbstract>false</isAbstract>
-      <order>1</order>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>182f9e58-c87c-4b22-a13a-2b6823d0fd91</parentFolderId>
@@ -28,7 +27,6 @@
           <display>Domain</display>
           <externalReference>7c03c1f1-8ee1-419d-9089-23b70fdb2096</externalReference>
           <isAbstract>false</isAbstract>
-          <order>1</order>
           <genericTypes />
           <isMapped>false</isMapped>
           <parentFolderId>91b60e92-801b-4ccb-88e8-8fa50b4c6bcb</parentFolderId>
@@ -43,7 +41,6 @@
       <display>intent</display>
       <externalReference>af7a9adb-05d0-43af-9b01-540942489054</externalReference>
       <isAbstract>false</isAbstract>
-      <order>2</order>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>182f9e58-c87c-4b22-a13a-2b6823d0fd91</parentFolderId>
@@ -55,7 +52,6 @@
           <display>Intent</display>
           <externalReference>ac90ab08-bbb3-40dc-860b-88602c1b8dbd</externalReference>
           <isAbstract>false</isAbstract>
-          <order>1</order>
           <genericTypes />
           <isMapped>false</isMapped>
           <parentFolderId>65cd49f3-063b-4f0c-87ed-611adc863220</parentFolderId>
@@ -84,7 +80,6 @@
       <display>repository</display>
       <externalReference>5f02b6a0-b35e-4541-b6fd-95e1dd1d6f18</externalReference>
       <isAbstract>false</isAbstract>
-      <order>3</order>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>182f9e58-c87c-4b22-a13a-2b6823d0fd91</parentFolderId>
@@ -96,7 +91,6 @@
           <display>Repositories</display>
           <externalReference>05510aca-afa9-4e87-80ef-41b634819bd6</externalReference>
           <isAbstract>false</isAbstract>
-          <order>1</order>
           <genericTypes />
           <isMapped>false</isMapped>
           <parentFolderId>b5e1e8fa-639d-4208-9882-a56e2fab3f8b</parentFolderId>
@@ -125,7 +119,6 @@
       <display>services</display>
       <externalReference>caf3287b-872f-4727-bed6-afb820992435</externalReference>
       <isAbstract>false</isAbstract>
-      <order>4</order>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>182f9e58-c87c-4b22-a13a-2b6823d0fd91</parentFolderId>
@@ -137,7 +130,6 @@
           <display>Services</display>
           <externalReference>bc9c0fb6-e753-4f1a-8230-5bfccd538feb</externalReference>
           <isAbstract>false</isAbstract>
-          <order>1</order>
           <genericTypes />
           <isMapped>false</isMapped>
           <parentFolderId>1cd37843-572c-41ca-88d6-89a5dc52df69</parentFolderId>
@@ -166,7 +158,6 @@
       <display>web</display>
       <externalReference>67b0254e-5654-4962-aa56-4ceead2022f2</externalReference>
       <isAbstract>false</isAbstract>
-      <order>5</order>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>182f9e58-c87c-4b22-a13a-2b6823d0fd91</parentFolderId>
@@ -178,7 +169,6 @@
           <display>rest</display>
           <externalReference>2ed882f0-3d4e-4c7c-b135-45be6eefc649</externalReference>
           <isAbstract>false</isAbstract>
-          <order>1</order>
           <genericTypes />
           <isMapped>false</isMapped>
           <parentFolderId>bc4e722f-ae09-44c2-9b00-b369c4785ba8</parentFolderId>
@@ -190,7 +180,6 @@
               <display>Controllers</display>
               <externalReference>bf4a24da-201e-400c-91d8-432d6df300ac</externalReference>
               <isAbstract>false</isAbstract>
-              <order>1</order>
               <genericTypes />
               <isMapped>false</isMapped>
               <parentFolderId>5fe43537-df22-4a56-87b8-472496be96d9</parentFolderId>
@@ -249,7 +238,6 @@
       <display>Startup</display>
       <externalReference>55a7261e-84f9-4281-9544-cc6292c1f233</externalReference>
       <isAbstract>false</isAbstract>
-      <order>6</order>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>182f9e58-c87c-4b22-a13a-2b6823d0fd91</parentFolderId>

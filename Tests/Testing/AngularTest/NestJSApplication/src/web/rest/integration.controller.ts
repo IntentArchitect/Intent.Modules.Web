@@ -62,7 +62,7 @@ export class IntegrationController {
   @Get('wrapped-primitive-guid')
   @ApiOkResponse({
     description: 'Result retrieved successfully.',
-    type: 'string',
+    type: String,
   })
   @ApiNotFoundResponse({ description: 'Response not found.' })
   async getWrappedPrimitiveGuid(@Req() req: Request): Promise<JsonResponse<string>> {
@@ -73,7 +73,7 @@ export class IntegrationController {
   @Get('wrapped-primitive-string')
   @ApiOkResponse({
     description: 'Result retrieved successfully.',
-    type: 'string',
+    type: String,
   })
   @ApiNotFoundResponse({ description: 'Response not found.' })
   async getWrappedPrimitiveString(@Req() req: Request): Promise<JsonResponse<string>> {
@@ -95,7 +95,7 @@ export class IntegrationController {
   @Get('primitive-guid')
   @ApiOkResponse({
     description: 'Result retrieved successfully.',
-    type: 'string',
+    type: String,
   })
   @ApiNotFoundResponse({ description: 'Response not found.' })
   async getPrimitiveGuid(@Req() req: Request): Promise<string> {
@@ -106,7 +106,7 @@ export class IntegrationController {
   @Get('primitive-string')
   @ApiOkResponse({
     description: 'Result retrieved successfully.',
-    type: 'string',
+    type: String,
   })
   @ApiNotFoundResponse({ description: 'Response not found.' })
   async getPrimitiveString(@Req() req: Request): Promise<string> {
@@ -128,7 +128,7 @@ export class IntegrationController {
   @Get('primitive-string-list')
   @ApiOkResponse({
     description: 'Result retrieved successfully.',
-    type: 'string',
+    type: String,
     isArray: true,
   })
   async getPrimitiveStringList(@Req() req: Request): Promise<string[]> {
