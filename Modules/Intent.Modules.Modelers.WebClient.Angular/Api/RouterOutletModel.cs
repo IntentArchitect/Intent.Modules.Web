@@ -11,7 +11,7 @@ using Intent.RoslynWeaver.Attributes;
 namespace Intent.Modelers.WebClient.Angular.Api
 {
     [IntentManaged(Mode.Merge)]
-    public class RouterOutletModel : IMetadataModel, IHasStereotypes, IHasName
+    public class RouterOutletModel : IMetadataModel, IHasStereotypes, IHasName, IElementWrapper
     {
         public const string SpecializationType = "Router Outlet";
         public const string SpecializationTypeId = "26d97593-7c29-402a-9191-d4e3e96217fa";

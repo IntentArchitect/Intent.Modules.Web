@@ -11,7 +11,7 @@ using Intent.RoslynWeaver.Attributes;
 namespace Intent.Angular.Layout.Api
 {
     [IntentManaged(Mode.Merge)]
-    public class LinkModel : IMetadataModel, IHasStereotypes, IHasName
+    public class LinkModel : IMetadataModel, IHasStereotypes, IHasName, IElementWrapper
     {
         public const string SpecializationType = "Link";
         public const string SpecializationTypeId = "b0127146-e571-4000-825e-e7a04e4a45d6";

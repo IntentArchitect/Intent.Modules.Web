@@ -13,7 +13,7 @@ using Intent.RoslynWeaver.Attributes;
 namespace Intent.Angular.Layout.Api
 {
     [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
-    public class FormModel : IMetadataModel, IHasStereotypes, IHasName
+    public class FormModel : IMetadataModel, IHasStereotypes, IHasName, IElementWrapper
     {
         public const string SpecializationType = "Form";
         protected readonly IElement _element;
@@ -32,8 +32,10 @@ namespace Intent.Angular.Layout.Api
             }
         }
 
+        [IntentManaged(Mode.Ignore)]
         public ModuleModel Module => InternalElement.GetModule();
 
+        [IntentManaged(Mode.Ignore)]
         public string DataModelPath { get; } = "";
 
         [IntentManaged(Mode.Fully)]
@@ -87,10 +89,12 @@ namespace Intent.Angular.Layout.Api
             return (_element != null ? _element.GetHashCode() : 0);
         }
 
+        [IntentManaged(Mode.Ignore)]
         public bool IsValid()
         {
             return true;
         }
+
         public const string SpecializationTypeId = "8aee9b69-d02d-4ca8-b28a-6585508bd033";
 
         public string Comment => _element.Comment;

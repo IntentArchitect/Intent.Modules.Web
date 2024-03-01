@@ -12,7 +12,7 @@ using Intent.RoslynWeaver.Attributes;
 namespace Intent.Modelers.WebClient.Angular.Api
 {
     [IntentManaged(Mode.Merge, Signature = Mode.Merge)]
-    public class ModelDefinitionModel : IMetadataModel, IHasStereotypes, IHasName, IHasFolder<IFolder>
+    public class ModelDefinitionModel : IMetadataModel, IHasStereotypes, IHasName, IHasFolder<IFolder>, IElementWrapper
     {
         public const string SpecializationType = "Model Definition";
         protected readonly IElement _element;

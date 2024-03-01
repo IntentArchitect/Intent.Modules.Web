@@ -14,13 +14,13 @@ namespace Intent.Angular.Layout.Api
     {
         public static ButtonSettings GetButtonSettings(this ButtonControlModel model)
         {
-            var stereotype = model.GetStereotype("Button Settings");
+            var stereotype = model.GetStereotype("abb75515-21f5-4675-9914-d0973f2aeb57");
             return stereotype != null ? new ButtonSettings(stereotype) : null;
         }
 
         public static bool HasButtonSettings(this ButtonControlModel model)
         {
-            return model.HasStereotype("Button Settings");
+            return model.HasStereotype("abb75515-21f5-4675-9914-d0973f2aeb57");
         }
 
         public static bool TryGetButtonSettings(this ButtonControlModel model, out ButtonSettings stereotype)
@@ -31,7 +31,7 @@ namespace Intent.Angular.Layout.Api
                 return false;
             }
 
-            stereotype = new ButtonSettings(model.GetStereotype("Button Settings"));
+            stereotype = new ButtonSettings(model.GetStereotype("abb75515-21f5-4675-9914-d0973f2aeb57"));
             return true;
         }
 

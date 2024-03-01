@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Intent.Metadata.Models;
+using Intent.Modules.Common;
 using Intent.Modules.Common.Types.Api;
 using Intent.RoslynWeaver.Attributes;
 
@@ -70,6 +71,7 @@ namespace Intent.Modelers.WebClient.Angular.Api
     public class NavigationSourceEndModel : NavigationEndModel
     {
         public const string SpecializationTypeId = "97a3de8a-c9bf-4cf2-bc0a-b8692b02211b";
+        public const string SpecializationType = "NavigationSourceEnd";
 
         public NavigationSourceEndModel(IAssociationEnd associationEnd, NavigationModel association) : base(associationEnd, association)
         {
@@ -80,6 +82,7 @@ namespace Intent.Modelers.WebClient.Angular.Api
     public class NavigationTargetEndModel : NavigationEndModel
     {
         public const string SpecializationTypeId = "2b191288-ecae-4743-b069-cbdd927ef349";
+        public const string SpecializationType = "NavigationTargetEnd";
 
         public NavigationTargetEndModel(IAssociationEnd associationEnd, NavigationModel association) : base(associationEnd, association)
         {
@@ -87,7 +90,7 @@ namespace Intent.Modelers.WebClient.Angular.Api
     }
 
     [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
-    public class NavigationEndModel : ITypeReference, IMetadataModel, IHasName, IHasStereotypes
+    public class NavigationEndModel : ITypeReference, IMetadataModel, IHasName, IHasStereotypes, IElementWrapper
     {
         protected readonly IAssociationEnd _associationEnd;
         private readonly NavigationModel _association;
@@ -115,6 +118,7 @@ namespace Intent.Modelers.WebClient.Angular.Api
         public string SpecializationTypeId => _associationEnd.SpecializationTypeId;
         public string Name => _associationEnd.Name;
         public NavigationModel Association => _association;
+        public IElement InternalElement => _associationEnd;
         public bool IsNavigable => _associationEnd.IsNavigable;
         public bool IsNullable => _associationEnd.TypeReference.IsNullable;
         public bool IsCollection => _associationEnd.TypeReference.IsCollection;

@@ -11,7 +11,7 @@ using Intent.RoslynWeaver.Attributes;
 namespace Intent.Angular.Layout.Api
 {
     [IntentManaged(Mode.Merge)]
-    public class DropdownModel : IMetadataModel, IHasStereotypes, IHasName
+    public class DropdownModel : IMetadataModel, IHasStereotypes, IHasName, IElementWrapper
     {
         public const string SpecializationType = "Dropdown";
         public const string SpecializationTypeId = "91610e3a-f0e4-4807-a1b3-4dc947fe13ac";

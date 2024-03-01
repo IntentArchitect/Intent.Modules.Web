@@ -12,7 +12,7 @@ using Intent.RoslynWeaver.Attributes;
 namespace Intent.Angular.Layout.Api
 {
     [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
-    public class FormFieldModel : IMetadataModel, IHasStereotypes, IHasName, IHasTypeReference
+    public class FormFieldModel : IMetadataModel, IHasStereotypes, IHasName, IElementWrapper, IHasTypeReference
     {
         public const string SpecializationType = "Form Field";
         protected readonly IElement _element;
@@ -46,6 +46,7 @@ namespace Intent.Angular.Layout.Api
         [IntentManaged(Mode.Fully)]
         public IElement InternalElement => _element;
 
+        [IntentManaged(Mode.Ignore)]
         public string DataModelPath { get; } = "";
 
         [IntentManaged(Mode.Fully)]

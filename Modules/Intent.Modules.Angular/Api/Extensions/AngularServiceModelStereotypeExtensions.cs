@@ -15,13 +15,13 @@ namespace Intent.Angular.Api
     {
         public static AngularServiceSettings GetAngularServiceSettings(this AngularServiceModel model)
         {
-            var stereotype = model.GetStereotype("Angular Service Settings");
+            var stereotype = model.GetStereotype("ede23670-71ce-42ef-ae7c-a37ff7ae46f3");
             return stereotype != null ? new AngularServiceSettings(stereotype) : null;
         }
 
         public static bool HasAngularServiceSettings(this AngularServiceModel model)
         {
-            return model.HasStereotype("Angular Service Settings");
+            return model.HasStereotype("ede23670-71ce-42ef-ae7c-a37ff7ae46f3");
         }
 
         public static bool TryGetAngularServiceSettings(this AngularServiceModel model, out AngularServiceSettings stereotype)
@@ -32,7 +32,7 @@ namespace Intent.Angular.Api
                 return false;
             }
 
-            stereotype = new AngularServiceSettings(model.GetStereotype("Angular Service Settings"));
+            stereotype = new AngularServiceSettings(model.GetStereotype("ede23670-71ce-42ef-ae7c-a37ff7ae46f3"));
             return true;
         }
 

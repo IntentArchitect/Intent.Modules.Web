@@ -24,7 +24,7 @@ using Intent.Utils;
 using ServiceOperationModel = Intent.Modelers.Services.Api.OperationModel;
 using ProxyOperationModel = Intent.Modelers.Types.ServiceProxies.Api.OperationModel;
 
-[assembly: DefaultIntentManaged(Mode.Merge)]
+[assembly: DefaultIntentManaged(Mode.Fully)]
 [assembly: IntentTemplate("Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial", Version = "1.0")]
 
 namespace Intent.Modules.Angular.ServiceProxies.Templates.Proxies.AngularServiceProxy
@@ -35,7 +35,7 @@ namespace Intent.Modules.Angular.ServiceProxies.Templates.Proxies.AngularService
         [IntentManaged(Mode.Fully)]
         public const string TemplateId = "Intent.Angular.ServiceProxies.Proxies.AngularServiceProxy";
 
-        [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
+        [IntentManaged(Mode.Fully, Body = Mode.Ignore)]
         public AngularServiceProxyTemplate(IOutputTarget outputTarget, Intent.Modelers.Types.ServiceProxies.Api.ServiceProxyModel model) : base(TemplateId, outputTarget, model)
         {
             //ServiceMetadataQueries.Validate(this, model);
@@ -107,6 +107,7 @@ namespace Intent.Modules.Angular.ServiceProxies.Templates.Proxies.AngularService
             });
         }
 
+        [IntentManaged(Mode.Fully)]
         public TypescriptFile TypescriptFile { get; }
 
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]
@@ -120,6 +121,7 @@ namespace Intent.Modules.Angular.ServiceProxies.Templates.Proxies.AngularService
             );
         }
 
+        [IntentManaged(Mode.Fully)]
         public override string TransformText()
         {
             return TypescriptFile.ToString();
@@ -273,6 +275,7 @@ namespace Intent.Modules.Angular.ServiceProxies.Templates.Proxies.AngularService
         {
             return Enum.TryParse(operation.GetHttpSettings().Verb().Value, out HttpVerb verbEnum) ? verbEnum : HttpVerb.Post;
         }
+
 
         //private string GetRelativeUri(ServiceOperationModel operation)
         //{

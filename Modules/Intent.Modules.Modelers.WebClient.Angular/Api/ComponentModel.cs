@@ -6,13 +6,13 @@ using Intent.Modules.Common;
 using Intent.Modules.Common.Types.Api;
 using Intent.RoslynWeaver.Attributes;
 
-[assembly: IntentTemplate("Intent.ModuleBuilder.Templates.Api.ApiElementModel", Version = "1.0")]
 [assembly: DefaultIntentManaged(Mode.Merge)]
+[assembly: IntentTemplate("Intent.ModuleBuilder.Templates.Api.ApiElementModel", Version = "1.0")]
 
 namespace Intent.Modelers.WebClient.Angular.Api
 {
     [IntentManaged(Mode.Merge, Signature = Mode.Merge)]
-    public class ComponentModel : IMetadataModel, IHasStereotypes, IHasName, IHasFolder<IFolder>
+    public class ComponentModel : IMetadataModel, IHasStereotypes, IHasName, IHasFolder<IFolder>, IElementWrapper
     {
 
         [IntentManaged(Mode.Ignore)]

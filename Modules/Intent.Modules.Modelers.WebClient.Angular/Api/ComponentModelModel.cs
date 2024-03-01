@@ -11,7 +11,7 @@ using Intent.RoslynWeaver.Attributes;
 namespace Intent.Modelers.WebClient.Angular.Api
 {
     [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
-    public class ComponentModelModel : IMetadataModel, IHasStereotypes, IHasName, IHasTypeReference
+    public class ComponentModelModel : IMetadataModel, IHasStereotypes, IHasName, IElementWrapper, IHasTypeReference
     {
         public const string SpecializationType = "Component Model";
         protected readonly IElement _element;

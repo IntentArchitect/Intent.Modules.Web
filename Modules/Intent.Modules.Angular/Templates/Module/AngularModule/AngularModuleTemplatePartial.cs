@@ -7,6 +7,7 @@ using Intent.Modelers.WebClient.Angular.Api;
 using Intent.Modules.Angular.Templates.Component.AngularComponentTs;
 using Intent.Modules.Angular.Templates.Core.CoreModule;
 using Intent.Modules.Angular.Templates.Module.AngularRoutingModule;
+using Intent.Modules.Common;
 using Intent.Modules.Common.Templates;
 using Intent.Modules.Common.Types.Api;
 using Intent.Modules.Common.TypeScript.Templates;

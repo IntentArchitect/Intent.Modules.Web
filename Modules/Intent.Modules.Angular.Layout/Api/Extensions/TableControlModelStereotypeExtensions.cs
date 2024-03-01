@@ -14,13 +14,13 @@ namespace Intent.Angular.Layout.Api
     {
         public static TableSettings GetTableSettings(this TableControlModel model)
         {
-            var stereotype = model.GetStereotype("Table Settings");
+            var stereotype = model.GetStereotype("df59cc7e-978d-42e3-921f-3f43d120834e");
             return stereotype != null ? new TableSettings(stereotype) : null;
         }
 
         public static bool HasTableSettings(this TableControlModel model)
         {
-            return model.HasStereotype("Table Settings");
+            return model.HasStereotype("df59cc7e-978d-42e3-921f-3f43d120834e");
         }
 
         public static bool TryGetTableSettings(this TableControlModel model, out TableSettings stereotype)
@@ -31,7 +31,7 @@ namespace Intent.Angular.Layout.Api
                 return false;
             }
 
-            stereotype = new TableSettings(model.GetStereotype("Table Settings"));
+            stereotype = new TableSettings(model.GetStereotype("df59cc7e-978d-42e3-921f-3f43d120834e"));
             return true;
         }
 

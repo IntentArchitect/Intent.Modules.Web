@@ -3,7 +3,7 @@
   <ApplicationId>fe241e7f-8588-40fa-86be-f9fb01a88e36</ApplicationId>
   <FileLogs>
     <FileLog>
-      <CorrelationId>Intent.VisualStudio.Projects.VisualStudio2015Solution#a9ad4760-d8e4-4591-a79b-16171936e4b6</CorrelationId>
+      <CorrelationId>Intent.VisualStudio.Projects.VisualStudioSolution#a9ad4760-d8e4-4591-a79b-16171936e4b6</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>../Intent.Modules.Web.sln</ApplicationRelativeFilePath>
       <IsIgnored>false</IsIgnored>
@@ -54,7 +54,7 @@
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Intent.Angular.ApiAuthorization.imodspec</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Intent.Angular.ApiAuthorization.imodspec</ProjectRelativeFilePath>
-      <IsIgnored>false</IsIgnored>
+      <IsIgnored>true</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>0b4155ba-8b36-4eb9-a383-2d23ee7113a3</ProjectId>
@@ -70,14 +70,6 @@
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>modelers/Authorization Components.designer.settings</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Authorization Components.designer.settings</ProjectRelativeFilePath>
-      <IsIgnored>false</IsIgnored>
-    </FileLog>
-    <FileLog>
-      <ProjectId>0b4155ba-8b36-4eb9-a383-2d23ee7113a3</ProjectId>
-      <CorrelationId>Intent.ModuleBuilder.ReadMe</CorrelationId>
-      <OverwriteBehaviour>always</OverwriteBehaviour>
-      <ApplicationRelativeFilePath>README.txt</ApplicationRelativeFilePath>
-      <ProjectRelativeFilePath>README.txt</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>

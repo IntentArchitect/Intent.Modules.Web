@@ -11,7 +11,7 @@ using Intent.RoslynWeaver.Attributes;
 namespace Intent.Modelers.WebClient.Angular.Api
 {
     [IntentManaged(Mode.Merge)]
-    public class RedirectModel : IMetadataModel, IHasStereotypes, IHasName, IHasTypeReference
+    public class RedirectModel : IMetadataModel, IHasStereotypes, IHasName, IHasTypeReference, IElementWrapper
     {
         public const string SpecializationType = "Redirect";
         public const string SpecializationTypeId = "6434986f-d5ce-4f51-9ebd-4780a0e30d07";

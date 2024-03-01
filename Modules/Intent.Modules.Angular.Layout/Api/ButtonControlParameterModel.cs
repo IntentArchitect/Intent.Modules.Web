@@ -11,7 +11,7 @@ using Intent.RoslynWeaver.Attributes;
 namespace Intent.Angular.Layout.Api
 {
     [IntentManaged(Mode.Merge)]
-    public class ButtonControlParameterModel : IMetadataModel, IHasStereotypes, IHasName, IHasTypeReference
+    public class ButtonControlParameterModel : IMetadataModel, IHasStereotypes, IHasName, IHasTypeReference, IElementWrapper
     {
         public const string SpecializationType = "Button Control Parameter";
         public const string SpecializationTypeId = "8e6bf0e3-9f98-4143-9900-78815b2201db";

@@ -15,13 +15,13 @@ namespace Intent.Angular.Api
     {
         public static AngularComponentSettings GetAngularComponentSettings(this ComponentModel model)
         {
-            var stereotype = model.GetStereotype("Angular Component Settings");
+            var stereotype = model.GetStereotype("ded6918f-81c2-4097-bdbe-48ec0fb84b7b");
             return stereotype != null ? new AngularComponentSettings(stereotype) : null;
         }
 
         public static bool HasAngularComponentSettings(this ComponentModel model)
         {
-            return model.HasStereotype("Angular Component Settings");
+            return model.HasStereotype("ded6918f-81c2-4097-bdbe-48ec0fb84b7b");
         }
 
         public static bool TryGetAngularComponentSettings(this ComponentModel model, out AngularComponentSettings stereotype)
@@ -32,7 +32,7 @@ namespace Intent.Angular.Api
                 return false;
             }
 
-            stereotype = new AngularComponentSettings(model.GetStereotype("Angular Component Settings"));
+            stereotype = new AngularComponentSettings(model.GetStereotype("ded6918f-81c2-4097-bdbe-48ec0fb84b7b"));
             return true;
         }
 

@@ -14,13 +14,13 @@ namespace Intent.Angular.Layout.Api
     {
         public static LinkSettings GetLinkSettings(this LinkModel model)
         {
-            var stereotype = model.GetStereotype("Link Settings");
+            var stereotype = model.GetStereotype("83a5537c-2283-450f-99be-640547d0fad0");
             return stereotype != null ? new LinkSettings(stereotype) : null;
         }
 
         public static bool HasLinkSettings(this LinkModel model)
         {
-            return model.HasStereotype("Link Settings");
+            return model.HasStereotype("83a5537c-2283-450f-99be-640547d0fad0");
         }
 
         public static bool TryGetLinkSettings(this LinkModel model, out LinkSettings stereotype)
@@ -31,7 +31,7 @@ namespace Intent.Angular.Layout.Api
                 return false;
             }
 
-            stereotype = new LinkSettings(model.GetStereotype("Link Settings"));
+            stereotype = new LinkSettings(model.GetStereotype("83a5537c-2283-450f-99be-640547d0fad0"));
             return true;
         }
 

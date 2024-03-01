@@ -11,7 +11,7 @@ using Intent.RoslynWeaver.Attributes;
 namespace Intent.Angular.ApiAuthorization.Api
 {
     [IntentManaged(Mode.Merge)]
-    public class LoginMenuModel : IMetadataModel, IHasStereotypes, IHasName
+    public class LoginMenuModel : IMetadataModel, IHasStereotypes, IHasName, IElementWrapper
     {
         public const string SpecializationType = "Login Menu";
         public const string SpecializationTypeId = "fc108495-cb62-4a0a-8b3e-1b601a442da3";

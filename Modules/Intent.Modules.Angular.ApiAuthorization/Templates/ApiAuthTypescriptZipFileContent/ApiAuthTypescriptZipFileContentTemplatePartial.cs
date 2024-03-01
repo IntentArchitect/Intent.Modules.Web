@@ -1,7 +1,9 @@
+using System;
 using System.Collections.Generic;
 using System.IO;
 using Intent.Engine;
 using Intent.Modules.Angular.Templates;
+using Intent.Modules.Common;
 using Intent.Modules.Common.Configuration;
 using Intent.Modules.Common.Templates;
 using Intent.Modules.Common.TypeScript.Templates;

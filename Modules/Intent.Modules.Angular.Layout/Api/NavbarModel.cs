@@ -12,7 +12,7 @@ using Intent.RoslynWeaver.Attributes;
 namespace Intent.Angular.Layout.Api
 {
     [IntentManaged(Mode.Merge)]
-    public class NavbarModel : IMetadataModel, IHasStereotypes, IHasName
+    public class NavbarModel : IMetadataModel, IHasStereotypes, IHasName, IElementWrapper
     {
         public const string SpecializationType = "Navbar";
         public const string SpecializationTypeId = "990cd6f1-8840-419b-be75-4ec63f03f359";

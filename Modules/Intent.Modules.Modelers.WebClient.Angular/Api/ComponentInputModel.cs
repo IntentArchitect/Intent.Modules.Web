@@ -11,7 +11,7 @@ using Intent.RoslynWeaver.Attributes;
 namespace Intent.Modelers.WebClient.Angular.Api
 {
     [IntentManaged(Mode.Merge)]
-    public class ComponentInputModel : IMetadataModel, IHasStereotypes, IHasName, IHasTypeReference
+    public class ComponentInputModel : IMetadataModel, IHasStereotypes, IHasName, IHasTypeReference, IElementWrapper
     {
         public const string SpecializationType = "Component Input";
         public const string SpecializationTypeId = "807bc2cd-cdba-482d-a47e-d2aa546200fc";

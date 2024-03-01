@@ -11,7 +11,7 @@ using Intent.RoslynWeaver.Attributes;
 namespace Intent.Modelers.WebClient.Angular.Api
 {
     [IntentManaged(Mode.Merge)]
-    public class ResolverModel : IMetadataModel, IHasStereotypes, IHasName, IHasTypeReference
+    public class ResolverModel : IMetadataModel, IHasStereotypes, IHasName, IHasTypeReference, IElementWrapper
     {
         public const string SpecializationType = "Resolver";
         public const string SpecializationTypeId = "8112a50c-9394-4e05-996b-0e57b40b3f46";

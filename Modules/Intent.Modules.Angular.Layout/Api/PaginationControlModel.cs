@@ -13,7 +13,7 @@ using Intent.RoslynWeaver.Attributes;
 namespace Intent.Angular.Layout.Api
 {
     [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
-    public class PaginationControlModel : IMetadataModel, IHasStereotypes, IHasName
+    public class PaginationControlModel : IMetadataModel, IHasStereotypes, IHasName, IElementWrapper
     {
         [IntentManaged(Mode.Fully)] public const string SpecializationType = "Pagination Control";
         protected readonly IElement _element;
@@ -36,6 +36,7 @@ namespace Intent.Angular.Layout.Api
             }
         }
 
+        [IntentManaged(Mode.Ignore)]
         public ModuleModel Module => new ModuleModel(_element.GetParentPath().Reverse().First(x => x.SpecializationType == ModuleModel.SpecializationType));
 
         [IntentManaged(Mode.Ignore)]
@@ -47,6 +48,7 @@ namespace Intent.Angular.Layout.Api
         [IntentManaged(Mode.Ignore)]
         public string PageNumberPath { get; set; }
 
+        [IntentManaged(Mode.Ignore)]
         public bool IsValid()
         {
             return DataModelPath != null && TotalItemsPath != null && PageNumberPath != null;

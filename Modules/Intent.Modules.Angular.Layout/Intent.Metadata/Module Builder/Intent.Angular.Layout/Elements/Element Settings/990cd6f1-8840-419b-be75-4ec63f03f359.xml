@@ -33,10 +33,12 @@
         <property name="5a9277a9-b808-4ade-bb57-840b51b0da3a" display="Save Mode" value="As Child" isActive="true" />
         <property name="736b1337-6f35-4e38-85a8-69ff5d69fb7d" display="Icon" value="{&quot;source&quot;:&quot;data:image/png;base64,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&quot;,&quot;type&quot;:0,&quot;absolutePathRelativeTo&quot;:null}" isActive="true" />
         <property name="32086823-bd72-4be0-a765-2d9530f4ce06" display="Expanded Icon" isActive="true" />
+        <property name="b966a8e9-f298-4741-8397-fe49f29c248b" display="Icon Function" isActive="true" />
         <property name="0632053a-6b40-47a0-857f-6840e322344c" display="Display Text Function" value="" isActive="true" />
         <property name="1e5a5798-220b-4a92-993d-c4ebd4123e53" display="Validate Function" value="" isActive="true" />
         <property name="c48d9593-c1f4-4610-9cb3-54de9c2f0c06" display="Allow Rename" value="true" isActive="true" />
         <property name="4b17e907-bd58-4f70-b376-383c6046ad8a" display="Allow Abstract" value="false" isActive="true" />
+        <property name="ad2bbaa1-becc-477b-83d2-97179678e4bb" display="Allow Static" value="false" isActive="true" />
         <property name="0eb8bcd6-4120-47c5-ac74-9a9e4a7d4536" display="Allow Set Value" value="false" isActive="true" />
         <property name="8ad604ab-7edf-4a6c-86a5-e27f0f95dfac" display="Allow Generic Types" value="false" isActive="true" />
         <property name="ad5ce0fc-72ab-4aa3-92e9-238954c2aedb" display="Allow Sorting" value="true" isActive="true" />
@@ -51,7 +53,7 @@
       <name>[context menu]</name>
       <display>[context menu]</display>
       <isAbstract>false</isAbstract>
-      <sort-children>by-type-then-manually</sort-children>
+      <sort-children>manually</sort-children>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>990cd6f1-8840-419b-be75-4ec63f03f359</parentFolderId>
@@ -93,6 +95,7 @@
                 <property name="A43F388B-DAFF-422C-BD8D-FB433EFEC51B" display="Type Order" isActive="true" />
                 <property name="8e092aa6-7d1a-4a06-af82-903e7642cef6" display="Allow Multiple" value="true" isActive="true" />
                 <property name="719e9dff-2b8d-407d-912d-fac99a158721" display="Api Model Name" isActive="true" />
+                <property name="77a9993c-40ba-47a9-a2a4-0974548a3f27" display="Is Option Visible Function" isActive="true" />
               </properties>
             </stereotype>
           </stereotypes>
@@ -132,6 +135,7 @@
                 <property name="A43F388B-DAFF-422C-BD8D-FB433EFEC51B" display="Type Order" isActive="true" />
                 <property name="8e092aa6-7d1a-4a06-af82-903e7642cef6" display="Allow Multiple" value="true" isActive="true" />
                 <property name="719e9dff-2b8d-407d-912d-fac99a158721" display="Api Model Name" isActive="true" />
+                <property name="77a9993c-40ba-47a9-a2a4-0974548a3f27" display="Is Option Visible Function" isActive="true" />
               </properties>
             </stereotype>
           </stereotypes>

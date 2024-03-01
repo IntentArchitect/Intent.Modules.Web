@@ -8,13 +8,13 @@ using Intent.Modules.Common.Templates;
 using Intent.Modules.Common.Types.Api;
 using Intent.RoslynWeaver.Attributes;
 
-[assembly: IntentTemplate("Intent.ModuleBuilder.Templates.Api.ApiElementModel", Version = "1.0")]
 [assembly: DefaultIntentManaged(Mode.Merge)]
+[assembly: IntentTemplate("Intent.ModuleBuilder.Templates.Api.ApiElementModel", Version = "1.0")]
 
 namespace Intent.Modelers.WebClient.Angular.Api
 {
     [IntentManaged(Mode.Merge, Signature = Mode.Merge)]
-    public class ModuleModel : IMetadataModel, IHasStereotypes, IHasName, IHasFolder<IFolder>, IFolder
+    public class ModuleModel : IMetadataModel, IHasStereotypes, IHasName, IHasFolder<IFolder>, IFolder, IElementWrapper
     {
         protected readonly IElement _element;
         public const string SpecializationType = "Module";

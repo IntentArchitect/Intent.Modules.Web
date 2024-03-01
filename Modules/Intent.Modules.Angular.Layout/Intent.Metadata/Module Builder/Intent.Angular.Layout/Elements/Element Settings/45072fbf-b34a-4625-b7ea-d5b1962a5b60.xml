@@ -33,10 +33,12 @@
         <property name="5a9277a9-b808-4ade-bb57-840b51b0da3a" display="Save Mode" value="As Child" isActive="true" />
         <property name="736b1337-6f35-4e38-85a8-69ff5d69fb7d" display="Icon" value="{&quot;source&quot;:&quot;data:image/png;base64,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&quot;,&quot;type&quot;:0,&quot;absolutePathRelativeTo&quot;:null}" isActive="true" />
         <property name="32086823-bd72-4be0-a765-2d9530f4ce06" display="Expanded Icon" isActive="true" />
+        <property name="b966a8e9-f298-4741-8397-fe49f29c248b" display="Icon Function" isActive="true" />
         <property name="0632053a-6b40-47a0-857f-6840e322344c" display="Display Text Function" value="" isActive="true" />
         <property name="1e5a5798-220b-4a92-993d-c4ebd4123e53" display="Validate Function" value="" isActive="true" />
         <property name="c48d9593-c1f4-4610-9cb3-54de9c2f0c06" display="Allow Rename" value="true" isActive="true" />
         <property name="4b17e907-bd58-4f70-b376-383c6046ad8a" display="Allow Abstract" value="false" isActive="true" />
+        <property name="ad2bbaa1-becc-477b-83d2-97179678e4bb" display="Allow Static" value="false" isActive="true" />
         <property name="0eb8bcd6-4120-47c5-ac74-9a9e4a7d4536" display="Allow Set Value" value="false" isActive="true" />
         <property name="8ad604ab-7edf-4a6c-86a5-e27f0f95dfac" display="Allow Generic Types" value="false" isActive="true" />
         <property name="ad5ce0fc-72ab-4aa3-92e9-238954c2aedb" display="Allow Sorting" value="true" isActive="true" />
@@ -51,7 +53,7 @@
       <name>[context menu]</name>
       <display>[context menu]</display>
       <isAbstract>false</isAbstract>
-      <sort-children>by-type-then-manually</sort-children>
+      <sort-children>manually</sort-children>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>45072fbf-b34a-4625-b7ea-d5b1962a5b60</parentFolderId>
@@ -93,6 +95,7 @@
                 <property name="A43F388B-DAFF-422C-BD8D-FB433EFEC51B" display="Type Order" isActive="true" />
                 <property name="8e092aa6-7d1a-4a06-af82-903e7642cef6" display="Allow Multiple" value="true" isActive="true" />
                 <property name="719e9dff-2b8d-407d-912d-fac99a158721" display="Api Model Name" isActive="true" />
+                <property name="77a9993c-40ba-47a9-a2a4-0974548a3f27" display="Is Option Visible Function" isActive="true" />
               </properties>
             </stereotype>
           </stereotypes>
@@ -132,6 +135,7 @@
                 <property name="A43F388B-DAFF-422C-BD8D-FB433EFEC51B" display="Type Order" isActive="true" />
                 <property name="8e092aa6-7d1a-4a06-af82-903e7642cef6" display="Allow Multiple" value="true" isActive="true" />
                 <property name="719e9dff-2b8d-407d-912d-fac99a158721" display="Api Model Name" isActive="true" />
+                <property name="77a9993c-40ba-47a9-a2a4-0974548a3f27" display="Is Option Visible Function" isActive="true" />
               </properties>
             </stereotype>
           </stereotypes>
@@ -171,6 +175,7 @@
                 <property name="A43F388B-DAFF-422C-BD8D-FB433EFEC51B" display="Type Order" isActive="true" />
                 <property name="8e092aa6-7d1a-4a06-af82-903e7642cef6" display="Allow Multiple" value="true" isActive="true" />
                 <property name="719e9dff-2b8d-407d-912d-fac99a158721" display="Api Model Name" isActive="true" />
+                <property name="77a9993c-40ba-47a9-a2a4-0974548a3f27" display="Is Option Visible Function" isActive="true" />
               </properties>
             </stereotype>
           </stereotypes>
@@ -210,6 +215,7 @@
                 <property name="A43F388B-DAFF-422C-BD8D-FB433EFEC51B" display="Type Order" isActive="true" />
                 <property name="8e092aa6-7d1a-4a06-af82-903e7642cef6" display="Allow Multiple" value="true" isActive="true" />
                 <property name="719e9dff-2b8d-407d-912d-fac99a158721" display="Api Model Name" isActive="true" />
+                <property name="77a9993c-40ba-47a9-a2a4-0974548a3f27" display="Is Option Visible Function" isActive="true" />
               </properties>
             </stereotype>
           </stereotypes>
@@ -249,6 +255,7 @@
                 <property name="A43F388B-DAFF-422C-BD8D-FB433EFEC51B" display="Type Order" isActive="true" />
                 <property name="8e092aa6-7d1a-4a06-af82-903e7642cef6" display="Allow Multiple" value="true" isActive="true" />
                 <property name="719e9dff-2b8d-407d-912d-fac99a158721" display="Api Model Name" isActive="true" />
+                <property name="77a9993c-40ba-47a9-a2a4-0974548a3f27" display="Is Option Visible Function" isActive="true" />
               </properties>
             </stereotype>
           </stereotypes>

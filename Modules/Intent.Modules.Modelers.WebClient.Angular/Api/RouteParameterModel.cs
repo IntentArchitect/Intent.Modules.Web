@@ -11,7 +11,7 @@ using Intent.RoslynWeaver.Attributes;
 namespace Intent.Modelers.WebClient.Angular.Api
 {
     [IntentManaged(Mode.Merge)]
-    public class RouteParameterModel : IMetadataModel, IHasStereotypes, IHasName, IHasTypeReference
+    public class RouteParameterModel : IMetadataModel, IHasStereotypes, IHasName, IHasTypeReference, IElementWrapper
     {
         public const string SpecializationType = "Route Parameter";
         public const string SpecializationTypeId = "2e770bf6-0f58-4806-8fdc-1477360b74e9";

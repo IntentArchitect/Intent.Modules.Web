@@ -12,7 +12,7 @@ using Intent.RoslynWeaver.Attributes;
 namespace Intent.Angular.Layout.Api
 {
     [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
-    public class TableControlModel : IMetadataModel, IHasStereotypes, IHasName
+    public class TableControlModel : IMetadataModel, IHasStereotypes, IHasName, IElementWrapper
     {
         [IntentManaged(Mode.Fully)] public const string SpecializationType = "Table Control";
         protected readonly IElement _element;
@@ -57,11 +57,6 @@ namespace Intent.Angular.Layout.Api
 
         [IntentManaged(Mode.Ignore)]
         public string DataModelPath { get; }
-
-        public bool IsValid()
-        {
-            return DataModelPath != null;
-        }
 
         [IntentManaged(Mode.Fully)]
         public string Id => _element.Id;

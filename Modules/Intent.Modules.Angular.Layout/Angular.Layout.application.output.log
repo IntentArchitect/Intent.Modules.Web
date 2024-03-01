@@ -3,7 +3,7 @@
   <ApplicationId>49018a38-94b9-46d5-b6b7-8ce2e5aae4a9</ApplicationId>
   <FileLogs>
     <FileLog>
-      <CorrelationId>Intent.VisualStudio.Projects.VisualStudio2015Solution#4f8bd004-ca5e-4005-9401-11466c72ccb9</CorrelationId>
+      <CorrelationId>Intent.VisualStudio.Projects.VisualStudioSolution#4f8bd004-ca5e-4005-9401-11466c72ccb9</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>../Intent.Modules.Web.sln</ApplicationRelativeFilePath>
       <IsIgnored>false</IsIgnored>
@@ -158,7 +158,7 @@
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Intent.Angular.Layout.imodspec</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Intent.Angular.Layout.imodspec</ProjectRelativeFilePath>
-      <IsIgnored>false</IsIgnored>
+      <IsIgnored>true</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>52d04f2f-7ff6-4102-bfc1-fcb55203dad0</ProjectId>
@@ -174,14 +174,6 @@
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>modelers/Angular Layout Extensions.designer.settings</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Angular Layout Extensions.designer.settings</ProjectRelativeFilePath>
-      <IsIgnored>false</IsIgnored>
-    </FileLog>
-    <FileLog>
-      <ProjectId>52d04f2f-7ff6-4102-bfc1-fcb55203dad0</ProjectId>
-      <CorrelationId>Intent.ModuleBuilder.ReadMe</CorrelationId>
-      <OverwriteBehaviour>always</OverwriteBehaviour>
-      <ApplicationRelativeFilePath>README.txt</ApplicationRelativeFilePath>
-      <ProjectRelativeFilePath>README.txt</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
   </FileLogs>

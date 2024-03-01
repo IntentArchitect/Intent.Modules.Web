@@ -13,7 +13,7 @@ using Intent.RoslynWeaver.Attributes;
 namespace Intent.Angular.Layout.Api
 {
     [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
-    public class ButtonControlModel : IMetadataModel, IHasStereotypes, IHasName
+    public class ButtonControlModel : IMetadataModel, IHasStereotypes, IHasName, IElementWrapper
     {
         public const string SpecializationType = "Button Control";
         protected readonly IElement _element;
@@ -47,6 +47,7 @@ namespace Intent.Angular.Layout.Api
             }
         }
 
+        [IntentManaged(Mode.Ignore)]
         public string ClickCommandPath { get; }
 
         [IntentManaged(Mode.Fully)]
