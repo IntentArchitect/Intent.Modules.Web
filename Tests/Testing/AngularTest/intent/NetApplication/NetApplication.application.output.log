@@ -110,8 +110,8 @@
       <ProjectId>07d957ac-c44e-4d5c-bf38-8e9ae1768a6d</ProjectId>
       <CorrelationId>Intent.VisualStudio.Projects.CoreWeb.LaunchSettings#07d957ac-c44e-4d5c-bf38-8e9ae1768a6d</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
-      <ApplicationRelativeFilePath>../../NetApplication/NetApplication.Api/Properties/launchsettings.json</ApplicationRelativeFilePath>
-      <ProjectRelativeFilePath>Properties/launchsettings.json</ProjectRelativeFilePath>
+      <ApplicationRelativeFilePath>../../NetApplication/NetApplication.Api/Properties/launchSettings.json</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>Properties/launchSettings.json</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
@@ -252,6 +252,14 @@
     </FileLog>
     <FileLog>
       <ProjectId>c47e04b3-279f-4951-8d93-a1861e29401e</ProjectId>
+      <CorrelationId>Intent.EntityFrameworkCore.PagedList</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>../../NetApplication/NetApplication.Application/Common/Pagination/PagedList.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>PagedList.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>c47e04b3-279f-4951-8d93-a1861e29401e</ProjectId>
       <CorrelationId>Intent.Application.Dtos.Pagination.PagedResult</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>../../NetApplication/NetApplication.Application/Common/Pagination/PagedResult.cs</ApplicationRelativeFilePath>
@@ -272,6 +280,22 @@
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>../../NetApplication/NetApplication.Application/Common/Security/AuthorizeAttribute.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>AuthorizeAttribute.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>4bd5eb55-0687-404c-9f11-b68c2410b5a4</ProjectId>
+      <CorrelationId>Intent.Application.FluentValidation.Dtos.ValidatorProviderInterface</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>../../NetApplication/NetApplication.Application/Common/Validation/IValidatorProvider.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>IValidatorProvider.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>4bd5eb55-0687-404c-9f11-b68c2410b5a4</ProjectId>
+      <CorrelationId>Intent.Application.FluentValidation.Dtos.ValidatorProvider</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>../../NetApplication/NetApplication.Application/Common/Validation/ValidatorProvider.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>ValidatorProvider.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
@@ -356,7 +380,7 @@
     </FileLog>
     <FileLog>
       <ProjectId>47af273d-4aff-44dd-9d10-b037ef3791aa</ProjectId>
-      <CorrelationId>Intent.Entities.Repositories.Api.NotFoundException</CorrelationId>
+      <CorrelationId>Intent.Entities.NotFoundException</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>../../NetApplication/NetApplication.Domain/Common/Exceptions/NotFoundException.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>NotFoundException.cs</ProjectRelativeFilePath>
@@ -404,10 +428,10 @@
     </FileLog>
     <FileLog>
       <ProjectId>5a4838d7-2cb9-468c-b68d-2ceccce23158</ProjectId>
-      <CorrelationId>Intent.Entities.Repositories.Api.PagedResultInterface</CorrelationId>
+      <CorrelationId>Intent.Entities.Repositories.Api.PagedListInterface</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
-      <ApplicationRelativeFilePath>../../NetApplication/NetApplication.Domain/Repositories/IPagedResult.cs</ApplicationRelativeFilePath>
-      <ProjectRelativeFilePath>IPagedResult.cs</ProjectRelativeFilePath>
+      <ApplicationRelativeFilePath>../../NetApplication/NetApplication.Domain/Repositories/IPagedList.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>IPagedList.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
@@ -452,14 +476,6 @@
     </FileLog>
     <FileLog>
       <ProjectId>0a77be58-613c-4054-999d-81d3709d66e1</ProjectId>
-      <CorrelationId>Intent.EntityFrameworkCore.Repositories.PagedList</CorrelationId>
-      <OverwriteBehaviour>always</OverwriteBehaviour>
-      <ApplicationRelativeFilePath>../../NetApplication/NetApplication.Infrastructure/Repositories/PagedList.cs</ApplicationRelativeFilePath>
-      <ProjectRelativeFilePath>PagedList.cs</ProjectRelativeFilePath>
-      <IsIgnored>false</IsIgnored>
-    </FileLog>
-    <FileLog>
-      <ProjectId>0a77be58-613c-4054-999d-81d3709d66e1</ProjectId>
       <CorrelationId>Intent.EntityFrameworkCore.Repositories.RepositoryBase</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>../../NetApplication/NetApplication.Infrastructure/Repositories/RepositoryBase.cs</ApplicationRelativeFilePath>
@@ -475,7 +491,7 @@
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
-      <CorrelationId>Intent.VisualStudio.Projects.VisualStudio2015Solution#fd0a16cc-586b-4c36-a533-d2769511908d</CorrelationId>
+      <CorrelationId>Intent.VisualStudio.Projects.VisualStudioSolution#fd0a16cc-586b-4c36-a533-d2769511908d</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>../../NetApplication/NetApplication.sln</ApplicationRelativeFilePath>
       <IsIgnored>false</IsIgnored>

@@ -13,7 +13,7 @@
     <FileLog>
       <ProjectId>b122ea6c-7f7f-4917-8548-066afb97552f</ProjectId>
       <CorrelationId>Intent.Modules.NestJS.Core.Templates.StaticContentTemplateRegistrations.StaticStaticContentTemplateRegistration#.eslintrc.js</CorrelationId>
-      <OverwriteBehaviour>once-off</OverwriteBehaviour>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>../../NestJSApplication/.eslintrc.js</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>.eslintrc.js</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
@@ -21,7 +21,7 @@
     <FileLog>
       <ProjectId>b122ea6c-7f7f-4917-8548-066afb97552f</ProjectId>
       <CorrelationId>Intent.Modules.NestJS.Core.Templates.StaticContentTemplateRegistrations.StaticStaticContentTemplateRegistration#.gitignore</CorrelationId>
-      <OverwriteBehaviour>once-off</OverwriteBehaviour>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>../../NestJSApplication/.gitignore</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>.gitignore</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
@@ -29,7 +29,7 @@
     <FileLog>
       <ProjectId>b122ea6c-7f7f-4917-8548-066afb97552f</ProjectId>
       <CorrelationId>Intent.Modules.NestJS.Core.Templates.StaticContentTemplateRegistrations.StaticStaticContentTemplateRegistration#.prettierrc</CorrelationId>
-      <OverwriteBehaviour>once-off</OverwriteBehaviour>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>../../NestJSApplication/.prettierrc</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>.prettierrc</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
@@ -37,7 +37,7 @@
     <FileLog>
       <ProjectId>b122ea6c-7f7f-4917-8548-066afb97552f</ProjectId>
       <CorrelationId>Intent.Modules.NestJS.Core.Templates.StaticContentTemplateRegistrations.StaticStaticContentTemplateRegistration#nest-cli.json</CorrelationId>
-      <OverwriteBehaviour>once-off</OverwriteBehaviour>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>../../NestJSApplication/nest-cli.json</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>nest-cli.json</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
@@ -53,7 +53,7 @@
     <FileLog>
       <ProjectId>b122ea6c-7f7f-4917-8548-066afb97552f</ProjectId>
       <CorrelationId>Intent.Modules.NestJS.Core.Templates.StaticContentTemplateRegistrations.StaticStaticContentTemplateRegistration#README.md</CorrelationId>
-      <OverwriteBehaviour>once-off</OverwriteBehaviour>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>../../NestJSApplication/README.md</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>README.md</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
@@ -285,7 +285,7 @@
     <FileLog>
       <ProjectId>b122ea6c-7f7f-4917-8548-066afb97552f</ProjectId>
       <CorrelationId>Intent.Modules.NestJS.Core.Templates.StaticContentTemplateRegistrations.StaticStaticContentTemplateRegistration#tsconfig.build.json</CorrelationId>
-      <OverwriteBehaviour>once-off</OverwriteBehaviour>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>../../NestJSApplication/tsconfig.build.json</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>tsconfig.build.json</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
@@ -293,7 +293,7 @@
     <FileLog>
       <ProjectId>b122ea6c-7f7f-4917-8548-066afb97552f</ProjectId>
       <CorrelationId>Intent.Modules.NestJS.Core.Templates.StaticContentTemplateRegistrations.StaticStaticContentTemplateRegistration#tsconfig.json</CorrelationId>
-      <OverwriteBehaviour>once-off</OverwriteBehaviour>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>../../NestJSApplication/tsconfig.json</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>tsconfig.json</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>

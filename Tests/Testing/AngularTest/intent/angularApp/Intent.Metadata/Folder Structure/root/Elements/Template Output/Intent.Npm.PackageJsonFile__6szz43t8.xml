@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<class id="74dd7a19-8814-41a0-822d-22390b034f80" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+<class id="55ad7b62-cb94-4b47-924d-2aa53af80cb3" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
   <name>Intent.Npm.PackageJsonFile</name>
   <display>Intent.Npm.PackageJsonFile</display>
   <externalReference>Intent.Npm</externalReference>

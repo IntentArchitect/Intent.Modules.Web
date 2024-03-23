@@ -6,6 +6,7 @@ using MediatR;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using NetApplication.Application.Common.Behaviours;
+using NetApplication.Application.Common.Validation;
 using NetApplication.Application.Implementation;
 using NetApplication.Application.Interfaces;
 
@@ -18,7 +19,7 @@ namespace NetApplication.Application
     {
         public static IServiceCollection AddApplication(this IServiceCollection services, IConfiguration configuration)
         {
-            services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly());
+            services.AddValidatorsFromAssembly(Assembly.GetExecutingAssembly(), lifetime: ServiceLifetime.Transient);
             services.AddMediatR(cfg =>
             {
                 cfg.RegisterServicesFromAssembly(Assembly.GetExecutingAssembly());
@@ -29,6 +30,7 @@ namespace NetApplication.Application
                 cfg.AddOpenBehavior(typeof(UnitOfWorkBehaviour<,>));
             });
             services.AddAutoMapper(Assembly.GetExecutingAssembly());
+            services.AddScoped<IValidatorProvider, ValidatorProvider>();
             services.AddTransient<IValidationService, ValidationService>();
             services.AddTransient<IIntegrationService, IntegrationService>();
             return services;

@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using Intent.RoslynWeaver.Attributes;
 
 [assembly: DefaultIntentManaged(Mode.Fully)]
-[assembly: IntentTemplate("Intent.Entities.Repositories.Api.PagedResultInterface", Version = "1.0")]
+[assembly: IntentTemplate("Intent.Entities.Repositories.Api.PagedListInterface", Version = "1.0")]
 
 namespace NetApplication.Domain.Repositories
 {
@@ -13,7 +13,7 @@ namespace NetApplication.Domain.Repositories
     /// will return a different "page" of elements. 
     /// </summary>
     /// <typeparam name="T">Type of elements</typeparam>
-    public interface IPagedResult<out T> : IEnumerable<T>
+    public interface IPagedList<T> : IList<T>
     {
         int TotalCount { get; }
         int PageCount { get; }
