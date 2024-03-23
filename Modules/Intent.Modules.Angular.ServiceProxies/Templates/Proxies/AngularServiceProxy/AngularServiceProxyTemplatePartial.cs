@@ -277,6 +277,7 @@ namespace Intent.Modules.Angular.ServiceProxies.Templates.Proxies.AngularService
         }
 
 
+
         //private string GetRelativeUri(ServiceOperationModel operation)
         //{
         //    var relativeUri = ServiceMetadataQueries.GetRelativeUri(operation);
