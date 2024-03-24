@@ -22,6 +22,12 @@ variables:
 - name: 'targetsToBuild'
   value: '**/*.sln'
 - group: 'Intent Architect Credentials'
+- name: 'intent-solution'
+  value: 'Tests/Testing/AngularTest/intent/AngularTest.isln'
+- name: 'warning-logging-command'
+  value: '##vso[task.logissue type=warning;]{@m} {@x}\n'
+- name: 'error-logging-command'
+  value: '##vso[task.logissue type=error;]{@m} {@x}\n'
 
 pool:
   vmImage: 'ubuntu-latest'
@@ -98,6 +104,26 @@ steps:
     command: 'test'
     projects: $(targetsToBuild)
     arguments: '--no-build'
+
+- task: PowerShell@2
+  displayName: 'Install Intent CLI'
+  inputs:
+    targetType: 'inline'
+    pwsh: true
+    script: dotnet tool install Intent.SoftwareFactory.CLI --global --prerelease
+
+- task: PowerShell@2
+  displayName: 'Template Testing'
+  env:
+    INTENT_USER: $(intent-architect-user)
+    INTENT_PASS: $(intent-architect-password)
+    INTENT_SOLUTION_PATH: $(intent-solution)
+  inputs:
+    targetType: 'inline'
+    pwsh: true
+    script: |
+      ./PipelineScripts/prepare-intent-testing.ps1
+      intent-cli ensure-no-outstanding-changes "$Env:INTENT_USER" "$Env:INTENT_PASS" "$Env:INTENT_SOLUTION_PATH"
 
 - task: PowerShell@2
   displayName: 'install intent packager'
