@@ -4,19 +4,19 @@ VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "1 - Api", "1 - Api", "{D95BC6FE-214D-4957-990F-D41F991B1E29}"
 EndProject
-Project("{FFD54A85-9362-48AC-B646-C93AB9AC63D2}") = "NetApplication.Api", "NetApplication.Api\NetApplication.Api.csproj", "{07D957AC-C44E-4D5C-BF38-8E9AE1768A6D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetApplication.Api", "NetApplication.Api\NetApplication.Api.csproj", "{07D957AC-C44E-4D5C-BF38-8E9AE1768A6D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "2 - Application", "2 - Application", "{27CE9156-26D2-47C0-8C9E-F5CB1EA1920A}"
 EndProject
-Project("{52B49DB5-3EA9-4095-B1A7-DF1AC22D7DAE}") = "NetApplication.Application", "NetApplication.Application\NetApplication.Application.csproj", "{CFF1407E-306D-40E7-8CA1-4103F9791379}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetApplication.Application", "NetApplication.Application\NetApplication.Application.csproj", "{CFF1407E-306D-40E7-8CA1-4103F9791379}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "3 - Domain", "3 - Domain", "{89AC3BBA-CE09-4DE4-A1C3-D003D1D9AF26}"
 EndProject
-Project("{52B49DB5-3EA9-4095-B1A7-DF1AC22D7DAE}") = "NetApplication.Domain", "NetApplication.Domain\NetApplication.Domain.csproj", "{D03BE099-BBF0-409A-94AF-286D4ED6D3D1}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetApplication.Domain", "NetApplication.Domain\NetApplication.Domain.csproj", "{D03BE099-BBF0-409A-94AF-286D4ED6D3D1}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "4 - Infrastructure", "4 - Infrastructure", "{9C378F5D-18B0-4BCB-953C-61FF7FDA871A}"
 EndProject
-Project("{52B49DB5-3EA9-4095-B1A7-DF1AC22D7DAE}") = "NetApplication.Infrastructure", "NetApplication.Infrastructure\NetApplication.Infrastructure.csproj", "{36A5BBCB-92DA-4535-BB84-DEBAA8995BA8}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NetApplication.Infrastructure", "NetApplication.Infrastructure\NetApplication.Infrastructure.csproj", "{36A5BBCB-92DA-4535-BB84-DEBAA8995BA8}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

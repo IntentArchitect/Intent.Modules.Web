@@ -1,4 +1,6 @@
-export const ApplicationName = 'Project2';export const ReturnUrlType = 'returnUrl';
+export const ApplicationName = 'Project2';
+
+export const ReturnUrlType = 'returnUrl';
 
 export const QueryParameterNames = {
   ReturnUrl: ReturnUrlType,

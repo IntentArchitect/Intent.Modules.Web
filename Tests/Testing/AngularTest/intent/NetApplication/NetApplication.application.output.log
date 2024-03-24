@@ -91,6 +91,14 @@
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
+      <ProjectId>b5b00b7b-59f7-48e5-a0d5-a87f3670d132</ProjectId>
+      <CorrelationId>Intent.AspNetCore.Controllers.TypeSchemaFilter</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>../../NetApplication/NetApplication.Api/Filters/TypeSchemaFilter.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>TypeSchemaFilter.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
       <ProjectId>07d957ac-c44e-4d5c-bf38-8e9ae1768a6d</ProjectId>
       <CorrelationId>Intent.VisualStudio.Projects.CSharpProject#07d957ac-c44e-4d5c-bf38-8e9ae1768a6d</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
