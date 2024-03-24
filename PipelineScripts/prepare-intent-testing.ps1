@@ -8,7 +8,7 @@ $repoConfigContent =
   <entries>
     <entry>
       <name>CI Compiled Modules</name>
-      <address>../$($pathToModules)/$($modulesFolderPath)</address>
+      <address>../../../../$($pathToModules)/$($modulesFolderPath)</address>
       <isBuiltIn>false</isBuiltIn>
       <order>3</order>
     </entry>
