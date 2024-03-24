@@ -1,3 +1,8 @@
+### Version 4.1.0
+
+- Improvement: Updated dependencies.
+
+
 ### Version 4.0.1
 
 - Improvement: Updated WebClient to use the latest proxies types.
