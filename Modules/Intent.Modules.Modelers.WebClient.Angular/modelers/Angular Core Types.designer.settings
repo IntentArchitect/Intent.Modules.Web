@@ -88,10 +88,11 @@
         <type order="0">Component Input</type>
         <type order="1">Component Output</type>
         <type order="2">Component Model</type>
-        <type order="3">Component Command</type>
-        <type order="4">Component View</type>
-        <type order="5">Model Definition</type>
-        <type order="6">NavigationTargetEnd</type>
+        <type order="3">Call Service Operation Action Target End</type>
+        <type order="4">Component Command</type>
+        <type order="5">Component View</type>
+        <type order="6">Model Definition</type>
+        <type order="7">NavigationTargetEnd</type>
       </typeOrder>
       <creationOptions>
         <option type="element">
@@ -116,6 +117,14 @@
           <specializationType>Component Model</specializationType>
           <specializationTypeId>356fbe17-bc63-4e16-b915-feefbc063cbe</specializationTypeId>
           <defaultName>model</defaultName>
+          <allowMultiple>true</allowMultiple>
+        </option>
+        <option type="association">
+          <text>Call Operation Action</text>
+          <icon type="UrlImagePath" source="./img/icons/uml/Association_256x.png" />
+          <specializationType>Call Service Operation Action Target End</specializationType>
+          <specializationTypeId>475f0810-2b4a-40da-8eb8-697cb62f7dbe</specializationTypeId>
+          <defaultName>NewCallServiceOperationActionTargetEnd</defaultName>
           <allowMultiple>true</allowMultiple>
         </option>
         <option type="element">
@@ -378,6 +387,7 @@
           </typeReferenceSetting>
           <typeOrder>
             <type order="0">Command Parameter</type>
+            <type order="1">Call Service Operation Action Target End</type>
           </typeOrder>
           <creationOptions>
             <option type="element">
@@ -386,6 +396,14 @@
               <specializationType>Command Parameter</specializationType>
               <specializationTypeId>4a1ce2a9-e79f-4e93-96af-24b44728ecbc</specializationTypeId>
               <defaultName>param</defaultName>
+              <allowMultiple>true</allowMultiple>
+            </option>
+            <option type="association">
+              <text>Call Operation Action</text>
+              <icon type="UrlImagePath" source="./img/icons/uml/Association_256x.png" />
+              <specializationType>Call Service Operation Action Target End</specializationType>
+              <specializationTypeId>475f0810-2b4a-40da-8eb8-697cb62f7dbe</specializationTypeId>
+              <defaultName>NewCallServiceOperationActionTargetEnd</defaultName>
               <allowMultiple>true</allowMultiple>
             </option>
           </creationOptions>
@@ -1125,6 +1143,56 @@
   </elementSettings>
   <elementExtensions />
   <associationSettings>
+    <associationSetting type="Call Service Operation Action" typeId="fe5a5cd8-aabd-472f-8d42-f5c233e658dc">
+      <sourceEnd type="Call Service Operation Action Source End" typeId="936e090c-8408-429d-b2f6-2eb8deecc428">
+        <nameAccessibilityMode>hidden</nameAccessibilityMode>
+        <allowSorting>true</allowSorting>
+        <sortChildren p5:nil="true" xmlns:p5="http://www.w3.org/2001/XMLSchema-instance" />
+        <typeReferenceSetting>
+          <isRequired>true</isRequired>
+          <targetTypes>
+            <type>Component</type>
+            <type>Component Command</type>
+          </targetTypes>
+          <allowIsNavigable>true</allowIsNavigable>
+          <allowIsNullable>true</allowIsNullable>
+          <allowIsCollection>true</allowIsCollection>
+          <isNavigableDefault>true</isNavigableDefault>
+          <isNullableDefault>false</isNullableDefault>
+          <isCollectionDefault>false</isCollectionDefault>
+        </typeReferenceSetting>
+      </sourceEnd>
+      <targetEnd type="Call Service Operation Action Target End" typeId="475f0810-2b4a-40da-8eb8-697cb62f7dbe">
+        <displayFunction>return `@call ${typeReference.getType()?.getDisplay() ?? "&lt;not-set&gt;"}`;</displayFunction>
+        <nameAccessibilityMode>hidden</nameAccessibilityMode>
+        <allowSorting>true</allowSorting>
+        <sortChildren p5:nil="true" xmlns:p5="http://www.w3.org/2001/XMLSchema-instance" />
+        <typeReferenceSetting>
+          <isRequired>true</isRequired>
+          <targetTypes>
+            <type>Operation</type>
+          </targetTypes>
+          <allowIsNavigable>true</allowIsNavigable>
+          <allowIsNullable>true</allowIsNullable>
+          <allowIsCollection>true</allowIsCollection>
+          <isNavigableDefault>true</isNavigableDefault>
+          <isNullableDefault>false</isNullableDefault>
+          <isCollectionDefault>false</isCollectionDefault>
+        </typeReferenceSetting>
+        <typeOrder />
+        <creationOptions />
+        <scriptOptions />
+        <mappingOptions>
+          <option mappingType="Call Service Mapping" mappingTypeId="e4a4111b-cf13-4efe-8a5d-fea9457ac8ad">
+            <text>Map Invocation</text>
+          </option>
+          <option mappingType="Service Call Response Mapping" mappingTypeId="6f998e3e-6e1f-483f-b8fd-59c6632add77">
+            <text>Map Response</text>
+          </option>
+        </mappingOptions>
+      </targetEnd>
+      <macros />
+    </associationSetting>
     <associationSetting type="Navigation" typeId="6d2b2070-c1cb-4cd2-88b4-4e5f8414bd9e">
       <sourceEnd type="NavigationSourceEnd" typeId="97a3de8a-c9bf-4cf2-bc0a-b8692b02211b">
         <nameAccessibilityMode>required</nameAccessibilityMode>
@@ -1197,7 +1265,251 @@ return `${name &amp;&amp; typeReference.isNavigable ? name + "(" + getInputs() +
     </associationSetting>
   </associationSettings>
   <associationExtensions />
-  <mappingSettings />
+  <mappingSettings>
+    <mappingSetting type="Call Service Mapping" typeId="e4a4111b-cf13-4efe-8a5d-fea9457ac8ad">
+      <title>Call Service Mapping</title>
+      <isRequiredFunction>return true;</isRequiredFunction>
+      <sourceRootElementFunction>return element.getParent("Component")?.id ?? element.id;</sourceRootElementFunction>
+      <sourceMappings>
+        <mapping id="dac3e0f8-cc81-4409-8159-19c0103e1d88" name="Component" type="Component" typeId="b1c481e1-e91e-4c29-9817-00ab9cad4b6b">
+          <allowMultipleMappings>true</allowMultipleMappings>
+          <isMappableFunction>return false;</isMappableFunction>
+          <isTraversable>false</isTraversable>
+          <traversableTypes />
+          <canBeModified>false</canBeModified>
+          <represents>data</represents>
+          <childSettings>
+            <childSetting id="1bd0c88d-926b-4a9e-9235-4d013d2a9afb" name="Component Input" type="Component Input" typeId="807bc2cd-cdba-482d-a47e-d2aa546200fc">
+              <allowMultipleMappings>true</allowMultipleMappings>
+              <isMappableFunction>return true;</isMappableFunction>
+              <isTraversable>false</isTraversable>
+              <traversableTypes />
+              <canBeModified>false</canBeModified>
+              <represents>data</represents>
+              <childSettings />
+            </childSetting>
+            <childSetting id="0b571a97-6506-408a-8806-4307a14a459a" name="Component Model" type="Component Model" typeId="356fbe17-bc63-4e16-b915-feefbc063cbe">
+              <allowMultipleMappings>true</allowMultipleMappings>
+              <isMappableFunction>return true;</isMappableFunction>
+              <isTraversable>true</isTraversable>
+              <traversableTypes>
+                <mappingId>b8cdff9f-3b97-41d6-94f0-c5bed689aed7</mappingId>
+                <mappingId>df059f6f-cc98-48ad-b762-7b421bc50b1b</mappingId>
+              </traversableTypes>
+              <canBeModified>false</canBeModified>
+              <represents>data</represents>
+              <childSettings />
+            </childSetting>
+          </childSettings>
+        </mapping>
+        <mapping id="b8cdff9f-3b97-41d6-94f0-c5bed689aed7" name="Model Definition" type="Model Definition" typeId="bd3941b5-e3b3-4a40-96e6-b9c87cea0101">
+          <allowMultipleMappings>true</allowMultipleMappings>
+          <isMappableFunction>return false;</isMappableFunction>
+          <isTraversable>false</isTraversable>
+          <traversableTypes />
+          <canBeModified>false</canBeModified>
+          <represents>data</represents>
+          <childSettings>
+            <childSetting id="46dba35f-c83d-4e03-a5bc-692e807912df" name="Model Definition Field" type="Model Definition Field" typeId="0dfc489c-7456-4a3d-a28b-50a633631a48">
+              <allowMultipleMappings>true</allowMultipleMappings>
+              <isMappableFunction>return true;</isMappableFunction>
+              <isTraversable>false</isTraversable>
+              <traversableTypes />
+              <canBeModified>false</canBeModified>
+              <represents>data</represents>
+              <childSettings />
+            </childSetting>
+          </childSettings>
+        </mapping>
+        <mapping id="df059f6f-cc98-48ad-b762-7b421bc50b1b" name="Form Group Definition" type="Form Group Definition" typeId="71142b08-4d10-405b-a5bd-0620d329a992">
+          <allowMultipleMappings>true</allowMultipleMappings>
+          <isMappableFunction>return false;</isMappableFunction>
+          <isTraversable>false</isTraversable>
+          <traversableTypes />
+          <canBeModified>false</canBeModified>
+          <represents>data</represents>
+          <childSettings>
+            <childSetting id="f52782ff-f570-444f-8d3e-ac281d9a4ef4" name="Form Group Control" type="Form Group Control" typeId="b4e29ea5-b9a4-47eb-8214-c4cc5b46ee91">
+              <allowMultipleMappings>true</allowMultipleMappings>
+              <isMappableFunction>return true;</isMappableFunction>
+              <isTraversable>false</isTraversable>
+              <traversableTypes />
+              <canBeModified>false</canBeModified>
+              <represents>data</represents>
+              <childSettings />
+            </childSetting>
+          </childSettings>
+        </mapping>
+      </sourceMappings>
+      <targetMappings>
+        <mapping id="cf2e1139-2c55-4b23-929a-3a478bbd828d" name="Proxy Service Operation" type="Operation" typeId="aee6811e-b2f6-4562-a8eb-502029f63bc8">
+          <allowMultipleMappings>true</allowMultipleMappings>
+          <isMappableFunction>return false;</isMappableFunction>
+          <isTraversable>false</isTraversable>
+          <traversableTypes />
+          <canBeModified>false</canBeModified>
+          <represents>data</represents>
+          <childSettings>
+            <childSetting id="aa51de6b-500f-40f2-aa3b-541515ff20f7" name="Proxy Service Operation Parameter" type="Parameter" typeId="f11273c1-217f-4f42-b690-3d8b488f95a8">
+              <allowMultipleMappings>true</allowMultipleMappings>
+              <isMappableFunction>return true;</isMappableFunction>
+              <isTraversable>true</isTraversable>
+              <traversableTypes>
+                <mappingId>f6196912-befe-49b8-807c-aab295c04a49</mappingId>
+              </traversableTypes>
+              <canBeModified>false</canBeModified>
+              <represents>data</represents>
+              <childSettings />
+            </childSetting>
+          </childSettings>
+        </mapping>
+        <mapping id="f6196912-befe-49b8-807c-aab295c04a49" name="DTO" type="DTO" typeId="fee0edca-4aa0-4f77-a524-6bbd84e78734">
+          <allowMultipleMappings>true</allowMultipleMappings>
+          <isMappableFunction>return true;</isMappableFunction>
+          <isTraversable>false</isTraversable>
+          <traversableTypes />
+          <canBeModified>false</canBeModified>
+          <represents>data</represents>
+          <childSettings>
+            <childSetting id="a0176002-5112-4300-a4a2-c21efe74f7a1" name="DTO-Field" type="DTO-Field" typeId="7baed1fd-469b-4980-8fd9-4cefb8331eb2">
+              <allowMultipleMappings>true</allowMultipleMappings>
+              <isMappableFunction>return true;</isMappableFunction>
+              <isTraversable>false</isTraversable>
+              <traversableTypes />
+              <canBeModified>false</canBeModified>
+              <represents>data</represents>
+              <childSettings />
+            </childSetting>
+          </childSettings>
+        </mapping>
+      </targetMappings>
+      <mappingTypes>
+        <mappingType type="Data Mapping" typeId="ce70308a-e29d-4644-8410-f9e6bbd214fc">
+          <represents>data</represents>
+          <sources>
+            <source id="1bd0c88d-926b-4a9e-9235-4d013d2a9afb" name="Component Input" />
+            <source id="46dba35f-c83d-4e03-a5bc-692e807912df" name="Model Definition Field" />
+            <source id="f52782ff-f570-444f-8d3e-ac281d9a4ef4" name="Form Group Control" />
+          </sources>
+          <targets>
+            <target id="aa51de6b-500f-40f2-aa3b-541515ff20f7" name="Proxy Service Operation Parameter" />
+            <target id="a0176002-5112-4300-a4a2-c21efe74f7a1" name="DTO-Field" />
+          </targets>
+          <allowAutoMap>true</allowAutoMap>
+        </mappingType>
+      </mappingTypes>
+    </mappingSetting>
+    <mappingSetting type="Service Call Response Mapping" typeId="6f998e3e-6e1f-483f-b8fd-59c6632add77">
+      <title>Service Call Response Mapping</title>
+      <sourceRootElementFunction>return hostElement.typeReference.getType()?.typeReference.getType()?.id;</sourceRootElementFunction>
+      <targetRootElementFunction>return hostElement.getParent().id</targetRootElementFunction>
+      <sourceMappings>
+        <mapping id="1dbd5867-c6a4-403e-bc5d-e404cd31c52e" name="DTO" type="DTO" typeId="fee0edca-4aa0-4f77-a524-6bbd84e78734">
+          <allowMultipleMappings>true</allowMultipleMappings>
+          <isMappableFunction>return true;</isMappableFunction>
+          <isTraversable>false</isTraversable>
+          <traversableTypes />
+          <canBeModified>false</canBeModified>
+          <represents>data</represents>
+          <childSettings>
+            <childSetting id="bb35b2cf-81e2-45cd-aadf-58453da35223" name="DTO-Field" type="DTO-Field" typeId="7baed1fd-469b-4980-8fd9-4cefb8331eb2">
+              <allowMultipleMappings>true</allowMultipleMappings>
+              <isMappableFunction>return true;</isMappableFunction>
+              <isTraversable>false</isTraversable>
+              <traversableTypes />
+              <canBeModified>false</canBeModified>
+              <represents>data</represents>
+              <childSettings />
+            </childSetting>
+          </childSettings>
+        </mapping>
+      </sourceMappings>
+      <targetMappings>
+        <mapping id="f6bbd47c-dd03-46c2-9524-26fbd6c97c21" name="Component" type="Component" typeId="b1c481e1-e91e-4c29-9817-00ab9cad4b6b">
+          <allowMultipleMappings>true</allowMultipleMappings>
+          <isMappableFunction>return false;</isMappableFunction>
+          <isTraversable>false</isTraversable>
+          <traversableTypes />
+          <canBeModified>false</canBeModified>
+          <represents>data</represents>
+          <childSettings>
+            <childSetting id="19d7f018-be0c-4703-b813-6015963a47a3" name="Component Input" type="Component Input" typeId="807bc2cd-cdba-482d-a47e-d2aa546200fc">
+              <allowMultipleMappings>true</allowMultipleMappings>
+              <isMappableFunction>return true;</isMappableFunction>
+              <isTraversable>false</isTraversable>
+              <traversableTypes />
+              <canBeModified>false</canBeModified>
+              <represents>data</represents>
+              <childSettings />
+            </childSetting>
+            <childSetting id="105c8e25-8f08-4470-bdaa-8a8ffe0d6ad1" name="Component Model" type="Component Model" typeId="356fbe17-bc63-4e16-b915-feefbc063cbe">
+              <allowMultipleMappings>true</allowMultipleMappings>
+              <isMappableFunction>return true;</isMappableFunction>
+              <isTraversable>true</isTraversable>
+              <traversableTypes>
+                <mappingId>dd876d42-e151-4c51-b3e9-a0231ba36b32</mappingId>
+                <mappingId>df546442-9da3-44b7-a099-02e14b412906</mappingId>
+              </traversableTypes>
+              <canBeModified>false</canBeModified>
+              <represents>data</represents>
+              <childSettings />
+            </childSetting>
+          </childSettings>
+        </mapping>
+        <mapping id="dd876d42-e151-4c51-b3e9-a0231ba36b32" name="Model Definition" type="Model Definition" typeId="bd3941b5-e3b3-4a40-96e6-b9c87cea0101">
+          <allowMultipleMappings>true</allowMultipleMappings>
+          <isMappableFunction>return false;</isMappableFunction>
+          <isTraversable>false</isTraversable>
+          <traversableTypes />
+          <canBeModified>false</canBeModified>
+          <represents>data</represents>
+          <childSettings>
+            <childSetting id="46518920-54e6-4b77-8c29-cfcc453d6754" name="Model Definition Field" type="Model Definition Field" typeId="0dfc489c-7456-4a3d-a28b-50a633631a48">
+              <allowMultipleMappings>true</allowMultipleMappings>
+              <isMappableFunction>return true;</isMappableFunction>
+              <isTraversable>false</isTraversable>
+              <traversableTypes />
+              <canBeModified>false</canBeModified>
+              <represents>data</represents>
+              <childSettings />
+            </childSetting>
+          </childSettings>
+        </mapping>
+        <mapping id="df546442-9da3-44b7-a099-02e14b412906" name="Form Group Definition" type="Form Group Definition" typeId="71142b08-4d10-405b-a5bd-0620d329a992">
+          <allowMultipleMappings>true</allowMultipleMappings>
+          <isMappableFunction>return false;</isMappableFunction>
+          <isTraversable>false</isTraversable>
+          <traversableTypes />
+          <canBeModified>false</canBeModified>
+          <represents>data</represents>
+          <childSettings>
+            <childSetting id="690aa1b9-83df-4eb2-9cbc-d6cb3d6620f6" name="Form Group Control" type="Form Group Control" typeId="b4e29ea5-b9a4-47eb-8214-c4cc5b46ee91">
+              <allowMultipleMappings>true</allowMultipleMappings>
+              <isMappableFunction>return true;</isMappableFunction>
+              <isTraversable>false</isTraversable>
+              <traversableTypes />
+              <canBeModified>false</canBeModified>
+              <represents>data</represents>
+              <childSettings />
+            </childSetting>
+          </childSettings>
+        </mapping>
+      </targetMappings>
+      <mappingTypes>
+        <mappingType type="Data Mapping" typeId="bbac21bb-9fdf-489e-8473-84be9cacc64d">
+          <represents>data</represents>
+          <sources>
+            <source id="bb35b2cf-81e2-45cd-aadf-58453da35223" name="DTO-Field" />
+          </sources>
+          <targets>
+            <target id="46518920-54e6-4b77-8c29-cfcc453d6754" name="Model Definition Field" />
+            <target id="690aa1b9-83df-4eb2-9cbc-d6cb3d6620f6" name="Form Group Control" />
+          </targets>
+          <allowAutoMap>true</allowAutoMap>
+        </mappingType>
+      </mappingTypes>
+    </mappingSetting>
+  </mappingSettings>
   <mappableElementPackages />
   <mappableElementPackageExtensions />
 </settings>

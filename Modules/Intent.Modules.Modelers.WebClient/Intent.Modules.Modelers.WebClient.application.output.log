@@ -9,30 +9,6 @@
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
-      <ProjectId>d0e72d48-eabc-4818-9d3e-3dcf185a39af</ProjectId>
-      <CorrelationId>Intent.ModuleBuilder.Templates.Api.ApiPackageModel#911c35b4-4ba3-404c-a0c6-e5258e53333a</CorrelationId>
-      <OverwriteBehaviour>always</OverwriteBehaviour>
-      <ApplicationRelativeFilePath>Api/WebClientModel.cs</ApplicationRelativeFilePath>
-      <ProjectRelativeFilePath>WebClientModel.cs</ProjectRelativeFilePath>
-      <IsIgnored>false</IsIgnored>
-    </FileLog>
-    <FileLog>
-      <ProjectId>10cf9138-e2fa-40a2-9599-11973c7e429d</ProjectId>
-      <CorrelationId>Intent.ModuleBuilder.Templates.Api.ApiMetadataDesignerExtensions</CorrelationId>
-      <OverwriteBehaviour>always</OverwriteBehaviour>
-      <ApplicationRelativeFilePath>ApiMetadataDesignerExtensions.cs</ApplicationRelativeFilePath>
-      <ProjectRelativeFilePath>ApiMetadataDesignerExtensions.cs</ProjectRelativeFilePath>
-      <IsIgnored>false</IsIgnored>
-    </FileLog>
-    <FileLog>
-      <ProjectId>10cf9138-e2fa-40a2-9599-11973c7e429d</ProjectId>
-      <CorrelationId>Intent.ModuleBuilder.Templates.Api.ApiMetadataPackageExtensions</CorrelationId>
-      <OverwriteBehaviour>always</OverwriteBehaviour>
-      <ApplicationRelativeFilePath>ApiMetadataPackageExtensions.cs</ApplicationRelativeFilePath>
-      <ProjectRelativeFilePath>ApiMetadataPackageExtensions.cs</ProjectRelativeFilePath>
-      <IsIgnored>false</IsIgnored>
-    </FileLog>
-    <FileLog>
       <ProjectId>10cf9138-e2fa-40a2-9599-11973c7e429d</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.IModSpecFile</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
@@ -46,22 +22,6 @@
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Intent.Modules.Modelers.WebClient.csproj</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Intent.Modules.Modelers.WebClient.csproj</ProjectRelativeFilePath>
-      <IsIgnored>false</IsIgnored>
-    </FileLog>
-    <FileLog>
-      <ProjectId>9889b0d6-a618-4114-9cb0-c74498f7bbeb</ProjectId>
-      <CorrelationId>Intent.ModuleBuilder.DesignerSettings#93058b8a-4d1d-4f88-ac14-332c87666418</CorrelationId>
-      <OverwriteBehaviour>always</OverwriteBehaviour>
-      <ApplicationRelativeFilePath>modelers/Web Client Package.designer.settings</ApplicationRelativeFilePath>
-      <ProjectRelativeFilePath>Web Client Package.designer.settings</ProjectRelativeFilePath>
-      <IsIgnored>false</IsIgnored>
-    </FileLog>
-    <FileLog>
-      <ProjectId>9889b0d6-a618-4114-9cb0-c74498f7bbeb</ProjectId>
-      <CorrelationId>Intent.ModuleBuilder.DesignerConfig#f492faed-0665-4513-9853-5a230721786f</CorrelationId>
-      <OverwriteBehaviour>always</OverwriteBehaviour>
-      <ApplicationRelativeFilePath>modelers/Web Client.designer.config</ApplicationRelativeFilePath>
-      <ProjectRelativeFilePath>Web Client.designer.config</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
   </FileLogs>

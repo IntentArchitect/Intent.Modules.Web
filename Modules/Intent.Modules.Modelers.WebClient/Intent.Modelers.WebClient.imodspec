@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package>
   <id>Intent.Modelers.WebClient</id>
-  <version>4.1.0-pre.0</version>
+  <version>5.0.0-pre.0</version>
   <supportedClientVersions>[4.1.0-pre.0, 5.0.0-a)</supportedClientVersions>
   <releaseNotes>release-notes.md</releaseNotes>
   <summary>Modeler for describing Web clients that interact with a backend service API</summary>
@@ -12,20 +12,12 @@
   <dependencies>
     <dependency id="Intent.Common" version="3.5.0" />
     <dependency id="Intent.Common.Types" version="3.3.9" />
-    <dependency id="Intent.Modelers.Domain" version="3.5.1" />
-    <dependency id="Intent.Modelers.Services" version="3.5.1" />
-    <dependency id="Intent.Modelers.Services.CQRS" version="4.1.2" />
-    <dependency id="Intent.Modelers.Types.ServiceProxies" version="5.2.3" />
   </dependencies>
   <files>
     <file src="$outDir$/$id$.dll" />
     <file src="$outDir$/$id$.pdb" />
   </files>
-  <metadata>
-    <install src="modelers/Web Client Package.designer.settings" externalReference="93058b8a-4d1d-4f88-ac14-332c87666418" />
-    <install src="modelers/Web Client.designer.config" externalReference="f492faed-0665-4513-9853-5a230721786f" />
-    <install target="Module Builder" src="Intent.Metadata/Module Builder/Intent.Modelers.WebClient/Intent.Modelers.WebClient.pkg.config" externalReference="2024876e-119b-4386-bc63-18e575f4e416" />
-  </metadata>
+  <metadata />
   <factoryExtensions />
   <moduleSettings />
   <moduleSettingsExtensions />

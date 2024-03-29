@@ -21,7 +21,6 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Intent.Modules.Angular\Intent.Modules.Angular.csproj" />
-    <ProjectReference Include="..\Intent.Modules.Modelers.WebClient\Intent.Modules.Modelers.WebClient.csproj" />
   </ItemGroup>
 
   <ItemGroup>

@@ -34,6 +34,14 @@
     </FileLog>
     <FileLog>
       <ProjectId>cd404cb9-57b2-4161-a7ae-e864b9a9e35d</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.Templates.Api.ApiAssociationModel#fe5a5cd8-aabd-472f-8d42-f5c233e658dc</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>Api/CallServiceOperationActionModel.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>CallServiceOperationActionModel.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>cd404cb9-57b2-4161-a7ae-e864b9a9e35d</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.Templates.Api.ApiElementModel#4a1ce2a9-e79f-4e93-96af-24b44728ecbc</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Api/CommandParameterModel.cs</ApplicationRelativeFilePath>
@@ -94,6 +102,14 @@
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Api/DisplayComponentModel.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>DisplayComponentModel.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>f681c920-0dae-4317-a5dc-8a744a3beb72</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.Templates.Api.ApiAssociationModelExtensions#fe5a5cd8-aabd-472f-8d42-f5c233e658dc</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>Api/Extensions/CallServiceOperationActionModelAssociationExtensions.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>CallServiceOperationActionModelAssociationExtensions.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>

@@ -103,6 +103,45 @@
           <metadata />
           <childElements />
         </childElement>
+        <childElement id="22d13cb3-1b10-4dbc-8300-9f38dc5beb74" type="Association Creation Option" typeId="3dcfa78b-17ee-45b6-be03-8407d089ce76">
+          <name>Call Operation Action</name>
+          <display>Call Operation Action: Call Service Operation Action Target End</display>
+          <isAbstract>false</isAbstract>
+          <genericTypes />
+          <typeReference id="2fcecf5c-7141-40f2-a541-c157f5042090">
+            <typeId>475f0810-2b4a-40da-8eb8-697cb62f7dbe</typeId>
+            <isNavigable>true</isNavigable>
+            <isNullable>false</isNullable>
+            <isCollection>false</isCollection>
+            <isRequired>true</isRequired>
+            <typePackageName>Intent.Modelers.WebClient.Angular</typePackageName>
+            <typePackageId>9cf8c5df-18a9-470e-a4fd-7e18d7050cd6</typePackageId>
+            <stereotypes />
+            <genericTypeParameters />
+          </typeReference>
+          <isMapped>false</isMapped>
+          <parentFolderId>41d45535-5728-4ea8-adb8-7e9dada95d0e</parentFolderId>
+          <packageId>9cf8c5df-18a9-470e-a4fd-7e18d7050cd6</packageId>
+          <packageName>Intent.Modelers.WebClient.Angular</packageName>
+          <stereotypes>
+            <stereotype stereotypeDefinitionId="9682fe8b-bf51-4c87-b198-5fcfe8983852" name="Option Settings">
+              <comment />
+              <addedByDefault>true</addedByDefault>
+              <definitionPackageName>Intent.ModuleBuilder</definitionPackageName>
+              <definitionPackageId>9972b2a9-b749-4bba-b5c8-824bf694c6ef</definitionPackageId>
+              <properties>
+                <property name="46678a0e-dbb3-479a-a434-092390ec23ec" display="Shortcut" isActive="true" />
+                <property name="78e777be-eeac-4959-8196-8377fe677cc2" display="Shortcut (macOS)" isActive="true" />
+                <property name="10f05e81-2da2-403f-9c7d-b712c7d202ba" display="Default Name" isActive="true" />
+                <property name="eb46bd10-e8b6-4852-8e6b-659f42c82797" display="Type Order" isActive="true" />
+                <property name="aa9aed36-437b-4f74-896d-5cffef1817a2" display="Allow Multiple" value="true" isActive="true" />
+                <property name="f0268cd4-f075-4743-9d04-9dd4e7752c73" display="Is Option Visible Function" isActive="true" />
+              </properties>
+            </stereotype>
+          </stereotypes>
+          <metadata />
+          <childElements />
+        </childElement>
       </childElements>
     </childElement>
   </childElements>

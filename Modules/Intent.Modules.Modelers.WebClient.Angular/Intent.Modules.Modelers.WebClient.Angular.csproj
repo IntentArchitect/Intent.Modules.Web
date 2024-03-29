@@ -7,6 +7,7 @@
   <ItemGroup>
     <PackageReference Include="Intent.Modules.Common" Version="3.5.0" />
     <PackageReference Include="Intent.Modules.Common.Types" Version="3.3.9" />
+    <PackageReference Include="Intent.Modules.Modelers.WebClient" Version="4.0.1" />
     <PackageReference Include="Intent.Packager" Version="3.4.2">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
@@ -16,7 +17,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Intent.Modules.Modelers.WebClient\Intent.Modules.Modelers.WebClient.csproj" />
   </ItemGroup>
 
 </Project>
