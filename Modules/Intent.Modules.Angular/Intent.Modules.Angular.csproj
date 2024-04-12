@@ -7,9 +7,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="content\InitialFiles\.vscode\extensions.json" />
-    <Content Include="content\InitialFiles\.vscode\launch.json" />
-    <Content Include="content\InitialFiles\.vscode\tasks.json" />
+    <Content Include="resources\InitialFiles\.vscode\extensions.json" />
+    <Content Include="resources\InitialFiles\.vscode\launch.json" />
+    <Content Include="resources\InitialFiles\.vscode\tasks.json" />
   </ItemGroup>
 
   <ItemGroup>
