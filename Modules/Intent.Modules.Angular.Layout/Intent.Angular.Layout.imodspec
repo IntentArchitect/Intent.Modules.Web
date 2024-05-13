@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package>
   <id>Intent.Angular.Layout</id>
-  <version>4.0.0-alpha.5</version>
+  <version>4.0.0-alpha.6</version>
   <supportedClientVersions>[4.1.0-pre.0, 5.0.0-a)</supportedClientVersions>
   <releaseNotes>release-notes.md</releaseNotes>
   <summary>Introduces all the UI components in the Angular designer</summary>
@@ -13,7 +13,7 @@
     <decorator id="Angular.Layout.AngularComponentHtmlDecorator.Controls" />
   </decorators>
   <dependencies>
-    <dependency id="Intent.Angular" version="4.0.0-alpha.5" />
+    <dependency id="Intent.Angular" version="4.0.0-alpha.8" />
     <dependency id="Intent.Code.Weaving.Html" version="1.0.0" />
     <dependency id="Intent.Code.Weaving.TypeScript" version="1.0.0" />
     <dependency id="Intent.Common" version="3.5.0" />
@@ -22,8 +22,8 @@
     <dependency id="Intent.Common.TypeScript" version="4.0.0" />
     <dependency id="Intent.Modelers.Services" version="3.5.1" />
     <dependency id="Intent.Modelers.Types.ServiceProxies" version="5.2.3" />
-    <dependency id="Intent.Modelers.WebClient" version="4.1.0-pre.0" />
-    <dependency id="Intent.Modelers.WebClient.Angular" version="4.0.0-alpha.3" />
+    <dependency id="Intent.Modelers.WebClient" version="4.1.0" />
+    <dependency id="Intent.Modelers.WebClient.Angular" version="4.0.0-alpha.5" />
   </dependencies>
   <files>
     <file src="$outDir$/$id$.dll" />
