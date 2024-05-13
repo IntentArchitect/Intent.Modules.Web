@@ -1,7 +1,9 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using Intent.Engine;
+using Intent.Metadata.Models;
 using Intent.Modules.Angular.Templates;
 using Intent.Modules.Common;
 using Intent.Modules.Common.Configuration;
@@ -54,6 +56,11 @@ namespace Intent.Modules.Angular.ApiAuthorization.Templates.ApiAuthTypescriptZip
                 fileName: filename,
                 fileExtension: extension.Replace(".", string.Empty)
             );
+        }
+
+        public override string GetCorrelationId()
+        {
+            return $"{Id}#{_zipEntry.FullFileNamePath}";
         }
 
         public override string RunTemplate()
