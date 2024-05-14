@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <applicationTemplate>
   <id>Intent.ApplicationTemplate.WebClient.Angular</id>
-  <version>3.3.17</version>
+  <version>3.3.18</version>
   <supportedClientVersions>[3.3.0-pre.0, 5.0.0)</supportedClientVersions>
   <displayName>Angular Web Client</displayName>
   <shortDescription>Standalone Angular web client.</shortDescription>
@@ -23,7 +23,7 @@
           <description>Core Angular functionality for creating the basic components and structures.</description>
           <icon type="UrlImagePath" source="data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAyOC4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHZpZXdCb3g9IjAgMCA1MCA1MCIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgNTAgNTAiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPGc+DQoJPHBvbHlnb24gZmlsbD0iI0RCMUUzMyIgcG9pbnRzPSIyNSwzLjIgMjUsMy4yIDI1LDMuMiA0LjcsMTAuNSA3LjgsMzcuMyAyNSw0Ni44IDI1LDQ2LjggMjUsNDYuOCA0Mi4yLDM3LjMgNDUuMywxMC41IAkiLz4NCgk8cG9seWdvbiBmaWxsPSIjQzIyMDMyIiBwb2ludHM9IjI1LDMuMiAyNSw4LjEgMjUsOCAyNSwzMC4xIDI1LDMwLjEgMjUsNDYuOCAyNSw0Ni44IDQyLjIsMzcuMyA0NS4zLDEwLjUgCSIvPg0KCTxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik0yNSw4TDEyLjMsMzYuNWwwLDBoNC43bDAsMGwyLjUtNi40aDEwLjhsMi41LDYuNGwwLDBoNC43bDAsMEwyNSw4TDI1LDhMMjUsOEwyNSw4TDI1LDh6IE0yOC43LDI2LjJoLTcuNA0KCQlsMy43LTguOUwyOC43LDI2LjJ6Ii8+DQo8L2c+DQo8L3N2Zz4NCg==" />
           <modules>
-            <module id="Intent.Angular" version="4.0.0-alpha.8" metadataOnly="false">
+            <module id="Intent.Angular" version="4.0.0-alpha.9" metadataOnly="false">
               <includedByDefault>true</includedByDefault>
               <required>true</required>
             </module>
