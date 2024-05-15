@@ -43,23 +43,23 @@ namespace Intent.Modules.Angular.Decorators
             scripts.AddPropertyIfNotExists("watch", "ng build --watch --configuration development");
             scripts.AddPropertyIfNotExists("test", "ng test");
 
-            dependencies.AddPropertyIfNotExists("@angular/animations", "16.2.0");
-            dependencies.AddPropertyIfNotExists("@angular/cdk", "16.2.2");
-            dependencies.AddPropertyIfNotExists("@angular/common", "16.2.0");
-            dependencies.AddPropertyIfNotExists("@angular/compiler", "16.2.0");
-            dependencies.AddPropertyIfNotExists("@angular/core", "16.2.0");
-            dependencies.AddPropertyIfNotExists("@angular/forms", "16.2.0");
-            dependencies.AddPropertyIfNotExists("@angular/material", "16.2.2");
-            dependencies.AddPropertyIfNotExists("@angular/platform-browser", "16.2.0");
-            dependencies.AddPropertyIfNotExists("@angular/platform-browser-dynamic", "16.2.0");
-            dependencies.AddPropertyIfNotExists("@angular/router", "16.2.0");
+            dependencies.AddPropertyIfNotExists("@angular/animations", "17.3.8");
+            dependencies.AddPropertyIfNotExists("@angular/cdk", "17.3.8");
+            dependencies.AddPropertyIfNotExists("@angular/common", "17.3.8");
+            dependencies.AddPropertyIfNotExists("@angular/compiler", "17.3.8");
+            dependencies.AddPropertyIfNotExists("@angular/core", "17.3.8");
+            dependencies.AddPropertyIfNotExists("@angular/forms", "17.3.8");
+            dependencies.AddPropertyIfNotExists("@angular/material", "17.3.8");
+            dependencies.AddPropertyIfNotExists("@angular/platform-browser", "17.3.8");
+            dependencies.AddPropertyIfNotExists("@angular/platform-browser-dynamic", "17.3.8");
+            dependencies.AddPropertyIfNotExists("@angular/router", "17.3.8");
             dependencies.AddPropertyIfNotExists("rxjs", "7.8.0");
             dependencies.AddPropertyIfNotExists("tslib", "2.3.0");
-            dependencies.AddPropertyIfNotExists("zone.js", "0.13.0");
+            dependencies.AddPropertyIfNotExists("zone.js", "0.14.5");
 
-            devDependencies.AddPropertyIfNotExists("@angular-devkit/build-angular", "16.2.1");
-            devDependencies.AddPropertyIfNotExists("@angular/cli", "16.2.1");
-            devDependencies.AddPropertyIfNotExists("@angular/compiler-cli", "16.2.0");
+            devDependencies.AddPropertyIfNotExists("@angular-devkit/build-angular", "17.3.7");
+            devDependencies.AddPropertyIfNotExists("@angular/cli", "17.3.7");
+            devDependencies.AddPropertyIfNotExists("@angular/compiler-cli", "17.3.8");
             devDependencies.AddPropertyIfNotExists("@types/jasmine", "4.3.0");
             devDependencies.AddPropertyIfNotExists("jasmine-core", "4.6.0");
             devDependencies.AddPropertyIfNotExists("karma", "6.4.0");
@@ -67,7 +67,7 @@ namespace Intent.Modules.Angular.Decorators
             devDependencies.AddPropertyIfNotExists("karma-coverage", "2.2.0");
             devDependencies.AddPropertyIfNotExists("karma-jasmine", "5.1.0");
             devDependencies.AddPropertyIfNotExists("karma-jasmine-html-reporter", "2.1.0");
-            devDependencies.AddPropertyIfNotExists("typescript", "5.1.3");
+            devDependencies.AddPropertyIfNotExists("typescript", "5.4.5");
         }
     }
 }
