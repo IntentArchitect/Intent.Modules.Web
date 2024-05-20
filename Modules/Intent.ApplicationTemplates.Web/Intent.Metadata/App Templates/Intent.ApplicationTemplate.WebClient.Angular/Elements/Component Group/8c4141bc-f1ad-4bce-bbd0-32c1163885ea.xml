@@ -4,7 +4,7 @@
   <display>Core</display>
   <isAbstract>false</isAbstract>
   <sort-children>by-type-then-manually</sort-children>
-  <order>1</order>
+  <order>2</order>
   <genericTypes />
   <isMapped>false</isMapped>
   <parentFolderId>7549551c-d51c-4f10-acc3-0924aac2c894</parentFolderId>
@@ -48,7 +48,7 @@
       </stereotypes>
       <metadata />
       <childElements>
-        <childElement id="1fe7ad1c-4b80-43d0-8e29-cfbee7a479fb" type="Module" typeId="ef75f8f0-520c-4ab8-814f-5e75f4877dd7">
+        <childElement id="1fe7ad1c-4b80-43d0-8e29-cfbee7a479fb" type="Component Module" typeId="ef75f8f0-520c-4ab8-814f-5e75f4877dd7">
           <name>Intent.Angular</name>
           <display>Intent.Angular</display>
           <isAbstract>false</isAbstract>
@@ -73,7 +73,7 @@
           <metadata />
           <childElements />
         </childElement>
-        <childElement id="62d4b242-5af8-4855-9626-a8d2c22e38cf" type="Module" typeId="ef75f8f0-520c-4ab8-814f-5e75f4877dd7">
+        <childElement id="62d4b242-5af8-4855-9626-a8d2c22e38cf" type="Component Module" typeId="ef75f8f0-520c-4ab8-814f-5e75f4877dd7">
           <name>Intent.OutputTargets.Folders</name>
           <display>Intent.OutputTargets.Folders</display>
           <isAbstract>false</isAbstract>

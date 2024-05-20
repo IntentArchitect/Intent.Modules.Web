@@ -4,7 +4,7 @@
   <display>Security</display>
   <isAbstract>false</isAbstract>
   <sort-children>by-type-then-manually</sort-children>
-  <order>2</order>
+  <order>3</order>
   <genericTypes />
   <isMapped>false</isMapped>
   <parentFolderId>7549551c-d51c-4f10-acc3-0924aac2c894</parentFolderId>
@@ -48,7 +48,7 @@
       </stereotypes>
       <metadata />
       <childElements>
-        <childElement id="5e244ffa-847c-4d92-b547-009492aa6a16" type="Module" typeId="ef75f8f0-520c-4ab8-814f-5e75f4877dd7">
+        <childElement id="5e244ffa-847c-4d92-b547-009492aa6a16" type="Component Module" typeId="ef75f8f0-520c-4ab8-814f-5e75f4877dd7">
           <name>Intent.Angular.ApiAuthorization</name>
           <display>Intent.Angular.ApiAuthorization</display>
           <isAbstract>false</isAbstract>

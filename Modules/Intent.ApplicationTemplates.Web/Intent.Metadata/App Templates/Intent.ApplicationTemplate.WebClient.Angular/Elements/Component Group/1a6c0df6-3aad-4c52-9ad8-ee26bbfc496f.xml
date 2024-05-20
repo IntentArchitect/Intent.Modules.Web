@@ -4,7 +4,7 @@
   <display>Extensions</display>
   <isAbstract>false</isAbstract>
   <sort-children>by-type-then-manually</sort-children>
-  <order>3</order>
+  <order>4</order>
   <genericTypes />
   <isMapped>false</isMapped>
   <parentFolderId>7549551c-d51c-4f10-acc3-0924aac2c894</parentFolderId>
@@ -48,7 +48,7 @@
       </stereotypes>
       <metadata />
       <childElements>
-        <childElement id="9bfef612-e879-4a48-aa55-25cee199a898" type="Module" typeId="ef75f8f0-520c-4ab8-814f-5e75f4877dd7">
+        <childElement id="9bfef612-e879-4a48-aa55-25cee199a898" type="Component Module" typeId="ef75f8f0-520c-4ab8-814f-5e75f4877dd7">
           <name>Intent.Angular.Layout</name>
           <display>Intent.Angular.Layout</display>
           <isAbstract>false</isAbstract>
@@ -101,7 +101,7 @@
       </stereotypes>
       <metadata />
       <childElements>
-        <childElement id="fc395ca7-8bab-4308-afaf-61edf5833d02" type="Module" typeId="ef75f8f0-520c-4ab8-814f-5e75f4877dd7">
+        <childElement id="fc395ca7-8bab-4308-afaf-61edf5833d02" type="Component Module" typeId="ef75f8f0-520c-4ab8-814f-5e75f4877dd7">
           <name>Intent.Angular.ServiceProxies</name>
           <display>Intent.Angular.ServiceProxies</display>
           <isAbstract>false</isAbstract>

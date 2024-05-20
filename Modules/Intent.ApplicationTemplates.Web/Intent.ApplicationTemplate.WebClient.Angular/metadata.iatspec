@@ -81,4 +81,14 @@
     </group>
   </componentGroups>
   <additionalSettings />
+  <minimumDependencyVersions>
+    <module id="Intent.Common" version="3.6.0" />
+    <module id="Intent.Common.Types" version="3.4.0" />
+    <module id="Intent.Common.Typescript" version="4.1.0" />
+    <module id="Intent.Metadata.WebApi" version="4.5.1" />
+    <module id="Intent.Modelers.Domain" version="3.9.0" />
+    <module id="Intent.Modelers.Services" version="3.7.2" />
+    <module id="Intent.Modelers.Services.CQRS" version="4.2.0" />
+    <module id="Intent.Modelers.Types.ServiceProxies" version="5.3.0" />
+  </minimumDependencyVersions>
 </applicationTemplate>
