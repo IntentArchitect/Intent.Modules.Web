@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<deviationsLog>
+  <files>
+    <file>
+      <correlationId>Intent.Application.ServiceImplementations.ServiceImplementation#ebe879b2-a2bb-4cdd-b861-2d057c0698ba</correlationId>
+      <path>NetApplication.Application/Implementation/IntegrationService.cs</path>
+      <count>1</count>
+      <updatedByAccountName>jonathan.lydall@intentarchitect.com</updatedByAccountName>
+      <updatedByDisplayName>Jonathan Lydall</updatedByDisplayName>
+      <updatedAt>2024-06-30T14:01:51.837831Z</updatedAt>
+      <deviationsHash>C749033060A115B9527FECBED033663BF85C0D61E80A6424D00693F1AEDF67BD</deviationsHash>
+      <fileHash>A2B011BDE730A18E573A21886DEB6E5A923C8FF60A70A03154DEEE28FDB11AE7</fileHash>
+    </file>
+    <file>
+      <correlationId>Intent.Application.FluentValidation.Dtos.DTOValidator#5c28c5cd-2655-45dd-b425-475830635a92</correlationId>
+      <path>NetApplication.Application/Integration/CustomDTOValidator.cs</path>
+      <count>1</count>
+      <updatedByAccountName>jonathan.lydall@intentarchitect.com</updatedByAccountName>
+      <updatedByDisplayName>Jonathan Lydall</updatedByDisplayName>
+      <updatedAt>2024-06-30T14:01:51.8376492Z</updatedAt>
+      <deviationsHash>02FEC4634A0C0FA6FBF7B58047E9A74ED950ABFDFB79E53E71B3A8F43761B481</deviationsHash>
+      <fileHash>3AAD2AE0906FDBF4E8755FA1240C59CC52476D8FBC56B9E06DF443B91576E28B</fileHash>
+    </file>
+  </files>
+</deviationsLog>
