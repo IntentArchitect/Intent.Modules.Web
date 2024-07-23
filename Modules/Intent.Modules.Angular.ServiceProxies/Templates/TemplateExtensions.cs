@@ -4,6 +4,7 @@ using Intent.Modelers.Types.ServiceProxies.Api;
 using Intent.Modules.Angular.ServiceProxies.Templates.Proxies.AngularDTO;
 using Intent.Modules.Angular.ServiceProxies.Templates.Proxies.AngularServiceProxy;
 using Intent.Modules.Angular.ServiceProxies.Templates.Proxies.JsonResponse;
+using Intent.Modules.Angular.ServiceProxies.Templates.Proxies.PagedResult;
 using Intent.Modules.Common.Templates;
 using Intent.RoslynWeaver.Attributes;
 
@@ -38,6 +39,11 @@ namespace Intent.Modules.Angular.ServiceProxies.Templates
         public static string GetJsonResponseName(this IIntentTemplate template)
         {
             return template.GetTypeName(JsonResponseTemplate.TemplateId);
+        }
+
+        public static string GetPagedResultName(this IIntentTemplate template)
+        {
+            return template.GetTypeName(PagedResultTemplate.TemplateId);
         }
 
     }

@@ -122,6 +122,30 @@
     </FileLog>
     <FileLog>
       <ProjectId>c08e0737-1abd-40fc-9366-f7dccdb55b11</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplateStringInterpolation#ca941dcd-86e1-4c41-b9bf-2e4be49eca20</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>Templates/Proxies/PagedResult/PagedResultTemplate.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>Proxies/PagedResult/PagedResultTemplate.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>c08e0737-1abd-40fc-9366-f7dccdb55b11</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial#ca941dcd-86e1-4c41-b9bf-2e4be49eca20</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>Templates/Proxies/PagedResult/PagedResultTemplatePartial.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>Proxies/PagedResult/PagedResultTemplatePartial.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>c08e0737-1abd-40fc-9366-f7dccdb55b11</ProjectId>
+      <CorrelationId>Intent.ModuleBuilder.TemplateRegistration.SingleFileNoModel#ca941dcd-86e1-4c41-b9bf-2e4be49eca20</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>Templates/Proxies/PagedResult/PagedResultTemplateRegistration.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>Proxies/PagedResult/PagedResultTemplateRegistration.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>c08e0737-1abd-40fc-9366-f7dccdb55b11</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.Templates.TemplateExtensions</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/TemplateExtensions.cs</ApplicationRelativeFilePath>

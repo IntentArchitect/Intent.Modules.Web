@@ -11,6 +11,7 @@ using Intent.Metadata.WebApi.Api;
 using Intent.Modelers.Types.ServiceProxies.Api;
 using Intent.Modelers.WebClient.Angular.Api;
 using Intent.Modules.Angular.ServiceProxies.Templates.Proxies.AngularDTO;
+using Intent.Modules.Angular.ServiceProxies.Templates.Proxies.PagedResult;
 using Intent.Modules.Angular.Templates;
 using Intent.Modules.Angular.Templates.Core.ApiService;
 using Intent.Modules.Common;
@@ -40,6 +41,7 @@ namespace Intent.Modules.Angular.ServiceProxies.Templates.Proxies.AngularService
         {
             //ServiceMetadataQueries.Validate(this, model);
             AddTypeSource(AngularDTOTemplate.TemplateId);
+            PagedResultTypeSource.ApplyTo(this, PagedResultTemplate.TemplateId);
 
             TypescriptFile = new TypescriptFile($"{string.Join("/", Model.GetModule(ExecutionContext).InternalElement.GetFolderPath(additionalFolders: Model.GetModule(ExecutionContext).GetModuleName().ToKebabCase()))}")
                 .AddClass(Model.Name, @class =>
