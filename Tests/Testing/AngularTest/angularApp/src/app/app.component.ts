@@ -8,9 +8,9 @@ import { PagedResult } from 'src/paged-result';
 import { ClientDto } from 'src/models/net-application/services/net-client/client.dto';
 
 @Component({
-    selector: 'app-root',
-    templateUrl: './app.component.html',
-    styleUrls: ['./app.component.scss']
+  selector: 'app-root',
+  templateUrl: './app.component.html',
+  styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
     isCollapsed: boolean = false;
