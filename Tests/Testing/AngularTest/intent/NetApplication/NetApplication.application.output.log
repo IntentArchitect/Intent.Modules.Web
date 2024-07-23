@@ -67,6 +67,14 @@
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
+      <ProjectId>34994c18-6b65-4171-845d-559c61a45949</ProjectId>
+      <CorrelationId>Intent.AspNetCore.Controllers.Controller#2a30d082-1750-476d-87c6-70f89c2f6db4</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>../../NetApplication/NetApplication.Api/Controllers/NetClientController.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>NetClientController.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
       <ProjectId>5b33090f-a07c-4cc4-ac90-227e5701c7ee</ProjectId>
       <CorrelationId>Intent.AspNetCore.Controllers.JsonResponse</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
@@ -323,6 +331,14 @@
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
+      <ProjectId>b4cdce89-0243-4da2-a4e7-0b25bdb23b35</ProjectId>
+      <CorrelationId>Intent.Application.ServiceImplementations.ServiceImplementation#2a30d082-1750-476d-87c6-70f89c2f6db4</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>../../NetApplication/NetApplication.Application/Implementation/NetClientService.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>NetClientService.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
       <ProjectId>cff1407e-306d-40e7-8ca1-4103f9791379</ProjectId>
       <CorrelationId>Intent.Application.Dtos.DtoModel#5c28c5cd-2655-45dd-b425-475830635a92</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
@@ -347,6 +363,14 @@
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
+      <ProjectId>5a355c5a-dc07-4e9b-bdb5-e609e145f040</ProjectId>
+      <CorrelationId>Intent.Application.Contracts.ServiceContract#2a30d082-1750-476d-87c6-70f89c2f6db4</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>../../NetApplication/NetApplication.Application/Interfaces/INetClientService.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>INetClientService.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
       <ProjectId>cff1407e-306d-40e7-8ca1-4103f9791379</ProjectId>
       <CorrelationId>Intent.Application.FluentValidation.Dtos.ValidationServiceInterface</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
@@ -360,6 +384,54 @@
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>../../NetApplication/NetApplication.Application/NetApplication.Application.csproj</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>NetApplication.Application.csproj</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>cff1407e-306d-40e7-8ca1-4103f9791379</ProjectId>
+      <CorrelationId>Intent.Application.Dtos.DtoModel#2070fc85-96bc-4c8b-bb88-4bee1cf45a41</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>../../NetApplication/NetApplication.Application/NetClient/ClientCreateDto.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>NetClient/ClientCreateDto.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>cff1407e-306d-40e7-8ca1-4103f9791379</ProjectId>
+      <CorrelationId>Intent.Application.FluentValidation.Dtos.DTOValidator#2070fc85-96bc-4c8b-bb88-4bee1cf45a41</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>../../NetApplication/NetApplication.Application/NetClient/ClientCreateDtoValidator.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>NetClient/ClientCreateDtoValidator.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>cff1407e-306d-40e7-8ca1-4103f9791379</ProjectId>
+      <CorrelationId>Intent.Application.Dtos.DtoModel#097b69ce-7e17-4f8a-8d0e-67a9832ac8c2</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>../../NetApplication/NetApplication.Application/NetClient/ClientDto.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>NetClient/ClientDto.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>cff1407e-306d-40e7-8ca1-4103f9791379</ProjectId>
+      <CorrelationId>Intent.Application.Dtos.AutoMapper.MappingExtensions#097b69ce-7e17-4f8a-8d0e-67a9832ac8c2</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>../../NetApplication/NetApplication.Application/NetClient/ClientDtoMappingExtensions.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>NetClient/ClientDtoMappingExtensions.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>cff1407e-306d-40e7-8ca1-4103f9791379</ProjectId>
+      <CorrelationId>Intent.Application.Dtos.DtoModel#2903897a-2900-4c50-a671-4ec17a1a3224</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>../../NetApplication/NetApplication.Application/NetClient/ClientUpdateDto.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>NetClient/ClientUpdateDto.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>cff1407e-306d-40e7-8ca1-4103f9791379</ProjectId>
+      <CorrelationId>Intent.Application.FluentValidation.Dtos.DTOValidator#2903897a-2900-4c50-a671-4ec17a1a3224</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>../../NetApplication/NetApplication.Application/NetClient/ClientUpdateDtoValidator.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>NetClient/ClientUpdateDtoValidator.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
@@ -419,11 +491,27 @@
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
+      <ProjectId>b8c5382f-7ff5-4990-bd84-68988680185c</ProjectId>
+      <CorrelationId>Intent.Entities.DomainEntity#441fa06e-0828-4117-97e4-ffb6fd82d96f</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>../../NetApplication/NetApplication.Domain/Entities/Client.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>Client.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
       <ProjectId>d03be099-bbf0-409a-94af-286d4ed6d3d1</ProjectId>
       <CorrelationId>Intent.VisualStudio.Projects.CSharpProject#d03be099-bbf0-409a-94af-286d4ed6d3d1</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>../../NetApplication/NetApplication.Domain/NetApplication.Domain.csproj</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>NetApplication.Domain.csproj</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>5a4838d7-2cb9-468c-b68d-2ceccce23158</ProjectId>
+      <CorrelationId>Intent.Entities.Repositories.Api.EntityRepositoryInterface#441fa06e-0828-4117-97e4-ffb6fd82d96f</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>../../NetApplication/NetApplication.Domain/Repositories/IClientRepository.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>IClientRepository.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
@@ -475,11 +563,27 @@
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
+      <ProjectId>cf5b53f3-5bdb-4f19-ba69-f03e9a3a5a84</ProjectId>
+      <CorrelationId>Intent.EntityFrameworkCore.EntityTypeConfiguration#441fa06e-0828-4117-97e4-ffb6fd82d96f</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>../../NetApplication/NetApplication.Infrastructure/Persistence/Configurations/ClientConfiguration.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>ClientConfiguration.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
       <ProjectId>0e34d6ee-b1e9-49b6-8d8d-dc0a6b59fe1b</ProjectId>
       <CorrelationId>Intent.EntityFrameworkCore.DbMigrationsReadMe</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>../../NetApplication/NetApplication.Infrastructure/Persistence/MIGRATION_README.txt</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>MIGRATION_README.txt</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>0a77be58-613c-4054-999d-81d3709d66e1</ProjectId>
+      <CorrelationId>Intent.EntityFrameworkCore.Repositories.Repository#441fa06e-0828-4117-97e4-ffb6fd82d96f</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>../../NetApplication/NetApplication.Infrastructure/Repositories/ClientRepository.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>ClientRepository.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>

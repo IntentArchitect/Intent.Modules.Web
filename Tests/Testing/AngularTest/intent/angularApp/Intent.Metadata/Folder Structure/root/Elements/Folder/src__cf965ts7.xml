@@ -191,5 +191,19 @@
       </metadata>
       <childElements />
     </childElement>
+    <childElement id="7229b29e-ea12-4c67-8bb8-5d3bd8652fee" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+      <name>Intent.Angular.ServiceProxies.Proxies.PagedResult</name>
+      <display>Intent.Angular.ServiceProxies.Proxies.PagedResult</display>
+      <externalReference>Intent.Angular.ServiceProxies</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>6ce75da5-28ec-4529-9ac7-43c47fdc5ae8</parentFolderId>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
+      <childElements />
+    </childElement>
   </childElements>
 </class>

@@ -307,6 +307,14 @@
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
+      <ProjectId>6ce75da5-28ec-4529-9ac7-43c47fdc5ae8</ProjectId>
+      <CorrelationId>Intent.Angular.ServiceProxies.Proxies.AngularServiceProxy#284ed623-eb3e-4492-95c8-cf64e4a0a1ed</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>../../angularApp/src/app/net-client-service.service.ts</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>app/net-client-service.service.ts</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
       <ProjectId>c597d308-cc11-4841-9439-7b85ded4f379</ProjectId>
       <CorrelationId>Intent.Modules.Angular.Templates.StaticContentTemplateRegistrations.InitialFilesStaticContentTemplateRegistration#src/assets/.gitkeep</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
@@ -368,6 +376,30 @@
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>../../angularApp/src/models/net-application/services/integration/custom.dto.ts</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>models/net-application/services/integration/custom.dto.ts</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>6ce75da5-28ec-4529-9ac7-43c47fdc5ae8</ProjectId>
+      <CorrelationId>Intent.Angular.ServiceProxies.Proxies.AngularDTO#2070fc85-96bc-4c8b-bb88-4bee1cf45a41</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>../../angularApp/src/models/net-application/services/net-client/client-create.dto.ts</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>models/net-application/services/net-client/client-create.dto.ts</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>6ce75da5-28ec-4529-9ac7-43c47fdc5ae8</ProjectId>
+      <CorrelationId>Intent.Angular.ServiceProxies.Proxies.AngularDTO#097b69ce-7e17-4f8a-8d0e-67a9832ac8c2</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>../../angularApp/src/models/net-application/services/net-client/client.dto.ts</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>models/net-application/services/net-client/client.dto.ts</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>6ce75da5-28ec-4529-9ac7-43c47fdc5ae8</ProjectId>
+      <CorrelationId>Intent.Angular.ServiceProxies.Proxies.PagedResult</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>../../angularApp/src/paged-result.ts</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>paged-result.ts</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
