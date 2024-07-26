@@ -84,7 +84,7 @@
   <minimumDependencyVersions>
     <module id="Intent.Common" version="3.6.0" />
     <module id="Intent.Common.Types" version="3.4.0" />
-    <module id="Intent.Common.TypeScript" version="4.1.0" />
+    <module id="Intent.Common.TypeScript" version="4.1.1-pre.0" />
     <module id="Intent.Metadata.WebApi" version="4.5.4" />
     <module id="Intent.Modelers.Domain" version="3.9.0" />
     <module id="Intent.Modelers.Services" version="3.7.4-pre.0" />

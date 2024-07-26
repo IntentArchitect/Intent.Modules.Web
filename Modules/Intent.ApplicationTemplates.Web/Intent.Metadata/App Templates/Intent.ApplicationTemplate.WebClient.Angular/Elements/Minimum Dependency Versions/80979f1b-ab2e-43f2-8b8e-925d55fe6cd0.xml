@@ -43,9 +43,9 @@
     </childElement>
     <childElement id="33d1efce-42ca-466b-ab70-5356f817fa98" type="Module" typeId="6a811790-b322-4340-8b68-84dae5ffafa8">
       <name>Intent.Common.TypeScript</name>
-      <display>Intent.Common.TypeScript 4.1.0</display>
+      <display>Intent.Common.TypeScript 4.1.1-pre.0</display>
       <isAbstract>false</isAbstract>
-      <value>4.1.0</value>
+      <value>4.1.1-pre.0</value>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>80979f1b-ab2e-43f2-8b8e-925d55fe6cd0</parentFolderId>
