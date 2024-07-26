@@ -13,6 +13,8 @@ namespace NetApplication.Domain.Entities
 
         public string Name { get; set; }
 
+        public char StatusCode { get; set; }
+
         public List<DomainEvent> DomainEvents { get; set; } = new List<DomainEvent>();
     }
 }

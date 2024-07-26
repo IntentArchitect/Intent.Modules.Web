@@ -44,7 +44,7 @@ export class AppComponent implements OnInit {
 
     @IntentIgnore()
     public performSuccessfulNetClientServiceCalls(): Observable<PagedResult<ClientDto>> {
-        return this.clientService.createClient({ name: "Client 1" })
+        return this.clientService.createClient({ name: "Client 1", statusCode: 'A' })
             .pipe(mergeMap(x => this.clientService.findClients(1, 1)));
     }
 

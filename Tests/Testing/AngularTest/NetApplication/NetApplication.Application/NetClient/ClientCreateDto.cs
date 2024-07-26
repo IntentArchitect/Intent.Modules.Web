@@ -13,12 +13,14 @@ namespace NetApplication.Application.NetClient
         }
 
         public string Name { get; set; }
+        public char StatusCode { get; set; }
 
-        public static ClientCreateDto Create(string name)
+        public static ClientCreateDto Create(string name, char statusCode)
         {
             return new ClientCreateDto
             {
-                Name = name
+                Name = name,
+                StatusCode = statusCode
             };
         }
     }

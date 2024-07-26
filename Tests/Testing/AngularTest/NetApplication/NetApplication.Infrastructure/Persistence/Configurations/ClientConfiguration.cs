@@ -17,6 +17,9 @@ namespace NetApplication.Infrastructure.Persistence.Configurations
             builder.Property(x => x.Name)
                 .IsRequired();
 
+            builder.Property(x => x.StatusCode)
+                .IsRequired();
+
             builder.Ignore(e => e.DomainEvents);
         }
     }

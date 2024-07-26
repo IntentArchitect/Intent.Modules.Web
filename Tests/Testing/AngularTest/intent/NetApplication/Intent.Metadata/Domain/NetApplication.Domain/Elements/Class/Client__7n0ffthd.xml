@@ -83,5 +83,29 @@
       <metadata />
       <childElements />
     </childElement>
+    <childElement id="b4d75401-31de-46ff-af57-a7028c0f5482" type="Attribute" typeId="0090fb93-483e-41af-a11d-5ad2dc796adf">
+      <name>StatusCode</name>
+      <display>StatusCode: char</display>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <typeReference id="140439d8-7a2e-4601-a04b-8c3ff43fc7de">
+        <typeId>C1B3A361-B1C6-48C3-B34C-7999B3E071F0</typeId>
+        <isNavigable>true</isNavigable>
+        <isNullable>false</isNullable>
+        <isCollection>false</isCollection>
+        <isRequired>true</isRequired>
+        <typePackageName>Intent.Common.Types</typePackageName>
+        <typePackageId>870ad967-cbd4-4ea9-b86d-9c3a5d55ea67</typePackageId>
+        <stereotypes />
+        <genericTypeParameters />
+      </typeReference>
+      <isMapped>false</isMapped>
+      <parentFolderId>441fa06e-0828-4117-97e4-ffb6fd82d96f</parentFolderId>
+      <packageId>458df383-5191-45b1-91bc-5cf81c934aa4</packageId>
+      <packageName>NetApplication.Domain</packageName>
+      <stereotypes />
+      <metadata />
+      <childElements />
+    </childElement>
   </childElements>
 </class>

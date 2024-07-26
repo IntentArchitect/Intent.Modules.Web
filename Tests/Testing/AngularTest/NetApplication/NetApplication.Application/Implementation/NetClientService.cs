@@ -36,6 +36,7 @@ namespace NetApplication.Application.Implementation
             var newClient = new Client
             {
                 Name = dto.Name,
+                StatusCode = dto.StatusCode,
             };
             _clientRepository.Add(newClient);
             await _clientRepository.UnitOfWork.SaveChangesAsync(cancellationToken);
@@ -71,6 +72,7 @@ namespace NetApplication.Application.Implementation
                 throw new NotFoundException($"Could not find Client {id}");
             }
             existingClient.Name = dto.Name;
+            existingClient.StatusCode = dto.StatusCode;
         }
 
         [IntentManaged(Mode.Fully, Body = Mode.Ignore)]

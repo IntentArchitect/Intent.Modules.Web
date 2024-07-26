@@ -64,7 +64,7 @@ async function performSuccessfulNetClientServiceCalls(url: string) {
     expect(fetchedResults).toEqual(
         {
             totalCount: 1, pageCount: 1, pageNumber: 1, pageSize: 1, data: [
-                {name: 'Client 1', id: fetchedResults.data[0].id}
+                {name: 'Client 1', id: fetchedResults.data[0].id, statusCode: 'A'}
             ]
         }
     );

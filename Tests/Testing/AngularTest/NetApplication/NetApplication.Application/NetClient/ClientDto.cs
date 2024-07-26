@@ -18,13 +18,15 @@ namespace NetApplication.Application.NetClient
 
         public string Name { get; set; }
         public Guid Id { get; set; }
+        public char StatusCode { get; set; }
 
-        public static ClientDto Create(string name, Guid id)
+        public static ClientDto Create(string name, Guid id, char statusCode)
         {
             return new ClientDto
             {
                 Name = name,
-                Id = id
+                Id = id,
+                StatusCode = statusCode
             };
         }
 
