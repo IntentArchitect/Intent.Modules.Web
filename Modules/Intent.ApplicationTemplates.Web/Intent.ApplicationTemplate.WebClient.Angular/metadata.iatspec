@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <applicationTemplate>
   <id>Intent.ApplicationTemplate.WebClient.Angular</id>
-  <version>3.3.24</version>
+  <version>3.3.25-pre.0</version>
   <supportedClientVersions>[3.3.0-pre.0, 5.0.0)</supportedClientVersions>
   <displayName>Angular Web Client</displayName>
   <shortDescription>Standalone Angular web client.</shortDescription>
@@ -82,7 +82,7 @@
   </componentGroups>
   <additionalSettings />
   <minimumDependencyVersions>
-    <module id="Intent.Code.Weaving.TypeScript" version="1.0.1" />
+    <module id="Intent.Code.Weaving.TypeScript" version="1.0.2" />
     <module id="Intent.Common" version="3.6.0" />
     <module id="Intent.Common.Types" version="3.4.0" />
     <module id="Intent.Common.TypeScript" version="4.1.1" />
