@@ -73,7 +73,7 @@
       <name>Intent.Metadata.WebApi</name>
       <display>Intent.Metadata.WebApi 4.5.5</display>
       <isAbstract>false</isAbstract>
-      <value>4.5.6</value>
+      <value>4.5.7</value>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>80979f1b-ab2e-43f2-8b8e-925d55fe6cd0</parentFolderId>
@@ -87,7 +87,7 @@
       <name>Intent.Modelers.Domain</name>
       <display>Intent.Modelers.Domain 3.9.0</display>
       <isAbstract>false</isAbstract>
-      <value>3.9.0</value>
+      <value>3.9.1</value>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>80979f1b-ab2e-43f2-8b8e-925d55fe6cd0</parentFolderId>

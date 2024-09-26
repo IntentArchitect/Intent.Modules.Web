@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <applicationTemplate>
   <id>Intent.ApplicationTemplate.WebClient.Angular</id>
-  <version>3.3.26</version>
+  <version>3.3.27-pre.0</version>
   <supportedClientVersions>[3.3.0-pre.0, 5.0.0)</supportedClientVersions>
   <displayName>Angular Web Client</displayName>
   <shortDescription>Standalone Angular web client.</shortDescription>
@@ -86,8 +86,8 @@
     <module id="Intent.Common" version="3.6.0" />
     <module id="Intent.Common.Types" version="3.4.0" />
     <module id="Intent.Common.TypeScript" version="4.1.1" />
-    <module id="Intent.Metadata.WebApi" version="4.5.6" />
-    <module id="Intent.Modelers.Domain" version="3.9.0" />
+    <module id="Intent.Metadata.WebApi" version="4.5.7" />
+    <module id="Intent.Modelers.Domain" version="3.9.1" />
     <module id="Intent.Modelers.Services" version="3.7.5" />
     <module id="Intent.Modelers.Services.CQRS" version="4.2.0" />
     <module id="Intent.Modelers.Types.ServiceProxies" version="5.3.0" />
