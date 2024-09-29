@@ -31,7 +31,7 @@
       <name>Intent.Common</name>
       <display>Intent.Common 3.6.0</display>
       <isAbstract>false</isAbstract>
-      <value>3.6.0</value>
+      <value>3.7.0</value>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>80979f1b-ab2e-43f2-8b8e-925d55fe6cd0</parentFolderId>
@@ -45,7 +45,7 @@
       <name>Intent.Common.Types</name>
       <display>Intent.Common.Types 3.4.0</display>
       <isAbstract>false</isAbstract>
-      <value>3.4.0</value>
+      <value>4.0.0</value>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>80979f1b-ab2e-43f2-8b8e-925d55fe6cd0</parentFolderId>
@@ -73,7 +73,7 @@
       <name>Intent.Metadata.WebApi</name>
       <display>Intent.Metadata.WebApi 4.5.7</display>
       <isAbstract>false</isAbstract>
-      <value>4.5.7</value>
+      <value>4.6.0</value>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>80979f1b-ab2e-43f2-8b8e-925d55fe6cd0</parentFolderId>
@@ -87,7 +87,7 @@
       <name>Intent.Modelers.Domain</name>
       <display>Intent.Modelers.Domain 3.9.1</display>
       <isAbstract>false</isAbstract>
-      <value>3.9.1</value>
+      <value>3.10.0</value>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>80979f1b-ab2e-43f2-8b8e-925d55fe6cd0</parentFolderId>
@@ -101,7 +101,7 @@
       <name>Intent.Modelers.Services</name>
       <display>Intent.Modelers.Services 3.7.5</display>
       <isAbstract>false</isAbstract>
-      <value>3.7.5</value>
+      <value>3.8.0</value>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>80979f1b-ab2e-43f2-8b8e-925d55fe6cd0</parentFolderId>
@@ -115,7 +115,7 @@
       <name>Intent.Modelers.Services.CQRS</name>
       <display>Intent.Modelers.Services.CQRS 4.2.0</display>
       <isAbstract>false</isAbstract>
-      <value>4.2.0</value>
+      <value>5.0.0</value>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>80979f1b-ab2e-43f2-8b8e-925d55fe6cd0</parentFolderId>
@@ -129,7 +129,7 @@
       <name>Intent.Modelers.Types.ServiceProxies</name>
       <display>Intent.Modelers.Types.ServiceProxies 5.3.0</display>
       <isAbstract>false</isAbstract>
-      <value>5.3.0</value>
+      <value>5.4.0</value>
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>80979f1b-ab2e-43f2-8b8e-925d55fe6cd0</parentFolderId>
