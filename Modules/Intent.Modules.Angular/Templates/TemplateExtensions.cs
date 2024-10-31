@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using Intent.Modelers.WebClient.Angular.Api;
 using Intent.Modules.Angular.Templates.Component.AngularComponentTs;
-using Intent.Modules.Angular.Templates.Core.ApiService;
 using Intent.Modules.Angular.Templates.Core.CoreModule;
 using Intent.Modules.Angular.Templates.Environment.Environment;
 using Intent.Modules.Angular.Templates.Environment.EnvironmentDotDevelopment;
@@ -30,11 +29,6 @@ namespace Intent.Modules.Angular.Templates
         public static string GetAngularComponentTsName(this IIntentTemplate template, ComponentModel model)
         {
             return template.GetTypeName(AngularComponentTsTemplate.TemplateId, model);
-        }
-
-        public static string GetApiServiceName(this IIntentTemplate template)
-        {
-            return template.GetTypeName(ApiServiceTemplate.TemplateId);
         }
 
         public static string GetCoreModuleName(this IIntentTemplate template)

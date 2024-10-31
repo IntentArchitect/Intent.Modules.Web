@@ -6,6 +6,7 @@ using Intent.Engine;
 using Intent.Eventing;
 using Intent.Metadata.Models;
 using Intent.Modules.Angular.Api;
+using Intent.Modules.Angular.Shared;
 using Intent.Modules.Common;
 using Intent.Modules.Common.Templates;
 using Intent.Modules.Common.TypeScript.Templates;
@@ -28,14 +29,14 @@ namespace Intent.Modules.Angular.Templates.Environment.Environment
         [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
         public EnvironmentTemplate(IOutputTarget outputTarget, object model = null) : base(TemplateId, outputTarget, model)
         {
-            ExecutionContext.EventDispatcher.Subscribe<AngularConfigVariableRequiredEvent>(HandleConfigVariableRequiredEvent);
+            ExecutionContext.EventDispatcher.SubscribeToAngularConfigVariableRequiredEvent(HandleConfigVariableRequiredEvent);
         }
 
-        private void HandleConfigVariableRequiredEvent(AngularConfigVariableRequiredEvent @event)
+        private void HandleConfigVariableRequiredEvent(string variableKey, string defaultValue)
         {
             _configVariables.Add(new ConfigVariable(
-                name: @event.VariableKey,
-                defaultValue: @event.DefaultValue));
+                name: variableKey,
+                defaultValue: defaultValue));
         }
 
         public string GetEnvironmentVariables()

@@ -1,56 +1,68 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <package>
   <id>Intent.Angular.ServiceProxies</id>
-  <version>4.0.0-alpha.10</version>
-  <supportedClientVersions>[4.1.0-pre.0, 5.0.0-a)</supportedClientVersions>
+  <version>4.0.0-alpha.11</version>
+  <supportedClientVersions>[4.3.0-a, 5.0.0-a)</supportedClientVersions>
   <summary>Introduces Proxy clients that interact with backend service APIs</summary>
   <description>Introduces Proxy clients that interact with backend service APIs</description>
   <authors>Intent Architect</authors>
   <iconUrl>data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAyOC4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHZpZXdCb3g9IjAgMCA1MCA1MCIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgNTAgNTAiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPGc+DQoJPHBvbHlnb24gZmlsbD0iI0RCMUUzMyIgcG9pbnRzPSIyNSwzLjIgMjUsMy4yIDI1LDMuMiA0LjcsMTAuNSA3LjgsMzcuMyAyNSw0Ni44IDI1LDQ2LjggMjUsNDYuOCA0Mi4yLDM3LjMgNDUuMywxMC41IAkiLz4NCgk8cG9seWdvbiBmaWxsPSIjQzIyMDMyIiBwb2ludHM9IjI1LDMuMiAyNSw4LjEgMjUsOCAyNSwzMC4xIDI1LDMwLjEgMjUsNDYuOCAyNSw0Ni44IDQyLjIsMzcuMyA0NS4zLDEwLjUgCSIvPg0KCTxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik0yNSw4TDEyLjMsMzYuNWwwLDBoNC43bDAsMGwyLjUtNi40aDEwLjhsMi41LDYuNGwwLDBoNC43bDAsMEwyNSw4TDI1LDhMMjUsOEwyNSw4TDI1LDh6IE0yOC43LDI2LjJoLTcuNA0KCQlsMy43LTguOUwyOC43LDI2LjJ6Ii8+DQo8L2c+DQo8L3N2Zz4NCg==</iconUrl>
   <releaseNotes>release-notes.md</releaseNotes>
+  <tags>Angular Service Proxy Proxies</tags>
   <templates>
-    <template id="Intent.Angular.ServiceProxies.Proxies.AngularDTO" externalReference="eef9e3d9-2c85-4a55-bed7-988d51fa5c6f">
+    <template id="Intent.Angular.ServiceProxies.AngularDTO" externalReference="eef9e3d9-2c85-4a55-bed7-988d51fa5c6f">
       <role>Front End</role>
-      <location>src</location>
+      <location>src/app/service-proxies/models</location>
     </template>
-    <template id="Intent.Angular.ServiceProxies.Proxies.AngularServiceProxy" externalReference="4ff46227-42ce-45ef-a5c1-057cb8501b76">
+    <template id="Intent.Angular.ServiceProxies.AngularServiceProxy" externalReference="4ff46227-42ce-45ef-a5c1-057cb8501b76">
       <role>Front End</role>
-      <location>src</location>
+      <location>src/app/service-proxies</location>
     </template>
-    <template id="Intent.Angular.ServiceProxies.Proxies.JsonResponse" externalReference="541fb796-1d01-4577-a7f7-5e6895a41e71">
+    <template id="Intent.Angular.ServiceProxies.ApiService" externalReference="2085bb25-5120-4f1e-a836-5b6160ff6f9b">
       <role>Front End</role>
-      <location>src</location>
+      <location>src/app/service-proxies</location>
     </template>
-    <template id="Intent.Angular.ServiceProxies.Proxies.PagedResult" externalReference="ca941dcd-86e1-4c41-b9bf-2e4be49eca20">
+    <template id="Intent.Angular.ServiceProxies.Environment" externalReference="2031fe7b-cf58-4142-9694-a51a8b84f615">
       <role>Front End</role>
-      <location>src</location>
+      <location>src/environments</location>
+    </template>
+    <template id="Intent.Angular.ServiceProxies.JsonResponse" externalReference="541fb796-1d01-4577-a7f7-5e6895a41e71">
+      <role>Front End</role>
+      <location>src/app/service-proxies/models</location>
+    </template>
+    <template id="Intent.Angular.ServiceProxies.PagedResult" externalReference="ca941dcd-86e1-4c41-b9bf-2e4be49eca20">
+      <role>Front End</role>
+      <location>src/app/service-proxies/models</location>
     </template>
   </templates>
+  <interoperability>
+    <detect id="Intent.Angular">
+      <install>
+        <package id="Intent.Angular.ServiceProxies.Interop" version="1.0.0-alpha.0" />
+      </install>
+    </detect>
+  </interoperability>
   <dependencies>
-    <dependency id="Intent.Angular" version="4.0.0-alpha.8" />
     <dependency id="Intent.Code.Weaving.Html" version="1.0.0" />
     <dependency id="Intent.Code.Weaving.TypeScript" version="1.0.0" />
-    <dependency id="Intent.Common" version="3.5.3" />
+    <dependency id="Intent.Common" version="3.6.0" />
     <dependency id="Intent.Common.Types" version="3.3.9" />
     <dependency id="Intent.Common.TypeScript" version="4.0.0" />
     <dependency id="Intent.Metadata.WebApi" version="4.2.5" />
     <dependency id="Intent.Modelers.Domain" version="3.5.1" />
-    <dependency id="Intent.Modelers.Services" version="3.7.4" />
+    <dependency id="Intent.Modelers.Services" version="3.5.1" />
     <dependency id="Intent.Modelers.Services.CQRS" version="4.1.2" />
     <dependency id="Intent.Modelers.Types.ServiceProxies" version="5.2.3" />
-    <dependency id="Intent.Modelers.WebClient" version="4.1.0" />
-    <dependency id="Intent.Modelers.WebClient.Angular" version="4.0.0-alpha.5" />
-    <dependency id="Intent.Npm" version="4.0.0" />
+    <dependency id="Intent.Modelers.UI" version="1.0.0-beta.1" />
+    <dependency id="Intent.Modelers.UI.ServiceProxies" version="1.0.0-beta.0" />
+    <dependency id="Intent.OutputTargets.Folders" version="3.4.0" />
   </dependencies>
   <files>
     <file src="$outDir$/$id$.dll" />
     <file src="$outDir$/$id$.pdb" />
   </files>
   <metadata />
-  <decorators>
-    <decorator id="Intent.Angular.ServiceProxies.PopulateDataComponentDecorator" externalReference="0ea5db52-70fd-4918-b3d7-9e960c841f99" />
-  </decorators>
+  <decorators />
   <moduleSettings />
   <moduleSettingsExtensions />
-  <tags />
 </package>

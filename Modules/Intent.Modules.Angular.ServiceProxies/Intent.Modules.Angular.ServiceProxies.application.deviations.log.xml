@@ -1,4 +1,35 @@
 <?xml version="1.0" encoding="utf-8"?>
 <deviationsLog>
-  <files />
+  <files>
+    <file>
+      <correlationId>Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial#eef9e3d9-2c85-4a55-bed7-988d51fa5c6f</correlationId>
+      <path>Intent.Modules.Angular.ServiceProxies/Templates/AngularDTO/AngularDTOTemplatePartial.cs</path>
+      <count>1</count>
+      <updatedByAccountName>jonathan.lydall@intentarchitect.com</updatedByAccountName>
+      <updatedByDisplayName>Jonathan Lydall</updatedByDisplayName>
+      <updatedAt>2024-10-30T12:30:50.053958Z</updatedAt>
+      <deviationsHash>95F024BBB9B93CC06F17BC55CA2B849AF9EDD9596525892D00915BACFA8C917B</deviationsHash>
+      <fileHash>343A342119F777B25A9D079D335380C49D4ECB8A076C23DF6C5D5C129B1124BA</fileHash>
+    </file>
+    <file>
+      <correlationId>Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial#4ff46227-42ce-45ef-a5c1-057cb8501b76</correlationId>
+      <path>Intent.Modules.Angular.ServiceProxies/Templates/AngularServiceProxy/AngularServiceProxyTemplatePartial.cs</path>
+      <count>2</count>
+      <updatedByAccountName>jonathan.lydall@intentarchitect.com</updatedByAccountName>
+      <updatedByDisplayName>Jonathan Lydall</updatedByDisplayName>
+      <updatedAt>2024-10-30T12:30:50.0539725Z</updatedAt>
+      <deviationsHash>D8E9E3B7409A51F41324BD9B4FF29AFBE86E51DBAA19209E0589DB51569E9478</deviationsHash>
+      <fileHash>A41322E4E6289509392C3CF074197C07E340840F552F737A9F0CE3618A105C1F</fileHash>
+    </file>
+    <file>
+      <correlationId>Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial#541fb796-1d01-4577-a7f7-5e6895a41e71</correlationId>
+      <path>Intent.Modules.Angular.ServiceProxies/Templates/JsonResponse/JsonResponseTemplatePartial.cs</path>
+      <count>1</count>
+      <updatedByAccountName>jonathan.lydall@intentarchitect.com</updatedByAccountName>
+      <updatedByDisplayName>Jonathan Lydall</updatedByDisplayName>
+      <updatedAt>2024-10-30T12:30:50.0539788Z</updatedAt>
+      <deviationsHash>95F024BBB9B93CC06F17BC55CA2B849AF9EDD9596525892D00915BACFA8C917B</deviationsHash>
+      <fileHash>D77F146AA14B83B7CBF2D2E1AE74A33BE2EBBDEAE1070FE620FE466DA4546A2E</fileHash>
+    </file>
+  </files>
 </deviationsLog>

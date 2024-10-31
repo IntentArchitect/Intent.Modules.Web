@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Intent.Engine;
 using Intent.Modelers.WebClient.Angular.Api;
+using Intent.Modules.Angular.Shared;
 using Intent.Modules.Angular.Templates.Model.Model;
 using Intent.Modules.Common;
 using Intent.Modules.Common.Templates;
@@ -42,10 +43,10 @@ namespace Intent.Modules.Angular.Templates.Module.AngularResolver
 
         public override void BeforeTemplateExecution()
         {
-            ExecutionContext.EventDispatcher.Publish(new AngularServiceProxyCreatedEvent(
+            ExecutionContext.EventDispatcher.PublishAngularServiceProxyCreatedEvent(
                 templateId: TemplateId,
                 modelId: Model.Id,
-                moduleId: Model.Module.Id));
+                moduleId: Model.Module.Id);
         }
     }
 }

@@ -33,20 +33,6 @@ namespace Intent.Modules.Angular.Templates
         public string ModuleId { get; }
     }
 
-    public class AngularServiceProxyCreatedEvent
-    {
-        public AngularServiceProxyCreatedEvent(string templateId, string modelId, string moduleId)
-        {
-            ModelId = modelId;
-            ModuleId = moduleId;
-            TemplateId = templateId;
-        }
-
-        public string ModelId { get; }
-        public string ModuleId { get; }
-        public string TemplateId { get; }
-    }
-
     public class AngularImportDependencyRequiredEvent
     {
         public AngularImportDependencyRequiredEvent(string moduleId, string dependency, string import)
@@ -81,17 +67,6 @@ namespace Intent.Modules.Angular.Templates
         public string UseClass { get; }
         public bool Multi { get; }
         public string Import { get; }
-    }
-
-    public class AngularConfigVariableRequiredEvent
-    {
-        public AngularConfigVariableRequiredEvent(string variableKey, string defaultValue)
-        {
-            VariableKey = variableKey;
-            DefaultValue = defaultValue;
-        }
-        public string VariableKey { get; }
-        public string DefaultValue { get; }
     }
 
     public class AngularComponentFieldRequiredEvent

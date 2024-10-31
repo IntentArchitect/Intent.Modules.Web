@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <package>
   <id>Intent.Angular.ApiAuthorization</id>
-  <version>3.3.4-alpha.6</version>
-  <supportedClientVersions>[4.1.0-pre.0, 5.0.0-a)</supportedClientVersions>
+  <version>3.3.4-alpha.7</version>
+  <supportedClientVersions>[4.3.0-a, 5.0.0-a)</supportedClientVersions>
   <releaseNotes>release-notes.md</releaseNotes>
   <summary>Decorate your application with authorization guards and securely access your API services with bearer tokens</summary>
   <description>Decorate your application with authorization guards and securely access your API services with bearer tokens</description>
@@ -23,8 +23,8 @@
   </decorators>
   <factoryExtensions />
   <dependencies>
-    <dependency id="Intent.Angular" version="4.0.0-alpha.8" />
-    <dependency id="Intent.Angular.Layout" version="4.0.0-alpha.6" />
+    <dependency id="Intent.Angular" version="4.0.0-alpha.11" />
+    <dependency id="Intent.Angular.Layout" version="4.0.0-alpha.7" />
     <dependency id="Intent.Code.Weaving.Html" version="1.0.0" />
     <dependency id="Intent.Code.Weaving.TypeScript" version="1.0.0" />
     <dependency id="Intent.Common" version="3.5.0" />
@@ -32,8 +32,8 @@
     <dependency id="Intent.Common.Types" version="3.3.9" />
     <dependency id="Intent.Common.TypeScript" version="4.0.0" />
     <dependency id="Intent.Modelers.Services" version="3.5.1" />
-    <dependency id="Intent.Modelers.WebClient" version="4.1.0" />
-    <dependency id="Intent.Modelers.WebClient.Angular" version="4.0.0-alpha.5" />
+    <dependency id="Intent.Modelers.WebClient" version="4.0.1" />
+    <dependency id="Intent.Modelers.WebClient.Angular" version="4.0.0-alpha.6" />
   </dependencies>
   <files>
     <file src="$outDir$/$id$.dll" />
