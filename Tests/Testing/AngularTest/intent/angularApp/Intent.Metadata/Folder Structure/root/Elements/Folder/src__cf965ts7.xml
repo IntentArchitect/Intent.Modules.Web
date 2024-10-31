@@ -122,7 +122,7 @@
       <childElements />
     </childElement>
     <childElement id="cdc51b3f-c025-4aad-b007-81b5e4192cc2" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
-      <name>Intent.Angular.ServiceProxies.Proxies.AngularDTO</name>
+      <name>Intent.Angular.ServiceProxies.AngularDTO</name>
       <display>Intent.Angular.ServiceProxies.Proxies.AngularDTO</display>
       <externalReference>Intent.Angular.ServiceProxies</externalReference>
       <isAbstract>false</isAbstract>
@@ -136,7 +136,7 @@
       <childElements />
     </childElement>
     <childElement id="76c36347-8cc2-4657-9d1d-fa5b26445d63" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
-      <name>Intent.Angular.ServiceProxies.Proxies.AngularServiceProxy</name>
+      <name>Intent.Angular.ServiceProxies.AngularServiceProxy</name>
       <display>Intent.Angular.ServiceProxies.Proxies.AngularServiceProxy</display>
       <externalReference>Intent.Angular.ServiceProxies</externalReference>
       <isAbstract>false</isAbstract>
@@ -150,7 +150,7 @@
       <childElements />
     </childElement>
     <childElement id="c187ad74-69d6-4856-a957-8bfe63d817e7" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
-      <name>Intent.Angular.ServiceProxies.Proxies.JsonResponse</name>
+      <name>Intent.Angular.ServiceProxies.JsonResponse</name>
       <display>Intent.Angular.ServiceProxies.Proxies.JsonResponse</display>
       <externalReference>Intent.Angular.ServiceProxies</externalReference>
       <isAbstract>false</isAbstract>
@@ -192,7 +192,7 @@
       <childElements />
     </childElement>
     <childElement id="7229b29e-ea12-4c67-8bb8-5d3bd8652fee" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
-      <name>Intent.Angular.ServiceProxies.Proxies.PagedResult</name>
+      <name>Intent.Angular.ServiceProxies.PagedResult</name>
       <display>Intent.Angular.ServiceProxies.Proxies.PagedResult</display>
       <externalReference>Intent.Angular.ServiceProxies</externalReference>
       <isAbstract>false</isAbstract>

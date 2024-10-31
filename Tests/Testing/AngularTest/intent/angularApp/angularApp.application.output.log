@@ -276,14 +276,6 @@
     </FileLog>
     <FileLog>
       <ProjectId>3e675093-91d8-4e3e-a945-476ac87a8f42</ProjectId>
-      <CorrelationId>Intent.Angular.Core.ApiService</CorrelationId>
-      <OverwriteBehaviour>always</OverwriteBehaviour>
-      <ApplicationRelativeFilePath>../../angularApp/src/app/core/api.service.ts</ApplicationRelativeFilePath>
-      <ProjectRelativeFilePath>api.service.ts</ProjectRelativeFilePath>
-      <IsIgnored>false</IsIgnored>
-    </FileLog>
-    <FileLog>
-      <ProjectId>3e675093-91d8-4e3e-a945-476ac87a8f42</ProjectId>
       <CorrelationId>Intent.Angular.Core.CoreModule</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>../../angularApp/src/app/core/core.module.ts</ApplicationRelativeFilePath>
@@ -292,7 +284,7 @@
     </FileLog>
     <FileLog>
       <ProjectId>6ce75da5-28ec-4529-9ac7-43c47fdc5ae8</ProjectId>
-      <CorrelationId>Intent.Angular.ServiceProxies.Proxies.AngularServiceProxy#55b2bf41-85d7-462e-a94d-40df425360fa</CorrelationId>
+      <CorrelationId>Intent.Angular.ServiceProxies.AngularServiceProxy#55b2bf41-85d7-462e-a94d-40df425360fa</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>../../angularApp/src/app/integration-service.service.ts</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>app/integration-service.service.ts</ProjectRelativeFilePath>
@@ -308,10 +300,18 @@
     </FileLog>
     <FileLog>
       <ProjectId>6ce75da5-28ec-4529-9ac7-43c47fdc5ae8</ProjectId>
-      <CorrelationId>Intent.Angular.ServiceProxies.Proxies.AngularServiceProxy#284ed623-eb3e-4492-95c8-cf64e4a0a1ed</CorrelationId>
+      <CorrelationId>Intent.Angular.ServiceProxies.AngularServiceProxy#284ed623-eb3e-4492-95c8-cf64e4a0a1ed</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>../../angularApp/src/app/net-client-service.service.ts</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>app/net-client-service.service.ts</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>868ead6c-51c1-4d7c-ad46-6cc7bf3320ce</ProjectId>
+      <CorrelationId>Intent.Angular.ServiceProxies.ApiService</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>../../angularApp/src/app/service-proxies/api.service.ts</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>api.service.ts</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
@@ -356,7 +356,7 @@
     </FileLog>
     <FileLog>
       <ProjectId>6ce75da5-28ec-4529-9ac7-43c47fdc5ae8</ProjectId>
-      <CorrelationId>Intent.Angular.ServiceProxies.Proxies.JsonResponse</CorrelationId>
+      <CorrelationId>Intent.Angular.ServiceProxies.JsonResponse</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>../../angularApp/src/json-response.ts</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>json-response.ts</ProjectRelativeFilePath>
@@ -372,7 +372,7 @@
     </FileLog>
     <FileLog>
       <ProjectId>6ce75da5-28ec-4529-9ac7-43c47fdc5ae8</ProjectId>
-      <CorrelationId>Intent.Angular.ServiceProxies.Proxies.AngularDTO#5c28c5cd-2655-45dd-b425-475830635a92</CorrelationId>
+      <CorrelationId>Intent.Angular.ServiceProxies.AngularDTO#5c28c5cd-2655-45dd-b425-475830635a92</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>../../angularApp/src/models/net-application/services/integration/custom.dto.ts</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>models/net-application/services/integration/custom.dto.ts</ProjectRelativeFilePath>
@@ -380,7 +380,7 @@
     </FileLog>
     <FileLog>
       <ProjectId>6ce75da5-28ec-4529-9ac7-43c47fdc5ae8</ProjectId>
-      <CorrelationId>Intent.Angular.ServiceProxies.Proxies.AngularDTO#2070fc85-96bc-4c8b-bb88-4bee1cf45a41</CorrelationId>
+      <CorrelationId>Intent.Angular.ServiceProxies.AngularDTO#2070fc85-96bc-4c8b-bb88-4bee1cf45a41</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>../../angularApp/src/models/net-application/services/net-client/client-create.dto.ts</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>models/net-application/services/net-client/client-create.dto.ts</ProjectRelativeFilePath>
@@ -388,7 +388,7 @@
     </FileLog>
     <FileLog>
       <ProjectId>6ce75da5-28ec-4529-9ac7-43c47fdc5ae8</ProjectId>
-      <CorrelationId>Intent.Angular.ServiceProxies.Proxies.AngularDTO#097b69ce-7e17-4f8a-8d0e-67a9832ac8c2</CorrelationId>
+      <CorrelationId>Intent.Angular.ServiceProxies.AngularDTO#097b69ce-7e17-4f8a-8d0e-67a9832ac8c2</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>../../angularApp/src/models/net-application/services/net-client/client.dto.ts</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>models/net-application/services/net-client/client.dto.ts</ProjectRelativeFilePath>
@@ -396,7 +396,7 @@
     </FileLog>
     <FileLog>
       <ProjectId>6ce75da5-28ec-4529-9ac7-43c47fdc5ae8</ProjectId>
-      <CorrelationId>Intent.Angular.ServiceProxies.Proxies.PagedResult</CorrelationId>
+      <CorrelationId>Intent.Angular.ServiceProxies.PagedResult</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>../../angularApp/src/paged-result.ts</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>paged-result.ts</ProjectRelativeFilePath>

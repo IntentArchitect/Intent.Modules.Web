@@ -1,5 +1,5 @@
 import { ClientCreateDto } from './../models/net-application/services/net-client/client-create.dto';import { ClientDto } from './../models/net-application/services/net-client/client.dto';
-import { ApiService } from './core/api.service';
+import { ApiService } from './service-proxies/api.service';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { PagedResult } from './../paged-result';
