@@ -26,22 +26,6 @@
     </FileLog>
     <FileLog>
       <ProjectId>c08e0737-1abd-40fc-9366-f7dccdb55b11</ProjectId>
-      <CorrelationId>ModuleBuilder.Typescript.Templates.TypescriptTemplate.PreProcessT4#eef9e3d9-2c85-4a55-bed7-988d51fa5c6f</CorrelationId>
-      <OverwriteBehaviour>always</OverwriteBehaviour>
-      <ApplicationRelativeFilePath>Templates/AngularDTO/AngularDTOTemplate.cs</ApplicationRelativeFilePath>
-      <ProjectRelativeFilePath>AngularDTO/AngularDTOTemplate.cs</ProjectRelativeFilePath>
-      <IsIgnored>false</IsIgnored>
-    </FileLog>
-    <FileLog>
-      <ProjectId>c08e0737-1abd-40fc-9366-f7dccdb55b11</ProjectId>
-      <CorrelationId>Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplateT4#eef9e3d9-2c85-4a55-bed7-988d51fa5c6f</CorrelationId>
-      <OverwriteBehaviour>always</OverwriteBehaviour>
-      <ApplicationRelativeFilePath>Templates/AngularDTO/AngularDTOTemplate.tt</ApplicationRelativeFilePath>
-      <ProjectRelativeFilePath>AngularDTO/AngularDTOTemplate.tt</ProjectRelativeFilePath>
-      <IsIgnored>false</IsIgnored>
-    </FileLog>
-    <FileLog>
-      <ProjectId>c08e0737-1abd-40fc-9366-f7dccdb55b11</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial#eef9e3d9-2c85-4a55-bed7-988d51fa5c6f</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/AngularDTO/AngularDTOTemplatePartial.cs</ApplicationRelativeFilePath>

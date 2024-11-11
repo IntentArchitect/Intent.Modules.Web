@@ -1,6 +1,7 @@
 ### Version 4.0.0
 
 - Updated to use latest Service Proxy modules.
+- Fixed: Imports in DTOs to other referenced DTOs were not always added.
 
 ### Version 3.4.2
 

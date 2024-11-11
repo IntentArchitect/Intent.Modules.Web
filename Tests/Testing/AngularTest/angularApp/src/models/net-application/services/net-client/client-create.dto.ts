@@ -1,4 +1,4 @@
 export interface ClientCreateDto {
-    name: string;
-    statusCode: string;
+  name: string;
+  statusCode: string;
 }
