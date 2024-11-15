@@ -4,7 +4,9 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using NetApplication.Application.Common.Interfaces;
 using NetApplication.Domain.Common.Interfaces;
+using NetApplication.Domain.Repositories;
 using NetApplication.Infrastructure.Persistence;
+using NetApplication.Infrastructure.Repositories;
 using NetApplication.Infrastructure.Services;
 
 [assembly: DefaultIntentManaged(Mode.Fully)]
@@ -22,6 +24,7 @@ namespace NetApplication.Infrastructure
                 options.UseLazyLoadingProxies();
             });
             services.AddScoped<IUnitOfWork>(provider => provider.GetRequiredService<ApplicationDbContext>());
+            services.AddTransient<IClientRepository, ClientRepository>();
             services.AddScoped<IDomainEventService, DomainEventService>();
             return services;
         }

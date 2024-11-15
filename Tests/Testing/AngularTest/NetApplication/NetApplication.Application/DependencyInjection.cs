@@ -33,6 +33,7 @@ namespace NetApplication.Application
             services.AddScoped<IValidatorProvider, ValidatorProvider>();
             services.AddTransient<IValidationService, ValidationService>();
             services.AddTransient<IIntegrationService, IntegrationService>();
+            services.AddTransient<INetClientService, NetClientService>();
             return services;
         }
     }

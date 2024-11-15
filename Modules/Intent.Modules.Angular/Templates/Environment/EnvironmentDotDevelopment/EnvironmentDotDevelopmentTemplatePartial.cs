@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Intent.Engine;
+using Intent.Modules.Angular.Shared;
 using Intent.Modules.Common;
 using Intent.Modules.Common.Templates;
 using Intent.Modules.Common.TypeScript.Templates;
@@ -24,14 +25,14 @@ namespace Intent.Modules.Angular.Templates.Environment.EnvironmentDotDevelopment
         [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
         public EnvironmentDotDevelopmentTemplate(IOutputTarget outputTarget, object model = null) : base(TemplateId, outputTarget, model)
         {
-            ExecutionContext.EventDispatcher.Subscribe<AngularConfigVariableRequiredEvent>(HandleConfigVariableRequiredEvent);
+            ExecutionContext.EventDispatcher.SubscribeToAngularConfigVariableRequiredEvent(HandleConfigVariableRequiredEvent);
         }
 
-        private void HandleConfigVariableRequiredEvent(AngularConfigVariableRequiredEvent @event)
+        private void HandleConfigVariableRequiredEvent(string variableKey, string defaultValue)
         {
             _configVariables.Add(new ConfigVariable(
-                name: @event.VariableKey,
-                defaultValue: @event.DefaultValue));
+                name: variableKey,
+                defaultValue: defaultValue));
         }
 
         public string GetEnvironmentVariables()

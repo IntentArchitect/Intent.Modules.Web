@@ -1,0 +1,19 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <MSBuildAllProjects Condition="'$(MSBuildVersion)' == '' Or '$(MSBuildVersion)' &lt; '16.0'">$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <SharedGUID>a44d5226-d943-4183-9680-d514571742ef</SharedGUID>
+  </PropertyGroup>
+  <PropertyGroup Label="Configuration">
+    <Import_RootNamespace>Intent.Modules.Angular.Shared</Import_RootNamespace>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)ApiMetadataDesignerExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Constants.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)ElementFolderExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)EventingDispatcherExtensions.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)SpecializationTypeIds.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Stereotypes.cs" />
+  </ItemGroup>
+</Project>

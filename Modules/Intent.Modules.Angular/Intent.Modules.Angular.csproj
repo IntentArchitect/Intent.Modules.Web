@@ -1,20 +1,21 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net6.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
-    <Version>4.0.0-alpha.5</Version>
+    <Version>4.0.0-alpha.11</Version>
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="content\InitialFiles\.vscode\extensions.json" />
-    <Content Include="content\InitialFiles\.vscode\launch.json" />
-    <Content Include="content\InitialFiles\.vscode\tasks.json" />
+    <Content Include="resources\InitialFiles\.vscode\extensions.json" />
+    <Content Include="resources\InitialFiles\.vscode\launch.json" />
+    <Content Include="resources\InitialFiles\.vscode\tasks.json" />
   </ItemGroup>
 
   <ItemGroup>
+    <PackageReference Include="Intent.Architect.Persistence" Version="3.7.0" />
     <PackageReference Include="Intent.Modules.Common" Version="3.5.0" />
-    <PackageReference Include="Intent.Modules.Common.Html" Version="4.0.0-pre.1" />
+    <PackageReference Include="Intent.Modules.Common.Html" Version="4.0.0" />
     <PackageReference Include="Intent.Modules.Common.TypeScript" Version="4.0.0" />
     <PackageReference Include="Intent.Modules.Npm" Version="3.3.5" />
     <PackageReference Include="Intent.Packager" Version="3.4.2">
@@ -22,7 +23,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Intent.RoslynWeaver.Attributes" Version="2.1.4" />
-    <PackageReference Include="Intent.SoftwareFactory.SDK" Version="3.5.0" />
+    <PackageReference Include="Intent.SoftwareFactory.SDK" Version="3.7.0" />
     <PackageReference Include="Mono.TextTemplating" Version="2.0.4" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
@@ -51,10 +52,6 @@
     <None Update="Templates\Module\AngularRoutingModule\AngularRoutingModuleTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>AngularRoutingModuleTemplate.cs</LastGenOutput>
-    </None>
-    <None Update="Templates\Core\ApiService\ApiServiceTemplate.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>ApiServiceTemplate.cs</LastGenOutput>
     </None>
     <None Update="Templates\Core\CoreModule\CoreModuleTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
@@ -110,11 +107,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>AngularComponentTsTemplate.tt</DependentUpon>
     </Compile>
-    <Compile Update="Templates\Core\ApiService\ApiServiceTemplate.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>ApiServiceTemplate.tt</DependentUpon>
-    </Compile>
     <Compile Update="Templates\Core\CoreModule\CoreModuleTemplate.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -166,5 +158,7 @@
       <DependentUpon>IndexTemplate.tt</DependentUpon>
     </Compile>
   </ItemGroup>
+
+  <Import Project="..\Intent.Modules.Angular.Shared\Intent.Modules.Angular.Shared.projitems" Label="Shared" />
 
 </Project>

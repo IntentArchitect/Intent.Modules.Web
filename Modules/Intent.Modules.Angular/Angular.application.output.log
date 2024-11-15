@@ -25,7 +25,7 @@
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
-      <ProjectId>b79f286d-1129-41f9-bb0f-d266b180d3c2</ProjectId>
+      <ProjectId>3f91d1ed-6dca-482a-a43c-00741e12b05c</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.Templates.StaticContentOutputReadme#77c0d8b5-42a9-4bcf-9cdd-deb9e6e1a745</CorrelationId>
       <OverwriteBehaviour>once-off</OverwriteBehaviour>
       <ApplicationRelativeFilePath>content/InitialFiles/readme.txt</ApplicationRelativeFilePath>
@@ -49,7 +49,7 @@
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
-      <ProjectId>b79f286d-1129-41f9-bb0f-d266b180d3c2</ProjectId>
+      <ProjectId>3f91d1ed-6dca-482a-a43c-00741e12b05c</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.IModSpecFile</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Intent.Angular.imodspec</ApplicationRelativeFilePath>
@@ -57,8 +57,8 @@
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
-      <ProjectId>b79f286d-1129-41f9-bb0f-d266b180d3c2</ProjectId>
-      <CorrelationId>Intent.VisualStudio.Projects.CoreLibrary.CSProject#b79f286d-1129-41f9-bb0f-d266b180d3c2</CorrelationId>
+      <ProjectId>3f91d1ed-6dca-482a-a43c-00741e12b05c</ProjectId>
+      <CorrelationId>Intent.VisualStudio.Projects.CSharpProject#3f91d1ed-6dca-482a-a43c-00741e12b05c</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Intent.Modules.Angular.csproj</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Intent.Modules.Angular.csproj</ProjectRelativeFilePath>
@@ -190,38 +190,6 @@
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/Core/AngularDotJsonFile/AngularDotJsonFileTemplateRegistration.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Core/AngularDotJsonFile/AngularDotJsonFileTemplateRegistration.cs</ProjectRelativeFilePath>
-      <IsIgnored>false</IsIgnored>
-    </FileLog>
-    <FileLog>
-      <ProjectId>abc98339-4259-4d28-82ae-502ba6cdc8b2</ProjectId>
-      <CorrelationId>ModuleBuilder.Typescript.Templates.TypescriptTemplate.PreProcessT4#ce096dec-3721-4a3d-9d36-038c7448e74c</CorrelationId>
-      <OverwriteBehaviour>always</OverwriteBehaviour>
-      <ApplicationRelativeFilePath>Templates/Core/ApiService/ApiServiceTemplate.cs</ApplicationRelativeFilePath>
-      <ProjectRelativeFilePath>Core/ApiService/ApiServiceTemplate.cs</ProjectRelativeFilePath>
-      <IsIgnored>false</IsIgnored>
-    </FileLog>
-    <FileLog>
-      <ProjectId>abc98339-4259-4d28-82ae-502ba6cdc8b2</ProjectId>
-      <CorrelationId>Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplateT4#ce096dec-3721-4a3d-9d36-038c7448e74c</CorrelationId>
-      <OverwriteBehaviour>always</OverwriteBehaviour>
-      <ApplicationRelativeFilePath>Templates/Core/ApiService/ApiServiceTemplate.tt</ApplicationRelativeFilePath>
-      <ProjectRelativeFilePath>Core/ApiService/ApiServiceTemplate.tt</ProjectRelativeFilePath>
-      <IsIgnored>false</IsIgnored>
-    </FileLog>
-    <FileLog>
-      <ProjectId>abc98339-4259-4d28-82ae-502ba6cdc8b2</ProjectId>
-      <CorrelationId>Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial#ce096dec-3721-4a3d-9d36-038c7448e74c</CorrelationId>
-      <OverwriteBehaviour>always</OverwriteBehaviour>
-      <ApplicationRelativeFilePath>Templates/Core/ApiService/ApiServiceTemplatePartial.cs</ApplicationRelativeFilePath>
-      <ProjectRelativeFilePath>Core/ApiService/ApiServiceTemplatePartial.cs</ProjectRelativeFilePath>
-      <IsIgnored>false</IsIgnored>
-    </FileLog>
-    <FileLog>
-      <ProjectId>abc98339-4259-4d28-82ae-502ba6cdc8b2</ProjectId>
-      <CorrelationId>Intent.ModuleBuilder.TemplateRegistration.SingleFileNoModel#ce096dec-3721-4a3d-9d36-038c7448e74c</CorrelationId>
-      <OverwriteBehaviour>always</OverwriteBehaviour>
-      <ApplicationRelativeFilePath>Templates/Core/ApiService/ApiServiceTemplateRegistration.cs</ApplicationRelativeFilePath>
-      <ProjectRelativeFilePath>Core/ApiService/ApiServiceTemplateRegistration.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>

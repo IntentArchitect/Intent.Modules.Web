@@ -1,7 +1,10 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using Intent.Engine;
+using Intent.Metadata.Models;
+using Intent.Modules.Angular.Shared;
 using Intent.Modules.Angular.Templates;
 using Intent.Modules.Common;
 using Intent.Modules.Common.Configuration;
@@ -56,6 +59,11 @@ namespace Intent.Modules.Angular.ApiAuthorization.Templates.ApiAuthTypescriptZip
             );
         }
 
+        public override string GetCorrelationId()
+        {
+            return $"{Id}#{_zipEntry.FullFileNamePath}";
+        }
+
         public override string RunTemplate()
         {
             return _zipEntry.Content;
@@ -86,14 +94,14 @@ namespace Intent.Modules.Angular.ApiAuthorization.Templates.ApiAuthTypescriptZip
                     multi: true,
                     import: "import { AuthorizeInterceptor } from './api-authorization/authorize.interceptor';"));
 
-                ExecutionContext.EventDispatcher.Publish(new AngularConfigVariableRequiredEvent("auth", $@"{{
+                ExecutionContext.EventDispatcher.PublishAngularConfigVariableRequiredEvent("auth", $@"{{
     authority: 'https://localhost:{_stsPort}',
     client_id: 'Auth_Code_Client',
     redirect_uri: window.location.origin + '/authentication/login-callback',
     post_logout_redirect_uri: window.location.origin + '/authentication/logout-callback',
     response_type: 'code',
     scope: 'openid profile email api roles'
-  }}"));
+  }}");
 
                 _hasBeenPublished = true;
             }

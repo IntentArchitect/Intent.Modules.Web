@@ -6,6 +6,7 @@
   <iconType>UrlImagePath</iconType>
   <metadataRelativePath>Intent.Metadata</metadataRelativePath>
   <modulesCacheRelativePath>.intent/modules</modulesCacheRelativePath>
+  <lastUsedApplicationTemplate id="Intent.ApplicationTemplate.ModuleBuilder" version="4.0.1" />
   <applications>
     <application id="9df99115-886a-4429-93c8-e03f42d47e10" name="Intent.Modules.Modelers.WebClient" relativePath="Intent.Modules.Modelers.WebClient\Intent.Modules.Modelers.WebClient.application.config" />
     <application id="1cecc65d-e804-4de6-a27f-e8e4ad0190d7" name="Angular" relativePath="Intent.Modules.Angular\Angular.application.config" />
@@ -15,5 +16,6 @@
     <application id="6e7fc874-237a-45f0-a0b2-307a17ea65bf" name="Intent.ApplicationTemplates.Web" relativePath="Intent.ApplicationTemplates.Web/Intent.ApplicationTemplates.Web.application.config" />
     <application id="fe241e7f-8588-40fa-86be-f9fb01a88e36" name="Angular.ApiAuthorization" relativePath="Intent.Modules.Angular.ApiAuthorization/Angular.ApiAuthorization.application.config" />
     <application id="313207ec-3d56-472e-888a-f593c3ffbe92" name="Intent.Modules.Angular.Metadata" relativePath="Intent.Modules.Angular.Metadata/Intent.Modules.Angular.Metadata.application.config" />
+    <application id="c586fe58-d005-4651-adc7-24d531a7090c" name="Intent.Modules.Angular.ServiceProxies.Interop" relativePath="Intent.Modules.Angular.ServiceProxies.Interop/Intent.Modules.Angular.ServiceProxies.Interop.application.config" />
   </applications>
 </solution>

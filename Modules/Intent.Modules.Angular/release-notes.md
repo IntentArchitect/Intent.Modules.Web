@@ -1,3 +1,7 @@
+### Version 4.0.0
+
+- Improvement: Updated Angular dependency to `17.3.8`.
+
 ### Version 3.4.3
 
 - Bugfix: Under certain circumstances an exception would be thrown during software factory execution.

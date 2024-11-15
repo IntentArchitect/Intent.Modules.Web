@@ -1,9 +1,12 @@
 using System.Collections.Generic;
 using Intent.Modelers.Services.Api;
 using Intent.Modelers.Types.ServiceProxies.Api;
-using Intent.Modules.Angular.ServiceProxies.Templates.Proxies.AngularDTO;
-using Intent.Modules.Angular.ServiceProxies.Templates.Proxies.AngularServiceProxy;
-using Intent.Modules.Angular.ServiceProxies.Templates.Proxies.JsonResponse;
+using Intent.Modules.Angular.ServiceProxies.Templates.AngularDTO;
+using Intent.Modules.Angular.ServiceProxies.Templates.AngularServiceProxy;
+using Intent.Modules.Angular.ServiceProxies.Templates.ApiService;
+using Intent.Modules.Angular.ServiceProxies.Templates.Environment;
+using Intent.Modules.Angular.ServiceProxies.Templates.JsonResponse;
+using Intent.Modules.Angular.ServiceProxies.Templates.PagedResult;
 using Intent.Modules.Common.Templates;
 using Intent.RoslynWeaver.Attributes;
 
@@ -35,9 +38,24 @@ namespace Intent.Modules.Angular.ServiceProxies.Templates
             return template.GetTypeName(AngularServiceProxyTemplate.TemplateId, model);
         }
 
+        public static string GetApiServiceName(this IIntentTemplate template)
+        {
+            return template.GetTypeName(ApiServiceTemplate.TemplateId);
+        }
+
+        public static string GetEnvironmentName(this IIntentTemplate template)
+        {
+            return template.GetTypeName(EnvironmentTemplate.TemplateId);
+        }
+
         public static string GetJsonResponseName(this IIntentTemplate template)
         {
             return template.GetTypeName(JsonResponseTemplate.TemplateId);
+        }
+
+        public static string GetPagedResultName(this IIntentTemplate template)
+        {
+            return template.GetTypeName(PagedResultTemplate.TemplateId);
         }
 
     }

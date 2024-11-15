@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using Intent.Modules.Angular.Shared;
 using Intent.Engine;
 using Intent.Modelers.WebClient.Angular.Api;
 using Intent.Modules.Angular.Templates.Component.AngularComponentTs;
@@ -54,14 +55,14 @@ namespace Intent.Modules.Angular.Templates.Module.AngularModule
                     }
                 });
 
-            ExecutionContext.EventDispatcher.Subscribe<AngularServiceProxyCreatedEvent>(@event =>
+            ExecutionContext.EventDispatcher.SubscribeToAngularServiceProxyCreatedEvent((templateId, modelId, moduleId) =>
             {
-                if (@event.ModuleId != Model.Id)
+                if (moduleId != Model.Id)
                 {
                     return;
                 }
 
-                var templateClassName = GetTypeName(@event.TemplateId, @event.ModelId);
+                var templateClassName = GetTypeName(templateId, modelId);
                 _providers.Add(templateClassName);
             });
 

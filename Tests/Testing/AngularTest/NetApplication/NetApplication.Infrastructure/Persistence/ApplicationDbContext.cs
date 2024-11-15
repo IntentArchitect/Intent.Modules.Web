@@ -6,6 +6,8 @@ using Microsoft.EntityFrameworkCore;
 using NetApplication.Application.Common.Interfaces;
 using NetApplication.Domain.Common;
 using NetApplication.Domain.Common.Interfaces;
+using NetApplication.Domain.Entities;
+using NetApplication.Infrastructure.Persistence.Configurations;
 
 [assembly: DefaultIntentManaged(Mode.Fully)]
 [assembly: IntentTemplate("Intent.EntityFrameworkCore.DbContext", Version = "1.0")]
@@ -20,6 +22,8 @@ namespace NetApplication.Infrastructure.Persistence
         {
             _domainEventService = domainEventService;
         }
+
+        public DbSet<Client> Clients { get; set; }
 
         public override async Task<int> SaveChangesAsync(
             bool acceptAllChangesOnSuccess,
@@ -40,6 +44,7 @@ namespace NetApplication.Infrastructure.Persistence
             base.OnModelCreating(modelBuilder);
 
             ConfigureModel(modelBuilder);
+            modelBuilder.ApplyConfiguration(new ClientConfiguration());
         }
 
         [IntentManaged(Mode.Ignore)]

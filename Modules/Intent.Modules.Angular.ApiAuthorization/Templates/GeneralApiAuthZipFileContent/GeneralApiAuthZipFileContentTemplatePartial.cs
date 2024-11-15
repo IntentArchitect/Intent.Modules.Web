@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -47,6 +48,11 @@ namespace Intent.Modules.Angular.ApiAuthorization.Templates.GeneralApiAuthZipFil
                 fileName: filename,
                 fileExtension: extension.Replace(".", string.Empty)
             );
+        }
+        
+        public override string GetCorrelationId()
+        {
+            return $"{Id}#{_zipEntry.FullFileNamePath}";
         }
 
         [IntentManaged(Mode.Fully, Body = Mode.Ignore)]

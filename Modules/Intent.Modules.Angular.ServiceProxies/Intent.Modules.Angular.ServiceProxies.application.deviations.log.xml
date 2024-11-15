@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<deviationsLog>
+  <files>
+    <file>
+      <correlationId>Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial#4ff46227-42ce-45ef-a5c1-057cb8501b76</correlationId>
+      <path>Intent.Modules.Angular.ServiceProxies/Templates/AngularServiceProxy/AngularServiceProxyTemplatePartial.cs</path>
+      <count>2</count>
+      <updatedByAccountName>jonathan.lydall@intentarchitect.com</updatedByAccountName>
+      <updatedByDisplayName>Jonathan Lydall</updatedByDisplayName>
+      <updatedAt>2024-10-30T12:30:50.0539725Z</updatedAt>
+      <deviationsHash>D8E9E3B7409A51F41324BD9B4FF29AFBE86E51DBAA19209E0589DB51569E9478</deviationsHash>
+      <fileHash>0E50274B3453CA4162299F269A6441A79CC0EA6125DF2460A0C133F863E5EEE2</fileHash>
+    </file>
+    <file>
+      <correlationId>Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial#541fb796-1d01-4577-a7f7-5e6895a41e71</correlationId>
+      <path>Intent.Modules.Angular.ServiceProxies/Templates/JsonResponse/JsonResponseTemplatePartial.cs</path>
+      <count>1</count>
+      <updatedByAccountName>jonathan.lydall@intentarchitect.com</updatedByAccountName>
+      <updatedByDisplayName>Jonathan Lydall</updatedByDisplayName>
+      <updatedAt>2024-10-30T12:30:50.0539788Z</updatedAt>
+      <deviationsHash>95F024BBB9B93CC06F17BC55CA2B849AF9EDD9596525892D00915BACFA8C917B</deviationsHash>
+      <fileHash>DA949CE69EAE87F4A5D763360C823EA339A14272C7D1C8E0B1E42EA79BE5D742</fileHash>
+    </file>
+  </files>
+</deviationsLog>

@@ -1,40 +1,48 @@
 using System.Linq;
-using Intent.Angular.Api;
 using Intent.Engine;
+using Intent.Metadata.Models;
 using Intent.Modelers.Types.ServiceProxies.Api;
-using Intent.Modelers.WebClient.Angular.Api;
-using Intent.Modelers.WebClient.Api;
+using Intent.Modules.Angular.Shared;
 using Intent.Modules.Common;
+using Intent.Modules.Common.Templates;
 
-namespace Intent.Angular.ServiceProxies.Api
+namespace Intent.Modules.Angular.ServiceProxies.Api;
+
+internal static class ServiceProxyModelExtensions
 {
-    public static class ServiceProxyModelExtensions
+    public static (IElement? Element, string? Name) GetModule(
+        this ServiceProxyModel model,
+        ISoftwareFactoryExecutionContext executionContext)
     {
-        public static ModuleModel GetModule(
-            this ServiceProxyModel model,
-            ISoftwareFactoryExecutionContext executionContext)
+        var moduleElement = model.InternalElement.GetParentPath().Reverse()
+            .FirstOrDefault(x => x.SpecializationTypeId == SpecializationTypeIds.Angular.Module);
+
+        if (moduleElement == null)
         {
-            var moduleElement = model.InternalElement.GetParentPath().Reverse()
-                .FirstOrDefault(x => x.SpecializationTypeId == ModuleModel.SpecializationTypeId);
+            var moduleElements = executionContext.MetadataManager.WebClient(executionContext.GetApplicationConfig().Id)
+                .GetElementsOfType(SpecializationTypeIds.Angular.Module)
+                .ToArray();
 
-            if (moduleElement == null)
-            {
-                var modules = executionContext.MetadataManager.WebClient(executionContext.GetApplicationConfig().Id)
-                    .GetModuleModels();
+            moduleElement = moduleElements
+                .FirstOrDefault(x => x.Name == "AppComponent");
 
-                moduleElement = modules
-                    .FirstOrDefault(x => x.Name == "AppComponent")?
-                    .InternalElement;
+            moduleElement ??= moduleElements
+                .FirstOrDefault(x => x.ChildElements
+                    .Any(componentElement =>
+                    {
+                        if (componentElement.SpecializationTypeId is not SpecializationTypeIds.WebClient.Angular.Component ||
+                            !componentElement.HasStereotype(Stereotypes.AngularComponent.Id))
+                        {
+                            return false;
+                        }
 
-                moduleElement ??= modules
-                    .First(x => x.Components.Any(c => c.GetAngularComponentSettings()?.Selector() == "app-root"))
-                    .InternalElement;
+                        var selector = componentElement.GetStereotypeProperty<string>(
+                            Stereotypes.AngularComponent.Id, Stereotypes.AngularComponent.Properties.Selector);
 
-            }
-
-            var module = new ModuleModel(moduleElement);
-
-            return module;
+                        return selector == "app-root";
+                    }));
         }
+
+        return (moduleElement, moduleElement?.Name.RemoveSuffix("Module"));
     }
 }

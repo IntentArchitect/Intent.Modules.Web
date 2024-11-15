@@ -128,7 +128,7 @@ export class IntegrationController {
   @Get('primitive-string-list')
   @ApiOkResponse({
     description: 'Result retrieved successfully.',
-    type: String,
+    type: 'String',
     isArray: true,
   })
   async getPrimitiveStringList(@Req() req: Request): Promise<string[]> {

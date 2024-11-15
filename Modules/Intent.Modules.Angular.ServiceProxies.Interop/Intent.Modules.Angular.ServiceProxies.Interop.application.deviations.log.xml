@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<deviationsLog>
+  <files>
+    <file>
+      <correlationId>Intent.ModuleBuilder.Templates.TemplateDecorator#0ea5db52-70fd-4918-b3d7-9e960c841f99</correlationId>
+      <path>Intent.Modules.Angular.ServiceProxies.Interop/Decorators/PopulateDataComponentDecorator.cs</path>
+      <count>2</count>
+      <updatedByAccountName>jonathan.lydall@intentarchitect.com</updatedByAccountName>
+      <updatedByDisplayName>Jonathan Lydall</updatedByDisplayName>
+      <updatedAt>2024-10-30T12:25:50.1026573Z</updatedAt>
+      <deviationsHash>5914327EF38573E3DBEC9FB8BAD410225B20672135AEE8E99777598D61FDEE8E</deviationsHash>
+      <fileHash>67C80F8D09D9A14ADC2AD0D3BF99FB63B559CE9DB28750B0E368165038153D83</fileHash>
+    </file>
+    <file>
+      <correlationId>Intent.ModuleBuilder.Templates.TemplateDecoratorRegistration#0ea5db52-70fd-4918-b3d7-9e960c841f99</correlationId>
+      <path>Intent.Modules.Angular.ServiceProxies.Interop/Decorators/PopulateDataComponentDecoratorRegistration.cs</path>
+      <count>1</count>
+      <updatedByAccountName>jonathan.lydall@intentarchitect.com</updatedByAccountName>
+      <updatedByDisplayName>Jonathan Lydall</updatedByDisplayName>
+      <updatedAt>2024-10-30T12:25:50.1027674Z</updatedAt>
+      <deviationsHash>B4790D074A41F03CC84FC2EDE049FA801EB8882E7882C5532A3FE4876C85960F</deviationsHash>
+      <fileHash>E3AABBCEF5CC1C7AE0996A258BA2D14C1D1BDFA7CCBA21E5C6C3C4A68BC9E3B2</fileHash>
+    </file>
+  </files>
+</deviationsLog>
