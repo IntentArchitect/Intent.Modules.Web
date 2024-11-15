@@ -1,12 +1,7 @@
-using System;
 using System.Collections.Generic;
 using System.Linq;
 using Intent.Engine;
-using Intent.Metadata.Models;
-using Intent.Modelers.UI.Api;
 using Intent.Modelers.WebClient.Angular.Api;
-using Intent.Modules.Angular.Shared;
-using Intent.Modules.Common;
 using Intent.Modules.Common.Registrations;
 using Intent.RoslynWeaver.Attributes;
 using Intent.Templates;
@@ -37,7 +32,7 @@ namespace Intent.Modules.Angular.Templates.Module.AngularRoutingModule
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]
         public override IEnumerable<RoutingModel> GetModels(IApplication application)
         {
-            return _metadataManager.UserInterface(application).GetModuleModels().Select(x => x.Routing).Where(x => x != null).ToList();
+            return Intent.Modelers.UI.Api.ApiMetadataDesignerExtensions.UserInterface(_metadataManager, application).GetModuleModels().Select(x => x.Routing).Where(x => x != null).ToList();
         }
     }
 }

@@ -374,7 +374,7 @@
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/Model/FormGroup/FormGroupTemplateRegistration.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Model/FormGroup/FormGroupTemplateRegistration.cs</ProjectRelativeFilePath>
-      <IsIgnored>false</IsIgnored>
+      <IsIgnored>true</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>abc98339-4259-4d28-82ae-502ba6cdc8b2</ProjectId>
@@ -438,7 +438,7 @@
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/Module/AngularModule/AngularModuleTemplateRegistration.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Module/AngularModule/AngularModuleTemplateRegistration.cs</ProjectRelativeFilePath>
-      <IsIgnored>false</IsIgnored>
+      <IsIgnored>true</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>abc98339-4259-4d28-82ae-502ba6cdc8b2</ProjectId>
@@ -470,7 +470,7 @@
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/Module/AngularResolver/AngularResolverTemplateRegistration.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Module/AngularResolver/AngularResolverTemplateRegistration.cs</ProjectRelativeFilePath>
-      <IsIgnored>false</IsIgnored>
+      <IsIgnored>true</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>abc98339-4259-4d28-82ae-502ba6cdc8b2</ProjectId>
@@ -502,7 +502,7 @@
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/Module/AngularRoutingModule/AngularRoutingModuleTemplateRegistration.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Module/AngularRoutingModule/AngularRoutingModuleTemplateRegistration.cs</ProjectRelativeFilePath>
-      <IsIgnored>false</IsIgnored>
+      <IsIgnored>true</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>abc98339-4259-4d28-82ae-502ba6cdc8b2</ProjectId>

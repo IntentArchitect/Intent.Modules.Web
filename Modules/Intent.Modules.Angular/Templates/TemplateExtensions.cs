@@ -1,4 +1,3 @@
-using System.Collections.Generic;
 using Intent.Modelers.WebClient.Angular.Api;
 using Intent.Modules.Angular.Templates.Component.AngularComponentTs;
 using Intent.Modules.Angular.Templates.Core.CoreModule;

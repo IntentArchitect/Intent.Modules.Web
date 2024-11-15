@@ -2,12 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Intent.Engine;
-using Intent.Metadata.Models;
-using Intent.Modelers.Services.Api;
 using Intent.Modelers.Types.ServiceProxies.Api;
-using Intent.Modelers.UI.Api;
-using Intent.Modules.Angular.Shared;
-using Intent.Modules.Common;
 using Intent.Modules.Common.Registrations;
 using Intent.RoslynWeaver.Attributes;
 using Intent.Templates;
@@ -39,7 +34,7 @@ namespace Intent.Modules.Angular.ServiceProxies.Templates.AngularServiceProxy
         public override IEnumerable<ServiceProxyModel> GetModels(IApplication application)
         {
             return Enumerable.Empty<ServiceProxyModel>()
-                .Concat(_metadataManager.UserInterface(application).GetServiceProxyModels())
+                .Concat(Intent.Modelers.UI.Api.ApiMetadataDesignerExtensions.UserInterface(_metadataManager, application).GetServiceProxyModels())
                 //.Concat(_metadataManager.WebClient(application).GetServiceProxyModels())  // because .UserInterface(...) it's fetching by designer's id.
                 .DistinctBy(x => x.Id);
         }

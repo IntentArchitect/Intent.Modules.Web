@@ -5,7 +5,6 @@ using System.Linq;
 using System.Text;
 using Intent.Angular.Api;
 using Intent.Engine;
-using Intent.Metadata.Models;
 using Intent.Modelers.WebClient.Angular.Api;
 using Intent.Modules.Angular.Templates.Component.Controls;
 using Intent.Modules.Angular.Templates.Component.Controls.DisplayComponent;
@@ -17,7 +16,6 @@ using Intent.Modules.Common.Templates;
 using Intent.Modules.Common.Types.Api;
 using Intent.RoslynWeaver.Attributes;
 using Intent.Templates;
-using Intent.Utils;
 
 [assembly: DefaultIntentManaged(Mode.Merge)]
 [assembly: IntentTemplate("Intent.ModuleBuilder.Html.Templates.HtmlFileTemplatePartial", Version = "1.0")]

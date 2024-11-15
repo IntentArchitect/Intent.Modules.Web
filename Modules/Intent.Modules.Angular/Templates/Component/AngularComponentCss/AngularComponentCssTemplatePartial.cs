@@ -1,10 +1,7 @@
 using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using Intent.Angular.Api;
 using Intent.Engine;
-using Intent.Metadata.Models;
 using Intent.Modelers.WebClient.Angular.Api;
 using Intent.Modules.Angular.Templates.Module.AngularModule;
 using Intent.Modules.Common;
