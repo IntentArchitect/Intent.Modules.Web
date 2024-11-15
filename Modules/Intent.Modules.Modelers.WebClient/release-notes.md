@@ -1,3 +1,7 @@
+### Version 5.0.0
+
+- Deprecating this module in favour of the Intent.Modelers.UI module. Upgrading to this version should seamlessly convert over to the Intent.Modelers.UI module, after which this module can be safely uninstalled.
+
 ### Version 4.1.0
 
 - Improvement: Updated dependencies.
