@@ -14,7 +14,7 @@
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Decorators/PopulateDataComponentDecorator.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>PopulateDataComponentDecorator.cs</ProjectRelativeFilePath>
-      <IsIgnored>false</IsIgnored>
+      <IsIgnored>true</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>e267e564-dfc6-46d2-ab8e-d2f44fe668a3</ProjectId>

@@ -15,7 +15,7 @@ internal static class ElementFolderExtensions
 
     public static IFolder AsFolder(this IElement element)
     {
-        if (element.SpecializationTypeId is
+        if (element?.SpecializationTypeId is
             SpecializationTypeIds.WebClient.Angular.Folder or
             SpecializationTypeIds.Common.Types.Folder or
             SpecializationTypeIds.Angular.Module)

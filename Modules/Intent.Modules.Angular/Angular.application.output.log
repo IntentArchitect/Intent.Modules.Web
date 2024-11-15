@@ -22,7 +22,7 @@
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Api/Extensions/ComponentModelStereotypeExtensions.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>ComponentModelStereotypeExtensions.cs</ProjectRelativeFilePath>
-      <IsIgnored>false</IsIgnored>
+      <IsIgnored>true</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>3f91d1ed-6dca-482a-a43c-00741e12b05c</ProjectId>
@@ -70,7 +70,7 @@
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/Component/AngularComponentCss/AngularComponentCssTemplate.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Component/AngularComponentCss/AngularComponentCssTemplate.cs</ProjectRelativeFilePath>
-      <IsIgnored>false</IsIgnored>
+      <IsIgnored>true</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>abc98339-4259-4d28-82ae-502ba6cdc8b2</ProjectId>
@@ -78,7 +78,7 @@
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/Component/AngularComponentCss/AngularComponentCssTemplate.tt</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Component/AngularComponentCss/AngularComponentCssTemplate.tt</ProjectRelativeFilePath>
-      <IsIgnored>false</IsIgnored>
+      <IsIgnored>true</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>abc98339-4259-4d28-82ae-502ba6cdc8b2</ProjectId>
@@ -86,7 +86,7 @@
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/Component/AngularComponentCss/AngularComponentCssTemplatePartial.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Component/AngularComponentCss/AngularComponentCssTemplatePartial.cs</ProjectRelativeFilePath>
-      <IsIgnored>false</IsIgnored>
+      <IsIgnored>true</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>abc98339-4259-4d28-82ae-502ba6cdc8b2</ProjectId>
@@ -94,7 +94,7 @@
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/Component/AngularComponentCss/AngularComponentCssTemplateRegistration.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Component/AngularComponentCss/AngularComponentCssTemplateRegistration.cs</ProjectRelativeFilePath>
-      <IsIgnored>false</IsIgnored>
+      <IsIgnored>true</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>abc98339-4259-4d28-82ae-502ba6cdc8b2</ProjectId>
@@ -102,7 +102,7 @@
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/Component/AngularComponentHtml/AngularComponentHtmlTemplate.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Component/AngularComponentHtml/AngularComponentHtmlTemplate.cs</ProjectRelativeFilePath>
-      <IsIgnored>false</IsIgnored>
+      <IsIgnored>true</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>abc98339-4259-4d28-82ae-502ba6cdc8b2</ProjectId>
@@ -110,7 +110,7 @@
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/Component/AngularComponentHtml/AngularComponentHtmlTemplate.tt</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Component/AngularComponentHtml/AngularComponentHtmlTemplate.tt</ProjectRelativeFilePath>
-      <IsIgnored>false</IsIgnored>
+      <IsIgnored>true</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>abc98339-4259-4d28-82ae-502ba6cdc8b2</ProjectId>
@@ -118,7 +118,7 @@
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/Component/AngularComponentHtml/AngularComponentHtmlTemplatePartial.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Component/AngularComponentHtml/AngularComponentHtmlTemplatePartial.cs</ProjectRelativeFilePath>
-      <IsIgnored>false</IsIgnored>
+      <IsIgnored>true</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>abc98339-4259-4d28-82ae-502ba6cdc8b2</ProjectId>
@@ -126,7 +126,7 @@
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/Component/AngularComponentHtml/AngularComponentHtmlTemplateRegistration.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Component/AngularComponentHtml/AngularComponentHtmlTemplateRegistration.cs</ProjectRelativeFilePath>
-      <IsIgnored>false</IsIgnored>
+      <IsIgnored>true</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>abc98339-4259-4d28-82ae-502ba6cdc8b2</ProjectId>
@@ -142,7 +142,7 @@
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/Component/AngularComponentTs/AngularComponentTsTemplate.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Component/AngularComponentTs/AngularComponentTsTemplate.cs</ProjectRelativeFilePath>
-      <IsIgnored>false</IsIgnored>
+      <IsIgnored>true</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>abc98339-4259-4d28-82ae-502ba6cdc8b2</ProjectId>
@@ -150,7 +150,7 @@
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/Component/AngularComponentTs/AngularComponentTsTemplate.tt</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Component/AngularComponentTs/AngularComponentTsTemplate.tt</ProjectRelativeFilePath>
-      <IsIgnored>false</IsIgnored>
+      <IsIgnored>true</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>abc98339-4259-4d28-82ae-502ba6cdc8b2</ProjectId>
@@ -158,7 +158,7 @@
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/Component/AngularComponentTs/AngularComponentTsTemplatePartial.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Component/AngularComponentTs/AngularComponentTsTemplatePartial.cs</ProjectRelativeFilePath>
-      <IsIgnored>false</IsIgnored>
+      <IsIgnored>true</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>abc98339-4259-4d28-82ae-502ba6cdc8b2</ProjectId>
@@ -166,7 +166,7 @@
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/Component/AngularComponentTs/AngularComponentTsTemplateRegistration.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Component/AngularComponentTs/AngularComponentTsTemplateRegistration.cs</ProjectRelativeFilePath>
-      <IsIgnored>false</IsIgnored>
+      <IsIgnored>true</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>abc98339-4259-4d28-82ae-502ba6cdc8b2</ProjectId>
@@ -382,7 +382,7 @@
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/Model/Model/ModelTemplate.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Model/Model/ModelTemplate.cs</ProjectRelativeFilePath>
-      <IsIgnored>false</IsIgnored>
+      <IsIgnored>true</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>abc98339-4259-4d28-82ae-502ba6cdc8b2</ProjectId>
@@ -390,7 +390,7 @@
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/Model/Model/ModelTemplate.tt</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Model/Model/ModelTemplate.tt</ProjectRelativeFilePath>
-      <IsIgnored>false</IsIgnored>
+      <IsIgnored>true</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>abc98339-4259-4d28-82ae-502ba6cdc8b2</ProjectId>
@@ -398,7 +398,7 @@
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/Model/Model/ModelTemplatePartial.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Model/Model/ModelTemplatePartial.cs</ProjectRelativeFilePath>
-      <IsIgnored>false</IsIgnored>
+      <IsIgnored>true</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>abc98339-4259-4d28-82ae-502ba6cdc8b2</ProjectId>
@@ -406,7 +406,7 @@
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/Model/Model/ModelTemplateRegistration.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Model/Model/ModelTemplateRegistration.cs</ProjectRelativeFilePath>
-      <IsIgnored>false</IsIgnored>
+      <IsIgnored>true</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>abc98339-4259-4d28-82ae-502ba6cdc8b2</ProjectId>
@@ -550,7 +550,7 @@
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Templates/TemplateExtensions.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>TemplateExtensions.cs</ProjectRelativeFilePath>
-      <IsIgnored>false</IsIgnored>
+      <IsIgnored>true</IsIgnored>
     </FileLog>
   </FileLogs>
 </outputLog>

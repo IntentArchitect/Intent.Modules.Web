@@ -14,7 +14,7 @@
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Api/ComponentViewExtensionModel.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>ComponentViewExtensionModel.cs</ProjectRelativeFilePath>
-      <IsIgnored>false</IsIgnored>
+      <IsIgnored>true</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>d463283f-3f3e-43e0-bb51-b135b172311c</ProjectId>

@@ -9,7 +9,7 @@
       <updatedByDisplayName>Gareth Baars</updatedByDisplayName>
       <updatedAt>2024-11-15T09:20:58.1209953Z</updatedAt>
       <deviationsHash>95F024BBB9B93CC06F17BC55CA2B849AF9EDD9596525892D00915BACFA8C917B</deviationsHash>
-      <fileHash>49844F045BD30784A112F23F087F5FBA1A8C0B84ACE0E89594069EF7E4A136AF</fileHash>
+      <fileHash>D31EA11B3C1C2C30FDE0E1F89BC8AEC66F6AA57F17E8FB20D2FDDEDCA61D76C2</fileHash>
     </file>
     <file>
       <correlationId>Intent.ModuleBuilder.TemplateRegistration.FilePerModel#3d1fe1c1-b396-4c8b-bc0f-f7ab2537ae7e</correlationId>
@@ -19,7 +19,7 @@
       <updatedByDisplayName>Gareth Baars</updatedByDisplayName>
       <updatedAt>2024-11-15T09:20:58.1210247Z</updatedAt>
       <deviationsHash>95F024BBB9B93CC06F17BC55CA2B849AF9EDD9596525892D00915BACFA8C917B</deviationsHash>
-      <fileHash>C3B0CDAF60C03F630904372B7B47C5231054754BD092EA8923C4C199FEDAD86D</fileHash>
+      <fileHash>7A17663CE327EEAC81B1F07D090693E8D48A4B9761DFB64F3E285FBAC12692E3</fileHash>
     </file>
     <file>
       <correlationId>Intent.ModuleBuilder.Html.Templates.HtmlFileTemplatePartial#25779bc1-5d6b-4fe5-89fb-97d75e8df259</correlationId>
@@ -29,7 +29,7 @@
       <updatedByDisplayName>Gareth Baars</updatedByDisplayName>
       <updatedAt>2024-11-15T09:20:58.1209791Z</updatedAt>
       <deviationsHash>6417C952E26CC9BF22B8461734330490FF996A2577985CE3395A263B6817FC51</deviationsHash>
-      <fileHash>B5098F1C91C1DCD7CAC07670795FFA80DF7F9BE7BE31F7C3A8CCF641587D8397</fileHash>
+      <fileHash>2BFABB631C02AA2D2E1BF81C2631A830C7C3948CACAE8D294624892F51F44A18</fileHash>
     </file>
     <file>
       <correlationId>Intent.ModuleBuilder.TemplateRegistration.FilePerModel#25779bc1-5d6b-4fe5-89fb-97d75e8df259</correlationId>
@@ -39,7 +39,7 @@
       <updatedByDisplayName>Gareth Baars</updatedByDisplayName>
       <updatedAt>2024-11-15T09:20:58.1210325Z</updatedAt>
       <deviationsHash>95F024BBB9B93CC06F17BC55CA2B849AF9EDD9596525892D00915BACFA8C917B</deviationsHash>
-      <fileHash>B5D56EFA5CADC4278490E94F53CACD48788D93CF53EAB2293B8F2ED268D23E0B</fileHash>
+      <fileHash>8E40BD7BCA1C8B5439AF4EE24E02E8FF01390A68BBC6F46AF68E4DC0E46774F3</fileHash>
     </file>
     <file>
       <correlationId>Intent.ModuleBuilder.Templates.TemplateDecoratorContract#b1c75969-a89e-41c6-a4b1-3283dc6b84ff</correlationId>
@@ -59,7 +59,7 @@
       <updatedByDisplayName>Gareth Baars</updatedByDisplayName>
       <updatedAt>2024-11-15T09:20:58.1211868Z</updatedAt>
       <deviationsHash>95F024BBB9B93CC06F17BC55CA2B849AF9EDD9596525892D00915BACFA8C917B</deviationsHash>
-      <fileHash>BEF64926F48136258F8DE84F8CE51F9DADE5E51DC16693DDE9491D3DE6DA381E</fileHash>
+      <fileHash>0DBC88B151D26B39769104C3A48D72A8D5930B20EB2AC2BA933087E43D886222</fileHash>
     </file>
     <file>
       <correlationId>Intent.ModuleBuilder.TemplateRegistration.FilePerModel#aa06d3ae-2965-4101-8f8b-8db7da8a0146</correlationId>
@@ -69,7 +69,7 @@
       <updatedByDisplayName>Gareth Baars</updatedByDisplayName>
       <updatedAt>2024-11-15T09:20:58.1210401Z</updatedAt>
       <deviationsHash>95F024BBB9B93CC06F17BC55CA2B849AF9EDD9596525892D00915BACFA8C917B</deviationsHash>
-      <fileHash>B98D28562B79B6EC873448A9ED19580AEB705A0F71778348D63447FC89C551DE</fileHash>
+      <fileHash>7DFC00686A615D5EAC474CE255C7F07BFE152F0048A16916DD83BB64119C6500</fileHash>
     </file>
     <file>
       <correlationId>Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial#ba59d6a8-a629-4feb-9e5b-c3498b89e9ec</correlationId>
@@ -149,7 +149,7 @@
       <updatedByDisplayName>Gareth Baars</updatedByDisplayName>
       <updatedAt>2024-11-15T09:20:58.1210737Z</updatedAt>
       <deviationsHash>95F024BBB9B93CC06F17BC55CA2B849AF9EDD9596525892D00915BACFA8C917B</deviationsHash>
-      <fileHash>2B70B9B701FBF003F38D04882C3580237077FD374FBF38D79578128642A56158</fileHash>
+      <fileHash>F0F4E9300309FA48B78C27358FCF32008A3E0C162ECBF3776048B5EC6371C96C</fileHash>
     </file>
     <file>
       <correlationId>Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial#9273966e-d177-45c3-8807-1e3bcbbf2cd8</correlationId>
@@ -159,7 +159,7 @@
       <updatedByDisplayName>Gareth Baars</updatedByDisplayName>
       <updatedAt>2024-11-15T09:20:58.1212619Z</updatedAt>
       <deviationsHash>95F024BBB9B93CC06F17BC55CA2B849AF9EDD9596525892D00915BACFA8C917B</deviationsHash>
-      <fileHash>AF7CB7CA7FDE59DC3C068AA1D67256E9880BF433EF4C9DB07598E9E99D0DC7FC</fileHash>
+      <fileHash>D588C297688F5EF2F6C950F95038869BC4562356569B6A5A47F9141C2DAD6204</fileHash>
     </file>
     <file>
       <correlationId>Intent.ModuleBuilder.TemplateRegistration.FilePerModel#9273966e-d177-45c3-8807-1e3bcbbf2cd8</correlationId>
@@ -169,7 +169,7 @@
       <updatedByDisplayName>Gareth Baars</updatedByDisplayName>
       <updatedAt>2024-11-15T09:20:58.1210811Z</updatedAt>
       <deviationsHash>95F024BBB9B93CC06F17BC55CA2B849AF9EDD9596525892D00915BACFA8C917B</deviationsHash>
-      <fileHash>62C4700F84AA3ABD9A87B8506DC78777811F8617223002534D2EDE9AAE0D1BB7</fileHash>
+      <fileHash>CF302632DD7C34C514785582D8523F2DE30A6227E89FD7884675B27C104AC708</fileHash>
     </file>
     <file>
       <correlationId>Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial#84287d05-962d-4c48-a274-5057407cd4aa</correlationId>
@@ -189,7 +189,7 @@
       <updatedByDisplayName>Gareth Baars</updatedByDisplayName>
       <updatedAt>2024-11-15T09:20:58.1210485Z</updatedAt>
       <deviationsHash>95F024BBB9B93CC06F17BC55CA2B849AF9EDD9596525892D00915BACFA8C917B</deviationsHash>
-      <fileHash>9BBAE7987FFBA849D7831C57B16A91818C89E403B19FB015DC419404DC02B9AF</fileHash>
+      <fileHash>F3B3AF67801888BDDCF60079E17F3E2B248E595C86FB979E29FDF4C3C5BE81A5</fileHash>
     </file>
     <file>
       <correlationId>Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial#46c14796-f106-463c-93de-d60d31354fac</correlationId>
@@ -209,7 +209,7 @@
       <updatedByDisplayName>Gareth Baars</updatedByDisplayName>
       <updatedAt>2024-11-15T09:20:58.1210561Z</updatedAt>
       <deviationsHash>95F024BBB9B93CC06F17BC55CA2B849AF9EDD9596525892D00915BACFA8C917B</deviationsHash>
-      <fileHash>B6B7DC981754FF3FDC57A97275A1A175FB7F0E431106341DA11BEC42FBF95114</fileHash>
+      <fileHash>A8D0D52FBF03D838C4A2B5A6B46D20FAB5D60C403D5C306C2899B5B12924DEBD</fileHash>
     </file>
     <file>
       <correlationId>Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial#1a817c51-35c5-4e17-8c69-f6a193f338a7</correlationId>
@@ -229,7 +229,7 @@
       <updatedByDisplayName>Gareth Baars</updatedByDisplayName>
       <updatedAt>2024-11-15T09:20:58.1210662Z</updatedAt>
       <deviationsHash>95F024BBB9B93CC06F17BC55CA2B849AF9EDD9596525892D00915BACFA8C917B</deviationsHash>
-      <fileHash>0B19D4D9563842F115823DB08ED97C16349961A6E1E52FAD93E63D9A06BE33AC</fileHash>
+      <fileHash>BBCE6E13C6A6175D70C3084BEB0C8F3791F46DD55FFB0F7986EEB3C562DE6F8D</fileHash>
     </file>
     <file>
       <correlationId>Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial#24192b12-bce1-4ac8-8edd-3f68a2eb3b7c</correlationId>
