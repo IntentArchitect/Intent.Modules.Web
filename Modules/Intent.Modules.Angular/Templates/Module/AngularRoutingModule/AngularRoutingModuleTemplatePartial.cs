@@ -4,7 +4,6 @@ using System.Linq;
 using Intent.Engine;
 using Intent.Metadata.Models;
 using Intent.Modelers.WebClient.Angular.Api;
-using Intent.Modules.Angular.Api;
 using Intent.Modules.Angular.Templates.Component.AngularComponentTs;
 using Intent.Modules.Angular.Templates.Module.AngularModule;
 using Intent.Modules.Angular.Templates.Shared.IntentDecorators;

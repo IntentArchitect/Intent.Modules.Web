@@ -62,7 +62,7 @@
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Intent.Modules.Angular.ApiAuthorization.csproj</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Intent.Modules.Angular.ApiAuthorization.csproj</ProjectRelativeFilePath>
-      <IsIgnored>false</IsIgnored>
+      <IsIgnored>true</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>116f7317-3e6b-4b94-a73e-7d9c9f11e207</ProjectId>
@@ -70,7 +70,7 @@
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>modelers/Authorization Components.designer.settings</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Authorization Components.designer.settings</ProjectRelativeFilePath>
-      <IsIgnored>false</IsIgnored>
+      <IsIgnored>true</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>55893a93-c4f1-4a6a-926b-16485d9034d8</ProjectId>

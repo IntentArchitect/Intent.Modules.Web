@@ -3,8 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using Intent.Engine;
 using Intent.Metadata.Models;
+using Intent.Modelers.UI.Api;
 using Intent.Modelers.WebClient.Angular.Api;
-using Intent.Modelers.WebClient.Api;
+using Intent.Modules.Angular.Shared;
 using Intent.Modules.Common;
 using Intent.Modules.Common.Registrations;
 using Intent.RoslynWeaver.Attributes;
@@ -36,7 +37,7 @@ namespace Intent.Modules.Angular.Templates.Module.AngularResolver
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]
         public override IEnumerable<ResolverModel> GetModels(IApplication application)
         {
-            return _metadataManager.WebClient(application).GetResolverModels();
+            return _metadataManager.UserInterface(application).GetResolverModels();
         }
     }
 }

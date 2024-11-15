@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using Intent.Engine;
 using Intent.Metadata.Models;
+using Intent.Modelers.UI.Api;
 using Intent.Modelers.WebClient.Angular.Api;
-using Intent.Modelers.WebClient.Api;
-using Intent.Modules.Angular.Api;
+using Intent.Modules.Angular.Shared;
 using Intent.Modules.Common;
 using Intent.Modules.Common.Registrations;
 using Intent.RoslynWeaver.Attributes;
@@ -37,7 +37,7 @@ namespace Intent.Modules.Angular.Templates.Component.AngularComponentTs
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]
         public override IEnumerable<ComponentModel> GetModels(IApplication application)
         {
-            return _metadataManager.WebClient(application).GetComponentModels();
+            return _metadataManager.UserInterface(application).GetComponentModels();
         }
     }
 }

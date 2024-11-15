@@ -16,14 +16,13 @@ namespace Intent.Modules.Angular.Templates.Model.FormGroup
     using Intent.Modules.Common.TypeScript.Templates;
     using Intent.Templates;
     using Intent.Metadata.Models;
-    using Intent.Modules.Angular.Api;
     using System;
     
     /// <summary>
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\Model\FormGroup\FormGroupTemplate.tt"
+    #line 1 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Model\FormGroup\FormGroupTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "17.0.0.0")]
     public partial class FormGroupTemplate : TypeScriptTemplateBase<Intent.Modelers.WebClient.Angular.Api.FormGroupDefinitionModel>
     {
@@ -36,210 +35,210 @@ namespace Intent.Modules.Angular.Templates.Model.FormGroup
             this.Write("import { FormGroup, FormControl, FormArray } from \'@angular/forms\';\r\n\r\nexport cla" +
                     "ss ");
             
-            #line 13 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\Model\FormGroup\FormGroupTemplate.tt"
+            #line 12 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Model\FormGroup\FormGroupTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(ClassName));
             
             #line default
             #line hidden
             this.Write(" extends FormGroup {\r\n  public static createEmpty(): ");
             
-            #line 14 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\Model\FormGroup\FormGroupTemplate.tt"
+            #line 13 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Model\FormGroup\FormGroupTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(ClassName));
             
             #line default
             #line hidden
             this.Write(" {\r\n    return new ");
             
-            #line 15 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\Model\FormGroup\FormGroupTemplate.tt"
+            #line 14 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Model\FormGroup\FormGroupTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(ClassName));
             
             #line default
             #line hidden
             this.Write("({\r\n");
             
-            #line 16 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\Model\FormGroup\FormGroupTemplate.tt"
+            #line 15 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Model\FormGroup\FormGroupTemplate.tt"
   foreach (var control in Model.Fields) {
             
             #line default
             #line hidden
             this.Write("      ");
             
-            #line 17 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\Model\FormGroup\FormGroupTemplate.tt"
+            #line 16 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Model\FormGroup\FormGroupTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(control.Name.ToCamelCase()));
             
             #line default
             #line hidden
             this.Write(": ");
             
-            #line 17 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\Model\FormGroup\FormGroupTemplate.tt"
+            #line 16 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Model\FormGroup\FormGroupTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(GetFieldDefaultValue(control)));
             
             #line default
             #line hidden
             this.Write(",\r\n");
             
-            #line 18 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\Model\FormGroup\FormGroupTemplate.tt"
+            #line 17 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Model\FormGroup\FormGroupTemplate.tt"
   }
             
             #line default
             #line hidden
             this.Write("    });\r\n  }\r\n");
             
-            #line 21 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\Model\FormGroup\FormGroupTemplate.tt"
+            #line 20 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Model\FormGroup\FormGroupTemplate.tt"
   if (Model.Mapping != null) { 
             
             #line default
             #line hidden
             this.Write("\r\n  public static create(dto: ");
             
-            #line 23 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\Model\FormGroup\FormGroupTemplate.tt"
+            #line 22 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Model\FormGroup\FormGroupTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(GetTypeName(Model.Mapping)));
             
             #line default
             #line hidden
             this.Write("): ");
             
-            #line 23 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\Model\FormGroup\FormGroupTemplate.tt"
+            #line 22 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Model\FormGroup\FormGroupTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(ClassName));
             
             #line default
             #line hidden
             this.Write(" {\r\n    return new ");
             
-            #line 24 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\Model\FormGroup\FormGroupTemplate.tt"
+            #line 23 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Model\FormGroup\FormGroupTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(ClassName));
             
             #line default
             #line hidden
             this.Write("({\r\n");
             
-            #line 25 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\Model\FormGroup\FormGroupTemplate.tt"
+            #line 24 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Model\FormGroup\FormGroupTemplate.tt"
       foreach (var field in Model.Fields) {
             
             #line default
             #line hidden
             this.Write("      ");
             
-            #line 26 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\Model\FormGroup\FormGroupTemplate.tt"
+            #line 25 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Model\FormGroup\FormGroupTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(field.Name.ToCamelCase()));
             
             #line default
             #line hidden
             this.Write(": ");
             
-            #line 26 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\Model\FormGroup\FormGroupTemplate.tt"
+            #line 25 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Model\FormGroup\FormGroupTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(field.InternalElement.IsMapped ? GetPathFromMapping("dto.", field) : GetFieldDefaultValue(field)));
             
             #line default
             #line hidden
             this.Write(",\r\n");
             
-            #line 27 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\Model\FormGroup\FormGroupTemplate.tt"
+            #line 26 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Model\FormGroup\FormGroupTemplate.tt"
       }
             
             #line default
             #line hidden
             this.Write("    });\r\n  }\r\n");
             
-            #line 30 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\Model\FormGroup\FormGroupTemplate.tt"
+            #line 29 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Model\FormGroup\FormGroupTemplate.tt"
   } 
             
             #line default
             #line hidden
             this.Write("\r\n  constructor(initialValue: {\r\n");
             
-            #line 33 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\Model\FormGroup\FormGroupTemplate.tt"
+            #line 32 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Model\FormGroup\FormGroupTemplate.tt"
   foreach (var control in Model.Fields) {
             
             #line default
             #line hidden
             this.Write("    ");
             
-            #line 34 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\Model\FormGroup\FormGroupTemplate.tt"
+            #line 33 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Model\FormGroup\FormGroupTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(control.Name.ToCamelCase()));
             
             #line default
             #line hidden
             this.Write(": ");
             
-            #line 34 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\Model\FormGroup\FormGroupTemplate.tt"
+            #line 33 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Model\FormGroup\FormGroupTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(GetTypeName(control.TypeReference)));
             
             #line default
             #line hidden
             this.Write(";\r\n");
             
-            #line 35 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\Model\FormGroup\FormGroupTemplate.tt"
+            #line 34 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Model\FormGroup\FormGroupTemplate.tt"
   }
             
             #line default
             #line hidden
             this.Write("  }) {\r\n    super({\r\n");
             
-            #line 38 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\Model\FormGroup\FormGroupTemplate.tt"
+            #line 37 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Model\FormGroup\FormGroupTemplate.tt"
   foreach (var control in Model.Fields) {
             
             #line default
             #line hidden
             this.Write("      ");
             
-            #line 39 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\Model\FormGroup\FormGroupTemplate.tt"
+            #line 38 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Model\FormGroup\FormGroupTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(control.Name.ToCamelCase()));
             
             #line default
             #line hidden
             this.Write(": new ");
             
-            #line 39 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\Model\FormGroup\FormGroupTemplate.tt"
+            #line 38 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Model\FormGroup\FormGroupTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(GetFormFieldType(control)));
             
             #line default
             #line hidden
             this.Write("(initialValue.");
             
-            #line 39 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\Model\FormGroup\FormGroupTemplate.tt"
+            #line 38 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Model\FormGroup\FormGroupTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(control.Name.ToCamelCase()));
             
             #line default
             #line hidden
             this.Write("),\r\n");
             
-            #line 40 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\Model\FormGroup\FormGroupTemplate.tt"
+            #line 39 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Model\FormGroup\FormGroupTemplate.tt"
   }
             
             #line default
             #line hidden
             this.Write("    });\r\n  }\r\n\r\n");
             
-            #line 44 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\Model\FormGroup\FormGroupTemplate.tt"
+            #line 43 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Model\FormGroup\FormGroupTemplate.tt"
   foreach (var control in Model.Fields) {
             
             #line default
             #line hidden
             this.Write("  get ");
             
-            #line 45 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\Model\FormGroup\FormGroupTemplate.tt"
+            #line 44 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Model\FormGroup\FormGroupTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(control.Name.ToCamelCase()));
             
             #line default
             #line hidden
             this.Write("(): ");
             
-            #line 45 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\Model\FormGroup\FormGroupTemplate.tt"
+            #line 44 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Model\FormGroup\FormGroupTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(GetTypeName(control.TypeReference)));
             
             #line default
             #line hidden
             this.Write(" { return this.get(\"");
             
-            #line 45 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\Model\FormGroup\FormGroupTemplate.tt"
+            #line 44 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Model\FormGroup\FormGroupTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(control.Name.ToCamelCase()));
             
             #line default
             #line hidden
             this.Write("\").value; }\r\n");
             
-            #line 46 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\Model\FormGroup\FormGroupTemplate.tt"
+            #line 45 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Model\FormGroup\FormGroupTemplate.tt"
   }
             
             #line default

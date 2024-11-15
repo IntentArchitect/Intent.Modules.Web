@@ -174,7 +174,7 @@
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>modelers/Angular Layout Extensions.designer.settings</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Angular Layout Extensions.designer.settings</ProjectRelativeFilePath>
-      <IsIgnored>false</IsIgnored>
+      <IsIgnored>true</IsIgnored>
     </FileLog>
   </FileLogs>
 </outputLog>

@@ -4,4 +4,3 @@
 <#@ import namespace="System.Linq" #>
 <#@ import namespace="Intent.Modules.Common" #>
 <#@ import namespace="Intent.Modules.Common.Templates" #>
-<#@ import namespace="Intent.Modules.Angular.Api" #>

@@ -2,6 +2,16 @@
 <deviationsLog>
   <files>
     <file>
+      <correlationId>Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial#eef9e3d9-2c85-4a55-bed7-988d51fa5c6f</correlationId>
+      <path>Intent.Modules.Angular.ServiceProxies/Templates/AngularDTO/AngularDTOTemplatePartial.cs</path>
+      <count>2</count>
+      <updatedByAccountName>gareth.baars@intentarchitect.com</updatedByAccountName>
+      <updatedByDisplayName>Gareth Baars</updatedByDisplayName>
+      <updatedAt>2024-11-15T09:39:38.4968176Z</updatedAt>
+      <deviationsHash>7340B03D08E319CD77F06EC5A93C7C02BF14569A9715290DD81AA70D094B4DF1</deviationsHash>
+      <fileHash>4DC019828854502FC45911E524871CADF44806D629B3C084D7A6171D5B816E03</fileHash>
+    </file>
+    <file>
       <correlationId>Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial#4ff46227-42ce-45ef-a5c1-057cb8501b76</correlationId>
       <path>Intent.Modules.Angular.ServiceProxies/Templates/AngularServiceProxy/AngularServiceProxyTemplatePartial.cs</path>
       <count>2</count>

@@ -1,0 +1,225 @@
+<?xml version="1.0" encoding="utf-8"?>
+<deviationsLog>
+  <files>
+    <file>
+      <correlationId>Intent.ModuleBuilder.Templates.Api.ApiElementModel#d009e5af-adb7-45c5-921c-fe8e209b8aa2</correlationId>
+      <path>Intent.Modules.Modelers.WebClient.Angular/Api/AngularServiceModel.cs</path>
+      <count>11</count>
+      <updatedByAccountName>gareth.baars@intentarchitect.com</updatedByAccountName>
+      <updatedByDisplayName>Gareth Baars</updatedByDisplayName>
+      <updatedAt>2024-11-15T09:43:16.6600089Z</updatedAt>
+      <deviationsHash>36C41CA4EF0BD3184BB6E81B22B26E2C17C106E5EC2DC3A60E4BC2695CEAAFD4</deviationsHash>
+      <fileHash>5BC37A6112F2DAF04EF84D1DEDE9679A2890B5849C924EDD980DC4EC3B9DA938</fileHash>
+    </file>
+    <file>
+      <correlationId>Intent.ModuleBuilder.Templates.Api.ApiElementModel#4a1ce2a9-e79f-4e93-96af-24b44728ecbc</correlationId>
+      <path>Intent.Modules.Modelers.WebClient.Angular/Api/CommandParameterModel.cs</path>
+      <count>2</count>
+      <updatedByAccountName>gareth.baars@intentarchitect.com</updatedByAccountName>
+      <updatedByDisplayName>Gareth Baars</updatedByDisplayName>
+      <updatedAt>2024-11-15T09:43:16.6600152Z</updatedAt>
+      <deviationsHash>6CC667371851B42D138D8DE38A8B884A7CEBA88DA3764CA01B75872D6A15256E</deviationsHash>
+      <fileHash>151EAC05CF92239E5A1971AC7078ADEC450EF9490936EE77774E327151ADBCA6</fileHash>
+    </file>
+    <file>
+      <correlationId>Intent.ModuleBuilder.Templates.Api.ApiElementModel#d6739ffc-30e6-4170-a105-bf28e69aa578</correlationId>
+      <path>Intent.Modules.Modelers.WebClient.Angular/Api/ComponentCommandModel.cs</path>
+      <count>13</count>
+      <updatedByAccountName>gareth.baars@intentarchitect.com</updatedByAccountName>
+      <updatedByDisplayName>Gareth Baars</updatedByDisplayName>
+      <updatedAt>2024-11-15T09:43:16.6600349Z</updatedAt>
+      <deviationsHash>131AD187629C5539C499ED587630724680A0ADD1AD8AB78E05E89F4BAF056882</deviationsHash>
+      <fileHash>0B27AF81CAD2C19428C3FB2700F3AB8764678D4C0DE2E53EB9B5B92A4CDF99D8</fileHash>
+    </file>
+    <file>
+      <correlationId>Intent.ModuleBuilder.Templates.Api.ApiElementModel#807bc2cd-cdba-482d-a47e-d2aa546200fc</correlationId>
+      <path>Intent.Modules.Modelers.WebClient.Angular/Api/ComponentInputModel.cs</path>
+      <count>2</count>
+      <updatedByAccountName>gareth.baars@intentarchitect.com</updatedByAccountName>
+      <updatedByDisplayName>Gareth Baars</updatedByDisplayName>
+      <updatedAt>2024-11-15T09:43:16.660041Z</updatedAt>
+      <deviationsHash>263D85BC461A58C33243F20A90FF6C2D7EC4924EFE72A028F6917FDE63DAE303</deviationsHash>
+      <fileHash>26824A75F5E77DABD4D98A4047ACC3196D1B64D30060C7554E33C8F947C2442D</fileHash>
+    </file>
+    <file>
+      <correlationId>Intent.ModuleBuilder.Templates.Api.ApiElementModel#b1c481e1-e91e-4c29-9817-00ab9cad4b6b</correlationId>
+      <path>Intent.Modules.Modelers.WebClient.Angular/Api/ComponentModel.cs</path>
+      <count>16</count>
+      <updatedByAccountName>gareth.baars@intentarchitect.com</updatedByAccountName>
+      <updatedByDisplayName>Gareth Baars</updatedByDisplayName>
+      <updatedAt>2024-11-15T09:43:16.660026Z</updatedAt>
+      <deviationsHash>0F62676BC8CEBB8D6235C9632B1C7F0889ABBDF44179A381E7EADFBA676A4376</deviationsHash>
+      <fileHash>525255C831575C91C7A0D2B328242C10AD03487F91BCCC3F52AB1B66836C2B52</fileHash>
+    </file>
+    <file>
+      <correlationId>Intent.ModuleBuilder.Templates.Api.ApiElementModel#356fbe17-bc63-4e16-b915-feefbc063cbe</correlationId>
+      <path>Intent.Modules.Modelers.WebClient.Angular/Api/ComponentModelModel.cs</path>
+      <count>12</count>
+      <updatedByAccountName>gareth.baars@intentarchitect.com</updatedByAccountName>
+      <updatedByDisplayName>Gareth Baars</updatedByDisplayName>
+      <updatedAt>2024-11-15T09:43:16.6600502Z</updatedAt>
+      <deviationsHash>29FF10444A6422757A432B93143DBC67931522698B45C2D057BA3FD43372182D</deviationsHash>
+      <fileHash>C79B559B3FEA23325C9F63BD210F0C1AB554A4FF5F0B04AA9653A1B7CF722BB0</fileHash>
+    </file>
+    <file>
+      <correlationId>Intent.ModuleBuilder.Templates.Api.ApiElementModel#56a7ef0e-737e-4a62-8237-7541c0d56882</correlationId>
+      <path>Intent.Modules.Modelers.WebClient.Angular/Api/ComponentOutputModel.cs</path>
+      <count>2</count>
+      <updatedByAccountName>gareth.baars@intentarchitect.com</updatedByAccountName>
+      <updatedByDisplayName>Gareth Baars</updatedByDisplayName>
+      <updatedAt>2024-11-15T09:43:16.6600569Z</updatedAt>
+      <deviationsHash>E42DEE0F913B9D93A8D3FAE8BC2E50D288D20033BEFC28D4754C62B1EFCA22DA</deviationsHash>
+      <fileHash>31C2EC9A509CC652B8E8EB927793620BB8E444F4A71E962F32E0DD209078E59D</fileHash>
+    </file>
+    <file>
+      <correlationId>Intent.ModuleBuilder.Templates.Api.ApiElementModel#624513a6-cba8-4dde-8ebe-6b19f00f0364</correlationId>
+      <path>Intent.Modules.Modelers.WebClient.Angular/Api/ComponentViewModel.cs</path>
+      <count>11</count>
+      <updatedByAccountName>gareth.baars@intentarchitect.com</updatedByAccountName>
+      <updatedByDisplayName>Gareth Baars</updatedByDisplayName>
+      <updatedAt>2024-11-15T09:43:16.6600657Z</updatedAt>
+      <deviationsHash>79AB2F924D904DAC553F65C3D4751A01010F1BBBA7A617B1EF40392D1DFB73B2</deviationsHash>
+      <fileHash>1626B2949341EDBF802240A5A8EE455C755CAC7807F67E8807B212B7D358F2A6</fileHash>
+    </file>
+    <file>
+      <correlationId>Intent.ModuleBuilder.Templates.Api.ApiElementModel#866a90f7-4044-43b9-bb05-7270c7889796</correlationId>
+      <path>Intent.Modules.Modelers.WebClient.Angular/Api/DisplayComponentModel.cs</path>
+      <count>2</count>
+      <updatedByAccountName>gareth.baars@intentarchitect.com</updatedByAccountName>
+      <updatedByDisplayName>Gareth Baars</updatedByDisplayName>
+      <updatedAt>2024-11-15T09:43:16.6600739Z</updatedAt>
+      <deviationsHash>B6E96EDDBCFCFBBE6492EDB928647054BA447FF35073BE945C056C6219EC926E</deviationsHash>
+      <fileHash>B971350AFC45AF4E6F04774AB6D74A0BB0FAB6F195570FC2B74EB33BD3A58029</fileHash>
+    </file>
+    <file>
+      <correlationId>Intent.ModuleBuilder.Templates.Api.ApiElementModel#0b1c1dcb-8c31-4294-883c-a130345730d2</correlationId>
+      <path>Intent.Modules.Modelers.WebClient.Angular/Api/FolderModel.cs</path>
+      <count>16</count>
+      <updatedByAccountName>gareth.baars@intentarchitect.com</updatedByAccountName>
+      <updatedByDisplayName>Gareth Baars</updatedByDisplayName>
+      <updatedAt>2024-11-15T09:43:16.6600844Z</updatedAt>
+      <deviationsHash>996F264036AEA7AB40F34EE8E748BD628CB8564CBA97349BBAF647D64FD1888F</deviationsHash>
+      <fileHash>1C0B04F08F7CE8D76E9EF71149715EF10A52519C0B6AB8B35BE28D0E1AD404B6</fileHash>
+    </file>
+    <file>
+      <correlationId>Intent.ModuleBuilder.Templates.Api.ApiElementModel#b4e29ea5-b9a4-47eb-8214-c4cc5b46ee91</correlationId>
+      <path>Intent.Modules.Modelers.WebClient.Angular/Api/FormGroupControlModel.cs</path>
+      <count>12</count>
+      <updatedByAccountName>gareth.baars@intentarchitect.com</updatedByAccountName>
+      <updatedByDisplayName>Gareth Baars</updatedByDisplayName>
+      <updatedAt>2024-11-15T09:43:16.660093Z</updatedAt>
+      <deviationsHash>B378DB139E4345F8962BDEA4C513B00DEB50D9C7CA70D100204F51CFE7F0196F</deviationsHash>
+      <fileHash>C988467408ECE1B0885941941B038002EB3BD2A141C8EDB3F8264E5FA0A5F182</fileHash>
+    </file>
+    <file>
+      <correlationId>Intent.ModuleBuilder.Templates.Api.ApiElementModel#71142b08-4d10-405b-a5bd-0620d329a992</correlationId>
+      <path>Intent.Modules.Modelers.WebClient.Angular/Api/FormGroupDefinitionModel.cs</path>
+      <count>15</count>
+      <updatedByAccountName>gareth.baars@intentarchitect.com</updatedByAccountName>
+      <updatedByDisplayName>Gareth Baars</updatedByDisplayName>
+      <updatedAt>2024-11-15T09:43:16.6601036Z</updatedAt>
+      <deviationsHash>831B7F52A44579B5A75F97526A9E8D5160E7D4E52E9EF6C6652FF75320DE6B67</deviationsHash>
+      <fileHash>256A6CC1155836D799DD875F09AA967168100057D59A255B6A79BE5A82B88CF9</fileHash>
+    </file>
+    <file>
+      <correlationId>Intent.ModuleBuilder.Templates.Api.ApiElementModel#0dfc489c-7456-4a3d-a28b-50a633631a48</correlationId>
+      <path>Intent.Modules.Modelers.WebClient.Angular/Api/ModelDefinitionFieldModel.cs</path>
+      <count>12</count>
+      <updatedByAccountName>gareth.baars@intentarchitect.com</updatedByAccountName>
+      <updatedByDisplayName>Gareth Baars</updatedByDisplayName>
+      <updatedAt>2024-11-15T09:43:16.6601262Z</updatedAt>
+      <deviationsHash>7902A4332F963B8D87FA8192FFAA2C2FB87CC4076EA5A998F122F2710DF14162</deviationsHash>
+      <fileHash>7472BA3D6B9A2509CD4903A70ADE64725BEBBC828586EB7D4C3E6CDB47A35D4D</fileHash>
+    </file>
+    <file>
+      <correlationId>Intent.ModuleBuilder.Templates.Api.ApiElementModel#bd3941b5-e3b3-4a40-96e6-b9c87cea0101</correlationId>
+      <path>Intent.Modules.Modelers.WebClient.Angular/Api/ModelDefinitionModel.cs</path>
+      <count>16</count>
+      <updatedByAccountName>gareth.baars@intentarchitect.com</updatedByAccountName>
+      <updatedByDisplayName>Gareth Baars</updatedByDisplayName>
+      <updatedAt>2024-11-15T09:43:16.6601174Z</updatedAt>
+      <deviationsHash>49461D037557829C18FC758A7FF81B2EB64258F9AAF77D637863D51BD7197310</deviationsHash>
+      <fileHash>7642417897F686F427A3E9A2339EA58DA1A7B5E94C3C7BA4FE6780203B2055AA</fileHash>
+    </file>
+    <file>
+      <correlationId>Intent.ModuleBuilder.Templates.Api.ApiElementModel#cac14331-198a-4f9a-bbb9-171eb0bd4efe</correlationId>
+      <path>Intent.Modules.Modelers.WebClient.Angular/Api/ModuleModel.cs</path>
+      <count>17</count>
+      <updatedByAccountName>gareth.baars@intentarchitect.com</updatedByAccountName>
+      <updatedByDisplayName>Gareth Baars</updatedByDisplayName>
+      <updatedAt>2024-11-15T09:43:16.6601376Z</updatedAt>
+      <deviationsHash>44E3E64FA787C970F204B765C607732840AC2614BA77F95A8A04B347931B439F</deviationsHash>
+      <fileHash>DE88EACCA6195B793ADAE58EFDCBFD03102ED985B937DAFCFC6EA0A847813B5E</fileHash>
+    </file>
+    <file>
+      <correlationId>Intent.ModuleBuilder.Templates.Api.ApiAssociationModel#6d2b2070-c1cb-4cd2-88b4-4e5f8414bd9e</correlationId>
+      <path>Intent.Modules.Modelers.WebClient.Angular/Api/NavigationModel.cs</path>
+      <count>4</count>
+      <updatedByAccountName>gareth.baars@intentarchitect.com</updatedByAccountName>
+      <updatedByDisplayName>Gareth Baars</updatedByDisplayName>
+      <updatedAt>2024-11-15T09:43:16.6599989Z</updatedAt>
+      <deviationsHash>5C892F0A57C2ABE32CA4D3060C2FEECFB84B9F2C60C65B6FF72ADA2EF3263F4B</deviationsHash>
+      <fileHash>682AC64006C5D81C3E0262C04B2E4195A70F3C778815EF726721AC44CC05B1D7</fileHash>
+    </file>
+    <file>
+      <correlationId>Intent.ModuleBuilder.Templates.Api.ApiElementModel#6434986f-d5ce-4f51-9ebd-4780a0e30d07</correlationId>
+      <path>Intent.Modules.Modelers.WebClient.Angular/Api/RedirectModel.cs</path>
+      <count>3</count>
+      <updatedByAccountName>gareth.baars@intentarchitect.com</updatedByAccountName>
+      <updatedByDisplayName>Gareth Baars</updatedByDisplayName>
+      <updatedAt>2024-11-15T09:43:16.6601458Z</updatedAt>
+      <deviationsHash>EBD45C31EEF10B04AE4731A40C5DA3723366BCB069A84F36E93E9FEA7117BC10</deviationsHash>
+      <fileHash>45202E91471418DAF2CEB58B8DC0DC5C4897B828885904D9CDF9977089D8239E</fileHash>
+    </file>
+    <file>
+      <correlationId>Intent.ModuleBuilder.Templates.Api.ApiElementModel#8112a50c-9394-4e05-996b-0e57b40b3f46</correlationId>
+      <path>Intent.Modules.Modelers.WebClient.Angular/Api/ResolverModel.cs</path>
+      <count>3</count>
+      <updatedByAccountName>gareth.baars@intentarchitect.com</updatedByAccountName>
+      <updatedByDisplayName>Gareth Baars</updatedByDisplayName>
+      <updatedAt>2024-11-15T09:43:16.6601527Z</updatedAt>
+      <deviationsHash>B8A1990A7E512B8269DC59AE2A0D1BCABD5B94076FF53CF3B744459B97ED0B7C</deviationsHash>
+      <fileHash>B0452CCB0253DC7FEC2B4616513E27A138BABE08EE0309B70FCC215EDC249518</fileHash>
+    </file>
+    <file>
+      <correlationId>Intent.ModuleBuilder.Templates.Api.ApiElementModel#9094f807-b330-4af8-be8d-bc7955035b94</correlationId>
+      <path>Intent.Modules.Modelers.WebClient.Angular/Api/RouteModel.cs</path>
+      <count>4</count>
+      <updatedByAccountName>gareth.baars@intentarchitect.com</updatedByAccountName>
+      <updatedByDisplayName>Gareth Baars</updatedByDisplayName>
+      <updatedAt>2024-11-15T09:43:16.6601602Z</updatedAt>
+      <deviationsHash>E4FEB82B92F7F76E1A8FBFE4616924D33DC1B68148F0CDC10C801CACC55DE4E2</deviationsHash>
+      <fileHash>D20A14D1A48F480A03A642EA68D4C3B59AC0A1162B71C88B50C068681CE7B8AC</fileHash>
+    </file>
+    <file>
+      <correlationId>Intent.ModuleBuilder.Templates.Api.ApiElementModel#2e770bf6-0f58-4806-8fdc-1477360b74e9</correlationId>
+      <path>Intent.Modules.Modelers.WebClient.Angular/Api/RouteParameterModel.cs</path>
+      <count>2</count>
+      <updatedByAccountName>gareth.baars@intentarchitect.com</updatedByAccountName>
+      <updatedByDisplayName>Gareth Baars</updatedByDisplayName>
+      <updatedAt>2024-11-15T09:43:16.6601662Z</updatedAt>
+      <deviationsHash>155CDAD72925291C6B9311017F3F83CE2ED5B4C9F0D4D53A853342DC81035298</deviationsHash>
+      <fileHash>E7F5976ABC04C8C531E153951F19F074428F2F44EF523292C8CAEBF30B4C025A</fileHash>
+    </file>
+    <file>
+      <correlationId>Intent.ModuleBuilder.Templates.Api.ApiElementModel#26d97593-7c29-402a-9191-d4e3e96217fa</correlationId>
+      <path>Intent.Modules.Modelers.WebClient.Angular/Api/RouterOutletModel.cs</path>
+      <count>2</count>
+      <updatedByAccountName>gareth.baars@intentarchitect.com</updatedByAccountName>
+      <updatedByDisplayName>Gareth Baars</updatedByDisplayName>
+      <updatedAt>2024-11-15T09:43:16.6601731Z</updatedAt>
+      <deviationsHash>CCB75E8E7D8D05A9306982BFBE58615116FD1100058F387CC03854A24ABCB99B</deviationsHash>
+      <fileHash>6A94FD30ADF14B4044E36AB99E023FE8D67874F95722E67FA1A16FD8D08116F6</fileHash>
+    </file>
+    <file>
+      <correlationId>Intent.ModuleBuilder.Templates.Api.ApiElementModel#b548c3c2-a27d-4290-8d23-99d158bb8987</correlationId>
+      <path>Intent.Modules.Modelers.WebClient.Angular/Api/RoutingModel.cs</path>
+      <count>3</count>
+      <updatedByAccountName>gareth.baars@intentarchitect.com</updatedByAccountName>
+      <updatedByDisplayName>Gareth Baars</updatedByDisplayName>
+      <updatedAt>2024-11-15T09:43:16.6601815Z</updatedAt>
+      <deviationsHash>9F46B03E0058B23C1F6B5110AF69BEFB00AB84390A30EE13C0BB3936F8A6A8F7</deviationsHash>
+      <fileHash>462EB39C33A74AFE05167F5BB05B769BF572409225AB1AB95B009B35228C1F23</fileHash>
+    </file>
+  </files>
+</deviationsLog>

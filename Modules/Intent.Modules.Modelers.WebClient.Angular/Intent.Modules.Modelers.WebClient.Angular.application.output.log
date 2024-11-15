@@ -246,7 +246,7 @@
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>modelers/Angular Core Types.designer.settings</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Angular Core Types.designer.settings</ProjectRelativeFilePath>
-      <IsIgnored>false</IsIgnored>
+      <IsIgnored>true</IsIgnored>
     </FileLog>
   </FileLogs>
 </outputLog>

@@ -54,7 +54,7 @@
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Intent.Angular.imodspec</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Intent.Angular.imodspec</ProjectRelativeFilePath>
-      <IsIgnored>false</IsIgnored>
+      <IsIgnored>true</IsIgnored>
     </FileLog>
     <FileLog>
       <ProjectId>3f91d1ed-6dca-482a-a43c-00741e12b05c</ProjectId>

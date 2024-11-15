@@ -44,7 +44,7 @@ namespace Intent.Modules.Angular.ServiceProxies.Templates.JsonResponse
         {
             var proxyModels = Enumerable.Empty<ServiceProxyModel>()
                 .Concat(ExecutionContext.MetadataManager.UserInterface(ExecutionContext.GetApplicationConfig().Id).GetServiceProxyModels())
-                .Concat(ExecutionContext.MetadataManager.WebClient(ExecutionContext.GetApplicationConfig().Id).GetServiceProxyModels())
+                //.Concat(ExecutionContext.MetadataManager.WebClient(ExecutionContext.GetApplicationConfig().Id).GetServiceProxyModels())  // because .UserInterface(...) it's fetching by designer's id.
                 .DistinctBy(x => x.Id)
                 .ToArray();
 

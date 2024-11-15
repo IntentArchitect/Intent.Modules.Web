@@ -13,14 +13,13 @@ namespace Intent.Modules.Angular.Templates.Component.AngularComponentCss
     using System.Linq;
     using Intent.Modules.Common;
     using Intent.Modules.Common.Templates;
-    using Intent.Modules.Angular.Api;
     using System;
     
     /// <summary>
     /// Class to produce the template output
     /// </summary>
     
-    #line 1 "C:\Dev\Intent.Modules.Web\Intent.Modules.Angular\Templates\Component\AngularComponentCss\AngularComponentCssTemplate.tt"
+    #line 1 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Component\AngularComponentCss\AngularComponentCssTemplate.tt"
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.TextTemplating", "17.0.0.0")]
     public partial class AngularComponentCssTemplate : IntentTemplateBase<Intent.Modelers.WebClient.Angular.Api.ComponentModel>
     {

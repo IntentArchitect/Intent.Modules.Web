@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <package>
   <id>Intent.Modelers.WebClient.Angular</id>
-  <version>4.0.0-alpha.6</version>
+  <version>4.0.0-alpha.7</version>
   <supportedClientVersions>[4.1.0-pre.0, 5.0.0-a)</supportedClientVersions>
   <releaseNotes>release-notes.md</releaseNotes>
   <summary>Configures Angular with the Web client designer</summary>
@@ -16,15 +16,15 @@
     <dependency id="Intent.Common.Types" version="3.3.9" />
     <dependency id="Intent.Modelers.Services" version="3.5.1" />
     <dependency id="Intent.Modelers.Types.ServiceProxies" version="5.2.3" />
-    <dependency id="Intent.Modelers.WebClient" version="4.0.1" />
+    <dependency id="Intent.Modelers.UI" version="1.0.0-beta.2" />
   </dependencies>
   <files>
     <file src="$outDir$/$id$.dll" />
     <file src="$outDir$/$id$.pdb" />
   </files>
   <metadata>
-    <install target="Web Client" src="modelers/Angular Core Types.designer.settings" externalReference="0a3786a7-f514-4ec3-88b9-7842744dbb3c" />
-    <install target="Web Client;Module Builder" src="Intent.Metadata/Module Builder/Intent.Modelers.WebClient.Angular/Intent.Modelers.WebClient.Angular.pkg.config" externalReference="9cf8c5df-18a9-470e-a4fd-7e18d7050cd6" />
+    <install target="Web Client;User Interface" src="modelers/Angular Core Types.designer.settings" externalReference="0a3786a7-f514-4ec3-88b9-7842744dbb3c" />
+    <install target="Web Client;User Interface;Module Builder" src="Intent.Metadata/Module Builder/Intent.Modelers.WebClient.Angular/Intent.Modelers.WebClient.Angular.pkg.config" externalReference="9cf8c5df-18a9-470e-a4fd-7e18d7050cd6" />
   </metadata>
   <moduleSettings />
   <moduleSettingsExtensions />

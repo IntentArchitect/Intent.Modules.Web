@@ -4,7 +4,6 @@ using System.Linq;
 using Intent.Angular.Api;
 using Intent.Metadata.Models;
 using Intent.Modelers.WebClient.Angular.Api;
-using Intent.Modules.Angular.Api;
 using Intent.Modules.Common;
 using Intent.RoslynWeaver.Attributes;
 

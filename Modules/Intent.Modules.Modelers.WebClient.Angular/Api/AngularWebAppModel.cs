@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Intent.Metadata.Models;
-using Intent.Modelers.WebClient.Api;
+using Intent.Modelers.UI.Api;
 using Intent.Modules.Common;
 using Intent.Modules.Common.Types.Api;
 using Intent.RoslynWeaver.Attributes;
@@ -13,12 +13,18 @@ using Intent.RoslynWeaver.Attributes;
 namespace Intent.Modelers.WebClient.Angular.Api
 {
     [IntentManaged(Mode.Merge)]
-    public class AngularWebAppModel : WebClientModel
+    public class AngularWebAppModel : UserInterfacePackageModel
     {
         [IntentManaged(Mode.Ignore)]
-        public AngularWebAppModel(IPackage element) : base(element)
+        public AngularWebAppModel(IPackage package) : base(package)
         {
         }
+
+        [IntentManaged(Mode.Fully)]
+        public ModuleModel RootModule => UnderlyingPackage.ChildElements
+            .GetElementsOfType(ModuleModel.SpecializationTypeId)
+            .Select(x => new ModuleModel(x))
+            .SingleOrDefault();
 
         [IntentManaged(Mode.Fully)]
         public IList<EnumModel> Enums => UnderlyingPackage.ChildElements
@@ -32,11 +38,6 @@ namespace Intent.Modelers.WebClient.Angular.Api
             .Select(x => new TypeDefinitionModel(x))
             .ToList();
 
-        [IntentManaged(Mode.Fully)]
-        public ModuleModel RootModule => UnderlyingPackage.ChildElements
-            .GetElementsOfType(ModuleModel.SpecializationTypeId)
-            .Select(x => new ModuleModel(x))
-            .SingleOrDefault();
-
     }
+
 }

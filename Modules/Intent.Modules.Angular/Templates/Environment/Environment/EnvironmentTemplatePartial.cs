@@ -5,7 +5,6 @@ using System.Linq;
 using Intent.Engine;
 using Intent.Eventing;
 using Intent.Metadata.Models;
-using Intent.Modules.Angular.Api;
 using Intent.Modules.Angular.Shared;
 using Intent.Modules.Common;
 using Intent.Modules.Common.Templates;

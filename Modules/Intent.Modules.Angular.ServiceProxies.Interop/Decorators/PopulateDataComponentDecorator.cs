@@ -5,7 +5,6 @@ using Intent.Engine;
 using Intent.Metadata.Models;
 using Intent.Modelers.Types.ServiceProxies.Api;
 using Intent.Modelers.UI.Api;
-using Intent.Modelers.WebClient.Api;
 using Intent.Modules.Angular.ServiceProxies.Templates.AngularServiceProxy;
 using Intent.Modules.Angular.Templates.Component.AngularComponentTs;
 using Intent.Modules.Common.Templates;
@@ -43,8 +42,8 @@ namespace Intent.Modules.Angular.ServiceProxies.Interop.Decorators
             }
 
             var serviceProxies = Enumerable.Empty<ServiceProxyModel>()
-                .Concat(application.MetadataManager.WebClient(application).GetServiceProxyModels())
-                .Concat(application.MetadataManager.UserInterface(application).GetServiceProxyModels())
+                //.Concat(application.MetadataManager.WebClient(application).GetServiceProxyModels()) // because .UserInterface(...) it's fetching by designer's id.
+                .Concat(application.MetadataManager.UserInterface(application).GetServiceProxyModels()) 
                 .ToArray();
 
             foreach (var model in _template.Model.Models)

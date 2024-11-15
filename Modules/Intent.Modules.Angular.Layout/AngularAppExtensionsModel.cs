@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using Intent.Metadata.Models;
-using Intent.Modelers.WebClient.Api;
+using Intent.Modelers.UI.Api;
 using Intent.Modules.Common;
 using Intent.RoslynWeaver.Attributes;
 
@@ -11,8 +11,8 @@ using Intent.RoslynWeaver.Attributes;
 
 namespace Intent.Angular.Layout.Api
 {
-    [IntentManaged(Mode.Merge)]
-    public class AngularAppExtensionsModel : WebClientModel
+    [IntentManaged(Mode.Fully)]
+    public class AngularAppExtensionsModel : UserInterfacePackageModel
     {
         [IntentManaged(Mode.Ignore)]
         public AngularAppExtensionsModel(IPackage package) : base(package)

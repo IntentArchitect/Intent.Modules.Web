@@ -15,13 +15,13 @@ namespace Intent.Angular.Api
     {
         public static AngularComponentSettings GetAngularComponentSettings(this ComponentModel model)
         {
-            var stereotype = model.GetStereotype("ded6918f-81c2-4097-bdbe-48ec0fb84b7b");
+            var stereotype = model.GetStereotype(AngularComponentSettings.DefinitionId);
             return stereotype != null ? new AngularComponentSettings(stereotype) : null;
         }
 
         public static bool HasAngularComponentSettings(this ComponentModel model)
         {
-            return model.HasStereotype("ded6918f-81c2-4097-bdbe-48ec0fb84b7b");
+            return model.HasStereotype(AngularComponentSettings.DefinitionId);
         }
 
         public static bool TryGetAngularComponentSettings(this ComponentModel model, out AngularComponentSettings stereotype)
@@ -32,7 +32,7 @@ namespace Intent.Angular.Api
                 return false;
             }
 
-            stereotype = new AngularComponentSettings(model.GetStereotype("ded6918f-81c2-4097-bdbe-48ec0fb84b7b"));
+            stereotype = new AngularComponentSettings(model.GetStereotype(AngularComponentSettings.DefinitionId));
             return true;
         }
 
@@ -40,6 +40,7 @@ namespace Intent.Angular.Api
         public class AngularComponentSettings
         {
             private IStereotype _stereotype;
+            public const string DefinitionId = "ded6918f-81c2-4097-bdbe-48ec0fb84b7b";
 
             public AngularComponentSettings(IStereotype stereotype)
             {

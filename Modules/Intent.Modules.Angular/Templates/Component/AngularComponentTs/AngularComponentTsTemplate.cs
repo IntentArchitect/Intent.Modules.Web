@@ -14,7 +14,6 @@ namespace Intent.Modules.Angular.Templates.Component.AngularComponentTs
     using Intent.Modules.Common;
     using Intent.Modules.Common.Templates;
     using Intent.Modules.Common.TypeScript.Templates;
-    using Intent.Modules.Angular.Api;
     using Intent.Modelers.WebClient.Angular.Api;
     using Intent.Modules.Angular.Templates.Module.AngularModule;
     using System;
@@ -35,266 +34,266 @@ namespace Intent.Modules.Angular.Templates.Component.AngularComponentTs
         {
             this.Write("import { Component, OnInit } from \'@angular/core\';");
             
-            #line 11 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Component\AngularComponentTs\AngularComponentTsTemplate.tt"
+            #line 10 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Component\AngularComponentTs\AngularComponentTsTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(GetImports()));
             
             #line default
             #line hidden
             this.Write("\r\n\r\n@Component({\r\n  selector: \'");
             
-            #line 14 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Component\AngularComponentTs\AngularComponentTsTemplate.tt"
+            #line 13 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Component\AngularComponentTs\AngularComponentTsTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(GetSelector()));
             
             #line default
             #line hidden
             this.Write("\',\r\n  templateUrl: \'./");
             
-            #line 15 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Component\AngularComponentTs\AngularComponentTsTemplate.tt"
+            #line 14 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Component\AngularComponentTs\AngularComponentTsTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(ComponentName.ToKebabCase()));
             
             #line default
             #line hidden
             this.Write(".component.html\',\r\n  styleUrls: [\'./");
             
-            #line 16 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Component\AngularComponentTs\AngularComponentTsTemplate.tt"
+            #line 15 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Component\AngularComponentTs\AngularComponentTsTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(ComponentName.ToKebabCase()));
             
             #line default
             #line hidden
             this.Write(".component.scss\']\r\n})\r\nexport class ");
             
-            #line 18 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Component\AngularComponentTs\AngularComponentTsTemplate.tt"
+            #line 17 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Component\AngularComponentTs\AngularComponentTsTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(ClassName));
             
             #line default
             #line hidden
             this.Write(" implements OnInit {\r\n");
             
-            #line 19 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Component\AngularComponentTs\AngularComponentTsTemplate.tt"
+            #line 18 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Component\AngularComponentTs\AngularComponentTsTemplate.tt"
   foreach (var field in _fields) {
             
             #line default
             #line hidden
             this.Write("  ");
             
-            #line 20 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Component\AngularComponentTs\AngularComponentTsTemplate.tt"
+            #line 19 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Component\AngularComponentTs\AngularComponentTsTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(field.Name));
             
             #line default
             #line hidden
             this.Write(": ");
             
-            #line 20 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Component\AngularComponentTs\AngularComponentTsTemplate.tt"
+            #line 19 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Component\AngularComponentTs\AngularComponentTsTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(field.Type));
             
             #line default
             #line hidden
             this.Write(" = ");
             
-            #line 20 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Component\AngularComponentTs\AngularComponentTsTemplate.tt"
+            #line 19 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Component\AngularComponentTs\AngularComponentTsTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(field.DefaultValue));
             
             #line default
             #line hidden
             this.Write(";\r\n");
             
-            #line 21 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Component\AngularComponentTs\AngularComponentTsTemplate.tt"
+            #line 20 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Component\AngularComponentTs\AngularComponentTsTemplate.tt"
   }
             
             #line default
             #line hidden
             
-            #line 22 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Component\AngularComponentTs\AngularComponentTsTemplate.tt"
+            #line 21 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Component\AngularComponentTs\AngularComponentTsTemplate.tt"
   foreach (var model in Model.Inputs) {
             
             #line default
             #line hidden
             this.Write("  ");
             
-            #line 23 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Component\AngularComponentTs\AngularComponentTsTemplate.tt"
+            #line 22 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Component\AngularComponentTs\AngularComponentTsTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(model.Name));
             
             #line default
             #line hidden
             this.Write(": ");
             
-            #line 23 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Component\AngularComponentTs\AngularComponentTsTemplate.tt"
+            #line 22 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Component\AngularComponentTs\AngularComponentTsTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(GetTypeName(model.TypeReference)));
             
             #line default
             #line hidden
             this.Write(";\r\n");
             
-            #line 24 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Component\AngularComponentTs\AngularComponentTsTemplate.tt"
+            #line 23 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Component\AngularComponentTs\AngularComponentTsTemplate.tt"
   }
             
             #line default
             #line hidden
             
-            #line 25 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Component\AngularComponentTs\AngularComponentTsTemplate.tt"
+            #line 24 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Component\AngularComponentTs\AngularComponentTsTemplate.tt"
   foreach (var model in Model.Outputs) {
             
             #line default
             #line hidden
             this.Write("  @");
             
-            #line 26 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Component\AngularComponentTs\AngularComponentTsTemplate.tt"
+            #line 25 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Component\AngularComponentTs\AngularComponentTsTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.UseType("Output", "@angular/core")));
             
             #line default
             #line hidden
             this.Write("() ");
             
-            #line 26 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Component\AngularComponentTs\AngularComponentTsTemplate.tt"
+            #line 25 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Component\AngularComponentTs\AngularComponentTsTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(model.Name));
             
             #line default
             #line hidden
             this.Write(" = new ");
             
-            #line 26 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Component\AngularComponentTs\AngularComponentTsTemplate.tt"
+            #line 25 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Component\AngularComponentTs\AngularComponentTsTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.UseType("EventEmitter", "@angular/core")));
             
             #line default
             #line hidden
             this.Write("<");
             
-            #line 26 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Component\AngularComponentTs\AngularComponentTsTemplate.tt"
+            #line 25 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Component\AngularComponentTs\AngularComponentTsTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(GetTypeName(model.TypeReference)));
             
             #line default
             #line hidden
             this.Write(">();\r\n");
             
-            #line 27 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Component\AngularComponentTs\AngularComponentTsTemplate.tt"
+            #line 26 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Component\AngularComponentTs\AngularComponentTsTemplate.tt"
   }
             
             #line default
             #line hidden
             
-            #line 28 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Component\AngularComponentTs\AngularComponentTsTemplate.tt"
+            #line 27 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Component\AngularComponentTs\AngularComponentTsTemplate.tt"
   foreach (var model in Model.Models) {
             
             #line default
             #line hidden
             this.Write("  ");
             
-            #line 29 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Component\AngularComponentTs\AngularComponentTsTemplate.tt"
+            #line 28 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Component\AngularComponentTs\AngularComponentTsTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(model.Name));
             
             #line default
             #line hidden
             this.Write(": ");
             
-            #line 29 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Component\AngularComponentTs\AngularComponentTsTemplate.tt"
+            #line 28 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Component\AngularComponentTs\AngularComponentTsTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(GetTypeName(model.TypeReference)));
             
             #line default
             #line hidden
             this.Write(";\r\n");
             
-            #line 30 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Component\AngularComponentTs\AngularComponentTsTemplate.tt"
+            #line 29 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Component\AngularComponentTs\AngularComponentTsTemplate.tt"
   }
             
             #line default
             #line hidden
             this.Write("\r\n  //@IntentCanAdd()\r\n  constructor(");
             
-            #line 33 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Component\AngularComponentTs\AngularComponentTsTemplate.tt"
+            #line 32 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Component\AngularComponentTs\AngularComponentTsTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(GetConstructorParams()));
             
             #line default
             #line hidden
             this.Write(") { }\r\n\r\n  ");
             
-            #line 35 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Component\AngularComponentTs\AngularComponentTsTemplate.tt"
+            #line 34 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Component\AngularComponentTs\AngularComponentTsTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.IntentIgnoreDecorator()));
             
             #line default
             #line hidden
             this.Write("\r\n  ngOnInit() {");
             
-            #line 36 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Component\AngularComponentTs\AngularComponentTsTemplate.tt"
+            #line 35 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Component\AngularComponentTs\AngularComponentTsTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(GetDecoratorsOutput(x => x.OnInit())));
             
             #line default
             #line hidden
             this.Write("\r\n  }\r\n");
             
-            #line 38 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Component\AngularComponentTs\AngularComponentTsTemplate.tt"
+            #line 37 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Component\AngularComponentTs\AngularComponentTsTemplate.tt"
   foreach (var command in Model.Commands) {
             
             #line default
             #line hidden
             this.Write("\r\n  ");
             
-            #line 40 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Component\AngularComponentTs\AngularComponentTsTemplate.tt"
+            #line 39 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Component\AngularComponentTs\AngularComponentTsTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(this.IntentIgnoreBodyDecorator()));
             
             #line default
             #line hidden
             this.Write("\r\n  ");
             
-            #line 41 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Component\AngularComponentTs\AngularComponentTsTemplate.tt"
+            #line 40 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Component\AngularComponentTs\AngularComponentTsTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(command.Name.ToCamelCase()));
             
             #line default
             #line hidden
             this.Write("(");
             
-            #line 41 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Component\AngularComponentTs\AngularComponentTsTemplate.tt"
+            #line 40 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Component\AngularComponentTs\AngularComponentTsTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(GetParameters(command)));
             
             #line default
             #line hidden
             this.Write("): ");
             
-            #line 41 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Component\AngularComponentTs\AngularComponentTsTemplate.tt"
+            #line 40 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Component\AngularComponentTs\AngularComponentTsTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(GetReturnType(command)));
             
             #line default
             #line hidden
             this.Write(" {\r\n    // write your business logic here for this command\r\n  }\r\n");
             
-            #line 44 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Component\AngularComponentTs\AngularComponentTsTemplate.tt"
+            #line 43 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Component\AngularComponentTs\AngularComponentTsTemplate.tt"
   }
             
             #line default
             #line hidden
             
-            #line 45 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Component\AngularComponentTs\AngularComponentTsTemplate.tt"
+            #line 44 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Component\AngularComponentTs\AngularComponentTsTemplate.tt"
   foreach (var navigation in Model.NavigateToComponents().Where(x => x.IsNavigable)) {
             
             #line default
             #line hidden
             
-            #line 46 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Component\AngularComponentTs\AngularComponentTsTemplate.tt"
+            #line 45 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Component\AngularComponentTs\AngularComponentTsTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(GetNavigationCommand(navigation)));
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 47 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Component\AngularComponentTs\AngularComponentTsTemplate.tt"
+            #line 46 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Component\AngularComponentTs\AngularComponentTsTemplate.tt"
   }
             
             #line default
             #line hidden
             
-            #line 48 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Component\AngularComponentTs\AngularComponentTsTemplate.tt"
+            #line 47 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Component\AngularComponentTs\AngularComponentTsTemplate.tt"
   foreach (var navigation in Model.NavigateBackComponents().Where(x => x.IsNavigable)) {
             
             #line default
             #line hidden
             
-            #line 49 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Component\AngularComponentTs\AngularComponentTsTemplate.tt"
+            #line 48 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Component\AngularComponentTs\AngularComponentTsTemplate.tt"
             this.Write(this.ToStringHelper.ToStringWithCulture(GetNavigationCommand(navigation)));
             
             #line default
             #line hidden
             this.Write("\r\n");
             
-            #line 50 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Component\AngularComponentTs\AngularComponentTsTemplate.tt"
+            #line 49 "C:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Component\AngularComponentTs\AngularComponentTsTemplate.tt"
   }
             
             #line default

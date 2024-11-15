@@ -2,6 +2,7 @@ using System.Linq;
 using Intent.Engine;
 using Intent.Metadata.Models;
 using Intent.Modelers.Types.ServiceProxies.Api;
+using Intent.Modelers.UI.Api;
 using Intent.Modules.Angular.Shared;
 using Intent.Modules.Common;
 using Intent.Modules.Common.Templates;
@@ -19,7 +20,7 @@ internal static class ServiceProxyModelExtensions
 
         if (moduleElement == null)
         {
-            var moduleElements = executionContext.MetadataManager.WebClient(executionContext.GetApplicationConfig().Id)
+            var moduleElements = executionContext.MetadataManager.UserInterface(executionContext.GetApplicationConfig().Id)
                 .GetElementsOfType(SpecializationTypeIds.Angular.Module)
                 .ToArray();
 

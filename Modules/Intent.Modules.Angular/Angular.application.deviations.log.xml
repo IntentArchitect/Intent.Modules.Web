@@ -1,4 +1,255 @@
 <?xml version="1.0" encoding="utf-8"?>
 <deviationsLog>
-  <files />
+  <files>
+    <file>
+      <correlationId>Intent.ModuleBuilder.ProjectItemTemplate.Partial#3d1fe1c1-b396-4c8b-bc0f-f7ab2537ae7e</correlationId>
+      <path>Intent.Modules.Angular/Templates/Component/AngularComponentCss/AngularComponentCssTemplatePartial.cs</path>
+      <count>1</count>
+      <updatedByAccountName>gareth.baars@intentarchitect.com</updatedByAccountName>
+      <updatedByDisplayName>Gareth Baars</updatedByDisplayName>
+      <updatedAt>2024-11-15T09:20:58.1209953Z</updatedAt>
+      <deviationsHash>95F024BBB9B93CC06F17BC55CA2B849AF9EDD9596525892D00915BACFA8C917B</deviationsHash>
+      <fileHash>49844F045BD30784A112F23F087F5FBA1A8C0B84ACE0E89594069EF7E4A136AF</fileHash>
+    </file>
+    <file>
+      <correlationId>Intent.ModuleBuilder.TemplateRegistration.FilePerModel#3d1fe1c1-b396-4c8b-bc0f-f7ab2537ae7e</correlationId>
+      <path>Intent.Modules.Angular/Templates/Component/AngularComponentCss/AngularComponentCssTemplateRegistration.cs</path>
+      <count>1</count>
+      <updatedByAccountName>gareth.baars@intentarchitect.com</updatedByAccountName>
+      <updatedByDisplayName>Gareth Baars</updatedByDisplayName>
+      <updatedAt>2024-11-15T09:20:58.1210247Z</updatedAt>
+      <deviationsHash>95F024BBB9B93CC06F17BC55CA2B849AF9EDD9596525892D00915BACFA8C917B</deviationsHash>
+      <fileHash>C3B0CDAF60C03F630904372B7B47C5231054754BD092EA8923C4C199FEDAD86D</fileHash>
+    </file>
+    <file>
+      <correlationId>Intent.ModuleBuilder.Html.Templates.HtmlFileTemplatePartial#25779bc1-5d6b-4fe5-89fb-97d75e8df259</correlationId>
+      <path>Intent.Modules.Angular/Templates/Component/AngularComponentHtml/AngularComponentHtmlTemplatePartial.cs</path>
+      <count>2</count>
+      <updatedByAccountName>gareth.baars@intentarchitect.com</updatedByAccountName>
+      <updatedByDisplayName>Gareth Baars</updatedByDisplayName>
+      <updatedAt>2024-11-15T09:20:58.1209791Z</updatedAt>
+      <deviationsHash>6417C952E26CC9BF22B8461734330490FF996A2577985CE3395A263B6817FC51</deviationsHash>
+      <fileHash>B5098F1C91C1DCD7CAC07670795FFA80DF7F9BE7BE31F7C3A8CCF641587D8397</fileHash>
+    </file>
+    <file>
+      <correlationId>Intent.ModuleBuilder.TemplateRegistration.FilePerModel#25779bc1-5d6b-4fe5-89fb-97d75e8df259</correlationId>
+      <path>Intent.Modules.Angular/Templates/Component/AngularComponentHtml/AngularComponentHtmlTemplateRegistration.cs</path>
+      <count>1</count>
+      <updatedByAccountName>gareth.baars@intentarchitect.com</updatedByAccountName>
+      <updatedByDisplayName>Gareth Baars</updatedByDisplayName>
+      <updatedAt>2024-11-15T09:20:58.1210325Z</updatedAt>
+      <deviationsHash>95F024BBB9B93CC06F17BC55CA2B849AF9EDD9596525892D00915BACFA8C917B</deviationsHash>
+      <fileHash>B5D56EFA5CADC4278490E94F53CACD48788D93CF53EAB2293B8F2ED268D23E0B</fileHash>
+    </file>
+    <file>
+      <correlationId>Intent.ModuleBuilder.Templates.TemplateDecoratorContract#b1c75969-a89e-41c6-a4b1-3283dc6b84ff</correlationId>
+      <path>Intent.Modules.Angular/Templates/Component/AngularComponentTs/AngularComponentTsDecorator.cs</path>
+      <count>1</count>
+      <updatedByAccountName>gareth.baars@intentarchitect.com</updatedByAccountName>
+      <updatedByDisplayName>Gareth Baars</updatedByDisplayName>
+      <updatedAt>2024-11-15T09:20:58.1211634Z</updatedAt>
+      <deviationsHash>95AB2835E13F632CAA2E426C797ABB59F62D265E38246CAF7B13296304CDABAE</deviationsHash>
+      <fileHash>FFBF35EF241BA118240380D9C819852328E447A9E634549FEE228A5902E38B1C</fileHash>
+    </file>
+    <file>
+      <correlationId>Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial#aa06d3ae-2965-4101-8f8b-8db7da8a0146</correlationId>
+      <path>Intent.Modules.Angular/Templates/Component/AngularComponentTs/AngularComponentTsTemplatePartial.cs</path>
+      <count>1</count>
+      <updatedByAccountName>gareth.baars@intentarchitect.com</updatedByAccountName>
+      <updatedByDisplayName>Gareth Baars</updatedByDisplayName>
+      <updatedAt>2024-11-15T09:20:58.1211868Z</updatedAt>
+      <deviationsHash>95F024BBB9B93CC06F17BC55CA2B849AF9EDD9596525892D00915BACFA8C917B</deviationsHash>
+      <fileHash>BEF64926F48136258F8DE84F8CE51F9DADE5E51DC16693DDE9491D3DE6DA381E</fileHash>
+    </file>
+    <file>
+      <correlationId>Intent.ModuleBuilder.TemplateRegistration.FilePerModel#aa06d3ae-2965-4101-8f8b-8db7da8a0146</correlationId>
+      <path>Intent.Modules.Angular/Templates/Component/AngularComponentTs/AngularComponentTsTemplateRegistration.cs</path>
+      <count>1</count>
+      <updatedByAccountName>gareth.baars@intentarchitect.com</updatedByAccountName>
+      <updatedByDisplayName>Gareth Baars</updatedByDisplayName>
+      <updatedAt>2024-11-15T09:20:58.1210401Z</updatedAt>
+      <deviationsHash>95F024BBB9B93CC06F17BC55CA2B849AF9EDD9596525892D00915BACFA8C917B</deviationsHash>
+      <fileHash>B98D28562B79B6EC873448A9ED19580AEB705A0F71778348D63447FC89C551DE</fileHash>
+    </file>
+    <file>
+      <correlationId>Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial#ba59d6a8-a629-4feb-9e5b-c3498b89e9ec</correlationId>
+      <path>Intent.Modules.Angular/Templates/Core/CoreModule/CoreModuleTemplatePartial.cs</path>
+      <count>1</count>
+      <updatedByAccountName>gareth.baars@intentarchitect.com</updatedByAccountName>
+      <updatedByDisplayName>Gareth Baars</updatedByDisplayName>
+      <updatedAt>2024-11-15T09:20:58.1212211Z</updatedAt>
+      <deviationsHash>95F024BBB9B93CC06F17BC55CA2B849AF9EDD9596525892D00915BACFA8C917B</deviationsHash>
+      <fileHash>696413F9C32CAC65F1F049FAA5CC9FD92D7F684DB1B1C524CB4A6B0C42DE0F43</fileHash>
+    </file>
+    <file>
+      <correlationId>Intent.ModuleBuilder.TemplateRegistration.SingleFileNoModel#ba59d6a8-a629-4feb-9e5b-c3498b89e9ec</correlationId>
+      <path>Intent.Modules.Angular/Templates/Core/CoreModule/CoreModuleTemplateRegistration.cs</path>
+      <count>1</count>
+      <updatedByAccountName>gareth.baars@intentarchitect.com</updatedByAccountName>
+      <updatedByDisplayName>Gareth Baars</updatedByDisplayName>
+      <updatedAt>2024-11-15T09:20:58.121095Z</updatedAt>
+      <deviationsHash>95F024BBB9B93CC06F17BC55CA2B849AF9EDD9596525892D00915BACFA8C917B</deviationsHash>
+      <fileHash>16E9F861A4A26F02E719D335042826A061EE83A0E320E342D130E3CD8F50CD79</fileHash>
+    </file>
+    <file>
+      <correlationId>Intent.ModuleBuilder.Html.Templates.HtmlFileTemplatePartial#181fbac7-d209-4cd9-9caa-cc0dff5b8c9a</correlationId>
+      <path>Intent.Modules.Angular/Templates/Core/Index/IndexTemplatePartial.cs</path>
+      <count>1</count>
+      <updatedByAccountName>gareth.baars@intentarchitect.com</updatedByAccountName>
+      <updatedByDisplayName>Gareth Baars</updatedByDisplayName>
+      <updatedAt>2024-11-15T09:20:58.1209871Z</updatedAt>
+      <deviationsHash>95F024BBB9B93CC06F17BC55CA2B849AF9EDD9596525892D00915BACFA8C917B</deviationsHash>
+      <fileHash>E252F1F95DBBD23CC6C02939A6F5686779F9F2C4983DD53A382CD79DC77AFC62</fileHash>
+    </file>
+    <file>
+      <correlationId>Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial#e7ea472f-5ef5-453b-8df6-4fb3569b9e07</correlationId>
+      <path>Intent.Modules.Angular/Templates/Environment/Environment/EnvironmentTemplatePartial.cs</path>
+      <count>1</count>
+      <updatedByAccountName>gareth.baars@intentarchitect.com</updatedByAccountName>
+      <updatedByDisplayName>Gareth Baars</updatedByDisplayName>
+      <updatedAt>2024-11-15T09:20:58.1212293Z</updatedAt>
+      <deviationsHash>95F024BBB9B93CC06F17BC55CA2B849AF9EDD9596525892D00915BACFA8C917B</deviationsHash>
+      <fileHash>BB8B9555536C4ED266DC254FC398A929444C89E85D18C795E620BB6B0EFC4091</fileHash>
+    </file>
+    <file>
+      <correlationId>Intent.ModuleBuilder.TemplateRegistration.SingleFileNoModel#e7ea472f-5ef5-453b-8df6-4fb3569b9e07</correlationId>
+      <path>Intent.Modules.Angular/Templates/Environment/Environment/EnvironmentTemplateRegistration.cs</path>
+      <count>1</count>
+      <updatedByAccountName>gareth.baars@intentarchitect.com</updatedByAccountName>
+      <updatedByDisplayName>Gareth Baars</updatedByDisplayName>
+      <updatedAt>2024-11-15T09:20:58.1211019Z</updatedAt>
+      <deviationsHash>95F024BBB9B93CC06F17BC55CA2B849AF9EDD9596525892D00915BACFA8C917B</deviationsHash>
+      <fileHash>E2D2F7BB63D0B959E1122D6526006970AB3887A96C6CC09CC5E5FFA38A075082</fileHash>
+    </file>
+    <file>
+      <correlationId>Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial#ab83c9fd-68ca-498b-82d2-89ac149b3e28</correlationId>
+      <path>Intent.Modules.Angular/Templates/Environment/EnvironmentDotDevelopment/EnvironmentDotDevelopmentTemplatePartial.cs</path>
+      <count>1</count>
+      <updatedByAccountName>gareth.baars@intentarchitect.com</updatedByAccountName>
+      <updatedByDisplayName>Gareth Baars</updatedByDisplayName>
+      <updatedAt>2024-11-15T09:20:58.1212377Z</updatedAt>
+      <deviationsHash>95F024BBB9B93CC06F17BC55CA2B849AF9EDD9596525892D00915BACFA8C917B</deviationsHash>
+      <fileHash>9B1AB5FD9C8CB349F2A49CD3E76F1D3CCFEEC45435CC5454B894933FCFBC59DB</fileHash>
+    </file>
+    <file>
+      <correlationId>Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial#fc84fb37-d9ec-4459-a3e1-e165eec1ca0e</correlationId>
+      <path>Intent.Modules.Angular/Templates/Model/FormGroup/FormGroupTemplatePartial.cs</path>
+      <count>1</count>
+      <updatedByAccountName>gareth.baars@intentarchitect.com</updatedByAccountName>
+      <updatedByDisplayName>Gareth Baars</updatedByDisplayName>
+      <updatedAt>2024-11-15T09:20:58.1212466Z</updatedAt>
+      <deviationsHash>95F024BBB9B93CC06F17BC55CA2B849AF9EDD9596525892D00915BACFA8C917B</deviationsHash>
+      <fileHash>83B3053E4789EE2579232152316A0ADF74BE099554B6CE07A5A081F104B4AB3A</fileHash>
+    </file>
+    <file>
+      <correlationId>Intent.ModuleBuilder.TemplateRegistration.FilePerModel#fc84fb37-d9ec-4459-a3e1-e165eec1ca0e</correlationId>
+      <path>Intent.Modules.Angular/Templates/Model/FormGroup/FormGroupTemplateRegistration.cs</path>
+      <count>1</count>
+      <updatedByAccountName>gareth.baars@intentarchitect.com</updatedByAccountName>
+      <updatedByDisplayName>Gareth Baars</updatedByDisplayName>
+      <updatedAt>2024-11-15T09:20:58.1210737Z</updatedAt>
+      <deviationsHash>95F024BBB9B93CC06F17BC55CA2B849AF9EDD9596525892D00915BACFA8C917B</deviationsHash>
+      <fileHash>2B70B9B701FBF003F38D04882C3580237077FD374FBF38D79578128642A56158</fileHash>
+    </file>
+    <file>
+      <correlationId>Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial#9273966e-d177-45c3-8807-1e3bcbbf2cd8</correlationId>
+      <path>Intent.Modules.Angular/Templates/Model/Model/ModelTemplatePartial.cs</path>
+      <count>1</count>
+      <updatedByAccountName>gareth.baars@intentarchitect.com</updatedByAccountName>
+      <updatedByDisplayName>Gareth Baars</updatedByDisplayName>
+      <updatedAt>2024-11-15T09:20:58.1212619Z</updatedAt>
+      <deviationsHash>95F024BBB9B93CC06F17BC55CA2B849AF9EDD9596525892D00915BACFA8C917B</deviationsHash>
+      <fileHash>AF7CB7CA7FDE59DC3C068AA1D67256E9880BF433EF4C9DB07598E9E99D0DC7FC</fileHash>
+    </file>
+    <file>
+      <correlationId>Intent.ModuleBuilder.TemplateRegistration.FilePerModel#9273966e-d177-45c3-8807-1e3bcbbf2cd8</correlationId>
+      <path>Intent.Modules.Angular/Templates/Model/Model/ModelTemplateRegistration.cs</path>
+      <count>1</count>
+      <updatedByAccountName>gareth.baars@intentarchitect.com</updatedByAccountName>
+      <updatedByDisplayName>Gareth Baars</updatedByDisplayName>
+      <updatedAt>2024-11-15T09:20:58.1210811Z</updatedAt>
+      <deviationsHash>95F024BBB9B93CC06F17BC55CA2B849AF9EDD9596525892D00915BACFA8C917B</deviationsHash>
+      <fileHash>62C4700F84AA3ABD9A87B8506DC78777811F8617223002534D2EDE9AAE0D1BB7</fileHash>
+    </file>
+    <file>
+      <correlationId>Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial#84287d05-962d-4c48-a274-5057407cd4aa</correlationId>
+      <path>Intent.Modules.Angular/Templates/Module/AngularModule/AngularModuleTemplatePartial.cs</path>
+      <count>1</count>
+      <updatedByAccountName>gareth.baars@intentarchitect.com</updatedByAccountName>
+      <updatedByDisplayName>Gareth Baars</updatedByDisplayName>
+      <updatedAt>2024-11-15T09:20:58.1211973Z</updatedAt>
+      <deviationsHash>95F024BBB9B93CC06F17BC55CA2B849AF9EDD9596525892D00915BACFA8C917B</deviationsHash>
+      <fileHash>F6E581EDC6E992CD726DEE2D8FA354E6D224841BF7BD0BC7212DB036FF18C7DC</fileHash>
+    </file>
+    <file>
+      <correlationId>Intent.ModuleBuilder.TemplateRegistration.FilePerModel#84287d05-962d-4c48-a274-5057407cd4aa</correlationId>
+      <path>Intent.Modules.Angular/Templates/Module/AngularModule/AngularModuleTemplateRegistration.cs</path>
+      <count>1</count>
+      <updatedByAccountName>gareth.baars@intentarchitect.com</updatedByAccountName>
+      <updatedByDisplayName>Gareth Baars</updatedByDisplayName>
+      <updatedAt>2024-11-15T09:20:58.1210485Z</updatedAt>
+      <deviationsHash>95F024BBB9B93CC06F17BC55CA2B849AF9EDD9596525892D00915BACFA8C917B</deviationsHash>
+      <fileHash>9BBAE7987FFBA849D7831C57B16A91818C89E403B19FB015DC419404DC02B9AF</fileHash>
+    </file>
+    <file>
+      <correlationId>Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial#46c14796-f106-463c-93de-d60d31354fac</correlationId>
+      <path>Intent.Modules.Angular/Templates/Module/AngularResolver/AngularResolverTemplatePartial.cs</path>
+      <count>1</count>
+      <updatedByAccountName>gareth.baars@intentarchitect.com</updatedByAccountName>
+      <updatedByDisplayName>Gareth Baars</updatedByDisplayName>
+      <updatedAt>2024-11-15T09:20:58.1212052Z</updatedAt>
+      <deviationsHash>95F024BBB9B93CC06F17BC55CA2B849AF9EDD9596525892D00915BACFA8C917B</deviationsHash>
+      <fileHash>792E9B69F8BF90C9B181758B775333A62C675CA0A92D6156B8A31E0D8B73B186</fileHash>
+    </file>
+    <file>
+      <correlationId>Intent.ModuleBuilder.TemplateRegistration.FilePerModel#46c14796-f106-463c-93de-d60d31354fac</correlationId>
+      <path>Intent.Modules.Angular/Templates/Module/AngularResolver/AngularResolverTemplateRegistration.cs</path>
+      <count>1</count>
+      <updatedByAccountName>gareth.baars@intentarchitect.com</updatedByAccountName>
+      <updatedByDisplayName>Gareth Baars</updatedByDisplayName>
+      <updatedAt>2024-11-15T09:20:58.1210561Z</updatedAt>
+      <deviationsHash>95F024BBB9B93CC06F17BC55CA2B849AF9EDD9596525892D00915BACFA8C917B</deviationsHash>
+      <fileHash>B6B7DC981754FF3FDC57A97275A1A175FB7F0E431106341DA11BEC42FBF95114</fileHash>
+    </file>
+    <file>
+      <correlationId>Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial#1a817c51-35c5-4e17-8c69-f6a193f338a7</correlationId>
+      <path>Intent.Modules.Angular/Templates/Module/AngularRoutingModule/AngularRoutingModuleTemplatePartial.cs</path>
+      <count>1</count>
+      <updatedByAccountName>gareth.baars@intentarchitect.com</updatedByAccountName>
+      <updatedByDisplayName>Gareth Baars</updatedByDisplayName>
+      <updatedAt>2024-11-15T09:20:58.1212141Z</updatedAt>
+      <deviationsHash>95F024BBB9B93CC06F17BC55CA2B849AF9EDD9596525892D00915BACFA8C917B</deviationsHash>
+      <fileHash>FA69B924E53B9070F4B31C5D1F6D0967597F1601F9B6C005AC5A8A2D7564F609</fileHash>
+    </file>
+    <file>
+      <correlationId>Intent.ModuleBuilder.TemplateRegistration.FilePerModel#1a817c51-35c5-4e17-8c69-f6a193f338a7</correlationId>
+      <path>Intent.Modules.Angular/Templates/Module/AngularRoutingModule/AngularRoutingModuleTemplateRegistration.cs</path>
+      <count>1</count>
+      <updatedByAccountName>gareth.baars@intentarchitect.com</updatedByAccountName>
+      <updatedByDisplayName>Gareth Baars</updatedByDisplayName>
+      <updatedAt>2024-11-15T09:20:58.1210662Z</updatedAt>
+      <deviationsHash>95F024BBB9B93CC06F17BC55CA2B849AF9EDD9596525892D00915BACFA8C917B</deviationsHash>
+      <fileHash>0B19D4D9563842F115823DB08ED97C16349961A6E1E52FAD93E63D9A06BE33AC</fileHash>
+    </file>
+    <file>
+      <correlationId>Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial#24192b12-bce1-4ac8-8edd-3f68a2eb3b7c</correlationId>
+      <path>Intent.Modules.Angular/Templates/Shared/IntentDecorators/IntentDecoratorsTemplatePartial.cs</path>
+      <count>1</count>
+      <updatedByAccountName>gareth.baars@intentarchitect.com</updatedByAccountName>
+      <updatedByDisplayName>Gareth Baars</updatedByDisplayName>
+      <updatedAt>2024-11-15T09:20:58.1212535Z</updatedAt>
+      <deviationsHash>95F024BBB9B93CC06F17BC55CA2B849AF9EDD9596525892D00915BACFA8C917B</deviationsHash>
+      <fileHash>C6500D1EC667A70CC17FFE1BE6039B681CE2A4C7E7F85360C306EE5F9CF5942B</fileHash>
+    </file>
+    <file>
+      <correlationId>Intent.ModuleBuilder.TemplateRegistration.SingleFileNoModel#24192b12-bce1-4ac8-8edd-3f68a2eb3b7c</correlationId>
+      <path>Intent.Modules.Angular/Templates/Shared/IntentDecorators/IntentDecoratorsTemplateRegistration.cs</path>
+      <count>1</count>
+      <updatedByAccountName>gareth.baars@intentarchitect.com</updatedByAccountName>
+      <updatedByDisplayName>Gareth Baars</updatedByDisplayName>
+      <updatedAt>2024-11-15T09:20:58.1211239Z</updatedAt>
+      <deviationsHash>95F024BBB9B93CC06F17BC55CA2B849AF9EDD9596525892D00915BACFA8C917B</deviationsHash>
+      <fileHash>B38DF9900B814F3EE2EA8B6E04F2168BFBE902A41627409EE2A415E4D1F27978</fileHash>
+    </file>
+  </files>
 </deviationsLog>

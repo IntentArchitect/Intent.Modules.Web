@@ -49,7 +49,7 @@ namespace Intent.Modules.Angular.ApiAuthorization.Templates.GeneralApiAuthZipFil
                 fileExtension: extension.Replace(".", string.Empty)
             );
         }
-        
+
         public override string GetCorrelationId()
         {
             return $"{Id}#{_zipEntry.FullFileNamePath}";

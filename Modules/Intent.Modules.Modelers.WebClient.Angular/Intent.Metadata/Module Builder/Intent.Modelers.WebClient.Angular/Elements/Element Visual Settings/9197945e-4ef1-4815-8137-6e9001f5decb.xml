@@ -3,7 +3,7 @@
   <name>[visual]</name>
   <display>[visual]: Component</display>
   <isAbstract>false</isAbstract>
-  <sort-children>by-type-then-manually</sort-children>
+  <sort-children>manually</sort-children>
   <order>6</order>
   <genericTypes />
   <typeReference id="337233ae-4a53-4313-bdda-801d7007f895">

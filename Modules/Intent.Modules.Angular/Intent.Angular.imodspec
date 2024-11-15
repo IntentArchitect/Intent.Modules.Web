@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package>
   <id>Intent.Angular</id>
-  <version>4.0.0-alpha.11</version>
+  <version>4.0.0-alpha.12</version>
   <supportedClientVersions>[4.3.0-a, 5.0.0-a)</supportedClientVersions>
   <summary>Experimental Angular automation systems</summary>
   <description>Experimental Angular automation systems</description>
@@ -86,6 +86,11 @@
         <package id="Intent.AspNetCore.Interop.Angular" version="3.3.9" />
       </install>
     </detect>
+    <detect id="Intent.Modelers.WebClient">
+      <install>
+        <package id="Intent.Modelers.WebClient" version="5.0.0-pre.0" />
+      </install>
+    </detect>
   </interoperability>
   <dependencies>
     <dependency id="Intent.Code.Weaving.Html" version="1.0.0" />
@@ -98,8 +103,8 @@
     <dependency id="Intent.Modelers.Services" version="3.5.1" />
     <dependency id="Intent.Modelers.Services.CQRS" version="4.1.2" />
     <dependency id="Intent.Modelers.Types.ServiceProxies" version="5.2.3" />
-    <dependency id="Intent.Modelers.WebClient" version="4.1.0" />
-    <dependency id="Intent.Modelers.WebClient.Angular" version="4.0.0-alpha.6" />
+    <dependency id="Intent.Modelers.UI" version="1.0.0-beta.2" />
+    <dependency id="Intent.Modelers.WebClient.Angular" version="4.0.0-alpha.7" />
     <dependency id="Intent.Npm" version="4.0.0" />
   </dependencies>
   <files>
@@ -107,8 +112,8 @@
     <file src="$outDir$/$id$.pdb" />
   </files>
   <metadata>
-    <install target="Web Client;Module Builder" src="Intent.Metadata/Module Builder/Intent.Angular/Intent.Angular.pkg.config" externalReference="a3deb341-dd4e-4f7f-99f5-2f198c1c251c" />
-    <install target="Web Client" src="Intent.Metadata/Web Client/Intent.Angular.Types/Intent.Angular.Types.pkg.config" />
+    <install target="Web Client;User Interface;Module Builder" src="Intent.Metadata/Module Builder/Intent.Angular/Intent.Angular.pkg.config" />
+    <install target="Web Client;User Interface" src="Intent.Metadata/Web Client/Intent.Angular.Types/Intent.Angular.Types.pkg.config" />
   </metadata>
   <moduleSettings />
   <moduleSettingsExtensions />

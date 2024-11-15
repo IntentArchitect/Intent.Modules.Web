@@ -5,7 +5,6 @@
 <#@ import namespace="Intent.Modules.Common" #>
 <#@ import namespace="Intent.Modules.Common.Templates" #>
 <#@ import namespace="Intent.Modules.Common.TypeScript.Templates" #>
-<#@ import namespace="Intent.Modules.Angular.Api" #>
 <#@ import namespace="Intent.Modelers.WebClient.Angular.Api" #>
 <#@ import namespace="Intent.Modules.Angular.Templates.Module.AngularModule" #>
 import { Component, OnInit } from '@angular/core';<#= GetImports() #>

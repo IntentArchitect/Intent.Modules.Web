@@ -40,7 +40,7 @@ namespace Intent.Modules.Angular.ServiceProxies.Templates.AngularDTO
         {
             return Enumerable.Empty<DTOModel>()
                 .Concat(_metadataManager.UserInterface(application).GetMappedServiceProxyDTOModels())
-                .Concat(_metadataManager.WebClient(application).GetMappedServiceProxyDTOModels())
+                //.Concat(_metadataManager.WebClient(application).GetMappedServiceProxyDTOModels())  // because .UserInterface(...) it's fetching by designer's id.
                 .DistinctBy(x => x.Id);
         }
     }

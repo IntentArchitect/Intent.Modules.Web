@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <class id="dba0b59e-2904-4ae3-b04a-a5c034aaf195" type="Package Extension" typeId="ab4152df-3add-4a08-81b6-0fefc7cbb204">
   <name>Angular Web App</name>
-  <display>Angular Web App: Web Client</display>
+  <display>Angular Web App: User Interface Package</display>
   <isAbstract>false</isAbstract>
   <sort-children>by-type-then-by-name</sort-children>
   <genericTypes />
@@ -11,8 +11,8 @@
     <isNullable>false</isNullable>
     <isCollection>false</isCollection>
     <isRequired>true</isRequired>
-    <typePackageName>Intent.Modelers.WebClient</typePackageName>
-    <typePackageId>2024876e-119b-4386-bc63-18e575f4e416</typePackageId>
+    <typePackageName>Intent.Modelers.UI</typePackageName>
+    <typePackageId>5c4628ec-679e-4f3d-afda-137c978deae0</typePackageId>
     <stereotypes />
     <genericTypeParameters />
   </typeReference>
@@ -213,7 +213,7 @@
       <childElements>
         <childElement id="1626c827-d33c-4736-a197-fad110495781" type="Element Event Handler" typeId="0ef412e3-d15a-45d3-bcd3-f646165f2eb6">
           <name>On Created</name>
-          <display>On Created: Script</display>
+          <display>On Created: Inline Script</display>
           <isAbstract>false</isAbstract>
           <genericTypes />
           <typeReference id="1767c2b9-fd66-483c-88dc-dd970767104a">
@@ -238,6 +238,7 @@
               <definitionPackageId>9972b2a9-b749-4bba-b5c8-824bf694c6ef</definitionPackageId>
               <properties>
                 <property name="73a4088f-626e-4d31-b0b2-113167f015b2" display="Script" value="createElement(&quot;Module&quot;, &quot;AppModule&quot;, context.id);" isActive="true" />
+                <property name="7df9c3b9-91a0-4cb7-bc3a-15d72f160054" display="Dependencies" isActive="true" />
               </properties>
             </stereotype>
           </stereotypes>

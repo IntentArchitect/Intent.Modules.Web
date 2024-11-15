@@ -21,7 +21,7 @@ namespace Intent.Modules.Angular.ServiceProxies.Templates.AngularDTO
         [IntentManaged(Mode.Fully)]
         public const string TemplateId = "Intent.Angular.ServiceProxies.AngularDTO";
 
-        [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
+        [IntentManaged(Mode.Ignore, Signature = Mode.Merge)]
         public AngularDTOTemplate(IOutputTarget outputTarget, Intent.Modelers.Services.Api.DTOModel model) : base(TemplateId, outputTarget, model)
         {
             TypescriptFile = new TypescriptFile(this.GetFolderPath())
@@ -42,11 +42,11 @@ namespace Intent.Modules.Angular.ServiceProxies.Templates.AngularDTO
         }
 
         public string GenericTypes => Model.GenericTypes.Any() ? $"<{string.Join(", ", Model.GenericTypes)}>" : "";
-   
+
         [IntentManaged(Mode.Fully)]
         public TypescriptFile TypescriptFile { get; }
 
-        [IntentManaged(Mode.Fully)]
+        [IntentManaged(Mode.Ignore)]
         public override ITemplateFileConfig GetTemplateFileConfig()
         {
             return new TypeScriptFileConfig(

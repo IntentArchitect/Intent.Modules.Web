@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <class id="b8aec31f-9a62-44c7-ad75-2714327799f9" type="Package Extension" typeId="ab4152df-3add-4a08-81b6-0fefc7cbb204">
   <name>Angular App Extensions</name>
-  <display>Angular App Extensions: Web Client</display>
+  <display>Angular App Extensions: User Interface Package</display>
   <isAbstract>false</isAbstract>
   <sort-children>by-type-then-by-name</sort-children>
   <genericTypes />
@@ -11,8 +11,8 @@
     <isNullable>false</isNullable>
     <isCollection>false</isCollection>
     <isRequired>true</isRequired>
-    <typePackageName>Intent.Modelers.WebClient</typePackageName>
-    <typePackageId>2024876e-119b-4386-bc63-18e575f4e416</typePackageId>
+    <typePackageName>Intent.Modelers.UI</typePackageName>
+    <typePackageId>5c4628ec-679e-4f3d-afda-137c978deae0</typePackageId>
     <stereotypes />
     <genericTypeParameters />
   </typeReference>

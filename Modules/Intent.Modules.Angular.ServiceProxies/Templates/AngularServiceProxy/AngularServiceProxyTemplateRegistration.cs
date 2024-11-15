@@ -40,7 +40,7 @@ namespace Intent.Modules.Angular.ServiceProxies.Templates.AngularServiceProxy
         {
             return Enumerable.Empty<ServiceProxyModel>()
                 .Concat(_metadataManager.UserInterface(application).GetServiceProxyModels())
-                .Concat(_metadataManager.WebClient(application).GetServiceProxyModels())
+                //.Concat(_metadataManager.WebClient(application).GetServiceProxyModels())  // because .UserInterface(...) it's fetching by designer's id.
                 .DistinctBy(x => x.Id);
         }
     }
