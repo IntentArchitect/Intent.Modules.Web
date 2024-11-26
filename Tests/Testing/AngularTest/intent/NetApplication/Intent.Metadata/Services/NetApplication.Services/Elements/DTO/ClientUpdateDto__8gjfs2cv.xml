@@ -12,7 +12,7 @@
     <mappingSettingsId>942eae46-49f1-450e-9274-a92d40ac35fa</mappingSettingsId>
     <autoSyncTypeReference>true</autoSyncTypeReference>
     <mappedPath>
-      <target id="441fa06e-0828-4117-97e4-ffb6fd82d96f" name="Client" type="element" specialization="Class" />
+      <target id="441fa06e-0828-4117-97e4-ffb6fd82d96f" name="Client" type="element" specialization="Class" specializationId="04e12b51-ed12-42a3-9667-a6aa81bb6d10" />
     </mappedPath>
   </mappedClass>
   <parentFolderId>373bcbf4-04be-4fdb-a734-d478d8c528d6</parentFolderId>
@@ -42,7 +42,7 @@
         <mappingSettingsId>942eae46-49f1-450e-9274-a92d40ac35fa</mappingSettingsId>
         <autoSyncTypeReference>true</autoSyncTypeReference>
         <mappedPath>
-          <target id="c9423cd4-3cba-4bb6-9441-0a6df3325f7b" name="Id" type="element" specialization="Attribute" />
+          <target id="c9423cd4-3cba-4bb6-9441-0a6df3325f7b" name="Id" type="element" specialization="Attribute" specializationId="0090fb93-483e-41af-a11d-5ad2dc796adf" />
         </mappedPath>
       </mappedClass>
       <parentFolderId>2903897a-2900-4c50-a671-4ec17a1a3224</parentFolderId>
@@ -96,7 +96,7 @@
         <mappingSettingsId>942eae46-49f1-450e-9274-a92d40ac35fa</mappingSettingsId>
         <autoSyncTypeReference>true</autoSyncTypeReference>
         <mappedPath>
-          <target id="8a8b36c8-2578-4fb1-9cc1-c3bde3a9d8e2" name="Name" type="element" specialization="Attribute" />
+          <target id="8a8b36c8-2578-4fb1-9cc1-c3bde3a9d8e2" name="Name" type="element" specialization="Attribute" specializationId="0090fb93-483e-41af-a11d-5ad2dc796adf" />
         </mappedPath>
       </mappedClass>
       <parentFolderId>2903897a-2900-4c50-a671-4ec17a1a3224</parentFolderId>
@@ -150,7 +150,7 @@
         <mappingSettingsId>942eae46-49f1-450e-9274-a92d40ac35fa</mappingSettingsId>
         <autoSyncTypeReference>true</autoSyncTypeReference>
         <mappedPath>
-          <target id="b4d75401-31de-46ff-af57-a7028c0f5482" name="StatusCode" type="element" specialization="Attribute" />
+          <target id="b4d75401-31de-46ff-af57-a7028c0f5482" name="StatusCode" type="element" specialization="Attribute" specializationId="0090fb93-483e-41af-a11d-5ad2dc796adf" />
         </mappedPath>
       </mappedClass>
       <parentFolderId>2903897a-2900-4c50-a671-4ec17a1a3224</parentFolderId>

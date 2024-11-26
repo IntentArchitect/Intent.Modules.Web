@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="d49171f1-b91b-4267-aef3-781607bb198d" type="Folder" typeId="4d95d53a-8855-4f35-aa82-e312643f5c5f">
+  <name>models</name>
+  <display>models</display>
+  <isAbstract>false</isAbstract>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>3f943180-f2bc-492a-bc8f-3cf7a52d4ce4</parentFolderId>
+  <stereotypes />
+  <metadata />
+  <childElements>
+    <childElement id="d844044c-1abe-44e5-8088-2b738c0625db" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+      <name>Intent.Angular.ServiceProxies.AngularDTO</name>
+      <display>Intent.Angular.ServiceProxies.AngularDTO</display>
+      <externalReference>Intent.Angular.ServiceProxies</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>d49171f1-b91b-4267-aef3-781607bb198d</parentFolderId>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
+      <childElements />
+    </childElement>
+    <childElement id="d04865dc-418e-453f-bc50-696c2524fabe" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+      <name>Intent.Angular.ServiceProxies.EnumContract</name>
+      <display>Intent.Angular.ServiceProxies.EnumContract</display>
+      <externalReference>Intent.Angular.ServiceProxies</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>d49171f1-b91b-4267-aef3-781607bb198d</parentFolderId>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
+      <childElements />
+    </childElement>
+    <childElement id="a69df10f-75db-4364-a7b7-355cfa24fe59" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+      <name>Intent.Angular.ServiceProxies.JsonResponse</name>
+      <display>Intent.Angular.ServiceProxies.JsonResponse</display>
+      <externalReference>Intent.Angular.ServiceProxies</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>d49171f1-b91b-4267-aef3-781607bb198d</parentFolderId>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
+      <childElements />
+    </childElement>
+    <childElement id="48f25745-fba6-488b-bf08-3a0ad34217eb" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+      <name>Intent.Angular.ServiceProxies.PagedResult</name>
+      <display>Intent.Angular.ServiceProxies.PagedResult</display>
+      <externalReference>Intent.Angular.ServiceProxies</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>d49171f1-b91b-4267-aef3-781607bb198d</parentFolderId>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
+      <childElements />
+    </childElement>
+  </childElements>
+</class>

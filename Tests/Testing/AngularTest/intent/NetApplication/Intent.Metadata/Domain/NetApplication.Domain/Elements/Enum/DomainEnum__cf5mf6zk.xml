@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="622a5505-9d17-4422-b940-24cf18fad8c3" type="Enum" typeId="85fba0e9-9161-4c85-a603-a229ef312beb">
+  <name>DomainEnum</name>
+  <display>DomainEnum</display>
+  <isAbstract>false</isAbstract>
+  <sort-children>by-type-then-manually</sort-children>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>458df383-5191-45b1-91bc-5cf81c934aa4</parentFolderId>
+  <packageId>458df383-5191-45b1-91bc-5cf81c934aa4</packageId>
+  <packageName>NetApplication.Domain</packageName>
+  <stereotypes />
+  <metadata />
+  <childElements>
+    <childElement id="8ed7fc39-5a91-4369-9da4-eeca288cb8ec" type="Enum-Literal" typeId="4215f417-25d2-4509-9309-5076a1452eaa">
+      <name>lit1</name>
+      <display>lit1</display>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>622a5505-9d17-4422-b940-24cf18fad8c3</parentFolderId>
+      <packageId>458df383-5191-45b1-91bc-5cf81c934aa4</packageId>
+      <packageName>NetApplication.Domain</packageName>
+      <stereotypes />
+      <metadata />
+      <childElements />
+    </childElement>
+    <childElement id="0713dab7-9702-467c-bf31-80af853d6826" type="Enum-Literal" typeId="4215f417-25d2-4509-9309-5076a1452eaa">
+      <name>lit2</name>
+      <display>lit2 = 2</display>
+      <isAbstract>false</isAbstract>
+      <value>2</value>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>622a5505-9d17-4422-b940-24cf18fad8c3</parentFolderId>
+      <packageId>458df383-5191-45b1-91bc-5cf81c934aa4</packageId>
+      <packageName>NetApplication.Domain</packageName>
+      <stereotypes />
+      <metadata />
+      <childElements />
+    </childElement>
+  </childElements>
+</class>

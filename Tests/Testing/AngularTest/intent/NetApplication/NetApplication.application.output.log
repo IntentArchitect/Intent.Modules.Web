@@ -355,6 +355,22 @@
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
+      <ProjectId>cff1407e-306d-40e7-8ca1-4103f9791379</ProjectId>
+      <CorrelationId>Intent.Application.Dtos.DtoModel#bc7a14a7-0255-43b0-a209-4b94e4f56e4b</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>../../NetApplication/NetApplication.Application/Integration/EnumTestDto.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>Integration/EnumTestDto.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>cff1407e-306d-40e7-8ca1-4103f9791379</ProjectId>
+      <CorrelationId>Intent.Application.Dtos.ContractEnumModel#83eedb34-4cbb-4fbe-888b-76c7dd7ea1c2</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>../../NetApplication/NetApplication.Application/Integration/ServiceEnum.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>Integration/ServiceEnum.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
       <ProjectId>5a355c5a-dc07-4e9b-bdb5-e609e145f040</ProjectId>
       <CorrelationId>Intent.Application.Contracts.ServiceContract#ebe879b2-a2bb-4cdd-b861-2d057c0698ba</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
@@ -488,6 +504,14 @@
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>../../NetApplication/NetApplication.Domain/Common/UpdateHelper.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>UpdateHelper.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>d03be099-bbf0-409a-94af-286d4ed6d3d1</ProjectId>
+      <CorrelationId>Intent.Entities.DomainEnum#622a5505-9d17-4422-b940-24cf18fad8c3</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>../../NetApplication/NetApplication.Domain/DomainEnum.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>DomainEnum.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>

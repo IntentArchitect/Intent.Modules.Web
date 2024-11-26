@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="32cd0c36-b923-42da-a629-8b09287b6bd2" type="Service Proxy" typeId="07d8d1a9-6b9f-4676-b7d3-8db06299e35c">
+  <name>IntegrationService</name>
+  <display>IntegrationService</display>
+  <isAbstract>false</isAbstract>
+  <sort-children>by-type-then-manually</sort-children>
+  <genericTypes />
+  <isMapped>true</isMapped>
+  <mappedClass isRoot="true">
+    <applicationId>537b3a33-dc26-4e92-8d8c-99951c8f912c</applicationId>
+    <metadataId>81104ae6-2bc5-4bae-b05a-f987b0372d81</metadataId>
+    <mappingSettingsId>df491bea-8a85-4bc9-a93d-41b7abb80ffb</mappingSettingsId>
+    <autoSyncTypeReference>true</autoSyncTypeReference>
+    <mappedPath>
+      <target id="e6b5ef58-5e87-4f38-8fcd-7daf0504e1f4" name="NetApplication.Services" type="package-reference" specialization="Services Package" specializationId="df45eaf6-9202-4c25-8dd5-677e9ba1e906" />
+      <target id="ebe879b2-a2bb-4cdd-b861-2d057c0698ba" name="IntegrationService" type="element" specialization="Service" specializationId="b16578a5-27b1-4047-a8df-f0b783d706bd" />
+    </mappedPath>
+  </mappedClass>
+  <parentFolderId>cbab4e08-fed9-406b-adc1-c1d4a25dffcb</parentFolderId>
+  <packageId>cbab4e08-fed9-406b-adc1-c1d4a25dffcb</packageId>
+  <packageName>User Interface Package</packageName>
+  <traits>
+    <trait id="20ce5b45-803a-4e2d-9f62-53b90f856529" name="[Injectable Service]" />
+  </traits>
+  <stereotypes />
+  <metadata />
+  <childElements>
+    <childElement id="43b31c0b-8ec9-4feb-9482-452c33460278" type="Operation" typeId="aee6811e-b2f6-4562-a8eb-502029f63bc8">
+      <name>EnumTest</name>
+      <display>EnumTest(): EnumTestDto</display>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <typeReference id="8407a3ae-70ea-470d-a2e2-dc464aced6be">
+        <typeId>bc7a14a7-0255-43b0-a209-4b94e4f56e4b</typeId>
+        <isNavigable>true</isNavigable>
+        <isNullable>false</isNullable>
+        <isCollection>false</isCollection>
+        <isRequired>true</isRequired>
+        <typePackageName>NetApplication.Services</typePackageName>
+        <typePackageId>e6b5ef58-5e87-4f38-8fcd-7daf0504e1f4</typePackageId>
+        <stereotypes />
+        <genericTypeParameters />
+      </typeReference>
+      <isMapped>true</isMapped>
+      <mappedClass>
+        <mappingSettingsId>df491bea-8a85-4bc9-a93d-41b7abb80ffb</mappingSettingsId>
+        <autoSyncTypeReference>true</autoSyncTypeReference>
+        <mappedPath>
+          <target id="25621c06-0fc3-47ad-bf74-4d9aced0b381" name="EnumTest" type="element" specialization="Operation" specializationId="e030c97a-e066-40a7-8188-808c275df3cb" />
+        </mappedPath>
+      </mappedClass>
+      <parentFolderId>32cd0c36-b923-42da-a629-8b09287b6bd2</parentFolderId>
+      <packageId>cbab4e08-fed9-406b-adc1-c1d4a25dffcb</packageId>
+      <packageName>User Interface Package</packageName>
+      <traits>
+        <trait id="2b6729eb-e2ae-4b5f-86fe-4f611d1f912e" name="[Processing Handler]" />
+        <trait id="12bec4f8-487a-40f8-a6d2-c519d995eb38" name="[Invokable Service Operation]" />
+      </traits>
+      <stereotypes />
+      <metadata />
+      <childElements />
+    </childElement>
+  </childElements>
+</class>

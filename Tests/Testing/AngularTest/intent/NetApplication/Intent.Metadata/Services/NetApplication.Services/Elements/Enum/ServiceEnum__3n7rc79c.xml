@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="83eedb34-4cbb-4fbe-888b-76c7dd7ea1c2" type="Enum" typeId="85fba0e9-9161-4c85-a603-a229ef312beb">
+  <name>ServiceEnum</name>
+  <display>ServiceEnum</display>
+  <isAbstract>false</isAbstract>
+  <sort-children>by-type-then-manually</sort-children>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>b6fbd5ef-ca59-46ea-ad56-67177fa4e396</parentFolderId>
+  <packageId>e6b5ef58-5e87-4f38-8fcd-7daf0504e1f4</packageId>
+  <packageName>NetApplication.Services</packageName>
+  <stereotypes />
+  <metadata />
+  <childElements>
+    <childElement id="d3682fd4-b5be-451c-ad24-decbe17bdbc7" type="Enum-Literal" typeId="4215f417-25d2-4509-9309-5076a1452eaa">
+      <name>ServiceLit1</name>
+      <display>ServiceLit1 = 1</display>
+      <isAbstract>false</isAbstract>
+      <value>1</value>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>83eedb34-4cbb-4fbe-888b-76c7dd7ea1c2</parentFolderId>
+      <packageId>e6b5ef58-5e87-4f38-8fcd-7daf0504e1f4</packageId>
+      <packageName>NetApplication.Services</packageName>
+      <stereotypes />
+      <metadata />
+      <childElements />
+    </childElement>
+    <childElement id="4c6b7ddb-690f-4df8-a42a-ce1ffc1323d3" type="Enum-Literal" typeId="4215f417-25d2-4509-9309-5076a1452eaa">
+      <name>ServiceLit2</name>
+      <display>ServiceLit2</display>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>83eedb34-4cbb-4fbe-888b-76c7dd7ea1c2</parentFolderId>
+      <packageId>e6b5ef58-5e87-4f38-8fcd-7daf0504e1f4</packageId>
+      <packageName>NetApplication.Services</packageName>
+      <stereotypes />
+      <metadata />
+      <childElements />
+    </childElement>
+  </childElements>
+</class>

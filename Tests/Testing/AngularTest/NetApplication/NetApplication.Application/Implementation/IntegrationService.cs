@@ -127,6 +127,13 @@ namespace NetApplication.Application.Implementation
             return CustomDTO.Create(ReferenceNumber);
         }
 
+        [IntentManaged(Mode.Fully, Body = Mode.Ignore)]
+        public async Task<EnumTestDto> EnumTest(CancellationToken cancellationToken = default)
+        {
+            // TODO: Implement EnumTest (IntegrationService) functionality
+            throw new NotImplementedException("Write your implementation for this service here...");
+        }
+
         public void Dispose()
         {
         }

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="f8517e14-a46a-49b1-afa9-fd8129ae2201" type="Folder" typeId="4d95d53a-8855-4f35-aa82-e312643f5c5f">
+  <name>app</name>
+  <display>app</display>
+  <isAbstract>false</isAbstract>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>d5aab24e-5eb7-4809-851d-84536000cb29</parentFolderId>
+  <stereotypes />
+  <metadata />
+  <childElements />
+</class>
