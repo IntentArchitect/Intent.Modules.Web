@@ -14,9 +14,9 @@ namespace NetApplication.Application.Common.Behaviours
     public class UnhandledExceptionBehaviour<TRequest, TResponse> : IPipelineBehavior<TRequest, TResponse>
         where TRequest : notnull
     {
-        private readonly ILogger<TRequest> _logger;
+        private readonly ILogger<UnhandledExceptionBehaviour<TRequest, TResponse>> _logger;
 
-        public UnhandledExceptionBehaviour(ILogger<TRequest> logger)
+        public UnhandledExceptionBehaviour(ILogger<UnhandledExceptionBehaviour<TRequest, TResponse>> logger)
         {
             _logger = logger;
         }
@@ -24,13 +24,13 @@ namespace NetApplication.Application.Common.Behaviours
         public async Task<TResponse> Handle(
             TRequest request,
             RequestHandlerDelegate<TResponse> next,
-            CancellationToken cancellationToken = default)
+            CancellationToken cancellationToken)
         {
             try
             {
                 return await next();
             }
-            catch (ValidationException ex)
+            catch (ValidationException)
             {
                 // Do not log Fluent Validation Exceptions
                 throw;
@@ -38,7 +38,7 @@ namespace NetApplication.Application.Common.Behaviours
             catch (Exception ex)
             {
                 var requestName = typeof(TRequest).Name;
-                _logger.LogError(ex, "CleanArchitecture Request: Unhandled Exception for Request {Name} {@Request}", requestName, request);
+                _logger.LogError(ex, "NetApplication Request: Unhandled Exception for Request {Name} {@Request}", requestName, request);
                 throw;
             }
         }

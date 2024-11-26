@@ -11,7 +11,7 @@ using NetApplication.Application.NetClient;
 
 namespace NetApplication.Application.Interfaces
 {
-    public interface INetClientService : IDisposable
+    public interface INetClientService
     {
         Task<Guid> CreateClient(ClientCreateDto dto, CancellationToken cancellationToken = default);
         Task<ClientDto> FindClientById(Guid id, CancellationToken cancellationToken = default);

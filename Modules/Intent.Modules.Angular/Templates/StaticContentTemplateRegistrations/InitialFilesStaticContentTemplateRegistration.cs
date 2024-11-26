@@ -21,7 +21,7 @@ namespace Intent.Modules.Angular.Templates.StaticContentTemplateRegistrations
         public override string ContentSubFolder => "InitialFiles";
 
 
-        public override string[] BinaryFileGlobbingPatterns => new string[] { "*.jpg", "*.png", "*.xlsx", "*.ico", "*.pdf" };
+        public override string[] BinaryFileGlobbingPatterns => new string[] { "**/*.jpg", "**/*.png", "**/*.xlsx", "**/*.ico", "**/*.pdf" };
 
 
         [IntentManaged(Mode.Fully, Body = Mode.Ignore)]

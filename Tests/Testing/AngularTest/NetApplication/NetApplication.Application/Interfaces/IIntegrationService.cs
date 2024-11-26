@@ -10,7 +10,7 @@ using NetApplication.Application.Integration;
 
 namespace NetApplication.Application.Interfaces
 {
-    public interface IIntegrationService : IDisposable
+    public interface IIntegrationService
     {
         Task<CustomDTO> QueryParamOp(string param1, int param2, CancellationToken cancellationToken = default);
         Task HeaderParamOp(string param1, CancellationToken cancellationToken = default);

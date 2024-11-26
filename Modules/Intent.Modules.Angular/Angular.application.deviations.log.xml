@@ -9,7 +9,7 @@
       <updatedByDisplayName>Gareth Baars</updatedByDisplayName>
       <updatedAt>2024-11-15T09:20:58.1209953Z</updatedAt>
       <deviationsHash>95F024BBB9B93CC06F17BC55CA2B849AF9EDD9596525892D00915BACFA8C917B</deviationsHash>
-      <fileHash>D31EA11B3C1C2C30FDE0E1F89BC8AEC66F6AA57F17E8FB20D2FDDEDCA61D76C2</fileHash>
+      <fileHash>CB8A2E34B121B32C9D9523EB8C66E67501477F568B4E4E5514C79F0B654605B9</fileHash>
     </file>
     <file>
       <correlationId>Intent.ModuleBuilder.TemplateRegistration.FilePerModel#3d1fe1c1-b396-4c8b-bc0f-f7ab2537ae7e</correlationId>
@@ -19,7 +19,7 @@
       <updatedByDisplayName>Gareth Baars</updatedByDisplayName>
       <updatedAt>2024-11-15T09:20:58.1210247Z</updatedAt>
       <deviationsHash>95F024BBB9B93CC06F17BC55CA2B849AF9EDD9596525892D00915BACFA8C917B</deviationsHash>
-      <fileHash>E935AB8C62F87CAED87284688E529785C006A590CD4E3CA54C273AE29BC036B6</fileHash>
+      <fileHash>767C9D146566BDDB55F92458A6DAC2EAB24204582C91ABA6C07053E26C11625A</fileHash>
     </file>
     <file>
       <correlationId>Intent.ModuleBuilder.Html.Templates.HtmlFileTemplatePartial#25779bc1-5d6b-4fe5-89fb-97d75e8df259</correlationId>
@@ -29,7 +29,7 @@
       <updatedByDisplayName>Gareth Baars</updatedByDisplayName>
       <updatedAt>2024-11-15T09:20:58.1209791Z</updatedAt>
       <deviationsHash>6417C952E26CC9BF22B8461734330490FF996A2577985CE3395A263B6817FC51</deviationsHash>
-      <fileHash>AEB3535163E6339E405860DE952A25E8C53379DEA95E4F1CD95127B66E68AEC4</fileHash>
+      <fileHash>3557A23BF3DF2A7B404D3E863D1D450E17ED35BD6043E02D696146DFE254A678</fileHash>
     </file>
     <file>
       <correlationId>Intent.ModuleBuilder.TemplateRegistration.FilePerModel#25779bc1-5d6b-4fe5-89fb-97d75e8df259</correlationId>
@@ -39,7 +39,7 @@
       <updatedByDisplayName>Gareth Baars</updatedByDisplayName>
       <updatedAt>2024-11-15T09:20:58.1210325Z</updatedAt>
       <deviationsHash>95F024BBB9B93CC06F17BC55CA2B849AF9EDD9596525892D00915BACFA8C917B</deviationsHash>
-      <fileHash>479C0A6F5C12F96336234908F9F2717DCADCB5FA0E00539DAA6836C67E8CB5AB</fileHash>
+      <fileHash>ED42D81C3D3E6BE39CE7A0B288E627B8EE5488937D1AE93B55F3AE71D6D98BF6</fileHash>
     </file>
     <file>
       <correlationId>Intent.ModuleBuilder.Templates.TemplateDecoratorContract#b1c75969-a89e-41c6-a4b1-3283dc6b84ff</correlationId>
@@ -59,7 +59,7 @@
       <updatedByDisplayName>Gareth Baars</updatedByDisplayName>
       <updatedAt>2024-11-15T09:20:58.1211868Z</updatedAt>
       <deviationsHash>95F024BBB9B93CC06F17BC55CA2B849AF9EDD9596525892D00915BACFA8C917B</deviationsHash>
-      <fileHash>45630C210FFE4BF1376824DBCF7B07B6634397F77D13AAA027AD5F5DFB4AF545</fileHash>
+      <fileHash>7F2CB456F766A97FD59F7976C9C1ECDBAA695BD53257B0F59851A62F96E9DA38</fileHash>
     </file>
     <file>
       <correlationId>Intent.ModuleBuilder.TemplateRegistration.FilePerModel#aa06d3ae-2965-4101-8f8b-8db7da8a0146</correlationId>
@@ -69,7 +69,7 @@
       <updatedByDisplayName>Gareth Baars</updatedByDisplayName>
       <updatedAt>2024-11-15T09:20:58.1210401Z</updatedAt>
       <deviationsHash>95F024BBB9B93CC06F17BC55CA2B849AF9EDD9596525892D00915BACFA8C917B</deviationsHash>
-      <fileHash>DEBBB006C71AA20B55212AFCEF85DD5F322615FF476EAC53F2C7FA698F20AC3A</fileHash>
+      <fileHash>89A7B3BE4531F550B13EF09D202C6E444E0DE96335860A09A811B754DE9ECF47</fileHash>
     </file>
     <file>
       <correlationId>Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial#ba59d6a8-a629-4feb-9e5b-c3498b89e9ec</correlationId>
@@ -169,7 +169,7 @@
       <updatedByDisplayName>Gareth Baars</updatedByDisplayName>
       <updatedAt>2024-11-15T09:20:58.1210811Z</updatedAt>
       <deviationsHash>95F024BBB9B93CC06F17BC55CA2B849AF9EDD9596525892D00915BACFA8C917B</deviationsHash>
-      <fileHash>EC3959295D0B0C5FA8B10E2F7D830E00FEFD779EF695619F51CB982BCA50699C</fileHash>
+      <fileHash>ABE061E62AE191F06290C2AB39089A9D78137C20886864C8D7EAE715397CC7E8</fileHash>
     </file>
     <file>
       <correlationId>Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial#84287d05-962d-4c48-a274-5057407cd4aa</correlationId>

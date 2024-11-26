@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package>
   <id>Intent.Angular</id>
-  <version>4.0.0-alpha.12</version>
+  <version>4.0.0-alpha.13</version>
   <supportedClientVersions>[4.3.0-a, 5.0.0-a)</supportedClientVersions>
   <summary>Experimental Angular automation systems</summary>
   <description>Experimental Angular automation systems</description>

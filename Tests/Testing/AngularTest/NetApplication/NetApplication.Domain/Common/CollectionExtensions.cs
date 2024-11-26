@@ -24,27 +24,25 @@ namespace NetApplication.Domain.Common
         /// <returns>A <see cref="ComparisonResult{TChanged, TOriginal}"/> object that describes the differences between the two collections.</returns>
         public static ComparisonResult<TChanged, TOriginal> CompareCollections<TChanged, TOriginal>(
             this ICollection<TOriginal> baseCollection,
-            ICollection<TChanged> changedCollection,
+            IEnumerable<TChanged> changedCollection,
             Func<TOriginal, TChanged, bool> equalityCheck)
         {
-            if (changedCollection == null)
-            {
-                changedCollection = new List<TChanged>();
-            }
+            changedCollection ??= new List<TChanged>();
 
             var toRemove = baseCollection.Where(baseElement => changedCollection.All(changedElement => !equalityCheck(baseElement, changedElement))).ToList();
             var toAdd = changedCollection.Where(changedElement => baseCollection.All(baseElement => !equalityCheck(baseElement, changedElement))).ToList();
 
             var possibleEdits = new List<Match<TChanged, TOriginal>>();
+
             foreach (var changedElement in changedCollection)
             {
                 var match = baseCollection.FirstOrDefault(baseElement => equalityCheck(baseElement, changedElement));
-                if (match != null)
+
+                if (match is not null)
                 {
                     possibleEdits.Add(new Match<TChanged, TOriginal>(changedElement, match));
                 }
             }
-
             return new ComparisonResult<TChanged, TOriginal>(toAdd, toRemove, possibleEdits);
         }
 
@@ -61,7 +59,9 @@ namespace NetApplication.Domain.Common
             /// <param name="toAdd">A collection of elements to be added.</param>
             /// <param name="toRemove">A collection of elements to be removed.</param>
             /// <param name="possibleEdits">A collection of matched elements that might have edits.</param>
-            public ComparisonResult(ICollection<TChanged> toAdd, ICollection<TOriginal> toRemove, ICollection<Match<TChanged, TOriginal>> possibleEdits)
+            public ComparisonResult(ICollection<TChanged> toAdd,
+                ICollection<TOriginal> toRemove,
+                ICollection<Match<TChanged, TOriginal>> possibleEdits)
             {
                 ToAdd = toAdd;
                 ToRemove = toRemove;
@@ -86,7 +86,7 @@ namespace NetApplication.Domain.Common
             /// <returns><see langword="true" /> if there are changes; otherwise, <see langword="false" />.</returns>
             public bool HasChanges()
             {
-                return ToAdd.Any() || ToRemove.Any() || PossibleEdits.Any();
+                return ToAdd.Count > 0 || ToRemove.Count > 0 || PossibleEdits.Count > 0;
             }
         }
 
