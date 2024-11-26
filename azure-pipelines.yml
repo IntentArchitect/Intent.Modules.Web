@@ -36,17 +36,10 @@ variables:
 - name: 'error-logging-command'
   value: '##vso[task.logissue type=error;]{@m} {@x}\n'
 
-# Can't use Linux since the line endings in our TypeScript weavers causes issues on Linux.
-# Additionally, want to avoid using the Azure Managed pool with anything except Linux as
-# it only allows 1 agent to run at a time and switching back and forth between Windows and
-# Linux can add a lot of time to the build.
-# pool:
-#   name: $(BuildPool.AzureManaged)
-#   demands:
-#   - 'ImageOverride -equals ubuntu-latest'
 pool:
-  name: 'Azure Pipelines'
-  vmImage: 'windows-latest'
+  name: $(BuildPool.AzureManaged)
+  demands:
+  - 'ImageOverride -equals ubuntu-latest'
 
 steps:
 
@@ -168,7 +161,7 @@ steps:
     script: dotnet tool install Intent.SoftwareFactory.CLI --global --prerelease
 
 - task: PowerShell@2
-  displayName: 'Template Testing'
+  displayName: 'Run SF CLI on tests solution'
   env:
     INTENT_USER: $(intent-architect-user)
     INTENT_PASS: $(intent-architect-password)
@@ -179,7 +172,7 @@ steps:
     script: intent-cli ensure-no-outstanding-changes "$Env:INTENT_USER" "$Env:INTENT_PASS" "$Env:INTENT_SOLUTION_PATH" --check-deviations
 
 - task: PowerShell@2
-  displayName: 'Install Intent packager'
+  displayName: 'Install Intent Packager'
   condition: and(succeeded(), in('True', variables.isMaster, variables.isDevelopment))
   inputs:
     targetType: 'inline'
@@ -243,7 +236,7 @@ steps:
     command: 'custom'
     custom: 'nuget'
     arguments: >
-      push $(Build.ArtifactStagingDirectory)\*.nupkg
+      push $(Build.ArtifactStagingDirectory)/*.nupkg
       -s https://api.nuget.org/v3/index.json
       -k $(nuget-api-key-intentarchitect)
       --skip-duplicate
