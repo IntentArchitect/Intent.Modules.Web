@@ -4,10 +4,12 @@ using Intent.Modelers.Types.ServiceProxies.Api;
 using Intent.Modules.Angular.ServiceProxies.Templates.AngularDTO;
 using Intent.Modules.Angular.ServiceProxies.Templates.AngularServiceProxy;
 using Intent.Modules.Angular.ServiceProxies.Templates.ApiService;
+using Intent.Modules.Angular.ServiceProxies.Templates.EnumContract;
 using Intent.Modules.Angular.ServiceProxies.Templates.Environment;
 using Intent.Modules.Angular.ServiceProxies.Templates.JsonResponse;
 using Intent.Modules.Angular.ServiceProxies.Templates.PagedResult;
 using Intent.Modules.Common.Templates;
+using Intent.Modules.Common.Types.Api;
 using Intent.RoslynWeaver.Attributes;
 
 [assembly: DefaultIntentManaged(Mode.Fully)]
@@ -41,6 +43,16 @@ namespace Intent.Modules.Angular.ServiceProxies.Templates
         public static string GetApiServiceName(this IIntentTemplate template)
         {
             return template.GetTypeName(ApiServiceTemplate.TemplateId);
+        }
+
+        public static string GetEnumContractName<T>(this IIntentTemplate<T> template) where T : EnumModel
+        {
+            return template.GetTypeName(EnumContractTemplate.TemplateId, template.Model);
+        }
+
+        public static string GetEnumContractName(this IIntentTemplate template, EnumModel model)
+        {
+            return template.GetTypeName(EnumContractTemplate.TemplateId, model);
         }
 
         public static string GetEnvironmentName(this IIntentTemplate template)

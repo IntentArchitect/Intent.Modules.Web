@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package>
   <id>Intent.Angular.ServiceProxies</id>
-  <version>4.0.0-alpha.12</version>
+  <version>4.0.0-alpha.13</version>
   <supportedClientVersions>[4.3.0-a, 5.0.0-a)</supportedClientVersions>
   <summary>Introduces Proxy clients that interact with backend service APIs</summary>
   <description>Introduces Proxy clients that interact with backend service APIs</description>
@@ -21,6 +21,10 @@
     <template id="Intent.Angular.ServiceProxies.ApiService" externalReference="2085bb25-5120-4f1e-a836-5b6160ff6f9b">
       <role>Front End</role>
       <location>src/app/service-proxies</location>
+    </template>
+    <template id="Intent.Angular.ServiceProxies.EnumContract" externalReference="72d85621-1285-4fd0-81d5-abfe27381111">
+      <role>Front End</role>
+      <location>src/app/service-proxies/models</location>
     </template>
     <template id="Intent.Angular.ServiceProxies.Environment" externalReference="2031fe7b-cf58-4142-9694-a51a8b84f615">
       <role>Front End</role>
@@ -46,7 +50,7 @@
     <dependency id="Intent.Code.Weaving.Html" version="1.0.0" />
     <dependency id="Intent.Code.Weaving.TypeScript" version="1.0.2" />
     <dependency id="Intent.Common" version="3.7.2" />
-    <dependency id="Intent.Common.Types" version="3.4.0" />
+    <dependency id="Intent.Common.Types" version="4.1.0" />
     <dependency id="Intent.Common.TypeScript" version="4.0.0" />
     <dependency id="Intent.Metadata.WebApi" version="4.2.5" />
     <dependency id="Intent.Modelers.Domain" version="3.11.1" />
