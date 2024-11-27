@@ -22,7 +22,7 @@ namespace NetApplication.Application.Common.Models
 
         public static Result Success()
         {
-            return new Result(true, Array.Empty<string>());
+            return new Result(true, []);
         }
 
         public static Result Failure(IEnumerable<string> errors)
