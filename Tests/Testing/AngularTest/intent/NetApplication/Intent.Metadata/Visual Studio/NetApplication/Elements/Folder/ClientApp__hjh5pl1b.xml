@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
-<class id="c7d59b34-5d39-4bce-b6b4-e4855086a792" type="Folder" typeId="3407a825-1331-4f3f-89a4-901903ed97ce">
-  <name>Exceptions</name>
-  <display>Exceptions</display>
+<class id="cdd5bbe0-0194-493f-93e6-f320f1ae1f27" type="Folder" typeId="3407a825-1331-4f3f-89a4-901903ed97ce">
+  <name>ClientApp</name>
+  <display>ClientApp</display>
+  <externalReference>060a63b7-71dc-488a-8c31-3e0e32c9e87d</externalReference>
   <isAbstract>false</isAbstract>
   <sort-children>by-type-then-by-name</sort-children>
   <genericTypes />
   <isMapped>false</isMapped>
-  <parentFolderId>38e9f408-2d0c-44b6-8ed2-1904fd5acfe3</parentFolderId>
+  <parentFolderId>07d957ac-c44e-4d5c-bf38-8e9ae1768a6d</parentFolderId>
   <packageId>fd0a16cc-586b-4c36-a533-d2769511908d</packageId>
   <packageName>NetApplication</packageName>
   <stereotypes>
@@ -21,20 +22,18 @@
   </stereotypes>
   <metadata />
   <childElements>
-    <childElement id="8bf36604-6f0d-4be9-a0ff-8a1bb265a465" type="Template Output" typeId="d421c322-7a51-4094-89fa-e5d8a0a97b27">
-      <name>Intent.Application.Identity.ForbiddenAccessException</name>
-      <display>Intent.Application.Identity.ForbiddenAccessException</display>
-      <externalReference>Intent.Application.Identity</externalReference>
+    <childElement id="8c0f2f77-1d63-42f9-a773-7576af4ed33a" type="Role" typeId="025e933b-b602-4b6d-95ab-0ec36ae940da">
+      <name>Front End</name>
+      <display>Front End</display>
+      <externalReference>164d4bd8-c4f0-4ca1-baa1-2549cc348c20</externalReference>
       <isAbstract>false</isAbstract>
       <genericTypes />
       <isMapped>false</isMapped>
-      <parentFolderId>c7d59b34-5d39-4bce-b6b4-e4855086a792</parentFolderId>
+      <parentFolderId>cdd5bbe0-0194-493f-93e6-f320f1ae1f27</parentFolderId>
       <packageId>fd0a16cc-586b-4c36-a533-d2769511908d</packageId>
       <packageName>NetApplication</packageName>
       <stereotypes />
-      <metadata>
-        <entry key="status" value="assigned" />
-      </metadata>
+      <metadata />
       <childElements />
     </childElement>
   </childElements>
