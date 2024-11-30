@@ -225,7 +225,7 @@
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
-      <ProjectId>698215d3-bf76-4b81-b918-c0f9ad52f524</ProjectId>
+      <ProjectId>f2e8f357-1f83-4957-8b39-0f7e883c0eb7</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.IModSpecFile</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Intent.Modelers.WebClient.Angular.imodspec</ApplicationRelativeFilePath>
@@ -233,8 +233,8 @@
       <IsIgnored>true</IsIgnored>
     </FileLog>
     <FileLog>
-      <ProjectId>698215d3-bf76-4b81-b918-c0f9ad52f524</ProjectId>
-      <CorrelationId>Intent.VisualStudio.Projects.CoreLibrary.CSProject#698215d3-bf76-4b81-b918-c0f9ad52f524</CorrelationId>
+      <ProjectId>f2e8f357-1f83-4957-8b39-0f7e883c0eb7</ProjectId>
+      <CorrelationId>Intent.VisualStudio.Projects.CSharpProject#f2e8f357-1f83-4957-8b39-0f7e883c0eb7</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Intent.Modules.Modelers.WebClient.Angular.csproj</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Intent.Modules.Modelers.WebClient.Angular.csproj</ProjectRelativeFilePath>

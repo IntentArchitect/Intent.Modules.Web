@@ -1,0 +1,236 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="3ea2f27b-c218-4e88-b6f0-e88b0e436e89" type="Service Proxy" typeId="07d8d1a9-6b9f-4676-b7d3-8db06299e35c">
+  <name>TestCaseService</name>
+  <display>TestCaseService</display>
+  <isAbstract>false</isAbstract>
+  <sort-children>by-type-then-manually</sort-children>
+  <genericTypes />
+  <isMapped>true</isMapped>
+  <mappedClass isRoot="true">
+    <applicationId>537b3a33-dc26-4e92-8d8c-99951c8f912c</applicationId>
+    <metadataId>81104ae6-2bc5-4bae-b05a-f987b0372d81</metadataId>
+    <mappingSettingsId>df491bea-8a85-4bc9-a93d-41b7abb80ffb</mappingSettingsId>
+    <autoSyncTypeReference>true</autoSyncTypeReference>
+    <mappedPath>
+      <target id="f2f69313-d9ac-4497-891d-d310e05aea24" name="TestCaseService" type="element" specialization="Service" specializationId="b16578a5-27b1-4047-a8df-f0b783d706bd" />
+    </mappedPath>
+  </mappedClass>
+  <parentFolderId>cbab4e08-fed9-406b-adc1-c1d4a25dffcb</parentFolderId>
+  <packageId>cbab4e08-fed9-406b-adc1-c1d4a25dffcb</packageId>
+  <packageName>User Interface Package</packageName>
+  <traits>
+    <trait id="20ce5b45-803a-4e2d-9f62-53b90f856529" name="[Injectable Service]" />
+  </traits>
+  <stereotypes />
+  <metadata />
+  <childElements>
+    <childElement id="aaa35039-f1f3-4b56-937f-d2bf9ab60663" type="Operation" typeId="aee6811e-b2f6-4562-a8eb-502029f63bc8">
+      <name>EnumTest</name>
+      <display>EnumTest(): EnumTestDto</display>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <typeReference id="bd66e274-fe0e-45fd-9e14-488352566388">
+        <typeId>bc7a14a7-0255-43b0-a209-4b94e4f56e4b</typeId>
+        <isNavigable>true</isNavigable>
+        <isNullable>false</isNullable>
+        <isCollection>false</isCollection>
+        <isRequired>true</isRequired>
+        <typePackageName>NetApplication.Services</typePackageName>
+        <typePackageId>e6b5ef58-5e87-4f38-8fcd-7daf0504e1f4</typePackageId>
+        <stereotypes />
+        <genericTypeParameters />
+      </typeReference>
+      <isMapped>true</isMapped>
+      <mappedClass>
+        <mappingSettingsId>df491bea-8a85-4bc9-a93d-41b7abb80ffb</mappingSettingsId>
+        <autoSyncTypeReference>true</autoSyncTypeReference>
+        <mappedPath>
+          <target id="25621c06-0fc3-47ad-bf74-4d9aced0b381" name="EnumTest" type="element" specialization="Operation" specializationId="e030c97a-e066-40a7-8188-808c275df3cb" />
+        </mappedPath>
+      </mappedClass>
+      <parentFolderId>3ea2f27b-c218-4e88-b6f0-e88b0e436e89</parentFolderId>
+      <packageId>cbab4e08-fed9-406b-adc1-c1d4a25dffcb</packageId>
+      <packageName>User Interface Package</packageName>
+      <traits>
+        <trait id="2b6729eb-e2ae-4b5f-86fe-4f611d1f912e" name="[Processing Handler]" />
+        <trait id="12bec4f8-487a-40f8-a6d2-c519d995eb38" name="[Invokable Service Operation]" />
+      </traits>
+      <stereotypes />
+      <metadata />
+      <childElements />
+    </childElement>
+    <childElement id="42168d0e-96bc-4f6e-b27d-0c53441a2e99" type="Operation" typeId="aee6811e-b2f6-4562-a8eb-502029f63bc8">
+      <name>Download</name>
+      <display>Download(): FileDownloadDto</display>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <typeReference id="acc3cc79-372b-45ad-8b92-75fe3d716e54">
+        <typeId>b9f795e8-d3f0-406b-b6dd-a1d787152695</typeId>
+        <isNavigable>true</isNavigable>
+        <isNullable>false</isNullable>
+        <isCollection>false</isCollection>
+        <isRequired>true</isRequired>
+        <typePackageName>NetApplication.Services</typePackageName>
+        <typePackageId>e6b5ef58-5e87-4f38-8fcd-7daf0504e1f4</typePackageId>
+        <stereotypes />
+        <genericTypeParameters />
+      </typeReference>
+      <isMapped>true</isMapped>
+      <mappedClass>
+        <mappingSettingsId>df491bea-8a85-4bc9-a93d-41b7abb80ffb</mappingSettingsId>
+        <autoSyncTypeReference>true</autoSyncTypeReference>
+        <mappedPath>
+          <target id="363966ff-39ce-4891-bd9e-2bf86640ba06" name="Download" type="element" specialization="Operation" specializationId="e030c97a-e066-40a7-8188-808c275df3cb" />
+        </mappedPath>
+      </mappedClass>
+      <parentFolderId>3ea2f27b-c218-4e88-b6f0-e88b0e436e89</parentFolderId>
+      <packageId>cbab4e08-fed9-406b-adc1-c1d4a25dffcb</packageId>
+      <packageName>User Interface Package</packageName>
+      <traits>
+        <trait id="2b6729eb-e2ae-4b5f-86fe-4f611d1f912e" name="[Processing Handler]" />
+        <trait id="12bec4f8-487a-40f8-a6d2-c519d995eb38" name="[Invokable Service Operation]" />
+      </traits>
+      <stereotypes />
+      <metadata />
+      <childElements />
+    </childElement>
+    <childElement id="6bb41879-b88e-4047-ada0-09a6a752dced" type="Operation" typeId="aee6811e-b2f6-4562-a8eb-502029f63bc8">
+      <name>Upload</name>
+      <display>Upload(content: &lt;type not found&gt;, filename: string?, contentType: string?, contentLength: long?): void</display>
+      <isAbstract>false</isAbstract>
+      <sort-children>by-type-then-manually</sort-children>
+      <genericTypes />
+      <typeReference id="5fae1688-9f51-4b66-abfb-b77c642dfa0e">
+        <isNavigable>true</isNavigable>
+        <isNullable>false</isNullable>
+        <isCollection>false</isCollection>
+        <isRequired>true</isRequired>
+        <stereotypes />
+        <genericTypeParameters />
+      </typeReference>
+      <isMapped>true</isMapped>
+      <mappedClass>
+        <mappingSettingsId>df491bea-8a85-4bc9-a93d-41b7abb80ffb</mappingSettingsId>
+        <autoSyncTypeReference>true</autoSyncTypeReference>
+        <mappedPath>
+          <target id="179fe4ce-0237-48a4-bf79-fea0e920a7b1" name="Upload" type="element" specialization="Operation" specializationId="e030c97a-e066-40a7-8188-808c275df3cb" />
+        </mappedPath>
+      </mappedClass>
+      <parentFolderId>3ea2f27b-c218-4e88-b6f0-e88b0e436e89</parentFolderId>
+      <packageId>cbab4e08-fed9-406b-adc1-c1d4a25dffcb</packageId>
+      <packageName>User Interface Package</packageName>
+      <traits>
+        <trait id="2b6729eb-e2ae-4b5f-86fe-4f611d1f912e" name="[Processing Handler]" />
+        <trait id="12bec4f8-487a-40f8-a6d2-c519d995eb38" name="[Invokable Service Operation]" />
+      </traits>
+      <stereotypes />
+      <metadata />
+      <childElements>
+        <childElement id="7bc50d64-d73c-4a32-8ee3-a48428cf890d" type="Parameter" typeId="f11273c1-217f-4f42-b690-3d8b488f95a8">
+          <name>content</name>
+          <display>content: &lt;type not found&gt;</display>
+          <isAbstract>false</isAbstract>
+          <genericTypes />
+          <typeReference id="ddad9392-555f-4f29-9fdb-fcecedaed11e">
+            <typeId>fd4ead8e-92e9-47c2-97a6-81d898525ea0</typeId>
+            <isNavigable>true</isNavigable>
+            <isNullable>false</isNullable>
+            <isCollection>false</isCollection>
+            <isRequired>true</isRequired>
+            <typePackageName>Intent.Metadata.WebApi</typePackageName>
+            <typePackageId>0011387a-b122-45d7-9cdb-8e21b315ab9f</typePackageId>
+            <stereotypes />
+            <genericTypeParameters />
+          </typeReference>
+          <isMapped>false</isMapped>
+          <parentFolderId>6bb41879-b88e-4047-ada0-09a6a752dced</parentFolderId>
+          <packageId>cbab4e08-fed9-406b-adc1-c1d4a25dffcb</packageId>
+          <packageName>User Interface Package</packageName>
+          <stereotypes />
+          <metadata>
+            <entry key="endpoint-input-id" value="f0a34070-bc97-4470-b485-a36db762652d" />
+          </metadata>
+          <childElements />
+        </childElement>
+        <childElement id="ff09c50c-6d16-445d-aa9f-91899632977d" type="Parameter" typeId="f11273c1-217f-4f42-b690-3d8b488f95a8">
+          <name>filename</name>
+          <display>filename: string?</display>
+          <isAbstract>false</isAbstract>
+          <genericTypes />
+          <typeReference id="16fbd93c-3943-44c9-baa3-f6620c5f8958">
+            <typeId>d384db9c-a279-45e1-801e-e4e8099625f2</typeId>
+            <isNavigable>true</isNavigable>
+            <isNullable>true</isNullable>
+            <isCollection>false</isCollection>
+            <isRequired>true</isRequired>
+            <typePackageName>Intent.Common.Types</typePackageName>
+            <typePackageId>870ad967-cbd4-4ea9-b86d-9c3a5d55ea67</typePackageId>
+            <stereotypes />
+            <genericTypeParameters />
+          </typeReference>
+          <isMapped>false</isMapped>
+          <parentFolderId>6bb41879-b88e-4047-ada0-09a6a752dced</parentFolderId>
+          <packageId>cbab4e08-fed9-406b-adc1-c1d4a25dffcb</packageId>
+          <packageName>User Interface Package</packageName>
+          <stereotypes />
+          <metadata>
+            <entry key="endpoint-input-id" value="e3f4d95a-2a83-4b27-a7f9-712b4bb6ebb8" />
+          </metadata>
+          <childElements />
+        </childElement>
+        <childElement id="65f47da8-5d3b-4e82-8fbc-18371835713d" type="Parameter" typeId="f11273c1-217f-4f42-b690-3d8b488f95a8">
+          <name>contentType</name>
+          <display>contentType: string?</display>
+          <isAbstract>false</isAbstract>
+          <genericTypes />
+          <typeReference id="18069195-fce8-4b04-9a5e-3815a0a1cad9">
+            <typeId>d384db9c-a279-45e1-801e-e4e8099625f2</typeId>
+            <isNavigable>true</isNavigable>
+            <isNullable>true</isNullable>
+            <isCollection>false</isCollection>
+            <isRequired>true</isRequired>
+            <typePackageName>Intent.Common.Types</typePackageName>
+            <typePackageId>870ad967-cbd4-4ea9-b86d-9c3a5d55ea67</typePackageId>
+            <stereotypes />
+            <genericTypeParameters />
+          </typeReference>
+          <isMapped>false</isMapped>
+          <parentFolderId>6bb41879-b88e-4047-ada0-09a6a752dced</parentFolderId>
+          <packageId>cbab4e08-fed9-406b-adc1-c1d4a25dffcb</packageId>
+          <packageName>User Interface Package</packageName>
+          <stereotypes />
+          <metadata>
+            <entry key="endpoint-input-id" value="0fe9ea15-aebe-4bda-8bee-fc5df711a4c6" />
+          </metadata>
+          <childElements />
+        </childElement>
+        <childElement id="aa3b3308-afdd-41ba-bfa2-890ea8642a89" type="Parameter" typeId="f11273c1-217f-4f42-b690-3d8b488f95a8">
+          <name>contentLength</name>
+          <display>contentLength: long?</display>
+          <isAbstract>false</isAbstract>
+          <genericTypes />
+          <typeReference id="80ea85d9-9456-4cb6-a9c5-74c2c9a4b995">
+            <typeId>33013006-E404-48C2-AC46-24EF5A5774FD</typeId>
+            <isNavigable>true</isNavigable>
+            <isNullable>true</isNullable>
+            <isCollection>false</isCollection>
+            <isRequired>true</isRequired>
+            <typePackageName>Intent.Common.Types</typePackageName>
+            <typePackageId>870ad967-cbd4-4ea9-b86d-9c3a5d55ea67</typePackageId>
+            <stereotypes />
+            <genericTypeParameters />
+          </typeReference>
+          <isMapped>false</isMapped>
+          <parentFolderId>6bb41879-b88e-4047-ada0-09a6a752dced</parentFolderId>
+          <packageId>cbab4e08-fed9-406b-adc1-c1d4a25dffcb</packageId>
+          <packageName>User Interface Package</packageName>
+          <stereotypes />
+          <metadata>
+            <entry key="endpoint-input-id" value="22896a09-fd84-439d-8eeb-870abda9293b" />
+          </metadata>
+          <childElements />
+        </childElement>
+      </childElements>
+    </childElement>
+  </childElements>
+</class>

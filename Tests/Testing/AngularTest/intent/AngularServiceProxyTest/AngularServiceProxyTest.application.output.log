@@ -11,19 +11,19 @@
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
-      <ProjectId>3f943180-f2bc-492a-bc8f-3cf7a52d4ce4</ProjectId>
-      <CorrelationId>Intent.Angular.ServiceProxies.AngularServiceProxy#32cd0c36-b923-42da-a629-8b09287b6bd2</CorrelationId>
-      <OverwriteBehaviour>always</OverwriteBehaviour>
-      <ApplicationRelativeFilePath>../../AngularServiceProxyTest/src/app/service-proxies/integration-service.service.ts</ApplicationRelativeFilePath>
-      <ProjectRelativeFilePath>integration-service.service.ts</ProjectRelativeFilePath>
-      <IsIgnored>false</IsIgnored>
-    </FileLog>
-    <FileLog>
       <ProjectId>d49171f1-b91b-4267-aef3-781607bb198d</ProjectId>
       <CorrelationId>Intent.Angular.ServiceProxies.EnumContract#622a5505-9d17-4422-b940-24cf18fad8c3</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>../../AngularServiceProxyTest/src/app/service-proxies/models/domain-enum.ts</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>domain-enum.ts</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>d49171f1-b91b-4267-aef3-781607bb198d</ProjectId>
+      <CorrelationId>Intent.Angular.ServiceProxies.AngularDTO#b9f795e8-d3f0-406b-b6dd-a1d787152695</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>../../AngularServiceProxyTest/src/app/service-proxies/models/models/net-application/services/common/file-download.dto.ts</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>models/net-application/services/common/file-download.dto.ts</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
@@ -48,6 +48,14 @@
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>../../AngularServiceProxyTest/src/app/service-proxies/models/service-enum.ts</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>service-enum.ts</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>3f943180-f2bc-492a-bc8f-3cf7a52d4ce4</ProjectId>
+      <CorrelationId>Intent.Angular.ServiceProxies.AngularServiceProxy#3ea2f27b-c218-4e88-b6f0-e88b0e436e89</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>../../AngularServiceProxyTest/src/app/service-proxies/test-case-service.service.ts</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>test-case-service.service.ts</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>

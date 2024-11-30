@@ -9,7 +9,7 @@
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
-      <ProjectId>52d04f2f-7ff6-4102-bfc1-fcb55203dad0</ProjectId>
+      <ProjectId>18e77ab4-2c34-417f-b98b-96fe554094ba</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.Templates.Api.ApiPackageExtensionModel#b8aec31f-9a62-44c7-ad75-2714327799f9</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>AngularAppExtensionsModel.cs</ApplicationRelativeFilePath>
@@ -153,7 +153,7 @@
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
-      <ProjectId>52d04f2f-7ff6-4102-bfc1-fcb55203dad0</ProjectId>
+      <ProjectId>18e77ab4-2c34-417f-b98b-96fe554094ba</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.IModSpecFile</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Intent.Angular.Layout.imodspec</ApplicationRelativeFilePath>
@@ -161,8 +161,8 @@
       <IsIgnored>true</IsIgnored>
     </FileLog>
     <FileLog>
-      <ProjectId>52d04f2f-7ff6-4102-bfc1-fcb55203dad0</ProjectId>
-      <CorrelationId>Intent.VisualStudio.Projects.CoreLibrary.CSProject#52d04f2f-7ff6-4102-bfc1-fcb55203dad0</CorrelationId>
+      <ProjectId>18e77ab4-2c34-417f-b98b-96fe554094ba</ProjectId>
+      <CorrelationId>Intent.VisualStudio.Projects.CSharpProject#18e77ab4-2c34-417f-b98b-96fe554094ba</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Intent.Modules.Angular.Layout.csproj</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Intent.Modules.Angular.Layout.csproj</ProjectRelativeFilePath>

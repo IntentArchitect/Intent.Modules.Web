@@ -6,7 +6,7 @@ Project("{52B49DB5-3EA9-4095-B1A7-DF1AC22D7DAE}") = "Intent.Modules.Modelers.Web
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intent.Modules.Angular", "Intent.Modules.Angular\Intent.Modules.Angular.csproj", "{3BA65C1B-BA94-4A8F-B35A-C9B9C401975E}"
 EndProject
-Project("{52B49DB5-3EA9-4095-B1A7-DF1AC22D7DAE}") = "Intent.Modules.Angular.Layout", "Intent.Modules.Angular.Layout\Intent.Modules.Angular.Layout.csproj", "{09081CF8-1475-47D6-9199-FC13A83E960D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intent.Modules.Angular.Layout", "Intent.Modules.Angular.Layout\Intent.Modules.Angular.Layout.csproj", "{09081CF8-1475-47D6-9199-FC13A83E960D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Angular", "Angular", "{A0A03C99-B672-4CAC-B744-D1022C2B7DF7}"
 EndProject
@@ -14,13 +14,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Designer", "Designer", "{AB
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intent.Modules.Angular.ServiceProxies", "Intent.Modules.Angular.ServiceProxies\Intent.Modules.Angular.ServiceProxies.csproj", "{6D139C9A-784D-48B9-A4AF-E24859654DBA}"
 EndProject
-Project("{52B49DB5-3EA9-4095-B1A7-DF1AC22D7DAE}") = "Intent.Modules.Modelers.WebClient.Angular", "Intent.Modules.Modelers.WebClient.Angular\Intent.Modules.Modelers.WebClient.Angular.csproj", "{74DDE750-06F1-4029-AADA-873CC2E5BD4E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intent.Modules.Modelers.WebClient.Angular", "Intent.Modules.Modelers.WebClient.Angular\Intent.Modules.Modelers.WebClient.Angular.csproj", "{74DDE750-06F1-4029-AADA-873CC2E5BD4E}"
 EndProject
 Project("{52B49DB5-3EA9-4095-B1A7-DF1AC22D7DAE}") = "Intent.ApplicationTemplates.Web", "Intent.ApplicationTemplates.Web\Intent.ApplicationTemplates.Web.csproj", "{41DBB0B8-E41C-4861-8610-5C409A85BA14}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ApplicationTemplates", "ApplicationTemplates", "{751BFE9F-22F3-46EC-BB39-88BA38B8ECB8}"
 EndProject
-Project("{52B49DB5-3EA9-4095-B1A7-DF1AC22D7DAE}") = "Intent.Modules.Angular.ApiAuthorization", "Intent.Modules.Angular.ApiAuthorization\Intent.Modules.Angular.ApiAuthorization.csproj", "{0B4155BA-8B36-4EB9-A383-2D23EE7113A3}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intent.Modules.Angular.ApiAuthorization", "Intent.Modules.Angular.ApiAuthorization\Intent.Modules.Angular.ApiAuthorization.csproj", "{0B4155BA-8B36-4EB9-A383-2D23EE7113A3}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intent.Modules.Angular.ServiceProxies.Interop", "Intent.Modules.Angular.ServiceProxies.Interop\Intent.Modules.Angular.ServiceProxies.Interop.csproj", "{5EE0A080-8D9E-4256-87E6-9B660BB9A34A}"
 EndProject

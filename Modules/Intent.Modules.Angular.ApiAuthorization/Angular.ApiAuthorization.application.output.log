@@ -41,7 +41,7 @@
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
-      <ProjectId>0b4155ba-8b36-4eb9-a383-2d23ee7113a3</ProjectId>
+      <ProjectId>5e076db2-0ce3-4a79-9b17-c13492e94f3b</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.Templates.Api.ApiMetadataProviderExtensions</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>ApiMetadataProviderExtensions.cs</ApplicationRelativeFilePath>
@@ -49,7 +49,7 @@
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
-      <ProjectId>0b4155ba-8b36-4eb9-a383-2d23ee7113a3</ProjectId>
+      <ProjectId>5e076db2-0ce3-4a79-9b17-c13492e94f3b</ProjectId>
       <CorrelationId>Intent.ModuleBuilder.IModSpecFile</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Intent.Angular.ApiAuthorization.imodspec</ApplicationRelativeFilePath>
@@ -57,8 +57,8 @@
       <IsIgnored>true</IsIgnored>
     </FileLog>
     <FileLog>
-      <ProjectId>0b4155ba-8b36-4eb9-a383-2d23ee7113a3</ProjectId>
-      <CorrelationId>Intent.VisualStudio.Projects.CoreLibrary.CSProject#0b4155ba-8b36-4eb9-a383-2d23ee7113a3</CorrelationId>
+      <ProjectId>5e076db2-0ce3-4a79-9b17-c13492e94f3b</ProjectId>
+      <CorrelationId>Intent.VisualStudio.Projects.CSharpProject#5e076db2-0ce3-4a79-9b17-c13492e94f3b</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>Intent.Modules.Angular.ApiAuthorization.csproj</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>Intent.Modules.Angular.ApiAuthorization.csproj</ProjectRelativeFilePath>
