@@ -59,6 +59,14 @@
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
+      <ProjectId>c4a50ec2-1f46-4746-974f-bd8870a7403e</ProjectId>
+      <CorrelationId>Intent.AspNetCore.Controllers.BinaryContentAttribute</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>../../NetApplication/NetApplication.Api/Controllers/FileTransfer/BinaryContentAttribute.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>BinaryContentAttribute.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
       <ProjectId>34994c18-6b65-4171-845d-559c61a45949</ProjectId>
       <CorrelationId>Intent.AspNetCore.Controllers.Controller#ebe879b2-a2bb-4cdd-b861-2d057c0698ba</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
@@ -83,11 +91,27 @@
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
+      <ProjectId>34994c18-6b65-4171-845d-559c61a45949</ProjectId>
+      <CorrelationId>Intent.AspNetCore.Controllers.Controller#f2f69313-d9ac-4497-891d-d310e05aea24</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>../../NetApplication/NetApplication.Api/Controllers/TestCaseController.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>TestCaseController.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
       <ProjectId>b5b00b7b-59f7-48e5-a0d5-a87f3670d132</ProjectId>
       <CorrelationId>Intent.AspNetCore.Swashbuckle.Security.AuthorizeCheckOperationFilter</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>../../NetApplication/NetApplication.Api/Filters/AuthorizeCheckOperationFilter.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>AuthorizeCheckOperationFilter.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>b5b00b7b-59f7-48e5-a0d5-a87f3670d132</ProjectId>
+      <CorrelationId>Intent.AspNetCore.Controllers.BinaryContentFilter</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>../../NetApplication/NetApplication.Api/Filters/BinaryContentFilter.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>BinaryContentFilter.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
@@ -200,6 +224,14 @@
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>../../NetApplication/NetApplication.Application/Common/Exceptions/ForbiddenAccessException.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>ForbiddenAccessException.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>cff1407e-306d-40e7-8ca1-4103f9791379</ProjectId>
+      <CorrelationId>Intent.Application.Dtos.DtoModel#b9f795e8-d3f0-406b-b6dd-a1d787152695</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>../../NetApplication/NetApplication.Application/Common/FileDownloadDto.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>Common/FileDownloadDto.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
@@ -339,6 +371,14 @@
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>
+      <ProjectId>b4cdce89-0243-4da2-a4e7-0b25bdb23b35</ProjectId>
+      <CorrelationId>Intent.Application.ServiceImplementations.ServiceImplementation#f2f69313-d9ac-4497-891d-d310e05aea24</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>../../NetApplication/NetApplication.Application/Implementation/TestCaseService.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>TestCaseService.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
       <ProjectId>cff1407e-306d-40e7-8ca1-4103f9791379</ProjectId>
       <CorrelationId>Intent.Application.Dtos.DtoModel#5c28c5cd-2655-45dd-b425-475830635a92</CorrelationId>
       <OverwriteBehaviour>always</OverwriteBehaviour>
@@ -384,6 +424,14 @@
       <OverwriteBehaviour>always</OverwriteBehaviour>
       <ApplicationRelativeFilePath>../../NetApplication/NetApplication.Application/Interfaces/INetClientService.cs</ApplicationRelativeFilePath>
       <ProjectRelativeFilePath>INetClientService.cs</ProjectRelativeFilePath>
+      <IsIgnored>false</IsIgnored>
+    </FileLog>
+    <FileLog>
+      <ProjectId>5a355c5a-dc07-4e9b-bdb5-e609e145f040</ProjectId>
+      <CorrelationId>Intent.Application.Contracts.ServiceContract#f2f69313-d9ac-4497-891d-d310e05aea24</CorrelationId>
+      <OverwriteBehaviour>always</OverwriteBehaviour>
+      <ApplicationRelativeFilePath>../../NetApplication/NetApplication.Application/Interfaces/ITestCaseService.cs</ApplicationRelativeFilePath>
+      <ProjectRelativeFilePath>ITestCaseService.cs</ProjectRelativeFilePath>
       <IsIgnored>false</IsIgnored>
     </FileLog>
     <FileLog>

@@ -26,6 +26,5 @@ namespace NetApplication.Application.Interfaces
         Task<List<string>> GetPrimitiveStringList(CancellationToken cancellationToken = default);
         Task NonHttpSettingsOperation(CancellationToken cancellationToken = default);
         Task<CustomDTO> GetInvoiceOpWithReturnTypeWrapped(CancellationToken cancellationToken = default);
-        Task<EnumTestDto> EnumTest(CancellationToken cancellationToken = default);
     }
 }

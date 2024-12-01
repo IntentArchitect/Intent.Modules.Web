@@ -250,18 +250,5 @@ namespace NetApplication.Api.Controllers
             result = await _appService.GetInvoiceOpWithReturnTypeWrapped(cancellationToken);
             return Ok(result);
         }
-
-        /// <summary>
-        /// </summary>
-        /// <response code="200">Returns the specified EnumTestDto.</response>
-        [HttpGet("enum-test")]
-        [ProducesResponseType(typeof(EnumTestDto), StatusCodes.Status200OK)]
-        [ProducesResponseType(typeof(ProblemDetails), StatusCodes.Status500InternalServerError)]
-        public async Task<ActionResult<EnumTestDto>> EnumTest(CancellationToken cancellationToken = default)
-        {
-            var result = default(EnumTestDto);
-            result = await _appService.EnumTest(cancellationToken);
-            return Ok(result);
-        }
     }
 }

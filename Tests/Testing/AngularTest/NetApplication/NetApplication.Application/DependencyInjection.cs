@@ -34,6 +34,7 @@ namespace NetApplication.Application
             services.AddTransient<IValidationService, ValidationService>();
             services.AddTransient<IIntegrationService, IntegrationService>();
             services.AddTransient<INetClientService, NetClientService>();
+            services.AddTransient<ITestCaseService, TestCaseService>();
             return services;
         }
     }
