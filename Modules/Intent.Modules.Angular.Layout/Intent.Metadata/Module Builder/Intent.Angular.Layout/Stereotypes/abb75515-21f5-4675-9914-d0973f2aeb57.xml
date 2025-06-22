@@ -25,7 +25,6 @@
       <type>string</type>
       <controlType>select</controlType>
       <optionsSource>options</optionsSource>
-      <placeholder />
       <defaultValue>Button</defaultValue>
       <valueOptions>
         <option>Button</option>
@@ -33,7 +32,6 @@
         <option>Reset</option>
         <option>Menu</option>
       </valueOptions>
-      <lookupTypes />
       <isRequiredFunction>return true;</isRequiredFunction>
     </property>
   </properties>

@@ -26,8 +26,6 @@
       <controlType>text</controlType>
       <optionsSource>n/a</optionsSource>
       <placeholder>(default)</placeholder>
-      <valueOptions />
-      <lookupTypes />
     </property>
     <property id="861d6123-3795-4065-a58d-526a04e833ba">
       <name>Inject Services</name>
@@ -35,7 +33,6 @@
       <controlType>multi-select</controlType>
       <optionsSource>lookup-element</optionsSource>
       <placeholder>(optional)</placeholder>
-      <valueOptions />
       <lookupTypes>
         <type>d009e5af-adb7-45c5-921c-fe8e209b8aa2</type>
         <type>2d4ad132-e574-4319-9ae9-4d6e4b81110c</type>
@@ -46,10 +43,7 @@
       <type>string</type>
       <controlType>checkbox</controlType>
       <optionsSource>n/a</optionsSource>
-      <placeholder />
       <defaultValue>true</defaultValue>
-      <valueOptions />
-      <lookupTypes />
     </property>
   </properties>
 </stereotypeDefinition>

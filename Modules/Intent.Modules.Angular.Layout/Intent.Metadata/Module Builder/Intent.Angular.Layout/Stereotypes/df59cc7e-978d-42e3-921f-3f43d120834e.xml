@@ -25,8 +25,6 @@
       <type>string</type>
       <controlType>select</controlType>
       <optionsSource>lookup-children</optionsSource>
-      <placeholder />
-      <valueOptions />
       <lookupTypes>
         <type>97a3de8a-c9bf-4cf2-bc0a-b8692b02211b</type>
         <type>2b191288-ecae-4743-b069-cbdd927ef349</type>

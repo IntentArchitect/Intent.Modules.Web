@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<applicationTemplate>
+<applicationTemplate type="application-template">
   <id>Intent.ApplicationTemplate.WebClient.Angular</id>
   <version>4.0.0</version>
   <supportedClientVersions>[4.3.0-a, 5.0.0-a)</supportedClientVersions>
   <displayName>Angular Web Client</displayName>
+  <additionalImages />
   <shortDescription>Standalone Angular web client.</shortDescription>
   <authors>Intent Architect</authors>
   <priority>1002</priority>
