@@ -2,11 +2,13 @@ param(
     [switch]$Reset
 )
 
+$modulesIsln = "Modules/Intent.Modules.Web.isln"
+$testsIsln = "Tests/Testing/AngularTest/intent/AngularTest.isln"
+
 if ($Reset) {
-    ./PipelineScripts/run-pre-commit-checks.ps1 -Reset
+    ./PipelineScripts/run-pre-commit-checks.ps1 -ModulesIsln $modulesIsln -TestsIsln $testsIsln -Reset
     exit 0
 }
 
-./PipelineScripts/run-pre-commit-checks.ps1 -ModulesIsln "Modules/Intent.Modules.Web.isln" -TestsIsln "Tests/Testing/AngularTest/intent/AngularTest.isln"
-
+./PipelineScripts/run-pre-commit-checks.ps1 -ModulesIsln $modulesIsln -TestsIsln $testsIsln
 exit 0
