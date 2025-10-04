@@ -2,7 +2,7 @@
 <package>
   <id>Intent.Angular.ServiceProxies.Interop</id>
   <version>1.0.0-alpha.1</version>
-  <supportedClientVersions>[4.3.0-a,5.0.0)</supportedClientVersions>
+  <supportedClientVersions>[4.4.0-a, 5.0.0-a)</supportedClientVersions>
   <summary>Provides interoperability between Intent.Angular.ServiceProxies and Intent.Angular for when Intent.Angular.ServiceProxies is not installed stand-alone.</summary>
   <description>Provides interoperability between Intent.Angular.ServiceProxies and Intent.Angular for when Intent.Angular.ServiceProxies is not installed stand-alone.</description>
   <authors>Intent Architect</authors>
@@ -30,4 +30,5 @@
   <moduleSettingsExtensions />
   <metadata />
   <releaseNotes>release-notes.md</releaseNotes>
+  <migrations />
 </package>

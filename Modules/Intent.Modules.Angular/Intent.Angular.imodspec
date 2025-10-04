@@ -2,7 +2,7 @@
 <package>
   <id>Intent.Angular</id>
   <version>4.0.0-alpha.13</version>
-  <supportedClientVersions>[4.3.0-a, 5.0.0-a)</supportedClientVersions>
+  <supportedClientVersions>[4.4.0-a, 5.0.0-a)</supportedClientVersions>
   <summary>Experimental Angular automation systems</summary>
   <description>Experimental Angular automation systems</description>
   <authors>Intent Architect</authors>

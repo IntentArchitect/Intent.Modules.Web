@@ -2,7 +2,7 @@
 <package>
   <id>Intent.Angular.ServiceProxies</id>
   <version>4.0.0-alpha.13</version>
-  <supportedClientVersions>[4.3.0-a, 5.0.0-a)</supportedClientVersions>
+  <supportedClientVersions>[4.4.0-a, 5.0.0-a)</supportedClientVersions>
   <summary>Introduces Proxy clients that interact with backend service APIs</summary>
   <description>Introduces Proxy clients that interact with backend service APIs</description>
   <authors>Intent Architect</authors>
@@ -69,4 +69,5 @@
   <decorators />
   <moduleSettings />
   <moduleSettingsExtensions />
+  <migrations />
 </package>

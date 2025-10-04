@@ -2,7 +2,7 @@
 <package>
   <id>Intent.Modelers.WebClient</id>
   <version>5.0.0-pre.0</version>
-  <supportedClientVersions>[4.1.0-pre.0, 5.0.0-a)</supportedClientVersions>
+  <supportedClientVersions>[4.4.0-a, 5.0.0-a)</supportedClientVersions>
   <releaseNotes>release-notes.md</releaseNotes>
   <summary>OBSOLETE: This module has been replaced by the Intent.Modelers.UI module. You can safely uninstall this module.
 Modeler for describing Web clients that interact with a backend service API</summary>

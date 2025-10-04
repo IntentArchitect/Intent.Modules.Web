@@ -19,7 +19,7 @@
       <updatedByDisplayName>Gareth Baars</updatedByDisplayName>
       <updatedAt>2024-11-15T09:42:35.756062Z</updatedAt>
       <deviationsHash>3DDE1583D4F1692AD1B2C8DD129FF2E46E40E95B06BC02E6834A5EB1E8B1F663</deviationsHash>
-      <fileHash>F428EA1C6D4E308F5C15E2CBF35FDD206FB912B5A736525E5C3D7ED0C2A1B23F</fileHash>
+      <fileHash>29DAF773A9EACF7572587FB67F99D24D60F861C28031BCC7CD62E80FD338829F</fileHash>
     </file>
     <file>
       <correlationId>Intent.ModuleBuilder.Templates.Api.ApiElementExtensionModel#92d1d466-c0a0-4168-bf58-54cd4f166b08</correlationId>
@@ -29,7 +29,7 @@
       <updatedByDisplayName>Gareth Baars</updatedByDisplayName>
       <updatedAt>2024-11-15T09:42:35.7560485Z</updatedAt>
       <deviationsHash>166DD5F7E6B0F3ED4E7104A3E02294E5AF407A11632CD039E0E6DB23E1C5A77C</deviationsHash>
-      <fileHash>63FB733C67EC68EC2B378ECDC3AA79C0FA16990E49D47535B0A1C3ED22118D98</fileHash>
+      <fileHash>0BABAEDDF922D46AA5FF4ACD61934A269CB98C6D246AFE63E2BF3E30F879B56A</fileHash>
     </file>
     <file>
       <correlationId>Intent.ModuleBuilder.Templates.Api.ApiElementExtensionModel#d7a42e98-3ee1-487b-8e69-8a589a6d434c</correlationId>
@@ -39,7 +39,7 @@
       <updatedByDisplayName>Gareth Baars</updatedByDisplayName>
       <updatedAt>2024-11-15T09:42:35.7560536Z</updatedAt>
       <deviationsHash>E41C0465494913AB25D4AC9B1DB727FA5AE5821036DB4423E5A6408488B76072</deviationsHash>
-      <fileHash>5A1060846E212B66534FB6982EEF39BCAC997C0700A3300E1EF42947BBAF37A2</fileHash>
+      <fileHash>0CA48231962C2CF10DE3667E9979EE6D93DACBD763DCE4BD8A06943FC8FD9960</fileHash>
     </file>
     <file>
       <correlationId>Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial#b1160f24-71f9-46fd-94d7-8d76a833ade9</correlationId>
@@ -49,7 +49,7 @@
       <updatedByDisplayName>Gareth Baars</updatedByDisplayName>
       <updatedAt>2024-11-15T09:42:35.7560979Z</updatedAt>
       <deviationsHash>95F024BBB9B93CC06F17BC55CA2B849AF9EDD9596525892D00915BACFA8C917B</deviationsHash>
-      <fileHash>569919017B37157F53BE4681081B49ADAB32A2F0630BD81F6C93CB56A92865F1</fileHash>
+      <fileHash>7E546D57124055BDAC4B1DC0B41439DF55F817F8BC81E4A5C5E8A3C83282B0A8</fileHash>
     </file>
     <file>
       <correlationId>Intent.ModuleBuilder.TemplateRegistration.Custom#b1160f24-71f9-46fd-94d7-8d76a833ade9</correlationId>
@@ -59,7 +59,7 @@
       <updatedByDisplayName>Gareth Baars</updatedByDisplayName>
       <updatedAt>2024-11-15T09:42:35.7560769Z</updatedAt>
       <deviationsHash>95F024BBB9B93CC06F17BC55CA2B849AF9EDD9596525892D00915BACFA8C917B</deviationsHash>
-      <fileHash>B6AF797B33AA72288ECAAD0D4C95940B8C695067F5F7D9EBE50C81C027E7BB57</fileHash>
+      <fileHash>03B7364068ADE8863A975EE0835DA4F27BAB09E520A8CF4134F8261C8473EB44</fileHash>
     </file>
     <file>
       <correlationId>Intent.ModuleBuilder.ProjectItemTemplate.Partial#08ee557b-aba4-4960-b6f3-ff4affb5093a</correlationId>
@@ -69,7 +69,7 @@
       <updatedByDisplayName>Gareth Baars</updatedByDisplayName>
       <updatedAt>2024-11-15T09:42:35.7560703Z</updatedAt>
       <deviationsHash>95F024BBB9B93CC06F17BC55CA2B849AF9EDD9596525892D00915BACFA8C917B</deviationsHash>
-      <fileHash>5A4355E353E6F2D7FE96BD522E4A520450827BC32F38D77D2C57AEC3AB92B2D1</fileHash>
+      <fileHash>AF62D1D26ACB719741644B59BD6E1B4AAA9A6D39F7CCCDD9F77F609A68B125FA</fileHash>
     </file>
     <file>
       <correlationId>Intent.ModuleBuilder.TemplateRegistration.Custom#08ee557b-aba4-4960-b6f3-ff4affb5093a</correlationId>
@@ -79,7 +79,7 @@
       <updatedByDisplayName>Gareth Baars</updatedByDisplayName>
       <updatedAt>2024-11-15T09:42:35.7560832Z</updatedAt>
       <deviationsHash>95F024BBB9B93CC06F17BC55CA2B849AF9EDD9596525892D00915BACFA8C917B</deviationsHash>
-      <fileHash>1DEA3C67729D8D4921FD4E2442D638E290EFF59FF87FACE1DB7A10045CEAF5BE</fileHash>
+      <fileHash>56CD7458CB83D1C626A316ED7CCB2189F42244017CAA5971C0ED9C23AA94C16B</fileHash>
     </file>
   </files>
 </deviationsLog>

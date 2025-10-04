@@ -2,7 +2,7 @@
 <package>
   <id>Intent.Angular.Layout</id>
   <version>4.0.0-alpha.8</version>
-  <supportedClientVersions>[4.1.0-pre.0, 5.0.0-a)</supportedClientVersions>
+  <supportedClientVersions>[4.4.0-a, 5.0.0-a)</supportedClientVersions>
   <releaseNotes>release-notes.md</releaseNotes>
   <summary>Introduces all the UI components in the Angular designer</summary>
   <description>Introduces all the UI components in the Angular designer</description>
@@ -36,4 +36,5 @@
   <moduleSettings />
   <moduleSettingsExtensions />
   <tags>angular</tags>
+  <migrations />
 </package>
