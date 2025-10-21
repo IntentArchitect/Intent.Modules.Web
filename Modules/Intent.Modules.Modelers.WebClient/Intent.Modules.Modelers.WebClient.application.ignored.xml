@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<ignoredFiles>
-  <files>
-    <file relativePath="Intent.Modules.Modelers.WebClient/Intent.Modelers.WebClient.imodspec" />
-    <file relativePath="Intent.Modules.Modelers.WebClient/Intent.Modules.Modelers.WebClient.csproj" />
-    <file relativePath="Intent.Modules.Web.sln" />
-  </files>
-</ignoredFiles>

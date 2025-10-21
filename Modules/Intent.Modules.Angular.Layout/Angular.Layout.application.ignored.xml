@@ -1,8 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<ignoredFiles>
-  <files>
-    <file relativePath="Intent.Modules.Angular.Layout/Api/ComponentViewExtensionModel.cs" />
-    <file relativePath="Intent.Modules.Angular.Layout/Intent.Angular.Layout.imodspec" />
-    <file relativePath="Intent.Modules.Angular.Layout/modelers/Angular Layout Extensions.designer.settings" />
-  </files>
-</ignoredFiles>

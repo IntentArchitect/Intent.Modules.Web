@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<outputFiles>
+  <files>
+    <file relativePath="src/app/api-authorization/api-authorization.module.spec.ts" state="ignored" />
+    <file relativePath="src/app/api-authorization/authorize.guard.spec.ts" state="ignored" />
+    <file relativePath="src/app/api-authorization/authorize.interceptor.spec.ts" state="ignored" />
+    <file relativePath="src/app/api-authorization/authorize.service.spec.ts" state="ignored" />
+    <file relativePath="src/app/api-authorization/login-menu/login-menu.component.spec.ts" state="ignored" />
+    <file relativePath="src/app/api-authorization/login/login.component.spec.ts" state="ignored" />
+    <file relativePath="src/app/api-authorization/logout/logout.component.spec.ts" state="ignored" />
+  </files>
+</outputFiles>
