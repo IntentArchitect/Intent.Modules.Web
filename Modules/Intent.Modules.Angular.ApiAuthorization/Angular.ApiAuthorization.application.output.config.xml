@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<outputFiles>
-  <files>
-    <file relativePath="Intent.Modules.Angular.ApiAuthorization/Api/ComponentViewExtensionModel.cs" state="ignored" />
-    <file relativePath="Intent.Modules.Angular.ApiAuthorization/Intent.Angular.ApiAuthorization.imodspec" state="ignored" />
-    <file relativePath="Intent.Modules.Angular.ApiAuthorization/Intent.Modules.Angular.ApiAuthorization.csproj" state="ignored" />
-    <file relativePath="Intent.Modules.Angular.ApiAuthorization/modelers/Authorization Components.designer.settings" state="ignored" />
-  </files>
-</outputFiles>

@@ -15,17 +15,8 @@
   <base href="/">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/x-icon" href="favicon.ico">
-<#  foreach (var link in _headerLinks.OrderBy(x => x.Relationship != "preconnect")) {
-        if (link.Relationship == "preconnect") {
-#>  <link rel="preconnect" href="<#= link.Href #>">
-<#
-        } else {
-#>  <link href="<#= link.Href #>" rel="<#= link.Relationship #>">
-<#
-        }
-    }
-#></head>
+</head>
 <body>
-<app-root></app-root>
+  <app-root></app-root>
 </body>
 </html>

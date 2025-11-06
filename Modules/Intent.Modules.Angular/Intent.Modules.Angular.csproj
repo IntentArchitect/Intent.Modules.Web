@@ -2,164 +2,56 @@
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
-    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
-    <Version>4.0.0-alpha.12</Version>
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="resources\InitialFiles\.vscode\extensions.json" />
-    <Content Include="resources\InitialFiles\.vscode\launch.json" />
-    <Content Include="resources\InitialFiles\.vscode\tasks.json" />
+    <Content Include="content\InitialFiles\.vscode\extensions.json" />
+    <Content Include="content\InitialFiles\.vscode\launch.json" />
+    <Content Include="content\InitialFiles\.vscode\tasks.json" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Intent.Architect.Persistence" Version="3.7.0" />
     <PackageReference Include="Intent.Modules.Common" Version="3.7.2" />
     <PackageReference Include="Intent.Modules.Common.Html" Version="4.0.0" />
-    <PackageReference Include="Intent.Modules.Common.TypeScript" Version="4.0.0" />
-    <PackageReference Include="Intent.Modules.Modelers.UI" Version="1.0.0-beta.2" />
-    <PackageReference Include="Intent.Modules.Npm" Version="3.3.5" />
+    <PackageReference Include="Intent.Modules.Common.TypeScript" Version="4.1.3-pre.0" />
     <PackageReference Include="Intent.Packager" Version="3.6.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
-    <PackageReference Include="Intent.RoslynWeaver.Attributes" Version="2.1.6" />
+    <PackageReference Include="Intent.RoslynWeaver.Attributes" Version="3.0.0" />
     <PackageReference Include="Intent.SoftwareFactory.SDK" Version="3.7.0" />
-    <PackageReference Include="Mono.TextTemplating" Version="2.0.4" />
-    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Intent.Modules.Modelers.WebClient.Angular\Intent.Modules.Modelers.WebClient.Angular.csproj" />
+    <Folder Include="resources\" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="Templates\Component\AngularComponentCss\AngularComponentCssTemplate.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>AngularComponentCssTemplate.cs</LastGenOutput>
-    </None>
-    <None Update="Templates\Component\AngularComponentHtml\AngularComponentHtmlTemplate.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>AngularComponentHtmlTemplate.cs</LastGenOutput>
-    </None>
-    <None Update="Templates\Component\AngularComponentTs\AngularComponentTsTemplate.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>AngularComponentTsTemplate.cs</LastGenOutput>
-    </None>
-    <None Update="Templates\Module\AngularModule\AngularModuleTemplate.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>AngularModuleTemplate.cs</LastGenOutput>
-    </None>
-    <None Update="Templates\Module\AngularRoutingModule\AngularRoutingModuleTemplate.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>AngularRoutingModuleTemplate.cs</LastGenOutput>
-    </None>
-    <None Update="Templates\Core\CoreModule\CoreModuleTemplate.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>CoreModuleTemplate.cs</LastGenOutput>
-    </None>
-    <None Update="Templates\Environment\Environment\EnvironmentTemplate.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>EnvironmentTemplate.cs</LastGenOutput>
-    </None>
-    <None Update="Templates\Model\FormGroup\FormGroupTemplate.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>FormGroupTemplate.cs</LastGenOutput>
-    </None>
-    <None Update="Templates\Shared\IntentDecorators\IntentDecoratorsTemplate.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>IntentDecoratorsTemplate.cs</LastGenOutput>
-    </None>
-    <None Update="Templates\Model\Model\ModelTemplate.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>ModelTemplate.cs</LastGenOutput>
-    </None>
-    <None Update="Templates\Module\AngularResolver\AngularResolverTemplate.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>AngularResolverTemplate.cs</LastGenOutput>
-    </None>
-    <None Update="Templates\Environment\EnvironmentDotDevelopment\EnvironmentDotDevelopmentTemplate.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>EnvironmentDotDevelopmentTemplate.cs</LastGenOutput>
-    </None>
     <None Update="Templates\Core\Index\IndexTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>IndexTemplate.cs</LastGenOutput>
     </None>
+    <None Update="Templates\Core\AppComponentHtml\AppComponentHtmlTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>AppComponentHtmlTemplate.cs</LastGenOutput>
+    </None>
   </ItemGroup>
 
   <ItemGroup>
-    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Compile Update="Templates\Component\AngularComponentCss\AngularComponentCssTemplate.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>AngularComponentCssTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Update="Templates\Component\AngularComponentHtml\AngularComponentHtmlTemplate.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>AngularComponentHtmlTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Update="Templates\Component\AngularComponentTs\AngularComponentTsTemplate.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>AngularComponentTsTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Update="Templates\Core\CoreModule\CoreModuleTemplate.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>CoreModuleTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Update="Templates\Environment\Environment\EnvironmentTemplate.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>EnvironmentTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Update="Templates\Model\FormGroup\FormGroupTemplate.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>FormGroupTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Update="Templates\Model\Model\ModelTemplate.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>ModelTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Update="Templates\Module\AngularModule\AngularModuleTemplate.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>AngularModuleTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Update="Templates\Module\AngularRoutingModule\AngularRoutingModuleTemplate.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>AngularRoutingModuleTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Update="Templates\Module\AngularResolver\AngularResolverTemplate.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>AngularResolverTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Update="Templates\Shared\IntentDecorators\IntentDecoratorsTemplate.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>IntentDecoratorsTemplate.tt</DependentUpon>
-    </Compile>
-    <Compile Update="Templates\Environment\EnvironmentDotDevelopment\EnvironmentDotDevelopmentTemplate.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>EnvironmentDotDevelopmentTemplate.tt</DependentUpon>
-    </Compile>
     <Compile Update="Templates\Core\Index\IndexTemplate.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>IndexTemplate.tt</DependentUpon>
     </Compile>
+    <Compile Update="Templates\Core\AppComponentHtml\AppComponentHtmlTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AppComponentHtmlTemplate.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
 
-  <Import Project="..\Intent.Modules.Angular.Shared\Intent.Modules.Angular.Shared.projitems" Label="Shared" />
+  <ItemGroup>
+    <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+  </ItemGroup>
 
 </Project>

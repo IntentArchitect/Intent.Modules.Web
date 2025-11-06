@@ -1,14 +1,14 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using Intent.Engine;
 using Intent.Metadata.Models;
 using Intent.Modules.Common;
+using Intent.Modules.Common.FileBuilders.DataFileBuilder;
 using Intent.Modules.Common.Templates;
 using Intent.RoslynWeaver.Attributes;
 using Intent.Templates;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Linq;
 
 [assembly: DefaultIntentManaged(Mode.Fully)]
 [assembly: IntentTemplate("Intent.ModuleBuilder.ProjectItemTemplate.Partial", Version = "1.0")]
@@ -16,87 +16,164 @@ using Newtonsoft.Json.Linq;
 namespace Intent.Modules.Angular.Templates.Core.AngularDotJsonFile
 {
     [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
-    partial class AngularDotJsonFileTemplate : IntentTemplateBase<object>
+    public class AngularDotJsonFileTemplate : IntentTemplateBase<object>, IDataFileBuilderTemplate
     {
-        private readonly HashSet<string> _requiredStyles = new();
-
         [IntentManaged(Mode.Fully)]
-        public const string TemplateId = "Intent.Angular.Core.AngularDotJsonFile";
+        public const string TemplateId = "Intent.Angular.Core.AngularDotJsonFileTemplate";
 
-        [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
+        [IntentManaged(Mode.Fully, Body = Mode.Ignore)]
         public AngularDotJsonFileTemplate(IOutputTarget outputTarget, object model = null) : base(TemplateId, outputTarget, model)
         {
-            ExecutionContext.EventDispatcher.Subscribe<AngularDotJsonStyleRequired>(x => _requiredStyles.Add(x.Payload));
+            DataFile = new DataFile($"AngularDotJsonFile")
+                .WithJsonWriter()
+                .WithRootObject(this, @object =>
+                {
+                    @object
+                        .WithValue("$schema", "./node_modules/@angular/cli/lib/config/schema.json")
+                        .WithValue("version", 1)
+                        .WithValue("newProjectRoot", "projects")
+                        .WithObject("projects", projects =>
+                        {
+                            projects.WithObject(AppNameCamelCased, app =>
+                            {
+                                app
+                                    .WithValue("projectType", "application")
+                                    .WithObject("schematics", schematics => { })
+                                    .WithValue("root", "")
+                                    .WithValue("sourceRoot", "src")
+                                    .WithValue("prefix", "app")
+                                    .WithObject("architect", arch =>
+                                    {
+                                        arch
+                                            .WithObject("build", build =>
+                                        {
+                                            build
+                                                .WithValue("builder", "@angular-devkit/build-angular:application")
+                                                .WithObject("options", options =>
+                                                {
+                                                    options
+                                                        .WithValue("outputPath", $"dist/{AppNameKebabCased}")
+                                                        .WithValue("index", "src/index.html")
+                                                        .WithValue("browser", "src/main.ts")
+                                                        .WithArray("polyfills", poly =>
+                                                        {
+                                                            poly.WithValue("zone.js");
+                                                        })
+                                                        .WithValue("tsConfig", "tsconfig.app.json")
+                                                        .WithArray("assets", assets =>
+                                                        {
+                                                            assets.WithObject(assetObj =>
+                                                            {
+                                                                assetObj
+                                                                    .WithValue("glob", "**/*")
+                                                                    .WithValue("input", "public");
+                                                            });
+                                                        })
+                                                        .WithArray("styles", styles =>
+                                                        {
+                                                            styles.WithValue("src/styles.css");
+                                                        })
+                                                        .WithArray("scripts", scripts => { });
+                                                })
+                                                .WithObject("configurations", config =>
+                                                {
+                                                    config.WithObject("production", prod =>
+                                                    {
+                                                        prod.WithArray("budgets", budgets =>
+                                                        {
+                                                            budgets.WithObject(budgetObj =>
+                                                            {
+                                                                budgetObj
+                                                                    .WithValue("type", "initial")
+                                                                    .WithValue("maximumWarning", "500kB")
+                                                                    .WithValue("maximumError", "1MB");
+                                                            });
+                                                            budgets.WithObject(budgetObj =>
+                                                            {
+                                                                budgetObj
+                                                                    .WithValue("type", "anyComponentStyle")
+                                                                    .WithValue("maximumWarning", "4kB")
+                                                                    .WithValue("maximumError", "8kB");
+                                                            });
+                                                        })
+                                                        .WithValue("outputHashing", "all");
+                                                    })
+                                                    .WithObject("development", dev =>
+                                                    {
+                                                        dev
+                                                          .WithValue("optimization", false)
+                                                          .WithValue("extractLicenses", false)
+                                                          .WithValue("sourceMap", true);
+                                                    });
+                                                })
+                                                .WithValue("defaultConfiguration", "production");
+                                        })
+                                            .WithObject("serve", serve =>
+                                            {
+                                                serve
+                                                    .WithValue("builder", "@angular-devkit/build-angular:dev-server")
+                                                    .WithObject("configurations", config =>
+                                                    {
+                                                        config.WithObject("production", prod =>
+                                                        {
+                                                            prod.WithValue("buildTarget", $"{AppNameCamelCased}:build:production");
+                                                        });
+                                                        config.WithObject("development", dev =>
+                                                        {
+                                                            dev.WithValue("buildTarget", $"{AppNameCamelCased}:build:development");
+                                                        });
+                                                    })
+                                                    .WithValue("defaultConfiguration", "development");
+                                            })
+                                            .WithObject("extract-i18n", extract =>
+                                            {
+                                                extract.WithValue("builder", "@angular-devkit/build-angular:extract-i18n");
+                                            })
+                                            .WithObject("test", test =>
+                                            {
+                                                test
+                                                    .WithValue("builder", "@angular-devkit/build-angular:karma")
+                                                    .WithObject("options", options =>
+                                                    {
+                                                        options.WithArray("polyfills", poly =>
+                                                        {
+                                                            poly
+                                                                .WithValue("zone.js")
+                                                                .WithValue("zone.js/testing");
+                                                        })
+                                                        .WithValue("tsConfig", "tsconfig.spec.json")
+                                                        .WithArray("assets", assets =>
+                                                        {
+                                                            assets.WithObject(assetsObj =>
+                                                            {
+                                                                assetsObj
+                                                                    .WithValue("glob", "**/*")
+                                                                    .WithValue("input", "public");
+                                                            });
+                                                        }).
+                                                        WithArray("styles", styles =>
+                                                        {
+                                                            styles.WithValue("src/styles.css");
+                                                        })
+                                                        .WithArray("scripts", scripts => { });
+                                                    });
+                                            });
+                                    })
+                                ;
+                            });
+                        })
+                        ;
+                });
         }
 
         private string AppNameCamelCased => OutputTarget.ApplicationName().ToCamelCase();
+
         private string AppNameKebabCased => OutputTarget.ApplicationName().ToKebabCase();
 
-        public override string RunTemplate()
-        {
-            if (!TryGetExistingFileContent(out var content))
-            {
-                content = TransformText();
-            }
+        [IntentManaged(Mode.Fully)]
+        public IDataFile DataFile { get; }
 
-            if (!_requiredStyles.Any())
-            {
-                return content;
-            }
-
-            var json = JsonConvert.DeserializeObject<JObject>(content)!;
-            if (json["projects"] == null)
-            {
-                return content;
-            }
-
-            var paths = new[]
-            {
-                new[] {"architect", "build", "options" },
-                new[] {"architect", "test", "options" }
-            };
-
-            foreach (var project in json["projects"]!.Children())
-            {
-                foreach (var path in paths)
-                {
-                    var currentToken = project.Children().First();
-                    foreach (var field in path)
-                    {
-                        currentToken = currentToken[field] ??= new JObject();
-                    }
-
-                    var stylesToken = (JArray)(currentToken["styles"] ??= new JArray());
-
-                    var missingStyles = _requiredStyles
-                        .Where(requiredStyle => !stylesToken.Contains(requiredStyle))
-                        .ToArray();
-                    if (!missingStyles.Any())
-                    {
-                        continue;
-                    }
-
-                    var styles = stylesToken
-                        .Select(x => x.Value<string>())
-                        .Union(missingStyles)
-                        .OrderBy(x => x)
-                        .ToArray();
-
-                    stylesToken.Clear();
-
-                    foreach (var style in styles.OrderBy(x => x))
-                    {
-                        stylesToken.Add(style);
-                    }
-                }
-            }
-
-            content = JsonConvert.SerializeObject(json, Formatting.Indented);
-
-            return content;
-        }
-
-        [IntentManaged(Mode.Fully, Body = Mode.Ignore)]
+        [IntentManaged(Mode.Merge)]
         public override ITemplateFileConfig GetTemplateFileConfig()
         {
             return new TemplateFileConfig(
@@ -104,5 +181,8 @@ namespace Intent.Modules.Angular.Templates.Core.AngularDotJsonFile
                 fileExtension: "json"
             );
         }
+
+        [IntentManaged(Mode.Fully)]
+        public override string TransformText() => DataFile.ToString();
     }
 }
