@@ -1,12 +1,15 @@
-using System;
-using System.Collections.Generic;
 using Intent.Engine;
 using Intent.Modules.Common;
+using Intent.Modules.Common.Html.Templates;
 using Intent.Modules.Common.Templates;
 using Intent.Modules.Common.TypeScript.Builder;
+using Intent.Modules.Common.TypeScript.Events;
 using Intent.Modules.Common.TypeScript.Templates;
 using Intent.RoslynWeaver.Attributes;
 using Intent.Templates;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 [assembly: DefaultIntentManaged(Mode.Fully)]
 [assembly: IntentTemplate("Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial", Version = "1.0")]
@@ -29,11 +32,12 @@ namespace Intent.Modules.Angular.Templates.Environment.Environment
                     @var.Export();
                     //@var.WithObjectValue(obj =>
                     //{
-                    //    obj.AddProperty("en1", "1");
-                    //    obj.AddProperty("en2", "2");
+                    //    obj.AddField("en1", "1");
+                    //    obj.AddField("en2", "2");
                     //});
-                    @var.WithComments("//@IntentCanAdd()");
                 });
+
+            ExecutionContext.EventDispatcher.Subscribe<ConfigurationVariableRequiredEvent>(HandleConfigVariableRequiredEvent);
         }
 
         [IntentManaged(Mode.Fully)]
@@ -49,6 +53,14 @@ namespace Intent.Modules.Angular.Templates.Environment.Environment
         public override string TransformText()
         {
             return TypescriptFile.ToString();
+        }
+
+        public void HandleConfigVariableRequiredEvent(ConfigurationVariableRequiredEvent @event)
+        {
+            var environmentVar = TypescriptFile.Variables.First(v => v.Name == "environment");
+            var environmentObj = environmentVar.Value as TypescriptVariableObject;
+
+            environmentObj.AddField(@event.Key, @event.DefaultValue);
         }
     }
 }

@@ -1,9 +1,11 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Intent.Engine;
 using Intent.Modules.Common;
 using Intent.Modules.Common.Templates;
 using Intent.Modules.Common.TypeScript.Builder;
+using Intent.Modules.Common.TypeScript.Events;
 using Intent.Modules.Common.TypeScript.Templates;
 using Intent.RoslynWeaver.Attributes;
 using Intent.Templates;
@@ -27,8 +29,9 @@ namespace Intent.Modules.Angular.Templates.Environment.EnvironmentDotDevelopment
                {
                    @var.Const();
                    @var.Export();
-                   @var.WithComments("//@IntentCanAdd()");
                });
+
+            ExecutionContext.EventDispatcher.Subscribe<ConfigurationVariableRequiredEvent>(HandleConfigVariableRequiredEvent);
         }
 
         [IntentManaged(Mode.Fully)]
@@ -50,6 +53,14 @@ namespace Intent.Modules.Angular.Templates.Environment.EnvironmentDotDevelopment
         public override string TransformText()
         {
             return TypescriptFile.ToString();
+        }
+
+        public void HandleConfigVariableRequiredEvent(ConfigurationVariableRequiredEvent @event)
+        {
+            var environmentVar = TypescriptFile.Variables.First(v => v.Name == "environment");
+            var environmentObj = environmentVar.Value as TypescriptVariableObject;
+
+            environmentObj.AddField(@event.Key, @event.DefaultValue);
         }
     }
 }

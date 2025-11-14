@@ -28,6 +28,14 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Angular", "Angular", "{598F
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intent.Modules.Angular", "Archived\Intent.Modules.Angular\Intent.Modules.Angular.csproj", "{2071FF13-1E74-442C-80B4-D9717B9238FC}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intent.Modules.Angular.HttpClients", "Intent.Modules.Angular.HttpClients\Intent.Modules.Angular.HttpClients.csproj", "{625A7C68-68E6-4172-A1D1-B1E816564B7C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Intent.Modules.AngularConstants", "Intent.Modules.AngularConstants\Intent.Modules.AngularConstants.csproj", "{857BC473-F199-4A99-8781-36B52DA13441}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{82F0F244-3D03-4AFE-8593-510E957184E3}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intent.Modules.Angular.Components.Material", "Intent.Modules.Angular.Components.Material\Intent.Modules.Angular.Components.Material.csproj", "{02D141F5-A102-4BF1-8C53-D3529EFEAC78}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -66,6 +74,18 @@ Global
 		{2071FF13-1E74-442C-80B4-D9717B9238FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2071FF13-1E74-442C-80B4-D9717B9238FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2071FF13-1E74-442C-80B4-D9717B9238FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{625A7C68-68E6-4172-A1D1-B1E816564B7C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{625A7C68-68E6-4172-A1D1-B1E816564B7C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{625A7C68-68E6-4172-A1D1-B1E816564B7C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{625A7C68-68E6-4172-A1D1-B1E816564B7C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{857BC473-F199-4A99-8781-36B52DA13441}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{857BC473-F199-4A99-8781-36B52DA13441}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{857BC473-F199-4A99-8781-36B52DA13441}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{857BC473-F199-4A99-8781-36B52DA13441}.Release|Any CPU.Build.0 = Release|Any CPU
+		{02D141F5-A102-4BF1-8C53-D3529EFEAC78}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{02D141F5-A102-4BF1-8C53-D3529EFEAC78}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{02D141F5-A102-4BF1-8C53-D3529EFEAC78}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{02D141F5-A102-4BF1-8C53-D3529EFEAC78}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -82,13 +102,16 @@ Global
 		{1684F2E1-8BE8-A4A5-B505-465C989BD351} = {AB4A5A3E-4A31-43C5-A4EC-F3A14831D754}
 		{C750571B-3F48-AC85-FA68-9E3ECD4A1CEC} = {AB4A5A3E-4A31-43C5-A4EC-F3A14831D754}
 		{2071FF13-1E74-442C-80B4-D9717B9238FC} = {A0A03C99-B672-4CAC-B744-D1022C2B7DF7}
+		{625A7C68-68E6-4172-A1D1-B1E816564B7C} = {598F26E2-4888-418F-A366-636F5E216EF9}
+		{857BC473-F199-4A99-8781-36B52DA13441} = {82F0F244-3D03-4AFE-8593-510E957184E3}
+		{82F0F244-3D03-4AFE-8593-510E957184E3} = {598F26E2-4888-418F-A366-636F5E216EF9}
+		{02D141F5-A102-4BF1-8C53-D3529EFEAC78} = {598F26E2-4888-418F-A366-636F5E216EF9}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {9A6E9459-F9E0-4E3C-BE28-09642ECC30F4}
 	EndGlobalSection
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
 		Archived\Intent.Modules.Angular.Shared\Intent.Modules.Angular.Shared.projitems*{2071ff13-1e74-442c-80b4-d9717b9238fc}*SharedItemsImports = 5
-		Archived\Intent.Modules.Angular.Shared\Intent.Modules.Angular.Shared.projitems*{41b3b5e6-3980-c62e-26f4-b5bc9be0292d}*SharedItemsImports = 5
 		Archived\Intent.Modules.Angular.Shared\Intent.Modules.Angular.Shared.projitems*{713de355-129b-56c6-a74b-78b8d64b0b70}*SharedItemsImports = 5
 		Archived\Intent.Modules.Angular.Shared\Intent.Modules.Angular.Shared.projitems*{7458b6db-1f1b-4807-a6c9-29ad1e5ba998}*SharedItemsImports = 13
 		Archived\Intent.Modules.Angular.Shared\Intent.Modules.Angular.Shared.projitems*{c50c7454-d583-fc10-7d5d-589f92d3c21d}*SharedItemsImports = 5

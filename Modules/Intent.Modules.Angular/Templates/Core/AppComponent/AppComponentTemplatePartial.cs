@@ -35,7 +35,7 @@ namespace Intent.Modules.Angular.Templates.Core.AppComponent
 
                     @class.AddDecorator("@Component", component =>
                     {
-                        var obj = new TypeScriptVariableObject();
+                        var obj = new TypescriptVariableObject();
                         obj.AddField("selector", "'app-root'");
                         obj.AddField("imports", "[RouterOutlet]");
                         obj.AddField("templateUrl", "'./app.component.html'");

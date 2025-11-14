@@ -2,14 +2,34 @@
 <package>
   <id>Intent.Angular</id>
   <version>5.0.0-alpha.0</version>
-  <supportedClientVersions>[4.4.0-a,5.0.0)</supportedClientVersions>
+  <supportedClientVersions>[4.5.0-a,5.0.0)</supportedClientVersions>
   <summary>Angular automation systems</summary>
   <description>Angular automation systems</description>
   <authors>Intent Architect</authors>
-  <iconUrl>data:image/svg+xml;base64,PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0idXRmLTgiPz4NCjwhLS0gR2VuZXJhdG9yOiBBZG9iZSBJbGx1c3RyYXRvciAyOC4xLjAsIFNWRyBFeHBvcnQgUGx1Zy1JbiAuIFNWRyBWZXJzaW9uOiA2LjAwIEJ1aWxkIDApICAtLT4NCjxzdmcgdmVyc2lvbj0iMS4xIiBpZD0iTGF5ZXJfMSIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIiB4bWxuczp4bGluaz0iaHR0cDovL3d3dy53My5vcmcvMTk5OS94bGluayIgeD0iMHB4IiB5PSIwcHgiDQoJIHZpZXdCb3g9IjAgMCA1MCA1MCIgZW5hYmxlLWJhY2tncm91bmQ9Im5ldyAwIDAgNTAgNTAiIHhtbDpzcGFjZT0icHJlc2VydmUiPg0KPGc+DQoJPHBvbHlnb24gZmlsbD0iI0RCMUUzMyIgcG9pbnRzPSIyNSwzLjIgMjUsMy4yIDI1LDMuMiA0LjcsMTAuNSA3LjgsMzcuMyAyNSw0Ni44IDI1LDQ2LjggMjUsNDYuOCA0Mi4yLDM3LjMgNDUuMywxMC41IAkiLz4NCgk8cG9seWdvbiBmaWxsPSIjQzIyMDMyIiBwb2ludHM9IjI1LDMuMiAyNSw4LjEgMjUsOCAyNSwzMC4xIDI1LDMwLjEgMjUsNDYuOCAyNSw0Ni44IDQyLjIsMzcuMyA0NS4zLDEwLjUgCSIvPg0KCTxwYXRoIGZpbGw9IiNGRkZGRkYiIGQ9Ik0yNSw4TDEyLjMsMzYuNWwwLDBoNC43bDAsMGwyLjUtNi40aDEwLjhsMi41LDYuNGwwLDBoNC43bDAsMEwyNSw4TDI1LDhMMjUsOEwyNSw4TDI1LDh6IE0yOC43LDI2LjJoLTcuNA0KCQlsMy43LTguOUwyOC43LDI2LjJ6Ii8+DQo8L2c+DQo8L3N2Zz4NCg==</iconUrl>
+  <iconUrl>data:image/png;base64,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</iconUrl>
   <tags>Angular</tags>
   <templates>
-    <template id="Intent.Angular.Core.AngularConfig" externalReference="f0710102-9ea8-4133-af13-9047df41a49f">
+    <template id="Intent.Angular.Component.ComponentHtml" externalReference="2286877d-3669-469e-8ec5-2c844e99ba8b">
+      <role>Front End</role>
+      <location>src/app</location>
+    </template>
+    <template id="Intent.Angular.Component.ComponentStyleTemplate" externalReference="96e2396b-c1e5-486e-bd2f-3c04c8c07a01">
+      <role>Front End</role>
+      <location>src/app</location>
+    </template>
+    <template id="Intent.Angular.Component.ComponentTypeScript" externalReference="66c56723-ba93-4a7c-92be-956f54fdb4f8">
+      <role>Front End</role>
+      <location>src/app</location>
+    </template>
+    <template id="Intent.Angular.Component.LayoutCompeonentHtml" externalReference="107f3fe3-ce28-4157-b7f7-1ce8ce9409db">
+      <role>Front End</role>
+      <location>src/app</location>
+    </template>
+    <template id="Intent.Angular.Component.LayoutComponentStyleTemplate" externalReference="0d262fb2-5f86-4023-bd04-0e2e997f974b">
+      <role>Front End</role>
+      <location>src/app</location>
+    </template>
+    <template id="Intent.Angular.Component.LayoutComponentTypescript" externalReference="8d3160db-cfcb-45df-860f-00eba74fdcc2">
       <role>Front End</role>
       <location>src/app</location>
     </template>
@@ -17,29 +37,29 @@
       <role>Front End</role>
       <location></location>
     </template>
-    <template id="Intent.Angular.Core.AngularRoutes" externalReference="a131606e-9407-4bd0-a0ff-3d293339e71b">
-      <role>Front End</role>
-      <location>src/app</location>
-    </template>
     <template id="Intent.Angular.Core.AppComponent" externalReference="eb2568a1-e43f-480c-8136-8a9346f816f9">
       <role>Front End</role>
       <location>src/app</location>
     </template>
-    <template id="Intent.Angular.Core.AppComponentHtml" externalReference="772e817a-2c28-4eb0-b53a-1fd173d2e716">
+    <template id="Intent.Angular.Core.AppComponentHtmlFile" externalReference="772e817a-2c28-4eb0-b53a-1fd173d2e716">
       <role>Front End</role>
       <location>src/app</location>
     </template>
-    <template id="Intent.Angular.Core.AppComponentScssTemplate" externalReference="9a65050d-9695-473b-944f-de372a6d3f45">
+    <template id="Intent.Angular.Core.AppComponentScssFileTemplate" externalReference="9a65050d-9695-473b-944f-de372a6d3f45">
       <role>Front End</role>
       <location>src/app</location>
     </template>
-    <template id="Intent.Angular.Core.Index" externalReference="8067dbcd-8eb3-4b99-a0f3-1987356a1ed4">
+    <template id="Intent.Angular.Core.AppConfig" externalReference="f0710102-9ea8-4133-af13-9047df41a49f">
+      <role>Front End</role>
+      <location>src/app</location>
+    </template>
+    <template id="Intent.Angular.Core.AppRoutes" externalReference="a131606e-9407-4bd0-a0ff-3d293339e71b">
+      <role>Front End</role>
+      <location>src/app</location>
+    </template>
+    <template id="Intent.Angular.Core.IndexHtmlFile" externalReference="8067dbcd-8eb3-4b99-a0f3-1987356a1ed4">
       <role>Front End</role>
       <location>src</location>
-    </template>
-    <template id="Intent.Angular.Core.PackageTemplate" externalReference="f0b0af1e-a8e9-42e1-a0e7-86aa74288a3d">
-      <role>Default</role>
-      <location></location>
     </template>
     <template id="Intent.Angular.Core.StylesDotScssFileTemplate" externalReference="51846760-db36-45d2-b14c-0d701e579189">
       <role>Front End</role>
@@ -53,6 +73,10 @@
       <role>Front End</role>
       <location>src/environments</location>
     </template>
+    <template id="Intent.Angular.Shared.IntentDecorators" externalReference="48c256b1-17b3-43fa-a650-3d50bd71668c">
+      <role>Front End</role>
+      <location>src/app/intent</location>
+    </template>
     <template id="Intent.Modules.Angular.Templates.StaticContentTemplateRegistrations.InitialFilesStaticContentTemplateRegistration" externalReference="0384b5c0-a591-46f4-bb2f-1b7a73d587b2">
       <role>Front End</role>
       <location></location>
@@ -63,19 +87,22 @@
   <moduleSettings></moduleSettings>
   <dependencies>
     <dependency id="Intent.Code.Weaving.Html" version="1.0.0" />
-    <dependency id="Intent.Code.Weaving.TypeScript" version="1.0.0" />
+    <dependency id="Intent.Code.Weaving.TypeScript" version="1.0.2" />
     <dependency id="Intent.Common" version="3.7.2" />
     <dependency id="Intent.Common.Html" version="4.0.0" />
     <dependency id="Intent.Common.Types" version="3.4.0" />
     <dependency id="Intent.Common.TypeScript" version="4.1.3-pre.0" />
-    <dependency id="Intent.Modelers.UI" version="1.0.0" />
+    <dependency id="Intent.Modelers.UI" version="1.0.3" />
     <dependency id="Intent.Modelers.UI.Core" version="1.0.0" />
+    <dependency id="Intent.Npm" version="4.0.0" />
   </dependencies>
   <files>
     <file src="$outDir$/$id$.dll" />
     <file src="$outDir$/$id$.pdb" />
   </files>
   <moduleSettingsExtensions />
-  <metadata />
+  <metadata>
+    <install src="modelers/Angular UI Extensions.designer.settings" externalReference="8d5ad9bc-b284-4836-b608-2f7893f05470" target="User Interface" />
+  </metadata>
   <migrations />
 </package>

@@ -16,5 +16,8 @@
     <application id="fe241e7f-8588-40fa-86be-f9fb01a88e36" name="Angular.ApiAuthorization" solutionFolder="Archived" relativePath="Archived\Intent.Modules.Angular.ApiAuthorization/Angular.ApiAuthorization.application.config" />
     <application id="c586fe58-d005-4651-adc7-24d531a7090c" name="Intent.Modules.Angular.ServiceProxies.Interop" solutionFolder="Archived" relativePath="Archived\Intent.Modules.Angular.ServiceProxies.Interop/Intent.Modules.Angular.ServiceProxies.Interop.application.config" />
     <application id="d7d7ead8-a88e-4cf0-b1f9-22e00cd94323" name="Intent.Modules.Angular" relativePath="Intent.Modules.Angular/Intent.Modules.Angular.application.config" />
+    <application id="68b9c5c2-c910-4824-8459-fec6beba2aab" name="Intent.Modules.Angular.Metadata" relativePath="Intent.Modules.Angular.Metadata/Intent.Modules.Angular.Metadata.application.config" />
+    <application id="c4f1e703-dab1-4ec1-be71-73843ef3a71d" name="Intent.Modules.Angular.HttpClients" relativePath="Intent.Modules.Angular.HttpClients/Intent.Modules.Angular.HttpClients.application.config" />
+    <application id="a3066354-0476-489c-8c80-5ff85e2fc776" name="Intent.Modules.Angular.Components.Material" relativePath="Intent.Modules.Angular.Components.Material/Intent.Modules.Angular.Components.Material.application.config" />
   </applications>
 </solution>

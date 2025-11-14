@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<deviationsLog>
+  <files>
+    <file>
+      <correlationId>Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial#884d5643-af1f-4a4c-a387-481f7362c628</correlationId>
+      <path>Intent.Modules.Angular.HttpClients/Templates/DtoContract/DtoContractTemplatePartial.cs</path>
+      <count>2</count>
+      <updatedByAccountName>jp.seini@intentarchitect.com</updatedByAccountName>
+      <updatedByDisplayName>JP Seini</updatedByDisplayName>
+      <updatedAt>2025-11-10T09:33:49.4797035Z</updatedAt>
+      <deviationsHash>29174F972EF90126E8B988F1BA1CA03AE80BFB81703E0A3F855DF523BE9807CE</deviationsHash>
+      <fileHash>59719CB8AFC7AA3F7447EB9306EB317FABAA7DA473B92E23E290B43C6F0FBB3E</fileHash>
+    </file>
+    <file>
+      <correlationId>Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial#9ca2ac42-c725-4b5c-beb3-272afe4ac1a7</correlationId>
+      <path>Intent.Modules.Angular.HttpClients/Templates/EnumContract/EnumContractTemplatePartial.cs</path>
+      <count>1</count>
+      <updatedByAccountName>jp.seini@intentarchitect.com</updatedByAccountName>
+      <updatedByDisplayName>JP Seini</updatedByDisplayName>
+      <updatedAt>2025-11-10T10:06:43.2556902Z</updatedAt>
+      <deviationsHash>50934FB0CD27964E8359D98C5C34F2C570957BBB7EA039F6008D2395DD17228A</deviationsHash>
+      <fileHash>FD98235A1F138AFE83789A982E0BF2A372551EBF09235615CE3BEDD79F764AC8</fileHash>
+    </file>
+    <file>
+      <correlationId>Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial#51ad7798-5b63-4e2f-8fa9-84cceebff21d</correlationId>
+      <path>Intent.Modules.Angular.HttpClients/Templates/HttpServiceProxy/HttpServiceProxyTemplatePartial.cs</path>
+      <count>1</count>
+      <updatedByAccountName>jp.seini@intentarchitect.com</updatedByAccountName>
+      <updatedByDisplayName>JP Seini</updatedByDisplayName>
+      <updatedAt>2025-11-11T13:22:55.8305683Z</updatedAt>
+      <deviationsHash>B06F25407044CC79BFA3B4460AF8AB5588A29284DBEC8A29C9AAEAF2B7399B5A</deviationsHash>
+      <fileHash>66BCCED37BDB112FC7003A755FCC4A1580B7603B7D5971A8558D14C0D260085D</fileHash>
+    </file>
+    <file>
+      <correlationId>Intent.ModuleBuilder.TemplateRegistration.FilePerModel#51ad7798-5b63-4e2f-8fa9-84cceebff21d</correlationId>
+      <path>Intent.Modules.Angular.HttpClients/Templates/HttpServiceProxy/HttpServiceProxyTemplateRegistration.cs</path>
+      <count>1</count>
+      <updatedByAccountName>jp.seini@intentarchitect.com</updatedByAccountName>
+      <updatedByDisplayName>JP Seini</updatedByDisplayName>
+      <updatedAt>2025-11-11T13:22:55.8305041Z</updatedAt>
+      <deviationsHash>A9D313707BCAA7FDE5F9C93C9F89736C5517F6EA50808D8A25CAD4018DA7443A</deviationsHash>
+      <fileHash>1E1D29D18C7625B8B8C010F47172C8642EFA0B621AA1A0C6264F54991F235E75</fileHash>
+    </file>
+    <file>
+      <correlationId>Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial#87793f43-db00-4ce8-a28b-defeeef4d267</correlationId>
+      <path>Intent.Modules.Angular.HttpClients/Templates/JsonResponse/JsonResponseTemplatePartial.cs</path>
+      <count>1</count>
+      <updatedByAccountName>jp.seini@intentarchitect.com</updatedByAccountName>
+      <updatedByDisplayName>JP Seini</updatedByDisplayName>
+      <updatedAt>2025-11-10T11:15:08.45364Z</updatedAt>
+      <deviationsHash>724F1B4B5518F4BB8BB4824F9BA79FD85F8A72A56627FDF65E599A60A628B46B</deviationsHash>
+      <fileHash>888FDA37141A7DDFC592596BB442556CB76EE65A4AE0928E1C715F18213FD25D</fileHash>
+    </file>
+    <file>
+      <correlationId>Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial#e2fde9ee-588d-4f30-a1be-17c5a912c15a</correlationId>
+      <path>Intent.Modules.Angular.HttpClients/Templates/PagedResult/PagedResultTemplatePartial.cs</path>
+      <count>1</count>
+      <updatedByAccountName>jp.seini@intentarchitect.com</updatedByAccountName>
+      <updatedByDisplayName>JP Seini</updatedByDisplayName>
+      <updatedAt>2025-11-10T09:33:49.4797344Z</updatedAt>
+      <deviationsHash>CDAA6EDB44FBBD7A14B35F328A819A579242679886BF4B4D8007284B3B07083B</deviationsHash>
+      <fileHash>57CD6811E2BDA76FC2160549DA3DFB654A6F45AE52EAB146B91E4468A70527F6</fileHash>
+    </file>
+  </files>
+</deviationsLog>

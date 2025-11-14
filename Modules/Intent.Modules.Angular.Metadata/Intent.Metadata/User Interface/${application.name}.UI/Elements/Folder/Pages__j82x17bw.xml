@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="b7b548eb-a3b3-44a2-910f-bb0b7de52667" type="Folder" typeId="4d95d53a-8855-4f35-aa82-e312643f5c5f">
+  <name>Pages</name>
+  <display>Pages</display>
+  <isAbstract>false</isAbstract>
+  <sort-children>by-type-then-by-name</sort-children>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>c8aa2ec1-73b4-4356-94e3-bc52a2245cb1</parentFolderId>
+  <packageId>c8aa2ec1-73b4-4356-94e3-bc52a2245cb1</packageId>
+  <packageName>${application.name}.UI</packageName>
+  <stereotypes />
+  <metadata />
+  <childElements />
+</class>

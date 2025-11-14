@@ -14,16 +14,13 @@
     <PackageReference Include="Intent.Modules.Common" Version="3.7.2" />
     <PackageReference Include="Intent.Modules.Common.Html" Version="4.0.0" />
     <PackageReference Include="Intent.Modules.Common.TypeScript" Version="4.1.3-pre.0" />
+    <PackageReference Include="Intent.Modules.Modelers.UI" Version="1.0.3" />
     <PackageReference Include="Intent.Packager" Version="3.6.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Intent.RoslynWeaver.Attributes" Version="3.0.0" />
-    <PackageReference Include="Intent.SoftwareFactory.SDK" Version="3.7.0" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="resources\" />
+	<PackageReference Include="Intent.SoftwareFactory.SDK" Version="3.9.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -34,6 +31,22 @@
     <None Update="Templates\Core\AppComponentHtml\AppComponentHtmlTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>AppComponentHtmlTemplate.cs</LastGenOutput>
+    </None>
+    <None Update="Templates\Core\AppComponentHtmlFile\AppComponentHtmlFileTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>AppComponentHtmlFileTemplate.cs</LastGenOutput>
+    </None>
+    <None Update="Templates\Core\IndexHtmlFile\IndexHtmlFileTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>IndexHtmlFileTemplate.cs</LastGenOutput>
+    </None>
+    <None Update="Templates\Component\ComponentHtml\ComponentHtmlTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>ComponentHtmlTemplate.cs</LastGenOutput>
+    </None>
+    <None Update="Templates\Component\LayoutCompeonentHtml\LayoutCompeonentHtmlTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>LayoutCompeonentHtmlTemplate.cs</LastGenOutput>
     </None>
   </ItemGroup>
 
@@ -47,6 +60,26 @@
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>AppComponentHtmlTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Templates\Core\AppComponentHtmlFile\AppComponentHtmlFileTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>AppComponentHtmlFileTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Templates\Core\IndexHtmlFile\IndexHtmlFileTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>IndexHtmlFileTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Templates\Component\ComponentHtml\ComponentHtmlTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ComponentHtmlTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Templates\Component\LayoutCompeonentHtml\LayoutCompeonentHtmlTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>LayoutCompeonentHtmlTemplate.tt</DependentUpon>
     </Compile>
   </ItemGroup>
 
