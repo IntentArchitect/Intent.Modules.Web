@@ -53,7 +53,7 @@ public class GetAllImplementationStrategy : BaseImplementationStrategy, IImpleme
         var responseMapping = _association.TargetEnd.Mappings.FirstOrDefault(m => m.TypeId == "e60890c6-7ce7-47be-a0da-dff82b8adc02"); // Call Service Response Mapping
         // this will be the main entity which is mapped
         var targetModel = responseMapping.MappedEnds.First().TargetElement;
-        var requestName = ApplySourceInitialization(templateMetadata, []);
+        var requestName = ApplySourceInitializationStatements(templateMetadata);
 
         templateMetadata.InvocationMethod.AddStatement(new TypescriptStatement($@"this.{templateMetadata.ServiceProxyTemplate.Model.Name.ToCamelCase(true)}.{templateMetadata.ServiceProxyOperation.Name.ToCamelCase(true)}().subscribe({{
       next: (data) => {{

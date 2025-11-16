@@ -53,29 +53,36 @@ public class GeneralImplementationStrategy : BaseImplementationStrategy, IImplem
         InjectProxyService(templateMetadata);
         AddServiceInvocationSupportFields(templateMetadata);
 
-        // handle source replacements
-        var sourceReplacements = new Dictionary<string, string>
+
+        // Struggled with the replacements bit below. I am sure there is probably a better way.
+        // Basically, will take the Source and Target path and convert to a . seperated list of the Ids (in ApplySourceInitializationStatements and BuildTargetStatement)
+        // The replacement will be applied against this, replaceing the Ids with the "correct"values from the replacement
+        // Then afterwards, any id's left in the string are converted back to the name values
+        foreach (var operation in templateMetadata.ComponentTemplateBase.Model.Operations)
         {
-            { templateMetadata.ComponentTemplateBase.Model.InternalElement.Id, "" }
-        };
-        foreach(var operation in templateMetadata.ComponentTemplateBase.Model.Operations)
-        {
-            sourceReplacements.Add(operation.InternalElement.Id, "");
+            SetSourceReplacement([templateMetadata.ComponentTemplateBase.Model.InternalElement, operation.InternalElement], "");
+            SetSourceReplacement(operation.InternalElement, "");
         }
+        foreach(var modelDef in templateMetadata.ComponentTemplateBase.Model.ModelDefinitions)
+        {
+            SetSourceReplacement([templateMetadata.ComponentTemplateBase.Model.InternalElement, modelDef.InternalElement], "this");
+        }
+        SetSourceReplacement(templateMetadata.ComponentTemplateBase.Model.InternalElement, "this");
+        var requestName = ApplySourceInitializationStatements(templateMetadata);
 
-        var requestName = ApplySourceInitialization(templateMetadata, sourceReplacements);
-
-
-        var responseMapping = _association.TargetEnd.Mappings.FirstOrDefault(m => m.TypeId == "e60890c6-7ce7-47be-a0da-dff82b8adc02"); // Call Service Response Mapping
-        // could be null if service returns void
-        var targetModel = responseMapping?.MappedEnds?.First()?.TargetElement;
+        foreach (var operation in templateMetadata.ComponentTemplateBase.Model.Operations)
+        {
+            SetTargetReplacement([templateMetadata.ComponentTemplateBase.Model.InternalElement.Id, operation.InternalElement.Id, null, null], "data");
+        }
+        SetTargetReplacement(templateMetadata.ServiceProxyOperation.InternalElement, "");
+        SetTargetReplacement(templateMetadata.ComponentTemplateBase.Model.InternalElement, "this");
+        var targetStatement = BuildTargetStatement(templateMetadata);
 
         var serviceProxyVariableName = templateMetadata.ServiceProxyTemplate.Model.Name.ToCamelCase(true);
         var serviceProxyOperationName = templateMetadata.ServiceProxyOperation.Name.ToCamelCase(true);
-        
-        var responseVariableName = targetModel is not null ? "data" : "";
-        var localResponseAssignmentStatement= targetModel is not null ? @$"{Environment.NewLine}
-        this.{targetModel.Name.ToCamelCase(true)} = data;" : "";
+        var responseVariableName = !string.IsNullOrWhiteSpace(targetStatement) ? "data" : "";
+        var localResponseAssignmentStatement = !string.IsNullOrWhiteSpace(targetStatement) ? @$"{Environment.NewLine}
+        {targetStatement}" : "";
 
         templateMetadata.InvocationMethod.AddStatement(new TypescriptStatement($@"this.{serviceProxyVariableName}.{serviceProxyOperationName}({requestName}).subscribe({{
       next: ({responseVariableName}) => {{

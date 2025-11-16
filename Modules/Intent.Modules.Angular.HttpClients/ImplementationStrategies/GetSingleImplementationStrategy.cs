@@ -63,7 +63,7 @@ public class GetSingleImplementationStrategy : BaseImplementationStrategy, IImpl
 
         // this will be the main entity which is mapped
         var targetModel = responseMapping.MappedEnds.First().TargetElement;
-        var requestName = ApplySourceInitialization(templateMetadata, replacements);
+        var requestName = ApplySourceInitializationStatements(templateMetadata);
 
         templateMetadata.InvocationMethod.AddStatement(new TypescriptStatement($@"this.{templateMetadata.ServiceProxyTemplate.Model.Name.ToCamelCase(true)}.{templateMetadata.ServiceProxyOperation.Name.ToCamelCase(true)}({requestName}).subscribe({{
       next: (data) => {{

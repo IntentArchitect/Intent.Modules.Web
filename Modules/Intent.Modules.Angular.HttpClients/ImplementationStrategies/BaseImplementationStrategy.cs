@@ -14,6 +14,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net.Security;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace Intent.Modules.Angular.HttpClients.ImplementationStrategies;
@@ -22,6 +23,9 @@ public abstract class BaseImplementationStrategy
 {
     internal IApplication _application;
     internal IAssociation _association;
+
+    internal Dictionary<string, string> SourceReplacements = [];
+    internal Dictionary<string, string?> TargetReplacements = [];
 
     internal InteractionMetadata GetInteractionMetadata(ITypescriptFileBuilderTemplate template)
     {
@@ -66,7 +70,7 @@ public abstract class BaseImplementationStrategy
     {
         // add the field to handle the errors
         if (!templateMetadata.ComponentTemplateBuilder.TypescriptFile.Classes.Any(c => c.Fields.Any(f => f.Name == "serviceError")))
-            {
+        {
             templateMetadata.Class.AddField("serviceError", "string | null", @field => field.WithValue("null"));
         }
 
@@ -77,39 +81,43 @@ public abstract class BaseImplementationStrategy
         }
     }
 
-    internal string ApplySourceInitialization(InteractionMetadata templateMetadata, Dictionary<string, string> replacements)
+    internal string ApplySourceInitializationStatements(InteractionMetadata templateMetadata)
     {
         var requestMapping = _association.TargetEnd.Mappings.FirstOrDefault(m => m.TypeId == "e4a4111b-cf13-4efe-8a5d-fea9457ac8ad"); // Call Service Mapping
         var clientFields = templateMetadata.ServiceProxyOperation.InternalElement.ChildElements.Where(x => x.IsDTOFieldModel()).ToArray();
 
         var paramString = string.Empty;
 
-        if(clientFields.Length == 0)
+        if (clientFields.Length == 0)
         {
             return string.Empty;
         }
 
         if (clientFields.Length == 1 && !templateMetadata.ServiceProxyModel.CreateParameterPerInput)
         {
+
             var parameters = requestMapping.MappedEnds
                 .Where(m => m.MappingTypeId == "ce70308a-e29d-4644-8410-f9e6bbd214fc") // data mappings
-                .Select(map => string.Join('.', map.SourcePath.Select(p =>
+                .Select(map =>
                 {
-                    if (replacements.TryGetValue(p.Element.Id, out string value))
-                    {
-                        return value;
-                    }
+                    // get the . seperated list of elements ids in the source path
+                    var joinedPath = string.Join('.', map.SourcePath.Select(s => s.Id));
+                    // replace Ids with replacement values
+                    var parsedPath = ReplaceKeysInStrings(joinedPath, SourceReplacements);
 
-                    return p.Name.ToCamelCase();
-                }).Where(p => !string.IsNullOrWhiteSpace(p))));
-                //.Select(@param =>
-                //{
-                //    foreach(var replacement in replacements)
-                //    {
-                //        param = param.Replace(replacement.Key, replacement.Value, StringComparison.InvariantCultureIgnoreCase);
-                //    }
-                //    return param;
-                //});
+                    // convert any remaining ids back to the actual resolved names
+                    return string.Join(".", parsedPath.Split(".").Where(v => !string.IsNullOrWhiteSpace(v)).Select(id =>
+                    {
+                        var matchedPath = map.SourcePath.FirstOrDefault(sp => sp.Id == id);
+
+                        if (matchedPath is not null)
+                        {
+                            return matchedPath.Name.ToCamelCase(true);
+                        }
+
+                        return id;
+                    }));
+                });
 
             return string.Join(", ", parameters);
         }
@@ -134,11 +142,24 @@ public abstract class BaseImplementationStrategy
                     continue;
                 }
 
-                var sourcePath = string.Join(separator: '.', map.SourcePath.Select(s => s.Name.ToCamelCase()));
-                foreach (var replacement in replacements)
-                {
-                    sourcePath = sourcePath.Replace(replacement.Key, replacement.Value);
-                }
+
+                // get the . seperated list of elements ids in the source path
+                var joinedPath = string.Join('.', map.SourcePath.Select(s => s.Id));
+                // replace Ids with replacement values
+                var parsedPath = ReplaceKeysInStrings(joinedPath, SourceReplacements);
+
+                // convert any remaining ids back to the actual resolved names
+                var sourcePath = string.Join(".", parsedPath.Split(".").Where(v => !string.IsNullOrWhiteSpace(v)).Select(id =>
+                    {
+                        var matchedPath = map.SourcePath.FirstOrDefault(sp => sp.Id == id);
+
+                        if (matchedPath is not null)
+                        {
+                            return matchedPath.Name.ToCamelCase(true);
+                        }
+
+                        return id;
+                    }));
 
                 // TODO Fix this
                 initStatementBuilder.AppendLine($"{templateMetadata.ComponentTemplateBuilder.TypescriptFile.Indentation + templateMetadata.ComponentTemplateBuilder.TypescriptFile.Indentation + templateMetadata.ComponentTemplateBuilder.TypescriptFile.Indentation}{map.TargetElement.Name.ToCamelCase(true)}: {sourcePath},");
@@ -160,5 +181,121 @@ public abstract class BaseImplementationStrategy
 
             return parameterName;
         }
+    }
+
+    internal string BuildTargetStatement(InteractionMetadata templateMetadata)
+    {
+        var responseMapping = _association.TargetEnd.Mappings.FirstOrDefault(m => m.TypeId == "e60890c6-7ce7-47be-a0da-dff82b8adc02"); // Call Service Response Mapping
+
+        if (responseMapping is null)
+        {
+            return string.Empty;
+        }
+
+        var initStatementBuilder = new StringBuilder();
+
+        foreach (var map in responseMapping.MappedEnds)
+        {
+            // get the . seperated list of elements ids in the source path
+            var joinedSourcePath = string.Join('.', map.SourcePath.Select(s => s.Id));
+            // replace Ids with replacement values
+            var parsedSourcePath = ReplaceKeysInStrings(joinedSourcePath, TargetReplacements);
+
+            // convert any remaining ids back to the actual resolved names
+            var sourcePath = string.Join(".", parsedSourcePath.Split(".").Where(v => !string.IsNullOrWhiteSpace(v)).Select(id =>
+            {
+                var matchedPath = map.SourcePath.FirstOrDefault(sp => sp.Id == id);
+
+                if (matchedPath is not null)
+                {
+                    return matchedPath.Name.ToCamelCase(true);
+                }
+
+                return id;
+            }));
+
+            // get the . seperated list of elements ids in the source path
+            var joinedTargetPath = string.Join('.', map.TargetPath.Select(s => s.Id));
+            // replace Ids with replacement values
+            var parsedTargetPath = ReplaceKeysInStrings(joinedTargetPath, TargetReplacements);
+
+            // convert any remaining ids back to the actual resolved names
+            var targetPath = string.Join(".", parsedTargetPath.Split(".").Where(v => !string.IsNullOrWhiteSpace(v)).Select(id =>
+            {
+                var matchedPath = map.TargetPath.FirstOrDefault(sp => sp.Id == id);
+
+                if (matchedPath is not null)
+                {
+                    return matchedPath.Name.ToCamelCase(true);
+                }
+
+                return id;
+            }));
+
+            // TODO Fix this
+            initStatementBuilder.AppendLine($"{targetPath} = {sourcePath};");
+        }
+
+        return initStatementBuilder.ToString();
+    }
+
+    internal virtual void SetSourceReplacement(IMetadataModel type, string replacement)
+    {
+        SourceReplacements.Remove(type.Id);
+        SourceReplacements.Add(type.Id, replacement);
+    }
+
+    internal virtual void SetSourceReplacement(IMetadataModel[] types, string replacement)
+    {
+        SourceReplacements.Remove(string.Join(".", types.Select(t => t.Id)));
+        SourceReplacements.Add(string.Join(".", types.Select(t => t.Id)), replacement);
+    }
+
+    internal virtual void SetTargetReplacement(IMetadataModel type, string replacement)
+    {
+        TargetReplacements.Remove(type.Id);
+        TargetReplacements.Add(type.Id, replacement);
+    }
+
+    internal virtual void SetTargetReplacement(IMetadataModel[] types, string replacement)
+    {
+        TargetReplacements.Remove(string.Join(".", types.Select(t => t.Id)));
+        TargetReplacements.Add(string.Join(".", types.Select(t => t.Id)), replacement);
+    }
+    internal virtual void SetTargetReplacement(string[] types, string replacement)
+    {
+        TargetReplacements.Remove(string.Join(".", types.Select(t => t ?? "*")));
+        TargetReplacements.Add(string.Join(".", types.Select(t => t ?? "*")), replacement);
+    }
+
+    internal virtual void SetTargetReplacement(string type, string replacement)
+    {
+        TargetReplacements.Remove(type);
+        TargetReplacements.Add(type, replacement);
+    }
+
+    private string ReplaceKeysInStrings(string inputString, Dictionary<string, string> replacements)
+    {
+        string updated = inputString;
+
+        foreach (var kvp in replacements)
+        {
+            var value = replacements[kvp.Key];
+
+            // Build regex pattern for wildcard support
+            string pattern = Regex.Escape(kvp.Key).Replace("\\*", "[^.]+");
+
+            // Match only full segments: e.g., a.b.c but not xab.c
+            pattern = $@"(?<=^|\.|\/){pattern}(?=\.|\/|$)";
+
+            var regex = new Regex(pattern);
+
+            if (regex.IsMatch(updated))
+            {
+                updated = regex.Replace(updated, value);
+            }
+        }
+
+        return updated;
     }
 }
