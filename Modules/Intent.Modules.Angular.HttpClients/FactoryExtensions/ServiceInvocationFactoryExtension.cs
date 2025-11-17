@@ -5,6 +5,7 @@ using Intent.Engine;
 using Intent.Modelers.Services.Api;
 using Intent.Modelers.UI.Api;
 using Intent.Modules.Angular.HttpClients.ImplementationStrategies;
+using Intent.Modules.Angular.HttpClients.ImplementationStrategies.Infrastructure;
 using Intent.Modules.Angular.HttpClients.Templates.Helper;
 using Intent.Modules.Common;
 using Intent.Modules.Common.Plugins;
@@ -45,32 +46,43 @@ namespace Intent.Modules.Angular.HttpClients.FactoryExtensions
             var associations = application.MetadataManager.UserInterface(application).GetAssociationsOfType("fe5a5cd8-aabd-472f-8d42-f5c233e658dc");
             foreach (var association in associations)
             {
-                var componentOperation = association.TargetEnd.ParentElement;
-                var componentModel = new ComponentModel(componentOperation.ParentElement);
-                var template = application.FindTemplateInstance<ITypescriptFileBuilderTemplate>("Intent.Angular.Component.ComponentTypeScript", componentModel);
+                // var componentOperation = association.TargetEnd.ParentElement;
+                // var componentModel = new ComponentModel(componentOperation.ParentElement);
+                // var template = application.FindTemplateInstance<ITypescriptFileBuilderTemplate>("Intent.Angular.Component.ComponentTypeScript", componentModel);
 
-                var strategies = new List<IImplementationStrategy>
-                {
-                    //new GetAllImplementationStrategy(application, association),
-                    //new GetSingleImplementationStrategy(application, association),
-                    new GeneralImplementationStrategy(application, association)
-                };
+                // var implementation = new ServiceInvocationImplementation(application, association);
+                // var interactionMetadata = ServiceInvocationImplementation.GetInteractionMetadata(association, application, template);
 
-                var matchedStrategies = strategies.Where(s => s.IsMatch()).ToArray();
+                // var strategies = new List<IImplementationStrategy>
+                // {
+                //     new NoParameterStrategy(interactionMetadata),
+                //     new SingleValueParameterStrategy(interactionMetadata, association),
+                //     new ObjectParameterStrategy(interactionMetadata, association)
+                //     //new GetAllImplementationStrategy(application, association),
+                //     //new GetSingleImplementationStrategy(application, association),
+                //     //new OldGeneralImplementationStrategy(application, association)
+                // };
 
-                if (matchedStrategies.Length == 1)
-                {
-                    matchedStrategies[0].BindToTemplate(template);
+                // var sourceStrategy = strategies.Where(s => s is IIsSourceStrategy && s.IsMatch()).ToArray();
+                // var targetStrategy = strategies.Where(s => s is IIsTargetStrategy && s.IsMatch()).ToArray();
 
-                    // We have a match, register HTTP client with DI
-                    application.EventDispatcher.Publish(new ServiceConfigurationRequestEvent("provideHttpClient", "@angular/common/http"));
-                }
-                else if (matchedStrategies.Length > 1)
-                {
-                    Logging.Log.Warning($@"Multiple implementation strategies were found that can implement the service operation");
-                    Logging.Log.Debug($@"Strategies: {string.Join(", ", matchedStrategies.Select(s => s.GetType().Name))}");
-                }
+                // if(sourceStrategy.Length > 1)
+                // {
+                //     Logging.Log.Warning($@"Multiple source implementation strategies were found that can implement the service operation");
+                //     Logging.Log.Debug($@"Source strategies: {string.Join(", ", sourceStrategy.Select(s => s.GetType().Name))}");
+                // }
 
+                // if (targetStrategy.Length > 1)
+                // {
+                //     Logging.Log.Warning($@"Multiple target implementation strategies were found that can implement the service operation");
+                //     Logging.Log.Debug($@"Strategies: {string.Join(", ", sourceStrategy.Select(s => s.GetType().Name))}");
+                // }
+
+                // implementation.SetSourceStrategy(sourceStrategy.FirstOrDefault());
+                // implementation.SetTargetStrategy(targetStrategy.FirstOrDefault());
+                // implementation.BindToTemplate(template, interactionMetadata);
+
+                // application.EventDispatcher.Publish(new ServiceConfigurationRequestEvent("provideHttpClient", "@angular/common/http"));
             }
         }
     }

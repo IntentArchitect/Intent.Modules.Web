@@ -8,11 +8,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Intent.Modules.Angular.HttpClients.ImplementationStrategies;
+namespace Intent.Modules.Angular.HttpClients.ImplementationStrategies.Infrastructure;
 
 public interface IImplementationStrategy
 {
     bool IsMatch();
-    void BindToTemplate(ITypescriptFileBuilderTemplate template);
-    void ApplyStrategy(ITypescriptFileBuilderTemplate template);
+    GenerateRequestResult GenerateImplementation();
 }
+
+public interface IIsSourceStrategy { }
+
+public interface IIsTargetStrategy { }

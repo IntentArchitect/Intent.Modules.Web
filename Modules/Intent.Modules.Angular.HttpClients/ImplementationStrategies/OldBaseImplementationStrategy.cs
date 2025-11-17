@@ -3,6 +3,7 @@ using Intent.Metadata.Models;
 using Intent.Modelers.Services.Api;
 using Intent.Modelers.Services.CQRS.Api;
 using Intent.Modelers.UI.Api;
+using Intent.Modules.Angular.HttpClients.ImplementationStrategies.Infrastructure;
 using Intent.Modules.Angular.HttpClients.Templates.Helper;
 using Intent.Modules.Angular.HttpClients.Templates.HttpServiceProxy;
 using Intent.Modules.Common;
@@ -19,7 +20,7 @@ using System.Threading.Tasks;
 
 namespace Intent.Modules.Angular.HttpClients.ImplementationStrategies;
 
-public abstract class BaseImplementationStrategy
+public abstract class OldBaseImplementationStrategy
 {
     internal IApplication _application;
     internal IAssociation _association;
@@ -262,6 +263,7 @@ public abstract class BaseImplementationStrategy
         TargetReplacements.Remove(string.Join(".", types.Select(t => t.Id)));
         TargetReplacements.Add(string.Join(".", types.Select(t => t.Id)), replacement);
     }
+
     internal virtual void SetTargetReplacement(string[] types, string replacement)
     {
         TargetReplacements.Remove(string.Join(".", types.Select(t => t ?? "*")));

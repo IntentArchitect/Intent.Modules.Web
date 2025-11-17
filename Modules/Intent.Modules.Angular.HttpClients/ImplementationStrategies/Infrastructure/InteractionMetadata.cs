@@ -9,9 +9,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Intent.Modules.Angular.HttpClients.ImplementationStrategies;
+namespace Intent.Modules.Angular.HttpClients.ImplementationStrategies.Infrastructure;
 
-internal class InteractionMetadata
+public class InteractionMetadata
 {
     public TypescriptClass Class { get; internal set; }
 
