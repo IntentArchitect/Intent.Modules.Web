@@ -36,7 +36,7 @@ namespace Intent.Modules.Angular.HttpClients.FactoryExtensions
             // idea.
 
             // GCB REPLY TO ABOVE COMMENT:
-            // This is not ideal. See what I did for the Blazor Http Clients that also need
+            // This is not ideal. See what I did for the Angular Http Clients that also need
             // to resolve a paged result. It uses our standard type resolution mechanisms (which are far more
             // intuitive)
             var templates = pagedResultTemplate?.ExecutionContext

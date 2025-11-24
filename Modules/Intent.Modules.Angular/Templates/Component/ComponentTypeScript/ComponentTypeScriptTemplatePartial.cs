@@ -1,10 +1,15 @@
 using Intent.Engine;
+using Intent.Exceptions;
 using Intent.Metadata.Models;
 using Intent.Modelers.UI.Api;
+using Intent.Modules.Angular.Api;
 using Intent.Modules.Angular.Templates.Shared.IntentDecorators;
 using Intent.Modules.Common;
 using Intent.Modules.Common.Templates;
+using Intent.Modules.Common.TypeResolution;
 using Intent.Modules.Common.Types.Api;
+using Intent.Modules.Common.Typescript.Mapping;
+using Intent.Modules.Common.Typescript.Mapping.Resolvers;
 using Intent.Modules.Common.TypeScript.Builder;
 using Intent.Modules.Common.TypeScript.Templates;
 using Intent.RoslynWeaver.Attributes;
@@ -16,6 +21,7 @@ using System.Reflection;
 using System.Reflection.Metadata;
 using System.Security.Claims;
 using System.Text;
+using static System.Reflection.Metadata.BlobBuilder;
 
 [assembly: DefaultIntentManaged(Mode.Fully)]
 [assembly: IntentTemplate("Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial", Version = "1.0")]
@@ -36,6 +42,10 @@ namespace Intent.Modules.Angular.Templates.Component.ComponentTypeScript
 
             AddTypeSource("Intent.Angular.HttpClients.DtoContract");
             AddTypeSource("Intent.Angular.HttpClients.PagedResult");
+            AddTypeSource("Intent.Angular.HttpClients.HttpServiceProxy");
+            AddTypeSource("Intent.Application.Dtos.DtoModel");
+            AddTypeSource(TemplateId);
+
 
             TypescriptFile = new TypescriptFile(this.GetFolderPath());
 
@@ -82,6 +92,91 @@ namespace Intent.Modules.Angular.Templates.Component.ComponentTypeScript
                                 p.WithDefaultValue(param.Value);
                             });
                         }
+
+                        TypescriptFile.AfterBuild(file =>
+                        {
+                            var mappingManager = CreateMappingManager();
+                            mappingManager.SetFromReplacement(operation, null);
+
+                            foreach (var action in operation.GetProcessingActions())
+                            {
+                                if (action.IsInvocationModel() && action.Mappings.Count() == 1)
+                                {
+                                    var operationMapping = action.Mappings.Single();
+                                    var mappedEnd = operationMapping.MappedEnds.FirstOrDefault(x => x.SourceElement.Id == action.Id);
+                                    if (mappedEnd == null)
+                                    {
+                                        throw new ElementException(action, "Mapping required for this invocation");
+                                    }
+                                    var invocation = mappingManager.GenerateSourceStatementForMapping(operationMapping, mappedEnd);
+
+                                    //var invStatement = invocation as Typescript;
+                                    //if (invStatement?.IsAsyncInvocation() == true || mappedEnd?.TargetElement.TypeReference?.Element?.Name == "Task")
+                                    //{
+                                    //    invocation = new CSharpAwaitExpression(invocation);
+                                    //}
+                                    method.AddStatement(invocation);
+                                    continue;
+                                }
+
+                                if (action.IsCallServiceOperationActionTargetEndModel())
+                                {
+                                    var serviceCall = action.AsCallServiceOperationActionTargetEndModel();
+                                    var parentElement = ((IElement)serviceCall.Element).ParentElement;
+                                    var invocationMapping = serviceCall.GetMapInvocationMapping();
+                                    var targetElement = (IElement)invocationMapping.TargetElement;
+
+                                    const string commandSpecializationTypeId = "ccf14eb6-3a55-4d81-b5b9-d27311c70cb9";
+                                    const string querySpecializationTypeId = "e71b0662-e29d-4db2-868b-8a12464b25d0";
+                                    const string dtoFieldTypeId = "7baed1fd-469b-4980-8fd9-4cefb8331eb2";
+                                    const string httpSettingsDefinitionId = "b4581ed2-42ec-4ae2-83dd-dcdd5f0837b6";
+
+                                    string? serviceName = null;
+                                    TypescriptStatement? invocation = null;
+
+                                    serviceName = parentElement is not null ? @class.InjectServiceProperty(this, GetTypeName(parentElement)) :
+                                        @class.InjectServiceProperty(this, GetTypeName(serviceCall.Package.AsTypeReference()));
+
+
+                                    if (targetElement.SpecializationTypeId is commandSpecializationTypeId or querySpecializationTypeId)
+                                    {
+                                        if (!targetElement.HasStereotype(httpSettingsDefinitionId))
+                                        {
+                                            throw new ElementException(action, "Target CQRS request is not exposed with HTTP");
+                                        }
+
+                                        var nameOfMethodToInvoke = this
+                                            .GetAllTypeInfo(parentElement.AsTypeReference()?.Element is null ? serviceCall.Package.AsTypeReference() : parentElement.AsTypeReference())
+                                            .Select(x => x.Template)
+                                            .OfType<ITypescriptTemplate>()
+                                            .FirstOrDefault(x => x.RootCodeContext.TryGetReferenceForModel(targetElement.Id, out _))
+                                                ?.RootCodeContext.GetReferenceForModel(targetElement.Id).Name;
+
+                                        if (nameOfMethodToInvoke == null)
+                                        {
+                                            throw new FriendlyException("Unable to resolve the service type for the service call to `" + targetElement.DisplayText + "`. Try installing a module to realize this service (e.g. `Intent.Blazor.HttpClients`)");
+                                        }
+
+                                        //var typescriptInvocationStatement = new TypescriptStatement(nameOfMethodToInvoke);
+                                        var arguments = new List<TypescriptStatement>();
+                                        if (targetElement.ChildElements.Any(x => x.SpecializationTypeId is dtoFieldTypeId))
+                                        {
+                                            arguments.Add(mappingManager.GenerateCreationStatement(invocationMapping));
+                                        }
+
+                                        invocation = new TypescriptStatement($"{nameOfMethodToInvoke}({string.Join(',', arguments)})");
+                                    }
+                                    else // Proxies
+                                    {
+                                        invocation = mappingManager.GenerateUpdateStatements(invocationMapping).First();
+                                    }
+
+                                    method.AddStatements(TypescriptFileExtensions.GetCallServiceOperation(serviceCall, mappingManager, serviceName, invocation));
+
+                                    continue;
+                                }
+                            }
+                        });
                     });
                 }
             }).AfterBuild(file =>
@@ -126,13 +221,28 @@ namespace Intent.Modules.Angular.Templates.Component.ComponentTypeScript
             }, 1000); // this build needs to happen AFTER the "Intent.Angular.HttpClients.DtoContract" template, otherwise PagedResults cannot be resolved
         }
 
+        public TypescriptClassMappingManager CreateMappingManager()
+        {
+            var template = (ITypescriptTemplate)this;
+
+            var mappingManager = new TypescriptClassMappingManager(template);
+            //mappingManager.AddMappingResolver(new LocalCommandQueryMappingResolver(template));
+            //mappingManager.AddMappingResolver(new CallServiceOperationMappingResolver(template));
+            //mappingManager.AddMappingResolver(new PropertyCollectionMappingResolver(template));
+            //mappingManager.AddMappingResolver(new RazorBindingMappingResolver(template));
+            mappingManager.AddMappingResolver(new TypeConvertingMappingResolver(template));
+            mappingManager.SetFromReplacement(Model, null);
+            mappingManager.SetToReplacement(Model, null);
+            return mappingManager;
+        }
+
         private void AddModelDefinitions(ComponentModel model)
         {
             foreach (var modelDef in model.ModelDefinitions)
             {
                 // the defacto standard should be interfaces, but they cannot contain operations
                 // or contructors. So add class if required, but otherwise add interface
-                if(modelDef.Constructors.Any() || modelDef.Operations.Any())
+                if (modelDef.Constructors.Any() || modelDef.Operations.Any())
                 {
                     AddClassModelDefinition(model, modelDef);
                     continue;

@@ -78,9 +78,10 @@ namespace Intent.Modules.Angular.HttpClients.Templates.HttpServiceProxy
 
                         @class.AddMethod(endpoint.Name.ToCamelCase(true), $"{UseType("Observable", "rxjs")}<{GetReturnType(endpoint)}>", method =>
                         {
-                            if (Model.UnderlyingModel is ServiceProxyModel serviceProxyModel && serviceProxyModel.Operations.Any())
+                            if (Model is IServiceProxyModel serviceProxyModel && serviceProxyModel.Endpoints.Any())
                             {
-                                var operationModel = serviceProxyModel.Operations.Single(x => x.Mapping?.ElementId == endpoint.Id);
+                                var operationModel = serviceProxyModel.Endpoints.Single(x => x.InternalElement.Id == endpoint.Id);
+                                method.RepresentsModel(operationModel);
                             }
 
                             method.Public();
