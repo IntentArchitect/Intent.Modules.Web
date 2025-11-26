@@ -28,7 +28,7 @@ namespace Intent.Modules.Angular.HttpClients.Templates.JsonResponse
         [IntentManaged(Mode.Merge, Signature = Mode.Fully, Body = Mode.Ignore)]
         public JsonResponseTemplate(IOutputTarget outputTarget, object model = null) : base(TemplateId, outputTarget, model)
         {
-            TypescriptFile = new TypescriptFile(this.GetFolderPath())
+            TypescriptFile = new TypescriptFile(this.GetFolderPath(), this)
                 .AddClass($"JsonResponse", @class =>
                 {
                     @class.Export();

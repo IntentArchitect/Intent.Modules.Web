@@ -28,7 +28,7 @@ namespace Intent.Modules.Angular.HttpClients.Templates.DtoContract
         [IntentManaged(Mode.Merge, Signature = Mode.Fully, Body = Mode.Ignore)]
         public DtoContractTemplate(IOutputTarget outputTarget, Intent.Modelers.Services.Api.DTOModel model) : base(TemplateId, outputTarget, model)
         {
-            TypescriptFile = new TypescriptFile(this.GetFolderPath())
+            TypescriptFile = new TypescriptFile(this.GetFolderPath(), this)
                 .AddInterface($"{Model.Name}", @interface =>
                 {
                     AddTypeSource(TemplateId);

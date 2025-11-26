@@ -10,6 +10,7 @@ using Intent.Templates;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text.RegularExpressions;
 
 [assembly: DefaultIntentManaged(Mode.Fully)]
 [assembly: IntentTemplate("Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial", Version = "1.0")]
@@ -17,25 +18,17 @@ using System.Linq;
 namespace Intent.Modules.Angular.Templates.Environment.Environment
 {
     [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
-    public partial class EnvironmentTemplate : TypeScriptTemplateBase<object>, ITypescriptFileBuilderTemplate
+    public partial class EnvironmentTemplate : EnvironmentTemplateBase, ITypescriptFileBuilderTemplate
     {
         [IntentManaged(Mode.Fully)]
         public const string TemplateId = "Intent.Angular.Environment.Environment";
 
+        private readonly IList<ConfigurationVariableRequiredEvent> _environmentVariables = new List<ConfigurationVariableRequiredEvent>();
+
         [IntentManaged(Mode.Merge, Signature = Mode.Fully, Body = Mode.Ignore)]
         public EnvironmentTemplate(IOutputTarget outputTarget, object model = null) : base(TemplateId, outputTarget, model)
         {
-            TypescriptFile = new TypescriptFile(this.GetFolderPath())
-                .AddVariable("environment", @var =>
-                {
-                    @var.Const();
-                    @var.Export();
-                    //@var.WithObjectValue(obj =>
-                    //{
-                    //    obj.AddField("en1", "1");
-                    //    obj.AddField("en2", "2");
-                    //});
-                });
+            TypescriptFile = new TypescriptFile(this.GetFolderPath(), this);
 
             ExecutionContext.EventDispatcher.Subscribe<ConfigurationVariableRequiredEvent>(HandleConfigVariableRequiredEvent);
         }
@@ -57,10 +50,12 @@ namespace Intent.Modules.Angular.Templates.Environment.Environment
 
         public void HandleConfigVariableRequiredEvent(ConfigurationVariableRequiredEvent @event)
         {
-            var environmentVar = TypescriptFile.Variables.First(v => v.Name == "environment");
-            var environmentObj = environmentVar.Value as TypescriptVariableObject;
+            _environmentVariables.Add(@event);
+        }
 
-            environmentObj.AddField(@event.Key, @event.DefaultValue);
+        public override string RunTemplate()
+        {
+            return GenerateFile();
         }
     }
 }

@@ -1,6 +1,7 @@
 using System.Linq;
 using Intent.Metadata.Models;
 using Intent.Modules.Common;
+using Intent.Modules.Common.Angular.Mapping;
 using Intent.Modules.Common.Typescript.Mapping;
 using Intent.Modules.Common.TypeScript.Builder;
 using Intent.Modules.Common.TypeScript.Templates;
@@ -35,16 +36,16 @@ public class CallServiceOperationMappingResolver : IMappingTypeResolver
         if (mappingModel.Model.SpecializationType is "Command" or "Query" &&
             ((IElement)mappingModel.Model).HasStereotype(httpSettingsDefinitionId))
         {
-            //return ((IElement)mappingModel.Model).ChildElements.Count(x => x.SpecializationTypeId is dtoFieldTypeId) == 1
-            //    ? new SingleFieldMapping(mappingModel, _template)
-            //    : new ObjectInitializationMapping(mappingModel, _template);
+            return ((IElement)mappingModel.Model).ChildElements.Count(x => x.SpecializationTypeId is dtoFieldTypeId) == 1
+                ? new SingleFieldMapping(mappingModel, _template)
+                : new ObjectInitializationMapping(mappingModel, _template);
         }
         
         if (
             mappingModel.Model.TypeReference?.Element?.SpecializationType is "Command" or "DTO" or "Model Definition" &&
             mappingModel.Model.SpecializationType is not "Event Emitter")
         {
-            //return new ObjectInitializationMapping(mappingModel, _template);
+            return new ObjectInitializationMapping(mappingModel, _template);
         }
 
         return null;

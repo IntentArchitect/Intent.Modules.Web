@@ -3,6 +3,7 @@ using Intent.Exceptions;
 using Intent.Metadata.Models;
 using Intent.Modelers.UI.Api;
 using Intent.Modules.Angular.Api;
+using Intent.Modules.Angular.Api.Mappings;
 using Intent.Modules.Angular.Templates.Shared.IntentDecorators;
 using Intent.Modules.Common;
 using Intent.Modules.Common.Templates;
@@ -46,8 +47,7 @@ namespace Intent.Modules.Angular.Templates.Component.ComponentTypeScript
             AddTypeSource("Intent.Application.Dtos.DtoModel");
             AddTypeSource(TemplateId);
 
-
-            TypescriptFile = new TypescriptFile(this.GetFolderPath());
+            TypescriptFile = new TypescriptFile(this.GetFolderPath(), this);
 
             AddModelDefinitions(model);
 
@@ -60,7 +60,7 @@ namespace Intent.Modules.Angular.Templates.Component.ComponentTypeScript
                     var obj = new TypescriptVariableObject();
                     obj.AddField("selector", $"'app-{ComponentName.ToKebabCase().ToLower()}'");
                     obj.AddField("templateUrl", $"'{ComponentName.ToKebabCase()}.component.html'");
-                    obj.AddField("styleUrl", $"'{ComponentName.ToKebabCase()}.component.scss'");
+                    obj.AddField("styleUrls", $"['{ComponentName.ToKebabCase()}.component.scss']");
 
                     //TODO sort out indentation on final line of parameter
                     component.AddArgument(obj.GetText(TypescriptFile.Indentation));
@@ -77,12 +77,6 @@ namespace Intent.Modules.Angular.Templates.Component.ComponentTypeScript
 
                 foreach (var operation in model.Operations)
                 {
-                    if (operation.Name == "ngOnInit")
-                    {
-                        AddOnInitOperation(@class);
-                        continue;
-                    }
-
                     @class.AddMethod(operation.Name.ToCamelCase(true), operation.ReturnType is null ? "void" : GetTypeName(operation.ReturnType), method =>
                     {
                         foreach (var param in operation.Parameters)
@@ -91,6 +85,11 @@ namespace Intent.Modules.Angular.Templates.Component.ComponentTypeScript
                             {
                                 p.WithDefaultValue(param.Value);
                             });
+                        }
+
+                        if (operation.Name == "ngOnInit")
+                        {
+                            ConfigureOnInitOperation(@class, method);
                         }
 
                         TypescriptFile.AfterBuild(file =>
@@ -109,12 +108,6 @@ namespace Intent.Modules.Angular.Templates.Component.ComponentTypeScript
                                         throw new ElementException(action, "Mapping required for this invocation");
                                     }
                                     var invocation = mappingManager.GenerateSourceStatementForMapping(operationMapping, mappedEnd);
-
-                                    //var invStatement = invocation as Typescript;
-                                    //if (invStatement?.IsAsyncInvocation() == true || mappedEnd?.TargetElement.TypeReference?.Element?.Name == "Task")
-                                    //{
-                                    //    invocation = new CSharpAwaitExpression(invocation);
-                                    //}
                                     method.AddStatement(invocation);
                                     continue;
                                 }
@@ -137,6 +130,7 @@ namespace Intent.Modules.Angular.Templates.Component.ComponentTypeScript
                                     serviceName = parentElement is not null ? @class.InjectServiceProperty(this, GetTypeName(parentElement)) :
                                         @class.InjectServiceProperty(this, GetTypeName(serviceCall.Package.AsTypeReference()));
 
+                                    @class.InjectServiceUtilityFields();
 
                                     if (targetElement.SpecializationTypeId is commandSpecializationTypeId or querySpecializationTypeId)
                                     {
@@ -145,23 +139,25 @@ namespace Intent.Modules.Angular.Templates.Component.ComponentTypeScript
                                             throw new ElementException(action, "Target CQRS request is not exposed with HTTP");
                                         }
 
-                                        var nameOfMethodToInvoke = this
+                                        var nameOfMethodToInvoke = (this
                                             .GetAllTypeInfo(parentElement.AsTypeReference()?.Element is null ? serviceCall.Package.AsTypeReference() : parentElement.AsTypeReference())
                                             .Select(x => x.Template)
                                             .OfType<ITypescriptTemplate>()
                                             .FirstOrDefault(x => x.RootCodeContext.TryGetReferenceForModel(targetElement.Id, out _))
-                                                ?.RootCodeContext.GetReferenceForModel(targetElement.Id).Name;
+                                                ?.RootCodeContext.GetReferenceForModel(targetElement.Id).Name) ?? throw new FriendlyException("Unable to resolve the service type for the service call to `" + targetElement.DisplayText + "`. Try installing a module to realize this service (e.g. `Intent.Blazor.HttpClients`)");
 
-                                        if (nameOfMethodToInvoke == null)
-                                        {
-                                            throw new FriendlyException("Unable to resolve the service type for the service call to `" + targetElement.DisplayText + "`. Try installing a module to realize this service (e.g. `Intent.Blazor.HttpClients`)");
-                                        }
-
-                                        //var typescriptInvocationStatement = new TypescriptStatement(nameOfMethodToInvoke);
                                         var arguments = new List<TypescriptStatement>();
-                                        if (targetElement.ChildElements.Any(x => x.SpecializationTypeId is dtoFieldTypeId))
+                                        if (targetElement.ChildElements.Any(x => x.SpecializationTypeId is dtoFieldTypeId) &&
+                                            targetElement.ChildElements.Count(x => x.SpecializationTypeId is dtoFieldTypeId) == 1)
                                         {
                                             arguments.Add(mappingManager.GenerateCreationStatement(invocationMapping));
+                                        }
+
+                                        if (targetElement.ChildElements.Any(x => x.SpecializationTypeId is dtoFieldTypeId) &&
+                                            targetElement.ChildElements.Count(x => x.SpecializationTypeId is dtoFieldTypeId) > 1)
+                                        {
+                                            method.AddStatement(mappingManager.GenerateCreationStatement(invocationMapping));
+                                            arguments.Add(targetElement.SpecializationType.ToCamelCase());
                                         }
 
                                         invocation = new TypescriptStatement($"{nameOfMethodToInvoke}({string.Join(',', arguments)})");
@@ -207,7 +203,8 @@ namespace Intent.Modules.Angular.Templates.Component.ComponentTypeScript
                             field.WithValue(model.Value);
                         }
 
-                        if (!model.TypeReference.IsNullable && string.IsNullOrWhiteSpace(model.Value) && !field.IsDefinitelyAssigned)
+                        // TODO cater for default value 
+                        if (!model.TypeReference.IsNullable && !field.IsDefinitelyAssigned)
                         {
                             field.WithDefaultValue(this, model.TypeReference);
                         }
@@ -227,9 +224,9 @@ namespace Intent.Modules.Angular.Templates.Component.ComponentTypeScript
 
             var mappingManager = new TypescriptClassMappingManager(template);
             //mappingManager.AddMappingResolver(new LocalCommandQueryMappingResolver(template));
-            //mappingManager.AddMappingResolver(new CallServiceOperationMappingResolver(template));
+            mappingManager.AddMappingResolver(new CallServiceOperationMappingResolver(template));
             //mappingManager.AddMappingResolver(new PropertyCollectionMappingResolver(template));
-            //mappingManager.AddMappingResolver(new RazorBindingMappingResolver(template));
+            mappingManager.AddMappingResolver(new TypescriptBindingMappingResolver(template));
             mappingManager.AddMappingResolver(new TypeConvertingMappingResolver(template));
             mappingManager.SetFromReplacement(Model, null);
             mappingManager.SetToReplacement(Model, null);
@@ -322,40 +319,37 @@ namespace Intent.Modules.Angular.Templates.Component.ComponentTypeScript
             });
         }
 
-        private void AddOnInitOperation(TypescriptClass @class)
+        private void ConfigureOnInitOperation(TypescriptClass @class, TypescriptMethod method)
         {
-            @class.AddMethod("ngOnInit", "void", init =>
+            method.AddDecorator("IntentMerge");
+
+            if (Model.Properties.Where(p => p.HasRouteParameter()).Any())
             {
-                init.AddDecorator("IntentMerge");
-
-                if (Model.Properties.Where(p => p.HasRouteParameter()).Any())
+                var ctor = @class.Constructors.First();
+                ctor.AddParameter("route", this.UseType("ActivatedRoute", "@angular/router"), param =>
                 {
-                    var ctor = @class.Constructors.First();
-                    ctor.AddParameter("route", this.UseType("ActivatedRoute", "@angular/router"), param =>
-                    {
-                        param.WithPrivateFieldAssignment();
-                    });
+                    param.WithPrivateFieldAssignment();
+                });
+            }
+
+            foreach (var prop in Model.Properties.Where(p => p.HasRouteParameter() || p.HasQueryParameter()))
+            {
+                var postStatement = "";
+                if (!prop.TypeReference.IsNullable)
+                {
+                    postStatement = " ?? ''";
                 }
 
-                foreach (var prop in Model.Properties.Where(p => p.HasRouteParameter() || p.HasQueryParameter()))
+                if (prop.HasRouteParameter())
                 {
-                    var postStatement = "";
-                    if (!prop.TypeReference.IsNullable)
-                    {
-                        postStatement = " ?? ''";
-                    }
-
-                    if (prop.HasRouteParameter())
-                    {
-                        init.AddStatement($"this.{prop.Name.ToCamelCase(true)} = this.route.snapshot.paramMap.get('{prop.Name.ToCamelCase(true)}'){postStatement};");
-                    }
-
-                    if (prop.HasQueryParameter())
-                    {
-                        init.AddStatement($"this.{prop.Name.ToCamelCase(true)} = this.route.snapshot.queryParamMap.get('{prop.Name.ToCamelCase(true)}'){postStatement};");
-                    }
+                    method.AddStatement($"this.{prop.Name.ToCamelCase(true)} = this.route.snapshot.paramMap.get('{prop.Name.ToCamelCase(true)}'){postStatement};");
                 }
-            });
+
+                if (prop.HasQueryParameter())
+                {
+                    method.AddStatement($"this.{prop.Name.ToCamelCase(true)} = this.route.snapshot.queryParamMap.get('{prop.Name.ToCamelCase(true)}'){postStatement};");
+                }
+            }
         }
 
         public override void BeforeTemplateExecution()

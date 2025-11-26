@@ -29,7 +29,7 @@ namespace Intent.Modules.Angular.Templates.Core.AppConfig
 
             ExecutionContext.EventDispatcher.Subscribe<ServiceConfigurationRequestEvent>(HandleServiceConfigurationRequest);
 
-            TypescriptFile = new TypescriptFile(this.GetFolderPath())
+            TypescriptFile = new TypescriptFile(this.GetFolderPath(), this)
                 .AddImport("ApplicationConfig", "@angular/core")
                 .AddImport("provideZoneChangeDetection", "@angular/core")
                 .AddImport("provideRouter", "@angular/router")

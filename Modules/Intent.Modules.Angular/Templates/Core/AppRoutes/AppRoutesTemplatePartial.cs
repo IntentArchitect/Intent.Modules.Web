@@ -27,7 +27,7 @@ namespace Intent.Modules.Angular.Templates.Core.AppRoutes
         {
             ExecutionContext.EventDispatcher.Subscribe<ComponentCreatedEvent>(HandleComponenetCreatedEvent);
 
-            TypescriptFile = new TypescriptFile(this.GetFolderPath())
+            TypescriptFile = new TypescriptFile(this.GetFolderPath(), this)
                 .AddImport("Routes", "@angular/router")
                 .AddVariable("routes", "Routes", @var =>
                 {

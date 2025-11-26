@@ -24,7 +24,7 @@ namespace Intent.Modules.Angular.HttpClients.Templates.PagedResult
         [IntentManaged(Mode.Merge, Signature = Mode.Fully, Body = Mode.Ignore)]
         public PagedResultTemplate(IOutputTarget outputTarget, object model = null) : base(TemplateId, outputTarget, model)
         {
-            TypescriptFile = new TypescriptFile(this.GetFolderPath())
+            TypescriptFile = new TypescriptFile(this.GetFolderPath(), this)
                 .AddClass($"PagedResult", @class =>
                 {
                     @class.Export();

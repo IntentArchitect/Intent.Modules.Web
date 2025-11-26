@@ -24,6 +24,7 @@ using System.Linq;
 using System.Net;
 using System.Security.Cryptography;
 using System.Text;
+using System.Text.RegularExpressions;
 
 [assembly: DefaultIntentManaged(Mode.Fully)]
 [assembly: IntentTemplate("Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial", Version = "1.0")]
@@ -43,7 +44,7 @@ namespace Intent.Modules.Angular.HttpClients.Templates.HttpServiceProxy
             AddTypeSource(DtoContractTemplate.TemplateId);
             PagedResultTypeSource.ApplyTo(this, PagedResultTemplate.TemplateId);
 
-            TypescriptFile = new TypescriptFile(this.GetFolderPath())
+            TypescriptFile = new TypescriptFile(this.GetFolderPath(), this)
                 .AddClass($"{Model.Name}", @class =>
                 {
                     @class.Export();
@@ -68,6 +69,8 @@ namespace Intent.Modules.Angular.HttpClients.Templates.HttpServiceProxy
                     {
                         ctor.AddParameter("httpClient", UseType("HttpClient", "@angular/common/http"), param => param.WithPrivateFieldAssignment());
                     });
+
+                    this.ExecutionContext.EventDispatcher.Publish(new ServiceConfigurationRequestEvent("provideHttpClient", "@angular/common/http"));
 
                     foreach (var endpoint in Model.Endpoints)
                     {
@@ -127,12 +130,13 @@ namespace Intent.Modules.Angular.HttpClients.Templates.HttpServiceProxy
                                 }
                             }
 
-                            var url = endpoint.Route.Replace("{", "${");
-                            var endpointRoute = endpoint.Route;
+                            var url = ToTypeScriptTemplateRoute(endpoint.Route);
                             foreach (var input in endpoint.Inputs)
                             {
                                 url = url.Replace($"${{{input.Name.ToLowerInvariant()}}}", $"${{{(!string.IsNullOrWhiteSpace(parameterName) && objectParam ? $"{parameterName}." : string.Empty)}{input.Name.ToCamelCase(true)}}}");
                             }
+
+                            url = AddEncodeURIComponent(url);
 
                             method.AddStatement($"const url = `${{this.baseUrl}}{url}`;");
                             method.AddStatements(GetPreDataServiceCallStatements(endpoint, objectParam ? parameterName : ""));
@@ -140,6 +144,29 @@ namespace Intent.Modules.Angular.HttpClients.Templates.HttpServiceProxy
                         });
                     }
                 });
+        }
+
+
+        private static string ToTypeScriptTemplateRoute(string route)
+        {
+            ArgumentNullException.ThrowIfNull(route);
+
+            // Matches {param} or {param:constraint}, captures "param" in group 1
+            return Regex.Replace(route, @"\{([^}:]+)(:[^}]*)?\}", @"$${$1}");
+        }
+
+        private static string AddEncodeURIComponent(string route)
+        {
+            if (route == null) throw new ArgumentNullException(nameof(route));
+
+            // Match ${...} and capture the inner identifier/expression
+            var pattern = new Regex(@"\$\{([^}]+)\}");
+
+            return pattern.Replace(route, match =>
+            {
+                var inner = match.Groups[1].Value; // e.g. "id"
+                return "${encodeURIComponent(" + inner + ")}";
+            });
         }
 
         public override void BeforeTemplateExecution()

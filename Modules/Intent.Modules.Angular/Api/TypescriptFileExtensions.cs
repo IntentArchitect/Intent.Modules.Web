@@ -514,10 +514,25 @@ public static class TypescriptFileExtensions
             name: fieldName.ToCamelCase() ?? type, 
             configure: config =>
             {
-                config.WithPrivateFieldAssignment();
+                config.WithPrivateReadonlyFieldAssignment();
             });
 
         return fieldName.ToCamelCase();
+    }
+
+    public static void InjectServiceUtilityFields(this TypescriptClass @class)
+    {
+        // add the field to handle the errors
+        if (!@class.Fields.Any(f => f.Name == "serviceError"))
+        {
+            @class.AddField("serviceError", "string | null", @field => field.WithValue("null"));
+        }
+
+        // add the field to indicate success
+        if (!@class.Fields.Any(f => f.Name == "serviceCallSuccess"))
+        {
+            @class.AddField("serviceCallSuccess", "boolean", @field => field.WithValue("false"));
+        }
     }
 
     public static IEnumerable<TypescriptStatement> GetCallServiceOperation(CallServiceOperationActionTargetEndModel serviceCall,
@@ -531,12 +546,17 @@ public static class TypescriptFileExtensions
             var responseStaticElementId = "2f68b1a4-a523-4987-b3da-f35e6e8e146b";
             if (serviceCall.GetMapResponseMapping().MappedEnds.Count == 1 && serviceCall.GetMapResponseMapping().MappedEnds.Single().SourceElement.Id == responseStaticElementId)
             {
+                var variableName = serviceCall.TypeReference.Element.TypeReference.IsCollection ? serviceCall.TypeReference.Element.TypeReference.Element.Name.Pluralize().ToCamelCase() : serviceCall.TypeReference.Element.TypeReference.Element.Name.ToCamelCase();
+                mappingManager.SetFromReplacement(new StaticMetadata(responseStaticElementId), variableName);
+
+                var responseObject = serviceCall.GetMapResponseMapping().MappedEnds.Any() ? mappingManager.GenerateTargetStatementForMapping(serviceCall.GetMapResponseMapping(), serviceCall.GetMapResponseMapping().MappedEnds.Single()) : string.Empty;
+
                 result.Add(new TypescriptStatement(@$"this.{serviceName}.{invocation}.subscribe({{
-      next: (data) => {{
+      next: ({(string.IsNullOrWhiteSpace(responseObject.GetText("")) ? string.Empty : "data")}) => {{
         this.serviceError = null;
         this.serviceCallSuccess = true;
 
-        {mappingManager.GenerateTargetStatementForMapping(serviceCall.GetMapResponseMapping(), serviceCall.GetMapResponseMapping().MappedEnds.Single())} = data;
+        {(string.IsNullOrWhiteSpace(responseObject.GetText("")) ? string.Empty : $"this.{responseObject} = data;")}
       }},
       error: (err) => {{
         this.serviceCallSuccess = false;
@@ -546,34 +566,51 @@ public static class TypescriptFileExtensions
         console.error('Failed to call service:', err);
       }}
     }});"));
-                // TODO
-                //result.Add(new TypescriptStatement($"{mappingManager.GenerateTargetStatementForMapping(serviceCall.GetMapResponseMapping(), serviceCall.GetMapResponseMapping().MappedEnds.Single())} = {$"{serviceName}"}"));
-                //result.Add(new CSharpAssignmentStatement(
-                //    lhs: mappingManager.GenerateTargetStatementForMapping(serviceCall.GetMapResponseMapping(), serviceCall.GetMapResponseMapping().MappedEnds.Single()),
-                //    rhs: new CSharpAwaitExpression(new CSharpAccessMemberStatement($"{serviceName}", invocation))));
+
             }
             else
             {
-                // TODO
-                var variableName = serviceCall.TypeReference.Element.TypeReference.IsCollection ? serviceCall.TypeReference.Element.TypeReference.Element.Name.Pluralize().ToPascalCase() : serviceCall.TypeReference.Element.TypeReference.Element.Name.ToPascalCase();
-                result.Add(new TypescriptStatement($"var {variableName} = {string.Empty}"));
-                //var variableName = serviceCall.TypeReference.Element.TypeReference.IsCollection ? serviceCall.TypeReference.Element.TypeReference.Element.Name.Pluralize().ToLocalVariableName() : serviceCall.TypeReference.Element.TypeReference.Element.Name.ToLocalVariableName();
-                //result.Add(new CSharpAssignmentStatement($"var {variableName}", new CSharpAwaitExpression(new CSharpAccessMemberStatement($"{serviceName}", invocation))));
+                var variableName = serviceCall.TypeReference.Element.TypeReference.IsCollection ? serviceCall.TypeReference.Element.TypeReference.Element.Name.Pluralize().ToCamelCase() : serviceCall.TypeReference.Element.TypeReference.Element.Name.ToCamelCase();
+                var responseObject = serviceCall.GetMapResponseMapping().MappedEnds.Any() ? mappingManager.GenerateTargetStatementForMapping(serviceCall.GetMapResponseMapping(), serviceCall.GetMapResponseMapping().MappedEnds.Single()) : string.Empty;
+
+                result.Add(new TypescriptStatement(@$"this.{serviceName}.{invocation}.subscribe({{
+      next: ({(string.IsNullOrWhiteSpace(responseObject.GetText("")) ? string.Empty : "data")}) => {{
+        this.serviceError = null;
+        this.serviceCallSuccess = true;
+
+        { (string.IsNullOrWhiteSpace(responseObject.GetText("")) ? string.Empty : $"this.{responseObject} = data;") }
+      }},
+      error: (err) => {{
+        this.serviceCallSuccess = false;
+        const message = err?.error?.message || err.message || 'Unknown error';
+        this.serviceError = `Failed to call service: ${{message}}`;
+
+        console.error('Failed to call service:', err);
+      }}
+    }});"));
+                
                 mappingManager.SetFromReplacement(new StaticMetadata(responseStaticElementId), variableName);
                 var response = mappingManager.GenerateUpdateStatements(serviceCall.GetMapResponseMapping());
-                //foreach (var statement in response)
-                //{
-                //    statement.WithSemicolon();
-                //}
 
                 result.AddRange(response);
             }
         }
         else
         {
-            // TODO
-            //result.Add(new CSharpAwaitExpression(new CSharpAccessMemberStatement($"{serviceName}", invocation)));
-            result.Add(new TypescriptStatement("hello"));
+            result.Add(new TypescriptStatement(@$"this.{serviceName}.{invocation}.subscribe({{
+      next: () => {{
+        this.serviceError = null;
+        this.serviceCallSuccess = true;
+      }},
+      error: (err) => {{
+        this.serviceCallSuccess = false;
+        const message = err?.error?.message || err.message || 'Unknown error';
+        this.serviceError = `Failed to call service: ${{message}}`;
+
+        console.error('Failed to call service:', err);
+      }}
+    }});"));
+
         }
         return result;
     }

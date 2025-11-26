@@ -23,7 +23,7 @@ namespace Intent.Modules.Angular.HttpClients.Templates.EnumContract
         [IntentManaged(Mode.Merge, Signature = Mode.Fully, Body = Mode.Ignore)]
         public EnumContractTemplate(IOutputTarget outputTarget, Intent.Modules.Common.Types.Api.EnumModel model) : base(TemplateId, outputTarget, model)
         {
-            TypescriptFile = new TypescriptFile(this.GetFolderPath())
+            TypescriptFile = new TypescriptFile(this.GetFolderPath(), this)
                 .AddEnum($"{Model.Name}", @enum =>
                 {
                     foreach (var literal in Model.Literals)

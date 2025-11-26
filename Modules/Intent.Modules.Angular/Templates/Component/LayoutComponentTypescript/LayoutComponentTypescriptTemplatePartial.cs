@@ -25,7 +25,7 @@ namespace Intent.Modules.Angular.Templates.Component.LayoutComponentTypescript
         [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
         public LayoutComponentTypescriptTemplate(IOutputTarget outputTarget, Intent.Modelers.UI.Api.LayoutModel model) : base(TemplateId, outputTarget, model)
         {
-            TypescriptFile = new TypescriptFile(this.GetFolderPath())
+            TypescriptFile = new TypescriptFile(this.GetFolderPath(), this)
                 .AddClass($"{Model.Name}", @class =>
                 {
                     @class.AddConstructor(ctor =>

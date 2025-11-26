@@ -22,7 +22,7 @@ namespace Intent.Modules.Angular.Templates.Core.AppComponent
         [IntentManaged(Mode.Merge, Signature = Mode.Fully, Body = Mode.Ignore)]
         public AppComponentTemplate(IOutputTarget outputTarget, object model = null) : base(TemplateId, outputTarget, model)
         {
-            TypescriptFile = new TypescriptFile(this.GetFolderPath())
+            TypescriptFile = new TypescriptFile(this.GetFolderPath(), this)
                 .AddImport("Component", "@angular/core")
                 .AddImport("RouterOutlet", "@angular/router")
                 .AddClass($"AppComponent", @class =>
@@ -39,7 +39,7 @@ namespace Intent.Modules.Angular.Templates.Core.AppComponent
                         obj.AddField("selector", "'app-root'");
                         obj.AddField("imports", "[RouterOutlet]");
                         obj.AddField("templateUrl", "'./app.component.html'");
-                        obj.AddField("styleUrl", "'./app.component.scss'");
+                        obj.AddField("styleUrls", "['./app.component.scss']");
 
                         component.AddArgument(obj.GetText("  "));
                     });
