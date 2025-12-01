@@ -23,8 +23,6 @@ namespace Intent.Modules.Angular.Templates.Environment.Environment
         [IntentManaged(Mode.Fully)]
         public const string TemplateId = "Intent.Angular.Environment.Environment";
 
-        private readonly IList<ConfigurationVariableRequiredEvent> _environmentVariables = new List<ConfigurationVariableRequiredEvent>();
-
         [IntentManaged(Mode.Merge, Signature = Mode.Fully, Body = Mode.Ignore)]
         public EnvironmentTemplate(IOutputTarget outputTarget, object model = null) : base(TemplateId, outputTarget, model)
         {

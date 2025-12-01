@@ -1,4 +1,4 @@
-using Intent.Exceptions;
+﻿using Intent.Exceptions;
 using Intent.Metadata.Models;
 using Intent.Modelers.UI.Api;
 using Intent.Modelers.UI.Core.Api;
@@ -507,38 +507,77 @@ public static class TypescriptFileExtensions
 
         if (ctor.Parameters.Any(p => p.Type == type))
         {
-            return fieldName.ToCamelCase();
+            return fieldName.ToCamelCase(true);
         }
         ctor.AddParameter(
             type: type,
-            name: fieldName.ToCamelCase() ?? type, 
+            name: fieldName.ToCamelCase(true) ?? type, 
             configure: config =>
             {
                 config.WithPrivateReadonlyFieldAssignment();
             });
 
-        return fieldName.ToCamelCase();
+        return fieldName.ToCamelCase(true);
     }
 
-    public static void InjectServiceUtilityFields(this TypescriptClass @class)
+    public static void InjectServiceUtilityFields(this TypescriptClass @class, string methodName)
     {
         // add the field to handle the errors
-        if (!@class.Fields.Any(f => f.Name == "serviceError"))
+        if (!@class.Fields.Any(f => f.Name == "serviceErrors"))
         {
-            @class.AddField("serviceError", "string | null", @field => field.WithValue("null"));
+            @class.AddField("serviceErrors", field =>
+            {
+                field.WithDefaultValue(@$"{{
+    {methodName}Error: null as string | null
+  }};");
+            });
+        }
+        else
+        {
+            // TODO: Make this entire way of doing this better and not using strings by Typescript builder type
+            var serviceErrorsField = @class.Fields.Single(f => f.Name == "serviceErrors");
+
+            var defaultValue = serviceErrorsField.Value ?? string.Empty;
+            var propertyName = $"{methodName}Error";
+
+            // Don't add it twice
+            if (!defaultValue.Contains(propertyName, StringComparison.Ordinal))
+            {
+                // Find the last '}' in the object literal
+                var insertPos = defaultValue.LastIndexOf('}');
+                if (insertPos >= 0)
+                {
+                    var before = defaultValue[..insertPos];
+
+                    // Trim trailing whitespace/newlines so the comma sits on the same line
+                    var trimmedBefore = before.TrimEnd();
+
+                    // Decide if we need a comma before the new line
+                    var needsComma = !trimmedBefore.EndsWith('{');
+                    var comma = needsComma ? "," : string.Empty;
+
+                    // Rebuild the whole initializer with a clean closing line
+                    var newDefaultValue = $"{trimmedBefore}{comma}\n    {propertyName}: null as string | null\n  }};";
+
+                    serviceErrorsField.WithDefaultValue(newDefaultValue);
+                }
+            }
         }
 
-        // add the field to indicate success
-        if (!@class.Fields.Any(f => f.Name == "serviceCallSuccess"))
+
+
+        // add the field to handle the errors
+        if (!@class.Fields.Any(f => f.Name == "isLoading"))
         {
-            @class.AddField("serviceCallSuccess", "boolean", @field => field.WithValue("false"));
+            @class.AddField("isLoading", @field => field.WithValue("false"));
         }
     }
 
     public static IEnumerable<TypescriptStatement> GetCallServiceOperation(CallServiceOperationActionTargetEndModel serviceCall,
         TypescriptClassMappingManager mappingManager,
         string serviceName,
-        TypescriptStatement invocation)
+        TypescriptStatement invocation,
+        string currentMethodName)
     {
         var result = new List<TypescriptStatement>();
         if (serviceCall.GetMapResponseMapping() != null)
@@ -546,22 +585,29 @@ public static class TypescriptFileExtensions
             var responseStaticElementId = "2f68b1a4-a523-4987-b3da-f35e6e8e146b";
             if (serviceCall.GetMapResponseMapping().MappedEnds.Count == 1 && serviceCall.GetMapResponseMapping().MappedEnds.Single().SourceElement.Id == responseStaticElementId)
             {
-                var variableName = serviceCall.TypeReference.Element.TypeReference.IsCollection ? serviceCall.TypeReference.Element.TypeReference.Element.Name.Pluralize().ToCamelCase() : serviceCall.TypeReference.Element.TypeReference.Element.Name.ToCamelCase();
+                var variableName = serviceCall.TypeReference.Element.TypeReference.IsCollection ? serviceCall.TypeReference.Element.TypeReference.Element.Name.Pluralize().ToCamelCase(true) : serviceCall.TypeReference.Element.TypeReference.Element.Name.ToCamelCase(true);
                 mappingManager.SetFromReplacement(new StaticMetadata(responseStaticElementId), variableName);
 
                 var responseObject = serviceCall.GetMapResponseMapping().MappedEnds.Any() ? mappingManager.GenerateTargetStatementForMapping(serviceCall.GetMapResponseMapping(), serviceCall.GetMapResponseMapping().MappedEnds.Single()) : string.Empty;
+                var responseText = responseObject.GetText("");
 
-                result.Add(new TypescriptStatement(@$"this.{serviceName}.{invocation}.subscribe({{
-      next: ({(string.IsNullOrWhiteSpace(responseObject.GetText("")) ? string.Empty : "data")}) => {{
-        this.serviceError = null;
-        this.serviceCallSuccess = true;
+                result.Add($"this.serviceErrors.{currentMethodName}Error = null;");
+                result.Add($"this.isLoading = true;");
+                result.Add("");
 
-        {(string.IsNullOrWhiteSpace(responseObject.GetText("")) ? string.Empty : $"this.{responseObject} = data;")}
-      }},
+                result.Add(new TypescriptStatement(@$"this.{serviceName}.{invocation}
+    .pipe(
+        finalize(() => {{
+          this.isLoading = false; 
+        }})
+     )
+    .subscribe({{{(!string.IsNullOrWhiteSpace(responseText) ? $@"
+      next: (data) => {{
+        this.{responseObject} = data;
+      }},": string.Empty)}
       error: (err) => {{
-        this.serviceCallSuccess = false;
         const message = err?.error?.message || err.message || 'Unknown error';
-        this.serviceError = `Failed to call service: ${{message}}`;
+        this.serviceErrors.{currentMethodName}Error = `Failed to call service: ${{message}}`;
 
         console.error('Failed to call service:', err);
       }}
@@ -570,20 +616,27 @@ public static class TypescriptFileExtensions
             }
             else
             {
-                var variableName = serviceCall.TypeReference.Element.TypeReference.IsCollection ? serviceCall.TypeReference.Element.TypeReference.Element.Name.Pluralize().ToCamelCase() : serviceCall.TypeReference.Element.TypeReference.Element.Name.ToCamelCase();
+                var variableName = serviceCall.TypeReference.Element.TypeReference.IsCollection ? serviceCall.TypeReference.Element.TypeReference.Element.Name.Pluralize().ToCamelCase(true) : serviceCall.TypeReference.Element.TypeReference.Element.Name.ToCamelCase(true);
                 var responseObject = serviceCall.GetMapResponseMapping().MappedEnds.Any() ? mappingManager.GenerateTargetStatementForMapping(serviceCall.GetMapResponseMapping(), serviceCall.GetMapResponseMapping().MappedEnds.Single()) : string.Empty;
+                var responseText = responseObject.GetText("");
 
-                result.Add(new TypescriptStatement(@$"this.{serviceName}.{invocation}.subscribe({{
-      next: ({(string.IsNullOrWhiteSpace(responseObject.GetText("")) ? string.Empty : "data")}) => {{
-        this.serviceError = null;
-        this.serviceCallSuccess = true;
+                result.Add($"this.serviceErrors.{currentMethodName}Error = null;");
+                result.Add($"this.isLoading = true;");
+                result.Add("");
 
-        { (string.IsNullOrWhiteSpace(responseObject.GetText("")) ? string.Empty : $"this.{responseObject} = data;") }
-      }},
+                result.Add(new TypescriptStatement(@$"this.{serviceName}.{invocation}
+    .pipe(
+        finalize(() => {{
+          this.isLoading = false; 
+        }})
+    )
+    .subscribe({{{(!string.IsNullOrWhiteSpace(responseText) ? $@"
+      next: (data) => {{
+        this.{responseObject} = data;
+      }}," : string.Empty)}
       error: (err) => {{
-        this.serviceCallSuccess = false;
         const message = err?.error?.message || err.message || 'Unknown error';
-        this.serviceError = `Failed to call service: ${{message}}`;
+        this.serviceErrors.{currentMethodName}Error = `Failed to call service: ${{message}}`;
 
         console.error('Failed to call service:', err);
       }}
@@ -597,15 +650,20 @@ public static class TypescriptFileExtensions
         }
         else
         {
-            result.Add(new TypescriptStatement(@$"this.{serviceName}.{invocation}.subscribe({{
-      next: () => {{
-        this.serviceError = null;
-        this.serviceCallSuccess = true;
-      }},
+            result.Add($"this.serviceErrors.{currentMethodName}Error = null;");
+            result.Add($"this.isLoading = true;");
+            result.Add("");
+
+            result.Add(new TypescriptStatement(@$"this.{serviceName}.{invocation}
+    .pipe(
+        finalize(() => {{
+          this.isLoading = false; 
+        }})
+    )
+    .subscribe({{
       error: (err) => {{
-        this.serviceCallSuccess = false;
         const message = err?.error?.message || err.message || 'Unknown error';
-        this.serviceError = `Failed to call service: ${{message}}`;
+        this.serviceErrors.{currentMethodName}Error = `Failed to call service: ${{message}}`;
 
         console.error('Failed to call service:', err);
       }}

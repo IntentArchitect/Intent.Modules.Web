@@ -62,7 +62,7 @@ namespace Intent.Modules.Angular.HttpClients.Templates.HttpServiceProxy
                         @base.PrivateReadOnly();
                         var environmentTemplate = GetTemplate<TypeScriptTemplateBase<object>>("Intent.Angular.Environment.Environment", new TemplateDiscoveryOptions { TrackDependency = false });
                         AddImport("environment", this.GetRelativePath(environmentTemplate));
-                        @base.WithValue($"environment.{Model.Name.ToCamelCase()}BaseUrl");
+                        @base.WithValue($"environment.{Model.Name.ToCamelCase(true)}BaseUrl");
                     });
 
                     @class.AddConstructor(ctor =>
@@ -173,7 +173,7 @@ namespace Intent.Modules.Angular.HttpClients.Templates.HttpServiceProxy
         {
             var proxyUrl = GetProxyUrl(Model);
 
-            ExecutionContext.EventDispatcher.Publish(new ConfigurationVariableRequiredEvent($"{Model.Name.ToCamelCase()}BaseUrl", $"'{proxyUrl}'"));
+            ExecutionContext.EventDispatcher.Publish(new ConfigurationVariableRequiredEvent($"{Model.Name.ToCamelCase(true)}BaseUrl", $"'{proxyUrl}'"));
         }
 
         [IntentManaged(Mode.Fully)]
@@ -230,7 +230,7 @@ namespace Intent.Modules.Angular.HttpClients.Templates.HttpServiceProxy
 
             return Model.CreateParameterPerInput || endpoint.InternalElement.Id == input.TypeReference.ElementId
                 ? input.Name.ToCamelCase(true)
-                : $"{methodParameterName!}.{input.Name.ToCamelCase()}";
+                : $"{methodParameterName!}.{input.Name.ToCamelCase(true)}";
         }
 
         public string GetApplicationName(IServiceProxyModel model)
@@ -238,7 +238,7 @@ namespace Intent.Modules.Angular.HttpClients.Templates.HttpServiceProxy
             return string.Concat(model.Endpoints[0].InternalElement.Package.Name
                 .RemoveSuffix(".Services")
                 .Split('.')
-                .Select(x => x.ToCamelCase()));
+                .Select(x => x.ToCamelCase(true)));
         }
 
         public string GetProxyUrl(IServiceProxyModel proxy)

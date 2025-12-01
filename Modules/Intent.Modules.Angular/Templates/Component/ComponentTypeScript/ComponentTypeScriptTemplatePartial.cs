@@ -59,10 +59,10 @@ namespace Intent.Modules.Angular.Templates.Component.ComponentTypeScript
                 {
                     var obj = new TypescriptVariableObject();
                     obj.AddField("selector", $"'app-{ComponentName.ToKebabCase().ToLower()}'");
+                    obj.AddField("standalone", "true");
                     obj.AddField("templateUrl", $"'{ComponentName.ToKebabCase()}.component.html'");
                     obj.AddField("styleUrls", $"['{ComponentName.ToKebabCase()}.component.scss']");
 
-                    //TODO sort out indentation on final line of parameter
                     component.AddArgument(obj.GetText(TypescriptFile.Indentation));
                 });
 
@@ -130,7 +130,8 @@ namespace Intent.Modules.Angular.Templates.Component.ComponentTypeScript
                                     serviceName = parentElement is not null ? @class.InjectServiceProperty(this, GetTypeName(parentElement)) :
                                         @class.InjectServiceProperty(this, GetTypeName(serviceCall.Package.AsTypeReference()));
 
-                                    @class.InjectServiceUtilityFields();
+                                    @class.InjectServiceUtilityFields(method.Name);
+                                    this.AddImport("finalize", "rxjs");
 
                                     if (targetElement.SpecializationTypeId is commandSpecializationTypeId or querySpecializationTypeId)
                                     {
@@ -157,7 +158,7 @@ namespace Intent.Modules.Angular.Templates.Component.ComponentTypeScript
                                             targetElement.ChildElements.Count(x => x.SpecializationTypeId is dtoFieldTypeId) > 1)
                                         {
                                             method.AddStatement(mappingManager.GenerateCreationStatement(invocationMapping));
-                                            arguments.Add(targetElement.SpecializationType.ToCamelCase());
+                                            arguments.Add(targetElement.SpecializationType.ToCamelCase(true));
                                         }
 
                                         invocation = new TypescriptStatement($"{nameOfMethodToInvoke}({string.Join(',', arguments)})");
@@ -167,12 +168,41 @@ namespace Intent.Modules.Angular.Templates.Component.ComponentTypeScript
                                         invocation = mappingManager.GenerateUpdateStatements(invocationMapping).First();
                                     }
 
-                                    method.AddStatements(TypescriptFileExtensions.GetCallServiceOperation(serviceCall, mappingManager, serviceName, invocation));
+                                    method.AddStatements(TypescriptFileExtensions.GetCallServiceOperation(serviceCall, mappingManager, serviceName, invocation, method.Name));
 
                                     continue;
                                 }
                             }
                         });
+                    });
+                }
+
+                foreach (var navigation in model.InternalElement.AssociatedElements.Where(e => e.IsNavigationEndModel() && e.IsNavigable))
+                {
+                    var navigationModel = navigation.AsNavigationEndModel();
+                    if (!navigationModel.Element.AsComponentModel().HasPage())
+                    {
+                        throw new ElementException(navigationModel.Element, "Navigation is targeting a Component that isn't a page. Please add the Page stereotype to the targeted Component.");
+                    }
+
+                    var toComponent = navigationModel.Element.AsComponentModel();
+
+                    @class.AddMethod(navigation.Name?.ToCamelCase(true) ?? $"navigateTo{toComponent.Name}", "void", method =>
+                    {
+                        var parameters = toComponent.Properties.Where(x => x.HasRouteParameter() || x.HasQueryParameter());
+                        var routeManager = new RouteManager(toComponent.GetPage().Route(), [.. parameters]);
+
+                        this.AddImport("Router", "@angular/router");
+                        var ctor = @class.Constructors.First();
+                        if (!ctor.Parameters.Any(p => p.Name == "router"))
+                        {
+                            ctor.AddParameter("router", this.UseType("Router", "@angular/router"), param =>
+                            {
+                                param.WithPrivateFieldAssignment();
+                            });
+                        }
+
+                        method.AddStatement(routeManager.GetRouteInvocationText(this, method));
                     });
                 }
             }).AfterBuild(file =>
@@ -203,8 +233,8 @@ namespace Intent.Modules.Angular.Templates.Component.ComponentTypeScript
                             field.WithValue(model.Value);
                         }
 
-                        // TODO cater for default value 
-                        if (!model.TypeReference.IsNullable && !field.IsDefinitelyAssigned)
+                        // TODO cater for default value and add back in IsDefinitelyAssigned
+                        if (!model.TypeReference.IsNullable)// && !field.IsDefinitelyAssigned)
                         {
                             field.WithDefaultValue(this, model.TypeReference);
                         }
@@ -223,7 +253,6 @@ namespace Intent.Modules.Angular.Templates.Component.ComponentTypeScript
             var template = (ITypescriptTemplate)this;
 
             var mappingManager = new TypescriptClassMappingManager(template);
-            //mappingManager.AddMappingResolver(new LocalCommandQueryMappingResolver(template));
             mappingManager.AddMappingResolver(new CallServiceOperationMappingResolver(template));
             //mappingManager.AddMappingResolver(new PropertyCollectionMappingResolver(template));
             mappingManager.AddMappingResolver(new TypescriptBindingMappingResolver(template));
@@ -321,7 +350,8 @@ namespace Intent.Modules.Angular.Templates.Component.ComponentTypeScript
 
         private void ConfigureOnInitOperation(TypescriptClass @class, TypescriptMethod method)
         {
-            method.AddDecorator("IntentMerge");
+            // TODO. Fix
+            //method.AddDecorator("IntentMerge");
 
             if (Model.Properties.Where(p => p.HasRouteParameter()).Any())
             {

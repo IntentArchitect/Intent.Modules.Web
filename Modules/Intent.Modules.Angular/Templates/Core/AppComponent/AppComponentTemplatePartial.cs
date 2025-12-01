@@ -38,6 +38,7 @@ namespace Intent.Modules.Angular.Templates.Core.AppComponent
                         var obj = new TypescriptVariableObject();
                         obj.AddField("selector", "'app-root'");
                         obj.AddField("imports", "[RouterOutlet]");
+                        obj.AddField("standalone", "true");
                         obj.AddField("templateUrl", "'./app.component.html'");
                         obj.AddField("styleUrls", "['./app.component.scss']");
 

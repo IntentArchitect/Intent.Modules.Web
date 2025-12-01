@@ -93,7 +93,7 @@ namespace Intent.Modules.Angular.Templates.Core.AppRoutes
             {
                 var original = match.Groups[1].Value;
                 var paramNameOnly = original.Split(":").First();
-                var camelCase = paramNameOnly.ToCamelCase();
+                var camelCase = paramNameOnly.ToCamelCase(true);
                 return $":{camelCase}";
             });
         }

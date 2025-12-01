@@ -18,8 +18,6 @@ namespace Intent.Modules.Angular.Templates.Environment.EnvironmentDotDevelopment
     [IntentManaged(Mode.Ignore, Signature = Mode.Fully)]
     public partial class EnvironmentDotDevelopmentTemplate : EnvironmentTemplateBase, ITypescriptFileBuilderTemplate
     {
-        private readonly IList<ConfigurationVariableRequiredEvent> _environmentVariables = new List<ConfigurationVariableRequiredEvent>();
-
         [IntentManaged(Mode.Fully)]
         public const string TemplateId = "Intent.Angular.Environment.EnvironmentDotDevelopment";
 

@@ -1,18 +1,27 @@
+using Intent.Modelers.UI.Api;
+using Intent.Modules.Angular.Templates.Component.ComponentTypeScript;
+using Intent.Modules.Common.Templates;
+using Intent.Modules.Common.TypeScript.Builder;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Claims;
+using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading;
 
 namespace Intent.Modules.Angular.Api;
 
 public class RouteManager
 {
-    public RouteManager(string route)
+    public RouteManager(string route, List<PropertyModel> parameters)
     {
         Route = route;
+        Parameters = parameters;
     }
 
     public string Route { get; private set; }
+    public List<PropertyModel> Parameters { get; private set; }
 
     public bool HasParameterExpression(string parameterName)
     {
@@ -61,13 +70,77 @@ public class RouteManager
         return result;
     }
 
-    public void AddParameter(string parameterName, string value)
+    public string GetRouteInvocationText(ComponentTypeScriptTemplate template, TypescriptMethod method)
     {
-        if (!Route.Contains('?'))
+        foreach (var parameter in Parameters)
         {
-            Route = Route.Insert(Route.LastIndexOf("\""), $"?{parameterName}={value}");
-            return;
+            method.AddParameter(parameter.Name.ToCamelCase(true), template.GetTypeName(parameter.TypeReference), param =>
+            {
+                if (parameter.Value != null)
+                {
+                    param.WithDefaultValue(parameter.Value);
+                }
+            });
+
+            if (HasParameterExpression(parameter.Name))
+            {
+                ReplaceParameterExpression(parameter.Name, $"{{{parameter.Name.ToCamelCase(true)}}}");
+            }
         }
-        Route = Route.Insert(Route.LastIndexOf("\""), $"&{parameterName}={value}");
+
+        var segments = GetRouteSegments(Route);
+        for(int position = 0; position < segments.Length; position++)
+        {
+            var parameter = Parameters.FirstOrDefault(p => segments[position].Equals($"{{{p.Name}}}", StringComparison.InvariantCultureIgnoreCase));
+
+            if (parameter is not null)
+            {
+                segments[position] = parameter.Name.ToCamelCase(true);
+            }
+
+            if (position == 0 && !segments[position].StartsWith("'/"))
+            {
+                // Ensure the first segment starts with a slash
+                segments[position] = $"/{segments[position]}";
+            }
+
+            if(parameter is null)
+            {
+                segments[position] = $"'{segments[position]}'";
+            }
+        }
+
+        // TODO cleanup
+        if(Parameters.Any(p => p.HasQueryParameter()))
+        {
+            var sb = new StringBuilder();
+            sb.AppendLine("{");
+            sb.AppendLine("      queryParams: {");
+            foreach(var queryParam in Parameters.Where(p => p.HasQueryParameter()))
+            {
+                sb.AppendLine($"        {queryParam.Name.ToCamelCase(true)}: {queryParam.Name.ToCamelCase(true)},");
+            }
+
+            sb.Remove(sb.Length - 3, 1); // Remove last comma
+
+            sb.AppendLine("      }");
+            sb.Append("    }");
+
+            return $"this.router.navigate([{string.Join(", ", segments)}], {sb});";
+        }
+
+        return $"this.router.navigate([{string.Join(", ", segments)}]);";
     }
+
+    private static string[] GetRouteSegments(string routeTemplate)
+    {
+        ArgumentNullException.ThrowIfNull(routeTemplate);
+
+        // Trim whitespace, then split on '/'
+        return routeTemplate
+            .Trim()
+            .Split('/', StringSplitOptions.RemoveEmptyEntries);
+    }
+
+
 }

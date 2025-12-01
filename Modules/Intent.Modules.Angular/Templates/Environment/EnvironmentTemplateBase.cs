@@ -13,7 +13,7 @@ namespace Intent.Modules.Angular.Templates.Environment;
 
 public abstract partial class EnvironmentTemplateBase : TypeScriptTemplateBase<object>
 {
-    private readonly IList<ConfigurationVariableRequiredEvent> _environmentVariables = [];
+    protected readonly IList<ConfigurationVariableRequiredEvent> _environmentVariables = [];
 
     protected EnvironmentTemplateBase(string templateId, IOutputTarget outputTarget, object model) : base(templateId, outputTarget, model)
     {
