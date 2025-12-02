@@ -96,7 +96,7 @@ namespace Intent.Modules.Angular.Templates.Component.ComponentTypeScript
                         {
                             var mappingManager = CreateMappingManager();
                             mappingManager.SetFromReplacement(operation, null);
-
+                            
                             foreach (var action in operation.GetProcessingActions())
                             {
                                 if (action.IsInvocationModel() && action.Mappings.Count() == 1)
@@ -148,17 +148,9 @@ namespace Intent.Modules.Angular.Templates.Component.ComponentTypeScript
                                                 ?.RootCodeContext.GetReferenceForModel(targetElement.Id).Name) ?? throw new FriendlyException("Unable to resolve the service type for the service call to `" + targetElement.DisplayText + "`. Try installing a module to realize this service (e.g. `Intent.Blazor.HttpClients`)");
 
                                         var arguments = new List<TypescriptStatement>();
-                                        if (targetElement.ChildElements.Any(x => x.SpecializationTypeId is dtoFieldTypeId) &&
-                                            targetElement.ChildElements.Count(x => x.SpecializationTypeId is dtoFieldTypeId) == 1)
+                                        if (targetElement.ChildElements.Any(x => x.SpecializationTypeId is dtoFieldTypeId))
                                         {
                                             arguments.Add(mappingManager.GenerateCreationStatement(invocationMapping));
-                                        }
-
-                                        if (targetElement.ChildElements.Any(x => x.SpecializationTypeId is dtoFieldTypeId) &&
-                                            targetElement.ChildElements.Count(x => x.SpecializationTypeId is dtoFieldTypeId) > 1)
-                                        {
-                                            method.AddStatement(mappingManager.GenerateCreationStatement(invocationMapping));
-                                            arguments.Add(targetElement.SpecializationType.ToCamelCase(true));
                                         }
 
                                         invocation = new TypescriptStatement($"{nameOfMethodToInvoke}({string.Join(',', arguments)})");
@@ -257,8 +249,8 @@ namespace Intent.Modules.Angular.Templates.Component.ComponentTypeScript
             //mappingManager.AddMappingResolver(new PropertyCollectionMappingResolver(template));
             mappingManager.AddMappingResolver(new TypescriptBindingMappingResolver(template));
             mappingManager.AddMappingResolver(new TypeConvertingMappingResolver(template));
-            mappingManager.SetFromReplacement(Model, null);
-            mappingManager.SetToReplacement(Model, null);
+            mappingManager.SetFromReplacement(Model, "this");
+            mappingManager.SetToReplacement(Model, "this");
             return mappingManager;
         }
 

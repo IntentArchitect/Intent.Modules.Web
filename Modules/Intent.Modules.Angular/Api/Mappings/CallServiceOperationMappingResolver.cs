@@ -32,7 +32,6 @@ public class CallServiceOperationMappingResolver : IMappingTypeResolver
 
         const string httpSettingsDefinitionId = "b4581ed2-42ec-4ae2-83dd-dcdd5f0837b6";
         const string dtoFieldTypeId = "7baed1fd-469b-4980-8fd9-4cefb8331eb2";
-        const string parameterFieldTypeId = "00208d20-469d-41cb-8501-768fd5eb796b";
 
         if (mappingModel.Model.SpecializationType is "Command" or "Query" &&
             ((IElement)mappingModel.Model).HasStereotype(httpSettingsDefinitionId))

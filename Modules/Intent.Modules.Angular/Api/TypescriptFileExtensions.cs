@@ -13,6 +13,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Security.Claims;
+using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading;
 
@@ -529,7 +530,7 @@ public static class TypescriptFileExtensions
             {
                 field.WithDefaultValue(@$"{{
     {methodName}Error: null as string | null
-  }};");
+  }}");
             });
         }
         else
@@ -557,7 +558,7 @@ public static class TypescriptFileExtensions
                     var comma = needsComma ? "," : string.Empty;
 
                     // Rebuild the whole initializer with a clean closing line
-                    var newDefaultValue = $"{trimmedBefore}{comma}\n    {propertyName}: null as string | null\n  }};";
+                    var newDefaultValue = $"{trimmedBefore}{comma}\n    {propertyName}: null as string | null\n  }}";
 
                     serviceErrorsField.WithDefaultValue(newDefaultValue);
                 }
@@ -616,36 +617,71 @@ public static class TypescriptFileExtensions
             }
             else
             {
-                var variableName = serviceCall.TypeReference.Element.TypeReference.IsCollection ? serviceCall.TypeReference.Element.TypeReference.Element.Name.Pluralize().ToCamelCase(true) : serviceCall.TypeReference.Element.TypeReference.Element.Name.ToCamelCase(true);
-                var responseObject = serviceCall.GetMapResponseMapping().MappedEnds.Any() ? mappingManager.GenerateTargetStatementForMapping(serviceCall.GetMapResponseMapping(), serviceCall.GetMapResponseMapping().MappedEnds.Single()) : string.Empty;
-                var responseText = responseObject.GetText("");
+                //var variableName = serviceCall.TypeReference.Element.TypeReference.IsCollection ? serviceCall.TypeReference.Element.TypeReference.Element.Name.Pluralize().ToCamelCase(true) : serviceCall.TypeReference.Element.TypeReference.Element.Name.ToCamelCase(true);
+                //var responseObject = serviceCall.GetMapResponseMapping().MappedEnds.Any() ? mappingManager.GenerateTargetStatementForMapping(serviceCall.GetMapResponseMapping(), serviceCall.GetMapResponseMapping().MappedEnds.Single()) : string.Empty;
+                //var responseText = responseObject.GetText("");
+
+                mappingManager.SetFromReplacement(new StaticMetadata(responseStaticElementId), "data");
+                var responses = mappingManager.GenerateUpdateStatements(serviceCall.GetMapResponseMapping());
 
                 result.Add($"this.serviceErrors.{currentMethodName}Error = null;");
                 result.Add($"this.isLoading = true;");
                 result.Add("");
 
-                result.Add(new TypescriptStatement(@$"this.{serviceName}.{invocation}
+                var sb = new StringBuilder();
+                sb.Append(@$"this.{serviceName}.{invocation}
     .pipe(
-        finalize(() => {{
-          this.isLoading = false; 
-        }})
-    )
-    .subscribe({{{(!string.IsNullOrWhiteSpace(responseText) ? $@"
-      next: (data) => {{
-        this.{responseObject} = data;
-      }}," : string.Empty)}
+      finalize(() => {{
+        this.isLoading = false; 
+      }})
+    ).subscribe({{");
+
+                if(responses.Any())
+                {
+                    sb.AppendLine($@"
+      next: (data) => {{");
+
+                    foreach (var response in responses)
+                    {
+                        sb.AppendLine($"        {response.ToString()}");
+                    }
+
+                    sb.Append(@$"      }},");
+                }
+
+                sb.Append(@$"
       error: (err) => {{
         const message = err?.error?.message || err.message || 'Unknown error';
         this.serviceErrors.{currentMethodName}Error = `Failed to call service: ${{message}}`;
 
         console.error('Failed to call service:', err);
       }}
-    }});"));
-                
-                mappingManager.SetFromReplacement(new StaticMetadata(responseStaticElementId), variableName);
-                var response = mappingManager.GenerateUpdateStatements(serviceCall.GetMapResponseMapping());
+    }});");
 
-                result.AddRange(response);
+                //            result.Add(new TypescriptStatement(@$"this.{serviceName}.{invocation}
+                //.pipe(
+                //    finalize(() => {{
+                //      this.isLoading = false; 
+                //    }})
+                //)
+                //.subscribe({{{(!string.IsNullOrWhiteSpace(responseText) ? $@"
+                //  next: (data) => {{
+                //    this.{responseObject} = data;
+                //  }}," : string.Empty)}
+                //  error: (err) => {{
+                //    const message = err?.error?.message || err.message || 'Unknown error';
+                //    this.serviceErrors.{currentMethodName}Error = `Failed to call service: ${{message}}`;
+
+                //    console.error('Failed to call service:', err);
+                //  }}
+                //}});"));
+
+                result.Add(sb.ToString());
+
+
+                //mappingManager.SetFromReplacement(new StaticMetadata(responseStaticElementId), variableName);
+                //var response = mappingManager.GenerateUpdateStatements(serviceCall.GetMapResponseMapping());
+                //result.AddRange(response);
             }
         }
         else
