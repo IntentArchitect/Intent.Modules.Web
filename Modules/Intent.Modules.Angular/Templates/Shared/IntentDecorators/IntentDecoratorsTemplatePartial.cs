@@ -40,8 +40,9 @@ namespace Intent.Modules.Angular.Templates.Shared.IntentDecorators
                  {
                      exp.AddParameter("identifier?", "string");
 
-                     var innerExp = new TypeScriptVariableExpressionFunction()
-                         .AddParameter("target", "any")
+                     var innerExp = new TypeScriptVariableExpressionFunction();
+                     innerExp.Indentation = file.Indentation;
+                     innerExp.AddParameter("target", "any")
                          .AddParameter("propertyKey?", "string")
                          .AddParameter("descriptor?", "any");
 

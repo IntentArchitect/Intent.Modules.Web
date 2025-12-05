@@ -26,6 +26,7 @@ namespace Intent.Modules.Angular.HttpClients.Templates.EnumContract
             TypescriptFile = new TypescriptFile(this.GetFolderPath(), this)
                 .AddEnum($"{Model.Name}", @enum =>
                 {
+                    @enum.Export();
                     foreach (var literal in Model.Literals)
                     {
                         @enum.AddLiteral(literal.Name, !string.IsNullOrWhiteSpace(literal.Value) ? literal.Value : null);

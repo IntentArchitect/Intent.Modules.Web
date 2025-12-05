@@ -21,7 +21,7 @@ public abstract partial class EnvironmentTemplateBase : TypeScriptTemplateBase<o
 
     protected string GenerateFile()
     {
-        if (TryGetExistingFileContent(out var content))
+        if (TryGetExistingFileContent(out var content) && !string.IsNullOrWhiteSpace(content))
         {
             // Parse existing environment keys
             var existingKeys = ParseExistingEnvironmentKeys(content);
@@ -202,7 +202,7 @@ public abstract partial class EnvironmentTemplateBase : TypeScriptTemplateBase<o
 
         var entries = string.Join(",\n  ", _environmentVariables.Select(env => $"{env.Key}: {FormatValue(env.DefaultValue)}"));
         return $@"export const environment = {{
-    {entries}
+  {entries}
 }};";
     }
 

@@ -50,7 +50,6 @@ namespace Intent.Modules.Angular.Templates.Environment.Environment
         {
             _environmentVariables.Add(@event);
         }
-
         public override string RunTemplate()
         {
             return GenerateFile();

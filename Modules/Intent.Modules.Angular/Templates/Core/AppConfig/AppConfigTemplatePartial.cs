@@ -1,6 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using Intent.Engine;
 using Intent.Modules.Angular.Templates.Core.AppRoutes;
 using Intent.Modules.Common;
@@ -10,6 +7,10 @@ using Intent.Modules.Common.TypeScript.Events;
 using Intent.Modules.Common.TypeScript.Templates;
 using Intent.RoslynWeaver.Attributes;
 using Intent.Templates;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection.Emit;
 
 [assembly: DefaultIntentManaged(Mode.Fully)]
 [assembly: IntentTemplate("Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial", Version = "1.0")]
@@ -39,6 +40,7 @@ namespace Intent.Modules.Angular.Templates.Core.AppConfig
                     config.WithObjectValue(obj =>
                     {
                         var providersArray = new TypescriptVariableArray();
+                        providersArray.Indentation = TypescriptFile.Indentation;
                         providersArray.AddValue("provideZoneChangeDetection({ eventCoalescing: true })");
                         providersArray.AddValue("provideRouter(routes)");
 

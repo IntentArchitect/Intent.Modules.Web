@@ -1,5 +1,6 @@
 using System.Linq;
 using Intent.Metadata.Models;
+using Intent.Modelers.UI.Api;
 using Intent.Modules.Common;
 using Intent.Modules.Common.Angular.Mapping;
 using Intent.Modules.Common.Typescript.Mapping;
@@ -24,11 +25,11 @@ public class CallServiceOperationMappingResolver : IMappingTypeResolver
             return new MethodInvocationMapping(mappingModel, _template);
         }
 
-        if (mappingModel.Mapping?.MappingTypeId == "720f119b-39b3-4f11-8d96-27fa82d1f4e2" // Invocation Mapping
-            && mappingModel.Model.SpecializationType is "Event Emitter")
-        {
-            //return new RazorEventEmitterInvocationMapping(mappingModel, _template);
-        }
+        //if (mappingModel.Mapping?.MappingTypeId == "720f119b-39b3-4f11-8d96-27fa82d1f4e2" // Invocation Mapping
+        //    && mappingModel.Model.SpecializationType is "Event Emitter")
+        //{
+        //    //return new RazorEventEmitterInvocationMapping(mappingModel, _template);
+        //}
 
         const string httpSettingsDefinitionId = "b4581ed2-42ec-4ae2-83dd-dcdd5f0837b6";
         const string dtoFieldTypeId = "7baed1fd-469b-4980-8fd9-4cefb8331eb2";
@@ -45,7 +46,9 @@ public class CallServiceOperationMappingResolver : IMappingTypeResolver
             mappingModel.Model.TypeReference?.Element?.SpecializationType is "Command" or "DTO" or "Model Definition" &&
             mappingModel.Model.SpecializationType is not "Event Emitter")
         {
-            return new ObjectInitializationMapping(mappingModel, _template);
+            return (mappingModel.Model as IElement).ParentElement.AsComponentModel() is not null ?
+                new ObjectInitializationMapping(mappingModel, _template) :
+                new PropertyObjectInitializationMapping(mappingModel, _template);
         }
 
         return null;

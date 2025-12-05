@@ -19,6 +19,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using System.Reflection.Emit;
 using System.Reflection.Metadata;
 using System.Security.Claims;
 using System.Text;
@@ -57,13 +58,17 @@ namespace Intent.Modules.Angular.Templates.Component.ComponentTypeScript
                 @class.AddDecorator("IntentMerge");
                 @class.AddDecorator("Component", component =>
                 {
-                    var obj = new TypescriptVariableObject();
+                    // TODO Clean this up
+                    var obj = new TypescriptVariableObject
+                    {
+                        Indentation = TypescriptFile.Indentation
+                    };
                     obj.AddField("selector", $"'app-{ComponentName.ToKebabCase().ToLower()}'");
                     obj.AddField("standalone", "true");
                     obj.AddField("templateUrl", $"'{ComponentName.ToKebabCase()}.component.html'");
                     obj.AddField("styleUrls", $"['{ComponentName.ToKebabCase()}.component.scss']");
 
-                    component.AddArgument(obj.GetText(TypescriptFile.Indentation));
+                    component.AddArgument(obj.GetText(""));
                 });
 
                 if (model.Operations.Any(o => o.Name == "ngOnInit"))
@@ -96,17 +101,13 @@ namespace Intent.Modules.Angular.Templates.Component.ComponentTypeScript
                         {
                             var mappingManager = CreateMappingManager();
                             mappingManager.SetFromReplacement(operation, null);
-                            
+
                             foreach (var action in operation.GetProcessingActions())
                             {
                                 if (action.IsInvocationModel() && action.Mappings.Count() == 1)
                                 {
                                     var operationMapping = action.Mappings.Single();
-                                    var mappedEnd = operationMapping.MappedEnds.FirstOrDefault(x => x.SourceElement.Id == action.Id);
-                                    if (mappedEnd == null)
-                                    {
-                                        throw new ElementException(action, "Mapping required for this invocation");
-                                    }
+                                    var mappedEnd = operationMapping.MappedEnds.FirstOrDefault(x => x.SourceElement.Id == action.Id) ?? throw new ElementException(action, "Mapping required for this invocation");
                                     var invocation = mappingManager.GenerateSourceStatementForMapping(operationMapping, mappedEnd);
                                     method.AddStatement(invocation);
                                     continue;
@@ -155,7 +156,7 @@ namespace Intent.Modules.Angular.Templates.Component.ComponentTypeScript
 
                                         invocation = new TypescriptStatement($"{nameOfMethodToInvoke}({string.Join(',', arguments)})");
                                     }
-                                    else // Proxies
+                                    else // Operations
                                     {
                                         invocation = mappingManager.GenerateUpdateStatements(invocationMapping).First();
                                     }
@@ -246,7 +247,6 @@ namespace Intent.Modules.Angular.Templates.Component.ComponentTypeScript
 
             var mappingManager = new TypescriptClassMappingManager(template);
             mappingManager.AddMappingResolver(new CallServiceOperationMappingResolver(template));
-            //mappingManager.AddMappingResolver(new PropertyCollectionMappingResolver(template));
             mappingManager.AddMappingResolver(new TypescriptBindingMappingResolver(template));
             mappingManager.AddMappingResolver(new TypeConvertingMappingResolver(template));
             mappingManager.SetFromReplacement(Model, "this");
@@ -345,13 +345,16 @@ namespace Intent.Modules.Angular.Templates.Component.ComponentTypeScript
             // TODO. Fix
             //method.AddDecorator("IntentMerge");
 
-            if (Model.Properties.Where(p => p.HasRouteParameter()).Any())
+            if (Model.Properties.Where(p => p.HasRouteParameter() || p.HasQueryParameter()).Any())
             {
                 var ctor = @class.Constructors.First();
-                ctor.AddParameter("route", this.UseType("ActivatedRoute", "@angular/router"), param =>
+                if (!ctor.Parameters.Any(p => p.Name == "route"))
                 {
-                    param.WithPrivateFieldAssignment();
-                });
+                    ctor.AddParameter("route", this.UseType("ActivatedRoute", "@angular/router"), param =>
+                    {
+                        param.WithPrivateFieldAssignment();
+                    });
+                }
             }
 
             foreach (var prop in Model.Properties.Where(p => p.HasRouteParameter() || p.HasQueryParameter()))

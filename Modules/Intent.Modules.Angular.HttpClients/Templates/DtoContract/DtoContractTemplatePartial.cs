@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Intent.Engine;
 using Intent.IArchitect.Agent.Persistence;
 using Intent.Modelers.Services.Api;
+using Intent.Modules.Angular.HttpClients.Templates.EnumContract;
 using Intent.Modules.Angular.HttpClients.Templates.PagedResult;
 using Intent.Modules.Angular.ServiceProxies.Templates.Proxies.PagedResult;
 using Intent.Modules.Common;
@@ -32,6 +33,7 @@ namespace Intent.Modules.Angular.HttpClients.Templates.DtoContract
                 .AddInterface($"{Model.Name}", @interface =>
                 {
                     AddTypeSource(TemplateId);
+                    AddTypeSource(EnumContractTemplate.TemplateId);
                     PagedResultTypeSource.ApplyTo(this, PagedResultTemplate.TemplateId);
 
                     @interface.Export();

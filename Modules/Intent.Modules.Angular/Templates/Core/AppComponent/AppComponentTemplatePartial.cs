@@ -35,14 +35,18 @@ namespace Intent.Modules.Angular.Templates.Core.AppComponent
 
                     @class.AddDecorator("@Component", component =>
                     {
-                        var obj = new TypescriptVariableObject();
+                        // TODO Clean this up
+                        var obj = new TypescriptVariableObject
+                        {
+                            Indentation = TypescriptFile.Indentation
+                        };
                         obj.AddField("selector", "'app-root'");
                         obj.AddField("imports", "[RouterOutlet]");
                         obj.AddField("standalone", "true");
                         obj.AddField("templateUrl", "'./app.component.html'");
                         obj.AddField("styleUrls", "['./app.component.scss']");
 
-                        component.AddArgument(obj.GetText("  "));
+                        component.AddArgument(obj.GetText(""));
                     });
                 });
         }

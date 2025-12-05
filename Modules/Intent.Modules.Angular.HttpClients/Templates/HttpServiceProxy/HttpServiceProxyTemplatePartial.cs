@@ -50,11 +50,13 @@ namespace Intent.Modules.Angular.HttpClients.Templates.HttpServiceProxy
                     @class.Export();
                     @class.AddDecorator(UseType("Injectable", "@angular/core"), decorator =>
                     {
-                        var obj = new TypescriptVariableObject();
+                        var obj = new TypescriptVariableObject
+                        {
+                            Indentation = TypescriptFile.Indentation
+                        };
                         obj.AddField("providedIn", "'root'");
 
-                        //TODO sort out indentation on final line of parameter
-                        decorator.AddArgument(obj.GetText(TypescriptFile.Indentation));
+                        decorator.AddArgument(obj.GetText(""));
                     });
 
                     @class.AddField("baseUrl", @base =>
