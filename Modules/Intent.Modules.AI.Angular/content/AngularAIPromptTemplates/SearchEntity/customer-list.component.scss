@@ -1,0 +1,128 @@
+.customer-page {
+  display: flex;
+  justify-content: center;
+}
+
+.customer-card {
+  width: 100%;
+  max-width: 960px;
+  margin-top: 24px;
+  border-radius: 18px;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.06);
+}
+
+mat-card-header {
+  padding-bottom: 4px;
+}
+
+mat-card-title {
+  font-size: 22px;
+}
+
+mat-card-subtitle {
+  font-size: 14px;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+/* Top toolbar (search + page size) */
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;   /* top-align both sides */
+  gap: 16px;
+  margin: 16px 0 8px;
+  flex-wrap: wrap;
+}
+
+.toolbar-left {
+  display: flex;
+  align-items: flex-end;      /* bottom-align field + button */
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.toolbar-right {
+  min-width: 200px;
+}
+
+.search-field {
+  min-width: 260px;
+}
+
+.page-size-field {
+  min-width: 140px;
+}
+
+/* nudge button so it lines up nicely with field */
+.search-button {
+  align-self: flex-end;
+  margin-bottom: 4px;
+}
+
+/* Summary text */
+.summary {
+  margin: 8px 0;
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+/* Material table styling */
+.customers-table {
+  width: 100%;
+  margin-top: 4px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.customers-table .mat-header-row {
+  background-color: #f3f4f6;
+}
+
+.customers-table .mat-header-cell,
+.customers-table .mat-cell {
+  padding: 10px 14px;
+  font-size: 14px;
+}
+
+.customers-table .mat-row:nth-child(even) .mat-cell {
+  background-color: #fafafa;
+}
+
+.customers-table .mat-row:hover .mat-cell {
+  background-color: #e5f2ff;
+}
+
+/* Column widths / alignment */
+.col-id {
+  width: 55%;
+  font-family: "Roboto Mono", monospace;
+  font-size: 12px;
+}
+
+.col-name,
+.col-surname {
+  width: 22.5%;
+}
+
+/* Info / error messages */
+.info {
+  margin-top: 8px;
+  font-size: 14px;
+}
+
+.info.error {
+  color: #c62828;
+}
+
+/* Pagination */
+.pagination {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 16px;
+}
+
+.page-info {
+  font-size: 13px;
+  color: rgba(0, 0, 0, 0.6);
+}

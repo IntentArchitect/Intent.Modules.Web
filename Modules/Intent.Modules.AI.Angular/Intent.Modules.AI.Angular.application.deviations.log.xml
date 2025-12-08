@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<deviationsLog>
+  <files>
+    <file>
+      <correlationId>Intent.ModuleBuilder.Templates.StaticContentTemplateRegistration#f5443fa4-afbe-4d49-a83e-3dc3ca1f010e</correlationId>
+      <path>Intent.Modules.AI.Angular/Templates/StaticContentTemplateRegistrations/AngularAIPromptTemplatesStaticContentTemplateRegistration.cs</path>
+      <count>2</count>
+      <updatedByAccountName>joel.turner@intentarchitect.com</updatedByAccountName>
+      <updatedByDisplayName>Joel Turner</updatedByDisplayName>
+      <updatedAt>2025-11-27T11:43:08.1985476Z</updatedAt>
+      <deviationsHash>2E6946F2BC7527CFAAC90D417D9440E685D09969F1CFA4607340B0F8E38D3EFB</deviationsHash>
+      <fileHash>C30E11F47DF72458CE6E056719F22028F74B2F4DE5BE6871E484E964594D19AD</fileHash>
+    </file>
+  </files>
+</deviationsLog>

@@ -6,7 +6,7 @@
   <iconType>UrlImagePath</iconType>
   <metadataRelativePath>Intent.Metadata</metadataRelativePath>
   <modulesCacheRelativePath>.intent/modules</modulesCacheRelativePath>
-  <lastUsedApplicationTemplate id="Intent.ApplicationTemplate.ModuleBuilder" version="4.1.11-pre.0" />
+  <lastUsedApplicationTemplate id="Intent.ApplicationTemplate.ModuleBuilder" version="4.1.12-pre.0" />
   <applications>
     <application id="9df99115-886a-4429-93c8-e03f42d47e10" name="Intent.Modules.Modelers.WebClient" solutionFolder="Archived" relativePath="Archived\Intent.Modules.Modelers.WebClient\Intent.Modules.Modelers.WebClient.application.config" />
     <application id="1cecc65d-e804-4de6-a27f-e8e4ad0190d7" name="Angular" solutionFolder="Archived" relativePath="Archived\Intent.Modules.Angular\Angular.application.config" />
@@ -19,5 +19,6 @@
     <application id="68b9c5c2-c910-4824-8459-fec6beba2aab" name="Intent.Modules.Angular.Metadata" relativePath="Intent.Modules.Angular.Metadata/Intent.Modules.Angular.Metadata.application.config" />
     <application id="c4f1e703-dab1-4ec1-be71-73843ef3a71d" name="Intent.Modules.Angular.HttpClients" relativePath="Intent.Modules.Angular.HttpClients/Intent.Modules.Angular.HttpClients.application.config" />
     <application id="a3066354-0476-489c-8c80-5ff85e2fc776" name="Intent.Modules.Angular.Components.Material" relativePath="Intent.Modules.Angular.Components.Material/Intent.Modules.Angular.Components.Material.application.config" />
+    <application id="ba3d75a2-6a2c-44c5-8ecf-bd333c5677b5" name="Intent.Modules.AI.Angular" relativePath="Intent.Modules.AI.Angular/Intent.Modules.AI.Angular.application.config" />
   </applications>
 </solution>

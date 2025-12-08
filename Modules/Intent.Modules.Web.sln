@@ -36,6 +36,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Common", "Common", "{82F0F2
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intent.Modules.Angular.Components.Material", "Intent.Modules.Angular.Components.Material\Intent.Modules.Angular.Components.Material.csproj", "{02D141F5-A102-4BF1-8C53-D3529EFEAC78}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Intent.Modules.AI.Angular", "Intent.Modules.AI.Angular\Intent.Modules.AI.Angular.csproj", "{284C5DF2-04D2-4FBE-BC42-FBB1A26D573F}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -86,6 +88,10 @@ Global
 		{02D141F5-A102-4BF1-8C53-D3529EFEAC78}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{02D141F5-A102-4BF1-8C53-D3529EFEAC78}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{02D141F5-A102-4BF1-8C53-D3529EFEAC78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{284C5DF2-04D2-4FBE-BC42-FBB1A26D573F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{284C5DF2-04D2-4FBE-BC42-FBB1A26D573F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{284C5DF2-04D2-4FBE-BC42-FBB1A26D573F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{284C5DF2-04D2-4FBE-BC42-FBB1A26D573F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

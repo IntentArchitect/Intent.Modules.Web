@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="3001e2e1-6e69-49ab-931c-bab622b6641b" type="Module Documentation" typeId="a869a2c4-bf24-477c-9d19-87fb24d4209f">
+  <name>Documentation</name>
+  <display>Documentation</display>
+  <isAbstract>false</isAbstract>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>4caf7667-4fd9-4f05-87c2-6db905c41294</parentFolderId>
+  <packageId>4caf7667-4fd9-4f05-87c2-6db905c41294</packageId>
+  <packageName>Intent.AI.Angular</packageName>
+  <stereotypes />
+  <metadata />
+  <childElements />
+</class>
