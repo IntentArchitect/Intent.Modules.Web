@@ -11,10 +11,6 @@
       }
     ]
   },
-  "rules": [
-    "If there are forms ensure that they are valid when doing saves, creates, updates etc. (IMPORTANT)",
-    "When adding components or concepts like `ngif` to the `html` ensure in the backing `ts` file you add and configure the corresponding imports. (CRITICAL)"
-  ],
   "input-files": [
   ],
   "templates": [
@@ -53,7 +49,13 @@
       "template-folder": "SearchEntity",
       "metadata": {
       },
+      "input-files": [
+        {
+          "template-id": "Intent.Angular.ServiceProxies.PagedResult"
+        }
+      ],
       "rules": [
+        "(IMPORTANT) Only add buttons/links for actions whose methods already exist in this class. Never bind to or invent methods that aren’t there."
       ]
     },
     {

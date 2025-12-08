@@ -17,11 +17,63 @@ Completely implement the Angular component by reading and updating the `.html` f
 7. **Only modify files listed in "Files Allowed To Modify". All other Input Code Files are read-only.**
             
 ## Important Rules
-* The `.razor.cs` file is the C# backing file for the `.razor` file.
 * PRESERVE existing code in the `.ts` file. You may add code, but you are not allowed to change the existing code (IMPORTANT) in the `.ts` file!
 * (IMPORTANT)NEVER ADD COMMENTS, not even code comments from templates or examples
 * The supplied Example Components are examples to guide your implementation 
 * Don't display technical ids to end users like Guids
+* If there are forms ensure that they are valid when doing saves, creates, updates etc. (IMPORTANT)
+* When adding components or concepts like `ngif` to the `html` ensure in the backing `ts` file you add and configure the corresponding imports. (CRITICAL)
+
+[UI ACTION RULES – VERY IMPORTANT]
+
+You will receive a TypeScript Angular component and must generate the HTML template (and sometimes small additions to the .ts file).
+
+1. Treat the TypeScript class as the source of truth for any logic that calls services or performs navigation.
+
+2. When generating the template:
+   - First, scan the class methods.
+   - For any public method whose name clearly represents a UI action
+     (e.g. starts with: navigateTo, add, create, new, edit, update, delete, remove, view, open, search, load),
+     you SHOULD render a corresponding control in the UI.
+
+   Examples:
+   - If the class has `navigateToCustomerAdd()`, render an “Add Customer” button calling it:
+       `<button mat-raised-button ... (click)="navigateToCustomerAdd()">Add Customer</button>`
+   - If the class has `editCustomer(id: string)`, render an Edit action per row:
+       `<button ... (click)="editCustomer(row.id)">Edit</button>`
+   - If the class has `onDeleteCustomer(id: string)`, render a Delete action per row.
+
+3. DO NOT bind to or reference methods that do not exist in the class.
+   - Never invent method names in the template.
+   - If you are unsure whether a method is meant to be a UI action, it is safer to skip the control.
+
+[TS MODIFICATION RULES – VERY IMPORTANT]
+
+4. You MAY add **new helper methods in the .ts file** if needed, as long as they:
+   - only manipulate component state, or
+   - only call existing methods in the same class.
+   - do NOT directly call services or `router.navigate`.
+
+5. DO NOT modify any existing methods that:
+   - call injected services (anything like `this.someService...`)
+   - or call the Angular router (e.g. `this.router.navigate(...)`).
+
+6. If a desired UI action would require changing an existing service / navigation method,
+   prefer to:
+   - call that existing method from the template, OR
+   - create a small wrapper method that calls it,
+   instead of editing the existing method’s internals.
+
+[LAYOUT RULES (IMPORTANT)]
+
+- Use the provided sample template as the layout blueprint.
+- Preserve the overall structure: hero card, then main card with:
+  - a filter section using .filter-grid
+  - a button row using .button-row that contains both Search and Add buttons
+  - the data table and paginator below.
+- Do NOT introduce new top-level wrappers (e.g. extra <div> around the card) unless strictly necessary.
+- Do NOT move the "Add" button into the header section or separate row; keep it in the same .button-row as the Search button.
+- You may change method names, labels, and bindings, but keep the DOM hierarchy and CSS class names the same as the sample.
             
 ## Additional Rules
 {{$additionalRules}}

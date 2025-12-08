@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
@@ -26,8 +26,14 @@
     <Folder Include="content\AngularAIPromptTemplates\AddEntity\" />
     <Folder Include="content\AngularAIPromptTemplates\EditEntityDialog\" />
     <Folder Include="content\AngularAIPromptTemplates\EditEntity\" />
-    <Folder Include="content\AngularAIPromptTemplates\SearchEntity\" />
+    <Folder Include="content\AngularAIPromptTemplates\SearchEntityold\" />
     <Folder Include="content\AngularAIPromptTemplates\ViewEntity\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="content\AngularAIPromptTemplates\SearchEntity\search-entity-delete-dialog.html">
+      <SubType>Code</SubType>
+    </None>
   </ItemGroup>
 
 </Project>
