@@ -6,6 +6,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="content\AngularAIPromptTemplates\SearchEntityold\**" />
+    <EmbeddedResource Remove="content\AngularAIPromptTemplates\SearchEntityold\**" />
+    <None Remove="content\AngularAIPromptTemplates\SearchEntityold\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Intent.Modules.Common" Version="3.7.3" />
     <PackageReference Include="Intent.Modules.Common.AI" Version="1.0.0-pre.0" />
     <PackageReference Include="Intent.Modules.Modelers.Services" Version="3.9.3" />
@@ -26,7 +32,6 @@
     <Folder Include="content\AngularAIPromptTemplates\AddEntity\" />
     <Folder Include="content\AngularAIPromptTemplates\EditEntityDialog\" />
     <Folder Include="content\AngularAIPromptTemplates\EditEntity\" />
-    <Folder Include="content\AngularAIPromptTemplates\SearchEntityold\" />
     <Folder Include="content\AngularAIPromptTemplates\ViewEntity\" />
   </ItemGroup>
 
