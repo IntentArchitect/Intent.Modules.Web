@@ -42,7 +42,8 @@ namespace Intent.Modules.Angular.Templates.Component.ComponentHtml
         {
             return new HtmlFileConfig(
                 fileName: $"{ComponentName.ToKebabCase()}.component",
-                relativeLocation: $"{string.Join("/", Model.GetParentFolderNames().Select(f => f.ToKebabCase()))}/{ComponentName.ToKebabCase()}"
+                relativeLocation: $"{string.Join("/", Model.GetParentFolderNames().Select(f => f.ToKebabCase()))}/{ComponentName.ToKebabCase()}",
+                overwriteBehaviour: OverwriteBehaviour.OverwriteDisabled
             );
         }
 

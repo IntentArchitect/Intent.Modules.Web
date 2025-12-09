@@ -87,7 +87,10 @@ namespace Intent.Modules.Angular.Templates.Component.ComponentTypeScript
                     {
                         foreach (var param in operation.Parameters)
                         {
-                            method.AddParameter(param.Name, GetTypeName(param.TypeReference), p =>
+                            var paramName = $"{param.Name.ToCamelCase(true)}{(param.TypeReference.IsNullable ? "?" : "")}";
+                            var paramType = $"{GetTypeName(param.TypeReference)}{(param.TypeReference.IsNullable ? " | null" : "")}";
+
+                            method.AddParameter(paramName, paramType, p =>
                             {
                                 p.WithDefaultValue(param.Value);
                             });
@@ -365,21 +368,37 @@ namespace Intent.Modules.Angular.Templates.Component.ComponentTypeScript
 
             foreach (var prop in Model.Properties.Where(p => p.HasRouteParameter() || p.HasQueryParameter()))
             {
-                var postStatement = "";
-                if (!prop.TypeReference.IsNullable)
+                // set some defaults
+                var propertyNullable = false;
+                var assignmentPrefix = "const ";
+                if (prop.TypeReference.IsNullable)
                 {
-                    postStatement = " ?? ''";
+                    propertyNullable = true;
+                    assignmentPrefix = "this.";
                 }
 
+                // if nullable, we can assign the value straight
                 if (prop.HasRouteParameter())
                 {
-                    method.AddStatement($"this.{prop.Name.ToCamelCase(true)} = this.route.snapshot.paramMap.get('{prop.Name.ToCamelCase(true)}'){postStatement};");
+                    method.AddStatement($"{assignmentPrefix}{prop.Name.ToCamelCase(true)} = this.route.snapshot.paramMap.get('{prop.Name.ToCamelCase(true)}');");
                 }
 
                 if (prop.HasQueryParameter())
                 {
-                    method.AddStatement($"this.{prop.Name.ToCamelCase(true)} = this.route.snapshot.queryParamMap.get('{prop.Name.ToCamelCase(true)}'){postStatement};");
+                    method.AddStatement($"{assignmentPrefix}{prop.Name.ToCamelCase(true)} = this.route.snapshot.queryParamMap.get('{prop.Name.ToCamelCase(true)}');");
                 }
+
+                // if nullable, assigned and move onto next one
+                if(propertyNullable)
+                {
+                    continue;
+                }
+
+                // otherwise we need to add the check and throw error if not supplied
+                method.AddStatement(@$"if (!{prop.Name.ToCamelCase(true)}) {{
+      throw new Error(""Expected '{prop.Name.ToCamelCase(true)}' not supplied"");
+    }}");
+                method.AddStatement($"this.{prop.Name.ToCamelCase(true)} = {prop.Name.ToCamelCase(true)};");
             }
         }
 
