@@ -42,6 +42,7 @@ namespace Intent.Modules.Angular.HttpClients.Templates.DtoContract
                     {
                         var type = GetTypeName(field.TypeReference);
                         var nullable = field.TypeReference.IsNullable ? "?" : "";
+                        type = field.TypeReference.IsNullable ? $"{type} | null" : type;
 
                         @interface.AddField($"{field.Name.ToCamelCase(true)}{nullable}", type);
                     }
@@ -56,7 +57,7 @@ namespace Intent.Modules.Angular.HttpClients.Templates.DtoContract
         {
             return new TypeScriptFileConfig(
                 overwriteBehaviour: OverwriteBehaviour.Always,
-                fileName: $"{Model.Name.ToKebabCase().RemoveSuffix("-dto")}.dto",
+                fileName: $"{Model.Name.ToKebabCase()}",
                 relativeLocation: this.GetPackageBasedRelativeLocation([]),
                 className: $"{Model.Name}"
             );

@@ -42,6 +42,7 @@ namespace Intent.Modules.Angular.Templates.Component.ComponentTypeScript
             AddImport("Component", "@angular/core");
             AddImport("OnInit", "@angular/core");
 
+            AddTypeSource("Intent.Angular.HttpClients.EnumContract");
             AddTypeSource("Intent.Angular.HttpClients.DtoContract");
             AddTypeSource("Intent.Angular.HttpClients.PagedResult");
             AddTypeSource("Intent.Angular.HttpClients.HttpServiceProxy");
@@ -276,14 +277,16 @@ namespace Intent.Modules.Angular.Templates.Component.ComponentTypeScript
             {
                 foreach (var propertyModel in modelDef.Properties)
                 {
+                    var propName = propertyModel.Name.ToCamelCase(true);
                     var fieldType = GetTypeName(propertyModel.TypeReference);
 
                     if (propertyModel.TypeReference.IsNullable)
                     {
                         fieldType = $"{fieldType} | null";
+                        propName = $"{propName}?";
                     }
 
-                    @interface.AddField(propertyModel.Name.ToCamelCase(true), fieldType);
+                    @interface.AddField(propName, fieldType);
                 }
             });
         }
@@ -305,14 +308,16 @@ namespace Intent.Modules.Angular.Templates.Component.ComponentTypeScript
 
                 foreach (var propertyModel in modelDef.Properties)
                 {
+                    var propName = propertyModel.Name.ToCamelCase(true);
                     var fieldType = GetTypeName(propertyModel.TypeReference);
 
                     if (propertyModel.TypeReference.IsNullable)
                     {
                         fieldType = $"{fieldType} | null";
+                        propName = $"{propName}?";
                     }
 
-                    @class.AddField(propertyModel.Name.ToCamelCase(true), fieldType, @field =>
+                    @class.AddField(propName, fieldType, @field =>
                     {
                         if (propertyModel.TypeReference.IsNullable && string.IsNullOrWhiteSpace(propertyModel.Value))
                         {
