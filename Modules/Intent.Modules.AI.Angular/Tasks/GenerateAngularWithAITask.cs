@@ -15,6 +15,7 @@ using Microsoft.SemanticKernel;
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using static Intent.Modules.AI.Prompts.Tasks.GenerateAngularWithAITask;
 
@@ -138,8 +139,6 @@ public class GenerateAngularWithAITask : AiPromptBaseTask<PromptInputs>, IModule
                 }
             }
         }
-        //Is there a pagination which needs to be added?
-        inputFiles.AddRange(_fileProvider.GetFilesForTemplate("Intent.Application.Dtos.Pagination.PagedResult"));
         return inputFiles;
     }
 

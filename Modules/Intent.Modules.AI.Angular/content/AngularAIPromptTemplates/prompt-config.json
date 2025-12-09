@@ -51,7 +51,8 @@
       },
       "input-files": [
         {
-          "template-id": "Intent.Angular.ServiceProxies.PagedResult"
+          "type": "Template",
+          "template-id": "Intent.Angular.HttpClients.PagedResult"
         }
       ],
       "rules": [
