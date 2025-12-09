@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="4076ac63-872b-415e-a89b-2a2732dfc8eb" type="Module Settings Extension" typeId="72044cdf-1f96-4ad2-86be-8d5468725e67">
+  <name>Angular Settings</name>
+  <display>Angular Settings: Angular Settings</display>
+  <isAbstract>false</isAbstract>
+  <sort-children>manually</sort-children>
+  <genericTypes />
+  <typeReference id="938f8a98-72a8-4ca4-b454-8f7847292aeb">
+    <typeId>3697d56e-8390-4e7f-ba44-fee766191e77</typeId>
+    <isNavigable>true</isNavigable>
+    <isNullable>false</isNullable>
+    <isCollection>false</isCollection>
+    <isRequired>true</isRequired>
+    <typePackageName>Intent.Angular</typePackageName>
+    <typePackageId>d1f9847f-ec1b-4774-910a-816c4f3e8487</typePackageId>
+    <stereotypes />
+    <genericTypeParameters />
+  </typeReference>
+  <isMapped>false</isMapped>
+  <parentFolderId>46c95fc2-68ad-4cc5-9969-1c7252929a46</parentFolderId>
+  <packageId>46c95fc2-68ad-4cc5-9969-1c7252929a46</packageId>
+  <packageName>Intent.Angular.Components.Material</packageName>
+  <stereotypes />
+  <metadata />
+  <childElements>
+    <childElement id="bbed95c0-28a3-487c-a72f-2f867f0de0e6" type="Module Settings Field Configuration" typeId="88e29cab-1342-40c7-b052-5fcd68ffafec">
+      <name>Material Theme</name>
+      <display>Material Theme</display>
+      <isAbstract>false</isAbstract>
+      <sort-children>manually</sort-children>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>4076ac63-872b-415e-a89b-2a2732dfc8eb</parentFolderId>
+      <packageId>46c95fc2-68ad-4cc5-9969-1c7252929a46</packageId>
+      <packageName>Intent.Angular.Components.Material</packageName>
+      <stereotypes>
+        <stereotype stereotypeDefinitionId="4805c791-5be3-4049-b929-6046d7be9944" name="Field Configuration">
+          <addedByDefault>true</addedByDefault>
+          <definitionPackageName>Intent.ModuleBuilder</definitionPackageName>
+          <definitionPackageId>9972b2a9-b749-4bba-b5c8-824bf694c6ef</definitionPackageId>
+          <properties>
+            <property name="e33ce4e3-a3c5-4a3c-a6b8-96418be03de0" display="Control Type" value="Select" isActive="true" />
+            <property name="7070a9ce-ff31-422e-9cff-d82876c5efdf" display="Is Required" value="false" isActive="false" />
+            <property name="01489021-8311-43d5-b41b-e7628a512c1d" display="Hint" isActive="true" />
+            <property name="653d889c-626f-45c5-a6e6-72b74a2f805c" display="Default Value" value="indigo-pink" isActive="true" />
+            <property name="c3456e79-0607-41a5-9b85-e0712f4f4834" display="Is Active Function" isActive="true" />
+            <property name="fa54329f-d4e5-48bc-8027-e17206e9fc89" display="Is Required Function" isActive="true" />
+            <property name="29696a13-bf1d-4fbd-bdf3-adb802430cb4" display="Order Priority" isActive="true" />
+          </properties>
+        </stereotype>
+      </stereotypes>
+      <metadata />
+      <childElements>
+        <childElement id="7f684cea-6b2d-43b3-a283-6425047ad289" type="Module Settings Field Option" typeId="1592709a-89b1-4cb0-9801-ce9d3b94545a">
+          <name>indigo-pink</name>
+          <display>indigo-pink = indigo-pink</display>
+          <isAbstract>false</isAbstract>
+          <value>indigo-pink</value>
+          <genericTypes />
+          <isMapped>false</isMapped>
+          <parentFolderId>bbed95c0-28a3-487c-a72f-2f867f0de0e6</parentFolderId>
+          <packageId>46c95fc2-68ad-4cc5-9969-1c7252929a46</packageId>
+          <packageName>Intent.Angular.Components.Material</packageName>
+          <stereotypes />
+          <metadata />
+          <childElements />
+        </childElement>
+        <childElement id="2df6ff0c-a3b7-41a5-a440-7a8876b3b73a" type="Module Settings Field Option" typeId="1592709a-89b1-4cb0-9801-ce9d3b94545a">
+          <name>deeppurple-amber</name>
+          <display>deeppurple-amber = deeppurple-amber</display>
+          <isAbstract>false</isAbstract>
+          <value>deeppurple-amber</value>
+          <genericTypes />
+          <isMapped>false</isMapped>
+          <parentFolderId>bbed95c0-28a3-487c-a72f-2f867f0de0e6</parentFolderId>
+          <packageId>46c95fc2-68ad-4cc5-9969-1c7252929a46</packageId>
+          <packageName>Intent.Angular.Components.Material</packageName>
+          <stereotypes />
+          <metadata />
+          <childElements />
+        </childElement>
+        <childElement id="6f1e2af4-f67d-4ecb-9503-71ae9a931938" type="Module Settings Field Option" typeId="1592709a-89b1-4cb0-9801-ce9d3b94545a">
+          <name>pink-bluegrey</name>
+          <display>pink-bluegrey = pink-bluegrey</display>
+          <isAbstract>false</isAbstract>
+          <value>pink-bluegrey</value>
+          <genericTypes />
+          <isMapped>false</isMapped>
+          <parentFolderId>bbed95c0-28a3-487c-a72f-2f867f0de0e6</parentFolderId>
+          <packageId>46c95fc2-68ad-4cc5-9969-1c7252929a46</packageId>
+          <packageName>Intent.Angular.Components.Material</packageName>
+          <stereotypes />
+          <metadata />
+          <childElements />
+        </childElement>
+        <childElement id="efd60c7c-5c00-4038-b04e-c65a7c029cd5" type="Module Settings Field Option" typeId="1592709a-89b1-4cb0-9801-ce9d3b94545a">
+          <name>purple-green</name>
+          <display>purple-green = purple-green</display>
+          <isAbstract>false</isAbstract>
+          <value>purple-green</value>
+          <genericTypes />
+          <isMapped>false</isMapped>
+          <parentFolderId>bbed95c0-28a3-487c-a72f-2f867f0de0e6</parentFolderId>
+          <packageId>46c95fc2-68ad-4cc5-9969-1c7252929a46</packageId>
+          <packageName>Intent.Angular.Components.Material</packageName>
+          <stereotypes />
+          <metadata />
+          <childElements />
+        </childElement>
+        <childElement id="46e5ac83-a957-4e65-ab36-0e500c05da36" type="Module Settings Field Option" typeId="1592709a-89b1-4cb0-9801-ce9d3b94545a">
+          <name>Custom Theme</name>
+          <display>Custom Theme = custom</display>
+          <isAbstract>false</isAbstract>
+          <value>custom</value>
+          <genericTypes />
+          <isMapped>false</isMapped>
+          <parentFolderId>bbed95c0-28a3-487c-a72f-2f867f0de0e6</parentFolderId>
+          <packageId>46c95fc2-68ad-4cc5-9969-1c7252929a46</packageId>
+          <packageName>Intent.Angular.Components.Material</packageName>
+          <stereotypes />
+          <metadata />
+          <childElements />
+        </childElement>
+      </childElements>
+    </childElement>
+  </childElements>
+</class>

@@ -1,3 +1,11 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
+using System.Reflection.Emit;
+using System.Reflection.Metadata;
+using System.Security.Claims;
+using System.Text;
 using Intent.Engine;
 using Intent.Exceptions;
 using Intent.Metadata.Models;
@@ -9,20 +17,12 @@ using Intent.Modules.Common;
 using Intent.Modules.Common.Templates;
 using Intent.Modules.Common.TypeResolution;
 using Intent.Modules.Common.Types.Api;
+using Intent.Modules.Common.TypeScript.Builder;
 using Intent.Modules.Common.Typescript.Mapping;
 using Intent.Modules.Common.Typescript.Mapping.Resolvers;
-using Intent.Modules.Common.TypeScript.Builder;
 using Intent.Modules.Common.TypeScript.Templates;
 using Intent.RoslynWeaver.Attributes;
 using Intent.Templates;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection;
-using System.Reflection.Emit;
-using System.Reflection.Metadata;
-using System.Security.Claims;
-using System.Text;
 using static System.Reflection.Metadata.BlobBuilder;
 
 [assembly: DefaultIntentManaged(Mode.Fully)]
@@ -342,6 +342,7 @@ namespace Intent.Modules.Angular.Templates.Component.ComponentTypeScript
 
         private void ConfigureOnInitOperation(TypescriptClass @class, TypescriptMethod method)
         {
+
             // TODO. Fix
             //method.AddDecorator("IntentMerge");
 

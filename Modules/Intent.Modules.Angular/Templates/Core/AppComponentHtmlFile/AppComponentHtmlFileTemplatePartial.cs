@@ -1,5 +1,7 @@
 using System.Collections.Generic;
+using System.Linq;
 using Intent.Engine;
+using Intent.Modelers.UI.Api;
 using Intent.Modules.Common;
 using Intent.Modules.Common.Html.Templates;
 using Intent.Modules.Common.Templates;
@@ -29,8 +31,16 @@ namespace Intent.Modules.Angular.Templates.Core.AppComponentHtmlFile
         {
             return new HtmlFileConfig(
                 fileName: $"app.component",
-                relativeLocation: ""
+                relativeLocation: "",
+                OverwriteBehaviour.OverwriteDisabled
             );
+        }
+
+        public override bool CanRunTemplate()
+        {
+            // This template is only needed if there are no layouts defined in the UI modeller
+            return base.CanRunTemplate() &&
+                !ExecutionContext.MetadataManager.UserInterface(ExecutionContext.GetApplicationConfig().Id).GetLayoutModels().Any();
         }
 
     }

@@ -5,6 +5,7 @@ using Intent.Modules.Angular.Templates.Component.LayoutComponentTypescript;
 using Intent.Modules.Angular.Templates.Core.AppComponent;
 using Intent.Modules.Angular.Templates.Core.AppConfig;
 using Intent.Modules.Angular.Templates.Core.AppRoutes;
+using Intent.Modules.Angular.Templates.Core.Main;
 using Intent.Modules.Angular.Templates.Environment.Environment;
 using Intent.Modules.Angular.Templates.Environment.EnvironmentDotDevelopment;
 using Intent.Modules.Angular.Templates.Shared.IntentDecorators;
@@ -53,6 +54,11 @@ namespace Intent.Modules.Angular.Templates
         public static string GetAppRoutesTemplateName(this IIntentTemplate template)
         {
             return template.GetTypeName(AppRoutesTemplate.TemplateId);
+        }
+
+        public static string GetMainTemplateName(this IIntentTemplate template)
+        {
+            return template.GetTypeName(MainTemplate.TemplateId);
         }
         public static string GetEnvironmentTemplateName(this IIntentTemplate template)
         {

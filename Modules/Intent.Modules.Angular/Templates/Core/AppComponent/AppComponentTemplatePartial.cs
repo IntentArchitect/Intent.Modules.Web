@@ -1,6 +1,8 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using Intent.Engine;
+using Intent.Modelers.UI.Api;
 using Intent.Modules.Common;
 using Intent.Modules.Common.Templates;
 using Intent.Modules.Common.TypeScript.Builder;
@@ -67,6 +69,13 @@ namespace Intent.Modules.Angular.Templates.Core.AppComponent
         public override string TransformText()
         {
             return TypescriptFile.ToString();
+        }
+
+        public override bool CanRunTemplate()
+        {
+            // This template is only needed if there are no layouts defined in the UI modeller
+            return base.CanRunTemplate() && 
+                !ExecutionContext.MetadataManager.UserInterface(ExecutionContext.GetApplicationConfig().Id).GetLayoutModels().Any();
         }
     }
 }

@@ -41,7 +41,14 @@ namespace Intent.Modules.Angular.Templates.Core.IndexHtmlFile
             #line hidden
             this.Write("</title>\r\n  <base href=\"/\">\r\n  <meta name=\"viewport\" content=\"width=device-width," +
                     " initial-scale=1\">\r\n  <link rel=\"icon\" type=\"image/x-icon\" href=\"favicon.ico\">\r\n" +
-                    "</head>\r\n<body>\r\n  <app-root></app-root>\r\n</body>\r\n</html>");
+                    "");
+            
+            #line 18 "D:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Core\IndexHtmlFile\IndexHtmlFileTemplate.tt"
+            this.Write(this.ToStringHelper.ToStringWithCulture(RenderResources()));
+            
+            #line default
+            #line hidden
+            this.Write("\r\n</head>\r\n<body>\r\n  <app-root></app-root>\r\n</body>\r\n</html>");
             return this.GenerationEnvironment.ToString();
         }
     }

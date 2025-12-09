@@ -12,24 +12,24 @@ using Intent.Templates;
 [assembly: DefaultIntentManaged(Mode.Fully)]
 [assembly: IntentTemplate("Intent.ModuleBuilder.TemplateRegistration.FilePerModel", Version = "1.0")]
 
-namespace Intent.Modules.Angular.Templates.Component.LayoutCompeonentHtml
+namespace Intent.Modules.Angular.Templates.Component.LayoutComponentHtml
 {
     [IntentManaged(Mode.Merge, Body = Mode.Merge, Signature = Mode.Fully)]
-    public class LayoutCompeonentHtmlTemplateRegistration : FilePerModelTemplateRegistration<LayoutModel>
+    public class LayoutComponentHtmlTemplateRegistration : FilePerModelTemplateRegistration<LayoutModel>
     {
         private readonly IMetadataManager _metadataManager;
 
-        public LayoutCompeonentHtmlTemplateRegistration(IMetadataManager metadataManager)
+        public LayoutComponentHtmlTemplateRegistration(IMetadataManager metadataManager)
         {
             _metadataManager = metadataManager;
         }
 
-        public override string TemplateId => LayoutCompeonentHtmlTemplate.TemplateId;
+        public override string TemplateId => LayoutComponentHtmlTemplate.TemplateId;
 
         [IntentManaged(Mode.Fully)]
         public override ITemplate CreateTemplateInstance(IOutputTarget outputTarget, LayoutModel model)
         {
-            return new LayoutCompeonentHtmlTemplate(outputTarget, model);
+            return new LayoutComponentHtmlTemplate(outputTarget, model);
         }
 
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]

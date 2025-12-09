@@ -1,3 +1,11 @@
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
+using System.Net;
+using System.Security.Cryptography;
+using System.Text;
+using System.Text.RegularExpressions;
 using Intent.Engine;
 using Intent.Metadata.Models;
 using Intent.Modelers.Services.Api;
@@ -17,14 +25,6 @@ using Intent.Modules.Metadata.WebApi.Models;
 using Intent.RoslynWeaver.Attributes;
 using Intent.Templates;
 using Intent.Utils;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Net;
-using System.Security.Cryptography;
-using System.Text;
-using System.Text.RegularExpressions;
 
 [assembly: DefaultIntentManaged(Mode.Fully)]
 [assembly: IntentTemplate("Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial", Version = "1.0")]
@@ -142,7 +142,7 @@ namespace Intent.Modules.Angular.HttpClients.Templates.HttpServiceProxy
 
                             method.AddStatement($"const url = `${{this.baseUrl}}{url}`;");
                             method.AddStatements(GetPreDataServiceCallStatements(endpoint, objectParam ? parameterName : ""));
-                            method.AddStatement(BuidReturnStatement(endpoint));
+                            method.AddStatement(BuildReturnStatement(endpoint));
                         });
                     }
                 });
@@ -209,9 +209,9 @@ namespace Intent.Modules.Angular.HttpClients.Templates.HttpServiceProxy
             return GetTypeName(operation.ReturnType);
         }
 
-        private string BuidReturnStatement(IHttpEndpointModel endpoint)
+        private string BuildReturnStatement(IHttpEndpointModel endpoint)
         {
-            if(endpoint.ReturnType?.Element is null)
+            if (endpoint.ReturnType?.Element is null)
             {
                 return $"return this.httpClient.{GetDataServiceCall(endpoint)};";
             }

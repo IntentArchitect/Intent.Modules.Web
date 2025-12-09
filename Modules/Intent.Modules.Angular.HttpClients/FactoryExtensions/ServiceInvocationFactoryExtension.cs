@@ -1,17 +1,17 @@
+using System.Linq;
 using Intent.Engine;
 using Intent.Modelers.Services.CQRS.Api;
 using Intent.Modelers.UI.Api;
 using Intent.Modules.Common;
 using Intent.Modules.Common.Plugins;
 using Intent.Modules.Common.Templates;
-using Intent.Modules.Common.Typescript.Mapping;
 using Intent.Modules.Common.TypeScript.Builder;
+using Intent.Modules.Common.Typescript.Mapping;
 using Intent.Modules.Common.TypeScript.Templates;
 using Intent.Modules.Modelers.UI.Api;
 using Intent.Plugins.FactoryExtensions;
 using Intent.RoslynWeaver.Attributes;
 using Microsoft.VisualBasic;
-using System.Linq;
 
 [assembly: DefaultIntentManaged(Mode.Fully)]
 [assembly: IntentTemplate("Intent.ModuleBuilder.Templates.FactoryExtension", Version = "1.0")]

@@ -2,7 +2,7 @@
 <package>
   <id>Intent.Angular</id>
   <version>5.0.0-alpha.0</version>
-  <supportedClientVersions>[4.5.0-a,5.0.0)</supportedClientVersions>
+  <supportedClientVersions>[4.5.21-a,5.0.0)</supportedClientVersions>
   <summary>Angular automation systems</summary>
   <description>Angular automation systems</description>
   <authors>Intent Architect</authors>
@@ -21,7 +21,7 @@
       <role>Front End</role>
       <location>src/app</location>
     </template>
-    <template id="Intent.Angular.Component.LayoutCompeonentHtml" externalReference="107f3fe3-ce28-4157-b7f7-1ce8ce9409db">
+    <template id="Intent.Angular.Component.LayoutComponentHtml" externalReference="107f3fe3-ce28-4157-b7f7-1ce8ce9409db">
       <role>Front End</role>
       <location>src/app</location>
     </template>
@@ -61,6 +61,10 @@
       <role>Front End</role>
       <location>src</location>
     </template>
+    <template id="Intent.Angular.Core.Main" externalReference="0faf347d-bce4-4a80-a22e-de235f1ac0d6">
+      <role>Front End</role>
+      <location>src</location>
+    </template>
     <template id="Intent.Angular.Core.StylesDotScssFileTemplate" externalReference="51846760-db36-45d2-b14c-0d701e579189">
       <role>Front End</role>
       <location>src</location>
@@ -84,7 +88,11 @@
   </templates>
   <decorators></decorators>
   <factoryExtensions></factoryExtensions>
-  <moduleSettings></moduleSettings>
+  <moduleSettings>
+    <group id="3697d56e-8390-4e7f-ba44-fee766191e77" title="Angular Settings" type="application-settings" externalReference="3697d56e-8390-4e7f-ba44-fee766191e77">
+      <settings />
+    </group>
+  </moduleSettings>
   <dependencies>
     <dependency id="Intent.Code.Weaving.Html" version="1.0.0" />
     <dependency id="Intent.Code.Weaving.TypeScript" version="1.0.2" />
@@ -93,7 +101,6 @@
     <dependency id="Intent.Common.Types" version="3.4.0" />
     <dependency id="Intent.Common.TypeScript" version="4.1.3-pre.0" />
     <dependency id="Intent.Modelers.UI" version="1.0.3" />
-    <dependency id="Intent.Modelers.UI.Core" version="1.0.0" />
     <dependency id="Intent.Npm" version="4.0.0" />
   </dependencies>
   <files>
@@ -103,6 +110,7 @@
   <moduleSettingsExtensions />
   <metadata>
     <install src="modelers/Angular UI Extensions.designer.settings" externalReference="8d5ad9bc-b284-4836-b608-2f7893f05470" target="User Interface" />
+    <install target="User Interface;Module Builder" src="Intent.Metadata/Module Builder/Intent.Angular/Intent.Angular.pkg.config" externalReference="d1f9847f-ec1b-4774-910a-816c4f3e8487" />
   </metadata>
   <migrations />
 </package>

@@ -9,19 +9,5 @@
 <#@ import namespace="Intent.Metadata.Models" #>
 <#@ import namespace="Intent.Modelers.UI.Api" #>
 
-<
-<body>
-    <div class="sidebar">
-        <h2>Menu</h2>
-        <nav>
-<#
-    foreach (var item in Model.Sider.InternalElement.ChildElements)
-    {
-#>
-            <a href="<#= item.Name #>"><#= item.Name #></a>
-<#
-    }
-#>
-        </nav>
-    </div>
-</body>
+
+<#= BuildLayoutHtml() #>

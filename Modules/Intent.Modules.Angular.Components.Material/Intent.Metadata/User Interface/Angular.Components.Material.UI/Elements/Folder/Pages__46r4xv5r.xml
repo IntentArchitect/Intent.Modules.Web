@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="8a97063d-35c3-434f-a7d9-8b8d4506cbbb" type="Folder" typeId="4d95d53a-8855-4f35-aa82-e312643f5c5f">
+  <name>Pages</name>
+  <display>Pages</display>
+  <externalReference>b7b548eb-a3b3-44a2-910f-bb0b7de52667</externalReference>
+  <isAbstract>false</isAbstract>
+  <order>1</order>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>c5b04a5d-3b45-4ec0-a80f-dba15a1faffc</parentFolderId>
+  <stereotypes />
+  <metadata />
+  <childElements>
+    <childElement id="2e03f623-f039-446f-9f05-a38380453585" type="Component" typeId="b1c481e1-e91e-4c29-9817-00ab9cad4b6b">
+      <name>ExamplePage</name>
+      <display>ExamplePage</display>
+      <externalReference>ca58167b-0c67-4fe1-ba0b-06dbbbc20aa1</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>8a97063d-35c3-434f-a7d9-8b8d4506cbbb</parentFolderId>
+      <stereotypes>
+        <stereotype stereotypeDefinitionId="ea4adc09-8978-4ede-ba5f-265debb2b60c" name="Page">
+          <addedByDefault>false</addedByDefault>
+          <definitionPackageName>Intent.Modelers.UI</definitionPackageName>
+          <definitionPackageId>5c4628ec-679e-4f3d-afda-137c978deae0</definitionPackageId>
+          <properties>
+            <property name="9dff9df1-a993-4bf6-9aa7-c16811142228" display="Route" value="/example-page/{Title}" isActive="true" />
+            <property name="0a8627ba-ec45-4023-9c36-b0999f43e982" display="Title" isActive="true" />
+          </properties>
+        </stereotype>
+      </stereotypes>
+      <mappings>
+        <mapping type="View Binding" typeId="c33f86ad-423a-4a6f-a80c-a3206eafe5cd">
+          <source elementId="2e03f623-f039-446f-9f05-a38380453585" location="[Intent.Modules.Angular.Metadata].[User Interface].[ExamplePage]" />
+          <target elementId="08e467f7-3de4-4287-9f3b-e7746fab118d" location="[Intent.Modules.Angular.Metadata].[User Interface].[[view]]" />
+          <mappedEnds />
+        </mapping>
+      </mappings>
+      <metadata />
+      <childElements>
+        <childElement id="08e467f7-3de4-4287-9f3b-e7746fab118d" type="Component View" typeId="624513a6-cba8-4dde-8ebe-6b19f00f0364">
+          <name>[view]</name>
+          <display>[view]</display>
+          <externalReference>29a62d5f-85fe-439f-9d20-13664bd1ffa2</externalReference>
+          <isAbstract>false</isAbstract>
+          <genericTypes />
+          <isMapped>false</isMapped>
+          <parentFolderId>2e03f623-f039-446f-9f05-a38380453585</parentFolderId>
+          <stereotypes />
+          <metadata />
+          <childElements />
+        </childElement>
+        <childElement id="84dbec14-0173-4350-8271-2917b7f69eca" type="Property" typeId="356fbe17-bc63-4e16-b915-feefbc063cbe">
+          <name>Title</name>
+          <display>Title: string</display>
+          <externalReference>17d84751-ea5e-4a83-8fcf-d048d93e4716</externalReference>
+          <isAbstract>false</isAbstract>
+          <genericTypes />
+          <typeReference id="8b81f697-96c7-411a-8dc2-00f53ba6038e">
+            <typeId>d384db9c-a279-45e1-801e-e4e8099625f2</typeId>
+            <isNavigable>true</isNavigable>
+            <isNullable>false</isNullable>
+            <isCollection>false</isCollection>
+            <isRequired>false</isRequired>
+            <stereotypes />
+            <genericTypeParameters />
+          </typeReference>
+          <isMapped>false</isMapped>
+          <parentFolderId>2e03f623-f039-446f-9f05-a38380453585</parentFolderId>
+          <stereotypes>
+            <stereotype stereotypeDefinitionId="f324c4ea-bac2-450d-b1b1-cc7f09ca3472" name="[Route Parameter]">
+              <addedByDefault>false</addedByDefault>
+              <definitionPackageName>Intent.Modelers.UI</definitionPackageName>
+              <definitionPackageId>5c4628ec-679e-4f3d-afda-137c978deae0</definitionPackageId>
+              <properties />
+            </stereotype>
+          </stereotypes>
+          <metadata />
+          <childElements />
+        </childElement>
+      </childElements>
+    </childElement>
+    <childElement id="f2988cba-d41e-4ae6-9133-afa28d5788df" type="Component" typeId="b1c481e1-e91e-4c29-9817-00ab9cad4b6b">
+      <name>Home</name>
+      <display>Home</display>
+      <externalReference>a584c83e-6d75-4809-abd0-fa51fad5d802</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>8a97063d-35c3-434f-a7d9-8b8d4506cbbb</parentFolderId>
+      <stereotypes>
+        <stereotype stereotypeDefinitionId="ea4adc09-8978-4ede-ba5f-265debb2b60c" name="Page">
+          <addedByDefault>false</addedByDefault>
+          <definitionPackageName>Intent.Modelers.UI</definitionPackageName>
+          <definitionPackageId>5c4628ec-679e-4f3d-afda-137c978deae0</definitionPackageId>
+          <properties>
+            <property name="9dff9df1-a993-4bf6-9aa7-c16811142228" display="Route" value="/" isActive="true" />
+            <property name="0a8627ba-ec45-4023-9c36-b0999f43e982" display="Title" value="Home" isActive="true" />
+          </properties>
+        </stereotype>
+      </stereotypes>
+      <mappings>
+        <mapping type="View Binding" typeId="c33f86ad-423a-4a6f-a80c-a3206eafe5cd">
+          <source elementId="f2988cba-d41e-4ae6-9133-afa28d5788df" location="[Intent.Modules.Angular.Metadata].[User Interface].[Home]" />
+          <target elementId="ae026b9e-c73c-4d4c-8fad-28113f94867a" location="[Intent.Modules.Angular.Metadata].[User Interface].[[view]]" />
+          <mappedEnds />
+        </mapping>
+      </mappings>
+      <metadata />
+      <childElements>
+        <childElement id="ae026b9e-c73c-4d4c-8fad-28113f94867a" type="Component View" typeId="624513a6-cba8-4dde-8ebe-6b19f00f0364">
+          <name>[view]</name>
+          <display>[view]</display>
+          <externalReference>60024323-fea2-46b3-813c-a78eab16e5d1</externalReference>
+          <isAbstract>false</isAbstract>
+          <genericTypes />
+          <isMapped>false</isMapped>
+          <parentFolderId>f2988cba-d41e-4ae6-9133-afa28d5788df</parentFolderId>
+          <stereotypes />
+          <metadata />
+          <childElements />
+        </childElement>
+      </childElements>
+    </childElement>
+  </childElements>
+</class>

@@ -9,7 +9,8 @@
 <#@ import namespace="Intent.Metadata.Models" #>
 
 
-<main>
-  <h1><#= AppNamePascalCased #></h1>
-  <router-outlet></router-outlet>
-</main>
+<div class="app-layout">
+  <main class="app-content">
+    <router-outlet></router-outlet>
+  </main>
+</div>

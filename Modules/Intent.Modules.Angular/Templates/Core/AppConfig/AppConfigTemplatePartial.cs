@@ -1,3 +1,7 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection.Emit;
 using Intent.Engine;
 using Intent.Modules.Angular.Templates.Core.AppRoutes;
 using Intent.Modules.Common;
@@ -7,10 +11,6 @@ using Intent.Modules.Common.TypeScript.Events;
 using Intent.Modules.Common.TypeScript.Templates;
 using Intent.RoslynWeaver.Attributes;
 using Intent.Templates;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Reflection.Emit;
 
 [assembly: DefaultIntentManaged(Mode.Fully)]
 [assembly: IntentTemplate("Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial", Version = "1.0")]
@@ -22,6 +22,8 @@ namespace Intent.Modules.Angular.Templates.Core.AppConfig
     {
         [IntentManaged(Mode.Fully)]
         public const string TemplateId = "Intent.Angular.Core.AppConfig";
+
+        private readonly List<ServiceConfigurationRequestEvent> _serviceConfigurations = [];
 
         [IntentManaged(Mode.Merge, Signature = Mode.Fully, Body = Mode.Ignore)]
         public AppConfigTemplate(IOutputTarget outputTarget, object model = null) : base(TemplateId, outputTarget, model)
@@ -50,22 +52,27 @@ namespace Intent.Modules.Angular.Templates.Core.AppConfig
                 {
                     var routeTemplate = GetTemplate<TypeScriptTemplateBase<object>>(AppRoutesTemplate.TemplateId, new TemplateDiscoveryOptions { TrackDependency = false });
                     file.AddImport("routes", this.GetRelativePath(routeTemplate));
+
+                    foreach(var serviceConfig in _serviceConfigurations)
+                    {
+                        var configVar = file.Variables.First(v => v.Name == "appConfig");
+                        var configVarValue = configVar.Value as TypescriptVariableObject;
+
+                        var providersField = configVarValue.Fields.First(f => f.Name == "providers") as TypescriptVariableField;
+                        var providersFieldValue = providersField.Value as TypescriptVariableArray;
+
+                        if (!providersFieldValue.Items.Any(i => i.Value.GetText("") == $"{serviceConfig.ImportBinding}()"))
+                        {
+                            providersFieldValue.AddValue($"{serviceConfig.ImportBinding}()");
+                            file.AddImport(serviceConfig.ImportBinding, serviceConfig.ModuleSpecifier);
+                        }
+                    }
                 });
         }
 
         public void HandleServiceConfigurationRequest(ServiceConfigurationRequestEvent @event)
         {
-            var configVar = TypescriptFile.Variables.First(v => v.Name == "appConfig");
-            var configVarValue = configVar.Value as TypescriptVariableObject;
-
-            var providersField = configVarValue.Fields.First(f => f.Name == "providers") as TypescriptVariableField;
-            var providersFieldValue = providersField.Value as TypescriptVariableArray;
-
-            if (!providersFieldValue.Items.Any(i => i.Value.GetText("") == $"{@event.ImportBinding}()"))
-            {
-                providersFieldValue.AddValue($"{@event.ImportBinding}()");
-                TypescriptFile.AddImport(@event.ImportBinding, @event.ModuleSpecifier);
-            }
+           _serviceConfigurations.Add(@event);
         }
 
         [IntentManaged(Mode.Fully)]

@@ -1,7 +1,9 @@
-﻿<Project Sdk="Microsoft.NET.Sdk">
+<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
+	<Version>5.0.0-alpha.0</Version>
+	<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
@@ -20,7 +22,7 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Intent.RoslynWeaver.Attributes" Version="3.0.0" />
-	  <PackageReference Include="Intent.SoftwareFactory.SDK" Version="3.12.0-pre.2" />
+	<PackageReference Include="Intent.SoftwareFactory.SDK" Version="3.12.0" />
   </ItemGroup>
 
   <ItemGroup>
@@ -47,6 +49,10 @@
     <None Update="Templates\Component\LayoutCompeonentHtml\LayoutCompeonentHtmlTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>LayoutCompeonentHtmlTemplate.cs</LastGenOutput>
+    </None>
+    <None Update="Templates\Component\LayoutComponentHtml\LayoutComponentHtmlTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>LayoutComponentHtmlTemplate.cs</LastGenOutput>
     </None>
   </ItemGroup>
 
@@ -81,10 +87,19 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>LayoutCompeonentHtmlTemplate.tt</DependentUpon>
     </Compile>
+    <Compile Update="Templates\Component\LayoutComponentHtml\LayoutComponentHtmlTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>LayoutComponentHtmlTemplate.tt</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
     <Service Include="{508349b6-6b84-4df5-91f0-309beebad82d}" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="content\InitialFiles\src\" />
   </ItemGroup>
 
 </Project>

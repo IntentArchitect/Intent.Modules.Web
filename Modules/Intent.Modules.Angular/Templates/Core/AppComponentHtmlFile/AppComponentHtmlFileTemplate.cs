@@ -32,14 +32,8 @@ namespace Intent.Modules.Angular.Templates.Core.AppComponentHtmlFile
         /// </summary>
         public override string TransformText()
         {
-            this.Write("\r\n\r\n<main>\r\n  <h1>");
-            
-            #line 13 "D:\Dev\Intent.Modules.Web\Modules\Intent.Modules.Angular\Templates\Core\AppComponentHtmlFile\AppComponentHtmlFileTemplate.tt"
-            this.Write(this.ToStringHelper.ToStringWithCulture(AppNamePascalCased));
-            
-            #line default
-            #line hidden
-            this.Write("</h1>\r\n  <router-outlet></router-outlet>\r\n</main>");
+            this.Write("\r\n\r\n<div class=\"app-layout\">\r\n  <main class=\"app-content\">\r\n    <router-outlet></" +
+                    "router-outlet>\r\n  </main>\r\n</div>");
             return this.GenerationEnvironment.ToString();
         }
     }

@@ -15,7 +15,7 @@ using Intent.Templates;
 
 namespace Intent.Modules.Angular.Templates.Environment.EnvironmentDotDevelopment
 {
-    [IntentManaged(Mode.Ignore, Signature = Mode.Fully)]
+    [IntentManaged(Mode.Ignore, Signature = Mode.Merge)]
     public partial class EnvironmentDotDevelopmentTemplate : EnvironmentTemplateBase, ITypescriptFileBuilderTemplate
     {
         [IntentManaged(Mode.Fully)]

@@ -1,14 +1,15 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography;
 using Intent.Engine;
 using Intent.Metadata.Models;
 using Intent.Modules.Common;
 using Intent.Modules.Common.FileBuilders.DataFileBuilder;
 using Intent.Modules.Common.Templates;
+using Intent.Modules.Common.TypeScript.Events;
 using Intent.RoslynWeaver.Attributes;
 using Intent.Templates;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Security.Cryptography;
 
 [assembly: DefaultIntentManaged(Mode.Fully)]
 [assembly: IntentTemplate("Intent.ModuleBuilder.ProjectItemTemplate.Partial", Version = "1.0")]
@@ -24,6 +25,8 @@ namespace Intent.Modules.Angular.Templates.Core.AngularDotJsonFile
         [IntentManaged(Mode.Fully, Body = Mode.Ignore)]
         public AngularDotJsonFileTemplate(IOutputTarget outputTarget, object model = null) : base(TemplateId, outputTarget, model)
         {
+
+
             DataFile = new DataFile($"AngularDotJsonFile")
                 .WithJsonWriter()
                 .WithRootObject(this, @object =>
@@ -71,7 +74,7 @@ namespace Intent.Modules.Angular.Templates.Core.AngularDotJsonFile
                                                         })
                                                         .WithArray("styles", styles =>
                                                         {
-                                                            styles.WithValue("src/styles.css");
+                                                            styles.WithValue("src/styles.scss");
                                                         })
                                                         .WithArray("scripts", scripts => { });
                                                 })
@@ -153,7 +156,7 @@ namespace Intent.Modules.Angular.Templates.Core.AngularDotJsonFile
                                                         }).
                                                         WithArray("styles", styles =>
                                                         {
-                                                            styles.WithValue("src/styles.css");
+                                                            styles.WithValue("src/styles.scss");
                                                         })
                                                         .WithArray("scripts", scripts => { });
                                                     });
@@ -184,5 +187,6 @@ namespace Intent.Modules.Angular.Templates.Core.AngularDotJsonFile
 
         [IntentManaged(Mode.Fully)]
         public override string TransformText() => DataFile.ToString();
+        
     }
 }

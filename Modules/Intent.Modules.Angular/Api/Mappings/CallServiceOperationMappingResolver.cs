@@ -2,7 +2,6 @@ using System.Linq;
 using Intent.Metadata.Models;
 using Intent.Modelers.UI.Api;
 using Intent.Modules.Common;
-using Intent.Modules.Common.Angular.Mapping;
 using Intent.Modules.Common.Typescript.Mapping;
 using Intent.Modules.Common.TypeScript.Builder;
 using Intent.Modules.Common.TypeScript.Templates;
