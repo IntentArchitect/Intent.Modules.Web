@@ -1,0 +1,127 @@
+﻿.pa-4 {
+    padding: 16px;
+}
+
+.mb-4 {
+    margin-bottom: 16px;
+}
+
+.ux-gradient-primary {
+    background: linear-gradient(90deg, #1976d2, #42a5f5);
+    color: #fff;
+}
+
+.header-content .title-row {
+    display: flex;
+    align-items: center;
+    margin-bottom: 4px;
+}
+
+.text-white {
+    color: #fff;
+}
+
+.opacity-90 {
+    opacity: 0.9;
+}
+
+.mr-1 {
+    margin-right: 4px;
+}
+
+.mr-2 {
+    margin-right: 8px;
+}
+
+/* main layout */
+.customer-form {
+    width: 100%;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 16px;
+}
+
+.grid-item {
+    min-width: 0;
+}
+
+.grid-item-wide {
+    grid-column: 1 / -1;
+}
+
+.section-title {
+    margin: 0 0 8px;
+    font-size: 1.05rem;
+    font-weight: 600;
+}
+
+.loyalty-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.address-block {
+    padding-bottom: 12px;
+    border-bottom: 1px dotted rgba(0, 0, 0, 0.15);
+}
+
+.save-button {
+    display: inline-flex; /* make sure it's flex */
+    align-items: center; /* vertical center */
+    justify-content: center;
+}
+
+.save-button .spinner {
+    margin-right: 8px;
+}
+
+.address-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 12px;
+}
+
+.address-item.full-row {
+    grid-column: 1 / -1;
+}
+
+.remove-row {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.actions-row {
+    display: flex;
+    justify-content: flex-end;
+    gap: 8px;
+    margin-top: 16px;
+}
+
+.error-container {
+    grid-column: 1 / -1;
+    padding: 8px 12px;
+    border-radius: 4px;
+    background: #ffebee;
+    color: #c62828;
+    margin-bottom: 8px;
+}
+
+.ux-fade-in-up {
+    animation: fadeInUp 0.3s ease-out;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translate3d(0, 8px, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0);
+    }
+}

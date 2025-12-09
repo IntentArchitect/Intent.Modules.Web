@@ -29,10 +29,7 @@
 
   <ItemGroup>
     <Folder Include="content\AngularAIPromptTemplates\AddEntityDialog\" />
-    <Folder Include="content\AngularAIPromptTemplates\AddEntity\" />
     <Folder Include="content\AngularAIPromptTemplates\EditEntityDialog\" />
-    <Folder Include="content\AngularAIPromptTemplates\EditEntity\" />
-    <Folder Include="content\AngularAIPromptTemplates\ViewEntity\" />
   </ItemGroup>
 
   <ItemGroup>

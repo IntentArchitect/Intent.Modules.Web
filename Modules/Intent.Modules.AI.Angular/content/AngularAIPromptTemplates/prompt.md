@@ -12,9 +12,8 @@ Completely implement the Angular component by reading and updating the `.html` f
 2. Add using clauses for code files that you use
 3. (CRITICAL) Read and understand the code in all provided Input Code Files. Understand how these code files interact with one another.
 4. If services to provide data are available, use them.
-5. If you bind to a field or method from the `.razor` file, you must make sure that the `.razor.cs` file has that code declared. If it doesn't add it appropriately.
-6. (CRITICAL) CHECK AND ENSURE AND CORRECT all bindings between the `.html` and `.ts`. The code must compile!
-7. **Only modify files listed in "Files Allowed To Modify". All other Input Code Files are read-only.**
+5. (CRITICAL) CHECK AND ENSURE AND CORRECT all bindings between the `.html` and `.ts`. The code must compile!
+6. **Only modify files listed in "Files Allowed To Modify". All other Input Code Files are read-only.**
             
 ## Important Rules
 * PRESERVE existing code in the `.ts` file. You may add code, but you are not allowed to change the existing code (IMPORTANT) in the `.ts` file!
