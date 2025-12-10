@@ -87,7 +87,7 @@ namespace Intent.Modules.Angular.Templates.Component.ComponentTypeScript
                     {
                         foreach (var param in operation.Parameters)
                         {
-                            var paramName = $"{param.Name.ToCamelCase(true)}{(param.TypeReference.IsNullable ? "?" : "")}";
+                            var paramName = $"{param.Name.ToCamelCase(true)}";
                             var paramType = $"{GetTypeName(param.TypeReference)}{(param.TypeReference.IsNullable ? " | null" : "")}";
 
                             method.AddParameter(paramName, paramType, p =>
@@ -137,6 +137,9 @@ namespace Intent.Modules.Angular.Templates.Component.ComponentTypeScript
 
                                     @class.InjectServiceUtilityFields(method.Name);
                                     this.AddImport("finalize", "rxjs");
+
+                                    method.InjectVariableInitStatements();
+                                    method.InjectNullGuardChecks(Model, invocationMapping);
 
                                     if (targetElement.SpecializationTypeId is commandSpecializationTypeId or querySpecializationTypeId)
                                     {
@@ -286,7 +289,6 @@ namespace Intent.Modules.Angular.Templates.Component.ComponentTypeScript
                     if (propertyModel.TypeReference.IsNullable)
                     {
                         fieldType = $"{fieldType} | null";
-                        propName = $"{propName}?";
                     }
 
                     @interface.AddField(propName, fieldType);
@@ -317,7 +319,6 @@ namespace Intent.Modules.Angular.Templates.Component.ComponentTypeScript
                     if (propertyModel.TypeReference.IsNullable)
                     {
                         fieldType = $"{fieldType} | null";
-                        propName = $"{propName}?";
                     }
 
                     @class.AddField(propName, fieldType, @field =>

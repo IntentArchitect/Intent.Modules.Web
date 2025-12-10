@@ -110,6 +110,43 @@ public static class TypescriptFileExtensions
         }
     }
 
+    public static void InjectNullGuardChecks(this TypescriptMethod @method, ComponentModel model, IElementToElementMapping invocationMapping)
+    {
+        // get the properties on the model which are nullable
+        var nullablePropertyElements = model.Properties.Where(p => p.TypeReference.IsNullable)
+                                       .Select(p => p.TypeReference.ElementId)
+                                       .ToList();
+
+        // get all the mapping elements
+        var distinctSourceElements = invocationMapping.MappedEnds
+            .SelectMany(m => m.SourcePath)
+            .Select(sp => sp.Element?.TypeReference?.ElementId)
+            .Where(s => s is not null)
+            .Distinct();
+
+        // get the intersections
+        var qualifyingItems = nullablePropertyElements.Intersect(distinctSourceElements);
+
+        if (!qualifyingItems.Any())
+        {
+            return;
+        }
+
+        // add the null guard
+        foreach(var item in qualifyingItems )
+        {
+            var property = model.Properties.First(m => m.TypeReference?.ElementId == item);
+            var propertyName = property.Name.ToCamelCase(true);
+
+            method.Statements.Add($@"if(!this.{propertyName}) {{
+      this.serviceErrors.{method.Name}Error = ""Property '{propertyName}' cannot be null"";
+      this.isLoading = false;
+      return;
+    }}");
+
+        }
+    }
+
     public static IEnumerable<TypescriptStatement> GetCallServiceOperation(CallServiceOperationActionTargetEndModel serviceCall,
         TypescriptClassMappingManager mappingManager,
         string serviceName,
@@ -127,8 +164,6 @@ public static class TypescriptFileExtensions
 
                 var responseObject = serviceCall.GetMapResponseMapping().MappedEnds.Any() ? mappingManager.GenerateTargetStatementForMapping(serviceCall.GetMapResponseMapping(), serviceCall.GetMapResponseMapping().MappedEnds.Single()) : string.Empty;
                 var responseText = responseObject.GetText("");
-
-                result.AddRange(GetVariableInitStatements(currentMethodName));
 
                 result.Add(new TypescriptStatement(@$"this.{serviceName}.{invocation}
     .pipe(
@@ -148,8 +183,6 @@ public static class TypescriptFileExtensions
             {
                 mappingManager.SetFromReplacement(new StaticMetadata(responseStaticElementId), "data");
                 var responses = mappingManager.GenerateUpdateStatements(serviceCall.GetMapResponseMapping());
-
-                result.AddRange(GetVariableInitStatements(currentMethodName));
 
                 var sb = new StringBuilder();
                 sb.Append(@$"this.{serviceName}.{invocation}
@@ -181,8 +214,6 @@ public static class TypescriptFileExtensions
         }
         else
         {
-            result.AddRange(GetVariableInitStatements(currentMethodName));
-
             result.Add(new TypescriptStatement(@$"this.{serviceName}.{invocation}
     .pipe(
         finalize(() => {{
@@ -197,12 +228,11 @@ public static class TypescriptFileExtensions
         return result;
     }
 
-    private static IEnumerable<TypescriptStatement> GetVariableInitStatements(string currentMethodName)
+    public static void InjectVariableInitStatements(this TypescriptMethod method)
     {
-        return [
-            new TypescriptStatement($"this.serviceErrors.{currentMethodName}Error = null;"),
-            new TypescriptStatement($"this.isLoading = true;"),
-            new TypescriptStatement("")];
+        method.AddStatement($"this.serviceErrors.{method.Name}Error = null;");
+        method.AddStatement($"this.isLoading = true;");
+        method.AddStatement("");
     }
 
     private static string GetErrorBlock(string methodName)

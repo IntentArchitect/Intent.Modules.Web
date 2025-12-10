@@ -114,7 +114,7 @@ namespace Intent.Modules.Angular.HttpClients.Templates.HttpServiceProxy
                                         parameterName = null;
                                         break;
                                     case 1:
-                                        parameterName = $"{fields[0].Name.ToCamelCase(true)}{(fields[0].TypeReference.IsNullable ? "?" : "")}";
+                                        parameterName = $"{fields[0].Name.ToCamelCase(true)}";
                                         var parameterType = $"{GetTypeName(fields[0].TypeReference)}{(fields[0].TypeReference.IsNullable ? " | null" : "")}";
                                         method.AddParameter(parameterName, parameterType);
                                         bodyPayload = $"new {{ {fields[0].Name.ToPascalCase()} = {parameterName} }}";
