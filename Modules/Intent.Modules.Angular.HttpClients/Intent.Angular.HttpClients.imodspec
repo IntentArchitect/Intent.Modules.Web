@@ -2,7 +2,7 @@
 <package>
   <id>Intent.Angular.HttpClients</id>
   <version>1.0.0-alpha.0</version>
-  <supportedClientVersions>[4.5.15-a,5.0.0)</supportedClientVersions>
+  <supportedClientVersions>[4.5.21-a,5.0.0)</supportedClientVersions>
   <summary>Introduces an HTTP Client implementation for Angular applications that can make service calls against a referenced service Restful API.</summary>
   <description>Introduces an HTTP Client implementation for Angular applications that can make service calls against a referenced service Restful API.</description>
   <authors>Intent Architect</authors>

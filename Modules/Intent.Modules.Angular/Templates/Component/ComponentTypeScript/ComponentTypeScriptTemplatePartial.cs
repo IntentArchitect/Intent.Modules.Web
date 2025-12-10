@@ -351,6 +351,7 @@ namespace Intent.Modules.Angular.Templates.Component.ComponentTypeScript
         private void ConfigureOnInitOperation(TypescriptClass @class, TypescriptMethod method)
         {
 
+
             // TODO. Fix
             //method.AddDecorator("IntentMerge");
 
@@ -389,7 +390,7 @@ namespace Intent.Modules.Angular.Templates.Component.ComponentTypeScript
                 }
 
                 // if nullable, assigned and move onto next one
-                if(propertyNullable)
+                if (propertyNullable)
                 {
                     continue;
                 }

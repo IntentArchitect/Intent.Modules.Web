@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
-<class id="8067dbcd-8eb3-4b99-a0f3-1987356a1ed4" type="Html File Template" typeId="af3fe721-86c5-41e3-9daf-1e79209ed345">
-  <name>IndexHtmlFileTemplate</name>
-  <display>IndexHtmlFileTemplate: Single File</display>
+<class id="0abba320-95fe-4070-b07f-ec1f93ae2049" type="File Template" typeId="43eae4bd-4613-4d15-88ac-52b7e743b7b2">
+  <name>IndexHtmlTemplate</name>
+  <display>IndexHtmlTemplate: Single File</display>
   <isAbstract>false</isAbstract>
   <genericTypes />
-  <typeReference id="a80b5ce1-46de-45d8-811a-52ebd4e5ec98">
+  <typeReference id="1bd3d755-5899-4b33-9a98-34d7c73e7420">
     <typeId>f65d2904-88c9-4501-873a-a4eec8303b1d</typeId>
     <isNavigable>true</isNavigable>
     <isNullable>false</isNullable>
@@ -20,6 +20,17 @@
   <packageId>d1f9847f-ec1b-4774-910a-816c4f3e8487</packageId>
   <packageName>Intent.Angular</packageName>
   <stereotypes>
+    <stereotype stereotypeDefinitionId="819dee60-184a-4cb7-9529-0d3910f82ee6" name="File Settings">
+      <addedByDefault>true</addedByDefault>
+      <definitionPackageName>Intent.ModuleBuilder</definitionPackageName>
+      <definitionPackageId>9972b2a9-b749-4bba-b5c8-824bf694c6ef</definitionPackageId>
+      <properties>
+        <property name="db83691e-fc21-467b-a004-427b23f9ed9b" display="Output File Content" value="Text" isActive="true" />
+        <property name="c22d63a0-a3ad-4fe0-a956-7ac74bb6c2fe" display="Templating Method" value="String Interpolation" isActive="true" />
+        <property name="add2c4a0-5e44-4b93-9851-be809230751c" display="Data File Output Type" value="JSON" isActive="false" />
+        <property name="329d0550-b81b-4db6-a99b-05d90360d432" display="File Extension" value="html" isActive="true" />
+      </properties>
+    </stereotype>
     <stereotype stereotypeDefinitionId="b1f08a30-9aae-4702-bfc8-e285e6b43a61" name="Template Settings">
       <addedByDefault>true</addedByDefault>
       <definitionPackageName>Intent.ModuleBuilder</definitionPackageName>

@@ -11,17 +11,17 @@ using Intent.Templates;
 [assembly: DefaultIntentManaged(Mode.Fully)]
 [assembly: IntentTemplate("Intent.ModuleBuilder.TemplateRegistration.SingleFileNoModel", Version = "1.0")]
 
-namespace Intent.Modules.Angular.Templates.Core.IndexHtmlFile
+namespace Intent.Modules.Angular.Templates.Core.IndexHtml
 {
     [IntentManaged(Mode.Merge, Body = Mode.Merge, Signature = Mode.Fully)]
-    public class IndexHtmlFileTemplateRegistration : SingleFileTemplateRegistration
+    public class IndexHtmlTemplateRegistration : SingleFileTemplateRegistration
     {
-        public override string TemplateId => IndexHtmlFileTemplate.TemplateId;
+        public override string TemplateId => IndexHtmlTemplate.TemplateId;
 
         [IntentManaged(Mode.Fully)]
         public override ITemplate CreateTemplateInstance(IOutputTarget outputTarget)
         {
-            return new IndexHtmlFileTemplate(outputTarget);
+            return new IndexHtmlTemplate(outputTarget);
         }
     }
 }

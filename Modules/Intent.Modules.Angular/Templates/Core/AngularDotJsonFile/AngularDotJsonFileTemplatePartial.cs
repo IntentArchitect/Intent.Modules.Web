@@ -1,3 +1,7 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Security.Cryptography;
 using Intent.Engine;
 using Intent.Metadata.Models;
 using Intent.Modules.Common;
@@ -6,10 +10,6 @@ using Intent.Modules.Common.Templates;
 using Intent.Modules.Common.TypeScript.Events;
 using Intent.RoslynWeaver.Attributes;
 using Intent.Templates;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography;
 
 [assembly: DefaultIntentManaged(Mode.Fully)]
 [assembly: IntentTemplate("Intent.ModuleBuilder.ProjectItemTemplate.Partial", Version = "1.0")]
@@ -187,6 +187,6 @@ namespace Intent.Modules.Angular.Templates.Core.AngularDotJsonFile
 
         [IntentManaged(Mode.Fully)]
         public override string TransformText() => DataFile.ToString();
-        
+
     }
 }

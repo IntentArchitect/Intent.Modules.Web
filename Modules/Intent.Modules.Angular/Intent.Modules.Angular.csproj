@@ -38,10 +38,6 @@
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>AppComponentHtmlFileTemplate.cs</LastGenOutput>
     </None>
-    <None Update="Templates\Core\IndexHtmlFile\IndexHtmlFileTemplate.tt">
-      <Generator>TextTemplatingFilePreprocessor</Generator>
-      <LastGenOutput>IndexHtmlFileTemplate.cs</LastGenOutput>
-    </None>
     <None Update="Templates\Component\ComponentHtml\ComponentHtmlTemplate.tt">
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>ComponentHtmlTemplate.cs</LastGenOutput>
@@ -72,11 +68,7 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>AppComponentHtmlFileTemplate.tt</DependentUpon>
     </Compile>
-    <Compile Update="Templates\Core\IndexHtmlFile\IndexHtmlFileTemplate.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>IndexHtmlFileTemplate.tt</DependentUpon>
-    </Compile>
+    
     <Compile Update="Templates\Component\ComponentHtml\ComponentHtmlTemplate.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>

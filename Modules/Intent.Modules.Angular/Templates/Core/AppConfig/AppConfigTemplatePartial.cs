@@ -53,7 +53,7 @@ namespace Intent.Modules.Angular.Templates.Core.AppConfig
                     var routeTemplate = GetTemplate<TypeScriptTemplateBase<object>>(AppRoutesTemplate.TemplateId, new TemplateDiscoveryOptions { TrackDependency = false });
                     file.AddImport("routes", this.GetRelativePath(routeTemplate));
 
-                    foreach(var serviceConfig in _serviceConfigurations)
+                    foreach (var serviceConfig in _serviceConfigurations)
                     {
                         var configVar = file.Variables.First(v => v.Name == "appConfig");
                         var configVarValue = configVar.Value as TypescriptVariableObject;
@@ -72,7 +72,7 @@ namespace Intent.Modules.Angular.Templates.Core.AppConfig
 
         public void HandleServiceConfigurationRequest(ServiceConfigurationRequestEvent @event)
         {
-           _serviceConfigurations.Add(@event);
+            _serviceConfigurations.Add(@event);
         }
 
         [IntentManaged(Mode.Fully)]

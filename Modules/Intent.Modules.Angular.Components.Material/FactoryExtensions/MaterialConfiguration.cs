@@ -1,3 +1,4 @@
+using System.Linq;
 using Intent.Engine;
 using Intent.Eventing;
 using Intent.Modules.Angular.Components.Material.Settings;
@@ -10,7 +11,6 @@ using Intent.Modules.Common.TypeScript.Events;
 using Intent.Modules.Common.TypeScript.Templates;
 using Intent.Plugins.FactoryExtensions;
 using Intent.RoslynWeaver.Attributes;
-using System.Linq;
 
 [assembly: DefaultIntentManaged(Mode.Fully)]
 [assembly: IntentTemplate("Intent.ModuleBuilder.Templates.FactoryExtension", Version = "1.0")]

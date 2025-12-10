@@ -57,7 +57,7 @@
       <role>Front End</role>
       <location>src/app</location>
     </template>
-    <template id="Intent.Angular.Core.IndexHtmlFile" externalReference="8067dbcd-8eb3-4b99-a0f3-1987356a1ed4">
+    <template id="Intent.Angular.Core.IndexHtmlTemplate" externalReference="0abba320-95fe-4070-b07f-ec1f93ae2049">
       <role>Front End</role>
       <location>src</location>
     </template>
