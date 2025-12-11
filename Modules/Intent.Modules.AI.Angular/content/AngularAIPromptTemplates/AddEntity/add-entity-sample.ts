@@ -188,6 +188,12 @@ export class CustomerAddComponent implements OnInit {
         }
     }
 
+    save(): void {
+        this.createCustomer();
+
+        this.navigateToCustomerSearch();
+    }
+
     // ---- Service / navigation methods (left as generated) -------------------
 
     createCustomer(): void {

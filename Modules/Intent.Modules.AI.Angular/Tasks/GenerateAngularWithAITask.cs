@@ -111,6 +111,7 @@ public class GenerateAngularWithAITask : AiPromptBaseTask<PromptInputs>, IModule
 
     private List<ICodebaseFile> GetInputFiles(IElement element, out List<ICodebaseFile> filesToModify)
     {
+        Debugger.Launch();
         var filesProvider = _applicationConfigurationProvider.GeneratedFilesProvider();
         var inputFiles = filesProvider.GetFilesForMetadata(element).ToList();
         filesToModify = [.. inputFiles];
