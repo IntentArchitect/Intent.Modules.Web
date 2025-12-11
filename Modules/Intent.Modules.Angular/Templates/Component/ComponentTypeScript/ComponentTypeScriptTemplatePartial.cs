@@ -353,6 +353,7 @@ namespace Intent.Modules.Angular.Templates.Component.ComponentTypeScript
         {
 
 
+
             // TODO. Fix
             //method.AddDecorator("IntentMerge");
 
