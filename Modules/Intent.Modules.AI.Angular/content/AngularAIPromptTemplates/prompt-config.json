@@ -1,18 +1,16 @@
 {
-  "metadata": {
-    "component-libraries": [
-      {
-        "name": "Angular",
-        "version": "19.2.*"
-      },
-      {
-        "name": "angular/material",
-        "version": "19.2.*"
-      }
-    ]
-  },
+  /*
+"mcp-servers": [
+    {
+      "name": "time",
+      "transport": "sse",
+      "url": "https://time.mcp.inevitable.fyi/mcp"
+    }
+  ]
+*/
+  /*
   "input-files": [
-  ],
+  ],*/
   "templates": [
     {
       "id": "SearchEntity",
@@ -29,34 +27,16 @@
             "weight": 3
           },
           {
-            "word": "filter",
-            "weight": 2
-          },
-          {
             "word": "list",
             "weight": 3
-          },
-          {
-            "word": "lookup",
-            "weight": 2
-          },
-          {
-            "word": "query",
-            "weight": 2
           }
         ]
-      },
-      "template-folder": "SearchEntity",
-      "metadata": {
       },
       "input-files": [
         {
           "type": "Template",
           "template-id": "Intent.Angular.HttpClients.PagedResult"
         }
-      ],
-      "rules": [
-        "(IMPORTANT) Only add buttons/links for actions whose methods already exist in this class. Never bind to or invent methods that aren’t there."
       ]
     },
     {
@@ -76,22 +56,9 @@
           {
             "word": "new",
             "weight": 2
-          },
-          {
-            "word": "insert",
-            "weight": 2
-          },
-          {
-            "word": "register",
-            "weight": 2
           }
         ]
-      },
-      "template-folder": "AddEntity",
-      "metadata": {
-      },
-      "rules": [
-      ]
+      }
     },
     {
       "id": "EditEntity",
@@ -116,12 +83,7 @@
             "weight": 2
           }
         ]
-      },
-      "template-folder": "EditEntity",
-      "metadata": {
-      },
-      "rules": [
-      ]
+      }
     },
     {
       "id": "ViewEntity",
@@ -146,17 +108,12 @@
             "weight": 2
           }
         ]
-      },
-      "template-folder": "ViewEntity",
-      "metadata": {
-      },
-      "rules": [
-      ]
+      }
     },
     {
       "id": "AddEntityDialog",
       "name": "Dialog - Add Entity",
-      "description": "Dialog to add reocrds",
+      "description": "Dialog to add records",
       "applicability": {
         "key-words": [
           {
@@ -174,22 +131,9 @@
           {
             "word": "new",
             "weight": 2
-          },
-          {
-            "word": "insert",
-            "weight": 2
-          },
-          {
-            "word": "register",
-            "weight": 2
           }
         ]
-      },
-      "template-folder": "AddEntityDialog",
-      "metadata": {
-      },
-      "rules": [
-      ]
+      }
     },
     {
       "id": "EditEntityDialog",
@@ -218,12 +162,7 @@
             "weight": 2
           }
         ]
-      },
-      "template-folder": "EditEntityDialog",
-      "metadata": {
-      },
-      "rules": [
-      ]
+      }
     }
   ]
 }

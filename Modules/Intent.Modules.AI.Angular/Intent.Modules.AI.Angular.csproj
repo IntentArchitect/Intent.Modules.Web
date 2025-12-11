@@ -28,11 +28,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="content\AngularAIPromptTemplates\AddEntityDialog\" />
-    <Folder Include="content\AngularAIPromptTemplates\EditEntityDialog\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Update="content\AngularAIPromptTemplates\SearchEntity\search-entity-delete-dialog.html">
       <SubType>Code</SubType>
     </None>

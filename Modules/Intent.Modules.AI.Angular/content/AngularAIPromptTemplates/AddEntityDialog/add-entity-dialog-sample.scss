@@ -1,0 +1,86 @@
+﻿/* Root wrapper: allows full-height scroll inside dialog */
+.dialog-content {
+    max-height: 70vh;
+    overflow-y: auto;
+    padding-right: 4px; /* avoid scrollbar overlap */
+}
+
+/* Two-column responsive layout */
+.grid {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: 1fr; /* mobile */
+    /* Dialogs are narrow, but allow 2 columns on larger widths */
+    @media (min-width: 800px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.grid-item {
+    width: 100%;
+}
+
+/* Full-row items like section headers */
+.grid-item-wide {
+    grid-column: 1 / -1;
+}
+
+/* Section titles */
+.section-title {
+    font-size: 1.15rem;
+    font-weight: 600;
+    margin: 12px 0 4px;
+}
+
+/* Loyalty row: aligns title + toggle */
+.loyalty-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Address block container */
+.address-block {
+    border: 1px dashed #d0d0d0;
+    border-radius: 6px;
+    padding: 16px;
+    margin-bottom: 12px;
+    display: grid;
+    gap: 12px;
+    grid-template-columns: 1fr; /* one column inside address */
+
+    @media (min-width: 800px) {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+    /* Buttons inside the address block */
+    .address-block button {
+        justify-self: start;
+    }
+
+/* Dialog action bar */
+mat-dialog-actions {
+    padding: 16px 0 0;
+}
+
+/* Utility spacing */
+.mt-1 {
+    margin-top: 4px;
+}
+
+.mt-2 {
+    margin-top: 8px;
+}
+
+.mt-3 {
+    margin-top: 12px;
+}
+
+.mr-1 {
+    margin-right: 4px;
+}
+
+.mr-2 {
+    margin-right: 8px;
+}

@@ -48,7 +48,6 @@ public class GenerateAngularWithAITask : AiPromptBaseTask<PromptInputs>, IModule
     }
 
     public record PromptInputs(
-        string EnvironmentMetadata,
         string InputFilesJson,
         string UserProvidedContext,
         string ExamplesJson,
@@ -90,7 +89,6 @@ public class GenerateAngularWithAITask : AiPromptBaseTask<PromptInputs>, IModule
         }
 
         return new PromptInputs(
-            EnvironmentMetadata: environmentMetadata,
             InputFilesJson: jsonInput,
             UserProvidedContext: promptContext.UserProvidedContext,
             ExamplesJson: exampleJson,
@@ -102,7 +100,6 @@ public class GenerateAngularWithAITask : AiPromptBaseTask<PromptInputs>, IModule
     {
         return new KernelArguments
         {
-            ["environmentMetadata"] = inputs.EnvironmentMetadata,
             ["inputFilesJson"] = inputs.InputFilesJson,
             ["userProvidedContext"] = inputs.UserProvidedContext,
             ["examples"] = inputs.ExamplesJson,
