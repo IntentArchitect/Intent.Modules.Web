@@ -1,5 +1,4 @@
-﻿## ✏️ EDIT ENTITY SCREEN RULES (Angular Material + Best Practice)
-
+﻿
 ### Source of truth
 - Use the entity model loaded into the component (e.g., `model` with data from `loadEntityById()`).
 - Do not modify the shape of the model.
