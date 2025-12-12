@@ -58,15 +58,30 @@ You will receive a TypeScript Angular component and must generate the HTML templ
    - only call existing methods in the same class.
    - do NOT directly call services or `router.navigate`.
 
-5. DO NOT modify any existing methods that:
-   - call injected services (anything like `this.someService...`)
+5. DO NOT change the implementation (internal logic) of any existing methods that:
+   - directly call injected services (e.g. `this.someService...`)
    - or call the Angular router (e.g. `this.router.navigate(...)`).
+
+Allowed:
+- Calling existing service/navigation wrapper methods from lifecycle hooks and event handlers
+  (e.g. add `ngOnInit()` calls like `this.loadCategories()` or `this.loadCustomerById(id)`).
+- Adding new orchestration methods such as `initPageData()`, `onSearch()`, `save()`, etc.,
+  as long as they only *call* existing methods and do not rewrite service payloads/signatures.
+
+Not allowed:
+- Editing the body of existing service/navigation wrapper methods (changing request payload mapping,
+  error handling, endpoints, routing paths, etc.).
 
 6. If a desired UI action would require changing an existing service / navigation method,
    prefer to:
    - call that existing method from the template, OR
    - create a small wrapper method that calls it,
    instead of editing the existing method’s internals.
+
+### Lifecycle wiring rule (IMPORTANT)
+- If the screen requires initial data (lookups, entity-by-id, etc.), the component must load it in `ngOnInit()`.
+- Prefer calling existing methods like `loadCategories()`, `loadEntityById(id)`, `loadSubCategories(...)`.
+- If those methods do not exist, create *new* load methods rather than editing service methods.
 
 [LAYOUT RULES (IMPORTANT)]
 

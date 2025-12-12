@@ -83,15 +83,18 @@ export class CustomerEditComponent implements OnInit {
         private readonly subCategoriesService: SubCategoriesService
     ) { }
 
+    @IntentMerge()
     ngOnInit(): void {
-        this.customerId = this.route.snapshot.paramMap.get('customerId') ?? '';
+        const customerId = this.route.snapshot.paramMap.get('customerId');
+        if (!customerId) {
+            throw new Error("Expected 'customerId' not supplied");
+        }
+        this.customerId = customerId;
 
         // load supporting data
         this.loadCategories();
 
-        if (this.customerId) {
-            this.loadCustomerById(this.customerId);
-        }
+        this.loadCustomerById(this.customerId);
     }
 
     // ---------------------- UI helpers (state only) ---------------------- //

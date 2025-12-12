@@ -4,6 +4,7 @@ using Intent.Metadata.Models;
 using Intent.Modelers.Services.Api;
 using Intent.Modelers.Services.CQRS.Api;
 using Intent.Modelers.UI.Api;
+using Intent.Modules.Common;
 using Intent.Modules.Common.AI.CodeGeneration;
 using Intent.Modules.Common.AI.Configuration;
 using Intent.Modules.Common.AI.Tasks;
@@ -139,10 +140,25 @@ public class GenerateAngularWithAITask : AiPromptBaseTask<PromptInputs>, IModule
         return inputFiles;
     }
 
+    // Commands and Queries need to check their parent id...
+
     private List<ICodebaseFile> GetCodeFilesForElement(IGeneratedFilesProvider filesProvider, ICanBeReferencedType element)
     {
         var inputFiles = new List<ICodebaseFile>();
-        inputFiles.AddRange(filesProvider.GetFilesForMetadata(element));
+
+        if (element.IsQueryModel() || element.IsCommandModel())
+        {
+            inputFiles.AddRange(filesProvider.GetFilesForMetadata(element));
+            var parent = ((IElement)element).GetFirstParent(x => true);
+            if (parent is not null)
+            {
+                inputFiles.AddRange(filesProvider.GetFilesForMetadata(parent));
+            }
+        }
+        else
+        {
+            inputFiles.AddRange(filesProvider.GetFilesForMetadata(element));
+        }
 
         foreach (var childDto in GetAllChildren(element, e => e.IsDTOModel() || e.IsEnumModel()))
         {

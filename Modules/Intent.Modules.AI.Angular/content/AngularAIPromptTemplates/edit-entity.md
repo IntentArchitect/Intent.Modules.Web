@@ -1,6 +1,6 @@
 ﻿
 ### Source of truth
-- Use the entity model loaded into the component (e.g., `model` with data from `loadEntityById()`).
+- In the ngOnInit load the data the component needs using the provided service and data.
 - Do not modify the shape of the model.
 - Do not invent new fields.
 
@@ -35,8 +35,3 @@
     - `addAddress()` → show Add button
     - `removeAddress(i)` → show Remove button
 
-### Forbidden actions
-- DO NOT modify:
-  - existing service methods (`updateEntity`, etc.)
-  - DTO structure
-  - models or nested models
