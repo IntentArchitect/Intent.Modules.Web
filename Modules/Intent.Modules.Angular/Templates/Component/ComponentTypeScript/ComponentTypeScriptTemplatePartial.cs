@@ -49,7 +49,8 @@ namespace Intent.Modules.Angular.Templates.Component.ComponentTypeScript
             AddTypeSource("Intent.Application.Dtos.DtoModel");
             AddTypeSource(TemplateId);
 
-            TypescriptFile = new TypescriptFile(this.GetFolderPath(), this);
+            TypescriptFile = new TypescriptFile(this.GetFolderPath(), this)
+                .WithComments("//@IntentMerge()");
 
             AddModelDefinitions(model);
 
@@ -79,6 +80,7 @@ namespace Intent.Modules.Angular.Templates.Component.ComponentTypeScript
 
                 @class.AddConstructor(ctor =>
                 {
+                    ctor.WithComments("//@IntentMerge()");
                 });
 
                 foreach (var operation in model.Operations)
@@ -351,11 +353,7 @@ namespace Intent.Modules.Angular.Templates.Component.ComponentTypeScript
 
         private void ConfigureOnInitOperation(TypescriptClass @class, TypescriptMethod method)
         {
-
-
-
-            // TODO. Fix
-            //method.AddDecorator("IntentMerge");
+            method.AddDecorator("IntentMerge");
 
             if (Model.Properties.Where(p => p.HasRouteParameter() || p.HasQueryParameter()).Any())
             {
