@@ -60,15 +60,31 @@ namespace Intent.Modules.Angular.HttpClients.Templates.HttpServiceProxy
                         decorator.AddArgument(obj.GetText(""));
                     });
 
+                    var packageName = Model.InternalElement.Package.Name.Replace(".", "").ToCamelCase().Singularize();
+                    var serviceConfigName = $"{packageName}Config";
+                    var environmentTemplate = GetTemplate<TypeScriptTemplateBase<object>>("Intent.Angular.Environment.Environment", new TemplateDiscoveryOptions { TrackDependency = false });
+                    AddImport("environment", this.GetRelativePath(environmentTemplate));
+
                     @class.AddField("baseUrl", @base =>
                     {
                         @base.PrivateReadOnly();
-                        var environmentTemplate = GetTemplate<TypeScriptTemplateBase<object>>("Intent.Angular.Environment.Environment", new TemplateDiscoveryOptions { TrackDependency = false });
-                        AddImport("environment", this.GetRelativePath(environmentTemplate));
-
-                        var packageName = Model.InternalElement.Package.Name.Replace(".", "").ToCamelCase().Singularize();
-                        var serviceConfigName = $"{packageName}Config";
                         @base.WithValue($"environment.{serviceConfigName}.services?.{Model.Name.ToCamelCase(true)}?.baseUrl ?? environment.{serviceConfigName}.baseUrl");
+                    });
+
+                    @class.AddField("timeoutMs", @timeout =>
+                    {
+                        AddImport("timeout", "rxjs/operators");
+
+                        @timeout.PrivateReadOnly();
+                        @timeout.WithValue($"environment.{serviceConfigName}.services?.{Model.Name.ToCamelCase(true)}?.timeoutMs ?? environment.{serviceConfigName}.timeoutMs ?? 10_000");
+                    });
+
+                    @class.AddField("retries", @timeout =>
+                    {
+                        AddImport("retry", "rxjs/operators");
+
+                        @timeout.PrivateReadOnly();
+                        @timeout.WithValue($"environment.{serviceConfigName}.services?.{Model.Name.ToCamelCase(true)}?.retries ?? environment.{serviceConfigName}.retries ?? 0");
                     });
 
                     @class.AddConstructor(ctor =>
@@ -283,12 +299,19 @@ namespace Intent.Modules.Angular.HttpClients.Templates.HttpServiceProxy
         {
             if (endpoint.ReturnType?.Element is null)
             {
-                return $"return this.httpClient.{GetDataServiceCall(endpoint)};";
+                return @$"return this.httpClient.{GetDataServiceCall(endpoint)}
+      .pipe(
+        timeout(this.timeoutMs), 
+        retry(this.retries)
+      );";
             }
 
             return $@"return this.httpClient.{GetDataServiceCall(endpoint)}
-      .pipe({UseType("map", "rxjs/operators")}((response: {GetApiResponseType(endpoint)}) => {{
-        {GetApiResponseExpression(endpoint)}
+      .pipe(
+        timeout(this.timeoutMs),
+        retry(this.retries),
+        {UseType("map", "rxjs/operators")}((response: {GetApiResponseType(endpoint)}) => {{
+          {GetApiResponseExpression(endpoint)}
       }}));";
         }
 
