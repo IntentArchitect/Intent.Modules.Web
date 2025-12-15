@@ -77,6 +77,10 @@
       <role>Front End</role>
       <location>src/environments</location>
     </template>
+    <template id="Intent.Angular.Environment.EnvironmentTypes" externalReference="d0ddc42a-1425-4370-9168-29b1c7458736">
+      <role>Front End</role>
+      <location>src/environments</location>
+    </template>
     <template id="Intent.Angular.Shared.IntentDecorators" externalReference="48c256b1-17b3-43fa-a650-3d50bd71668c">
       <role>Front End</role>
       <location>src/app/intent</location>

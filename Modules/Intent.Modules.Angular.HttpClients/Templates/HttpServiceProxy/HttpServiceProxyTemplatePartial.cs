@@ -1,11 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Net;
-using System.Security.Cryptography;
-using System.Text;
-using System.Text.RegularExpressions;
 using Intent.Engine;
 using Intent.Metadata.Models;
 using Intent.Modelers.Services.Api;
@@ -25,6 +17,15 @@ using Intent.Modules.Metadata.WebApi.Models;
 using Intent.RoslynWeaver.Attributes;
 using Intent.Templates;
 using Intent.Utils;
+using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Linq;
+using System.Net;
+using System.Security.Cryptography;
+using System.Text;
+using System.Text.RegularExpressions;
+using System.Xml.Linq;
 
 [assembly: DefaultIntentManaged(Mode.Fully)]
 [assembly: IntentTemplate("Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial", Version = "1.0")]
@@ -64,7 +65,10 @@ namespace Intent.Modules.Angular.HttpClients.Templates.HttpServiceProxy
                         @base.PrivateReadOnly();
                         var environmentTemplate = GetTemplate<TypeScriptTemplateBase<object>>("Intent.Angular.Environment.Environment", new TemplateDiscoveryOptions { TrackDependency = false });
                         AddImport("environment", this.GetRelativePath(environmentTemplate));
-                        @base.WithValue($"environment.{Model.Name.ToCamelCase(true)}BaseUrl");
+
+                        var packageName = Model.InternalElement.Package.Name.Replace(".", "").ToCamelCase().Singularize();
+                        var serviceConfigName = $"{packageName}Config";
+                        @base.WithValue($"environment.{serviceConfigName}.services?.{Model.Name.ToCamelCase(true)}?.baseUrl ?? environment.{serviceConfigName}.baseUrl");
                     });
 
                     @class.AddConstructor(ctor =>
@@ -176,7 +180,72 @@ namespace Intent.Modules.Angular.HttpClients.Templates.HttpServiceProxy
         {
             var proxyUrl = GetProxyUrl(Model);
 
-            ExecutionContext.EventDispatcher.Publish(new ConfigurationVariableRequiredEvent($"{Model.Name.ToCamelCase(true)}BaseUrl", $"'{proxyUrl}'"));
+            PublishStaticInterfaces();
+
+            var packageName = Model.InternalElement.Package.Name.Replace(".", "").ToPascalCase().Singularize();
+
+            ExecutionContext.EventDispatcher.Publish(new EnvironmentRegistrationRequestEvent
+            {
+                TypeName = $"{packageName}ServicesConfig",
+                Comment = $"optional overrides for {packageName}",
+                Kind = EnvironmentTypeKind.Interface,
+                Fields = [new EnvironmentFieldDescriptor
+                {
+                    Name = $"{Model.Name.ToCamelCase(true)}",
+                    Type = "ServiceOverride",
+                    IsOptional = true
+                }]
+            });
+
+            ExecutionContext.EventDispatcher.Publish(new EnvironmentRegistrationRequestEvent
+            {
+                EnvironmentName = $"{packageName.ToCamelCase(true)}Config",
+                Comment = $"specific configuration for {packageName}",
+                TypeName = $"{packageName}Config",
+                Kind = EnvironmentTypeKind.Interface,
+                Extends = ["HttpConfig"],
+                Fields =
+                [
+                    new EnvironmentFieldDescriptor
+                    {
+                        Name = "services",
+                        Type = $"{packageName}ServicesConfig",
+                        IsOptional = true
+                    }
+                ],
+                DefaultValue = @$"{{ 
+    baseUrl: '{proxyUrl}'
+  }}"
+            });
+        }
+
+        private void PublishStaticInterfaces()
+        {
+            ExecutionContext.EventDispatcher.Publish(new EnvironmentRegistrationRequestEvent
+            {
+                TypeName = "HttpConfig",
+                Comment = "base config for http service proxies",
+                Kind = EnvironmentTypeKind.Interface,
+                Fields =
+                [
+                   new() { Name = "baseUrl", Type = "string", IsOptional = false },
+                   new() { Name = "timeoutMs", Type = "number", IsOptional = true },
+                   new() { Name = "retries", Type = "number", IsOptional = true }
+                ]
+            });
+
+            ExecutionContext.EventDispatcher.Publish(new EnvironmentRegistrationRequestEvent
+            {
+               TypeName = "ServiceOverride",
+               Comment = "interface allows for overrides per service",
+               Kind = EnvironmentTypeKind.Interface,
+               Fields =
+               [
+                   new() { Name = "baseUrl", Type = "string", IsOptional = true },
+                   new() { Name = "timeoutMs", Type = "number", IsOptional = true },
+                   new() { Name = "retries", Type = "number", IsOptional = true }
+               ]
+            });
         }
 
         [IntentManaged(Mode.Fully)]

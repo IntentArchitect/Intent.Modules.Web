@@ -1,4 +1,5 @@
 ﻿using Intent.Engine;
+using Intent.Modules.Angular.Templates.Environment.EnvironmentTypes;
 using Intent.Modules.Common.TypeScript.Events;
 using Intent.Modules.Common.TypeScript.Templates;
 using Intent.Templates;
@@ -13,7 +14,7 @@ namespace Intent.Modules.Angular.Templates.Environment;
 
 public abstract partial class EnvironmentTemplateBase : TypeScriptTemplateBase<object>
 {
-    protected readonly IList<ConfigurationVariableRequiredEvent> _environmentVariables = [];
+    protected readonly List<EnvironmentRegistrationRequestEvent> _environmentVariables = [];
 
     protected EnvironmentTemplateBase(string templateId, IOutputTarget outputTarget, object model) : base(templateId, outputTarget, model)
     {
@@ -28,11 +29,11 @@ public abstract partial class EnvironmentTemplateBase : TypeScriptTemplateBase<o
 
             // Add new keys from _environments that don't already exist
             var newKeys = new Dictionary<string, string>();
-            foreach (var env in _environmentVariables)
+            foreach (var env in _environmentVariables.Where(e => !string.IsNullOrWhiteSpace(e.EnvironmentName)))
             {
-                if (!existingKeys.ContainsKey(env.Key))
+                if (!existingKeys.ContainsKey(env.EnvironmentName))
                 {
-                    newKeys[env.Key] = env.DefaultValue;
+                    newKeys[env.EnvironmentName] = GetDefaultValue(env);
                 }
             }
 
@@ -177,7 +178,7 @@ public abstract partial class EnvironmentTemplateBase : TypeScriptTemplateBase<o
         var afterClosingBrace = content.Substring(closingBraceIndex);
 
         // Build new entries
-        var newEntries = string.Join(", ", newKeys.Select(kvp => $"{kvp.Key}: {FormatValue(kvp.Value)}"));
+        var newEntries = string.Join(", ", newKeys.Select(kvp => $"{kvp.Key}: {kvp.Value}"));
 
         // If we need a comma, add it right after the last character, then add newline and new entries
         if (needsComma)
@@ -195,15 +196,57 @@ public abstract partial class EnvironmentTemplateBase : TypeScriptTemplateBase<o
 
     private string GenerateEnvironmentFile()
     {
+        var envTypeTemplate = ExecutionContext.FindTemplateInstance(EnvironmentTypesTemplate.TemplateId);
+        var sb = new StringBuilder();
+
+        sb.AppendLine($"import {{ AppEnvironment }} from \"{this.GetRelativePath(envTypeTemplate)}\";");
+        sb.AppendLine();
+
         if (_environmentVariables.Count == 0)
         {
-            return "export const environment = { };";
+            sb.AppendLine($"export const environment : AppEnvironment = {{ }};");
+            return sb.ToString();
         }
 
-        var entries = string.Join(",\n  ", _environmentVariables.Select(env => $"{env.Key}: {FormatValue(env.DefaultValue)}"));
-        return $@"export const environment = {{
+        var entries = string.Join(",\n  ", _environmentVariables.GetMergedEvents()
+            .Where(env => !string.IsNullOrWhiteSpace(env.EnvironmentName))
+            .Select(env => $"{env.EnvironmentName}: {GetDefaultValue(env)}"));
+
+        sb.AppendLine($@"export const environment : AppEnvironment = {{
   {entries}
-}};";
+}};");
+
+        return sb.ToString();
+    }
+
+    private static string GetDefaultValue(EnvironmentRegistrationRequestEvent env)
+    {
+        // If DefaultValue is explicitly provided, use it
+        if (!string.IsNullOrWhiteSpace(env.DefaultValue))
+        {
+            return FormatValue(env.DefaultValue);
+        }
+
+        // If no DefaultValue but has Fields with default values, construct an object literal
+        if (env.Fields != null && env.Fields.Any())
+        {
+            var fieldsWithDefaults = env.Fields
+                .Where(f => !string.IsNullOrWhiteSpace(f.Name) && !string.IsNullOrWhiteSpace(f.DefaultValue))
+                .ToList();
+
+            if (fieldsWithDefaults.Count != 0)
+            {
+                var fieldEntries = string.Join(",\n    ", fieldsWithDefaults
+                    .Select(f => $"{f.Name}: {FormatValue(f.DefaultValue)}"));
+
+                return @$"{{
+    {fieldEntries}
+  }}";
+            }
+        }
+
+        // Fallback to empty string if nothing else is available
+        return "''";
     }
 
     private static string FormatValue(string value)
@@ -222,6 +265,7 @@ public abstract partial class EnvironmentTemplateBase : TypeScriptTemplateBase<o
         return $"'{value}'";
     }
 
-    [GeneratedRegex(@"export\s+const\s+environment\s*=\s*\{", RegexOptions.Singleline)]
+    [GeneratedRegex(@"export\s+const\s+environment\s*(?::\s*[^=]+)?=\s*\{",
+    RegexOptions.Singleline)]
     private static partial Regex EnvironmentFileRegex();
 }

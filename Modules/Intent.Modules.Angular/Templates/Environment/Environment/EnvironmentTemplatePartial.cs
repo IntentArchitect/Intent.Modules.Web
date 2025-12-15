@@ -28,7 +28,7 @@ namespace Intent.Modules.Angular.Templates.Environment.Environment
         {
             TypescriptFile = new TypescriptFile(this.GetFolderPath(), this);
 
-            ExecutionContext.EventDispatcher.Subscribe<ConfigurationVariableRequiredEvent>(HandleConfigVariableRequiredEvent);
+            ExecutionContext.EventDispatcher.Subscribe<EnvironmentRegistrationRequestEvent>(HandleEnvironmentRegistrationRequestEvent);
         }
 
         [IntentManaged(Mode.Fully)]
@@ -46,10 +46,11 @@ namespace Intent.Modules.Angular.Templates.Environment.Environment
             return TypescriptFile.ToString();
         }
 
-        public void HandleConfigVariableRequiredEvent(ConfigurationVariableRequiredEvent @event)
+        public void HandleEnvironmentRegistrationRequestEvent(EnvironmentRegistrationRequestEvent @event)
         {
             _environmentVariables.Add(@event);
         }
+
         public override string RunTemplate()
         {
             return GenerateFile();

@@ -8,6 +8,7 @@ using Intent.Modules.Angular.Templates.Core.AppRoutes;
 using Intent.Modules.Angular.Templates.Core.Main;
 using Intent.Modules.Angular.Templates.Environment.Environment;
 using Intent.Modules.Angular.Templates.Environment.EnvironmentDotDevelopment;
+using Intent.Modules.Angular.Templates.Environment.EnvironmentTypes;
 using Intent.Modules.Angular.Templates.Shared.IntentDecorators;
 using Intent.Modules.Common.Templates;
 using Intent.Modules.Common.TypeScript.Templates;
@@ -68,6 +69,11 @@ namespace Intent.Modules.Angular.Templates
         public static string GetEnvironmentDotDevelopmentTemplateName(this IIntentTemplate template)
         {
             return template.GetTypeName(EnvironmentDotDevelopmentTemplate.TemplateId);
+        }
+
+        public static string GetEnvironmentTypesTemplateName(this IIntentTemplate template)
+        {
+            return template.GetTypeName(EnvironmentTypesTemplate.TemplateId);
         }
 
         public static string GetIntentDecoratorsTemplateName(this IIntentTemplate template)
