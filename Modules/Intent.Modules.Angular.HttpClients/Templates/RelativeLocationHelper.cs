@@ -24,7 +24,7 @@ public static class RelativeLocationHelper
         where T : IHasFolder
     {
         return string.Join('/', Enumerable.Empty<string>()
-            .Concat(parentFolders ?? Enumerable.Empty<string>())
+            .Concat(parentFolders ?? [])
             .Concat(GetElementPackageParts(template))
             .Concat(GetParentFolders(template.Model))
             .Select(x => x.ToKebabCase())

@@ -1,3 +1,6 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using Intent.Engine;
 using Intent.Modules.Common;
 using Intent.Modules.Common.Templates;
@@ -7,9 +10,6 @@ using Intent.Modules.Common.TypeScript.Templates;
 using Intent.RoslynWeaver.Attributes;
 using Intent.Templates;
 using Microsoft.VisualBasic.FileIO;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 
 [assembly: DefaultIntentManaged(Mode.Fully)]
 [assembly: IntentTemplate("Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial", Version = "1.0")]
@@ -24,7 +24,7 @@ namespace Intent.Modules.Angular.Templates.Environment.EnvironmentTypes
 
         private List<EnvironmentRegistrationRequestEvent> _registrationEvents = new List<EnvironmentRegistrationRequestEvent>();
 
-        [IntentManaged(Mode.Merge, Signature = Mode.Ignore)]
+        [IntentManaged(Mode.Ignore, Signature = Mode.Ignore)]
         public EnvironmentTypesTemplate(IOutputTarget outputTarget, object model = null) : base(TemplateId, outputTarget, model)
         {
             TypescriptFile = new TypescriptFile(this.GetFolderPath(), this)
@@ -33,7 +33,7 @@ namespace Intent.Modules.Angular.Templates.Environment.EnvironmentTypes
                     @interface.WithComments("// interface for all environment configuration");
                     @interface.WithComments("//@IntentMerge()");
                     @interface.Export();
-                    
+
                 });
 
             TypescriptFile.WithComments("//@IntentMerge()").AfterBuild(file =>
@@ -74,7 +74,7 @@ namespace Intent.Modules.Angular.Templates.Environment.EnvironmentTypes
                     }
                 });
 
-                if(!string.IsNullOrWhiteSpace(@event.EnvironmentName) && !appEnvironmentInterface.Fields.Any(f => f.Name == @event.EnvironmentName))
+                if (!string.IsNullOrWhiteSpace(@event.EnvironmentName) && !appEnvironmentInterface.Fields.Any(f => f.Name == @event.EnvironmentName))
                 {
                     appEnvironmentInterface.AddField(@event.EnvironmentName, @event.TypeName);
                 }
@@ -101,6 +101,6 @@ namespace Intent.Modules.Angular.Templates.Environment.EnvironmentTypes
             _registrationEvents.Add(@event);
         }
 
-        
+
     }
 }

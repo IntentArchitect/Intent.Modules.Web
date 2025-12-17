@@ -21,9 +21,7 @@ public class HttpServiceContractModel : IServiceContractModel
             .Where(x => x.Mapping.ElementId != null)
             .ToDictionary(x => x.Mapping.ElementId);
 
-        Operations = _serviceProxyModel.GetMappedEndpoints()
-            .Select(x => new OperationModel(x, operationsByMappedElementId.GetValueOrDefault(x.Id)))
-            .ToArray();
+        Operations = [.. _serviceProxyModel.GetMappedEndpoints().Select(x => new OperationModel(x, operationsByMappedElementId.GetValueOrDefault(x.Id)))];
     }
 
     public string Id => _serviceProxyModel.Id;
@@ -45,9 +43,7 @@ public class HttpServiceContractModel : IServiceContractModel
         {
             _httpEndpointModel = httpEndpointModel;
             _operationModel = operationModel;
-            Parameters = _httpEndpointModel.Inputs
-                .Select(x => new ParameterModel(x))
-                .ToArray();
+            Parameters = [.. _httpEndpointModel.Inputs.Select(x => new ParameterModel(x))];
         }
 
         public string Id => _operationModel?.Id ?? _httpEndpointModel.Id;

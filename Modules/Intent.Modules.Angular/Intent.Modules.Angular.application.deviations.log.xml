@@ -79,7 +79,7 @@
       <updatedByDisplayName>JP Seini</updatedByDisplayName>
       <updatedAt>2025-12-05T11:49:44.2103499Z</updatedAt>
       <deviationsHash>D0DA2C804E115AC6B4894BFF907B45C63609175507DC37EBD32E93C2F1258B2B</deviationsHash>
-      <fileHash>439CA0D80C720422B2ACCA397C12547669154FDD089CEF5605CE707068251242</fileHash>
+      <fileHash>17EE9B813E77A6555DD7333298D7B3FECC72138B1D2FDE8226E68513B6BBAFAE</fileHash>
     </file>
     <file>
       <correlationId>Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial#a34e5b50-c6fd-4247-b5c1-35bf263d9e9b</correlationId>
@@ -89,7 +89,17 @@
       <updatedByDisplayName>JP Seini</updatedByDisplayName>
       <updatedAt>2025-12-05T11:49:44.2103389Z</updatedAt>
       <deviationsHash>78788FDAA49CE2E53E481D8052A016F9B2D83616D1E78632F4A395B808E7BD53</deviationsHash>
-      <fileHash>BD47C223C6124C3691327DDB8B2B8A0A368E888E1CFAFEAAD9AA9AB86F917695</fileHash>
+      <fileHash>8487518586BEC5C3C137912E9FBF48C82C259136829031C08B33B783454C184C</fileHash>
+    </file>
+    <file>
+      <correlationId>Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial#d0ddc42a-1425-4370-9168-29b1c7458736</correlationId>
+      <path>Intent.Modules.Angular/Templates/Environment/EnvironmentTypes/EnvironmentTypesTemplatePartial.cs</path>
+      <count>1</count>
+      <updatedByAccountName>jp.seini@intentarchitect.com</updatedByAccountName>
+      <updatedByDisplayName>JP Seini</updatedByDisplayName>
+      <updatedAt>2025-12-15T14:56:22.0104423Z</updatedAt>
+      <deviationsHash>409DEFA3C8FB66406B81C5F20500CFCD0C5EC04CFD6C68876D19B21AD41A25AE</deviationsHash>
+      <fileHash>636078357777C657F85A194566F2DAB1DC0016FBFE2EEE9B179CE0882D28FE68</fileHash>
     </file>
     <file>
       <correlationId>Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial#48c256b1-17b3-43fa-a650-3d50bd71668c</correlationId>

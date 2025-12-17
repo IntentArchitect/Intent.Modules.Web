@@ -1,5 +1,9 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Text.RegularExpressions;
 using Intent.Engine;
-using Intent.Metadata.Models;
 using Intent.Modelers.Services.Api;
 using Intent.Modelers.Services.CQRS.Api;
 using Intent.Modelers.Types.ServiceProxies.Api;
@@ -16,16 +20,6 @@ using Intent.Modules.Common.TypeScript.Templates;
 using Intent.Modules.Metadata.WebApi.Models;
 using Intent.RoslynWeaver.Attributes;
 using Intent.Templates;
-using Intent.Utils;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Linq;
-using System.Net;
-using System.Security.Cryptography;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Xml.Linq;
 
 [assembly: DefaultIntentManaged(Mode.Fully)]
 [assembly: IntentTemplate("Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial", Version = "1.0")]
@@ -60,32 +54,7 @@ namespace Intent.Modules.Angular.HttpClients.Templates.HttpServiceProxy
                         decorator.AddArgument(obj.GetText(""));
                     });
 
-                    var packageName = Model.InternalElement.Package.Name.Replace(".", "").ToCamelCase().Singularize();
-                    var serviceConfigName = $"{packageName}Config";
-                    var environmentTemplate = GetTemplate<TypeScriptTemplateBase<object>>("Intent.Angular.Environment.Environment", new TemplateDiscoveryOptions { TrackDependency = false });
-                    AddImport("environment", this.GetRelativePath(environmentTemplate));
-
-                    @class.AddField("baseUrl", @base =>
-                    {
-                        @base.PrivateReadOnly();
-                        @base.WithValue($"environment.{serviceConfigName}.services?.{Model.Name.ToCamelCase(true)}?.baseUrl ?? environment.{serviceConfigName}.baseUrl");
-                    });
-
-                    @class.AddField("timeoutMs", @timeout =>
-                    {
-                        AddImport("timeout", "rxjs/operators");
-
-                        @timeout.PrivateReadOnly();
-                        @timeout.WithValue($"environment.{serviceConfigName}.services?.{Model.Name.ToCamelCase(true)}?.timeoutMs ?? environment.{serviceConfigName}.timeoutMs ?? 10_000");
-                    });
-
-                    @class.AddField("retries", @timeout =>
-                    {
-                        AddImport("retry", "rxjs/operators");
-
-                        @timeout.PrivateReadOnly();
-                        @timeout.WithValue($"environment.{serviceConfigName}.services?.{Model.Name.ToCamelCase(true)}?.retries ?? environment.{serviceConfigName}.retries ?? 0");
-                    });
+                    AddServiceEnvironmentFields(@class);
 
                     @class.AddConstructor(ctor =>
                     {
@@ -169,21 +138,50 @@ namespace Intent.Modules.Angular.HttpClients.Templates.HttpServiceProxy
                 });
         }
 
+        private void AddServiceEnvironmentFields(TypescriptClass @class)
+        {
+            var packageName = Model.InternalElement.Package.Name.Replace(".", "").ToCamelCase().Singularize();
+            var serviceConfigName = $"{packageName}Config";
+            var environmentTemplate = GetTemplate<TypeScriptTemplateBase<object>>("Intent.Angular.Environment.Environment", new TemplateDiscoveryOptions { TrackDependency = false });
+            AddImport("environment", this.GetRelativePath(environmentTemplate));
+
+            @class.AddField("baseUrl", @base =>
+            {
+                @base.PrivateReadOnly();
+                @base.WithValue($"environment.{serviceConfigName}.services?.{Model.Name.ToCamelCase(true)}?.baseUrl ?? environment.{serviceConfigName}.baseUrl");
+            });
+
+            @class.AddField("timeoutMs", @timeout =>
+            {
+                AddImport("timeout", "rxjs/operators");
+
+                @timeout.PrivateReadOnly();
+                @timeout.WithValue($"environment.{serviceConfigName}.services?.{Model.Name.ToCamelCase(true)}?.timeoutMs ?? environment.{serviceConfigName}.timeoutMs ?? 10_000");
+            });
+
+            @class.AddField("retries", @timeout =>
+            {
+                AddImport("retry", "rxjs/operators");
+
+                @timeout.PrivateReadOnly();
+                @timeout.WithValue($"environment.{serviceConfigName}.services?.{Model.Name.ToCamelCase(true)}?.retries ?? environment.{serviceConfigName}.retries ?? 0");
+            });
+        }
 
         private static string ToTypeScriptTemplateRoute(string route)
         {
             ArgumentNullException.ThrowIfNull(route);
 
             // Matches {param} or {param:constraint}, captures "param" in group 1
-            return Regex.Replace(route, @"\{([^}:]+)(:[^}]*)?\}", @"$${$1}");
+            return TypeScriptRouteRegex().Replace(route, @"$${$1}");
         }
 
         private static string AddEncodeURIComponent(string route)
         {
-            if (route == null) throw new ArgumentNullException(nameof(route));
+            ArgumentNullException.ThrowIfNull(route);
 
             // Match ${...} and capture the inner identifier/expression
-            var pattern = new Regex(@"\$\{([^}]+)\}");
+            var pattern = RouteMatchRegex();
 
             return pattern.Replace(route, match =>
             {
@@ -252,10 +250,10 @@ namespace Intent.Modules.Angular.HttpClients.Templates.HttpServiceProxy
 
             ExecutionContext.EventDispatcher.Publish(new EnvironmentRegistrationRequestEvent
             {
-               TypeName = "ServiceOverride",
-               Comment = "interface allows for overrides per service",
-               Kind = EnvironmentTypeKind.Interface,
-               Fields =
+                TypeName = "ServiceOverride",
+                Comment = "interface allows for overrides per service",
+                Kind = EnvironmentTypeKind.Interface,
+                Fields =
                [
                    new() { Name = "baseUrl", Type = "string", IsOptional = true },
                    new() { Name = "timeoutMs", Type = "number", IsOptional = true },
@@ -315,26 +313,10 @@ namespace Intent.Modules.Angular.HttpClients.Templates.HttpServiceProxy
       }}));";
         }
 
-        private string GetSourceExpression(string? methodParameterName, IHttpEndpointModel endpoint, IHttpEndpointInputModel input)
-        {
-            var hasSingleFieldChild = endpoint.InternalElement.ChildElements.Count(x => x.IsDTOFieldModel()) == 1;
-            if (!Model.CreateParameterPerInput && hasSingleFieldChild)
-            {
-                return methodParameterName!;
-            }
-
-            return Model.CreateParameterPerInput || endpoint.InternalElement.Id == input.TypeReference.ElementId
-                ? input.Name.ToCamelCase(true)
-                : $"{methodParameterName!}.{input.Name.ToCamelCase(true)}";
-        }
-
-        public string GetApplicationName(IServiceProxyModel model)
-        {
-            return string.Concat(model.Endpoints[0].InternalElement.Package.Name
+        public static string GetApplicationName(IServiceProxyModel model) => string.Concat(model.Endpoints[0].InternalElement.Package.Name
                 .RemoveSuffix(".Services")
                 .Split('.')
                 .Select(x => x.ToCamelCase(true)));
-        }
 
         public string GetProxyUrl(IServiceProxyModel proxy)
         {
@@ -418,9 +400,9 @@ namespace Intent.Modules.Angular.HttpClients.Templates.HttpServiceProxy
                 statements.Add(";");
             }
 
-            if (!statements.Any())
+            if (statements.Count == 0)
             {
-                return new List<string>();
+                return [];
             }
 
             return statements;
@@ -549,5 +531,10 @@ namespace Intent.Modules.Angular.HttpClients.Templates.HttpServiceProxy
         ";
             return string.Join(newLine, statements);
         }
+
+        [GeneratedRegex(@"\{([^}:]+)(:[^}]*)?\}")]
+        private static partial Regex TypeScriptRouteRegex();
+        [GeneratedRegex(@"\$\{([^}]+)\}")]
+        private static partial Regex RouteMatchRegex();
     }
 }
