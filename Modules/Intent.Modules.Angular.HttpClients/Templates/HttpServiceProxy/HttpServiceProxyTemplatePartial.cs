@@ -32,6 +32,7 @@ namespace Intent.Modules.Angular.HttpClients.Templates.HttpServiceProxy
         [IntentManaged(Mode.Fully)]
         public const string TemplateId = "Intent.Angular.HttpClients.HttpServiceProxy";
 
+
         [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
         public HttpServiceProxyTemplate(IOutputTarget outputTarget,
             IServiceProxyModel model) : base(TemplateId, outputTarget, model)

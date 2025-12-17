@@ -80,7 +80,7 @@ namespace Intent.Modules.Angular.Templates.Component.LayoutComponentHtml
 
         private string GetFooterText()
         {
-            if (Model.Header is not null)
+            if (Model.Footer is not null)
             {
                 return $"<{Model.Footer.Name.ToKebabCase()}></{Model.Footer.Name.ToKebabCase()}>";
             }

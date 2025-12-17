@@ -1,4 +1,6 @@
 ﻿using Intent.Engine;
+using Intent.IArchitect.Agent.Persistence.Model;
+using Intent.IArchitect.Agent.Persistence.Model.Common;
 using Intent.Metadata.Models;
 using Intent.Modules.Angular.HttpClients.Templates.Helper;
 using Intent.Modules.AngularConstants;
@@ -54,13 +56,14 @@ public static class ProxyUrlHelper
 
         if (sourceAppConfig is not null)
         {
-            var vsDesigner = executionContext.MetadataManager.GetDesigner(sourceAppConfig.Id, Designers.VisualStudioId);
-
-            IEnumerable<IPackage> vsPackages = [];
+            IEnumerable<PackageModelPersistable> vsPackages = [];
 
             try
             {
-                vsPackages = vsDesigner.Packages;
+                var appPersistable = ApplicationPersistable.Load(sourceAppConfig.FilePath);
+                var vsDesigner = appPersistable.GetDesigner(Designers.VisualStudioId);
+
+                vsPackages = vsDesigner.GetPackages();
             }
             // not the best way to handle this, but this occurs if there is an problem loading all of the packages
             // in the VS designer
@@ -69,20 +72,29 @@ public static class ProxyUrlHelper
                 return string.Empty;
             }
 
-            if (vsPackages.Count() == 1)
+            foreach(var vsPackage in vsPackages)
             {
-                IPackage vsPackage = vsPackages.First();
                 var launchProject = FindFirstMatchingElementRecursive(vsPackage);
 
                 if (launchProject is not null)
                 {
                     // LaunchSettings Id and BaseUrl property
-                    var applicationUrl = launchProject.GetStereotypeProperty("fd52e71a-3810-4ae7-ae40-4e1514903d25", "1b85d04d-e80a-4640-9fee-558711473fa8", "");
+                    var launchSettingsStereotype = launchProject.Stereotypes.FirstOrDefault(s => s.DefinitionId == "fd52e71a-3810-4ae7-ae40-4e1514903d25");
 
-                    if (!string.IsNullOrEmpty(applicationUrl))
+                    if(launchSettingsStereotype is null)
                     {
-                        return applicationUrl;
+                        return string.Empty;
                     }
+
+                    var applicationUrlProperty = launchSettingsStereotype.Properties
+                        .FirstOrDefault(p => p.DefinitionId == "1b85d04d-e80a-4640-9fee-558711473fa8");
+
+                    if(applicationUrlProperty is null || string.IsNullOrWhiteSpace(applicationUrlProperty.Value))
+                    {
+                        return string.Empty;
+                    }
+
+                    return applicationUrlProperty.Value;
                 }
             }
         }
@@ -90,9 +102,7 @@ public static class ProxyUrlHelper
         return string.Empty;
     }
 
-    // These two methods are duplicated as there is no common interface with ChildElements
-    // between IPackage and IElement (that I can see)
-    private static IElement? FindFirstMatchingElementRecursive(IPackage element)
+    private static ElementPersistable? FindFirstMatchingElementRecursive(IElementPersistable element)
     {
         // Check current level first
         var match = element.ChildElements
@@ -100,34 +110,6 @@ public static class ProxyUrlHelper
                 (c.SpecializationTypeId == "FFD54A85-9362-48AC-B646-C93AB9AC63D2" ||
                  c.SpecializationTypeId == "8e9e6693-2888-4f48-a0d6-0f163baab740") &&
                  // LaunchSettings stereotype
-                c.Stereotypes.Any(s => s.DefinitionId == "fd52e71a-3810-4ae7-ae40-4e1514903d25"));
-
-        if (match != null)
-        {
-            return match; // Found, stop here
-        }
-
-        // Recurse into children
-        foreach (var child in element.ChildElements)
-        {
-            var nestedMatch = FindFirstMatchingElementRecursive(child);
-            if (nestedMatch != null)
-            {
-                return nestedMatch; // Propagate first match up
-            }
-        }
-
-        return null; // No match found
-    }
-
-    private static IElement? FindFirstMatchingElementRecursive(IElement element)
-    {
-        // Check current level first
-        var match = element.ChildElements
-            .FirstOrDefault(c =>
-                (c.SpecializationTypeId == "FFD54A85-9362-48AC-B646-C93AB9AC63D2" ||
-                 c.SpecializationTypeId == "8e9e6693-2888-4f48-a0d6-0f163baab740") &&
-                 // Launch settings stereotype
                 c.Stereotypes.Any(s => s.DefinitionId == "fd52e71a-3810-4ae7-ae40-4e1514903d25"));
 
         if (match != null)
