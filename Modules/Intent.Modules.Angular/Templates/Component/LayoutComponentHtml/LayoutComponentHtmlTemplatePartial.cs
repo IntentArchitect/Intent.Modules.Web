@@ -1,9 +1,6 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using Intent.Engine;
 using Intent.Modelers.UI.Api;
+using Intent.Modules.Angular.Templates.Component.SiderComponentTypescript;
 using Intent.Modules.Common;
 using Intent.Modules.Common.Html.Templates;
 using Intent.Modules.Common.Templates;
@@ -12,6 +9,10 @@ using Intent.Modules.Common.TypeScript.Builder;
 using Intent.Modules.Common.TypeScript.Templates;
 using Intent.RoslynWeaver.Attributes;
 using Intent.Templates;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 
 [assembly: DefaultIntentManaged(Mode.Fully)]
 [assembly: IntentTemplate("Intent.ModuleBuilder.Html.Templates.HtmlFileTemplatePartial", Version = "1.0")]
@@ -62,7 +63,10 @@ namespace Intent.Modules.Angular.Templates.Component.LayoutComponentHtml
         {
             if (Model.Sider is not null)
             {
-                return $"<{Model.Sider.Name.ToKebabCase()}></{Model.Sider.Name.ToKebabCase()}>";
+                this.AddTemplateDependency(SiderComponentTypescriptTemplate.TemplateId, Model.Sider);
+
+                var componenentName = this.GetLayoutItemSelector(Model.Sider.InternalElement);
+                return $"<{componenentName}></{componenentName}>";
             }
 
             return string.Empty;
@@ -72,7 +76,8 @@ namespace Intent.Modules.Angular.Templates.Component.LayoutComponentHtml
         {
             if (Model.Header is not null)
             {
-                return $"<{Model.Header.Name.ToKebabCase()}></{Model.Header.Name.ToKebabCase()}>";
+                var componenentName = this.GetLayoutItemSelector(Model.Header.InternalElement);
+                return $"<{componenentName}></{componenentName}>";
             }
 
             return string.Empty;
@@ -82,7 +87,8 @@ namespace Intent.Modules.Angular.Templates.Component.LayoutComponentHtml
         {
             if (Model.Footer is not null)
             {
-                return $"<{Model.Footer.Name.ToKebabCase()}></{Model.Footer.Name.ToKebabCase()}>";
+                var componenentName = this.GetLayoutItemSelector(Model.Footer.InternalElement);
+                return $"<{componenentName}></{componenentName}>";
             }
 
             return string.Empty;

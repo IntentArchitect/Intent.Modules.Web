@@ -50,9 +50,31 @@
       <Generator>TextTemplatingFilePreprocessor</Generator>
       <LastGenOutput>LayoutComponentHtmlTemplate.cs</LastGenOutput>
     </None>
+    <None Update="Templates\Component\FooterComponentHtml\FooterComponentHtmlTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>FooterComponentHtmlTemplate.cs</LastGenOutput>
+    </None>
+    <None Update="Templates\Component\HeaderComponentHtml\HeaderComponentHtmlTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>HeaderComponentHtmlTemplate.cs</LastGenOutput>
+    </None>
+    <None Update="Templates\Component\SiderComponentHtml\SiderComponentHtmlTemplate.tt">
+      <Generator>TextTemplatingFilePreprocessor</Generator>
+      <LastGenOutput>SiderComponentHtmlTemplate.cs</LastGenOutput>
+    </None>
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Templates\Component\ComponentHtml\ComponentHtmlTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ComponentHtmlTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Templates\Component\LayoutComponentHtml\LayoutComponentHtmlTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>LayoutComponentHtmlTemplate.tt</DependentUpon>
+    </Compile>
     <Compile Update="Templates\Core\Index\IndexTemplate.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
@@ -68,21 +90,25 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>AppComponentHtmlFileTemplate.tt</DependentUpon>
     </Compile>
-    
-    <Compile Update="Templates\Component\ComponentHtml\ComponentHtmlTemplate.cs">
-      <DesignTime>True</DesignTime>
-      <AutoGen>True</AutoGen>
-      <DependentUpon>ComponentHtmlTemplate.tt</DependentUpon>
-    </Compile>
     <Compile Update="Templates\Component\LayoutCompeonentHtml\LayoutCompeonentHtmlTemplate.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
       <DependentUpon>LayoutCompeonentHtmlTemplate.tt</DependentUpon>
     </Compile>
-    <Compile Update="Templates\Component\LayoutComponentHtml\LayoutComponentHtmlTemplate.cs">
+    <Compile Update="Templates\Component\FooterComponentHtml\FooterComponentHtmlTemplate.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
-      <DependentUpon>LayoutComponentHtmlTemplate.tt</DependentUpon>
+      <DependentUpon>FooterComponentHtmlTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Templates\Component\HeaderComponentHtml\HeaderComponentHtmlTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>HeaderComponentHtmlTemplate.tt</DependentUpon>
+    </Compile>
+    <Compile Update="Templates\Component\SiderComponentHtml\SiderComponentHtmlTemplate.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>SiderComponentHtmlTemplate.tt</DependentUpon>
     </Compile>
   </ItemGroup>
 

@@ -1,8 +1,8 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using Intent.Engine;
 using Intent.Modelers.UI.Api;
+using Intent.Modules.Angular.Templates.Component.FooterComponentTypescript;
+using Intent.Modules.Angular.Templates.Component.HeaderComponentTypescript;
+using Intent.Modules.Angular.Templates.Component.SiderComponentTypescript;
 using Intent.Modules.Angular.Templates.Shared.IntentDecorators;
 using Intent.Modules.Common;
 using Intent.Modules.Common.Templates;
@@ -11,6 +11,9 @@ using Intent.Modules.Common.TypeScript.Builder;
 using Intent.Modules.Common.TypeScript.Templates;
 using Intent.RoslynWeaver.Attributes;
 using Intent.Templates;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 [assembly: DefaultIntentManaged(Mode.Fully)]
 [assembly: IntentTemplate("Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial", Version = "1.0")]
@@ -37,6 +40,28 @@ namespace Intent.Modules.Angular.Templates.Component.LayoutComponentTypescript
 
             AddImport("RouterOutlet", "@angular/router");
 
+            var imports = new HashSet<string>()
+            { 
+                "RouterOutlet"
+            };
+
+            // add the dependencies for the layout items if they exist
+            if (Model.Header is not null)
+            {
+                imports.Add(this.GetLayoutItemClassName(model.Header.InternalElement));
+                this.AddTemplateDependency(HeaderComponentTypescriptTemplate.TemplateId, model.Header);
+            }
+            if (Model.Sider is not null)
+            {
+                imports.Add(this.GetLayoutItemClassName(model.Sider.InternalElement));
+                this.AddTemplateDependency(SiderComponentTypescriptTemplate.TemplateId, model.Sider);
+            }
+            if (Model.Footer is not null)
+            {
+                imports.Add(this.GetLayoutItemClassName(model.Footer.InternalElement));
+                this.AddTemplateDependency(FooterComponentTypescriptTemplate.TemplateId, model.Footer);
+            }
+
             TypescriptFile = new TypescriptFile(this.GetFolderPath(), this)
                 .AddClass($"{LayoutName}Layout", @class =>
                 {
@@ -53,10 +78,15 @@ namespace Intent.Modules.Angular.Templates.Component.LayoutComponentTypescript
                         obj.AddField("standalone", "true");
                         obj.AddField("templateUrl", $"'{LayoutName.ToKebabCase()}.component.html'");
                         obj.AddField("styleUrls", $"['{LayoutName.ToKebabCase()}.component.scss']");
-                        obj.AddField("imports", $"[RouterOutlet]");
+                        obj.AddField("imports", @$"[
+    {string.Join(@$",
+    ", imports)}
+  ]");
 
                         component.AddArgument(obj.GetText(""));
                     });
+
+                    
                 }).AfterBuild(file =>
                 {
                     var intentDecoratorTemplate = GetTemplate<TypeScriptTemplateBase<object>>(IntentDecoratorsTemplate.TemplateId);

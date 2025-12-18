@@ -21,6 +21,30 @@
       <role>Front End</role>
       <location>src/app</location>
     </template>
+    <template id="Intent.Angular.Component.FooterComponentHtml" externalReference="36ea187f-2aa6-4357-8523-a9bf4f2b7910">
+      <role>Front End</role>
+      <location>src/app</location>
+    </template>
+    <template id="Intent.Angular.Component.FooterComponentStyleTemplate" externalReference="480732a2-4ce6-457b-a281-26deca31d3b2">
+      <role>Front End</role>
+      <location>src/app</location>
+    </template>
+    <template id="Intent.Angular.Component.FooterComponentTypescript" externalReference="159e2fe7-7c95-471f-9ff0-bbfb5d6e4917">
+      <role>Front End</role>
+      <location>src/app</location>
+    </template>
+    <template id="Intent.Angular.Component.HeaderComponentHtml" externalReference="f481d075-029c-4699-8fdb-26810c7632a7">
+      <role>Front End</role>
+      <location>src/app</location>
+    </template>
+    <template id="Intent.Angular.Component.HeaderComponentStyleTemplate" externalReference="8ac054dd-2623-43ba-b807-14a5126f714d">
+      <role>Front End</role>
+      <location>src/app</location>
+    </template>
+    <template id="Intent.Angular.Component.HeaderComponentTypescript" externalReference="78865424-30cb-4e0c-a939-0ceb4f2df48b">
+      <role>Front End</role>
+      <location>src/app</location>
+    </template>
     <template id="Intent.Angular.Component.LayoutComponentHtml" externalReference="107f3fe3-ce28-4157-b7f7-1ce8ce9409db">
       <role>Front End</role>
       <location>src/app</location>
@@ -30,6 +54,18 @@
       <location>src/app</location>
     </template>
     <template id="Intent.Angular.Component.LayoutComponentTypescript" externalReference="8d3160db-cfcb-45df-860f-00eba74fdcc2">
+      <role>Front End</role>
+      <location>src/app</location>
+    </template>
+    <template id="Intent.Angular.Component.SiderComponentHtml" externalReference="3892f9a3-7772-416c-af3e-22ca288e8eb4">
+      <role>Front End</role>
+      <location>src/app</location>
+    </template>
+    <template id="Intent.Angular.Component.SiderComponentStyleTemplate" externalReference="04652573-800d-4d95-bbc1-da26e42e78c4">
+      <role>Front End</role>
+      <location>src/app</location>
+    </template>
+    <template id="Intent.Angular.Component.SiderComponentTypescript" externalReference="91ce2858-4a6a-45fe-af89-10f958d338d7">
       <role>Front End</role>
       <location>src/app</location>
     </template>

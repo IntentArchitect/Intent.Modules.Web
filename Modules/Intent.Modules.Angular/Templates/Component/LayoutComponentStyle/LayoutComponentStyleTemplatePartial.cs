@@ -45,7 +45,8 @@ namespace Intent.Modules.Angular.Templates.Component.LayoutComponentStyle
             return new TemplateFileConfig(
                fileName: $"{LayoutName.ToKebabCase()}.component",
                relativeLocation: $"{string.Join("/", Model.GetParentFolderNames().Select(f => f.ToKebabCase()))}/{LayoutName.ToKebabCase()}",
-               fileExtension: "scss"
+               fileExtension: "scss",
+               overwriteBehaviour: OverwriteBehaviour.OverwriteDisabled
            );
         }
 
