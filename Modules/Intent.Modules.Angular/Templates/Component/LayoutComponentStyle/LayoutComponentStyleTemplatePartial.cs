@@ -22,6 +22,8 @@ namespace Intent.Modules.Angular.Templates.Component.LayoutComponentStyle
         [IntentManaged(Mode.Fully)]
         public const string TemplateId = "Intent.Angular.Component.LayoutComponentStyleTemplate";
 
+        private string _content = string.Empty;
+
         [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
         public LayoutComponentStyleTemplate(IOutputTarget outputTarget, LayoutModel model) : base(TemplateId, outputTarget, model)
         {
@@ -50,5 +52,9 @@ namespace Intent.Modules.Angular.Templates.Component.LayoutComponentStyle
            );
         }
 
+        public void SetContent(string content)
+        {
+            _content = content;
+        }
     }
 }

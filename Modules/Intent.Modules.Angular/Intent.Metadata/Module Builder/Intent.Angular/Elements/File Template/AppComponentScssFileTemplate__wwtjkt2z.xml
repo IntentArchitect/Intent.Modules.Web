@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <class id="9a65050d-9695-473b-944f-de372a6d3f45" type="File Template" typeId="43eae4bd-4613-4d15-88ac-52b7e743b7b2">
+  <comment>This is the default base app component if no layout is modeled. If a layout is modeled, then it is used as the base app component and this template is not executed</comment>
   <name>AppComponentScssFileTemplate</name>
   <display>AppComponentScssFileTemplate: Single File</display>
   <isAbstract>false</isAbstract>

@@ -26,8 +26,8 @@
   </stereotypes>
   <mappings>
     <mapping type="View Binding" typeId="c33f86ad-423a-4a6f-a80c-a3206eafe5cd">
-      <source elementId="ca58167b-0c67-4fe1-ba0b-06dbbbc20aa1" location="[Intent.Modules.Angular.Metadata].[User Interface].[ExamplePage]" />
-      <target elementId="29a62d5f-85fe-439f-9d20-13664bd1ffa2" location="[Intent.Modules.Angular.Metadata].[User Interface].[[view]]" />
+      <source applicationId="68b9c5c2-c910-4824-8459-fec6beba2aab" designerId="f492faed-0665-4513-9853-5a230721786f" elementId="ca58167b-0c67-4fe1-ba0b-06dbbbc20aa1" location="[Intent.Modules.Angular.Metadata].[User Interface].[ExamplePage]" />
+      <target applicationId="68b9c5c2-c910-4824-8459-fec6beba2aab" designerId="f492faed-0665-4513-9853-5a230721786f" elementId="29a62d5f-85fe-439f-9d20-13664bd1ffa2" location="[Intent.Modules.Angular.Metadata].[User Interface].[[view]]" />
       <mappedEnds />
     </mapping>
   </mappings>
@@ -61,6 +61,27 @@
           <properties />
         </stereotype>
       </stereotypes>
+      <metadata />
+      <childElements />
+    </childElement>
+    <childElement id="c71fd35e-cab1-4db4-a9a9-b8c101900b75" type="Component Operation" typeId="e030c97a-e066-40a7-8188-808c275df3cb">
+      <name>ngOnInit</name>
+      <display>ngOnInit(): void</display>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <typeReference id="aa7c2a83-8774-411f-8aff-8bf15f64e39f">
+        <isNavigable>true</isNavigable>
+        <isNullable>false</isNullable>
+        <isCollection>false</isCollection>
+        <isRequired>true</isRequired>
+        <stereotypes />
+        <genericTypeParameters />
+      </typeReference>
+      <isMapped>false</isMapped>
+      <parentFolderId>ca58167b-0c67-4fe1-ba0b-06dbbbc20aa1</parentFolderId>
+      <packageId>c8aa2ec1-73b4-4356-94e3-bc52a2245cb1</packageId>
+      <packageName>${application.name}.UI</packageName>
+      <stereotypes />
       <metadata />
       <childElements />
     </childElement>

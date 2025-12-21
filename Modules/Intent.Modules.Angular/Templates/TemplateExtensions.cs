@@ -1,10 +1,7 @@
 using System.Collections.Generic;
 using Intent.Modelers.UI.Api;
 using Intent.Modules.Angular.Templates.Component.ComponentTypeScript;
-using Intent.Modules.Angular.Templates.Component.FooterComponentTypescript;
-using Intent.Modules.Angular.Templates.Component.HeaderComponentTypescript;
 using Intent.Modules.Angular.Templates.Component.LayoutComponentTypescript;
-using Intent.Modules.Angular.Templates.Component.SiderComponentTypescript;
 using Intent.Modules.Angular.Templates.Core.AppComponent;
 using Intent.Modules.Angular.Templates.Core.AppConfig;
 using Intent.Modules.Angular.Templates.Core.AppRoutes;
@@ -35,26 +32,6 @@ namespace Intent.Modules.Angular.Templates
             return template.GetTypeName(ComponentTypeScriptTemplate.TemplateId, model);
         }
 
-        public static string GetFooterComponentTypescriptTemplateName<T>(this IIntentTemplate<T> template) where T : LayoutFooterModel
-        {
-            return template.GetTypeName(FooterComponentTypescriptTemplate.TemplateId, template.Model);
-        }
-
-        public static string GetFooterComponentTypescriptTemplateName(this IIntentTemplate template, LayoutFooterModel model)
-        {
-            return template.GetTypeName(FooterComponentTypescriptTemplate.TemplateId, model);
-        }
-
-        public static string GetHeaderComponentTypescriptTemplateName<T>(this IIntentTemplate<T> template) where T : LayoutHeaderModel
-        {
-            return template.GetTypeName(HeaderComponentTypescriptTemplate.TemplateId, template.Model);
-        }
-
-        public static string GetHeaderComponentTypescriptTemplateName(this IIntentTemplate template, LayoutHeaderModel model)
-        {
-            return template.GetTypeName(HeaderComponentTypescriptTemplate.TemplateId, model);
-        }
-
         public static string GetLayoutComponentTypescriptTemplateName<T>(this IIntentTemplate<T> template) where T : LayoutModel
         {
             return template.GetTypeName(LayoutComponentTypescriptTemplate.TemplateId, template.Model);
@@ -63,16 +40,6 @@ namespace Intent.Modules.Angular.Templates
         public static string GetLayoutComponentTypescriptTemplateName(this IIntentTemplate template, LayoutModel model)
         {
             return template.GetTypeName(LayoutComponentTypescriptTemplate.TemplateId, model);
-        }
-
-        public static string GetSiderComponentTypescriptTemplateName<T>(this IIntentTemplate<T> template) where T : LayoutSiderModel
-        {
-            return template.GetTypeName(SiderComponentTypescriptTemplate.TemplateId, template.Model);
-        }
-
-        public static string GetSiderComponentTypescriptTemplateName(this IIntentTemplate template, LayoutSiderModel model)
-        {
-            return template.GetTypeName(SiderComponentTypescriptTemplate.TemplateId, model);
         }
 
         public static string GetAppComponentTemplateName(this IIntentTemplate template)

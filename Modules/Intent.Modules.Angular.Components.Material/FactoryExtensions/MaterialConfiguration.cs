@@ -1,8 +1,10 @@
 using System.Linq;
+using System.Text.RegularExpressions;
 using Intent.Engine;
 using Intent.Eventing;
 using Intent.Modules.Angular.Components.Material.Settings;
 using Intent.Modules.Angular.Settings;
+using Intent.Modules.Angular.Templates.Core.ThemeDotScssFile;
 using Intent.Modules.Common;
 using Intent.Modules.Common.FileBuilders.DataFileBuilder;
 using Intent.Modules.Common.Plugins;
@@ -11,6 +13,7 @@ using Intent.Modules.Common.TypeScript.Events;
 using Intent.Modules.Common.TypeScript.Templates;
 using Intent.Plugins.FactoryExtensions;
 using Intent.RoslynWeaver.Attributes;
+using static System.Net.Mime.MediaTypeNames;
 
 [assembly: DefaultIntentManaged(Mode.Fully)]
 [assembly: IntentTemplate("Intent.ModuleBuilder.Templates.FactoryExtension", Version = "1.0")]
@@ -43,63 +46,71 @@ namespace Intent.Modules.Angular.Components.Material.FactoryExtensions
 
             application.EventDispatcher.Publish(new ServiceConfigurationRequestEvent("provideAnimations", "@angular/platform-browser/animations"));
 
-            var angJsonTemplate = application.FindTemplateInstance<IDataFileBuilderTemplate>("Intent.Angular.Core.AngularDotJsonFileTemplate");
-
-            angJsonTemplate.DataFile.AfterBuild(file =>
+            // only set all the content themes if both colors are not custom
+            if (application.Settings.GetAngularSettings().PrimaryColor().AsEnum() != AngularSettingsExtensions.PrimaryColorOptionsEnum.Custom &&
+                application.Settings.GetAngularSettings().AccentColor().AsEnum() != AngularSettingsExtensions.AccentColorOptionsEnum.Custom)
             {
-                if (!(file.RootObject.ContainsKey("projects")))
-                {
-                    return;
-                }
-                var projectsNode = angJsonTemplate.DataFile?.RootObject["projects"] as IDataFileObjectValue;
-
-                if (!projectsNode.ContainsKey(application.GetApplicationConfig().Name.ToCamelCase()))
-                {
-                    return;
-                }
-                var applicationNode = projectsNode[application.GetApplicationConfig().Name.ToCamelCase()] as IDataFileObjectValue;
-
-                if (!applicationNode.ContainsKey("architect"))
-                {
-                    return;
-                }
-                var architectNode = applicationNode["architect"] as IDataFileObjectValue;
-
-                UpdateStylesNode("build", application, architectNode);
-                UpdateStylesNode("test", application, architectNode);
-            });
+                var themeTemplate = application.FindTemplateInstance<ThemeDotScssFileTemplate>(TemplateDependency.OnTemplate(ThemeDotScssFileTemplate.TemplateId));
+                SetThemeContent(themeTemplate, application);
+            }
         }
 
-        private static void UpdateStylesNode(string key, IApplication application, IDataFileObjectValue architectNode)
+        private static void SetThemeContent(ThemeDotScssFileTemplate template, IApplication application)
         {
-            if (!architectNode.ContainsKey(key))
+            // Parse and replace the existing content
+            var primaryColor = application.Settings.GetAngularSettings().PrimaryColor().Value;
+            var accentColor = application.Settings.GetAngularSettings().AccentColor().Value;
+
+            // if there is no existing content, then output the file as per the ThemeDefaultStyle
+            // with the themese selected
+            if (!template.TryGetExistingFileContent(out var existingFileContent))
             {
-                return;
+                template.SetContent(string.Format(ThemeDefaultStyle, primaryColor, accentColor));
             }
-            var keyNode = architectNode[key] as IDataFileObjectValue;
-
-            if (!keyNode.ContainsKey("options"))
+            else
             {
-                return;
-            }
-            var optionsNode = keyNode["options"] as IDataFileObjectValue;
-
-            if (!optionsNode.ContainsKey("styles"))
-            {
-                return;
-            }
-            var stylesNode = optionsNode["styles"] as IDataFileArrayValue;
-
-            var materialTheme = application.Settings.GetAngularSettings().MaterialTheme();
-            if (materialTheme is not null && materialTheme.Value is not null && materialTheme.AsEnum() != AngularSettingsExtensions.MaterialThemeOptionsEnum.Custom)
-            {
-                var materialCssLocation = $"node_modules/@angular/material/prebuilt-themes/{materialTheme.Value}.css";
-
-                if (!stylesNode.Contains(new DataFileScalarValue(materialCssLocation)))
-                {
-                    stylesNode.WithValue(materialCssLocation);
-                }
+                var updatedContent = UpdatePaletteReferences(existingFileContent, primaryColor, accentColor);
+                template.SetContent(updatedContent);
             }
         }
+
+        private static string UpdatePaletteReferences(string content, string primaryColor, string accentColor)
+        {
+            // Replace $my-primary palette reference
+            content = FactoryRegex.PrimaryPaletteRegex().Replace(content, $"$my-primary: mat.m2-define-palette(mat.$m2-{primaryColor}-palette);");
+
+            // Replace $my-accent palette reference
+            content = FactoryRegex.AccentPaletteRegex().Replace(content, $"$my-accent: mat.m2-define-palette(mat.$m2-{accentColor}-palette);");
+
+            return content;
+        }
+
+        private const string ThemeDefaultStyle = @"@use '@angular/material' as mat;
+
+// Define your Material theme
+$my-primary: mat.m2-define-palette(mat.$m2-{0}-palette);
+$my-accent: mat.m2-define-palette(mat.$m2-{1}-palette);
+$my-warn: mat.m2-define-palette(mat.$m2-red-palette);
+
+$my-theme: mat.m2-define-light-theme((
+  color: (
+    primary: $my-primary,
+    accent: $my-accent,
+    warn: $my-warn,
+  ),
+  typography: mat.m2-define-typography-config(),
+  density: 0,
+));
+
+// Extract colors from Material theme
+$primary-color: mat.m2-get-color-from-palette($my-primary, 500);
+$primary-dark: mat.m2-get-color-from-palette($my-primary, 700);
+$primary-light: mat.m2-get-color-from-palette($my-primary, 300);
+$accent-color: mat.m2-get-color-from-palette($my-accent, 500);
+$accent-dark: mat.m2-get-color-from-palette($my-accent, 700);
+$accent-light: mat.m2-get-color-from-palette($my-accent, 300);
+";
+
+
     }
 }

@@ -19,6 +19,8 @@ namespace Intent.Modules.Angular.Templates.Core.StylesDotScssFile
         [IntentManaged(Mode.Fully)]
         public const string TemplateId = "Intent.Angular.Core.StylesDotScssFileTemplate";
 
+        private string _content = string.Empty;
+
         [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
         public StylesDotScssFileTemplate(IOutputTarget outputTarget, object model = null) : base(TemplateId, outputTarget, model)
         {
@@ -29,9 +31,14 @@ namespace Intent.Modules.Angular.Templates.Core.StylesDotScssFile
         {
             return new TemplateFileConfig(
                 fileName: $"styles",
-                fileExtension: "scss"
+                fileExtension: "scss",
+                overwriteBehaviour: OverwriteBehaviour.OverwriteDisabled
             );
         }
 
+        public void SetContent(string content)
+        {
+            _content = content;
+        }
     }
 }

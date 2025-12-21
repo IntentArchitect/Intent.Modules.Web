@@ -1,4 +1,4 @@
-﻿
+
 ### 1. Criteria must come ONLY from the backend search service
 - The search form **must only expose filters that are supported in the backend search service request model**.
 - Look at the generated TypeScript service proxies in `service-proxies/**`:
@@ -65,3 +65,4 @@ Choose the correct control type based on the property in the DTO (excluding pagi
 - DO NOT modify backend-calling methods — only call them.
 - DO NOT generate UI fields for properties that do not exist in the search DTO.
 - Add an “Add Entity” button **only if the TS class already defines a navigation method**, never invent one.
+- (CRITICAL) If a navigation method exists in the TS class for adding entities, create the button based on that method — DO NOT create duplicate buttons based on navigation items.

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <class id="eb2568a1-e43f-480c-8136-8a9346f816f9" type="Typescript File Template" typeId="e6e41d88-2829-41b6-a791-065d2bb44eb3">
+  <comment>This is the default base app component if no layout is modeled. If a layout is modeled, then it is used as the base app component and this template is not executed</comment>
   <name>AppComponentTemplate</name>
   <display>AppComponentTemplate: Single File</display>
   <isAbstract>false</isAbstract>

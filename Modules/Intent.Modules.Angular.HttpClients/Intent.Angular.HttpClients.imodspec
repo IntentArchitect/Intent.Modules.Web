@@ -33,7 +33,6 @@
   <decorators></decorators>
   <factoryExtensions>
     <factoryExtension id="Intent.Angular.HttpClients.PagedResultTypeSourceInstaller" externalReference="2b26f9ad-19d0-4f41-91da-4c0c1953819e" />
-    <factoryExtension id="Intent.Angular.HttpClients.ServiceInvocationFactoryExtension" externalReference="e128f7df-a431-4a13-86ae-81e30d8588a8" />
   </factoryExtensions>
   <moduleSettings></moduleSettings>
   <dependencies>
@@ -44,10 +43,10 @@
     <dependency id="Intent.Metadata.Security" version="1.1.2" />
     <dependency id="Intent.Metadata.WebApi" version="4.7.17" />
     <dependency id="Intent.Modelers.ServiceProxies" version="5.2.3" metadataOnly="true" />
-	<dependency id="Intent.Modelers.Services" version="4.0.8" metadataOnly="true" />
+    <dependency id="Intent.Modelers.Services" version="4.0.8" metadataOnly="true" />
     <dependency id="Intent.Modelers.Services.CQRS" version="6.0.4" metadataOnly="true" />
     <dependency id="Intent.Modelers.Types.ServiceProxies" version="5.5.3" />
-    <dependency id="Intent.Modelers.UI" version="1.0.4" />
+    <dependency id="Intent.Modelers.UI" version="1.0.5-pre.0" />
     <dependency id="Intent.Modelers.UI.ServiceProxies" version="1.0.0" />
   </dependencies>
   <files>

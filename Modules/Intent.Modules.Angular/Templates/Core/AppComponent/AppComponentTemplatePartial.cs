@@ -42,7 +42,7 @@ namespace Intent.Modules.Angular.Templates.Core.AppComponent
                         {
                             Indentation = TypescriptFile.Indentation
                         };
-                        obj.AddField("selector", "'app-root'");
+                        obj.AddField("selector", "'app-main'");
                         obj.AddField("imports", "[RouterOutlet]");
                         obj.AddField("standalone", "true");
                         obj.AddField("templateUrl", "'./app.component.html'");

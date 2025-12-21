@@ -13,8 +13,13 @@ namespace Intent.Modules.Angular.Templates.Component.LayoutComponentStyle
         [IntentManaged(Mode.Fully, Body = Mode.Ignore)]
         public override string TransformText()
         {
-            return @$"// Place your file template logic here
-";
+            // the content can be set from another template or factory extension
+            if (!string.IsNullOrWhiteSpace(_content))
+            {
+                return _content;
+            }
+
+            return @$"// Place your styling here";
         }
     }
 }

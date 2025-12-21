@@ -11,6 +11,7 @@
   <decorators></decorators>
   <factoryExtensions>
     <factoryExtension id="Intent.Angular.Components.Material.MaterialConfiguration" externalReference="721226fb-2212-40f2-998b-91efce6bb391" />
+    <factoryExtension id="Intent.Angular.Components.Material.SampleFileConfiguration" externalReference="c6547084-8e5f-49f3-8e80-aa3d7c8f17d6" />
   </factoryExtensions>
   <moduleSettings></moduleSettings>
   <dependencies>
@@ -32,15 +33,56 @@
   <moduleSettingsExtensions>
     <groupExtension id="4076ac63-872b-415e-a89b-2a2732dfc8eb" groupId="3697d56e-8390-4e7f-ba44-fee766191e77" externalReference="4076ac63-872b-415e-a89b-2a2732dfc8eb">
       <settings>
-        <setting id="bbed95c0-28a3-487c-a72f-2f867f0de0e6" title="Material Theme" type="select">
+        <setting id="bbed95c0-28a3-487c-a72f-2f867f0de0e6" title="Primary Color" type="select" orderPriority="1">
           <isRequired>false</isRequired>
-          <defaultValue>indigo-pink</defaultValue>
+          <defaultValue>blue</defaultValue>
           <options>
-            <option value="indigo-pink" description="indigo-pink" />
-            <option value="deeppurple-amber" description="deeppurple-amber" />
-            <option value="pink-bluegrey" description="pink-bluegrey" />
-            <option value="purple-green" description="purple-green" />
-            <option value="custom" description="Custom Theme" />
+            <option value="amber" description="Amber" />
+            <option value="blue" description="Blue" />
+            <option value="blue-grey" description="Blue Grey" />
+            <option value="brown" description="Brown" />
+            <option value="cyan" description="Cyan" />
+            <option value="deep-orange" description="Deep Orange" />
+            <option value="deep-purple" description="Deep Purple" />
+            <option value="green" description="Green" />
+            <option value="grey" description="Grey" />
+            <option value="indigo" description="Iindigo" />
+            <option value="light-blue" description="Light Blue" />
+            <option value="light-green" description="Light Green" />
+            <option value="lime" description="Lime" />
+            <option value="orange" description="Orange" />
+            <option value="pink" description="Pink" />
+            <option value="purple" description="Purple" />
+            <option value="red" description="Red" />
+            <option value="teal" description="Teal" />
+            <option value="yellow" description="Yellow" />
+            <option value="custom" description="Custom" />
+          </options>
+        </setting>
+        <setting id="3a30f6a5-b8eb-4e82-87c7-46788f65ad71" title="Accent Color" type="select" orderPriority="2">
+          <isRequired>false</isRequired>
+          <defaultValue>deep-orange</defaultValue>
+          <options>
+            <option value="blue" description="Blue" />
+            <option value="blue-grey" description="Blue Grey" />
+            <option value="brown" description="Brown" />
+            <option value="cyan" description="Cyan" />
+            <option value="deep-orange" description="Deep Orange" />
+            <option value="deep-purple" description="Deep Purple" />
+            <option value="green" description="Green" />
+            <option value="grey" description="Grey" />
+            <option value="indigo" description="Iindigo" />
+            <option value="light-blue" description="Light Blue" />
+            <option value="light-green" description="Light Green" />
+            <option value="lime" description="Lime" />
+            <option value="orange" description="Orange" />
+            <option value="pink" description="Pink" />
+            <option value="purple" description="Purple" />
+            <option value="red" description="Red" />
+            <option value="teal" description="Teal" />
+            <option value="yellow" description="Yellow" />
+            <option value="custom" description="Custom" />
+            <option value="amber" description="Amber" />
           </options>
         </setting>
       </settings>

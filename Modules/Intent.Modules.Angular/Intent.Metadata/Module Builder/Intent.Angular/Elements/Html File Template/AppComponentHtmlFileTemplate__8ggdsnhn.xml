@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <class id="772e817a-2c28-4eb0-b53a-1fd173d2e716" type="Html File Template" typeId="af3fe721-86c5-41e3-9daf-1e79209ed345">
+  <comment>This is the default base app component if no layout is modeled. If a layout is modeled, then it is used as the base app component and this template is not executed</comment>
   <name>AppComponentHtmlFileTemplate</name>
   <display>AppComponentHtmlFileTemplate: Single File</display>
   <isAbstract>false</isAbstract>

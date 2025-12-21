@@ -1,8 +1,8 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
 using Intent.Engine;
 using Intent.Modelers.UI.Api;
-using Intent.Modules.Angular.Templates.Component.FooterComponentTypescript;
-using Intent.Modules.Angular.Templates.Component.HeaderComponentTypescript;
-using Intent.Modules.Angular.Templates.Component.SiderComponentTypescript;
 using Intent.Modules.Angular.Templates.Shared.IntentDecorators;
 using Intent.Modules.Common;
 using Intent.Modules.Common.Templates;
@@ -11,9 +11,6 @@ using Intent.Modules.Common.TypeScript.Builder;
 using Intent.Modules.Common.TypeScript.Templates;
 using Intent.RoslynWeaver.Attributes;
 using Intent.Templates;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 
 [assembly: DefaultIntentManaged(Mode.Fully)]
 [assembly: IntentTemplate("Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial", Version = "1.0")]
@@ -25,6 +22,8 @@ namespace Intent.Modules.Angular.Templates.Component.LayoutComponentTypescript
     {
         [IntentManaged(Mode.Fully)]
         public const string TemplateId = "Intent.Angular.Component.LayoutComponentTypescript";
+
+        private List<string> _additionalImports = new();
 
         [IntentManaged(Mode.Merge, Signature = Mode.Fully, Body = Mode.Ignore)]
         public LayoutComponentTypescriptTemplate(IOutputTarget outputTarget, Intent.Modelers.UI.Api.LayoutModel model) : base(TemplateId, outputTarget, model)
@@ -39,37 +38,28 @@ namespace Intent.Modules.Angular.Templates.Component.LayoutComponentTypescript
             AddTypeSource(TemplateId);
 
             AddImport("RouterOutlet", "@angular/router");
-
-            var imports = new HashSet<string>()
-            { 
-                "RouterOutlet"
-            };
-
-            // add the dependencies for the layout items if they exist
-            if (Model.Header is not null)
-            {
-                imports.Add(this.GetLayoutItemClassName(model.Header.InternalElement));
-                this.AddTemplateDependency(HeaderComponentTypescriptTemplate.TemplateId, model.Header);
-            }
-            if (Model.Sider is not null)
-            {
-                imports.Add(this.GetLayoutItemClassName(model.Sider.InternalElement));
-                this.AddTemplateDependency(SiderComponentTypescriptTemplate.TemplateId, model.Sider);
-            }
-            if (Model.Footer is not null)
-            {
-                imports.Add(this.GetLayoutItemClassName(model.Footer.InternalElement));
-                this.AddTemplateDependency(FooterComponentTypescriptTemplate.TemplateId, model.Footer);
-            }
+            AddImport("RouterLink", "@angular/router");
 
             TypescriptFile = new TypescriptFile(this.GetFolderPath(), this)
                 .AddClass($"{LayoutName}Layout", @class =>
                 {
                     @class.Export();
                     @class.AddDecorator("IntentMerge");
+                    
+
+
+                }).AfterBuild(file =>
+                {
+                    var intentDecoratorTemplate = GetTemplate<TypeScriptTemplateBase<object>>(IntentDecoratorsTemplate.TemplateId);
+                    file.AddImport("IntentIgnoreBody", this.GetRelativePath(intentDecoratorTemplate));
+                    file.AddImport("IntentMerge", this.GetRelativePath(intentDecoratorTemplate));
+
+                    var @class = file.Classes.First(c => c.Name == $"{LayoutName}Layout");
+                    _additionalImports.Insert(0, "RouterLink");
+                    _additionalImports.Insert(0, "RouterOutlet");
+
                     @class.AddDecorator("Component", component =>
                     {
-                        // TODO Clean this up
                         var obj = new TypescriptVariableObject
                         {
                             Indentation = TypescriptFile.Indentation
@@ -79,19 +69,11 @@ namespace Intent.Modules.Angular.Templates.Component.LayoutComponentTypescript
                         obj.AddField("templateUrl", $"'{LayoutName.ToKebabCase()}.component.html'");
                         obj.AddField("styleUrls", $"['{LayoutName.ToKebabCase()}.component.scss']");
                         obj.AddField("imports", @$"[
-    {string.Join(@$",
-    ", imports)}
+    {string.Join(@",    
+    ", _additionalImports)},
   ]");
-
                         component.AddArgument(obj.GetText(""));
                     });
-
-                    
-                }).AfterBuild(file =>
-                {
-                    var intentDecoratorTemplate = GetTemplate<TypeScriptTemplateBase<object>>(IntentDecoratorsTemplate.TemplateId);
-                    file.AddImport("IntentIgnoreBody", this.GetRelativePath(intentDecoratorTemplate));
-                    file.AddImport("IntentMerge", this.GetRelativePath(intentDecoratorTemplate));
                 });
         }
 
@@ -125,6 +107,11 @@ namespace Intent.Modules.Angular.Templates.Component.LayoutComponentTypescript
         public override string TransformText()
         {
             return TypescriptFile.ToString();
+        }
+
+        public void AddImports(string imports)
+        {
+            _additionalImports.Add(imports);
         }
     }
 }

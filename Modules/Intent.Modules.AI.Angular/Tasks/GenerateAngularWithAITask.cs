@@ -53,7 +53,8 @@ public class GenerateAngularWithAITask : AiPromptBaseTask<PromptInputs>, IModule
         string UserProvidedContext,
         string ExamplesJson,
         string FilesToModifyJson,
-        string AdditionalRules);
+        string AdditionalRules,
+        string NavigationItems);
 
     protected override PromptInputs BuildPromptInputs(
         PromptArgs execArgs,
@@ -61,7 +62,6 @@ public class GenerateAngularWithAITask : AiPromptBaseTask<PromptInputs>, IModule
         PromptConfig promptTemplateConfig,
         PromptContext promptContext)
     {
-
         var inputFiles = GetInputFiles(componentModel, out var toModify)
             .Concat(promptContext.IncludeCodeFiles);
 
@@ -89,12 +89,16 @@ public class GenerateAngularWithAITask : AiPromptBaseTask<PromptInputs>, IModule
             additionalRules = "None";
         }
 
+        var navItems = GetNavigationItems(componentModel);
+        var navItemsText = string.Join(Environment.NewLine, navItems.Select(s => $"- {s}"));
+
         return new PromptInputs(
             InputFilesJson: jsonInput,
             UserProvidedContext: promptContext.UserProvidedContext,
             ExamplesJson: exampleJson,
             FilesToModifyJson: fileToModifyJson,
-            AdditionalRules: additionalRules);
+            AdditionalRules: additionalRules,
+            NavigationItems: navItemsText);
     }
 
     protected override KernelArguments CreateKernelArguments(PromptInputs inputs)
@@ -106,7 +110,8 @@ public class GenerateAngularWithAITask : AiPromptBaseTask<PromptInputs>, IModule
             ["examples"] = inputs.ExamplesJson,
             ["filesToModifyJson"] = inputs.FilesToModifyJson,
             ["additionalRules"] = inputs.AdditionalRules,
-            ["fileChangesSchema"] = FileChangesSchema.GetPromptInstructions()
+            ["fileChangesSchema"] = FileChangesSchema.GetPromptInstructions(),
+            ["staticNavigationItems"] = inputs.NavigationItems
         };
     }
 
@@ -184,5 +189,19 @@ public class GenerateAngularWithAITask : AiPromptBaseTask<PromptInputs>, IModule
         }
 
         return children.ToArray();
+    }
+
+    private string[] GetNavigationItems(IElement element)
+    {
+        var navItems = new List<string>();
+        foreach (var association in element.AssociatedElements)
+        {
+            if (association.IsNavigationTargetEndModel() && association.IsNavigable)
+            {
+                navItems.Add(association.TypeReference.Element.Name);
+            }
+        }
+
+        return [.. navItems];
     }
 }

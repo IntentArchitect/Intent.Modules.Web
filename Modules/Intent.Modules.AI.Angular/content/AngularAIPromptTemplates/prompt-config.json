@@ -163,6 +163,33 @@
           }
         ]
       }
+    },
+    {
+      "id": "MainLayout",
+      "name": "Layout - Main Layout",
+      "description": "Shared page frame: header, navigation, and content area",
+      "applicability": {
+        "key-words": [
+          {
+            "word": "mainlayout",
+            "weight": 3
+          },
+          {
+            "word": "layout",
+            "weight": 2
+          },
+          {
+            "word": "rootlayout",
+            "weight": 2
+          }
+        ]
+      },
+      "input-files": [
+        {
+          "type": "Template",
+          "template-id": "Intent.Angular.Core.AppRoutes"
+        }
+      ]
     }
   ]
 }

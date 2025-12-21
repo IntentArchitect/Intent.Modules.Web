@@ -1,32 +1,33 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
 using Intent.Engine;
+using Intent.Metadata.Models;
 using Intent.Modelers.UI.Api;
-using Intent.Modules.Angular.Templates.Component.SiderComponentTypescript;
 using Intent.Modules.Common;
-using Intent.Modules.Common.Html.Templates;
 using Intent.Modules.Common.Templates;
 using Intent.Modules.Common.Types.Api;
 using Intent.Modules.Common.TypeScript.Builder;
 using Intent.Modules.Common.TypeScript.Templates;
 using Intent.RoslynWeaver.Attributes;
 using Intent.Templates;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 [assembly: DefaultIntentManaged(Mode.Fully)]
-[assembly: IntentTemplate("Intent.ModuleBuilder.Html.Templates.HtmlFileTemplatePartial", Version = "1.0")]
+[assembly: IntentTemplate("Intent.ModuleBuilder.ProjectItemTemplate.Partial", Version = "1.0")]
 
 namespace Intent.Modules.Angular.Templates.Component.LayoutComponentHtml
 {
     [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
-    partial class LayoutComponentHtmlTemplate : HtmlTemplateBase<Intent.Modelers.UI.Api.LayoutModel>
+    partial class LayoutComponentHtmlTemplate : IntentTemplateBase<LayoutModel>
     {
         [IntentManaged(Mode.Fully)]
-        public const string TemplateId = "Intent.Angular.Component.LayoutComponentHtml";
+        public const string TemplateId = "Intent.Angular.Component.LayoutComponentHtmlTemplate";
+
+        private string _content = string.Empty;
 
         [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
-        public LayoutComponentHtmlTemplate(IOutputTarget outputTarget, Intent.Modelers.UI.Api.LayoutModel model) : base(TemplateId, outputTarget, model)
+        public LayoutComponentHtmlTemplate(IOutputTarget outputTarget, LayoutModel model) : base(TemplateId, outputTarget, model)
         {
 
         }
@@ -43,63 +44,19 @@ namespace Intent.Modules.Angular.Templates.Component.LayoutComponentHtml
             }
         }
 
-        public string BuildLayoutHtml()
+        public void SetContent(string content)
         {
-            var sb = new StringBuilder();
-
-            sb.AppendLine(GetHeaderText());
-            sb.AppendLine("<div class=\"app-layout\">");
-            sb.AppendLine($"  {GetSiderText()}");
-            sb.AppendLine("  <main class=\"app-content\">");
-            sb.AppendLine("    <router-outlet></router-outlet>");
-            sb.AppendLine("  </main>");
-            sb.AppendLine(GetFooterText());
-            sb.AppendLine("</div>");
-
-            return sb.ToString();
-        }
-
-        private string GetSiderText()
-        {
-            if (Model.Sider is not null)
-            {
-                this.AddTemplateDependency(SiderComponentTypescriptTemplate.TemplateId, Model.Sider);
-
-                var componenentName = this.GetLayoutItemSelector(Model.Sider.InternalElement);
-                return $"<{componenentName}></{componenentName}>";
-            }
-
-            return string.Empty;
-        }
-
-        private string GetHeaderText()
-        {
-            if (Model.Header is not null)
-            {
-                var componenentName = this.GetLayoutItemSelector(Model.Header.InternalElement);
-                return $"<{componenentName}></{componenentName}>";
-            }
-
-            return string.Empty;
-        }
-
-        private string GetFooterText()
-        {
-            if (Model.Footer is not null)
-            {
-                var componenentName = this.GetLayoutItemSelector(Model.Footer.InternalElement);
-                return $"<{componenentName}></{componenentName}>";
-            }
-
-            return string.Empty;
+            _content = content;
         }
 
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]
         public override ITemplateFileConfig GetTemplateFileConfig()
         {
-            return new HtmlFileConfig(
+            return new TemplateFileConfig(
                 fileName: $"{LayoutName.ToKebabCase()}.component",
-                relativeLocation: $"{string.Join("/", Model.GetParentFolderNames().Select(f => f.ToKebabCase()))}/{LayoutName.ToKebabCase()}"
+                fileExtension: "html",
+                relativeLocation: $"{string.Join("/", Model.GetParentFolderNames().Select(f => f.ToKebabCase()))}/{LayoutName.ToKebabCase()}",
+                overwriteBehaviour: OverwriteBehaviour.OverwriteDisabled
             );
         }
 

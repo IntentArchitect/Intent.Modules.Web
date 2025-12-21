@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Intent.Engine;
 using Intent.Metadata.Models;
+using Intent.Modelers.UI.Api;
 using Intent.Modules.Common;
 using Intent.Modules.Common.Templates;
 using Intent.RoslynWeaver.Attributes;
@@ -31,6 +32,13 @@ namespace Intent.Modules.Angular.Templates.Core.AppComponentScssFile
                 fileName: $"app.component",
                 fileExtension: "scss"
             );
+        }
+
+        public override bool CanRunTemplate()
+        {
+            // This template is only needed if there are no layouts defined in the UI modeller
+            return base.CanRunTemplate() &&
+                !ExecutionContext.MetadataManager.UserInterface(ExecutionContext.GetApplicationConfig().Id).GetLayoutModels().Any();
         }
     }
 }

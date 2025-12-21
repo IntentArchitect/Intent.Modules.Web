@@ -32,6 +32,8 @@ Completely implement the Angular component by reading and updating the `.html` f
 
 You will receive a TypeScript Angular component and must generate the HTML template (and sometimes small additions to the .ts file).
 
+(CRITICAL) Action buttons in the page content should ONLY be created from TypeScript methods, NEVER from Navigation Items. Navigation Items are only for side navigation menus/drawers.
+
 1. Treat the TypeScript class as the source of truth for any logic that calls services or performs navigation.
 
 2. When generating the template:
@@ -114,6 +116,26 @@ Before producing Angular templates:
 - Ensure no template reference variables (`#ref`) contain expressions or interpolation.
 - Ensure all Material directive bindings reference valid identifiers, not strings or expressions.
 - If unsure, prefer a simpler, valid Angular pattern over a dynamic one.
+
+## Navigation Items (for Layout Components)
+{{$staticNavigationItems}}
+
+### Navigation rendering rules
+- Navigation items are ONLY for navigation drawers/menus (side navigation), NOT for action buttons in the page content.
+- If navigation items are provided above:
+  - Render each item as a menu link in the navigation drawer ONLY.
+  - DO NOT create standalone buttons or actions in the page content based on navigation items.
+  - Check the TypeScript file for existing navigation methods (e.g. `navigateToCustomers()`, `navigateToOrders()`).
+  - If a navigation method exists for a route:
+    - Use `(click)="navigationMethod()"` instead of `routerLink`.
+  - If no navigation method exists:
+    - Use `routerLink="/path"` with `routerLinkActive="active"`.
+  - Each navigation item should include:
+    - `<mat-icon matListItemIcon>` with the appropriate icon
+    - `<span matListItemTitle>` with the display text
+- DO NOT add navigation items that are not listed above.
+- DO NOT modify existing navigation methods in the TypeScript file.
+- (CRITICAL) Navigation items should NEVER be rendered as buttons in the main page content. If a navigation item points to an "Add" route (e.g., "Add Customer"), and the TypeScript file has a corresponding method (e.g., `navigateToCustomerAdd()`), create the button based on the UI ACTION RULES (from the TypeScript method), NOT from the navigation item. Navigation items are for navigation menus only.
 
 ## Additional Rules
 {{$additionalRules}}

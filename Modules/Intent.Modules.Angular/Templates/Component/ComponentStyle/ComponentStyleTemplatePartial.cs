@@ -22,6 +22,8 @@ namespace Intent.Modules.Angular.Templates.Component.ComponentStyle
         [IntentManaged(Mode.Fully)]
         public const string TemplateId = "Intent.Angular.Component.ComponentStyleTemplate";
 
+        private string _content = string.Empty;
+
         [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
         public ComponentStyleTemplate(IOutputTarget outputTarget, ComponentModel model) : base(TemplateId, outputTarget, model)
         {
@@ -37,6 +39,11 @@ namespace Intent.Modules.Angular.Templates.Component.ComponentStyle
                 }
                 return Model.Name;
             }
+        }
+
+        public void SetContent(string content)
+        {
+            _content = content;
         }
 
         [IntentManaged(Mode.Merge, Body = Mode.Ignore, Signature = Mode.Fully)]

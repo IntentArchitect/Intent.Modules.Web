@@ -29,7 +29,7 @@ namespace Intent.Modules.Angular.Templates.Core.IndexHtml
   <link rel=""icon"" type=""image/x-icon"" href=""favicon.ico"" />
 </head>
 <body>
-  <app-root></app-root>
+  <app-main></app-main>
 </body>
 </html>
 ";

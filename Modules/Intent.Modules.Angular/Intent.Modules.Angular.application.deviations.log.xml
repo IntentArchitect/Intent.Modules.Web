@@ -12,26 +12,6 @@
       <fileHash>C4B883834F5644D6E4EB51E636FEDB8FC69392B566A7D934EB2CAA1784B4330E</fileHash>
     </file>
     <file>
-      <correlationId>Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial#159e2fe7-7c95-471f-9ff0-bbfb5d6e4917</correlationId>
-      <path>Intent.Modules.Angular/Templates/Component/FooterComponentTypescript/FooterComponentTypescriptTemplatePartial.cs</path>
-      <count>1</count>
-      <updatedByAccountName>jp.seini@intentarchitect.com</updatedByAccountName>
-      <updatedByDisplayName>JP Seini</updatedByDisplayName>
-      <updatedAt>2025-12-17T14:05:27.9975719Z</updatedAt>
-      <deviationsHash>4DFD646CB286735FD16A5BCD8A649D7702916D2F4E6FB2FD21A17985C746AB0E</deviationsHash>
-      <fileHash>5E19C9613FB927B629024F8E6CCF063151BAB9AB365A76E9B64026B861304FDE</fileHash>
-    </file>
-    <file>
-      <correlationId>Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial#78865424-30cb-4e0c-a939-0ceb4f2df48b</correlationId>
-      <path>Intent.Modules.Angular/Templates/Component/HeaderComponentTypescript/HeaderComponentTypescriptTemplatePartial.cs</path>
-      <count>1</count>
-      <updatedByAccountName>jp.seini@intentarchitect.com</updatedByAccountName>
-      <updatedByDisplayName>JP Seini</updatedByDisplayName>
-      <updatedAt>2025-12-17T14:05:27.9975827Z</updatedAt>
-      <deviationsHash>E7B1E43C017004BBB941D7C2E930AE7D97A061E543A732671456A9439F6DECD2</deviationsHash>
-      <fileHash>5D5A51F2CF3D02F6F591BB960EA6B99E3394ACA3681C9251680D5041E9C5DDB3</fileHash>
-    </file>
-    <file>
       <correlationId>Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial#8d3160db-cfcb-45df-860f-00eba74fdcc2</correlationId>
       <path>Intent.Modules.Angular/Templates/Component/LayoutComponentTypescript/LayoutComponentTypescriptTemplatePartial.cs</path>
       <count>2</count>
@@ -39,17 +19,7 @@
       <updatedByDisplayName>JP Seini</updatedByDisplayName>
       <updatedAt>2025-12-05T18:18:08.7830416Z</updatedAt>
       <deviationsHash>2F06BF4126F88E5F66D31F78919DEB271252189852CB65E0BD7018605D3B9959</deviationsHash>
-      <fileHash>C4EB830A478D740C3FB5E2C98AA98F869D89726BAE50716640DCC597440C0792</fileHash>
-    </file>
-    <file>
-      <correlationId>Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial#91ce2858-4a6a-45fe-af89-10f958d338d7</correlationId>
-      <path>Intent.Modules.Angular/Templates/Component/SiderComponentTypescript/SiderComponentTypescriptTemplatePartial.cs</path>
-      <count>1</count>
-      <updatedByAccountName>jp.seini@intentarchitect.com</updatedByAccountName>
-      <updatedByDisplayName>JP Seini</updatedByDisplayName>
-      <updatedAt>2025-12-17T14:05:27.9975974Z</updatedAt>
-      <deviationsHash>4FC5D88F52D748202D0E01FF6E9DD86F4DF36094B904556F4FB889768841C34C</deviationsHash>
-      <fileHash>ADDD44D36D7A6F7C71F8C4D13129857BAAC8CADB958C575EDB6A7FC12B45340F</fileHash>
+      <fileHash>69043016C7D5731D3D6078C88BEBD80247F9CE37467AEA7465583F92FA1D8E24</fileHash>
     </file>
     <file>
       <correlationId>Intent.ModuleBuilder.ProjectItemTemplate.Partial#bb603edc-d1a0-4fbf-bf28-97b19d93a51c</correlationId>
@@ -69,7 +39,7 @@
       <updatedByDisplayName>JP Seini</updatedByDisplayName>
       <updatedAt>2025-11-06T10:36:53.2488796Z</updatedAt>
       <deviationsHash>92B5BCFD0676CF18CE0030FB50A73C7810CA28BF831847960B2192A5486600B6</deviationsHash>
-      <fileHash>7E74B6FE5510C7DDD34B4C7517C5982BA56D1255E320B43D193AB8B7653FB1A4</fileHash>
+      <fileHash>6CDFF9FB13A7D43F374B13BBCD1BE981F9B00584E4E94C75F84D05C139C5F40D</fileHash>
     </file>
     <file>
       <correlationId>Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial#f0710102-9ea8-4133-af13-9047df41a49f</correlationId>
@@ -149,7 +119,7 @@
       <updatedByDisplayName>JP Seini</updatedByDisplayName>
       <updatedAt>2025-11-07T12:03:47.2770308Z</updatedAt>
       <deviationsHash>19F366B0DE0F1B4DBA32BE231F319B6CC7A33A5BA5B5D3B0C95AAE27756483E7</deviationsHash>
-      <fileHash>F54AFB9DF20B8AA1BF30F1D89AA312161E7AF7C4F9E3578350BAA8791C38AC2E</fileHash>
+      <fileHash>880F74809A7651B85D54F24D3C423E7D17CB0C357D90F1F07495E8B4C66FB488</fileHash>
     </file>
   </files>
 </deviationsLog>
