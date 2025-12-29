@@ -81,3 +81,9 @@
     - On error, set a `serviceErrors.*` message and keep the dialog open.
 - Never call `dialogRef.close(...)` on failure.
 - The Cancel button must call `cancel()` and `cancel()` must only call `this.dialogRef.close(null)` (or `false`), with no additional logic.
+
+### Styling Rules
+- Use existing utility classes from `styles.scss` (e.g., `.filter-grid`, `.button-row`, `.table-wrapper`, `.ux-gradient-primary`, `.pa-4`, `.mb-4`, etc.)
+- Component `.scss` files should remain minimal - only add truly component-specific styles
+- If you need a new utility class or pattern that doesn't exist, you may add it to `styles.scss`
+- NEVER modify existing styles in `styles.scss` or `theme.scss` - only add new ones if needed

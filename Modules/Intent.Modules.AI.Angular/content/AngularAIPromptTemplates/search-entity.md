@@ -1,4 +1,10 @@
 
+### Styling Rules
+- Use existing utility classes from `styles.scss` (e.g., `.filter-grid`, `.button-row`, `.table-wrapper`, `.ux-gradient-primary`, `.pa-4`, `.mb-4`, etc.)
+- Component `.scss` files should remain minimal - only add truly component-specific styles
+- If you need a new utility class or pattern that doesn't exist, you may add it to `styles.scss`
+- NEVER modify existing styles in `styles.scss` or `theme.scss` - only add new ones if needed
+
 ### 1. Criteria must come ONLY from the backend search service
 - The search form **must only expose filters that are supported in the backend search service request model**.
 - Look at the generated TypeScript service proxies in `service-proxies/**`:

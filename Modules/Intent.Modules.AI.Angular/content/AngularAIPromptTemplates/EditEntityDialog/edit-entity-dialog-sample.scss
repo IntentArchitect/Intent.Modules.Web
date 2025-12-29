@@ -1,17 +1,22 @@
-﻿/* Ensure scrolling inside the dialog content */
-.dialog-content {
+﻿.dialog-content {
+    padding-top: 1.5rem !important;
+    padding-bottom: 1rem !important;
+    padding-right: 1.5rem !important;
+    padding-left: 1.5rem !important;
+    min-width: 600px;
     max-height: 70vh;
     overflow-y: auto;
-    padding-right: 4px; // prevents text overlapping scrollbars
+    overflow-x: hidden;
 }
 
-/* Core dialog grid */
 .grid {
     display: grid;
-    grid-template-columns: 1fr; // Single column for compact dialogs
+    grid-template-columns: 1fr;
     gap: 16px;
-    /* Larger dialogs = 2 columns */
-    @media (min-width: 800px) {
+}
+
+@media (min-width: 800px) {
+    .grid {
         grid-template-columns: repeat(2, 1fr);
     }
 }
@@ -20,26 +25,22 @@
     width: 100%;
 }
 
-/* Items that should span both columns */
 .grid-item-wide {
     grid-column: 1 / -1;
 }
 
-/* Section headers (Preferences, Loyalty, Addresses) */
 .section-title {
     font-size: 1.15rem;
     font-weight: 600;
     margin: 12px 0 4px;
 }
 
-/* Loyalty row: place title & slide toggle side by side */
 .loyalty-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
 
-/* Address block — reusable for Add and Edit dialogs */
 .address-block {
     grid-column: 1 / -1;
     padding: 16px;
@@ -49,18 +50,19 @@
     display: grid;
     gap: 12px;
     grid-template-columns: 1fr;
+}
 
-    @media (min-width: 800px) {
+@media (min-width: 800px) {
+    .address-block {
         grid-template-columns: repeat(2, 1fr);
-    }
-
-    .remove-btn {
-        grid-column: 1 / -1;
-        justify-self: start;
     }
 }
 
-/* Common spacing utilities */
+.address-block .remove-btn {
+    grid-column: 1 / -1;
+    justify-self: start;
+}
+
 .mt-1 {
     margin-top: 4px;
 }
@@ -93,17 +95,40 @@
     margin-right: 8px;
 }
 
-/* Dialog actions */
 mat-dialog-actions {
-    margin-top: 16px;
-    padding: 8px 0 0;
-    border-top: 1px solid #e5e5e5;
+    padding: 16px 24px 16px 24px !important;
+    margin: 0 !important;
+    border-top: 1px solid rgba(0, 0, 0, 0.12);
 }
 
-/* Optional loader styling */
 .loading-container {
     display: flex;
     flex-direction: column;
     align-items: center;
     padding: 32px 0;
+}
+
+.spinner {
+    margin-right: 8px;
+}
+
+.error-text {
+    color: #c62828;
+    background-color: #ffebee;
+    border-left: 4px solid #c62828;
+    border-radius: 4px;
+    padding: 0.75rem;
+    font-size: 0.875rem;
+}
+
+@media (max-width: 768px) {
+    .dialog-content {
+        min-width: 320px;
+        padding-left: 1rem !important;
+        padding-right: 1rem !important;
+    }
+
+    mat-dialog-actions {
+        padding: 12px 16px !important;
+    }
 }

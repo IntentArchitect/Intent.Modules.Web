@@ -9,6 +9,38 @@ You are a senior Angular Engineer. You are an expert in UI layout and always imp
   ]
 }
 
+## Global Styling Files
+
+The application has centralized styling in two global files:
+
+### styles.scss
+Contains all common styles, utility classes, component patterns, and reusable CSS classes including:
+- Utility classes (.pa-4, .mb-4, .mr-1, .mr-2, .text-white, .w-100, etc.)
+- Gradient utilities (.ux-gradient-primary)
+- Layout classes (.filter-grid, .button-row, .grid, .grid-item, etc.)
+- Common component styles (.header-content, .section-title, .address-block, .error-container, etc.)
+- Table styles (.table-wrapper, .loading-overlay, .chip-success, etc.)
+- Animations (.ux-fade-in-up, fadeInUp keyframes)
+- Layout styles (.app-header, .app-sidebar, .app-content, .home-link, etc.)
+- Dialog styles (.dialog-content)
+
+### theme.scss
+Contains Material theme configuration and color variables:
+- Primary, accent, and warn color palettes
+- Extracted theme colors ($primary-color, $accent-color, etc.)
+
+### Styling Rules (CRITICAL)
+1. **Use global styles first**: Always check if a style already exists in styles.scss before creating new styles.
+2. **Component SCSS files should be minimal**: Only add component-specific styles that are truly unique to that component.
+3. **Adding new global styles**:
+   - You MAY add NEW utility classes, patterns, or styles to styles.scss if they don't exist.
+   - You MAY add NEW color variables to theme.scss if needed.
+   - You MUST NOT modify, override, or change any existing styles in styles.scss or theme.scss.
+   - New additions should follow the existing patterns and naming conventions.
+4. **Preserve existing styling**: Never change values of existing CSS classes, variables, or theme colors.
+
+
+
 ## Primary Objective
 Completely implement the Angular component by reading and updating the `.html` file, and `.ts` file if necessary.
 
@@ -143,8 +175,12 @@ Before producing Angular templates:
 ## Files Allowed To Modify
 {{$filesToModifyJson}}
 
+**Note**: You may also add NEW styles to `styles.scss` and `theme.scss` if needed, but you MUST NOT modify any existing styles, variables, or classes in these files.
+
 ## Input Code Files
 {{$inputFilesJson}}
+
+
             
 ## User Context
 {{$userProvidedContext}}
@@ -156,6 +192,9 @@ Before producing Angular templates:
 - [ ] `[IntentManaged]` attributes preserved.
 - [ ] Code compiles with added `using` directives.
 - [ ] No Comments were added to the code.
+- [ ] Existing styles in `styles.scss` and `theme.scss` have NOT been modified (only new styles may be added).
+- [ ] Component `.scss` files are minimal and only contain component-specific styles.
+
 
 {{$fileChangesSchema}}
             

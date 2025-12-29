@@ -10,6 +10,7 @@
   <templates></templates>
   <decorators></decorators>
   <factoryExtensions>
+    <factoryExtension id="Intent.Angular.Components.Material.DialogBindingExtension" externalReference="be996282-2e4c-4043-9736-58d852e5c7d3" />
     <factoryExtension id="Intent.Angular.Components.Material.MaterialConfiguration" externalReference="721226fb-2212-40f2-998b-91efce6bb391" />
     <factoryExtension id="Intent.Angular.Components.Material.SampleFileConfiguration" externalReference="c6547084-8e5f-49f3-8e80-aa3d7c8f17d6" />
   </factoryExtensions>

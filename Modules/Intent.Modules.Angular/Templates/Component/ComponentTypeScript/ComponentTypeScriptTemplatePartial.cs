@@ -87,6 +87,8 @@ namespace Intent.Modules.Angular.Templates.Component.ComponentTypeScript
                 {
                     @class.AddMethod(operation.Name.ToCamelCase(true), operation.ReturnType is null ? "void" : GetTypeName(operation.ReturnType), method =>
                     {
+                        method.AddDecorator("@IntentMerge");
+
                         foreach (var param in operation.Parameters)
                         {
                             var paramName = $"{param.Name.ToCamelCase(true)}";
@@ -353,9 +355,9 @@ namespace Intent.Modules.Angular.Templates.Component.ComponentTypeScript
 
         private void ConfigureOnInitOperation(TypescriptClass @class, TypescriptMethod method)
         {
-            method.AddDecorator("IntentMerge");
+            var addRouteExtraction = Model.HasPage() && Model.Properties.Any(p => p.HasRouteParameter() || p.HasQueryParameter());
 
-            if (Model.Properties.Where(p => p.HasRouteParameter() || p.HasQueryParameter()).Any())
+            if (addRouteExtraction)
             {
                 var ctor = @class.Constructors.First();
                 if (!ctor.Parameters.Any(p => p.Name == "route"))
@@ -367,40 +369,45 @@ namespace Intent.Modules.Angular.Templates.Component.ComponentTypeScript
                 }
             }
 
-            foreach (var prop in Model.Properties.Where(p => p.HasRouteParameter() || p.HasQueryParameter()))
+            if (addRouteExtraction)
             {
-                // set some defaults
-                var propertyNullable = false;
-                var assignmentPrefix = "const ";
-                if (prop.TypeReference.IsNullable)
+                foreach (var prop in Model.Properties.Where(p => p.HasRouteParameter() || p.HasQueryParameter()))
                 {
-                    propertyNullable = true;
-                    assignmentPrefix = "this.";
-                }
+                    // set some defaults
+                    var propertyNullable = false;
+                    var assignmentPrefix = "const ";
+                    if (prop.TypeReference.IsNullable)
+                    {
+                        propertyNullable = true;
+                        assignmentPrefix = "this.";
+                    }
 
-                // if nullable, we can assign the value straight
-                if (prop.HasRouteParameter())
-                {
-                    method.AddStatement($"{assignmentPrefix}{prop.Name.ToCamelCase(true)} = this.route.snapshot.paramMap.get('{prop.Name.ToCamelCase(true)}');");
-                }
+                    // if nullable, we can assign the value straight
+                    if (prop.HasRouteParameter())
+                    {
+                        method.AddStatement($"{assignmentPrefix}{prop.Name.ToCamelCase(true)} = this.route.snapshot.paramMap.get('{prop.Name.ToCamelCase(true)}');");
+                    }
 
-                if (prop.HasQueryParameter())
-                {
-                    method.AddStatement($"{assignmentPrefix}{prop.Name.ToCamelCase(true)} = this.route.snapshot.queryParamMap.get('{prop.Name.ToCamelCase(true)}');");
-                }
+                    if (prop.HasQueryParameter())
+                    {
+                        method.AddStatement($"{assignmentPrefix}{prop.Name.ToCamelCase(true)} = this.route.snapshot.queryParamMap.get('{prop.Name.ToCamelCase(true)}');");
+                    }
 
-                // if nullable, assigned and move onto next one
-                if (propertyNullable)
-                {
-                    continue;
-                }
+                    // if nullable, assigned and move onto next one
+                    if (propertyNullable)
+                    {
+                        continue;
+                    }
 
-                // otherwise we need to add the check and throw error if not supplied
-                method.AddStatement(@$"if (!{prop.Name.ToCamelCase(true)}) {{
+                    // otherwise we need to add the check and throw error if not supplied
+                    method.AddStatement(@$"if (!{prop.Name.ToCamelCase(true)}) {{
       throw new Error(""Expected '{prop.Name.ToCamelCase(true)}' not supplied"");
     }}");
-                method.AddStatement($"this.{prop.Name.ToCamelCase(true)} = {prop.Name.ToCamelCase(true)};");
+                    method.AddStatement($"this.{prop.Name.ToCamelCase(true)} = {prop.Name.ToCamelCase(true)};");
+                }
             }
+
+            
         }
 
         public override void BeforeTemplateExecution()

@@ -1,8 +1,14 @@
-﻿import { Component, OnInit } from '@angular/core';
+﻿//@IntentMerge()
+import { IntentIgnoreBody, IntentMerge, IntentIgnore } from './../../../intent/intent.decorators';
+import { GetCustomersQuery } from './../../../service-proxies/models/my-back-end/services/customers/get-customers-query';
+import { CustomerSummaryQueryDto } from './../../../service-proxies/models/my-back-end/services/customers/customer-summary-query-dto';
+import { CustomersService } from './../../../service-proxies/Customers/customers-service';
+import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
+import { finalize } from 'rxjs';
+import { PagedResult } from './../../../service-proxies/models/paged-result';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { Router } from '@angular/router';
-
 import { MatCardModule } from '@angular/material/card';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -12,181 +18,208 @@ import { MatTableModule } from '@angular/material/table';
 import { MatPaginatorModule, PageEvent } from '@angular/material/paginator';
 import { MatSortModule, Sort } from '@angular/material/sort';
 import { MatSelectModule } from '@angular/material/select';
-import { MatSnackBar, MatSnackBarModule } from '@angular/material/snack-bar';
-import { MatDialog, MatDialogModule } from '@angular/material/dialog';
 import { MatChipsModule } from '@angular/material/chips';
 import { MatTooltipModule } from '@angular/material/tooltip';
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatDialogModule, MatDialog } from '@angular/material/dialog';
+import { CustomerAddDialogComponent } from './../customer-add-dialog/customer-add-dialog.component';
+import { CustomerEditDialogComponent } from './../customer-edit-dialog/customer-edit-dialog.component';
+import { CustomerDeleteDialogComponent } from './../customer-delete-dialog/customer-delete-dialog.component';
 
-import { CustomersService } from '../services/customers.service';
-import { DeleteCustomerConfirmDialogComponent } from './delete-customer-confirm-dialog.component';
-
-export interface CustomerSummaryDto {
-    id: string;
-    name: string;
-    surname: string;
-    email: string;
-    isActive: boolean;
+interface DeleteCustomerModel {
+  id: string | null;
 }
 
-export interface PagedResult<T> {
-    data: T[];
-    totalCount: number;
-}
-
+@IntentMerge()
 @Component({
-    selector: 'app-customers-management',
-    standalone: true,
-    templateUrl: './customers-management.component.html',
-    styleUrls: ['./customers-management.component.scss'],
-    imports: [
-        CommonModule,
-        FormsModule,
-        // Material
-        MatCardModule,
-        MatFormFieldModule,
-        MatInputModule,
-        MatButtonModule,
-        MatIconModule,
-        MatTableModule,
-        MatPaginatorModule,
-        MatSortModule,
-        MatSelectModule,
-        MatSnackBarModule,
-        MatDialogModule,
-        MatChipsModule,
-        MatTooltipModule,
-        MatProgressSpinnerModule
-    ]
+  selector: 'app-customer-search',
+  standalone: true,
+  templateUrl: 'customer-search.component.html',
+  styleUrls: ['customer-search.component.scss'],
+  imports: [
+    CommonModule,
+    FormsModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatButtonModule,
+    MatIconModule,
+    MatTableModule,
+    MatPaginatorModule,
+    MatSortModule,
+    MatSelectModule,
+    MatChipsModule,
+    MatTooltipModule,
+    MatProgressSpinnerModule,
+    MatDialogModule
+  ]
 })
-export class CustomersManagementComponent implements OnInit {
-    // Filters
-    searchText: string | null = '';
-    isActive: boolean | null = null;
+export class CustomerSearchComponent implements OnInit {
+  serviceErrors = {
+    loadCustomersError: null as string | null
+  };
+  isLoading = false;
+  customersModels: PagedResult<CustomerSummaryQueryDto> | null = null;
+  model: DeleteCustomerModel | null = null;
 
-    // Table / paging / sorting
-    displayedColumns: string[] = ['name', 'surname', 'email', 'status', 'actions'];
-    data: CustomerSummaryDto[] = [];
-    totalItems = 0;
-    pageSize = 10;
-    pageIndex = 0;
+  searchTerm: string | null = '';
+  isActiveFilter: boolean | null = null;
+  displayedColumns: string[] = ['name', 'surname', 'email', 'status', 'actions'];
+  pageSize = 10;
+  pageIndex = 0;
+  sortField: string | null = null;
+  sortDirection: 'asc' | 'desc' | '' = '';
 
-    sortField?: string;
-    sortDirection: 'asc' | 'desc' | '' = '';
+  get data(): CustomerSummaryQueryDto[] {
+    return this.customersModels?.data ?? [];
+  }
 
-    // UI state
-    isLoading = false;
+  get totalItems(): number {
+    return this.customersModels?.totalCount ?? 0;
+  }
 
-    constructor(
-        private customersService: CustomersService,
-        private snackBar: MatSnackBar,
-        private router: Router,
-        private dialog: MatDialog
-    ) { }
+  //@IntentMerge()
+  constructor(private router: Router, private readonly customersService: CustomersService, private dialog: MatDialog) {
+  }
 
-    ngOnInit(): void {
-        this.loadCustomers();
+  @IntentMerge()
+  ngOnInit(): void {
+    this.refreshCustomers();
+  }
+
+  @IntentMerge()
+  deleteCustomer(customerId: string): void {
+    const dialogRef = this.dialog.open(CustomerDeleteDialogComponent, {
+      width: '400px',
+      disableClose: true,
+      data: {
+        customerId: customerId
+      }
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.refreshCustomers();
+      }
+    });
+  }
+
+  @IntentMerge()
+  addCustomer(): void {
+    const dialogRef = this.dialog.open(CustomerAddDialogComponent, {
+      width: '800px',
+      disableClose: true
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.refreshCustomers();
+      }
+    });
+  }
+
+
+  @IntentMerge()
+  loadCustomers(pageNo: number, pageSize: number, orderBy: string | null, searchTerm: string | null, isActive: boolean | null): void {
+    this.serviceErrors.loadCustomersError = null;
+    this.isLoading = true;
+    
+    this.customersService.getCustomers({
+      pageNo: pageNo,
+      pageSize: pageSize,
+      orderBy: orderBy,
+      searchTerm: searchTerm,
+      isActive: isActive,
+    })
+    .pipe(
+        finalize(() => {
+          this.isLoading = false; 
+        })
+     )
+    .subscribe({
+      next: (data) => {
+        this.customersModels = data;
+      },
+      error: (err) => {
+        const message = err?.error?.message || err.message || 'Unknown error';
+        this.serviceErrors.loadCustomersError = `Failed to call service: ${message}`;
+
+        console.error('Failed to call service:', err);
+      }
+    });
+  }
+
+  navigateToCustomerAdd(): void {
+    this.router.navigate(['/customer', 'add']);
+  }
+
+  navigateToCustomerEdit(customerId: string): void {
+    this.router.navigate(['/customer', 'edit', customerId]);
+  }
+
+  onSearch(): void {
+    this.pageIndex = 0;
+    this.refreshCustomers();
+  }
+
+  onPageChange(event: PageEvent): void {
+    this.pageIndex = event.pageIndex;
+    this.pageSize = event.pageSize;
+    this.refreshCustomers();
+  }
+
+  onSortChange(sort: Sort): void {
+    if (!sort.direction) {
+      this.sortField = null;
+      this.sortDirection = '';
+    } else {
+      const fieldMap: Record<string, string> = {
+        name: 'Name',
+        surname: 'Surname',
+        email: 'Email'
+      };
+      this.sortField = fieldMap[sort.active] ?? sort.active;
+      this.sortDirection = sort.direction;
     }
+    this.refreshCustomers();
+  }
 
-    private loadCustomers(): void {
-        this.isLoading = true;
-
-        const orderBy = this.sortField
-            ? `${this.sortField} ${this.sortDirection || 'asc'}`
-            : undefined;
-
-        this.customersService
-            .getCustomers({
-                pageNo: this.pageIndex + 1,
-                pageSize: this.pageSize,
-                orderBy,
-                searchTerm: this.searchText || undefined,
-                isActive: this.isActive
-            })
-            .subscribe({
-                next: (result) => {
-                    this.data = result.data;
-                    this.totalItems = result.totalCount;
-                    this.isLoading = false;
-                },
-                error: (error) => {
-                    const message =
-                        error?.error?.message || 'Failed to load customers.';
-                    this.snackBar.open(message, 'Close', { duration: 5000 });
-                    this.isLoading = false;
-                }
-            });
+  private getOrderBy(): string | null {
+    if (!this.sortField || !this.sortDirection) {
+      return null;
     }
+    return `${this.sortField} ${this.sortDirection}`;
+  }
 
-    onSearch(): void {
-        this.pageIndex = 0;
-        this.loadCustomers();
-    }
+  private refreshCustomers(): void {
+    const trimmedSearch = this.searchTerm && this.searchTerm.trim().length > 0 ? this.searchTerm.trim() : null;
+    this.loadCustomers(
+      this.pageIndex + 1,
+      this.pageSize,
+      this.getOrderBy(),
+      trimmedSearch,
+      this.isActiveFilter
+    );
+  }
 
-    onPageChange(event: PageEvent): void {
-        this.pageIndex = event.pageIndex;
-        this.pageSize = event.pageSize;
-        this.loadCustomers();
-    }
+  @IntentMerge()
+  editCustomer(customerId: string): void {
+    const dialogRef = this.dialog.open(CustomerEditDialogComponent, {
+      width: '800px',
+      disableClose: true,
+      data: {
+        customerId: customerId
+      }
+    });
 
-    onSortChange(sort: Sort): void {
-        if (!sort.direction) {
-            this.sortField = undefined;
-            this.sortDirection = '';
-        } else {
-            const map: Record<string, string> = {
-                name: 'Name',
-                surname: 'Surname',
-                email: 'Email'
-            };
-            this.sortField = map[sort.active] ?? sort.active;
-            this.sortDirection = sort.direction;
-        }
+    dialogRef.afterClosed().subscribe(result => {
+      if (result) {
+        this.refreshCustomers();
+      }
+    });
+  }
 
-        this.loadCustomers();
-    }
-
-    addCustomer(): void {
-        this.router.navigate(['/templates/pages/customers/add']);
-    }
-
-    editCustomer(customerId: string): void {
-        this.router.navigate(['/templates/pages/customers/edit', customerId]);
-    }
-
-    viewCustomer(customerId: string): void {
-        this.router.navigate(['/templates/pages/customers/view', customerId]);
-    }
-
-    onDeleteCustomer(customerId: string): void {
-        const dialogRef = this.dialog.open(DeleteCustomerConfirmDialogComponent, {
-            width: '360px',
-            disableClose: true,
-            data: {
-                title: 'Delete customer',
-                message: 'Are you sure you want to delete this customer?'
-            }
-        });
-
-        dialogRef.afterClosed().subscribe((confirmed: boolean) => {
-            if (confirmed) {
-                this.deleteCustomer(customerId);
-            }
-        });
-    }
-
-    private deleteCustomer(customerId: string): void {
-        this.customersService.deleteCustomer(customerId).subscribe({
-            next: () => {
-                this.snackBar.open('Customer deleted successfully.', 'Close', {
-                    duration: 3000
-                });
-                this.loadCustomers();
-            },
-            error: (error) => {
-                const message = error?.error?.message || 'Failed to delete customer.';
-                this.snackBar.open(message, 'Close', { duration: 5000 });
-            }
-        });
-    }
+  navigateToCustomerViewPage(customerId: string): void {
+    this.router.navigate(['/customer', 'view', customerId]);
+  }
 }

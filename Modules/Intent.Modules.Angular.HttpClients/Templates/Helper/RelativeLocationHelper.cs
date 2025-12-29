@@ -1,10 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using Intent.Modelers.Services.Api;
+﻿using Intent.Modelers.Services.Api;
+using Intent.Modelers.Types.ServiceProxies.Api;
 using Intent.Modules.Common.Templates;
 using Intent.Modules.Common.Types.Api;
 using Intent.Modules.Common.TypeScript.Templates;
+using System;
+using System.Collections.Generic;
+using System.Linq;
 
 namespace Intent.Modules.Angular.HttpClients.Templates.Helper;
 
@@ -20,7 +21,7 @@ public static class RelativeLocationHelper
         return GetPackageBasedRelativeLocation<DTOModel>(template, parentFolders);
     }
 
-    private static string GetPackageBasedRelativeLocation<T>(TypeScriptTemplateBase<T> template, IEnumerable<string> parentFolders = null)
+    public static string GetPackageBasedRelativeLocation<T>(TypeScriptTemplateBase<T> template, IEnumerable<string> parentFolders = null)
         where T : IHasFolder
     {
         return string.Join('/', Enumerable.Empty<string>()
@@ -37,6 +38,7 @@ public static class RelativeLocationHelper
         {
             EnumModel model => model.InternalElement,
             DTOModel model => model.InternalElement,
+            IServiceProxyModel model => model.InternalElement,
             _ => throw new InvalidOperationException()
         };
 

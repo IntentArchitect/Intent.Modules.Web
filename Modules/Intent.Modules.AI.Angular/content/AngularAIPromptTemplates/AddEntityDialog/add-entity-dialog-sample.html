@@ -1,259 +1,267 @@
-﻿<form #form="ngForm" novalidate (ngSubmit)="onSave(form)">
-    <h2 mat-dialog-title>Add Customer</h2>
+﻿<form #form="ngForm" novalidate (ngSubmit)="save(form)">
+  <h2 mat-dialog-title>Add Customer</h2>
 
-    <mat-dialog-content class="dialog-content">
-        <div class="grid">
-            <!-- Name -->
-            <div class="grid-item">
-                <mat-form-field appearance="outline" class="w-100">
-                    <mat-label>Name</mat-label>
-                    <input matInput
-                           required
-                           name="name"
-                           [(ngModel)]="model.name"
-                           #nameCtrl="ngModel" />
-                    <mat-error *ngIf="nameCtrl.invalid && (nameCtrl.touched || form.submitted)">
-                        Name is required
-                    </mat-error>
-                </mat-form-field>
-            </div>
+  <mat-dialog-content class="dialog-content">
+    <div class="grid">
+      <div class="grid-item">
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>Name</mat-label>
+          <input
+            matInput
+            required
+            name="name"
+            [(ngModel)]="model.name"
+            #nameCtrl="ngModel" />
+          <mat-error *ngIf="nameCtrl.invalid && (nameCtrl.touched || form.submitted)">
+            Name is required
+          </mat-error>
+        </mat-form-field>
+      </div>
 
-            <!-- Surname -->
-            <div class="grid-item">
-                <mat-form-field appearance="outline" class="w-100">
-                    <mat-label>Surname</mat-label>
-                    <input matInput
-                           required
-                           name="surname"
-                           [(ngModel)]="model.surname"
-                           #surnameCtrl="ngModel" />
-                    <mat-error *ngIf="surnameCtrl.invalid && (surnameCtrl.touched || form.submitted)">
-                        Surname is required
-                    </mat-error>
-                </mat-form-field>
-            </div>
+      <div class="grid-item">
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>Surname</mat-label>
+          <input
+            matInput
+            required
+            name="surname"
+            [(ngModel)]="model.surname"
+            #surnameCtrl="ngModel" />
+          <mat-error *ngIf="surnameCtrl.invalid && (surnameCtrl.touched || form.submitted)">
+            Surname is required
+          </mat-error>
+        </mat-form-field>
+      </div>
 
-            <!-- Email -->
-            <div class="grid-item">
-                <mat-form-field appearance="outline" class="w-100">
-                    <mat-label>Email</mat-label>
-                    <input matInput
-                           required
-                           email
-                           name="email"
-                           [(ngModel)]="model.email"
-                           #emailCtrl="ngModel" />
-                    <mat-error *ngIf="emailCtrl.hasError('required') && (emailCtrl.touched || form.submitted)">
-                        Email is required
-                    </mat-error>
-                    <mat-error *ngIf="emailCtrl.hasError('email') && !emailCtrl.hasError('required') && (emailCtrl.touched || form.submitted)">
-                        Please enter a valid email
-                    </mat-error>
-                </mat-form-field>
-            </div>
+      <div class="grid-item">
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>Email</mat-label>
+          <input
+            matInput
+            required
+            email
+            name="email"
+            [(ngModel)]="model.email"
+            #emailCtrl="ngModel" />
+          <mat-error *ngIf="emailCtrl.hasError('required') && (emailCtrl.touched || form.submitted)">
+            Email is required
+          </mat-error>
+          <mat-error *ngIf="emailCtrl.hasError('email') && !emailCtrl.hasError('required') && (emailCtrl.touched || form.submitted)">
+            Please enter a valid email
+          </mat-error>
+        </mat-form-field>
+      </div>
 
-            <!-- Category -->
-            <div class="grid-item">
-                <mat-form-field appearance="outline" class="w-100">
-                    <mat-label>Category</mat-label>
-                    <mat-select required
-                                name="categoryId"
-                                [(ngModel)]="model.categoryId"
-                                #categoryCtrl="ngModel"
-                                (selectionChange)="onCategoryChange($event.value)">
-                        <mat-option [value]="''">Select category</mat-option>
-                        <mat-option *ngFor="let c of categoriesModels"
-                                    [value]="c.id">
-                            {{ c.name }}
-                        </mat-option>
-                    </mat-select>
-                    <mat-error *ngIf="categoryCtrl.invalid && (categoryCtrl.touched || form.submitted)">
-                        Category is required
-                    </mat-error>
-                </mat-form-field>
-            </div>
+      <div class="grid-item">
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>Category</mat-label>
+          <mat-select
+            required
+            name="categoryId"
+            [(ngModel)]="model.categoryId"
+            #categoryCtrl="ngModel"
+            (selectionChange)="onCategoryChange($event.value)">
+            <mat-option [value]="''">Select category</mat-option>
+            <mat-option *ngFor="let c of categoriesModels" [value]="c.id">
+              {{ c.name }}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="categoryCtrl.invalid && (categoryCtrl.touched || form.submitted)">
+            Category is required
+          </mat-error>
+        </mat-form-field>
+      </div>
 
-            <!-- Sub Category -->
-            <div class="grid-item">
-                <mat-form-field appearance="outline" class="w-100">
-                    <mat-label>Sub Category</mat-label>
-                    <mat-select required
-                                name="subCategoryId"
-                                [(ngModel)]="model.subCategoryId"
-                                #subCategoryCtrl="ngModel"
-                                [disabled]="!subCategoriesModels || subCategoriesModels.length === 0">
-                        <mat-option [value]="''">Select sub category</mat-option>
-                        <mat-option *ngFor="let s of subCategoriesModels"
-                                    [value]="s.id">
-                            {{ s.name }}
-                        </mat-option>
-                    </mat-select>
-                    <mat-error *ngIf="subCategoryCtrl.invalid && (subCategoryCtrl.touched || form.submitted)">
-                        Sub category is required
-                    </mat-error>
-                </mat-form-field>
-            </div>
+      <div class="grid-item">
+        <mat-form-field appearance="outline" class="w-100">
+          <mat-label>Sub Category</mat-label>
+          <mat-select
+            required
+            name="subCategoryId"
+            [(ngModel)]="model.subCategoryId"
+            #subCategoryCtrl="ngModel"
+            [disabled]="!subCategoriesModels || subCategoriesModels.length === 0">
+            <mat-option [value]="''">Select sub category</mat-option>
+            <mat-option *ngFor="let s of subCategoriesModels" [value]="s.id">
+              {{ s.name }}
+            </mat-option>
+          </mat-select>
+          <mat-error *ngIf="subCategoryCtrl.invalid && (subCategoryCtrl.touched || form.submitted)">
+            Sub category is required
+          </mat-error>
+        </mat-form-field>
+      </div>
 
-            <!-- Active -->
-            <div class="grid-item">
-                <mat-slide-toggle color="primary"
-                                  name="isActive"
-                                  [(ngModel)]="model.isActive">
-                    Active
-                </mat-slide-toggle>
-            </div>
+      <div class="grid-item">
+        <mat-slide-toggle
+          color="primary"
+          name="isActive"
+          [(ngModel)]="model.isActive">
+          Active
+        </mat-slide-toggle>
+      </div>
 
-            <!-- Loyalty header -->
-            <div class="grid-item-wide loyalty-header">
-                <div class="section-title">Loyalty</div>
-                <mat-slide-toggle color="primary"
-                                  name="hasLoyalty"
-                                  [(ngModel)]="hasLoyalty"
-                                  (change)="onHasLoyaltyChange($event.checked)">
-                    Has Loyalty
-                </mat-slide-toggle>
-            </div>
+      <div class="grid-item-wide loyalty-header">
+        <div class="section-title">Loyalty</div>
+        <mat-slide-toggle
+          color="primary"
+          name="hasLoyalty"
+          [(ngModel)]="hasLoyalty"
+          (change)="onHasLoyaltyChange($event.checked)">
+          Has Loyalty
+        </mat-slide-toggle>
+      </div>
 
-            <!-- Loyalty fields -->
-            <ng-container *ngIf="hasLoyalty">
-                <div class="grid-item">
-                    <mat-form-field class="w-100" appearance="outline">
-                        <mat-label>Loyalty Number</mat-label>
-                        <input matInput
-                               required
-                               name="loyaltyNo"
-                               [(ngModel)]="model.loyalty!.loyaltyNo"
-                               #loyaltyNoCtrl="ngModel" />
-                        <mat-error *ngIf="loyaltyNoCtrl.invalid && (loyaltyNoCtrl.touched || form.submitted)">
-                            Loyalty number is required
-                        </mat-error>
-                    </mat-form-field>
-                </div>
-
-                <div class="grid-item">
-                    <mat-form-field class="w-100" appearance="outline">
-                        <mat-label>Points</mat-label>
-                        <input matInput
-                               type="number"
-                               min="0"
-                               name="loyaltyPoints"
-                               [(ngModel)]="model.loyalty!.points" />
-                    </mat-form-field>
-                </div>
-            </ng-container>
-
-            <!-- Preferences -->
-            <div class="grid-item-wide mt-2">
-                <div class="section-title">Communication Preferences</div>
-                <div class="preferences-row">
-                    <mat-slide-toggle color="primary"
-                                      name="prefNewsLetter"
-                                      [(ngModel)]="model.preference.newsLetter">
-                        Newsletter
-                    </mat-slide-toggle>
-                    <mat-slide-toggle color="primary"
-                                      name="prefSpecials"
-                                      [(ngModel)]="model.preference.specials">
-                        Specials
-                    </mat-slide-toggle>
-                </div>
-            </div>
-
-            <!-- Addresses -->
-            <div class="grid-item-wide mt-2">
-                <div class="section-title">Addresses</div>
-            </div>
-
-            <div class="grid-item-wide">
-                <ng-container *ngFor="let addr of model.addresses; let i = index">
-                    <div class="address-block">
-                        <mat-form-field appearance="outline" class="w-100">
-                            <mat-label>Type</mat-label>
-                            <mat-select name="addressType{{ i }}"
-                                        [(ngModel)]="addr.addressType">
-                                <mat-option [value]="AddressType.Deliver">Delivery</mat-option>
-                                <mat-option [value]="AddressType.Billing">Billing</mat-option>
-                            </mat-select>
-                        </mat-form-field>
-
-                        <mat-form-field class="w-100" appearance="outline">
-                            <mat-label>Line 1</mat-label>
-                            <input matInput
-                                   required
-                                   name="addrLine1{{ i }}"
-                                   [(ngModel)]="addr.line1"
-                                   #addrLine1Ctrl="ngModel" />
-                            <mat-error *ngIf="addrLine1Ctrl.invalid && (addrLine1Ctrl.touched || form.submitted)">
-                                Line 1 is required
-                            </mat-error>
-                        </mat-form-field>
-
-                        <mat-form-field class="w-100" appearance="outline">
-                            <mat-label>Line 2</mat-label>
-                            <input matInput
-                                   name="addrLine2{{ i }}"
-                                   [(ngModel)]="addr.line2" />
-                        </mat-form-field>
-
-                        <mat-form-field class="w-100" appearance="outline">
-                            <mat-label>City</mat-label>
-                            <input matInput
-                                   required
-                                   name="addrCity{{ i }}"
-                                   [(ngModel)]="addr.city"
-                                   #addrCityCtrl="ngModel" />
-                            <mat-error *ngIf="addrCityCtrl.invalid && (addrCityCtrl.touched || form.submitted)">
-                                City is required
-                            </mat-error>
-                        </mat-form-field>
-
-                        <mat-form-field class="w-100" appearance="outline">
-                            <mat-label>Postal</mat-label>
-                            <input matInput
-                                   required
-                                   name="addrPostal{{ i }}"
-                                   [(ngModel)]="addr.postal"
-                                   #addrPostalCtrl="ngModel" />
-                            <mat-error *ngIf="addrPostalCtrl.invalid && (addrPostalCtrl.touched || form.submitted)">
-                                Postal code is required
-                            </mat-error>
-                        </mat-form-field>
-
-                        <button mat-stroked-button
-                                color="warn"
-                                type="button"
-                                (click)="removeAddress(i)">
-                            Remove
-                        </button>
-                    </div>
-                </ng-container>
-
-                <button mat-stroked-button
-                        color="primary"
-                        type="button"
-                        (click)="addAddress()">
-                    Add address
-                </button>
-            </div>
-
-            <!-- Service error -->
-            <div class="grid-item-wide error-text" *ngIf="serviceErrors.createCustomerError">
-                {{ serviceErrors.createCustomerError }}
-            </div>
+      <ng-container *ngIf="hasLoyalty">
+        <div class="grid-item">
+          <mat-form-field class="w-100" appearance="outline">
+            <mat-label>Loyalty Number</mat-label>
+            <input
+              matInput
+              required
+              name="loyaltyNo"
+              [(ngModel)]="model.loyalty!.loyaltyNo"
+              #loyaltyNoCtrl="ngModel" />
+            <mat-error *ngIf="loyaltyNoCtrl.invalid && (loyaltyNoCtrl.touched || form.submitted)">
+              Loyalty number is required
+            </mat-error>
+          </mat-form-field>
         </div>
-    </mat-dialog-content>
 
-    <mat-dialog-actions align="end">
-        <button mat-button type="button" (click)="cancel()">Cancel</button>
+        <div class="grid-item">
+          <mat-form-field class="w-100" appearance="outline">
+            <mat-label>Points</mat-label>
+            <input
+              matInput
+              type="number"
+              min="0"
+              name="loyaltyPoints"
+              [(ngModel)]="model.loyalty!.points" />
+          </mat-form-field>
+        </div>
+      </ng-container>
 
-        <button mat-raised-button
-                color="primary"
-                type="submit"
-                [disabled]="form.invalid || isLoading">
-            <mat-progress-spinner *ngIf="isLoading"
-                                  mode="indeterminate"
-                                  diameter="18"></mat-progress-spinner>
-            <span *ngIf="!isLoading">Save</span>
+      <div class="grid-item-wide mt-2">
+        <div class="section-title">Communication Preferences</div>
+        <div class="preferences-row">
+          <mat-slide-toggle
+            color="primary"
+            name="prefNewsLetter"
+            [(ngModel)]="model.preference.newsLetter">
+            Newsletter
+          </mat-slide-toggle>
+          <mat-slide-toggle
+            color="primary"
+            name="prefSpecials"
+            [(ngModel)]="model.preference.specials">
+            Specials
+          </mat-slide-toggle>
+        </div>
+      </div>
+
+      <div class="grid-item-wide mt-2">
+        <div class="section-title">Addresses</div>
+      </div>
+
+      <div class="grid-item-wide">
+        <ng-container *ngFor="let addr of model.addresses; let i = index">
+          <div class="address-block">
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Type</mat-label>
+              <mat-select
+                name="addressType{{ i }}"
+                [(ngModel)]="addr.addressType">
+                <mat-option [value]="AddressType.Deliver">Delivery</mat-option>
+                <mat-option [value]="AddressType.Billing">Billing</mat-option>
+              </mat-select>
+            </mat-form-field>
+
+            <mat-form-field class="w-100" appearance="outline">
+              <mat-label>Line 1</mat-label>
+              <input
+                matInput
+                required
+                name="addrLine1{{ i }}"
+                [(ngModel)]="addr.line1"
+                #addrLine1Ctrl="ngModel" />
+              <mat-error *ngIf="addrLine1Ctrl.invalid && (addrLine1Ctrl.touched || form.submitted)">
+                Line 1 is required
+              </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="w-100" appearance="outline">
+              <mat-label>Line 2</mat-label>
+              <input
+                matInput
+                name="addrLine2{{ i }}"
+                [(ngModel)]="addr.line2" />
+            </mat-form-field>
+
+            <mat-form-field class="w-100" appearance="outline">
+              <mat-label>City</mat-label>
+              <input
+                matInput
+                required
+                name="addrCity{{ i }}"
+                [(ngModel)]="addr.city"
+                #addrCityCtrl="ngModel" />
+              <mat-error *ngIf="addrCityCtrl.invalid && (addrCityCtrl.touched || form.submitted)">
+                City is required
+              </mat-error>
+            </mat-form-field>
+
+            <mat-form-field class="w-100" appearance="outline">
+              <mat-label>Postal</mat-label>
+              <input
+                matInput
+                required
+                name="addrPostal{{ i }}"
+                [(ngModel)]="addr.postal"
+                #addrPostalCtrl="ngModel" />
+              <mat-error *ngIf="addrPostalCtrl.invalid && (addrPostalCtrl.touched || form.submitted)">
+                Postal code is required
+              </mat-error>
+            </mat-form-field>
+
+            <button
+              mat-stroked-button
+              color="warn"
+              type="button"
+              (click)="removeAddress(i)">
+              Remove
+            </button>
+          </div>
+        </ng-container>
+
+        <button
+          mat-stroked-button
+          color="primary"
+          type="button"
+          (click)="addAddress()">
+          Add address
         </button>
-    </mat-dialog-actions>
+      </div>
+
+      <div class="grid-item-wide error-container" *ngIf="serviceErrors.createCustomerError">
+        {{ serviceErrors.createCustomerError }}
+      </div>
+    </div>
+  </mat-dialog-content>
+
+  <mat-dialog-actions align="end">
+    <button mat-button type="button" (click)="cancel()">Cancel</button>
+
+    <button
+      mat-raised-button
+      color="primary"
+      type="submit"
+      [disabled]="form.invalid || isLoading">
+      <mat-progress-spinner
+        *ngIf="isLoading"
+        mode="indeterminate"
+        diameter="18">
+      </mat-progress-spinner>
+      <span *ngIf="!isLoading">Save</span>
+    </button>
+  </mat-dialog-actions>
 </form>

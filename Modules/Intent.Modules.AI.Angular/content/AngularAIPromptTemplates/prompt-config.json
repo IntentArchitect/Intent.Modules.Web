@@ -36,6 +36,14 @@
         {
           "type": "Template",
           "template-id": "Intent.Angular.HttpClients.PagedResult"
+        },
+        {
+          "type": "Template",
+          "template-id": "Intent.Angular.Core.StylesDotScssFileTemplate"
+        },
+        {
+          "type": "Template",
+          "template-id": "Intent.Angular.Core.ThemeDotScssFileTemplate"
         }
       ]
     },
@@ -58,7 +66,17 @@
             "weight": 2
           }
         ]
-      }
+      },
+      "input-files": [
+        {
+          "type": "Template",
+          "template-id": "Intent.Angular.Core.StylesDotScssFileTemplate"
+        },
+        {
+          "type": "Template",
+          "template-id": "Intent.Angular.Core.ThemeDotScssFileTemplate"
+        }
+      ]
     },
     {
       "id": "EditEntity",
@@ -83,7 +101,17 @@
             "weight": 2
           }
         ]
-      }
+      },
+      "input-files": [
+        {
+          "type": "Template",
+          "template-id": "Intent.Angular.Core.StylesDotScssFileTemplate"
+        },
+        {
+          "type": "Template",
+          "template-id": "Intent.Angular.Core.ThemeDotScssFileTemplate"
+        }
+      ]
     },
     {
       "id": "ViewEntity",
@@ -108,7 +136,17 @@
             "weight": 2
           }
         ]
-      }
+      },
+      "input-files": [
+        {
+          "type": "Template",
+          "template-id": "Intent.Angular.Core.StylesDotScssFileTemplate"
+        },
+        {
+          "type": "Template",
+          "template-id": "Intent.Angular.Core.ThemeDotScssFileTemplate"
+        }
+      ]
     },
     {
       "id": "AddEntityDialog",
@@ -133,7 +171,17 @@
             "weight": 2
           }
         ]
-      }
+      },
+      "input-files": [
+        {
+          "type": "Template",
+          "template-id": "Intent.Angular.Core.StylesDotScssFileTemplate"
+        },
+        {
+          "type": "Template",
+          "template-id": "Intent.Angular.Core.ThemeDotScssFileTemplate"
+        }
+      ]
     },
     {
       "id": "EditEntityDialog",
@@ -162,7 +210,17 @@
             "weight": 2
           }
         ]
-      }
+      },
+      "input-files": [
+        {
+          "type": "Template",
+          "template-id": "Intent.Angular.Core.StylesDotScssFileTemplate"
+        },
+        {
+          "type": "Template",
+          "template-id": "Intent.Angular.Core.ThemeDotScssFileTemplate"
+        }
+      ]
     },
     {
       "id": "MainLayout",
@@ -188,6 +246,14 @@
         {
           "type": "Template",
           "template-id": "Intent.Angular.Core.AppRoutes"
+        },
+        {
+          "type": "Template",
+          "template-id": "Intent.Angular.Core.StylesDotScssFileTemplate"
+        },
+        {
+          "type": "Template",
+          "template-id": "Intent.Angular.Core.ThemeDotScssFileTemplate"
         }
       ]
     }

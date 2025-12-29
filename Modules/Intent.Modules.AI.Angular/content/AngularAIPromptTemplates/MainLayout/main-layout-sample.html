@@ -1,20 +1,27 @@
 <mat-toolbar color="primary" class="app-header">
-  <button mat-icon-button="" (click)="drawer.toggle()" aria-label="Toggle menu">
+  <button mat-icon-button (click)="drawer.toggle()" aria-label="Toggle menu">
     <mat-icon>menu</mat-icon>
   </button>
-  <a routerLink="/" class="home-link" mat-button="">
+  <a routerLink="/" class="home-link" mat-button>
     <mat-icon>home</mat-icon>
     <span>Home</span>
   </a>
 </mat-toolbar>
 
 <mat-sidenav-container class="app-layout">
-  <mat-sidenav #drawer="" mode="side" opened="" class="app-sidebar">
+  <mat-sidenav #drawer mode="side" opened class="app-sidebar">
     <mat-nav-list>
-      <h3 mat-subheader="">Navigation</h3>
-      <a mat-list-item="" routerLink="/example-page/ModeledRoute" routerLinkActive="active">
-        <mat-icon matListItemIcon="">text_rotation_none</mat-icon>
-        <span matListItemTitle="">Example Page</span>
+      <a mat-list-item routerLink="/customer/category-list" routerLinkActive="active">
+        <mat-icon matListItemIcon>category</mat-icon>
+        <span matListItemTitle>Category List</span>
+      </a>
+      <a mat-list-item routerLink="/customer/search" routerLinkActive="active">
+        <mat-icon matListItemIcon>search</mat-icon>
+        <span matListItemTitle>Customer Search</span>
+      </a>
+      <a mat-list-item routerLink="/example-page/ModeledRoute" routerLinkActive="active">
+        <mat-icon matListItemIcon>text_rotation_none</mat-icon>
+        <span matListItemTitle>Example Page</span>
       </a>
     </mat-nav-list>
   </mat-sidenav>
@@ -23,5 +30,3 @@
     <router-outlet></router-outlet>
   </mat-sidenav-content>
 </mat-sidenav-container>
-
-

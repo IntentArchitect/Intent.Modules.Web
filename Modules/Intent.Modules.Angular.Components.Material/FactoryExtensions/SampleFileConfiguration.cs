@@ -1,3 +1,5 @@
+using System;
+using System.Linq;
 using Intent.Engine;
 using Intent.Modules.Angular.Templates.Component.ComponentStyle;
 using Intent.Modules.Angular.Templates.Component.LayoutComponentHtml;
@@ -11,8 +13,6 @@ using Intent.Modules.Common.Plugins;
 using Intent.Modules.Common.TypeScript.Templates;
 using Intent.Plugins.FactoryExtensions;
 using Intent.RoslynWeaver.Attributes;
-using System;
-using System.Linq;
 using static System.Net.Mime.MediaTypeNames;
 
 [assembly: DefaultIntentManaged(Mode.Fully)]
@@ -215,8 +215,8 @@ namespace Intent.Modules.Angular.Components.Material.FactoryExtensions
 }
 
 .app-layout {
-  height: 100vh;
-  padding-top: 64px;
+  height: calc(100vh - 64px);
+  margin-top: 64px;
   display: flex;
 }
 
@@ -226,6 +226,7 @@ namespace Intent.Modules.Angular.Components.Material.FactoryExtensions
   border-right: 2px solid rgba(theme.$primary-color, 0.2);
   overflow-y: auto;
   overflow-x: hidden;
+  z-index: 1000;
 }
 
 .sidebar-nav {
@@ -289,9 +290,7 @@ namespace Intent.Modules.Angular.Components.Material.FactoryExtensions
   .sidebar-toggle:checked ~ .app-layout .app-sidebar {
     left: 0;
   }
-}
-
-";
+}";
 
         private const string HomeDefaultStyle = @"// Default Home Component Styles. This can overridden or modified as needed manually or using AI
 @use '../../../theme' as theme;
@@ -573,7 +572,161 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-}";
+}
+
+// Common card container styles
+.card-container {
+  display: flex;
+  justify-content: center;
+  padding: 24px;
+}
+
+.card-content {
+  width: 100%;
+  max-width: 960px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 24px;
+}
+
+// Common error message styles
+.error-message {
+  color: theme.$warn-color;
+  background-color: theme.$warn-light;
+  border-radius: $radius-sm;
+  padding: 8px 12px;
+  font-size: 14px;
+}
+
+// Common loading overlay styles
+.loading-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgba(255, 255, 255, 0.7);
+}
+
+// Common no results / empty state styles
+.empty-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 32px 16px;
+  color: rgba(0, 0, 0, 0.54);
+
+  mat-icon {
+    font-size: 40px;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+// Common table container styles
+.table-container {
+  position: relative;
+  overflow: auto;
+  border-radius: $radius-sm;
+
+  &.loading {
+    pointer-events: none;
+    opacity: 0.8;
+  }
+}
+
+// Utility classes
+.pa-4 { padding: 1.5rem !important; }
+.mb-4 { margin-bottom: 1.5rem !important; }
+.mr-1 { margin-right: 0.25rem !important; }
+.mr-2 { margin-right: 0.5rem !important; }
+.my-4 { margin-top: 1rem !important; margin-bottom: 1rem !important; }
+.w-100 { width: 100%; }
+.text-white { color: white; }
+.font-weight-bold { font-weight: 600; }
+.opacity-90 { opacity: 0.9; }
+
+// Gradient header card
+.ux-gradient-primary {
+  background: linear-gradient(135deg, #{theme.$primary-color} 0%, #{theme.$primary-light} 100%);
+  color: white;
+  border: none;
+  box-shadow: 0 4px 12px rgba(25, 118, 210, 0.3);
+}
+
+// Fade in animation
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.ux-fade-in-up {
+  animation: fadeInUp 0.5s ease-out forwards;
+}
+
+// Header content styling
+.header-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.title-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  
+  mat-icon {
+    font-size: 32px;
+    width: 32px;
+    height: 32px;
+  }
+}
+
+.subtitle-row {
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+// Button row
+.button-row {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+// Status chips
+.chip-success {
+  background-color: #c8e6c9 !important;
+  color: #2e7d32 !important;
+}
+
+.chip-error {
+  background-color: #ffcdd2 !important;
+  color: #c62828 !important;
+}
+
+// Loading container
+.loading-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem;
+  color: rgba(0, 0, 0, 0.54);
+}
+
+.mt-2 { margin-top: 0.5rem !important; }";
 
     }
 }

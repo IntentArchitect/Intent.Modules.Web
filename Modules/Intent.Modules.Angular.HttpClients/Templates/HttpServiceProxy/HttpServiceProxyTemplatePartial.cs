@@ -1,8 +1,3 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
 using Intent.Engine;
 using Intent.Modelers.Services.Api;
 using Intent.Modelers.Services.CQRS.Api;
@@ -14,12 +9,19 @@ using Intent.Modules.Angular.ServiceProxies.Templates.Proxies.PagedResult;
 using Intent.Modules.Angular.Templates.Helper;
 using Intent.Modules.Common;
 using Intent.Modules.Common.Templates;
+using Intent.Modules.Common.Types.Api;
 using Intent.Modules.Common.TypeScript.Builder;
 using Intent.Modules.Common.TypeScript.Events;
 using Intent.Modules.Common.TypeScript.Templates;
 using Intent.Modules.Metadata.WebApi.Models;
 using Intent.RoslynWeaver.Attributes;
 using Intent.Templates;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net;
+using System.Text;
+using System.Text.RegularExpressions;
 
 [assembly: DefaultIntentManaged(Mode.Fully)]
 [assembly: IntentTemplate("Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial", Version = "1.0")]
@@ -266,9 +268,17 @@ namespace Intent.Modules.Angular.HttpClients.Templates.HttpServiceProxy
         [IntentManaged(Mode.Fully)]
         public TypescriptFile TypescriptFile { get; }
 
-        [IntentManaged(Mode.Fully)]
+        [IntentManaged(Mode.Ignore)]
         public override ITemplateFileConfig GetTemplateFileConfig()
         {
+            return new TypeScriptFileConfig(
+               overwriteBehaviour: OverwriteBehaviour.Always,
+               fileName: $"{Model.Name.ToKebabCase()}",
+               relativeLocation: $"{string.Join("/", Model.GetParentFolderNames().Select(f => f.ToKebabCase()))}",
+               //relativeLocation: RelativeLocationHelper.GetPackageBasedRelativeLocation<IServiceProxyModel>(this, []),
+               className: $"{Model.Name}"
+           );
+
             return TypescriptFile.GetConfig($"{Model.Name}");
         }
 
@@ -443,7 +453,9 @@ namespace Intent.Modules.Angular.HttpClients.Templates.HttpServiceProxy
             }
             else if (operation.Inputs.FirstOrDefault(x => x.Source == HttpInputSource.FromBody) is { } bodyParam)
             {
-                arguments.Add(bodyParam.Name.ToCamelCase(true));
+                var fields = operation.InternalElement.ChildElements.Where(x => x.IsDTOFieldModel()).ToArray();
+
+                arguments.Add(fields.Length == 1 ? $"{{ {fields[0].Name.ToCamelCase(true)} }}" : bodyParam.Name.ToCamelCase(true));
             }
             else if (operation.Verb is HttpVerb.Post or HttpVerb.Put)
             {

@@ -4,7 +4,6 @@
     <mat-dialog-content class="dialog-content">
         <ng-container *ngIf="model; else loadingTpl">
             <div class="grid">
-                <!-- Name -->
                 <div class="grid-item">
                     <mat-form-field appearance="outline" class="w-100">
                         <mat-label>Name</mat-label>
@@ -19,7 +18,6 @@
                     </mat-form-field>
                 </div>
 
-                <!-- Surname -->
                 <div class="grid-item">
                     <mat-form-field appearance="outline" class="w-100">
                         <mat-label>Surname</mat-label>
@@ -34,7 +32,6 @@
                     </mat-form-field>
                 </div>
 
-                <!-- Email -->
                 <div class="grid-item">
                     <mat-form-field appearance="outline" class="w-100">
                         <mat-label>Email</mat-label>
@@ -53,7 +50,6 @@
                     </mat-form-field>
                 </div>
 
-                <!-- Category -->
                 <div class="grid-item">
                     <mat-form-field appearance="outline" class="w-100">
                         <mat-label>Category</mat-label>
@@ -73,7 +69,6 @@
                     </mat-form-field>
                 </div>
 
-                <!-- Sub Category -->
                 <div class="grid-item">
                     <mat-form-field appearance="outline" class="w-100">
                         <mat-label>Sub Category</mat-label>
@@ -92,7 +87,6 @@
                     </mat-form-field>
                 </div>
 
-                <!-- Active -->
                 <div class="grid-item">
                     <mat-slide-toggle color="primary"
                                       name="isActive"
@@ -101,7 +95,6 @@
                     </mat-slide-toggle>
                 </div>
 
-                <!-- Preferences -->
                 <div class="grid-item-wide">
                     <h3 class="section-title">Preferences</h3>
                 </div>
@@ -122,7 +115,6 @@
                     </mat-slide-toggle>
                 </div>
 
-                <!-- Loyalty -->
                 <div class="grid-item-wide">
                     <div class="loyalty-header">
                         <h3 class="section-title">Loyalty</h3>
@@ -161,7 +153,6 @@
                     </div>
                 </ng-container>
 
-                <!-- Addresses -->
                 <div class="grid-item-wide">
                     <h3 class="section-title">Addresses</h3>
                 </div>
@@ -223,6 +214,7 @@
                         <button mat-stroked-button
                                 color="warn"
                                 type="button"
+                                class="remove-btn"
                                 (click)="removeAddress(i)">
                             Remove
                         </button>
@@ -238,7 +230,6 @@
                     </button>
                 </div>
 
-                <!-- Error -->
                 <div class="grid-item-wide error-text" *ngIf="serviceErrors.updateCustomerError">
                     {{ serviceErrors.updateCustomerError }}
                 </div>
