@@ -1,7 +1,7 @@
 //@IntentMerge()
-import { IntentIgnoreBody, IntentMerge, IntentIgnore } from './../../intent/intent.decorators';
-import { CreateProductCommand } from './../../service-proxies/models/dot-net-back-end-service/services/products/create-product-command';
-import { ProductsService } from './../../service-proxies/products/products-service';
+import { IntentIgnoreBody, IntentMerge, IntentIgnore } from '../../intent/intent.decorators';
+import { CreateProductCommand } from '../../service-proxies/models/dot-net-back-end-service/services/products/create-product-command';
+import { ProductsService } from '../../service-proxies/products/products-service';
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { finalize } from 'rxjs';
