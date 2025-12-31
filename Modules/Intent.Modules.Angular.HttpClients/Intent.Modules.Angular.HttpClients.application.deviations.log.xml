@@ -24,12 +24,12 @@
     <file>
       <correlationId>Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial#51ad7798-5b63-4e2f-8fa9-84cceebff21d</correlationId>
       <path>Intent.Modules.Angular.HttpClients/Templates/HttpServiceProxy/HttpServiceProxyTemplatePartial.cs</path>
-      <count>1</count>
+      <count>2</count>
       <updatedByAccountName>jp.seini@intentarchitect.com</updatedByAccountName>
       <updatedByDisplayName>JP Seini</updatedByDisplayName>
-      <updatedAt>2025-11-11T13:22:55.8305683Z</updatedAt>
-      <deviationsHash>B06F25407044CC79BFA3B4460AF8AB5588A29284DBEC8A29C9AAEAF2B7399B5A</deviationsHash>
-      <fileHash>2F6856854833F2E0CEF251D48C118071937CB4C0956A5293AB4340E676FEF153</fileHash>
+      <updatedAt>2025-12-30T19:28:15.5288253Z</updatedAt>
+      <deviationsHash>4B49A3CA7A703697D1D83774DBFC1F75A90E817F03FA517C0805490FAF8FAF74</deviationsHash>
+      <fileHash>C6C54403493968CC66BD36FFFD020FE64B848EC98D3EACE325E2B6BDEBB81E75</fileHash>
     </file>
     <file>
       <correlationId>Intent.ModuleBuilder.TemplateRegistration.FilePerModel#51ad7798-5b63-4e2f-8fa9-84cceebff21d</correlationId>

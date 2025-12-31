@@ -13,9 +13,9 @@ namespace Intent.Modules.Angular.Templates.Core.StylesDotScssFile
         [IntentManaged(Mode.Fully, Body = Mode.Ignore)]
         public override string TransformText()
         {
-            if(!string.IsNullOrWhiteSpace(_content))
+            if (!string.IsNullOrWhiteSpace(_content))
             {
-                 return _content;
+                return _content;
             }
 
             return $@"// You can add global styles to this file, and also import other style files 

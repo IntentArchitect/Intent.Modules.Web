@@ -1,4 +1,5 @@
-﻿import { IntentIgnoreBody, IntentMerge, IntentIgnore } from './../../../intent/intent.decorators';
+﻿//@IntentMerge()
+import { IntentIgnoreBody, IntentMerge, IntentIgnore } from './../../../intent/intent.decorators';
 import { AddressType } from './../../../service-proxies/models/address-type';
 import { CreateCustomerCommand } from './../../../service-proxies/models/my-back-end/services/customers/create-customer-command';
 import { CreateCustomerPreferenceDto } from './../../../service-proxies/models/my-back-end/services/customers/create-customer-preference-dto';
@@ -7,29 +8,29 @@ import { CreateCustomerCommandAddressesDto } from './../../../service-proxies/mo
 import { CategoryDto } from './../../../service-proxies/models/my-back-end/services/categories/category-dto';
 import { SubCategoryDto } from './../../../service-proxies/models/my-back-end/services/sub-categories/sub-category-dto';
 import { CategoriesService } from './../../../service-proxies/Categories/categories-service';
-import { CustomersService } from './../../../service-proxies/Customers/customers-service';
 import { SubCategoriesService } from './../../../service-proxies/SubCategories/sub-categories-service';
-import { CommonModule } from '@angular/common';
+import { CustomersService } from './../../../service-proxies/Customers/customers-service';
 import { Component, OnInit } from '@angular/core';
+import { finalize } from 'rxjs';
+import { CommonModule } from '@angular/common';
 import { FormsModule, NgForm } from '@angular/forms';
-import { MatButtonModule } from '@angular/material/button';
 import { MatDialogModule, MatDialogRef } from '@angular/material/dialog';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
-import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
-import { finalize } from 'rxjs';
+import { MatButtonModule } from '@angular/material/button';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 
 interface CreateCustomerModel {
-    categoryId?: string | null;
-    subCategoryId?: string | null;
+    categoryId: string | null;
+    subCategoryId: string | null;
     name: string;
     surname: string;
     email: string;
     isActive: boolean;
     preference: CreateCustomerPreferenceModel;
-    loyalty?: CreateCustomerCommandLoyaltyModel | null;
+    loyalty: CreateCustomerCommandLoyaltyModel | null;
     addresses: CreateCustomerCommandAddressesModel[];
 }
 
@@ -40,12 +41,12 @@ interface CreateCustomerPreferenceModel {
 
 interface CreateCustomerCommandLoyaltyModel {
     loyaltyNo: string;
-    points?: number | null;
+    points: number | null;
 }
 
 interface CreateCustomerCommandAddressesModel {
     line1: string;
-    line2?: string | null;
+    line2: string | null;
     city: string;
     postal: string;
     addressType: AddressType;
@@ -67,76 +68,64 @@ interface CreateCustomerCommandAddressesModel {
         MatSlideToggleModule,
         MatButtonModule,
         MatProgressSpinnerModule
-    ]
+    ],
 })
 export class CustomerAddDialogComponent implements OnInit {
-
-    public readonly AddressType = AddressType;
-
     serviceErrors = {
         loadCategoriesError: null as string | null,
-        createCustomerError: null as string | null,
-        loadSubCategoriesError: null as string | null
+        loadSubCategoriesError: null as string | null,
+        createCustomerError: null as string | null
     };
-
     isLoading = false;
     categoriesModels: CategoryDto[] | null = null;
     subCategoriesModels: SubCategoryDto[] | null = null;
-
     model: CreateCustomerModel = {
         categoryId: '',
         subCategoryId: '',
         name: '',
         surname: '',
         email: '',
-        isActive: true,
+        isActive: false,
         preference: {
             newsLetter: false,
             specials: false
         },
-        loyalty: null,
+        loyalty: {
+            loyaltyNo: '',
+            points: 0
+        },
         addresses: []
     };
 
+    public readonly AddressType = AddressType;
     hasLoyalty = false;
 
-    constructor(
-        private dialogRef: MatDialogRef<CustomerAddDialogComponent>,
+    //@IntentMerge()
+    constructor(private dialogRef: MatDialogRef<CustomerAddDialogComponent>,
         private readonly categoriesService: CategoriesService,
-        private readonly customersService: CustomersService,
-        private readonly subCategoriesService: SubCategoriesService
-    ) { }
+        private readonly subCategoriesService: SubCategoriesService,
+        private readonly customersService: CustomersService) {
+    }
 
+    @IntentMerge()
     ngOnInit(): void {
         this.hasLoyalty = !!this.model.loyalty;
         this.loadCategories();
-
-        // Ensure at least one address row
         if (this.model.addresses.length === 0) {
             this.addAddress();
         }
     }
 
-    // ---- Form submit wrapper ----
-    onSave(form: NgForm): void {
+    save(form: NgForm): void {
         this.serviceErrors.createCustomerError = null;
-
         if (form.invalid) {
             form.control.markAllAsTouched();
             return;
         }
 
-        this.createCustomer();
-    }
-
-    // ---- Service call ----
-    createCustomer(): void {
-        this.serviceErrors.createCustomerError = null;
-        this.isLoading = true;
-
-        const payload = {
-            categoryId: this.model.categoryId ?? '',
-            subCategoryId: this.model.subCategoryId ?? '',
+        const command: CreateCustomerCommand = {
+            categoryId: this.model.categoryId || '',
+            subCategoryId: this.model.subCategoryId || '',
             name: this.model.name,
             surname: this.model.surname,
             email: this.model.email,
@@ -157,16 +146,18 @@ export class CustomerAddDialogComponent implements OnInit {
                 city: a.city,
                 postal: a.postal,
                 addressType: a.addressType,
-            }))
+            })),
         };
 
-        this.customersService.createCustomer(payload)
-            .pipe(finalize(() => {
-                this.isLoading = false;
-            }))
+        this.isLoading = true;
+        this.customersService.createCustomer(command)
+            .pipe(
+                finalize(() => {
+                    this.isLoading = false;
+                })
+            )
             .subscribe({
                 next: () => {
-                    // Close dialog and notify caller of success
                     this.dialogRef.close(true);
                 },
                 error: (err) => {
@@ -177,15 +168,62 @@ export class CustomerAddDialogComponent implements OnInit {
             });
     }
 
-    // ---- Loaders ----
+    @IntentMerge()
+    createCustomer(): void {
+        this.serviceErrors.createCustomerError = null;
+        this.isLoading = true;
+
+        this.customersService.createCustomer({
+            categoryId: this.model.categoryId!,
+            subCategoryId: this.model.subCategoryId!,
+            name: this.model.name,
+            surname: this.model.surname,
+            email: this.model.email,
+            isActive: this.model.isActive,
+            preference: {
+                newsLetter: this.model.preference.newsLetter,
+                specials: this.model.preference.specials,
+            },
+            loyalty: this.model.loyalty
+                ? {
+                    loyaltyNo: this.model.loyalty.loyaltyNo,
+                    points: this.model.loyalty.points!,
+                }
+                : null,
+            addresses: this.model.addresses.map(a => ({
+                line1: a.line1,
+                line2: a.line2,
+                city: a.city,
+                postal: a.postal,
+                addressType: a.addressType,
+            })),
+        })
+            .pipe(
+                finalize(() => {
+                    this.isLoading = false;
+                })
+            )
+            .subscribe({
+                error: (err) => {
+                    const message = err?.error?.message || err.message || 'Unknown error';
+                    this.serviceErrors.createCustomerError = `Failed to call service: ${message}`;
+
+                    console.error('Failed to call service:', err);
+                }
+            });
+    }
+
+    @IntentMerge()
     loadCategories(): void {
         this.serviceErrors.loadCategoriesError = null;
         this.isLoading = true;
 
         this.categoriesService.getCategories()
-            .pipe(finalize(() => {
-                this.isLoading = false;
-            }))
+            .pipe(
+                finalize(() => {
+                    this.isLoading = false;
+                })
+            )
             .subscribe({
                 next: (data) => {
                     this.categoriesModels = data;
@@ -193,19 +231,23 @@ export class CustomerAddDialogComponent implements OnInit {
                 error: (err) => {
                     const message = err?.error?.message || err.message || 'Unknown error';
                     this.serviceErrors.loadCategoriesError = `Failed to call service: ${message}`;
+
                     console.error('Failed to call service:', err);
                 }
             });
     }
 
-    loadSubCategories(categoryId?: string | null): void {
+    @IntentMerge()
+    loadSubCategories(categoryId: string | null): void {
         this.serviceErrors.loadSubCategoriesError = null;
         this.isLoading = true;
 
         this.subCategoriesService.getSubCategories(categoryId)
-            .pipe(finalize(() => {
-                this.isLoading = false;
-            }))
+            .pipe(
+                finalize(() => {
+                    this.isLoading = false;
+                })
+            )
             .subscribe({
                 next: (data) => {
                     this.subCategoriesModels = data;
@@ -213,12 +255,12 @@ export class CustomerAddDialogComponent implements OnInit {
                 error: (err) => {
                     const message = err?.error?.message || err.message || 'Unknown error';
                     this.serviceErrors.loadSubCategoriesError = `Failed to call service: ${message}`;
+
                     console.error('Failed to call service:', err);
                 }
             });
     }
 
-    // ---- UI helpers ----
     onCategoryChange(id: string | null): void {
         this.model.categoryId = id ?? '';
         this.model.subCategoryId = '';
@@ -256,7 +298,6 @@ export class CustomerAddDialogComponent implements OnInit {
         }
     }
 
-    // ---- Cancel ----
     cancel(): void {
         this.dialogRef.close(null);
     }

@@ -29,6 +29,10 @@
           {
             "word": "list",
             "weight": 3
+          },
+          {
+            "word": "deletedialog",
+            "weight": 2
           }
         ]
       },
