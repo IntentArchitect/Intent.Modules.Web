@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="edea53f0-020c-40a8-a1e4-0b64a8bc0b14" type="Diagram" typeId="4912c89a-77eb-497e-a3f4-7408b6a20886">
+  <name>DefaultDiagram</name>
+  <display>DefaultDiagram</display>
+  <isAbstract>false</isAbstract>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>8493be1e-3ebd-4cf9-9fd9-07c972346f13</parentFolderId>
+  <packageId>2f554248-0cba-4543-bb70-00ac850dc428</packageId>
+  <packageName>AngularAppCQRS.UI</packageName>
+  <diagram>
+    <targetPackageId>edea53f0-020c-40a8-a1e4-0b64a8bc0b14</targetPackageId>
+  </diagram>
+  <stereotypes />
+  <metadata />
+  <childElements />
+</class>

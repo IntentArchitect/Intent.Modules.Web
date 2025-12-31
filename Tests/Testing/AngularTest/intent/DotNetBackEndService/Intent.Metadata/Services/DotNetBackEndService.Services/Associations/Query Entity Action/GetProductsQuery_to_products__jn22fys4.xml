@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<association id="ab5fdff0-ba70-4168-a8a4-20a542f1b127">
+  <sourceEnd id="d935cbf8-c03a-43f5-b644-7ef2636a78d1" type="Query Entity Action Source End" typeId="32a65f26-2555-4616-8a2c-6a90805600bb">
+    <display>: GetProductsQuery</display>
+    <order>0</order>
+    <typeReference id="ccc57c0a-b31a-4e07-9328-7d8d82898999">
+      <typeId>f94c172b-7042-4cf5-a12f-cc24348e5bef</typeId>
+      <isNavigable>false</isNavigable>
+      <isNullable>false</isNullable>
+      <isCollection>false</isCollection>
+      <isRequired>true</isRequired>
+      <typePackageName>DotNetBackEndService.Services</typePackageName>
+      <typePackageId>0086f3b4-ca20-405f-aca7-641b8b8fe067</typePackageId>
+      <stereotypes />
+      <genericTypeParameters />
+    </typeReference>
+    <stereotypes />
+    <metadata />
+    <childElements />
+  </sourceEnd>
+  <targetEnd id="ab5fdff0-ba70-4168-a8a4-20a542f1b127" type="Query Entity Action Target End" typeId="93ef6675-cba4-4998-adff-cb22d5343ed4">
+    <name>products</name>
+    <display>[query] products: Product[*]</display>
+    <order>0</order>
+    <traits>
+      <trait id="d00a2ab0-9a23-4192-b8bb-166798fc7dba" name="[Processing Action]" />
+    </traits>
+    <typeReference id="b564e1f1-15e7-4c15-bcaf-ffa4884bf760">
+      <typeId>33ff86b4-b6f3-4ff8-bb75-553ba02f9e4f</typeId>
+      <isNavigable>true</isNavigable>
+      <isNullable>false</isNullable>
+      <isCollection>true</isCollection>
+      <isRequired>true</isRequired>
+      <typePackageName>DotNetBackEndService.Domain</typePackageName>
+      <typePackageId>ade10f4e-7e5a-4063-988c-c5cf7c99ae2c</typePackageId>
+      <stereotypes />
+      <genericTypeParameters />
+    </typeReference>
+    <stereotypes />
+    <mappings>
+      <mapping type="Query Entity Mapping" typeId="25f25af9-c38b-4053-9474-b0fabe9d7ea7">
+        <source applicationId="a234e200-cbe6-47a0-adaa-af0656448614" designerId="81104ae6-2bc5-4bae-b05a-f987b0372d81" elementId="f94c172b-7042-4cf5-a12f-cc24348e5bef" location="[DotNetBackEndService].[Services].[GetProductsQuery]" />
+        <target applicationId="a234e200-cbe6-47a0-adaa-af0656448614" designerId="6ab29b31-27af-4f56-a67c-986d82097d63" elementId="33ff86b4-b6f3-4ff8-bb75-553ba02f9e4f" location="[DotNetBackEndService].[Services].[Product]" />
+        <mappedEnds />
+      </mapping>
+    </mappings>
+    <metadata />
+    <childElements />
+  </targetEnd>
+  <associationType>Query Entity Action</associationType>
+  <associationTypeId>47ab5888-a258-4bec-a9fc-a83de69eb79d</associationTypeId>
+  <stereotypes />
+</association>

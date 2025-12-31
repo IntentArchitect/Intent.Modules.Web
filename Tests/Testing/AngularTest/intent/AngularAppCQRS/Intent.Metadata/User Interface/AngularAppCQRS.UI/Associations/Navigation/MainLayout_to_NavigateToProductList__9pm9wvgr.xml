@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<association id="bc9a508c-48ba-4f12-9201-bc0d438f4bb6">
+  <sourceEnd id="9e5798e7-96f5-43f4-9d49-34d668f5587b" type="Navigation Source End" typeId="97a3de8a-c9bf-4cf2-bc0a-b8692b02211b">
+    <display>: MainLayout</display>
+    <order>0</order>
+    <typeReference id="2e62d987-c359-4c9a-8c28-7cbd94f84644">
+      <typeId>f910a54f-01e3-45e3-96fa-4ac71aed069d</typeId>
+      <isNavigable>false</isNavigable>
+      <isNullable>false</isNullable>
+      <isCollection>false</isCollection>
+      <isRequired>true</isRequired>
+      <typePackageName>AngularAppCQRS.UI</typePackageName>
+      <typePackageId>2f554248-0cba-4543-bb70-00ac850dc428</typePackageId>
+      <stereotypes />
+      <genericTypeParameters />
+    </typeReference>
+    <stereotypes />
+    <metadata />
+    <childElements />
+  </sourceEnd>
+  <targetEnd id="bc9a508c-48ba-4f12-9201-bc0d438f4bb6" type="Navigation Target End" typeId="2b191288-ecae-4743-b069-cbdd927ef349">
+    <name>NavigateToProductList</name>
+    <display>[navigate] ProductList</display>
+    <order>0</order>
+    <traits>
+      <trait id="dc813928-0ce1-4f66-ae31-b5e5d506b4a3" name="[Invokable]" />
+    </traits>
+    <typeReference id="f36b2177-903a-419f-9582-f821d07fbaa0">
+      <typeId>2ade55d1-e679-4a33-90b5-a8d36adccde8</typeId>
+      <isNavigable>true</isNavigable>
+      <isNullable>false</isNullable>
+      <isCollection>false</isCollection>
+      <isRequired>true</isRequired>
+      <typePackageName>AngularAppCQRS.UI</typePackageName>
+      <typePackageId>2f554248-0cba-4543-bb70-00ac850dc428</typePackageId>
+      <stereotypes />
+      <genericTypeParameters />
+    </typeReference>
+    <stereotypes />
+    <metadata />
+    <childElements />
+  </targetEnd>
+  <associationType>Navigation</associationType>
+  <associationTypeId>6d2b2070-c1cb-4cd2-88b4-4e5f8414bd9e</associationTypeId>
+  <stereotypes />
+</association>

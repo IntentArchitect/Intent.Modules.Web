@@ -1,0 +1,65 @@
+// Default Home Component Styles. This can overridden or modified as needed manually or using AI
+@use '../../../theme' as theme;
+@use '../../../styles.scss' as *;
+
+:host {
+  display: block;
+  height: 100%;
+  overflow: hidden;
+}
+
+.home-container {
+  @extend .page-container;
+}
+
+// Override icon badge with accent color
+.icon-badge {
+  background: $accent-gradient;
+  box-shadow: 0 8px 20px rgba(theme.$accent-color, 0.3);
+}
+
+// Override info-display to use accent color
+.info-display {
+  background: linear-gradient(135deg, rgba(theme.$accent-color, 0.08) 0%, rgba(theme.$accent-light, 0.12) 100%);
+  border-left: 4px solid theme.$accent-color;
+}
+
+// Component-specific description override
+.description {
+  font-size: 1.2rem;
+  color: $text-primary;
+
+  strong {
+    color: #2c2c2c;
+    font-weight: 700;
+  }
+}
+
+.docs-button {
+  display: inline-flex;
+  align-items: center;
+  gap: $spacing-xs;
+  background: $primary-gradient;
+  color: white;
+  padding: $spacing-sm $spacing-lg;
+  border-radius: $radius-lg;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all $transition-normal ease;
+  box-shadow: $shadow-primary-md;
+
+  svg {
+    flex-shrink: 0;
+  }
+
+  &:hover {
+    transform: translateY(-2px);
+    box-shadow: $shadow-primary-lg;
+    background: $primary-gradient-dark;
+  }
+
+  &:active {
+    transform: translateY(0);
+  }
+}

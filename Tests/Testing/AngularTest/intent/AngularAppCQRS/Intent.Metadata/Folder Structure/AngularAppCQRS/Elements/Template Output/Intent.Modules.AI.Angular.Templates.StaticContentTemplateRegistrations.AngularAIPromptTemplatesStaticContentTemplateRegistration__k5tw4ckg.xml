@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="b7e3b2f8-e689-4b30-b255-54c670150124" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+  <name>Intent.Modules.AI.Angular.Templates.StaticContentTemplateRegistrations.AngularAIPromptTemplatesStaticContentTemplateRegistration</name>
+  <display>Intent.Modules.AI.Angular.Templates.StaticContentTemplateRegistrations.AngularAIPromptTemplatesStaticContentTemplateRegistration</display>
+  <externalReference>Intent.AI.Angular</externalReference>
+  <isAbstract>false</isAbstract>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>4d3049c6-3207-44d1-a8d0-1cafbeafde82</parentFolderId>
+  <stereotypes />
+  <metadata>
+    <entry key="status" value="assigned" />
+  </metadata>
+  <childElements />
+</class>

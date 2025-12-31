@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="29506cbb-9a0a-4189-a569-5b902c594e1e" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+  <name>Intent.Angular.Core.AngularDotJsonFileTemplate</name>
+  <display>Intent.Angular.Core.AngularDotJsonFileTemplate</display>
+  <externalReference>Intent.Angular</externalReference>
+  <isAbstract>false</isAbstract>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>4d3049c6-3207-44d1-a8d0-1cafbeafde82</parentFolderId>
+  <stereotypes />
+  <metadata>
+    <entry key="status" value="assigned" />
+  </metadata>
+  <childElements />
+</class>

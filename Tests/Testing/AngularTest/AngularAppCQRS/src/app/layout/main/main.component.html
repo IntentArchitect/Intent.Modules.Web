@@ -1,0 +1,28 @@
+<mat-toolbar color="primary" class="app-header">
+  <button mat-icon-button (click)="drawer.toggle()" aria-label="Toggle menu">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <a routerLink="/" class="home-link" mat-button>
+    <mat-icon>home</mat-icon>
+    <span>Home</span>
+  </a>
+</mat-toolbar>
+
+<mat-sidenav-container class="app-layout">
+  <mat-sidenav #drawer mode="side" opened class="app-sidebar">
+    <mat-nav-list class="sidebar-nav">
+      <a mat-list-item routerLink="/product-list" routerLinkActive="active">
+        <mat-icon matListItemIcon>shopping_cart</mat-icon>
+        <span matListItemTitle>Product List</span>
+      </a>
+      <a mat-list-item routerLink="/example-page/ModeledRoute" routerLinkActive="active">
+        <mat-icon matListItemIcon>text_rotation_none</mat-icon>
+        <span matListItemTitle>Example Page</span>
+      </a>
+    </mat-nav-list>
+  </mat-sidenav>
+
+  <mat-sidenav-content class="app-content">
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

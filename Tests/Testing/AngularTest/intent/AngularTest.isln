@@ -6,12 +6,11 @@
   <iconType>UrlImagePath</iconType>
   <metadataRelativePath>Intent.Metadata</metadataRelativePath>
   <modulesCacheRelativePath>.intent/modules</modulesCacheRelativePath>
-  <lastUsedApplicationTemplate id="Intent.ApplicationTemplate.NestJS.Web" version="3.4.1" />
+  <lastUsedApplicationTemplate id="Intent.ApplicationTemplate.WebClient.Angular" version="5.0.0-beta.0" />
   <applications>
-    <application id="00914bae-0287-4383-8d4e-5ae4591c7a91" name="angularApp" relativePath="angularApp/angularApp.application.config" />
-    <application id="537b3a33-dc26-4e92-8d8c-99951c8f912c" name="NetApplication" relativePath="NetApplication/NetApplication.application.config" />
-    <application id="7510940e-4d4d-49bf-8086-8353ca131d36" name="SpringBootApplication" relativePath="SpringBootApplication/SpringBootApplication.application.config" />
+    <application id="a234e200-cbe6-47a0-adaa-af0656448614" name="DotNetBackEndService" relativePath="DotNetBackEndService/DotNetBackEndService.application.config" />
+    <application id="ad925f84-ceed-46ee-8059-6b3e79738beb" name="AngularAppCQRS" relativePath="AngularAppCQRS/AngularAppCQRS.application.config" />
     <application id="121dbd73-3294-4b02-8c5a-34c59a478a2e" name="NestJSApplication" relativePath="NestJSApplication/NestJSApplication.application.config" />
-    <application id="b5ebfd2d-a8da-4c86-82e8-76a35c6bc689" name="AngularServiceProxyTest" relativePath="AngularServiceProxyTest/AngularServiceProxyTest.application.config" />
+    <application id="7510940e-4d4d-49bf-8086-8353ca131d36" name="SpringBootApplication" relativePath="SpringBootApplication/SpringBootApplication.application.config" />
   </applications>
 </solution>

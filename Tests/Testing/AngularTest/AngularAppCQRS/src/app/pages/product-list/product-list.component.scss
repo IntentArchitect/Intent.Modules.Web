@@ -1,0 +1,52 @@
+// Place your styling here
+
+.table-wrapper {
+  margin-top: 1rem;
+}
+
+.table-container {
+  max-height: calc(100vh - 350px);
+  min-height: 300px;
+
+  table {
+    min-width: 600px;
+    width: 100%;
+  }
+
+  .mat-mdc-table {
+    background: white;
+  }
+
+  .mat-mdc-header-cell {
+    font-weight: 600;
+    font-size: 0.875rem;
+    color: rgba(0, 0, 0, 0.87);
+  }
+
+  .mat-mdc-cell {
+    font-size: 0.875rem;
+  }
+
+  .mat-mdc-row:hover {
+    background-color: rgba(0, 0, 0, 0.04);
+  }
+}
+
+.mat-row {
+  td.mat-cell {
+    text-align: center;
+    padding: 2rem;
+    color: rgba(0, 0, 0, 0.54);
+    font-style: italic;
+  }
+}
+
+@media (max-width: 768px) {
+  .table-container {
+    max-height: calc(100vh - 400px);
+
+    table {
+      min-width: 100%;
+    }
+  }
+}

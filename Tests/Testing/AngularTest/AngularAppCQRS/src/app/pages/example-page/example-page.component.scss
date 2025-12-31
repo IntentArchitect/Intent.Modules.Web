@@ -1,0 +1,46 @@
+// Default Home Component Styles. This can overridden or modified as needed manually or using AI
+// Default Example Component Styles. This can overridden or modified as needed manually or using AI
+@use '../../../theme' as theme;
+@use '../../../styles.scss' as *;
+
+:host {
+  display: block;
+  height: 100%;
+  overflow: hidden;
+}
+
+.example-container {
+  @extend .page-container;
+}
+
+// Override icon badge with accent color (same as home page)
+.icon-badge {
+  background: $accent-gradient;
+  box-shadow: 0 8px 20px rgba(theme.$accent-color, 0.3);
+}
+
+// Component-specific param display
+.param-display {
+  @extend .info-display;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, rgba(theme.$accent-color, 0.08) 0%, rgba(theme.$accent-light, 0.12) 100%);
+  border-left: 4px solid theme.$accent-color;
+}
+
+.param-label {
+  font-weight: 600;
+  color: theme.$primary-color;
+  font-size: 1.1rem;
+}
+
+.param-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: theme.$primary-light;
+  font-family: 'Courier New', monospace;
+  background: white;
+  padding: $spacing-xs $spacing-md;
+  border-radius: $radius-md;
+  box-shadow: $shadow-sm;
+}

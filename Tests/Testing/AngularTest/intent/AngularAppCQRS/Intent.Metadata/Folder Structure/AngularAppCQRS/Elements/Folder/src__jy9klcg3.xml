@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="11c3e807-9f91-431f-b833-47341e359257" type="Folder" typeId="4d95d53a-8855-4f35-aa82-e312643f5c5f">
+  <name>src</name>
+  <display>src</display>
+  <externalReference>ed8e1606-6b99-4478-af51-2837380f4153</externalReference>
+  <isAbstract>false</isAbstract>
+  <order>1</order>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>4d3049c6-3207-44d1-a8d0-1cafbeafde82</parentFolderId>
+  <stereotypes />
+  <metadata />
+  <childElements>
+    <childElement id="9e4f3332-0311-4ea0-9f58-f54254e8ac5d" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+      <name>Intent.Angular.Core.IndexHtmlTemplate</name>
+      <display>Intent.Angular.Core.IndexHtmlTemplate</display>
+      <externalReference>Intent.Angular</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>11c3e807-9f91-431f-b833-47341e359257</parentFolderId>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
+      <childElements />
+    </childElement>
+    <childElement id="598ffe72-070a-48ba-bb51-78beb7d9cd57" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+      <name>Intent.Angular.Core.Main</name>
+      <display>Intent.Angular.Core.Main</display>
+      <externalReference>Intent.Angular</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>11c3e807-9f91-431f-b833-47341e359257</parentFolderId>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
+      <childElements />
+    </childElement>
+    <childElement id="1732ae5d-dc4b-40db-ab04-14a52774149e" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+      <name>Intent.Angular.Core.StylesDotScssFileTemplate</name>
+      <display>Intent.Angular.Core.StylesDotScssFileTemplate</display>
+      <externalReference>Intent.Angular</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>11c3e807-9f91-431f-b833-47341e359257</parentFolderId>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
+      <childElements />
+    </childElement>
+    <childElement id="f3ba9f5a-dcdd-432d-a90d-3178d03c5f46" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+      <name>Intent.Angular.Core.ThemeDotScssFileTemplate</name>
+      <display>Intent.Angular.Core.ThemeDotScssFileTemplate</display>
+      <externalReference>Intent.Angular</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>11c3e807-9f91-431f-b833-47341e359257</parentFolderId>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
+      <childElements />
+    </childElement>
+  </childElements>
+</class>

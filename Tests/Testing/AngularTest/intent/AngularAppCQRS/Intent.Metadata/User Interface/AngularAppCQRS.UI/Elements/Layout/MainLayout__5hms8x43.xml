@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="f910a54f-01e3-45e3-96fa-4ac71aed069d" type="Layout" typeId="776a9393-6b23-4a8c-8937-fd7e833fa0ef">
+  <name>MainLayout</name>
+  <display>MainLayout</display>
+  <externalReference>c1c2682d-7a09-446d-8a19-d24d63cc99e4</externalReference>
+  <isAbstract>false</isAbstract>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>f30d6d44-48bb-4511-9345-dca368e03234</parentFolderId>
+  <packageId>2f554248-0cba-4543-bb70-00ac850dc428</packageId>
+  <packageName>AngularAppCQRS.UI</packageName>
+  <stereotypes />
+  <metadata />
+  <childElements />
+</class>

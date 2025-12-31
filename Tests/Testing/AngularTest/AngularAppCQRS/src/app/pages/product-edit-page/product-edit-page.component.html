@@ -1,0 +1,155 @@
+<div class="pa-4">
+  <mat-card class="mb-4 ux-gradient-primary" appearance="outlined">
+    <mat-card-content class="pa-4">
+      <div class="header-content">
+        <div class="title-row">
+          <mat-icon class="mr-2">edit</mat-icon>
+          <span class="mat-headline-5 text-white font-weight-bold">Edit Product</span>
+        </div>
+        <div class="subtitle-row text-white opacity-90">
+          Update the details of this product.
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="ux-fade-in-up" style="animation-delay: 0.1s">
+    <mat-card-header>
+      <mat-card-title>Product Details</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+      <ng-container *ngIf="productByIdModels; else loadingTpl">
+        <form #form="ngForm" class="product-form">
+          <div *ngIf="serviceErrors.updateProductError" class="error-container">
+            {{ serviceErrors.updateProductError }}
+          </div>
+          <div *ngIf="serviceErrors.loadProductByIdError" class="error-container">
+            {{ serviceErrors.loadProductByIdError }}
+          </div>
+
+          <div class="grid">
+            <div class="grid-item">
+              <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Name</mat-label>
+                <input
+                  matInput
+                  name="name"
+                  required
+                  [(ngModel)]="productByIdModels!.name"
+                  #nameCtrl="ngModel"
+                  placeholder="Enter product name"
+                />
+                <button mat-icon-button matPrefix disabled>
+                  <mat-icon>badge</mat-icon>
+                </button>
+                <mat-error *ngIf="nameCtrl.invalid && nameCtrl.touched">
+                  Name is required
+                </mat-error>
+              </mat-form-field>
+            </div>
+
+            <div class="grid-item">
+              <mat-form-field appearance="outline" class="w-100">
+                <mat-label>SKU</mat-label>
+                <input
+                  matInput
+                  name="sku"
+                  required
+                  [(ngModel)]="productByIdModels!.sku"
+                  #skuCtrl="ngModel"
+                  placeholder="Enter SKU"
+                />
+                <button mat-icon-button matPrefix disabled>
+                  <mat-icon>qr_code</mat-icon>
+                </button>
+                <mat-error *ngIf="skuCtrl.invalid && skuCtrl.touched">
+                  SKU is required
+                </mat-error>
+              </mat-form-field>
+            </div>
+
+            <div class="grid-item">
+              <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Price</mat-label>
+                <input
+                  matInput
+                  type="number"
+                  min="0"
+                  step="0.01"
+                  name="price"
+                  required
+                  [(ngModel)]="productByIdModels!.price"
+                  #priceCtrl="ngModel"
+                  placeholder="0.00"
+                />
+                <button mat-icon-button matPrefix disabled>
+                  <mat-icon>attach_money</mat-icon>
+                </button>
+                <mat-error *ngIf="priceCtrl.invalid && priceCtrl.touched">
+                  Price is required
+                </mat-error>
+              </mat-form-field>
+            </div>
+
+            <div class="grid-item-wide">
+              <mat-form-field appearance="outline" class="w-100">
+                <mat-label>Description</mat-label>
+                <textarea
+                  matInput
+                  name="description"
+                  required
+                  rows="3"
+                  [(ngModel)]="productByIdModels!.description"
+                  #descriptionCtrl="ngModel"
+                  placeholder="Enter product description"
+                ></textarea>
+                <mat-error *ngIf="descriptionCtrl.invalid && descriptionCtrl.touched">
+                  Description is required
+                </mat-error>
+              </mat-form-field>
+            </div>
+
+            <div class="grid-item-wide actions-row">
+              <button
+                mat-raised-button
+                color="primary"
+                type="button"
+                class="save-button"
+                (click)="save(form)"
+                [disabled]="isLoading || form.invalid || !productByIdModels"
+              >
+                <mat-progress-spinner
+                  *ngIf="isLoading"
+                  mode="indeterminate"
+                  diameter="18"
+                  class="spinner"
+                ></mat-progress-spinner>
+                <mat-icon *ngIf="!isLoading" class="mr-1">save</mat-icon>
+                <span>{{ isLoading ? 'Saving…' : 'Save' }}</span>
+              </button>
+
+              <button
+                mat-raised-button
+                color="accent"
+                type="button"
+                (click)="navigateToProductList()"
+                [disabled]="isLoading"
+              >
+                <mat-icon class="mr-1">arrow_back</mat-icon>
+                Back to list
+              </button>
+            </div>
+          </div>
+        </form>
+      </ng-container>
+
+      <ng-template #loadingTpl>
+        <div class="loading-container">
+          <mat-progress-spinner mode="indeterminate" diameter="40"></mat-progress-spinner>
+          <div class="mt-2">Loading product...</div>
+        </div>
+      </ng-template>
+    </mat-card-content>
+  </mat-card>
+</div>
