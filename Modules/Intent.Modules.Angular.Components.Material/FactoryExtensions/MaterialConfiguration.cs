@@ -88,8 +88,8 @@ namespace Intent.Modules.Angular.Components.Material.FactoryExtensions
         private const string ThemeDefaultStyle = @"@use '@angular/material' as mat;
 
 // Define your Material theme
-$my-primary: mat.m2-define-palette(mat.$m2-green-palette);
-$my-accent: mat.m2-define-palette(mat.$m2-blue-palette);
+$my-primary: mat.m2-define-palette(mat.$m2-blue-palette);
+$my-accent: mat.m2-define-palette(mat.$m2-deep-orange-palette);
 $my-warn: mat.m2-define-palette(mat.$m2-red-palette);
 
 $my-theme: mat.m2-define-light-theme((

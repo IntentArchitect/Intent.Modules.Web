@@ -66,11 +66,18 @@
 }
 
 .app-sidebar {
-  width: 260px;
-  background: linear-gradient(180deg, rgba(theme.$primary-color, 0.03) 0%, rgba(theme.$primary-light, 0.05) 100%);
-  border-right: 2px solid rgba(theme.$primary-color, 0.2);
-  overflow-y: auto;
-  overflow-x: hidden;
+    width: 260px;
+    background: linear-gradient(180deg, rgba(theme.$primary-color, 0.03) 0%, rgba(theme.$primary-light, 0.05) 100%);
+    border-right: 2px solid rgba(theme.$primary-color, 0.2);
+    overflow-y: auto;
+    overflow-x: hidden;
+    z-index: 1000;
+    margin-top: 64px;
+    height: calc(100% - 64px);
+
+    mat-nav-list {
+        padding-top: 1rem;
+    }
 }
 
 .sidebar-nav {

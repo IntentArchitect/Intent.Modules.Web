@@ -227,6 +227,12 @@ namespace Intent.Modules.Angular.Components.Material.FactoryExtensions
   overflow-y: auto;
   overflow-x: hidden;
   z-index: 1000;
+  margin-top: 64px;
+  height: calc(100% - 64px);
+
+  mat-nav-list {
+    padding-top: 1rem;
+  }
 }
 
 .sidebar-nav {

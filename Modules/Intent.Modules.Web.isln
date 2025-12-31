@@ -8,13 +8,6 @@
   <modulesCacheRelativePath>.intent/modules</modulesCacheRelativePath>
   <lastUsedApplicationTemplate id="Intent.ApplicationTemplate.ModuleBuilder" version="4.1.12-pre.0" />
   <applications>
-    <application id="9df99115-886a-4429-93c8-e03f42d47e10" name="Intent.Modules.Modelers.WebClient" solutionFolder="Archived" relativePath="Archived\Intent.Modules.Modelers.WebClient\Intent.Modules.Modelers.WebClient.application.config" />
-    <application id="1cecc65d-e804-4de6-a27f-e8e4ad0190d7" name="Angular" solutionFolder="Archived" relativePath="Archived\Intent.Modules.Angular\Angular.application.config" />
-    <application id="49018a38-94b9-46d5-b6b7-8ce2e5aae4a9" name="Angular.Layout" solutionFolder="Archived" relativePath="Archived\Intent.Modules.Angular.Layout\Angular.Layout.application.config" />
-    <application id="194c7c1b-71e9-4344-8e30-4904a0157d02" name="Intent.Modules.Angular.ServiceProxies" solutionFolder="Archived" relativePath="Archived\Intent.Modules.Angular.ServiceProxies/Intent.Modules.Angular.ServiceProxies.application.config" />
-    <application id="89c7df59-3ece-4e22-ac0d-d612722c811c" name="Modelers.WebClient.Angular" solutionFolder="Archived" relativePath="Archived\Intent.Modules.Modelers.WebClient.Angular/Intent.Modules.Modelers.WebClient.Angular.application.config" />
-    <application id="fe241e7f-8588-40fa-86be-f9fb01a88e36" name="Angular.ApiAuthorization" solutionFolder="Archived" relativePath="Archived\Intent.Modules.Angular.ApiAuthorization/Angular.ApiAuthorization.application.config" />
-    <application id="c586fe58-d005-4651-adc7-24d531a7090c" name="Intent.Modules.Angular.ServiceProxies.Interop" solutionFolder="Archived" relativePath="Archived\Intent.Modules.Angular.ServiceProxies.Interop/Intent.Modules.Angular.ServiceProxies.Interop.application.config" />
     <application id="d7d7ead8-a88e-4cf0-b1f9-22e00cd94323" name="Intent.Modules.Angular" relativePath="Intent.Modules.Angular/Intent.Modules.Angular.application.config" />
     <application id="68b9c5c2-c910-4824-8459-fec6beba2aab" name="Intent.Modules.Angular.Metadata" relativePath="Intent.Modules.Angular.Metadata/Intent.Modules.Angular.Metadata.application.config" />
     <application id="c4f1e703-dab1-4ec1-be71-73843ef3a71d" name="Intent.Modules.Angular.HttpClients" relativePath="Intent.Modules.Angular.HttpClients/Intent.Modules.Angular.HttpClients.application.config" />
