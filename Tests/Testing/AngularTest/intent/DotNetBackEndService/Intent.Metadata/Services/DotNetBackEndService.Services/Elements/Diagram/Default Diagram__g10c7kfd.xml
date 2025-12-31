@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="ee4c0acb-41f1-4e85-96fe-5d231c7bf6b5" type="Diagram" typeId="8c90aca5-86f4-47f1-bd58-116fe79f5c55">
+  <name>Default Diagram</name>
+  <display>Default Diagram</display>
+  <externalReference>169f3801-8244-4b9e-ac2f-3eaede785048</externalReference>
+  <isAbstract>false</isAbstract>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>0086f3b4-ca20-405f-aca7-641b8b8fe067</parentFolderId>
+  <packageId>0086f3b4-ca20-405f-aca7-641b8b8fe067</packageId>
+  <packageName>DotNetBackEndService.Services</packageName>
+  <diagram>
+    <targetPackageId>0086f3b4-ca20-405f-aca7-641b8b8fe067</targetPackageId>
+  </diagram>
+  <stereotypes />
+  <metadata />
+  <childElements />
+</class>

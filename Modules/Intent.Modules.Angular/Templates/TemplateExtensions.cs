@@ -1,103 +1,91 @@
-using Intent.Modelers.WebClient.Angular.Api;
-using Intent.Modules.Angular.Templates.Component.AngularComponentTs;
-using Intent.Modules.Angular.Templates.Core.CoreModule;
+using System.Collections.Generic;
+using Intent.Modelers.UI.Api;
+using Intent.Modules.Angular.Templates.Component.ComponentTypeScript;
+using Intent.Modules.Angular.Templates.Component.LayoutComponentTypescript;
+using Intent.Modules.Angular.Templates.Core.AppComponent;
+using Intent.Modules.Angular.Templates.Core.AppConfig;
+using Intent.Modules.Angular.Templates.Core.AppRoutes;
+using Intent.Modules.Angular.Templates.Core.Main;
 using Intent.Modules.Angular.Templates.Environment.Environment;
 using Intent.Modules.Angular.Templates.Environment.EnvironmentDotDevelopment;
-using Intent.Modules.Angular.Templates.Model.FormGroup;
-using Intent.Modules.Angular.Templates.Model.Model;
-using Intent.Modules.Angular.Templates.Module.AngularModule;
-using Intent.Modules.Angular.Templates.Module.AngularResolver;
-using Intent.Modules.Angular.Templates.Module.AngularRoutingModule;
+using Intent.Modules.Angular.Templates.Environment.EnvironmentTypes;
 using Intent.Modules.Angular.Templates.Shared.IntentDecorators;
 using Intent.Modules.Common.Templates;
+using Intent.Modules.Common.TypeScript.Templates;
 using Intent.RoslynWeaver.Attributes;
 
 [assembly: DefaultIntentManaged(Mode.Fully)]
-[assembly: DefaultIntentManaged(Mode.Fully, Targets = Targets.Usings)]
+[assembly: DefaultIntentManaged(Mode.Merge, Targets = Targets.Usings)]
 [assembly: IntentTemplate("Intent.ModuleBuilder.Templates.TemplateExtensions", Version = "1.0")]
 
 namespace Intent.Modules.Angular.Templates
 {
     public static class TemplateExtensions
     {
-        public static string GetAngularComponentTsName<T>(this IIntentTemplate<T> template) where T : ComponentModel
+        public static string GetComponentTypeScriptTemplateName<T>(this IIntentTemplate<T> template) where T : ComponentModel
         {
-            return template.GetTypeName(AngularComponentTsTemplate.TemplateId, template.Model);
+            return template.GetTypeName(ComponentTypeScriptTemplate.TemplateId, template.Model);
         }
 
-        public static string GetAngularComponentTsName(this IIntentTemplate template, ComponentModel model)
+        public static string GetComponentTypeScriptTemplateName(this IIntentTemplate template, ComponentModel model)
         {
-            return template.GetTypeName(AngularComponentTsTemplate.TemplateId, model);
+            return template.GetTypeName(ComponentTypeScriptTemplate.TemplateId, model);
         }
 
-        public static string GetCoreModuleName(this IIntentTemplate template)
+        public static string GetLayoutComponentTypescriptTemplateName<T>(this IIntentTemplate<T> template) where T : LayoutModel
         {
-            return template.GetTypeName(CoreModuleTemplate.TemplateId);
+            return template.GetTypeName(LayoutComponentTypescriptTemplate.TemplateId, template.Model);
         }
 
-        public static string GetEnvironmentName(this IIntentTemplate template)
+        public static string GetLayoutComponentTypescriptTemplateName(this IIntentTemplate template, LayoutModel model)
+        {
+            return template.GetTypeName(LayoutComponentTypescriptTemplate.TemplateId, model);
+        }
+
+        public static string GetAppComponentTemplateName(this IIntentTemplate template)
+        {
+            return template.GetTypeName(AppComponentTemplate.TemplateId);
+        }
+
+        public static string GetAppConfigTemplateName(this IIntentTemplate template)
+        {
+            return template.GetTypeName(AppConfigTemplate.TemplateId);
+        }
+
+        public static string GetAppRoutesTemplateName(this IIntentTemplate template)
+        {
+            return template.GetTypeName(AppRoutesTemplate.TemplateId);
+        }
+
+        public static string GetMainTemplateName(this IIntentTemplate template)
+        {
+            return template.GetTypeName(MainTemplate.TemplateId);
+        }
+        public static string GetEnvironmentTemplateName(this IIntentTemplate template)
         {
             return template.GetTypeName(EnvironmentTemplate.TemplateId);
         }
 
-        public static string GetEnvironmentDotDevelopmentName(this IIntentTemplate template)
+        public static string GetEnvironmentDotDevelopmentTemplateName(this IIntentTemplate template)
         {
             return template.GetTypeName(EnvironmentDotDevelopmentTemplate.TemplateId);
         }
 
-        public static string GetFormGroupName<T>(this IIntentTemplate<T> template) where T : FormGroupDefinitionModel
+        public static string GetEnvironmentTypesTemplateName(this IIntentTemplate template)
         {
-            return template.GetTypeName(FormGroupTemplate.TemplateId, template.Model);
+            return template.GetTypeName(EnvironmentTypesTemplate.TemplateId);
         }
 
-        public static string GetFormGroupName(this IIntentTemplate template, FormGroupDefinitionModel model)
-        {
-            return template.GetTypeName(FormGroupTemplate.TemplateId, model);
-        }
-
-        public static string GetModelName<T>(this IIntentTemplate<T> template) where T : ModelDefinitionModel
-        {
-            return template.GetTypeName(ModelTemplate.TemplateId, template.Model);
-        }
-
-        public static string GetModelName(this IIntentTemplate template, ModelDefinitionModel model)
-        {
-            return template.GetTypeName(ModelTemplate.TemplateId, model);
-        }
-
-        public static string GetAngularModuleName<T>(this IIntentTemplate<T> template) where T : ModuleModel
-        {
-            return template.GetTypeName(AngularModuleTemplate.TemplateId, template.Model);
-        }
-
-        public static string GetAngularModuleName(this IIntentTemplate template, ModuleModel model)
-        {
-            return template.GetTypeName(AngularModuleTemplate.TemplateId, model);
-        }
-
-        public static string GetAngularResolverName<T>(this IIntentTemplate<T> template) where T : ResolverModel
-        {
-            return template.GetTypeName(AngularResolverTemplate.TemplateId, template.Model);
-        }
-
-        public static string GetAngularResolverName(this IIntentTemplate template, ResolverModel model)
-        {
-            return template.GetTypeName(AngularResolverTemplate.TemplateId, model);
-        }
-
-        public static string GetAngularRoutingModuleName<T>(this IIntentTemplate<T> template) where T : RoutingModel
-        {
-            return template.GetTypeName(AngularRoutingModuleTemplate.TemplateId, template.Model);
-        }
-
-        public static string GetAngularRoutingModuleName(this IIntentTemplate template, RoutingModel model)
-        {
-            return template.GetTypeName(AngularRoutingModuleTemplate.TemplateId, model);
-        }
-
-        public static string GetIntentDecoratorsName(this IIntentTemplate template)
+        public static string GetIntentDecoratorsTemplateName(this IIntentTemplate template)
         {
             return template.GetTypeName(IntentDecoratorsTemplate.TemplateId);
+        }
+
+        [IntentIgnore]
+        public static string UseType<T>(this TypeScriptTemplateBase<T> template, string type, string location)
+        {
+            template.AddImport(type, location);
+            return type;
         }
 
     }

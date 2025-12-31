@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="3697d56e-8390-4e7f-ba44-fee766191e77" type="Module Settings Configuration" typeId="37e678f8-370a-4b05-ae44-69bb3d2b39b6">
+  <name>Angular Settings</name>
+  <display>Angular Settings</display>
+  <isAbstract>false</isAbstract>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>d1f9847f-ec1b-4774-910a-816c4f3e8487</parentFolderId>
+  <packageId>d1f9847f-ec1b-4774-910a-816c4f3e8487</packageId>
+  <packageName>Intent.Angular</packageName>
+  <stereotypes>
+    <stereotype stereotypeDefinitionId="15b3e709-aeb8-410a-9172-1273eb7b0864" name="Configuration">
+      <addedByDefault>true</addedByDefault>
+      <definitionPackageName>Intent.ModuleBuilder</definitionPackageName>
+      <definitionPackageId>9972b2a9-b749-4bba-b5c8-824bf694c6ef</definitionPackageId>
+      <properties>
+        <property name="ce4eefa2-657c-42b0-a8cf-bbe35ef1d8a9" display="Settings Type" value="Application Settings" isActive="true" />
+      </properties>
+    </stereotype>
+  </stereotypes>
+  <metadata />
+  <childElements />
+</class>

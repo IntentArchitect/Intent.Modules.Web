@@ -16,49 +16,14 @@ namespace Intent.Modules.Angular.Templates.Core.StylesDotScssFile
     [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
     partial class StylesDotScssFileTemplate : IntentTemplateBase<object>
     {
-        private readonly List<string> _requests = new();
-
         [IntentManaged(Mode.Fully)]
-        public const string TemplateId = "Intent.Angular.Core.StylesDotScssFile";
+        public const string TemplateId = "Intent.Angular.Core.StylesDotScssFileTemplate";
+
+        private string _content = string.Empty;
 
         [IntentManaged(Mode.Merge, Signature = Mode.Fully)]
         public StylesDotScssFileTemplate(IOutputTarget outputTarget, object model = null) : base(TemplateId, outputTarget, model)
         {
-            ExecutionContext.EventDispatcher.Subscribe<StyleRequest>(request => _requests.Add(request.Payload));
-        }
-
-        public override string RunTemplate()
-        {
-            if (!TryGetExistingFileContent(out var content))
-            {
-                content = TransformText();
-            }
-
-            var lines = content.ReplaceLineEndings().Split(System.Environment.NewLine).ToList();
-
-            int trailingEmptyLineCount;
-            for (trailingEmptyLineCount = 0; trailingEmptyLineCount < lines.Count; trailingEmptyLineCount++)
-            {
-                if (!string.IsNullOrWhiteSpace(lines[^(trailingEmptyLineCount + 1)]))
-                {
-                    break;
-                }
-            }
-
-            var existing = new HashSet<string>(lines.Select(x => x.Trim().ToLowerInvariant()));
-            foreach (var request in _requests)
-            {
-                if (!existing.Add(request.Trim().ToLowerInvariant()))
-                {
-                    continue;
-                }
-
-                lines.Insert(lines.Count - trailingEmptyLineCount, request);
-            }
-
-            content = string.Join(System.Environment.NewLine, lines);
-
-            return content;
         }
 
         [IntentManaged(Mode.Fully, Body = Mode.Ignore)]
@@ -66,8 +31,14 @@ namespace Intent.Modules.Angular.Templates.Core.StylesDotScssFile
         {
             return new TemplateFileConfig(
                 fileName: $"styles",
-                fileExtension: "scss"
+                fileExtension: "scss",
+                overwriteBehaviour: OverwriteBehaviour.OverwriteDisabled
             );
+        }
+
+        public void SetContent(string content)
+        {
+            _content = content;
         }
     }
 }

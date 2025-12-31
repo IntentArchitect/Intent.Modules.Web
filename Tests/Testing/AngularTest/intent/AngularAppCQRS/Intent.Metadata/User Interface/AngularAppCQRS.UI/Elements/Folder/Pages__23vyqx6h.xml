@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="8493be1e-3ebd-4cf9-9fd9-07c972346f13" type="Folder" typeId="4d95d53a-8855-4f35-aa82-e312643f5c5f">
+  <name>Pages</name>
+  <display>Pages</display>
+  <externalReference>b7b548eb-a3b3-44a2-910f-bb0b7de52667</externalReference>
+  <isAbstract>false</isAbstract>
+  <sort-children>by-type-then-by-name</sort-children>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>2f554248-0cba-4543-bb70-00ac850dc428</parentFolderId>
+  <packageId>2f554248-0cba-4543-bb70-00ac850dc428</packageId>
+  <packageName>AngularAppCQRS.UI</packageName>
+  <stereotypes />
+  <metadata />
+  <childElements />
+</class>

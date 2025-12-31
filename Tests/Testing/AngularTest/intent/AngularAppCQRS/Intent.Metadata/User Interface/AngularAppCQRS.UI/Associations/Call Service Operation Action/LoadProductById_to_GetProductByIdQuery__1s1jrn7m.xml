@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<association id="1ebbb119-f8f9-4d92-b3ab-85fd80629f6e">
+  <sourceEnd id="5e277f06-0268-44ec-8802-5740825e43e2" type="Call Service Operation Action Source End" typeId="936e090c-8408-429d-b2f6-2eb8deecc428">
+    <display>: LoadProductById</display>
+    <order>0</order>
+    <typeReference id="5e3f35dd-1ccc-456b-a254-ceadc14ec49a">
+      <typeId>5fb164d0-24b4-422c-8d7c-b527beb95fdf</typeId>
+      <isNavigable>false</isNavigable>
+      <isNullable>false</isNullable>
+      <isCollection>false</isCollection>
+      <isRequired>true</isRequired>
+      <typePackageName>AngularAppCQRS.UI</typePackageName>
+      <typePackageId>2f554248-0cba-4543-bb70-00ac850dc428</typePackageId>
+      <stereotypes />
+      <genericTypeParameters />
+    </typeReference>
+    <stereotypes />
+    <metadata />
+    <childElements />
+  </sourceEnd>
+  <targetEnd id="1ebbb119-f8f9-4d92-b3ab-85fd80629f6e" type="Call Service Operation Action Target End" typeId="475f0810-2b4a-40da-8eb8-697cb62f7dbe">
+    <name>GetProductByIdQuery</name>
+    <display>[call] Products.GetProductByIdQuery: ProductDto</display>
+    <order>1</order>
+    <traits>
+      <trait id="dc813928-0ce1-4f66-ae31-b5e5d506b4a3" name="[Invokable]" />
+    </traits>
+    <typeReference id="0c6c7de0-a0b6-4919-a997-a76e98a27595">
+      <typeId>b3ede351-b295-4f5d-a6ca-10d0fb1dc8d9</typeId>
+      <isNavigable>true</isNavigable>
+      <isNullable>false</isNullable>
+      <isCollection>false</isCollection>
+      <isRequired>true</isRequired>
+      <typePackageName>DotNetBackEndService.Services</typePackageName>
+      <typePackageId>0086f3b4-ca20-405f-aca7-641b8b8fe067</typePackageId>
+      <stereotypes />
+      <genericTypeParameters />
+    </typeReference>
+    <stereotypes />
+    <mappings>
+      <mapping type="Call Service Mapping" typeId="e4a4111b-cf13-4efe-8a5d-fea9457ac8ad">
+        <source applicationId="ad925f84-ceed-46ee-8059-6b3e79738beb" designerId="f492faed-0665-4513-9853-5a230721786f" elementId="6db1bba5-e25f-4997-9135-6e575e046108" location="[AngularAppCQRS].[User Interface].[ProductEditPage]" />
+        <target applicationId="a234e200-cbe6-47a0-adaa-af0656448614" designerId="81104ae6-2bc5-4bae-b05a-f987b0372d81" elementId="b3ede351-b295-4f5d-a6ca-10d0fb1dc8d9" location="[AngularAppCQRS].[User Interface].[GetProductByIdQuery]" />
+        <mappedEnds>
+          <mappedEnd>
+            <expression>{LoadProductById.GetProductByIdQuery}</expression>
+            <path>
+              <target id="b3ede351-b295-4f5d-a6ca-10d0fb1dc8d9" name="GetProductByIdQuery" type="element" specialization="Query" specializationId="e71b0662-e29d-4db2-868b-8a12464b25d0" />
+            </path>
+            <sources>
+              <source identifier="LoadProductById.GetProductByIdQuery" mappingType="Invocation Mapping" mappingTypeId="ab447316-1252-49bc-a695-f34cb00a3cdc">
+                <path>
+                  <target id="6db1bba5-e25f-4997-9135-6e575e046108" name="ProductEditPage" type="element" specialization="Component" specializationId="b1c481e1-e91e-4c29-9817-00ab9cad4b6b" />
+                  <target id="5fb164d0-24b4-422c-8d7c-b527beb95fdf" name="LoadProductById" type="element" specialization="Component Operation" specializationId="e030c97a-e066-40a7-8188-808c275df3cb" />
+                  <target id="1ebbb119-f8f9-4d92-b3ab-85fd80629f6e" name="GetProductByIdQuery" type="association" specialization="Call Service Operation Action Target End" specializationId="475f0810-2b4a-40da-8eb8-697cb62f7dbe" />
+                </path>
+              </source>
+            </sources>
+          </mappedEnd>
+          <mappedEnd>
+            <expression>{LoadProductById.id}</expression>
+            <path>
+              <target id="b3ede351-b295-4f5d-a6ca-10d0fb1dc8d9" name="GetProductByIdQuery" type="element" specialization="Query" specializationId="e71b0662-e29d-4db2-868b-8a12464b25d0" />
+              <target id="f09871fc-3339-4502-b1dc-9d8d6fd1e742" name="Id" type="element" specialization="DTO-Field" specializationId="7baed1fd-469b-4980-8fd9-4cefb8331eb2" />
+            </path>
+            <sources>
+              <source identifier="LoadProductById.id" mappingType="Data Mapping" mappingTypeId="ce70308a-e29d-4644-8410-f9e6bbd214fc">
+                <path>
+                  <target id="6db1bba5-e25f-4997-9135-6e575e046108" name="ProductEditPage" type="element" specialization="Component" specializationId="b1c481e1-e91e-4c29-9817-00ab9cad4b6b" />
+                  <target id="5fb164d0-24b4-422c-8d7c-b527beb95fdf" name="LoadProductById" type="element" specialization="Component Operation" specializationId="e030c97a-e066-40a7-8188-808c275df3cb" />
+                  <target id="e965ac27-7a83-48bf-b00b-bfc447ef367d" name="id" type="element" specialization="Parameter" specializationId="c26d8d0a-a26b-4b5f-b449-e9bdb60b3a4b" />
+                </path>
+              </source>
+            </sources>
+          </mappedEnd>
+        </mappedEnds>
+      </mapping>
+      <mapping type="Call Service Response Mapping" typeId="e60890c6-7ce7-47be-a0da-dff82b8adc02">
+        <source applicationId="ad925f84-ceed-46ee-8059-6b3e79738beb" designerId="f492faed-0665-4513-9853-5a230721786f" elementId="6db1bba5-e25f-4997-9135-6e575e046108" location="[AngularAppCQRS].[User Interface].[ProductEditPage]" />
+        <target applicationId="ad925f84-ceed-46ee-8059-6b3e79738beb" designerId="f492faed-0665-4513-9853-5a230721786f" elementId="6db1bba5-e25f-4997-9135-6e575e046108" location="[AngularAppCQRS].[User Interface].[ProductEditPage]" />
+        <mappedEnds>
+          <mappedEnd>
+            <expression>{LoadProductById.GetProductByIdQuery.response}</expression>
+            <path>
+              <target id="6db1bba5-e25f-4997-9135-6e575e046108" name="ProductEditPage" type="element" specialization="Component" specializationId="b1c481e1-e91e-4c29-9817-00ab9cad4b6b" />
+              <target id="2ef5058a-d41e-4f51-9176-73b502b90ee3" name="ProductByIdModels" type="element" specialization="Property" specializationId="356fbe17-bc63-4e16-b915-feefbc063cbe" />
+            </path>
+            <sources>
+              <source identifier="LoadProductById.GetProductByIdQuery.response" mappingType="Data Mapping" mappingTypeId="9cccf6be-31be-4ac0-a026-ed0c4f5578bf">
+                <path>
+                  <target id="6db1bba5-e25f-4997-9135-6e575e046108" name="ProductEditPage" type="element" specialization="Component" specializationId="b1c481e1-e91e-4c29-9817-00ab9cad4b6b" />
+                  <target id="5fb164d0-24b4-422c-8d7c-b527beb95fdf" name="LoadProductById" type="element" specialization="Component Operation" specializationId="e030c97a-e066-40a7-8188-808c275df3cb" />
+                  <target id="1ebbb119-f8f9-4d92-b3ab-85fd80629f6e" name="GetProductByIdQuery" type="association" specialization="Call Service Operation Action Target End" specializationId="475f0810-2b4a-40da-8eb8-697cb62f7dbe" />
+                  <target id="2f68b1a4-a523-4987-b3da-f35e6e8e146b" name="response" type="static-mappable" specialization="response" specializationId="2f68b1a4-a523-4987-b3da-f35e6e8e146b">
+                    <typeReference>
+                      <typeId>23627eb6-569c-4767-be6c-1976f8beab5f</typeId>
+                      <isNavigable>true</isNavigable>
+                      <isNullable>false</isNullable>
+                      <isCollection>false</isCollection>
+                      <isRequired>true</isRequired>
+                      <typePackageName>DotNetBackEndService.Services</typePackageName>
+                      <typePackageId>0086f3b4-ca20-405f-aca7-641b8b8fe067</typePackageId>
+                      <stereotypes />
+                      <genericTypeParameters />
+                    </typeReference>
+                  </target>
+                </path>
+              </source>
+            </sources>
+          </mappedEnd>
+        </mappedEnds>
+      </mapping>
+    </mappings>
+    <metadata />
+    <childElements />
+  </targetEnd>
+  <associationType>Call Service Operation Action</associationType>
+  <associationTypeId>fe5a5cd8-aabd-472f-8d42-f5c233e658dc</associationTypeId>
+  <stereotypes />
+</association>

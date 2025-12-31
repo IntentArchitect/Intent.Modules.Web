@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="ed8e1606-6b99-4478-af51-2837380f4153" type="Folder" typeId="4d95d53a-8855-4f35-aa82-e312643f5c5f">
+  <name>src</name>
+  <display>src</display>
+  <isAbstract>false</isAbstract>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>8e5c7d46-90fe-4828-b4cd-61e44c9b2a2c</parentFolderId>
+  <packageId>8e5c7d46-90fe-4828-b4cd-61e44c9b2a2c</packageId>
+  <packageName>${application.name}</packageName>
+  <stereotypes />
+  <metadata />
+  <childElements />
+</class>

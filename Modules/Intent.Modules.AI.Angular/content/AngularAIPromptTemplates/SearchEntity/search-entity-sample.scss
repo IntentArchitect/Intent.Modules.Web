@@ -1,0 +1,73 @@
+// Component-specific styles for customer-search
+
+// Filter grid layout (specific to search)
+.filter-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.filter-item {
+  display: flex;
+  flex-direction: column;
+}
+
+// Table wrapper
+.table-wrapper {
+  margin-top: 1rem;
+}
+
+// Table container specific to search page
+.table-container {
+  max-height: calc(100vh - 450px);
+  min-height: 400px;
+
+  table {
+    min-width: 650px;
+    width: 100%;
+  }
+
+  .mat-mdc-table {
+    background: white;
+  }
+
+  .mat-mdc-header-cell {
+    font-weight: 600;
+    font-size: 0.875rem;
+    color: rgba(0, 0, 0, 0.87);
+  }
+
+  .mat-mdc-cell {
+    font-size: 0.875rem;
+  }
+
+  .mat-mdc-row:hover {
+    background-color: rgba(0, 0, 0, 0.04);
+  }
+}
+
+// Empty state styling
+.mat-row {
+  td.mat-cell {
+    text-align: center;
+    padding: 2rem;
+    color: rgba(0, 0, 0, 0.54);
+    font-style: italic;
+  }
+}
+
+// Responsive adjustments
+@media (max-width: 768px) {
+  .filter-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .table-container {
+    max-height: calc(100vh - 500px);
+    
+    table {
+      min-width: 100%;
+    }
+  }
+}

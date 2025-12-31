@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="8b742fcf-2ace-48ac-aef0-b069f67a4259" type="Model Definition" typeId="bd3941b5-e3b3-4a40-96e6-b9c87cea0101">
+  <name>CreateProductModel</name>
+  <display>CreateProductModel</display>
+  <isAbstract>false</isAbstract>
+  <sort-children>by-type-then-manually</sort-children>
+  <order>4</order>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>8a64687f-6c20-40fd-b050-ad9f34f6c74f</parentFolderId>
+  <packageId>2f554248-0cba-4543-bb70-00ac850dc428</packageId>
+  <packageName>AngularAppCQRS.UI</packageName>
+  <stereotypes />
+  <metadata />
+  <childElements>
+    <childElement id="63d58942-6330-4464-b52b-4cd278e4f456" type="Property" typeId="356fbe17-bc63-4e16-b915-feefbc063cbe">
+      <name>Name</name>
+      <display>Name: string</display>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <typeReference id="fa4e80bd-e820-4025-91fb-818b266ffcaa">
+        <typeId>d384db9c-a279-45e1-801e-e4e8099625f2</typeId>
+        <isNavigable>true</isNavigable>
+        <isNullable>false</isNullable>
+        <isCollection>false</isCollection>
+        <isRequired>true</isRequired>
+        <typePackageName>Intent.Common.Types</typePackageName>
+        <typePackageId>870ad967-cbd4-4ea9-b86d-9c3a5d55ea67</typePackageId>
+        <stereotypes />
+        <genericTypeParameters />
+      </typeReference>
+      <isMapped>false</isMapped>
+      <parentFolderId>8b742fcf-2ace-48ac-aef0-b069f67a4259</parentFolderId>
+      <packageId>2f554248-0cba-4543-bb70-00ac850dc428</packageId>
+      <packageName>AngularAppCQRS.UI</packageName>
+      <stereotypes />
+      <metadata />
+      <childElements />
+    </childElement>
+    <childElement id="62c3222d-ee15-4aa3-9582-5224f2a50d5a" type="Property" typeId="356fbe17-bc63-4e16-b915-feefbc063cbe">
+      <name>Description</name>
+      <display>Description: string</display>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <typeReference id="1ebf3d5f-1f42-4111-8159-473a3d889fd7">
+        <typeId>d384db9c-a279-45e1-801e-e4e8099625f2</typeId>
+        <isNavigable>true</isNavigable>
+        <isNullable>false</isNullable>
+        <isCollection>false</isCollection>
+        <isRequired>true</isRequired>
+        <typePackageName>Intent.Common.Types</typePackageName>
+        <typePackageId>870ad967-cbd4-4ea9-b86d-9c3a5d55ea67</typePackageId>
+        <stereotypes />
+        <genericTypeParameters />
+      </typeReference>
+      <isMapped>false</isMapped>
+      <parentFolderId>8b742fcf-2ace-48ac-aef0-b069f67a4259</parentFolderId>
+      <packageId>2f554248-0cba-4543-bb70-00ac850dc428</packageId>
+      <packageName>AngularAppCQRS.UI</packageName>
+      <stereotypes />
+      <metadata />
+      <childElements />
+    </childElement>
+    <childElement id="eba4c59e-393b-4f2b-873d-e23d35b89477" type="Property" typeId="356fbe17-bc63-4e16-b915-feefbc063cbe">
+      <name>Sku</name>
+      <display>Sku: string</display>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <typeReference id="d2b7c6e6-70d2-44f3-aa84-d11ebf6a7f62">
+        <typeId>d384db9c-a279-45e1-801e-e4e8099625f2</typeId>
+        <isNavigable>true</isNavigable>
+        <isNullable>false</isNullable>
+        <isCollection>false</isCollection>
+        <isRequired>true</isRequired>
+        <typePackageName>Intent.Common.Types</typePackageName>
+        <typePackageId>870ad967-cbd4-4ea9-b86d-9c3a5d55ea67</typePackageId>
+        <stereotypes />
+        <genericTypeParameters />
+      </typeReference>
+      <isMapped>false</isMapped>
+      <parentFolderId>8b742fcf-2ace-48ac-aef0-b069f67a4259</parentFolderId>
+      <packageId>2f554248-0cba-4543-bb70-00ac850dc428</packageId>
+      <packageName>AngularAppCQRS.UI</packageName>
+      <stereotypes />
+      <metadata />
+      <childElements />
+    </childElement>
+    <childElement id="4354562a-22f8-4001-a04c-bcc78126881a" type="Property" typeId="356fbe17-bc63-4e16-b915-feefbc063cbe">
+      <name>Price</name>
+      <display>Price: decimal?</display>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <typeReference id="f2bf6ff2-d396-4823-992f-39855579712e">
+        <typeId>675c7b84-997a-44e0-82b9-cd724c07c9e6</typeId>
+        <isNavigable>true</isNavigable>
+        <isNullable>true</isNullable>
+        <isCollection>false</isCollection>
+        <isRequired>true</isRequired>
+        <typePackageName>Intent.Common.Types</typePackageName>
+        <typePackageId>870ad967-cbd4-4ea9-b86d-9c3a5d55ea67</typePackageId>
+        <stereotypes />
+        <genericTypeParameters />
+      </typeReference>
+      <isMapped>false</isMapped>
+      <parentFolderId>8b742fcf-2ace-48ac-aef0-b069f67a4259</parentFolderId>
+      <packageId>2f554248-0cba-4543-bb70-00ac850dc428</packageId>
+      <packageName>AngularAppCQRS.UI</packageName>
+      <stereotypes />
+      <metadata />
+      <childElements />
+    </childElement>
+  </childElements>
+</class>

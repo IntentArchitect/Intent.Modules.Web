@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="fe3a9399-973e-4ad0-8c5d-16311943c78b" type="Designer Settings" typeId="7a6411a8-ffef-4209-91c6-8d12755a806a">
+  <name>AI Prompts</name>
+  <display>AI Prompts</display>
+  <isAbstract>false</isAbstract>
+  <sort-children>by-type-then-by-name</sort-children>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>43ed9f10-7add-4849-b9a3-bf2dfb14e89b</parentFolderId>
+  <packageId>4caf7667-4fd9-4f05-87c2-6db905c41294</packageId>
+  <packageName>Intent.AI.Angular</packageName>
+  <stereotypes>
+    <stereotype stereotypeDefinitionId="81e5637b-05d7-43a4-9619-6ef873be9f47" name="Designer Settings">
+      <addedByDefault>true</addedByDefault>
+      <definitionPackageName>Intent.ModuleBuilder</definitionPackageName>
+      <definitionPackageId>9972b2a9-b749-4bba-b5c8-824bf694c6ef</definitionPackageId>
+      <properties>
+        <property name="9566aa04-ab84-4fbc-b039-6e676159ed82" display="Is Reference" value="false" isActive="true" />
+        <property name="fdbbd211-a162-4f29-bcdb-1250309d8aef" display="Extend Designers" value="[&quot;f492faed-0665-4513-9853-5a230721786f&quot;]" isActive="true" />
+      </properties>
+    </stereotype>
+  </stereotypes>
+  <metadata />
+  <childElements />
+</class>

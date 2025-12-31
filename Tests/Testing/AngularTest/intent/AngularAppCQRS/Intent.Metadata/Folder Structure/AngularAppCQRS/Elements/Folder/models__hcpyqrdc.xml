@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="cb8380de-096c-42f4-baae-9a5b0461dc48" type="Folder" typeId="4d95d53a-8855-4f35-aa82-e312643f5c5f">
+  <name>models</name>
+  <display>models</display>
+  <isAbstract>false</isAbstract>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>aa8442f1-577e-478a-9358-955d00ec92a0</parentFolderId>
+  <stereotypes />
+  <metadata />
+  <childElements>
+    <childElement id="72bd9d47-875e-4db7-a2b3-e21a81188d03" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+      <name>Intent.Angular.HttpClients.DtoContract</name>
+      <display>Intent.Angular.HttpClients.DtoContract</display>
+      <externalReference>Intent.Angular.HttpClients</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>cb8380de-096c-42f4-baae-9a5b0461dc48</parentFolderId>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
+      <childElements />
+    </childElement>
+    <childElement id="1d1fe154-833d-4e39-848e-b17ebd30f97c" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+      <name>Intent.Angular.HttpClients.EnumContract</name>
+      <display>Intent.Angular.HttpClients.EnumContract</display>
+      <externalReference>Intent.Angular.HttpClients</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>cb8380de-096c-42f4-baae-9a5b0461dc48</parentFolderId>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
+      <childElements />
+    </childElement>
+    <childElement id="6bcfc4ca-1808-4b9a-b7e8-392a30161298" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+      <name>Intent.Angular.HttpClients.JsonResponse</name>
+      <display>Intent.Angular.HttpClients.JsonResponse</display>
+      <externalReference>Intent.Angular.HttpClients</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>cb8380de-096c-42f4-baae-9a5b0461dc48</parentFolderId>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
+      <childElements />
+    </childElement>
+    <childElement id="f51bebdd-c612-4538-9613-4350de41803d" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+      <name>Intent.Angular.HttpClients.PagedResult</name>
+      <display>Intent.Angular.HttpClients.PagedResult</display>
+      <externalReference>Intent.Angular.HttpClients</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>cb8380de-096c-42f4-baae-9a5b0461dc48</parentFolderId>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
+      <childElements />
+    </childElement>
+  </childElements>
+</class>

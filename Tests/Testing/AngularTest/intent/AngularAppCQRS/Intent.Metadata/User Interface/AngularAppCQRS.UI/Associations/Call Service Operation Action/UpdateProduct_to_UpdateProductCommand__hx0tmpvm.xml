@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="utf-8"?>
+<association id="f5571ee6-c4f5-4683-b0fe-d2d510ef5cfb">
+  <sourceEnd id="d1fb2f8c-5b9a-43ee-9782-76a03f609e8e" type="Call Service Operation Action Source End" typeId="936e090c-8408-429d-b2f6-2eb8deecc428">
+    <display>: UpdateProduct</display>
+    <order>0</order>
+    <typeReference id="de7220db-2057-4746-ac9c-e1cd8c0a3dc6">
+      <typeId>fb7a4a4a-5a73-4c7b-94dc-28ee3ae73389</typeId>
+      <isNavigable>false</isNavigable>
+      <isNullable>false</isNullable>
+      <isCollection>false</isCollection>
+      <isRequired>true</isRequired>
+      <typePackageName>AngularAppCQRS.UI</typePackageName>
+      <typePackageId>2f554248-0cba-4543-bb70-00ac850dc428</typePackageId>
+      <stereotypes />
+      <genericTypeParameters />
+    </typeReference>
+    <stereotypes />
+    <metadata />
+    <childElements />
+  </sourceEnd>
+  <targetEnd id="f5571ee6-c4f5-4683-b0fe-d2d510ef5cfb" type="Call Service Operation Action Target End" typeId="475f0810-2b4a-40da-8eb8-697cb62f7dbe">
+    <name>UpdateProductCommand</name>
+    <display>[call] Products.UpdateProductCommand: void</display>
+    <order>0</order>
+    <traits>
+      <trait id="dc813928-0ce1-4f66-ae31-b5e5d506b4a3" name="[Invokable]" />
+    </traits>
+    <typeReference id="411b7a9a-7acc-4260-a5eb-f985c1b0471b">
+      <typeId>369fef90-b3c8-43d0-aa05-e504832b0acb</typeId>
+      <isNavigable>true</isNavigable>
+      <isNullable>false</isNullable>
+      <isCollection>false</isCollection>
+      <isRequired>true</isRequired>
+      <typePackageName>DotNetBackEndService.Services</typePackageName>
+      <typePackageId>0086f3b4-ca20-405f-aca7-641b8b8fe067</typePackageId>
+      <stereotypes />
+      <genericTypeParameters />
+    </typeReference>
+    <stereotypes />
+    <mappings>
+      <mapping type="Call Service Mapping" typeId="e4a4111b-cf13-4efe-8a5d-fea9457ac8ad">
+        <source applicationId="ad925f84-ceed-46ee-8059-6b3e79738beb" designerId="f492faed-0665-4513-9853-5a230721786f" elementId="6db1bba5-e25f-4997-9135-6e575e046108" location="[AngularAppCQRS].[User Interface].[ProductEditPage]" />
+        <target applicationId="a234e200-cbe6-47a0-adaa-af0656448614" designerId="81104ae6-2bc5-4bae-b05a-f987b0372d81" elementId="369fef90-b3c8-43d0-aa05-e504832b0acb" location="[AngularAppCQRS].[User Interface].[UpdateProductCommand]" />
+        <mappedEnds>
+          <mappedEnd>
+            <expression>{UpdateProduct.UpdateProductCommand}</expression>
+            <path>
+              <target id="369fef90-b3c8-43d0-aa05-e504832b0acb" name="UpdateProductCommand" type="element" specialization="Command" specializationId="ccf14eb6-3a55-4d81-b5b9-d27311c70cb9" />
+            </path>
+            <sources>
+              <source identifier="UpdateProduct.UpdateProductCommand" mappingType="Invocation Mapping" mappingTypeId="ab447316-1252-49bc-a695-f34cb00a3cdc">
+                <path>
+                  <target id="6db1bba5-e25f-4997-9135-6e575e046108" name="ProductEditPage" type="element" specialization="Component" specializationId="b1c481e1-e91e-4c29-9817-00ab9cad4b6b" />
+                  <target id="fb7a4a4a-5a73-4c7b-94dc-28ee3ae73389" name="UpdateProduct" type="element" specialization="Component Operation" specializationId="e030c97a-e066-40a7-8188-808c275df3cb" />
+                  <target id="f5571ee6-c4f5-4683-b0fe-d2d510ef5cfb" name="UpdateProductCommand" type="association" specialization="Call Service Operation Action Target End" specializationId="475f0810-2b4a-40da-8eb8-697cb62f7dbe" />
+                </path>
+              </source>
+            </sources>
+          </mappedEnd>
+          <mappedEnd>
+            <expression>{ProductByIdModels.Id}</expression>
+            <path>
+              <target id="369fef90-b3c8-43d0-aa05-e504832b0acb" name="UpdateProductCommand" type="element" specialization="Command" specializationId="ccf14eb6-3a55-4d81-b5b9-d27311c70cb9" />
+              <target id="b93f9aeb-b40f-4b53-805f-875aba169075" name="Id" type="element" specialization="DTO-Field" specializationId="7baed1fd-469b-4980-8fd9-4cefb8331eb2" />
+            </path>
+            <sources>
+              <source identifier="ProductByIdModels.Id" mappingType="Data Mapping" mappingTypeId="ce70308a-e29d-4644-8410-f9e6bbd214fc">
+                <path>
+                  <target id="6db1bba5-e25f-4997-9135-6e575e046108" name="ProductEditPage" type="element" specialization="Component" specializationId="b1c481e1-e91e-4c29-9817-00ab9cad4b6b" />
+                  <target id="2ef5058a-d41e-4f51-9176-73b502b90ee3" name="ProductByIdModels" type="element" specialization="Property" specializationId="356fbe17-bc63-4e16-b915-feefbc063cbe" />
+                  <target id="04da6ae6-5be3-409b-8598-e350bc9b1941" name="Id" type="element" specialization="DTO-Field" specializationId="7baed1fd-469b-4980-8fd9-4cefb8331eb2" />
+                </path>
+              </source>
+            </sources>
+          </mappedEnd>
+          <mappedEnd>
+            <expression>{ProductByIdModels.Name}</expression>
+            <path>
+              <target id="369fef90-b3c8-43d0-aa05-e504832b0acb" name="UpdateProductCommand" type="element" specialization="Command" specializationId="ccf14eb6-3a55-4d81-b5b9-d27311c70cb9" />
+              <target id="983082a0-d46f-475b-a1c8-2b8681834c45" name="Name" type="element" specialization="DTO-Field" specializationId="7baed1fd-469b-4980-8fd9-4cefb8331eb2" />
+            </path>
+            <sources>
+              <source identifier="ProductByIdModels.Name" mappingType="Data Mapping" mappingTypeId="ce70308a-e29d-4644-8410-f9e6bbd214fc">
+                <path>
+                  <target id="6db1bba5-e25f-4997-9135-6e575e046108" name="ProductEditPage" type="element" specialization="Component" specializationId="b1c481e1-e91e-4c29-9817-00ab9cad4b6b" />
+                  <target id="2ef5058a-d41e-4f51-9176-73b502b90ee3" name="ProductByIdModels" type="element" specialization="Property" specializationId="356fbe17-bc63-4e16-b915-feefbc063cbe" />
+                  <target id="d7944308-d62d-45cf-967d-543bf01df959" name="Name" type="element" specialization="DTO-Field" specializationId="7baed1fd-469b-4980-8fd9-4cefb8331eb2" />
+                </path>
+              </source>
+            </sources>
+          </mappedEnd>
+          <mappedEnd>
+            <expression>{ProductByIdModels.Description}</expression>
+            <path>
+              <target id="369fef90-b3c8-43d0-aa05-e504832b0acb" name="UpdateProductCommand" type="element" specialization="Command" specializationId="ccf14eb6-3a55-4d81-b5b9-d27311c70cb9" />
+              <target id="4d5c1a6a-a846-4a75-987d-609cfdd5c774" name="Description" type="element" specialization="DTO-Field" specializationId="7baed1fd-469b-4980-8fd9-4cefb8331eb2" />
+            </path>
+            <sources>
+              <source identifier="ProductByIdModels.Description" mappingType="Data Mapping" mappingTypeId="ce70308a-e29d-4644-8410-f9e6bbd214fc">
+                <path>
+                  <target id="6db1bba5-e25f-4997-9135-6e575e046108" name="ProductEditPage" type="element" specialization="Component" specializationId="b1c481e1-e91e-4c29-9817-00ab9cad4b6b" />
+                  <target id="2ef5058a-d41e-4f51-9176-73b502b90ee3" name="ProductByIdModels" type="element" specialization="Property" specializationId="356fbe17-bc63-4e16-b915-feefbc063cbe" />
+                  <target id="b9f60b8e-45c2-47cf-b1ea-e88a1f85552f" name="Description" type="element" specialization="DTO-Field" specializationId="7baed1fd-469b-4980-8fd9-4cefb8331eb2" />
+                </path>
+              </source>
+            </sources>
+          </mappedEnd>
+          <mappedEnd>
+            <expression>{ProductByIdModels.Sku}</expression>
+            <path>
+              <target id="369fef90-b3c8-43d0-aa05-e504832b0acb" name="UpdateProductCommand" type="element" specialization="Command" specializationId="ccf14eb6-3a55-4d81-b5b9-d27311c70cb9" />
+              <target id="da745b7b-e5fd-4874-bc77-fb16c6b96030" name="Sku" type="element" specialization="DTO-Field" specializationId="7baed1fd-469b-4980-8fd9-4cefb8331eb2" />
+            </path>
+            <sources>
+              <source identifier="ProductByIdModels.Sku" mappingType="Data Mapping" mappingTypeId="ce70308a-e29d-4644-8410-f9e6bbd214fc">
+                <path>
+                  <target id="6db1bba5-e25f-4997-9135-6e575e046108" name="ProductEditPage" type="element" specialization="Component" specializationId="b1c481e1-e91e-4c29-9817-00ab9cad4b6b" />
+                  <target id="2ef5058a-d41e-4f51-9176-73b502b90ee3" name="ProductByIdModels" type="element" specialization="Property" specializationId="356fbe17-bc63-4e16-b915-feefbc063cbe" />
+                  <target id="1c39f4ac-0cfb-4cc8-ba62-aef5766f9d94" name="Sku" type="element" specialization="DTO-Field" specializationId="7baed1fd-469b-4980-8fd9-4cefb8331eb2" />
+                </path>
+              </source>
+            </sources>
+          </mappedEnd>
+          <mappedEnd>
+            <expression>{ProductByIdModels.Price}</expression>
+            <path>
+              <target id="369fef90-b3c8-43d0-aa05-e504832b0acb" name="UpdateProductCommand" type="element" specialization="Command" specializationId="ccf14eb6-3a55-4d81-b5b9-d27311c70cb9" />
+              <target id="5771ab00-3f17-4f5f-8616-5baab83250ac" name="Price" type="element" specialization="DTO-Field" specializationId="7baed1fd-469b-4980-8fd9-4cefb8331eb2" />
+            </path>
+            <sources>
+              <source identifier="ProductByIdModels.Price" mappingType="Data Mapping" mappingTypeId="ce70308a-e29d-4644-8410-f9e6bbd214fc">
+                <path>
+                  <target id="6db1bba5-e25f-4997-9135-6e575e046108" name="ProductEditPage" type="element" specialization="Component" specializationId="b1c481e1-e91e-4c29-9817-00ab9cad4b6b" />
+                  <target id="2ef5058a-d41e-4f51-9176-73b502b90ee3" name="ProductByIdModels" type="element" specialization="Property" specializationId="356fbe17-bc63-4e16-b915-feefbc063cbe" />
+                  <target id="0a624cf6-180e-490f-8609-2f4274a6eb60" name="Price" type="element" specialization="DTO-Field" specializationId="7baed1fd-469b-4980-8fd9-4cefb8331eb2" />
+                </path>
+              </source>
+            </sources>
+          </mappedEnd>
+        </mappedEnds>
+      </mapping>
+    </mappings>
+    <metadata />
+    <childElements />
+  </targetEnd>
+  <associationType>Call Service Operation Action</associationType>
+  <associationTypeId>fe5a5cd8-aabd-472f-8d42-f5c233e658dc</associationTypeId>
+  <stereotypes />
+</association>

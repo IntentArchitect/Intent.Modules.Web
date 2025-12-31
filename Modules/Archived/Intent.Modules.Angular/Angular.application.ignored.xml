@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ignoredFiles>
+  <files>
+    <file relativePath="Intent.Modules.Angular/Api/Extensions/ComponentModelStereotypeExtensions.cs" />
+    <file relativePath="Intent.Modules.Angular/content/InitialFiles/readme.txt" />
+    <file relativePath="Intent.Modules.Angular/Intent.Angular.imodspec" />
+    <file relativePath="Intent.Modules.Angular/Templates/Component/AngularComponentCss/AngularComponentCssTemplate.cs" />
+    <file relativePath="Intent.Modules.Angular/Templates/Component/AngularComponentCss/AngularComponentCssTemplate.tt" />
+    <file relativePath="Intent.Modules.Angular/Templates/Component/AngularComponentCss/AngularComponentCssTemplatePartial.cs" />
+    <file relativePath="Intent.Modules.Angular/Templates/Component/AngularComponentCss/AngularComponentCssTemplateRegistration.cs" />
+    <file relativePath="Intent.Modules.Angular/Templates/Component/AngularComponentHtml/AngularComponentHtmlTemplate.cs" />
+    <file relativePath="Intent.Modules.Angular/Templates/Component/AngularComponentHtml/AngularComponentHtmlTemplate.tt" />
+    <file relativePath="Intent.Modules.Angular/Templates/Component/AngularComponentHtml/AngularComponentHtmlTemplatePartial.cs" />
+    <file relativePath="Intent.Modules.Angular/Templates/Component/AngularComponentHtml/AngularComponentHtmlTemplateRegistration.cs" />
+    <file relativePath="Intent.Modules.Angular/Templates/Component/AngularComponentTs/AngularComponentTsTemplate.cs" />
+    <file relativePath="Intent.Modules.Angular/Templates/Component/AngularComponentTs/AngularComponentTsTemplate.tt" />
+    <file relativePath="Intent.Modules.Angular/Templates/Component/AngularComponentTs/AngularComponentTsTemplatePartial.cs" />
+    <file relativePath="Intent.Modules.Angular/Templates/Component/AngularComponentTs/AngularComponentTsTemplateRegistration.cs" />
+    <file relativePath="Intent.Modules.Angular/Templates/Model/FormGroup/FormGroupTemplateRegistration.cs" />
+    <file relativePath="Intent.Modules.Angular/Templates/Model/Model/ModelTemplate.cs" />
+    <file relativePath="Intent.Modules.Angular/Templates/Model/Model/ModelTemplate.tt" />
+    <file relativePath="Intent.Modules.Angular/Templates/Model/Model/ModelTemplatePartial.cs" />
+    <file relativePath="Intent.Modules.Angular/Templates/Model/Model/ModelTemplateRegistration.cs" />
+    <file relativePath="Intent.Modules.Angular/Templates/Module/AngularModule/AngularModuleTemplateRegistration.cs" />
+    <file relativePath="Intent.Modules.Angular/Templates/Module/AngularResolver/AngularResolverTemplateRegistration.cs" />
+    <file relativePath="Intent.Modules.Angular/Templates/Module/AngularRoutingModule/AngularRoutingModuleTemplateRegistration.cs" />
+    <file relativePath="Intent.Modules.Angular/Templates/TemplateExtensions.cs" />
+  </files>
+</ignoredFiles>

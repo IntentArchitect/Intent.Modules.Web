@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="8a64687f-6c20-40fd-b050-ad9f34f6c74f" type="Component" typeId="b1c481e1-e91e-4c29-9817-00ab9cad4b6b">
+  <name>ProductAddPage</name>
+  <display>ProductAddPage</display>
+  <isAbstract>false</isAbstract>
+  <sort-children>by-type-then-manually</sort-children>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>8493be1e-3ebd-4cf9-9fd9-07c972346f13</parentFolderId>
+  <packageId>2f554248-0cba-4543-bb70-00ac850dc428</packageId>
+  <packageName>AngularAppCQRS.UI</packageName>
+  <traits>
+    <trait id="b407aace-ad14-484e-ac93-4762a3d182d8" name="[Component]" />
+    <trait id="ea4adc09-8978-4ede-ba5f-265debb2b60c" name="Page" />
+  </traits>
+  <stereotypes>
+    <stereotype stereotypeDefinitionId="ea4adc09-8978-4ede-ba5f-265debb2b60c" name="Page">
+      <addedByDefault>false</addedByDefault>
+      <definitionPackageName>Intent.Modelers.UI</definitionPackageName>
+      <definitionPackageId>5c4628ec-679e-4f3d-afda-137c978deae0</definitionPackageId>
+      <properties>
+        <property name="9dff9df1-a993-4bf6-9aa7-c16811142228" display="Route" value="/product-add" isActive="true" />
+        <property name="0a8627ba-ec45-4023-9c36-b0999f43e982" display="Title" isActive="true" />
+      </properties>
+    </stereotype>
+  </stereotypes>
+  <mappings>
+    <mapping type="View Binding" typeId="c33f86ad-423a-4a6f-a80c-a3206eafe5cd">
+      <source applicationId="ad925f84-ceed-46ee-8059-6b3e79738beb" designerId="f492faed-0665-4513-9853-5a230721786f" elementId="8a64687f-6c20-40fd-b050-ad9f34f6c74f" location="[AngularAppCQRS].[User Interface].[ProductAddPage]" />
+      <target applicationId="ad925f84-ceed-46ee-8059-6b3e79738beb" designerId="f492faed-0665-4513-9853-5a230721786f" elementId="eb3ab26b-19e6-489b-a0c0-19017f89983f" location="[AngularAppCQRS].[User Interface].[[view]]" />
+      <mappedEnds />
+    </mapping>
+  </mappings>
+  <metadata />
+  <childElements>
+    <childElement id="be68282e-33eb-480a-9349-8ede9bc6f5a6" type="Property" typeId="356fbe17-bc63-4e16-b915-feefbc063cbe">
+      <name>Model</name>
+      <display>Model: CreateProductModel = new()</display>
+      <isAbstract>false</isAbstract>
+      <value>new()</value>
+      <genericTypes />
+      <typeReference id="4c22eee4-1149-4226-89ff-dc083bf184ae">
+        <typeId>8b742fcf-2ace-48ac-aef0-b069f67a4259</typeId>
+        <isNavigable>true</isNavigable>
+        <isNullable>false</isNullable>
+        <isCollection>false</isCollection>
+        <isRequired>true</isRequired>
+        <typePackageName>AngularAppCQRS.UI</typePackageName>
+        <typePackageId>2f554248-0cba-4543-bb70-00ac850dc428</typePackageId>
+        <stereotypes />
+        <genericTypeParameters />
+      </typeReference>
+      <isMapped>false</isMapped>
+      <parentFolderId>8a64687f-6c20-40fd-b050-ad9f34f6c74f</parentFolderId>
+      <packageId>2f554248-0cba-4543-bb70-00ac850dc428</packageId>
+      <packageName>AngularAppCQRS.UI</packageName>
+      <stereotypes />
+      <metadata />
+      <childElements />
+    </childElement>
+    <childElement id="cb448cc7-b331-4cb4-bb61-3d016c8589d3" type="Component Operation" typeId="e030c97a-e066-40a7-8188-808c275df3cb">
+      <name>ngOnInit</name>
+      <display>ngOnInit(): void</display>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <typeReference id="0dccb489-647e-4c03-aa4a-1318b6c6447b">
+        <isNavigable>true</isNavigable>
+        <isNullable>false</isNullable>
+        <isCollection>false</isCollection>
+        <isRequired>true</isRequired>
+        <stereotypes />
+        <genericTypeParameters />
+      </typeReference>
+      <isMapped>false</isMapped>
+      <parentFolderId>8a64687f-6c20-40fd-b050-ad9f34f6c74f</parentFolderId>
+      <packageId>2f554248-0cba-4543-bb70-00ac850dc428</packageId>
+      <packageName>AngularAppCQRS.UI</packageName>
+      <stereotypes />
+      <metadata />
+      <childElements />
+    </childElement>
+    <childElement id="1ac72c0c-4978-4149-9521-5d4ebb4ba82f" type="Component Operation" typeId="e030c97a-e066-40a7-8188-808c275df3cb">
+      <name>CreateProduct</name>
+      <display>CreateProduct(): void</display>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <typeReference id="7616a84e-1256-422e-98b9-a219bf15c196">
+        <isNavigable>true</isNavigable>
+        <isNullable>false</isNullable>
+        <isCollection>false</isCollection>
+        <isRequired>true</isRequired>
+        <stereotypes />
+        <genericTypeParameters />
+      </typeReference>
+      <isMapped>false</isMapped>
+      <parentFolderId>8a64687f-6c20-40fd-b050-ad9f34f6c74f</parentFolderId>
+      <packageId>2f554248-0cba-4543-bb70-00ac850dc428</packageId>
+      <packageName>AngularAppCQRS.UI</packageName>
+      <stereotypes />
+      <metadata />
+      <childElements />
+    </childElement>
+  </childElements>
+</class>

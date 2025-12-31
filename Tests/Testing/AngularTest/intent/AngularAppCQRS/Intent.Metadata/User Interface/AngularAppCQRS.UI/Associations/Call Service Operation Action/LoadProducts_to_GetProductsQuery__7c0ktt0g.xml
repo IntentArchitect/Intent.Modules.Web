@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<association id="8a486d6a-3216-4bfe-bf9c-210c91715216">
+  <sourceEnd id="6f1d08c8-fd9a-4890-8bc4-ea674bff503e" type="Call Service Operation Action Source End" typeId="936e090c-8408-429d-b2f6-2eb8deecc428">
+    <display>: LoadProducts</display>
+    <order>0</order>
+    <typeReference id="46b93021-ecc9-4db3-8c4c-d5162c081450">
+      <typeId>b956b87c-7d5b-462f-bd16-03d9fdeb6f50</typeId>
+      <isNavigable>false</isNavigable>
+      <isNullable>false</isNullable>
+      <isCollection>false</isCollection>
+      <isRequired>true</isRequired>
+      <typePackageName>AngularAppCQRS.UI</typePackageName>
+      <typePackageId>2f554248-0cba-4543-bb70-00ac850dc428</typePackageId>
+      <stereotypes />
+      <genericTypeParameters />
+    </typeReference>
+    <stereotypes />
+    <metadata />
+    <childElements />
+  </sourceEnd>
+  <targetEnd id="8a486d6a-3216-4bfe-bf9c-210c91715216" type="Call Service Operation Action Target End" typeId="475f0810-2b4a-40da-8eb8-697cb62f7dbe">
+    <name>GetProductsQuery</name>
+    <display>[call] Products.GetProductsQuery: ProductDto[*]</display>
+    <order>0</order>
+    <traits>
+      <trait id="dc813928-0ce1-4f66-ae31-b5e5d506b4a3" name="[Invokable]" />
+    </traits>
+    <typeReference id="5d8d65e1-e03f-4e5c-a738-9c755ce87125">
+      <typeId>f94c172b-7042-4cf5-a12f-cc24348e5bef</typeId>
+      <isNavigable>true</isNavigable>
+      <isNullable>false</isNullable>
+      <isCollection>false</isCollection>
+      <isRequired>true</isRequired>
+      <typePackageName>DotNetBackEndService.Services</typePackageName>
+      <typePackageId>0086f3b4-ca20-405f-aca7-641b8b8fe067</typePackageId>
+      <stereotypes />
+      <genericTypeParameters />
+    </typeReference>
+    <stereotypes />
+    <mappings>
+      <mapping type="Call Service Mapping" typeId="e4a4111b-cf13-4efe-8a5d-fea9457ac8ad">
+        <source applicationId="ad925f84-ceed-46ee-8059-6b3e79738beb" designerId="f492faed-0665-4513-9853-5a230721786f" elementId="2ade55d1-e679-4a33-90b5-a8d36adccde8" location="[AngularAppCQRS].[User Interface].[ProductList]" />
+        <target applicationId="a234e200-cbe6-47a0-adaa-af0656448614" designerId="81104ae6-2bc5-4bae-b05a-f987b0372d81" elementId="f94c172b-7042-4cf5-a12f-cc24348e5bef" location="[AngularAppCQRS].[User Interface].[GetProductsQuery]" />
+        <mappedEnds>
+          <mappedEnd>
+            <expression>{LoadProducts.GetProductsQuery}</expression>
+            <path>
+              <target id="f94c172b-7042-4cf5-a12f-cc24348e5bef" name="GetProductsQuery" type="element" specialization="Query" specializationId="e71b0662-e29d-4db2-868b-8a12464b25d0" />
+            </path>
+            <sources>
+              <source identifier="LoadProducts.GetProductsQuery" mappingType="Invocation Mapping" mappingTypeId="ab447316-1252-49bc-a695-f34cb00a3cdc">
+                <path>
+                  <target id="2ade55d1-e679-4a33-90b5-a8d36adccde8" name="ProductList" type="element" specialization="Component" specializationId="b1c481e1-e91e-4c29-9817-00ab9cad4b6b" />
+                  <target id="b956b87c-7d5b-462f-bd16-03d9fdeb6f50" name="LoadProducts" type="element" specialization="Component Operation" specializationId="e030c97a-e066-40a7-8188-808c275df3cb" />
+                  <target id="8a486d6a-3216-4bfe-bf9c-210c91715216" name="GetProductsQuery" type="association" specialization="Call Service Operation Action Target End" specializationId="475f0810-2b4a-40da-8eb8-697cb62f7dbe" />
+                </path>
+              </source>
+            </sources>
+          </mappedEnd>
+        </mappedEnds>
+      </mapping>
+      <mapping type="Call Service Response Mapping" typeId="e60890c6-7ce7-47be-a0da-dff82b8adc02">
+        <source applicationId="ad925f84-ceed-46ee-8059-6b3e79738beb" designerId="f492faed-0665-4513-9853-5a230721786f" elementId="2ade55d1-e679-4a33-90b5-a8d36adccde8" location="[AngularAppCQRS].[User Interface].[ProductList]" />
+        <target applicationId="ad925f84-ceed-46ee-8059-6b3e79738beb" designerId="f492faed-0665-4513-9853-5a230721786f" elementId="2ade55d1-e679-4a33-90b5-a8d36adccde8" location="[AngularAppCQRS].[User Interface].[ProductList]" />
+        <mappedEnds>
+          <mappedEnd>
+            <expression>{LoadProducts.GetProductsQuery.response}</expression>
+            <path>
+              <target id="2ade55d1-e679-4a33-90b5-a8d36adccde8" name="ProductList" type="element" specialization="Component" specializationId="b1c481e1-e91e-4c29-9817-00ab9cad4b6b" />
+              <target id="e8598309-3a46-4415-b408-5274b9568021" name="ProductsModels" type="element" specialization="Property" specializationId="356fbe17-bc63-4e16-b915-feefbc063cbe" />
+            </path>
+            <sources>
+              <source identifier="LoadProducts.GetProductsQuery.response" mappingType="Data Mapping" mappingTypeId="9cccf6be-31be-4ac0-a026-ed0c4f5578bf">
+                <path>
+                  <target id="2ade55d1-e679-4a33-90b5-a8d36adccde8" name="ProductList" type="element" specialization="Component" specializationId="b1c481e1-e91e-4c29-9817-00ab9cad4b6b" />
+                  <target id="b956b87c-7d5b-462f-bd16-03d9fdeb6f50" name="LoadProducts" type="element" specialization="Component Operation" specializationId="e030c97a-e066-40a7-8188-808c275df3cb" />
+                  <target id="8a486d6a-3216-4bfe-bf9c-210c91715216" name="GetProductsQuery" type="association" specialization="Call Service Operation Action Target End" specializationId="475f0810-2b4a-40da-8eb8-697cb62f7dbe" />
+                  <target id="2f68b1a4-a523-4987-b3da-f35e6e8e146b" name="response" type="static-mappable" specialization="response" specializationId="2f68b1a4-a523-4987-b3da-f35e6e8e146b">
+                    <typeReference>
+                      <typeId>23627eb6-569c-4767-be6c-1976f8beab5f</typeId>
+                      <isNavigable>true</isNavigable>
+                      <isNullable>false</isNullable>
+                      <isCollection>true</isCollection>
+                      <isRequired>true</isRequired>
+                      <typePackageName>DotNetBackEndService.Services</typePackageName>
+                      <typePackageId>0086f3b4-ca20-405f-aca7-641b8b8fe067</typePackageId>
+                      <stereotypes />
+                      <genericTypeParameters />
+                    </typeReference>
+                  </target>
+                </path>
+              </source>
+            </sources>
+          </mappedEnd>
+        </mappedEnds>
+      </mapping>
+    </mappings>
+    <metadata />
+    <childElements />
+  </targetEnd>
+  <associationType>Call Service Operation Action</associationType>
+  <associationTypeId>fe5a5cd8-aabd-472f-8d42-f5c233e658dc</associationTypeId>
+  <stereotypes />
+</association>

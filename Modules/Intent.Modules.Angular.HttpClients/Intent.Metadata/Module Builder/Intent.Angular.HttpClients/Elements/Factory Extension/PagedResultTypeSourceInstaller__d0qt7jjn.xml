@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="2b26f9ad-19d0-4f41-91da-4c0c1953819e" type="Factory Extension" typeId="7d008e84-bb28-4b10-ba28-7439202fca76">
+  <name>PagedResultTypeSourceInstaller</name>
+  <display>PagedResultTypeSourceInstaller</display>
+  <isAbstract>false</isAbstract>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>ea1e332c-5694-404f-8527-c72838d7befb</parentFolderId>
+  <packageId>ea1e332c-5694-404f-8527-c72838d7befb</packageId>
+  <packageName>Intent.Angular.HttpClients</packageName>
+  <stereotypes />
+  <metadata />
+  <childElements />
+</class>

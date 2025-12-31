@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="3216a70d-3066-4255-87d7-128082dfdecf" type="Factory Extension" typeId="7d008e84-bb28-4b10-ba28-7439202fca76">
+  <name>SampleFilesConfiguration</name>
+  <display>SampleFilesConfiguration</display>
+  <isAbstract>false</isAbstract>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>d1f9847f-ec1b-4774-910a-816c4f3e8487</parentFolderId>
+  <packageId>d1f9847f-ec1b-4774-910a-816c4f3e8487</packageId>
+  <packageName>Intent.Angular</packageName>
+  <stereotypes />
+  <metadata />
+  <childElements />
+</class>

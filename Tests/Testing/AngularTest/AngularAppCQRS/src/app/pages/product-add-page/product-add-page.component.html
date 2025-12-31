@@ -1,0 +1,132 @@
+<div class="pa-4">
+  <mat-card class="mb-4 ux-gradient-primary" appearance="outlined">
+    <mat-card-content class="pa-4">
+      <div class="header-content">
+        <div class="title-row">
+          <mat-icon class="mr-2">add_shopping_cart</mat-icon>
+          <span class="mat-headline-5 text-white font-weight-bold">Add Product</span>
+        </div>
+        <div class="subtitle-row text-white opacity-90">
+          Capture a new product with its core details.
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+  <mat-card class="ux-fade-in-up" style="animation-delay: 0.1s">
+    <mat-card-header>
+      <mat-card-title>Product Details</mat-card-title>
+    </mat-card-header>
+
+    <mat-card-content>
+      <form #form="ngForm" class="product-form">
+        <div *ngIf="serviceErrors.createProductError" class="error-message mb-4">
+          {{ serviceErrors.createProductError }}
+        </div>
+
+        <div class="grid">
+          <div class="grid-item">
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Name</mat-label>
+              <input
+                matInput
+                placeholder="Enter product name"
+                name="name"
+                required
+                [(ngModel)]="model.name"
+                #nameCtrl="ngModel" />
+              <button mat-icon-button matPrefix disabled>
+                <mat-icon>inventory_2</mat-icon>
+              </button>
+              <mat-error *ngIf="nameCtrl.invalid && nameCtrl.touched">
+                Name is required
+              </mat-error>
+            </mat-form-field>
+          </div>
+
+          <div class="grid-item">
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-label>SKU</mat-label>
+              <input
+                matInput
+                placeholder="Enter SKU"
+                name="sku"
+                required
+                [(ngModel)]="model.sku"
+                #skuCtrl="ngModel" />
+              <button mat-icon-button matPrefix disabled>
+                <mat-icon>confirmation_number</mat-icon>
+              </button>
+              <mat-error *ngIf="skuCtrl.invalid && skuCtrl.touched">
+                SKU is required
+              </mat-error>
+            </mat-form-field>
+          </div>
+
+          <div class="grid-item">
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Price</mat-label>
+              <input
+                matInput
+                type="number"
+                min="0"
+                step="0.01"
+                placeholder="Enter price"
+                name="price"
+                required
+                [(ngModel)]="model.price"
+                #priceCtrl="ngModel" />
+              <button mat-icon-button matPrefix disabled>
+                <mat-icon>attach_money</mat-icon>
+              </button>
+              <mat-error *ngIf="priceCtrl.invalid && priceCtrl.touched">
+                Price is required and must be a valid number
+              </mat-error>
+            </mat-form-field>
+          </div>
+
+          <div class="grid-item-wide">
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Description</mat-label>
+              <textarea
+                matInput
+                rows="3"
+                placeholder="Enter description"
+                name="description"
+                [(ngModel)]="model.description"></textarea>
+            </mat-form-field>
+          </div>
+
+          <div class="grid-item-wide actions-row">
+            <button
+              mat-raised-button
+              color="primary"
+              type="button"
+              class="save-button"
+              (click)="save(form)"
+              [disabled]="isLoading || form.invalid">
+              <mat-progress-spinner
+                *ngIf="isLoading"
+                mode="indeterminate"
+                diameter="18"
+                class="spinner">
+              </mat-progress-spinner>
+              <mat-icon *ngIf="!isLoading" class="mr-1">save</mat-icon>
+              <span>{{ isLoading ? 'Saving…' : 'Save' }}</span>
+            </button>
+
+            <button
+              mat-raised-button
+              color="accent"
+              type="button"
+              (click)="navigateToProductList()"
+              [disabled]="isLoading">
+              <mat-icon class="mr-1">arrow_back</mat-icon>
+              Back to list
+            </button>
+          </div>
+        </div>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>

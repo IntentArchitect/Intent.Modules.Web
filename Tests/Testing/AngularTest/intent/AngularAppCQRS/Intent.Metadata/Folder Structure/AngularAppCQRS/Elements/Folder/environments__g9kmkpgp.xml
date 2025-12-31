@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="12c208cf-8fea-47c6-a028-6ae7890c2c7a" type="Folder" typeId="4d95d53a-8855-4f35-aa82-e312643f5c5f">
+  <name>environments</name>
+  <display>environments</display>
+  <isAbstract>false</isAbstract>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>11c3e807-9f91-431f-b833-47341e359257</parentFolderId>
+  <stereotypes />
+  <metadata />
+  <childElements>
+    <childElement id="642692c1-2f55-4aab-9110-9c85f27fdd9f" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+      <name>Intent.Angular.Environment.Environment</name>
+      <display>Intent.Angular.Environment.Environment</display>
+      <externalReference>Intent.Angular</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>12c208cf-8fea-47c6-a028-6ae7890c2c7a</parentFolderId>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
+      <childElements />
+    </childElement>
+    <childElement id="8d98ccd4-e657-4aa1-8f27-e80fe5f42ddd" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+      <name>Intent.Angular.Environment.EnvironmentDotDevelopment</name>
+      <display>Intent.Angular.Environment.EnvironmentDotDevelopment</display>
+      <externalReference>Intent.Angular</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>12c208cf-8fea-47c6-a028-6ae7890c2c7a</parentFolderId>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
+      <childElements />
+    </childElement>
+    <childElement id="61d20e49-f313-4285-bf35-f78a5bcd8e74" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+      <name>Intent.Angular.Environment.EnvironmentTypes</name>
+      <display>Intent.Angular.Environment.EnvironmentTypes</display>
+      <externalReference>Intent.Angular</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>12c208cf-8fea-47c6-a028-6ae7890c2c7a</parentFolderId>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
+      <childElements />
+    </childElement>
+  </childElements>
+</class>

@@ -1,0 +1,265 @@
+{
+  /*
+"mcp-servers": [
+    {
+      "name": "time",
+      "transport": "sse",
+      "url": "https://time.mcp.inevitable.fyi/mcp"
+    }
+  ]
+*/
+  /*
+  "input-files": [
+  ],*/
+  "templates": [
+    {
+      "id": "SearchEntity",
+      "name": "Page - Search Entity",
+      "description": "Search Entity",
+      "applicability": {
+        "key-words": [
+          {
+            "word": "search",
+            "weight": 3
+          },
+          {
+            "word": "find",
+            "weight": 3
+          },
+          {
+            "word": "list",
+            "weight": 3
+          },
+          {
+            "word": "deletedialog",
+            "weight": 2
+          }
+        ]
+      },
+      "input-files": [
+        {
+          "type": "Template",
+          "template-id": "Intent.Angular.HttpClients.PagedResult"
+        },
+        {
+          "type": "Template",
+          "template-id": "Intent.Angular.Core.StylesDotScssFileTemplate"
+        },
+        {
+          "type": "Template",
+          "template-id": "Intent.Angular.Core.ThemeDotScssFileTemplate"
+        }
+      ]
+    },
+    {
+      "id": "AddEntity",
+      "name": "Page - Add Entity",
+      "description": "Add Entity",
+      "applicability": {
+        "key-words": [
+          {
+            "word": "add",
+            "weight": 3
+          },
+          {
+            "word": "create",
+            "weight": 3
+          },
+          {
+            "word": "new",
+            "weight": 2
+          }
+        ]
+      },
+      "input-files": [
+        {
+          "type": "Template",
+          "template-id": "Intent.Angular.Core.StylesDotScssFileTemplate"
+        },
+        {
+          "type": "Template",
+          "template-id": "Intent.Angular.Core.ThemeDotScssFileTemplate"
+        }
+      ]
+    },
+    {
+      "id": "EditEntity",
+      "name": "Page - Edit Entity",
+      "description": "Edit Entity",
+      "applicability": {
+        "key-words": [
+          {
+            "word": "edit",
+            "weight": 3
+          },
+          {
+            "word": "update",
+            "weight": 3
+          },
+          {
+            "word": "modify",
+            "weight": 2
+          },
+          {
+            "word": "change",
+            "weight": 2
+          }
+        ]
+      },
+      "input-files": [
+        {
+          "type": "Template",
+          "template-id": "Intent.Angular.Core.StylesDotScssFileTemplate"
+        },
+        {
+          "type": "Template",
+          "template-id": "Intent.Angular.Core.ThemeDotScssFileTemplate"
+        }
+      ]
+    },
+    {
+      "id": "ViewEntity",
+      "name": "Page - View Entity",
+      "description": "View Entity",
+      "applicability": {
+        "key-words": [
+          {
+            "word": "view",
+            "weight": 2
+          },
+          {
+            "word": "details",
+            "weight": 2
+          },
+          {
+            "word": "detail",
+            "weight": 2
+          },
+          {
+            "word": "show",
+            "weight": 2
+          }
+        ]
+      },
+      "input-files": [
+        {
+          "type": "Template",
+          "template-id": "Intent.Angular.Core.StylesDotScssFileTemplate"
+        },
+        {
+          "type": "Template",
+          "template-id": "Intent.Angular.Core.ThemeDotScssFileTemplate"
+        }
+      ]
+    },
+    {
+      "id": "AddEntityDialog",
+      "name": "Dialog - Add Entity",
+      "description": "Dialog to add records",
+      "applicability": {
+        "key-words": [
+          {
+            "word": "dialog",
+            "weight": 2
+          },
+          {
+            "word": "add",
+            "weight": 3
+          },
+          {
+            "word": "create",
+            "weight": 3
+          },
+          {
+            "word": "new",
+            "weight": 2
+          }
+        ]
+      },
+      "input-files": [
+        {
+          "type": "Template",
+          "template-id": "Intent.Angular.Core.StylesDotScssFileTemplate"
+        },
+        {
+          "type": "Template",
+          "template-id": "Intent.Angular.Core.ThemeDotScssFileTemplate"
+        }
+      ]
+    },
+    {
+      "id": "EditEntityDialog",
+      "name": "Dialog - Edit Entity",
+      "description": "Dialog to edit records",
+      "applicability": {
+        "key-words": [
+          {
+            "word": "dialog",
+            "weight": 2
+          },
+          {
+            "word": "edit",
+            "weight": 3
+          },
+          {
+            "word": "update",
+            "weight": 3
+          },
+          {
+            "word": "modify",
+            "weight": 2
+          },
+          {
+            "word": "change",
+            "weight": 2
+          }
+        ]
+      },
+      "input-files": [
+        {
+          "type": "Template",
+          "template-id": "Intent.Angular.Core.StylesDotScssFileTemplate"
+        },
+        {
+          "type": "Template",
+          "template-id": "Intent.Angular.Core.ThemeDotScssFileTemplate"
+        }
+      ]
+    },
+    {
+      "id": "MainLayout",
+      "name": "Layout - Main Layout",
+      "description": "Shared page frame: header, navigation, and content area",
+      "applicability": {
+        "key-words": [
+          {
+            "word": "mainlayout",
+            "weight": 3
+          },
+          {
+            "word": "layout",
+            "weight": 2
+          },
+          {
+            "word": "rootlayout",
+            "weight": 2
+          }
+        ]
+      },
+      "input-files": [
+        {
+          "type": "Template",
+          "template-id": "Intent.Angular.Core.AppRoutes"
+        },
+        {
+          "type": "Template",
+          "template-id": "Intent.Angular.Core.StylesDotScssFileTemplate"
+        },
+        {
+          "type": "Template",
+          "template-id": "Intent.Angular.Core.ThemeDotScssFileTemplate"
+        }
+      ]
+    }
+  ]
+}

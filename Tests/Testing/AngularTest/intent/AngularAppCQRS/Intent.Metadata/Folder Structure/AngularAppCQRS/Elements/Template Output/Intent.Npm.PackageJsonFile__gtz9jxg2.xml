@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="ca69b1d6-a0ec-4062-8eb6-21d9b6492741" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+  <name>Intent.Npm.PackageJsonFile</name>
+  <display>Intent.Npm.PackageJsonFile</display>
+  <externalReference>Intent.Npm</externalReference>
+  <isAbstract>false</isAbstract>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>4d3049c6-3207-44d1-a8d0-1cafbeafde82</parentFolderId>
+  <stereotypes />
+  <metadata>
+    <entry key="status" value="assigned" />
+  </metadata>
+  <childElements />
+</class>

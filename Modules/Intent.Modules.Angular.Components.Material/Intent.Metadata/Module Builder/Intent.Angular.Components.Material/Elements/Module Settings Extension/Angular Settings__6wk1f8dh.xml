@@ -1,0 +1,647 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="4076ac63-872b-415e-a89b-2a2732dfc8eb" type="Module Settings Extension" typeId="72044cdf-1f96-4ad2-86be-8d5468725e67">
+  <name>Angular Settings</name>
+  <display>Angular Settings: Angular Settings</display>
+  <isAbstract>false</isAbstract>
+  <sort-children>manually</sort-children>
+  <genericTypes />
+  <typeReference id="938f8a98-72a8-4ca4-b454-8f7847292aeb">
+    <typeId>3697d56e-8390-4e7f-ba44-fee766191e77</typeId>
+    <isNavigable>true</isNavigable>
+    <isNullable>false</isNullable>
+    <isCollection>false</isCollection>
+    <isRequired>true</isRequired>
+    <typePackageName>Intent.Angular</typePackageName>
+    <typePackageId>d1f9847f-ec1b-4774-910a-816c4f3e8487</typePackageId>
+    <stereotypes />
+    <genericTypeParameters />
+  </typeReference>
+  <isMapped>false</isMapped>
+  <parentFolderId>46c95fc2-68ad-4cc5-9969-1c7252929a46</parentFolderId>
+  <packageId>46c95fc2-68ad-4cc5-9969-1c7252929a46</packageId>
+  <packageName>Intent.Angular.Components.Material</packageName>
+  <stereotypes />
+  <metadata />
+  <childElements>
+    <childElement id="bbed95c0-28a3-487c-a72f-2f867f0de0e6" type="Module Settings Field Configuration" typeId="88e29cab-1342-40c7-b052-5fcd68ffafec">
+      <name>Primary Color</name>
+      <display>Primary Color</display>
+      <isAbstract>false</isAbstract>
+      <sort-children>manually</sort-children>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>4076ac63-872b-415e-a89b-2a2732dfc8eb</parentFolderId>
+      <packageId>46c95fc2-68ad-4cc5-9969-1c7252929a46</packageId>
+      <packageName>Intent.Angular.Components.Material</packageName>
+      <stereotypes>
+        <stereotype stereotypeDefinitionId="4805c791-5be3-4049-b929-6046d7be9944" name="Field Configuration">
+          <addedByDefault>true</addedByDefault>
+          <definitionPackageName>Intent.ModuleBuilder</definitionPackageName>
+          <definitionPackageId>9972b2a9-b749-4bba-b5c8-824bf694c6ef</definitionPackageId>
+          <properties>
+            <property name="e33ce4e3-a3c5-4a3c-a6b8-96418be03de0" display="Control Type" value="Select" isActive="true" />
+            <property name="7070a9ce-ff31-422e-9cff-d82876c5efdf" display="Is Required" value="false" isActive="false" />
+            <property name="01489021-8311-43d5-b41b-e7628a512c1d" display="Hint" isActive="true" />
+            <property name="653d889c-626f-45c5-a6e6-72b74a2f805c" display="Default Value" value="blue" isActive="true" />
+            <property name="c3456e79-0607-41a5-9b85-e0712f4f4834" display="Is Active Function" isActive="true" />
+            <property name="fa54329f-d4e5-48bc-8027-e17206e9fc89" display="Is Required Function" isActive="true" />
+            <property name="29696a13-bf1d-4fbd-bdf3-adb802430cb4" display="Order Priority" value="1" isActive="true" />
+          </properties>
+        </stereotype>
+      </stereotypes>
+      <metadata />
+      <childElements>
+        <childElement id="7f684cea-6b2d-43b3-a283-6425047ad289" type="Module Settings Field Option" typeId="1592709a-89b1-4cb0-9801-ce9d3b94545a">
+          <name>Amber</name>
+          <display>Amber = amber</display>
+          <isAbstract>false</isAbstract>
+          <value>amber</value>
+          <genericTypes />
+          <isMapped>false</isMapped>
+          <parentFolderId>bbed95c0-28a3-487c-a72f-2f867f0de0e6</parentFolderId>
+          <packageId>46c95fc2-68ad-4cc5-9969-1c7252929a46</packageId>
+          <packageName>Intent.Angular.Components.Material</packageName>
+          <stereotypes />
+          <metadata />
+          <childElements />
+        </childElement>
+        <childElement id="3fd325bd-1e7e-4a86-95d9-57877f7aa447" type="Module Settings Field Option" typeId="1592709a-89b1-4cb0-9801-ce9d3b94545a">
+          <name>Blue</name>
+          <display>Blue = blue</display>
+          <isAbstract>false</isAbstract>
+          <value>blue</value>
+          <genericTypes />
+          <isMapped>false</isMapped>
+          <parentFolderId>bbed95c0-28a3-487c-a72f-2f867f0de0e6</parentFolderId>
+          <packageId>46c95fc2-68ad-4cc5-9969-1c7252929a46</packageId>
+          <packageName>Intent.Angular.Components.Material</packageName>
+          <stereotypes />
+          <metadata />
+          <childElements />
+        </childElement>
+        <childElement id="a87a55c8-d494-4d46-9a02-5ff9054cf84b" type="Module Settings Field Option" typeId="1592709a-89b1-4cb0-9801-ce9d3b94545a">
+          <name>Blue Grey</name>
+          <display>Blue Grey = blue-grey</display>
+          <isAbstract>false</isAbstract>
+          <value>blue-grey</value>
+          <genericTypes />
+          <isMapped>false</isMapped>
+          <parentFolderId>bbed95c0-28a3-487c-a72f-2f867f0de0e6</parentFolderId>
+          <packageId>46c95fc2-68ad-4cc5-9969-1c7252929a46</packageId>
+          <packageName>Intent.Angular.Components.Material</packageName>
+          <stereotypes />
+          <metadata />
+          <childElements />
+        </childElement>
+        <childElement id="d4bac056-2f56-425f-88ee-8a0ffb659ed2" type="Module Settings Field Option" typeId="1592709a-89b1-4cb0-9801-ce9d3b94545a">
+          <name>Brown</name>
+          <display>Brown = brown</display>
+          <isAbstract>false</isAbstract>
+          <value>brown</value>
+          <genericTypes />
+          <isMapped>false</isMapped>
+          <parentFolderId>bbed95c0-28a3-487c-a72f-2f867f0de0e6</parentFolderId>
+          <packageId>46c95fc2-68ad-4cc5-9969-1c7252929a46</packageId>
+          <packageName>Intent.Angular.Components.Material</packageName>
+          <stereotypes />
+          <metadata />
+          <childElements />
+        </childElement>
+        <childElement id="78ff519b-b16d-4f0d-a70d-59e30cce8961" type="Module Settings Field Option" typeId="1592709a-89b1-4cb0-9801-ce9d3b94545a">
+          <name>Cyan</name>
+          <display>Cyan = cyan</display>
+          <isAbstract>false</isAbstract>
+          <value>cyan</value>
+          <genericTypes />
+          <isMapped>false</isMapped>
+          <parentFolderId>bbed95c0-28a3-487c-a72f-2f867f0de0e6</parentFolderId>
+          <packageId>46c95fc2-68ad-4cc5-9969-1c7252929a46</packageId>
+          <packageName>Intent.Angular.Components.Material</packageName>
+          <stereotypes />
+          <metadata />
+          <childElements />
+        </childElement>
+        <childElement id="79d4985b-7f2f-430a-b2ba-c020d8ab0fa5" type="Module Settings Field Option" typeId="1592709a-89b1-4cb0-9801-ce9d3b94545a">
+          <name>Deep Orange</name>
+          <display>Deep Orange = deep-orange</display>
+          <isAbstract>false</isAbstract>
+          <value>deep-orange</value>
+          <genericTypes />
+          <isMapped>false</isMapped>
+          <parentFolderId>bbed95c0-28a3-487c-a72f-2f867f0de0e6</parentFolderId>
+          <packageId>46c95fc2-68ad-4cc5-9969-1c7252929a46</packageId>
+          <packageName>Intent.Angular.Components.Material</packageName>
+          <stereotypes />
+          <metadata />
+          <childElements />
+        </childElement>
+        <childElement id="d977a7fc-db6c-4ace-a68f-febce187e9d0" type="Module Settings Field Option" typeId="1592709a-89b1-4cb0-9801-ce9d3b94545a">
+          <name>Deep Purple</name>
+          <display>Deep Purple = deep-purple</display>
+          <isAbstract>false</isAbstract>
+          <value>deep-purple</value>
+          <genericTypes />
+          <isMapped>false</isMapped>
+          <parentFolderId>bbed95c0-28a3-487c-a72f-2f867f0de0e6</parentFolderId>
+          <packageId>46c95fc2-68ad-4cc5-9969-1c7252929a46</packageId>
+          <packageName>Intent.Angular.Components.Material</packageName>
+          <stereotypes />
+          <metadata />
+          <childElements />
+        </childElement>
+        <childElement id="d803965d-758f-4156-92ab-114148badb9d" type="Module Settings Field Option" typeId="1592709a-89b1-4cb0-9801-ce9d3b94545a">
+          <name>Green</name>
+          <display>Green = green</display>
+          <isAbstract>false</isAbstract>
+          <value>green</value>
+          <genericTypes />
+          <isMapped>false</isMapped>
+          <parentFolderId>bbed95c0-28a3-487c-a72f-2f867f0de0e6</parentFolderId>
+          <packageId>46c95fc2-68ad-4cc5-9969-1c7252929a46</packageId>
+          <packageName>Intent.Angular.Components.Material</packageName>
+          <stereotypes />
+          <metadata />
+          <childElements />
+        </childElement>
+        <childElement id="b56f7552-59e4-4a75-908e-f68292293880" type="Module Settings Field Option" typeId="1592709a-89b1-4cb0-9801-ce9d3b94545a">
+          <name>Grey</name>
+          <display>Grey = grey</display>
+          <isAbstract>false</isAbstract>
+          <value>grey</value>
+          <genericTypes />
+          <isMapped>false</isMapped>
+          <parentFolderId>bbed95c0-28a3-487c-a72f-2f867f0de0e6</parentFolderId>
+          <packageId>46c95fc2-68ad-4cc5-9969-1c7252929a46</packageId>
+          <packageName>Intent.Angular.Components.Material</packageName>
+          <stereotypes />
+          <metadata />
+          <childElements />
+        </childElement>
+        <childElement id="667d010c-82f8-41e2-b129-e9db7fcb6ad4" type="Module Settings Field Option" typeId="1592709a-89b1-4cb0-9801-ce9d3b94545a">
+          <name>Iindigo</name>
+          <display>Iindigo = indigo</display>
+          <isAbstract>false</isAbstract>
+          <value>indigo</value>
+          <genericTypes />
+          <isMapped>false</isMapped>
+          <parentFolderId>bbed95c0-28a3-487c-a72f-2f867f0de0e6</parentFolderId>
+          <packageId>46c95fc2-68ad-4cc5-9969-1c7252929a46</packageId>
+          <packageName>Intent.Angular.Components.Material</packageName>
+          <stereotypes />
+          <metadata />
+          <childElements />
+        </childElement>
+        <childElement id="fbd2aadd-71b6-4ad5-8c2a-fa4c5d966e0a" type="Module Settings Field Option" typeId="1592709a-89b1-4cb0-9801-ce9d3b94545a">
+          <name>Light Blue</name>
+          <display>Light Blue = light-blue</display>
+          <isAbstract>false</isAbstract>
+          <value>light-blue</value>
+          <genericTypes />
+          <isMapped>false</isMapped>
+          <parentFolderId>bbed95c0-28a3-487c-a72f-2f867f0de0e6</parentFolderId>
+          <packageId>46c95fc2-68ad-4cc5-9969-1c7252929a46</packageId>
+          <packageName>Intent.Angular.Components.Material</packageName>
+          <stereotypes />
+          <metadata />
+          <childElements />
+        </childElement>
+        <childElement id="8bad056a-8570-43fa-9259-eb9eed8268e6" type="Module Settings Field Option" typeId="1592709a-89b1-4cb0-9801-ce9d3b94545a">
+          <name>Light Green</name>
+          <display>Light Green = light-green</display>
+          <isAbstract>false</isAbstract>
+          <value>light-green</value>
+          <genericTypes />
+          <isMapped>false</isMapped>
+          <parentFolderId>bbed95c0-28a3-487c-a72f-2f867f0de0e6</parentFolderId>
+          <packageId>46c95fc2-68ad-4cc5-9969-1c7252929a46</packageId>
+          <packageName>Intent.Angular.Components.Material</packageName>
+          <stereotypes />
+          <metadata />
+          <childElements />
+        </childElement>
+        <childElement id="333e2d39-c2bc-48a7-b847-9ff58cd10dc3" type="Module Settings Field Option" typeId="1592709a-89b1-4cb0-9801-ce9d3b94545a">
+          <name>Lime</name>
+          <display>Lime = lime</display>
+          <isAbstract>false</isAbstract>
+          <value>lime</value>
+          <genericTypes />
+          <isMapped>false</isMapped>
+          <parentFolderId>bbed95c0-28a3-487c-a72f-2f867f0de0e6</parentFolderId>
+          <packageId>46c95fc2-68ad-4cc5-9969-1c7252929a46</packageId>
+          <packageName>Intent.Angular.Components.Material</packageName>
+          <stereotypes />
+          <metadata />
+          <childElements />
+        </childElement>
+        <childElement id="9902d1ec-595a-4310-b00d-f01e606f0ffb" type="Module Settings Field Option" typeId="1592709a-89b1-4cb0-9801-ce9d3b94545a">
+          <name>Orange</name>
+          <display>Orange = orange</display>
+          <isAbstract>false</isAbstract>
+          <value>orange</value>
+          <genericTypes />
+          <isMapped>false</isMapped>
+          <parentFolderId>bbed95c0-28a3-487c-a72f-2f867f0de0e6</parentFolderId>
+          <packageId>46c95fc2-68ad-4cc5-9969-1c7252929a46</packageId>
+          <packageName>Intent.Angular.Components.Material</packageName>
+          <stereotypes />
+          <metadata />
+          <childElements />
+        </childElement>
+        <childElement id="43e4953a-1541-4efc-a59f-a652287c34ff" type="Module Settings Field Option" typeId="1592709a-89b1-4cb0-9801-ce9d3b94545a">
+          <name>Pink</name>
+          <display>Pink = pink</display>
+          <isAbstract>false</isAbstract>
+          <value>pink</value>
+          <genericTypes />
+          <isMapped>false</isMapped>
+          <parentFolderId>bbed95c0-28a3-487c-a72f-2f867f0de0e6</parentFolderId>
+          <packageId>46c95fc2-68ad-4cc5-9969-1c7252929a46</packageId>
+          <packageName>Intent.Angular.Components.Material</packageName>
+          <stereotypes />
+          <metadata />
+          <childElements />
+        </childElement>
+        <childElement id="551682d7-bac7-4dfd-920c-0d92f72114e7" type="Module Settings Field Option" typeId="1592709a-89b1-4cb0-9801-ce9d3b94545a">
+          <name>Purple</name>
+          <display>Purple = purple</display>
+          <isAbstract>false</isAbstract>
+          <value>purple</value>
+          <genericTypes />
+          <isMapped>false</isMapped>
+          <parentFolderId>bbed95c0-28a3-487c-a72f-2f867f0de0e6</parentFolderId>
+          <packageId>46c95fc2-68ad-4cc5-9969-1c7252929a46</packageId>
+          <packageName>Intent.Angular.Components.Material</packageName>
+          <stereotypes />
+          <metadata />
+          <childElements />
+        </childElement>
+        <childElement id="0c8271bd-99a8-4a25-8cfb-1299ac50a7a0" type="Module Settings Field Option" typeId="1592709a-89b1-4cb0-9801-ce9d3b94545a">
+          <name>Red</name>
+          <display>Red = red</display>
+          <isAbstract>false</isAbstract>
+          <value>red</value>
+          <genericTypes />
+          <isMapped>false</isMapped>
+          <parentFolderId>bbed95c0-28a3-487c-a72f-2f867f0de0e6</parentFolderId>
+          <packageId>46c95fc2-68ad-4cc5-9969-1c7252929a46</packageId>
+          <packageName>Intent.Angular.Components.Material</packageName>
+          <stereotypes />
+          <metadata />
+          <childElements />
+        </childElement>
+        <childElement id="65707e65-bb26-491c-9a85-c795bcf89fc9" type="Module Settings Field Option" typeId="1592709a-89b1-4cb0-9801-ce9d3b94545a">
+          <name>Teal</name>
+          <display>Teal = teal</display>
+          <isAbstract>false</isAbstract>
+          <value>teal</value>
+          <genericTypes />
+          <isMapped>false</isMapped>
+          <parentFolderId>bbed95c0-28a3-487c-a72f-2f867f0de0e6</parentFolderId>
+          <packageId>46c95fc2-68ad-4cc5-9969-1c7252929a46</packageId>
+          <packageName>Intent.Angular.Components.Material</packageName>
+          <stereotypes />
+          <metadata />
+          <childElements />
+        </childElement>
+        <childElement id="9efbe113-1017-40ef-b22e-2df4c07739c9" type="Module Settings Field Option" typeId="1592709a-89b1-4cb0-9801-ce9d3b94545a">
+          <name>Yellow</name>
+          <display>Yellow = yellow</display>
+          <isAbstract>false</isAbstract>
+          <value>yellow</value>
+          <genericTypes />
+          <isMapped>false</isMapped>
+          <parentFolderId>bbed95c0-28a3-487c-a72f-2f867f0de0e6</parentFolderId>
+          <packageId>46c95fc2-68ad-4cc5-9969-1c7252929a46</packageId>
+          <packageName>Intent.Angular.Components.Material</packageName>
+          <stereotypes />
+          <metadata />
+          <childElements />
+        </childElement>
+        <childElement id="46e5ac83-a957-4e65-ab36-0e500c05da36" type="Module Settings Field Option" typeId="1592709a-89b1-4cb0-9801-ce9d3b94545a">
+          <name>Custom</name>
+          <display>Custom = custom</display>
+          <isAbstract>false</isAbstract>
+          <value>custom</value>
+          <genericTypes />
+          <isMapped>false</isMapped>
+          <parentFolderId>bbed95c0-28a3-487c-a72f-2f867f0de0e6</parentFolderId>
+          <packageId>46c95fc2-68ad-4cc5-9969-1c7252929a46</packageId>
+          <packageName>Intent.Angular.Components.Material</packageName>
+          <stereotypes />
+          <metadata />
+          <childElements />
+        </childElement>
+      </childElements>
+    </childElement>
+    <childElement id="3a30f6a5-b8eb-4e82-87c7-46788f65ad71" type="Module Settings Field Configuration" typeId="88e29cab-1342-40c7-b052-5fcd68ffafec">
+      <name>Accent Color</name>
+      <display>Accent Color</display>
+      <isAbstract>false</isAbstract>
+      <sort-children>manually</sort-children>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>4076ac63-872b-415e-a89b-2a2732dfc8eb</parentFolderId>
+      <packageId>46c95fc2-68ad-4cc5-9969-1c7252929a46</packageId>
+      <packageName>Intent.Angular.Components.Material</packageName>
+      <stereotypes>
+        <stereotype stereotypeDefinitionId="4805c791-5be3-4049-b929-6046d7be9944" name="Field Configuration">
+          <addedByDefault>true</addedByDefault>
+          <definitionPackageName>Intent.ModuleBuilder</definitionPackageName>
+          <definitionPackageId>9972b2a9-b749-4bba-b5c8-824bf694c6ef</definitionPackageId>
+          <properties>
+            <property name="e33ce4e3-a3c5-4a3c-a6b8-96418be03de0" display="Control Type" value="Select" isActive="true" />
+            <property name="7070a9ce-ff31-422e-9cff-d82876c5efdf" display="Is Required" value="false" isActive="false" />
+            <property name="01489021-8311-43d5-b41b-e7628a512c1d" display="Hint" isActive="true" />
+            <property name="653d889c-626f-45c5-a6e6-72b74a2f805c" display="Default Value" value="deep-orange" isActive="true" />
+            <property name="c3456e79-0607-41a5-9b85-e0712f4f4834" display="Is Active Function" isActive="true" />
+            <property name="fa54329f-d4e5-48bc-8027-e17206e9fc89" display="Is Required Function" isActive="true" />
+            <property name="29696a13-bf1d-4fbd-bdf3-adb802430cb4" display="Order Priority" value="2" isActive="true" />
+          </properties>
+        </stereotype>
+      </stereotypes>
+      <metadata />
+      <childElements>
+        <childElement id="86712dec-e5b1-4421-97f6-c4786a01d797" type="Module Settings Field Option" typeId="1592709a-89b1-4cb0-9801-ce9d3b94545a">
+          <name>Blue</name>
+          <display>Blue = blue</display>
+          <isAbstract>false</isAbstract>
+          <value>blue</value>
+          <genericTypes />
+          <isMapped>false</isMapped>
+          <parentFolderId>3a30f6a5-b8eb-4e82-87c7-46788f65ad71</parentFolderId>
+          <packageId>46c95fc2-68ad-4cc5-9969-1c7252929a46</packageId>
+          <packageName>Intent.Angular.Components.Material</packageName>
+          <stereotypes />
+          <metadata />
+          <childElements />
+        </childElement>
+        <childElement id="1ffc683e-78ce-4cc8-a149-7e8f30c70778" type="Module Settings Field Option" typeId="1592709a-89b1-4cb0-9801-ce9d3b94545a">
+          <name>Blue Grey</name>
+          <display>Blue Grey = blue-grey</display>
+          <isAbstract>false</isAbstract>
+          <value>blue-grey</value>
+          <genericTypes />
+          <isMapped>false</isMapped>
+          <parentFolderId>3a30f6a5-b8eb-4e82-87c7-46788f65ad71</parentFolderId>
+          <packageId>46c95fc2-68ad-4cc5-9969-1c7252929a46</packageId>
+          <packageName>Intent.Angular.Components.Material</packageName>
+          <stereotypes />
+          <metadata />
+          <childElements />
+        </childElement>
+        <childElement id="804335ad-1591-4b8a-9c47-00f6acae05d2" type="Module Settings Field Option" typeId="1592709a-89b1-4cb0-9801-ce9d3b94545a">
+          <name>Brown</name>
+          <display>Brown = brown</display>
+          <isAbstract>false</isAbstract>
+          <value>brown</value>
+          <genericTypes />
+          <isMapped>false</isMapped>
+          <parentFolderId>3a30f6a5-b8eb-4e82-87c7-46788f65ad71</parentFolderId>
+          <packageId>46c95fc2-68ad-4cc5-9969-1c7252929a46</packageId>
+          <packageName>Intent.Angular.Components.Material</packageName>
+          <stereotypes />
+          <metadata />
+          <childElements />
+        </childElement>
+        <childElement id="df048a6d-fe5c-48d1-bd3e-4e3616295938" type="Module Settings Field Option" typeId="1592709a-89b1-4cb0-9801-ce9d3b94545a">
+          <name>Cyan</name>
+          <display>Cyan = cyan</display>
+          <isAbstract>false</isAbstract>
+          <value>cyan</value>
+          <genericTypes />
+          <isMapped>false</isMapped>
+          <parentFolderId>3a30f6a5-b8eb-4e82-87c7-46788f65ad71</parentFolderId>
+          <packageId>46c95fc2-68ad-4cc5-9969-1c7252929a46</packageId>
+          <packageName>Intent.Angular.Components.Material</packageName>
+          <stereotypes />
+          <metadata />
+          <childElements />
+        </childElement>
+        <childElement id="3318943c-2851-4687-a8ef-46e5513e2db2" type="Module Settings Field Option" typeId="1592709a-89b1-4cb0-9801-ce9d3b94545a">
+          <name>Deep Orange</name>
+          <display>Deep Orange = deep-orange</display>
+          <isAbstract>false</isAbstract>
+          <value>deep-orange</value>
+          <genericTypes />
+          <isMapped>false</isMapped>
+          <parentFolderId>3a30f6a5-b8eb-4e82-87c7-46788f65ad71</parentFolderId>
+          <packageId>46c95fc2-68ad-4cc5-9969-1c7252929a46</packageId>
+          <packageName>Intent.Angular.Components.Material</packageName>
+          <stereotypes />
+          <metadata />
+          <childElements />
+        </childElement>
+        <childElement id="9fde6ec7-075d-44a8-989a-ca715a13198d" type="Module Settings Field Option" typeId="1592709a-89b1-4cb0-9801-ce9d3b94545a">
+          <name>Deep Purple</name>
+          <display>Deep Purple = deep-purple</display>
+          <isAbstract>false</isAbstract>
+          <value>deep-purple</value>
+          <genericTypes />
+          <isMapped>false</isMapped>
+          <parentFolderId>3a30f6a5-b8eb-4e82-87c7-46788f65ad71</parentFolderId>
+          <packageId>46c95fc2-68ad-4cc5-9969-1c7252929a46</packageId>
+          <packageName>Intent.Angular.Components.Material</packageName>
+          <stereotypes />
+          <metadata />
+          <childElements />
+        </childElement>
+        <childElement id="eda23c14-01d1-4994-aaf4-0bcff40bbbe5" type="Module Settings Field Option" typeId="1592709a-89b1-4cb0-9801-ce9d3b94545a">
+          <name>Green</name>
+          <display>Green = green</display>
+          <isAbstract>false</isAbstract>
+          <value>green</value>
+          <genericTypes />
+          <isMapped>false</isMapped>
+          <parentFolderId>3a30f6a5-b8eb-4e82-87c7-46788f65ad71</parentFolderId>
+          <packageId>46c95fc2-68ad-4cc5-9969-1c7252929a46</packageId>
+          <packageName>Intent.Angular.Components.Material</packageName>
+          <stereotypes />
+          <metadata />
+          <childElements />
+        </childElement>
+        <childElement id="1216ccaa-8a9d-4621-abc7-4e3cd167b181" type="Module Settings Field Option" typeId="1592709a-89b1-4cb0-9801-ce9d3b94545a">
+          <name>Grey</name>
+          <display>Grey = grey</display>
+          <isAbstract>false</isAbstract>
+          <value>grey</value>
+          <genericTypes />
+          <isMapped>false</isMapped>
+          <parentFolderId>3a30f6a5-b8eb-4e82-87c7-46788f65ad71</parentFolderId>
+          <packageId>46c95fc2-68ad-4cc5-9969-1c7252929a46</packageId>
+          <packageName>Intent.Angular.Components.Material</packageName>
+          <stereotypes />
+          <metadata />
+          <childElements />
+        </childElement>
+        <childElement id="ae736b89-6bfe-488d-bc62-1d3f6cef5089" type="Module Settings Field Option" typeId="1592709a-89b1-4cb0-9801-ce9d3b94545a">
+          <name>Iindigo</name>
+          <display>Iindigo = indigo</display>
+          <isAbstract>false</isAbstract>
+          <value>indigo</value>
+          <genericTypes />
+          <isMapped>false</isMapped>
+          <parentFolderId>3a30f6a5-b8eb-4e82-87c7-46788f65ad71</parentFolderId>
+          <packageId>46c95fc2-68ad-4cc5-9969-1c7252929a46</packageId>
+          <packageName>Intent.Angular.Components.Material</packageName>
+          <stereotypes />
+          <metadata />
+          <childElements />
+        </childElement>
+        <childElement id="3ad68557-eec8-4ef7-9c2d-d8dd4efa3a40" type="Module Settings Field Option" typeId="1592709a-89b1-4cb0-9801-ce9d3b94545a">
+          <name>Light Blue</name>
+          <display>Light Blue = light-blue</display>
+          <isAbstract>false</isAbstract>
+          <value>light-blue</value>
+          <genericTypes />
+          <isMapped>false</isMapped>
+          <parentFolderId>3a30f6a5-b8eb-4e82-87c7-46788f65ad71</parentFolderId>
+          <packageId>46c95fc2-68ad-4cc5-9969-1c7252929a46</packageId>
+          <packageName>Intent.Angular.Components.Material</packageName>
+          <stereotypes />
+          <metadata />
+          <childElements />
+        </childElement>
+        <childElement id="9d3cdb8f-5336-4a3d-b5d6-193cb52e10a6" type="Module Settings Field Option" typeId="1592709a-89b1-4cb0-9801-ce9d3b94545a">
+          <name>Light Green</name>
+          <display>Light Green = light-green</display>
+          <isAbstract>false</isAbstract>
+          <value>light-green</value>
+          <genericTypes />
+          <isMapped>false</isMapped>
+          <parentFolderId>3a30f6a5-b8eb-4e82-87c7-46788f65ad71</parentFolderId>
+          <packageId>46c95fc2-68ad-4cc5-9969-1c7252929a46</packageId>
+          <packageName>Intent.Angular.Components.Material</packageName>
+          <stereotypes />
+          <metadata />
+          <childElements />
+        </childElement>
+        <childElement id="3ce7000f-bd8a-495d-831f-2d68b14e3ffd" type="Module Settings Field Option" typeId="1592709a-89b1-4cb0-9801-ce9d3b94545a">
+          <name>Lime</name>
+          <display>Lime = lime</display>
+          <isAbstract>false</isAbstract>
+          <value>lime</value>
+          <genericTypes />
+          <isMapped>false</isMapped>
+          <parentFolderId>3a30f6a5-b8eb-4e82-87c7-46788f65ad71</parentFolderId>
+          <packageId>46c95fc2-68ad-4cc5-9969-1c7252929a46</packageId>
+          <packageName>Intent.Angular.Components.Material</packageName>
+          <stereotypes />
+          <metadata />
+          <childElements />
+        </childElement>
+        <childElement id="01357bae-4edc-4a53-9b76-b55c838eee6d" type="Module Settings Field Option" typeId="1592709a-89b1-4cb0-9801-ce9d3b94545a">
+          <name>Orange</name>
+          <display>Orange = orange</display>
+          <isAbstract>false</isAbstract>
+          <value>orange</value>
+          <genericTypes />
+          <isMapped>false</isMapped>
+          <parentFolderId>3a30f6a5-b8eb-4e82-87c7-46788f65ad71</parentFolderId>
+          <packageId>46c95fc2-68ad-4cc5-9969-1c7252929a46</packageId>
+          <packageName>Intent.Angular.Components.Material</packageName>
+          <stereotypes />
+          <metadata />
+          <childElements />
+        </childElement>
+        <childElement id="cc233fac-726f-4d81-a486-7589cded14d5" type="Module Settings Field Option" typeId="1592709a-89b1-4cb0-9801-ce9d3b94545a">
+          <name>Pink</name>
+          <display>Pink = pink</display>
+          <isAbstract>false</isAbstract>
+          <value>pink</value>
+          <genericTypes />
+          <isMapped>false</isMapped>
+          <parentFolderId>3a30f6a5-b8eb-4e82-87c7-46788f65ad71</parentFolderId>
+          <packageId>46c95fc2-68ad-4cc5-9969-1c7252929a46</packageId>
+          <packageName>Intent.Angular.Components.Material</packageName>
+          <stereotypes />
+          <metadata />
+          <childElements />
+        </childElement>
+        <childElement id="792e3d02-c1da-41c1-ac16-7123dd6598e3" type="Module Settings Field Option" typeId="1592709a-89b1-4cb0-9801-ce9d3b94545a">
+          <name>Purple</name>
+          <display>Purple = purple</display>
+          <isAbstract>false</isAbstract>
+          <value>purple</value>
+          <genericTypes />
+          <isMapped>false</isMapped>
+          <parentFolderId>3a30f6a5-b8eb-4e82-87c7-46788f65ad71</parentFolderId>
+          <packageId>46c95fc2-68ad-4cc5-9969-1c7252929a46</packageId>
+          <packageName>Intent.Angular.Components.Material</packageName>
+          <stereotypes />
+          <metadata />
+          <childElements />
+        </childElement>
+        <childElement id="93b18d27-52de-4b56-8b69-13855c54712d" type="Module Settings Field Option" typeId="1592709a-89b1-4cb0-9801-ce9d3b94545a">
+          <name>Red</name>
+          <display>Red = red</display>
+          <isAbstract>false</isAbstract>
+          <value>red</value>
+          <genericTypes />
+          <isMapped>false</isMapped>
+          <parentFolderId>3a30f6a5-b8eb-4e82-87c7-46788f65ad71</parentFolderId>
+          <packageId>46c95fc2-68ad-4cc5-9969-1c7252929a46</packageId>
+          <packageName>Intent.Angular.Components.Material</packageName>
+          <stereotypes />
+          <metadata />
+          <childElements />
+        </childElement>
+        <childElement id="42dda483-ab65-4f5d-9dd8-c55d401740f5" type="Module Settings Field Option" typeId="1592709a-89b1-4cb0-9801-ce9d3b94545a">
+          <name>Teal</name>
+          <display>Teal = teal</display>
+          <isAbstract>false</isAbstract>
+          <value>teal</value>
+          <genericTypes />
+          <isMapped>false</isMapped>
+          <parentFolderId>3a30f6a5-b8eb-4e82-87c7-46788f65ad71</parentFolderId>
+          <packageId>46c95fc2-68ad-4cc5-9969-1c7252929a46</packageId>
+          <packageName>Intent.Angular.Components.Material</packageName>
+          <stereotypes />
+          <metadata />
+          <childElements />
+        </childElement>
+        <childElement id="d54ad9e8-9f4d-40b4-bde2-1572f8a2516f" type="Module Settings Field Option" typeId="1592709a-89b1-4cb0-9801-ce9d3b94545a">
+          <name>Yellow</name>
+          <display>Yellow = yellow</display>
+          <isAbstract>false</isAbstract>
+          <value>yellow</value>
+          <genericTypes />
+          <isMapped>false</isMapped>
+          <parentFolderId>3a30f6a5-b8eb-4e82-87c7-46788f65ad71</parentFolderId>
+          <packageId>46c95fc2-68ad-4cc5-9969-1c7252929a46</packageId>
+          <packageName>Intent.Angular.Components.Material</packageName>
+          <stereotypes />
+          <metadata />
+          <childElements />
+        </childElement>
+        <childElement id="232cfb5a-c405-4082-8b02-43e07bb03fc4" type="Module Settings Field Option" typeId="1592709a-89b1-4cb0-9801-ce9d3b94545a">
+          <name>Custom</name>
+          <display>Custom = custom</display>
+          <isAbstract>false</isAbstract>
+          <value>custom</value>
+          <genericTypes />
+          <isMapped>false</isMapped>
+          <parentFolderId>3a30f6a5-b8eb-4e82-87c7-46788f65ad71</parentFolderId>
+          <packageId>46c95fc2-68ad-4cc5-9969-1c7252929a46</packageId>
+          <packageName>Intent.Angular.Components.Material</packageName>
+          <stereotypes />
+          <metadata />
+          <childElements />
+        </childElement>
+        <childElement id="4215ce73-4082-408b-885f-d5b9f6180f40" type="Module Settings Field Option" typeId="1592709a-89b1-4cb0-9801-ce9d3b94545a">
+          <name>Amber</name>
+          <display>Amber = amber</display>
+          <isAbstract>false</isAbstract>
+          <value>amber</value>
+          <genericTypes />
+          <isMapped>false</isMapped>
+          <parentFolderId>3a30f6a5-b8eb-4e82-87c7-46788f65ad71</parentFolderId>
+          <packageId>46c95fc2-68ad-4cc5-9969-1c7252929a46</packageId>
+          <packageName>Intent.Angular.Components.Material</packageName>
+          <stereotypes />
+          <metadata />
+          <childElements />
+        </childElement>
+      </childElements>
+    </childElement>
+  </childElements>
+</class>

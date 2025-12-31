@@ -1,0 +1,26 @@
+<h2 mat-dialog-title>Delete customer</h2>
+
+<mat-dialog-content class="dialog-content">
+  <p>Are you sure you want to delete this customer?</p>
+
+  <div *ngIf="serviceErrors.deleteCustomerError" class="error-message mt-2">
+    {{ serviceErrors.deleteCustomerError }}
+  </div>
+</mat-dialog-content>
+
+<mat-dialog-actions align="end">
+  <button mat-button (click)="onCancel()" [disabled]="isLoading">
+    Cancel
+  </button>
+
+  <button mat-raised-button color="warn" (click)="onConfirm()" [disabled]="isLoading">
+    <mat-icon class="mr-1">delete</mat-icon>
+    Delete
+    <mat-progress-spinner
+      *ngIf="isLoading"
+      mode="indeterminate"
+      diameter="20"
+      class="ml-2">
+    </mat-progress-spinner>
+  </button>
+</mat-dialog-actions>

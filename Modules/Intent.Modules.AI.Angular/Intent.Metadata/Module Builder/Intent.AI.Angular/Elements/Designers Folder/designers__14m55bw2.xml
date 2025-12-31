@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="43ed9f10-7add-4849-b9a3-bf2dfb14e89b" type="Designers Folder" typeId="dbb71aa5-0db2-4a2a-97a9-501950f36f99">
+  <name>designers</name>
+  <display>designers</display>
+  <isAbstract>false</isAbstract>
+  <sort-children>by-type-then-by-name</sort-children>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>4caf7667-4fd9-4f05-87c2-6db905c41294</parentFolderId>
+  <packageId>4caf7667-4fd9-4f05-87c2-6db905c41294</packageId>
+  <packageName>Intent.AI.Angular</packageName>
+  <stereotypes />
+  <metadata />
+  <childElements />
+</class>

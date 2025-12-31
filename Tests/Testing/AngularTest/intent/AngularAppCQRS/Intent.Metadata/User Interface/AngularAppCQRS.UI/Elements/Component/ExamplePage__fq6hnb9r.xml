@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="b31a77c6-c2ce-44bf-8045-1e6700cc5e3c" type="Component" typeId="b1c481e1-e91e-4c29-9817-00ab9cad4b6b">
+  <name>ExamplePage</name>
+  <display>ExamplePage</display>
+  <externalReference>ca58167b-0c67-4fe1-ba0b-06dbbbc20aa1</externalReference>
+  <isAbstract>false</isAbstract>
+  <sort-children>by-type-then-manually</sort-children>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>8493be1e-3ebd-4cf9-9fd9-07c972346f13</parentFolderId>
+  <packageId>2f554248-0cba-4543-bb70-00ac850dc428</packageId>
+  <packageName>AngularAppCQRS.UI</packageName>
+  <traits>
+    <trait id="b407aace-ad14-484e-ac93-4762a3d182d8" name="[Component]" />
+    <trait id="ea4adc09-8978-4ede-ba5f-265debb2b60c" name="Page" />
+  </traits>
+  <stereotypes>
+    <stereotype stereotypeDefinitionId="ea4adc09-8978-4ede-ba5f-265debb2b60c" name="Page">
+      <addedByDefault>false</addedByDefault>
+      <definitionPackageName>Intent.Modelers.UI</definitionPackageName>
+      <definitionPackageId>5c4628ec-679e-4f3d-afda-137c978deae0</definitionPackageId>
+      <properties>
+        <property name="9dff9df1-a993-4bf6-9aa7-c16811142228" display="Route" value="/example-page/{Title}" isActive="true" />
+        <property name="0a8627ba-ec45-4023-9c36-b0999f43e982" display="Title" isActive="true" />
+      </properties>
+    </stereotype>
+  </stereotypes>
+  <mappings>
+    <mapping type="View Binding" typeId="c33f86ad-423a-4a6f-a80c-a3206eafe5cd">
+      <source applicationId="ad925f84-ceed-46ee-8059-6b3e79738beb" designerId="f492faed-0665-4513-9853-5a230721786f" elementId="b31a77c6-c2ce-44bf-8045-1e6700cc5e3c" location="[Intent.Modules.Angular.Metadata].[User Interface].[ExamplePage]" />
+      <target applicationId="ad925f84-ceed-46ee-8059-6b3e79738beb" designerId="f492faed-0665-4513-9853-5a230721786f" elementId="b90d9845-e604-48dc-876e-00e121fd2c73" location="[Intent.Modules.Angular.Metadata].[User Interface].[[view]]" />
+      <mappedEnds />
+    </mapping>
+  </mappings>
+  <metadata />
+  <childElements>
+    <childElement id="db7b533d-d9c2-487c-ad69-6a1530f37f04" type="Property" typeId="356fbe17-bc63-4e16-b915-feefbc063cbe">
+      <name>Title</name>
+      <display>Title: string</display>
+      <externalReference>17d84751-ea5e-4a83-8fcf-d048d93e4716</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <typeReference id="cc4fbf6a-5f45-4917-a24a-8a99f920f211">
+        <typeId>d384db9c-a279-45e1-801e-e4e8099625f2</typeId>
+        <isNavigable>true</isNavigable>
+        <isNullable>false</isNullable>
+        <isCollection>false</isCollection>
+        <isRequired>true</isRequired>
+        <typePackageName>Intent.Common.Types</typePackageName>
+        <typePackageId>870ad967-cbd4-4ea9-b86d-9c3a5d55ea67</typePackageId>
+        <stereotypes />
+        <genericTypeParameters />
+      </typeReference>
+      <isMapped>false</isMapped>
+      <parentFolderId>b31a77c6-c2ce-44bf-8045-1e6700cc5e3c</parentFolderId>
+      <packageId>2f554248-0cba-4543-bb70-00ac850dc428</packageId>
+      <packageName>AngularAppCQRS.UI</packageName>
+      <stereotypes>
+        <stereotype stereotypeDefinitionId="f324c4ea-bac2-450d-b1b1-cc7f09ca3472" name="[Route Parameter]">
+          <addedByDefault>false</addedByDefault>
+          <definitionPackageName>Intent.Modelers.UI</definitionPackageName>
+          <definitionPackageId>5c4628ec-679e-4f3d-afda-137c978deae0</definitionPackageId>
+          <properties />
+        </stereotype>
+      </stereotypes>
+      <metadata />
+      <childElements />
+    </childElement>
+    <childElement id="cb4699c2-2826-4310-8a9b-d543496f079c" type="Component Operation" typeId="e030c97a-e066-40a7-8188-808c275df3cb">
+      <name>ngOnInit</name>
+      <display>ngOnInit(): void</display>
+      <externalReference>c71fd35e-cab1-4db4-a9a9-b8c101900b75</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <typeReference id="25005731-a4dc-4533-8eee-8ad98934df5c">
+        <isNavigable>true</isNavigable>
+        <isNullable>false</isNullable>
+        <isCollection>false</isCollection>
+        <isRequired>true</isRequired>
+        <stereotypes />
+        <genericTypeParameters />
+      </typeReference>
+      <isMapped>false</isMapped>
+      <parentFolderId>b31a77c6-c2ce-44bf-8045-1e6700cc5e3c</parentFolderId>
+      <packageId>2f554248-0cba-4543-bb70-00ac850dc428</packageId>
+      <packageName>AngularAppCQRS.UI</packageName>
+      <stereotypes />
+      <metadata />
+      <childElements />
+    </childElement>
+  </childElements>
+</class>

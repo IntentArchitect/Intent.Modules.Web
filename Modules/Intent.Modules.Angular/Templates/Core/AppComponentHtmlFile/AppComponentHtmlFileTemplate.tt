@@ -1,0 +1,16 @@
+<#@ template language="C#" inherits="HtmlTemplateBase<object>" #>
+<#@ assembly name="System.Core" #>
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="System.Linq" #>
+<#@ import namespace="Intent.Modules.Common" #>
+<#@ import namespace="Intent.Modules.Common.Templates" #>
+<#@ import namespace="Intent.Modules.Common.Html.Templates" #>
+<#@ import namespace="Intent.Templates" #>
+<#@ import namespace="Intent.Metadata.Models" #>
+
+
+<div class="app-layout">
+  <main class="app-content">
+    <router-outlet></router-outlet>
+  </main>
+</div>

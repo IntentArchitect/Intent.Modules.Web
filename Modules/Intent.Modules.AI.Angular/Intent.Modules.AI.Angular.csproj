@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="content\AngularAIPromptTemplates\SearchEntityold\**" />
+    <EmbeddedResource Remove="content\AngularAIPromptTemplates\SearchEntityold\**" />
+    <None Remove="content\AngularAIPromptTemplates\SearchEntityold\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Intent.Modules.Common" Version="3.7.3" />
+    <PackageReference Include="Intent.Modules.Common.AI" Version="1.0.0" />
+    <PackageReference Include="Intent.Modules.Modelers.Services" Version="3.9.3" />
+    <PackageReference Include="Intent.Modules.Modelers.Services.CQRS" Version="5.1.1" />
+    <PackageReference Include="Intent.Modules.Modelers.UI" Version="1.0.5-pre.0" />
+    <PackageReference Include="Intent.Modules.VisualStudio.Projects" Version="3.8.11" />
+    <PackageReference Include="Intent.Packager" Version="3.6.0">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Intent.RoslynWeaver.Attributes" Version="3.0.0" />
+    <PackageReference Include="Intent.SoftwareFactory.SDK" Version="3.12.1-pre.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="content\AngularAIPromptTemplates\SearchEntity\search-entity-delete-dialog.html">
+      <SubType>Code</SubType>
+    </None>
+  </ItemGroup>
+
+</Project>

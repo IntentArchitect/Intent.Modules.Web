@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="c1c2682d-7a09-446d-8a19-d24d63cc99e4" type="Layout" typeId="776a9393-6b23-4a8c-8937-fd7e833fa0ef">
+  <name>MainLayout</name>
+  <display>MainLayout</display>
+  <isAbstract>false</isAbstract>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>c8a397ff-98e6-4179-9e81-632e74d7b303</parentFolderId>
+  <packageId>c8aa2ec1-73b4-4356-94e3-bc52a2245cb1</packageId>
+  <packageName>${application.name}.UI</packageName>
+  <stereotypes />
+  <metadata />
+  <childElements />
+</class>
