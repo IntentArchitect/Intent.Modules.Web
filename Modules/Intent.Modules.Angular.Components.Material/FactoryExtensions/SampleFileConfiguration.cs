@@ -115,43 +115,30 @@ namespace Intent.Modules.Angular.Components.Material.FactoryExtensions
         };
 
         private const string MainLayoutDefaultHtml = @"
-<input type=""checkbox"" id=""sidebar-toggle"" class=""sidebar-toggle"" />
+<mat-toolbar color=""primary"" class=""app-header"">
+  <button mat-icon-button (click)=""drawer.toggle()"" aria-label=""Toggle menu"">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <a routerLink=""/"" class=""home-link"" mat-button>
+    <mat-icon>home</mat-icon>
+    <span>Home</span>
+  </a>
+</mat-toolbar>
 
-<div class=""app-layout"">
-  <header class=""app-header"">
-    <label for=""sidebar-toggle"" class=""menu-toggle"" aria-label=""Toggle menu"">
-      <svg xmlns=""http://www.w3.org/2000/svg"" width=""24"" height=""24"" viewBox=""0 0 24 24"" fill=""none"" stroke=""currentColor"" stroke-width=""2"">
-        <line x1=""3"" y1=""12"" x2=""21"" y2=""12""></line>
-        <line x1=""3"" y1=""6"" x2=""21"" y2=""6""></line>
-        <line x1=""3"" y1=""18"" x2=""21"" y2=""18""></line>
-      </svg>
-    </label>
-    <a routerLink=""/"" class=""home-link"">
-      <svg xmlns=""http://www.w3.org/2000/svg"" width=""20"" height=""20"" viewBox=""0 0 24 24"" fill=""none"" stroke=""currentColor"" stroke-width=""2"">
-        <path d=""M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z""></path>
-        <polyline points=""9 22 9 12 15 12 15 22""></polyline>
-      </svg>
-      <span>Home</span>
-    </a>
-  </header>
-
-  <aside class=""app-sidebar"">
-    <nav class=""sidebar-nav"">
-      <a routerLink=""/example-page/ModeledRoute"" class=""nav-item"" routerLinkActive=""active"">
-        <svg xmlns=""http://www.w3.org/2000/svg"" width=""18"" height=""18"" viewBox=""0 0 24 24"" fill=""none"" stroke=""currentColor"" stroke-width=""2"">
-          <path d=""M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z""></path>
-          <polyline points=""3.27 6.96 12 12.01 20.73 6.96""></polyline>
-          <line x1=""12"" y1=""22.08"" x2=""12"" y2=""12""></line>
-        </svg>
-        <span>Example Page</span>
+<mat-sidenav-container class=""app-layout"">
+  <mat-sidenav #drawer mode=""side"" opened class=""app-sidebar"">
+    <mat-nav-list>
+      <a mat-list-item routerLink=""/example-page/ModeledRoute"" routerLinkActive=""active"">
+        <mat-icon matListItemIcon>text_rotation_none</mat-icon>
+        <span matListItemTitle>Example Page</span>
       </a>
-    </nav>
-  </aside>
+    </mat-nav-list>
+  </mat-sidenav>
 
-  <main class=""app-content"">
+  <mat-sidenav-content class=""app-content"">
     <router-outlet></router-outlet>
-  </main>
-</div>";
+  </mat-sidenav-content>
+</mat-sidenav-container>";
 
         private const string MainLayoutDefaulStyle = @"// Default Layout Styles. This can overridden or modified as needed manually or using AI
 
@@ -215,8 +202,8 @@ namespace Intent.Modules.Angular.Components.Material.FactoryExtensions
 }
 
 .app-layout {
-  height: calc(100vh - 64px);
-  margin-top: 64px;
+  height: 100vh;
+  padding-top: 64px;
   display: flex;
 }
 
