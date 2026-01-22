@@ -3,7 +3,7 @@ param(
 )
 
 $modulesIsln = "Modules/Intent.Modules.Web.isln"
-$testsIsln = "Tests/Testing/AngularTest/intent/AngularTest.isln"
+$testsIsln = "Tests/intent/AngularTest.isln"
 
 if ($Reset) {
     ./PipelineScripts/run-pre-commit-checks.ps1 -ModulesIsln $modulesIsln -TestsIsln $testsIsln -Reset
