@@ -33,7 +33,7 @@ variables:
 - name: 'targetsToBuild'
   value: 'Modules/*.sln'
 - name: 'intent-solution'
-  value: 'Tests/intent/AngularTest.isln'
+  value: 'Tests/intent/Intent.Modules.Web.Tests.isln'
 - name: 'intent-module-solution'
   value: 'Modules/Intent.Modules.Web.isln'
 - name: 'warning-logging-command'
