@@ -1,15 +1,15 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
-	<Version>5.0.0-beta.0</Version>
+	<Version>5.0.0-beta.1</Version>
 	<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Include="content\InitialFiles\.vscode\extensions.json" />
-    <Content Include="content\InitialFiles\.vscode\launch.json" />
-    <Content Include="content\InitialFiles\.vscode\tasks.json" />
+    <Content Include="resources\InitialFiles\.vscode\extensions.json" />
+    <Content Include="resources\InitialFiles\.vscode\launch.json" />
+    <Content Include="resources\InitialFiles\.vscode\tasks.json" />
   </ItemGroup>
 
   <ItemGroup>
@@ -74,7 +74,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="content\InitialFiles\src\" />
+    <Folder Include="resources\InitialFiles\src\" />
   </ItemGroup>
 
 </Project>

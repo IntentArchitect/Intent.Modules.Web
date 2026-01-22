@@ -6,9 +6,9 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="content\AngularAIPromptTemplates\SearchEntityold\**" />
-    <EmbeddedResource Remove="content\AngularAIPromptTemplates\SearchEntityold\**" />
-    <None Remove="content\AngularAIPromptTemplates\SearchEntityold\**" />
+    <Compile Remove="resources\AngularAIPromptTemplates\SearchEntityold\**" />
+    <EmbeddedResource Remove="resources\AngularAIPromptTemplates\SearchEntityold\**" />
+    <None Remove="resources\AngularAIPromptTemplates\SearchEntityold\**" />
   </ItemGroup>
 
   <ItemGroup>
@@ -23,12 +23,12 @@
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
     <PackageReference Include="Intent.RoslynWeaver.Attributes" Version="3.0.0" />
-    <PackageReference Include="Intent.SoftwareFactory.SDK" Version="3.12.1-pre.1" />
+    <PackageReference Include="Intent.SoftwareFactory.SDK" Version="3.12.1" />
     <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="content\AngularAIPromptTemplates\SearchEntity\search-entity-delete-dialog.html">
+    <None Update="resources\AngularAIPromptTemplates\SearchEntity\search-entity-delete-dialog.html">
       <SubType>Code</SubType>
     </None>
   </ItemGroup>
