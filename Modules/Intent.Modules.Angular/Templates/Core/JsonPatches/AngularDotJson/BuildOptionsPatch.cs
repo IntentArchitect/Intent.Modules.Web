@@ -1,4 +1,5 @@
 ﻿using Intent.Modules.Angular.Settings;
+using Intent.Modules.Angular.Templates.Core.JsonPatches;
 using Intent.Modules.Common.FileBuilders.DataFileBuilder;
 using System;
 using System.Collections.Generic;
@@ -6,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Intent.Modules.Angular.Templates.Core.AngularDotJsonFile.Patches;
+namespace Intent.Modules.Angular.Templates.Core.JsonPatches.AngularDotJson;
 
 internal class BuildOptionsPatch : IAngularJsonPatch
 {

@@ -1,4 +1,5 @@
 ﻿using Intent.Modules.Angular.Settings;
+using Intent.Modules.Angular.Templates.Core.JsonPatches;
 using Intent.Modules.Common.FileBuilders.DataFileBuilder;
 using System;
 using System.Collections.Generic;
@@ -6,20 +7,21 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Intent.Modules.Angular.Templates.Core.AngularDotJsonFile.Patches;
+namespace Intent.Modules.Angular.Templates.Core.JsonPatches.AngularDotJson;
 
-internal class OptionsPolyFillsPatch : IAngularJsonPatch
+internal class BuildBuilderDevKitPatch : IAngularJsonPatch
 {
     private readonly string _applicationName;
 
-    public OptionsPolyFillsPatch(AngularSettings.AngularVersionOptionsEnum angularVersion, string applicationName)
+    public BuildBuilderDevKitPatch(AngularSettings.AngularVersionOptionsEnum angularVersion, string applicationName)
     {
         AngularVersion = angularVersion;
         _applicationName = applicationName;
     }
+
     public AngularSettings.AngularVersionOptionsEnum AngularVersion { get; internal set; }
 
-    public bool Applicable() => AngularVersion == AngularSettings.AngularVersionOptionsEnum._192 || AngularVersion == AngularSettings.AngularVersionOptionsEnum._202;
+    public bool Applicable() => AngularVersion == AngularSettings.AngularVersionOptionsEnum._192;
 
     public void Apply(IDataFile file)
     {
@@ -29,7 +31,7 @@ internal class OptionsPolyFillsPatch : IAngularJsonPatch
         }
 
         var projects = file.RootObject["projects"] as IDataFileObjectValue;
-        if (!projects.ContainsKey(_applicationName))
+        if(!projects.ContainsKey(_applicationName))
         {
             return;
         }
@@ -46,21 +48,14 @@ internal class OptionsPolyFillsPatch : IAngularJsonPatch
             return;
         }
 
-        var build = architect["build"] as IDataFileObjectValue;
-        if (!build.ContainsKey("options"))
+        var buildObject = architect["build"] as IDataFileObjectValue;
+        if (!buildObject.ContainsKey("builder"))
         {
+            buildObject.WithValue("builder", "@angular-devkit/build-angular:application", 0);
             return;
         }
 
-        var optionsObject = build["options"] as IDataFileObjectValue;
-        if (!optionsObject.ContainsKey("polyfills"))
-        {
-            var position = AngularVersion == AngularSettings.AngularVersionOptionsEnum._192 ? 3 : 1;
-
-            optionsObject.WithArray("polyfills", position, poly =>
-            {
-                poly.WithValue("zone.js");
-            });
-        }
+        var builderProperty = buildObject["builder"] as IDataFileScalarValue;
+        builderProperty.Value = "@angular-devkit/build-angular:application";
     }
 }

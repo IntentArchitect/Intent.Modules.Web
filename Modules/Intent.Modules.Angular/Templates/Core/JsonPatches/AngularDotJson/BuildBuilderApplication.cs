@@ -1,4 +1,5 @@
 ﻿using Intent.Modules.Angular.Settings;
+using Intent.Modules.Angular.Templates.Core.JsonPatches;
 using Intent.Modules.Common.FileBuilders.DataFileBuilder;
 using System;
 using System.Collections.Generic;
@@ -6,13 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Intent.Modules.Angular.Templates.Core.AngularDotJsonFile.Patches;
+namespace Intent.Modules.Angular.Templates.Core.JsonPatches.AngularDotJson;
 
-internal class BuildBuilderDevKitPatch : IAngularJsonPatch
+internal class BuildBuilderApplication : IAngularJsonPatch
 {
     private readonly string _applicationName;
 
-    public BuildBuilderDevKitPatch(AngularSettings.AngularVersionOptionsEnum angularVersion, string applicationName)
+    public BuildBuilderApplication(AngularSettings.AngularVersionOptionsEnum angularVersion, string applicationName)
     {
         AngularVersion = angularVersion;
         _applicationName = applicationName;
@@ -20,7 +21,7 @@ internal class BuildBuilderDevKitPatch : IAngularJsonPatch
 
     public AngularSettings.AngularVersionOptionsEnum AngularVersion { get; internal set; }
 
-    public bool Applicable() => AngularVersion == AngularSettings.AngularVersionOptionsEnum._192;
+    public bool Applicable() => AngularVersion != AngularSettings.AngularVersionOptionsEnum._192;
 
     public void Apply(IDataFile file)
     {
@@ -30,7 +31,7 @@ internal class BuildBuilderDevKitPatch : IAngularJsonPatch
         }
 
         var projects = file.RootObject["projects"] as IDataFileObjectValue;
-        if(!projects.ContainsKey(_applicationName))
+        if (!projects.ContainsKey(_applicationName))
         {
             return;
         }
@@ -50,11 +51,12 @@ internal class BuildBuilderDevKitPatch : IAngularJsonPatch
         var buildObject = architect["build"] as IDataFileObjectValue;
         if (!buildObject.ContainsKey("builder"))
         {
-            buildObject.WithValue("builder", "@angular-devkit/build-angular:application", 0);
+            buildObject.WithValue("builder", "@angular/build:application", 0);
             return;
         }
 
         var builderProperty = buildObject["builder"] as IDataFileScalarValue;
-        builderProperty.Value = "@angular-devkit/build-angular:application";
+        builderProperty.Value = "@angular/build:application";
     }
+
 }

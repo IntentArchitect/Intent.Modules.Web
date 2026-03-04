@@ -29,7 +29,7 @@
       <updatedByDisplayName>JP Seini</updatedByDisplayName>
       <updatedAt>2025-11-05T07:52:11.2711151Z</updatedAt>
       <deviationsHash>07300FCA02470B68144FBE2DC6BF9676E85D730A638177527DFD2690811587B3</deviationsHash>
-      <fileHash>792BADCA919A77CF31C8FC6B6DCE13BDA9DFB8339EF1105C7DCAECBD8012DDD8</fileHash>
+      <fileHash>3F7BC6783340E3B2FB8B67CE52A89F3963B89EB4B479D263E21958D7A8D9BAF1</fileHash>
     </file>
     <file>
       <correlationId>Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial#eb2568a1-e43f-480c-8136-8a9346f816f9</correlationId>
@@ -49,7 +49,7 @@
       <updatedByDisplayName>JP Seini</updatedByDisplayName>
       <updatedAt>2025-11-06T13:38:29.8707431Z</updatedAt>
       <deviationsHash>42111E2E2A00EF501636753A86683E0EDE96EFD716725D4F69DFF1724080279E</deviationsHash>
-      <fileHash>5CA356C667D815FFD69D5F22BCA1A4A5232B7CF3E777827507BABB948421C10A</fileHash>
+      <fileHash>71677E6262E72282C7703C71B42DA66771BA4D848208B4AD796F7E2512D8FDCE</fileHash>
     </file>
     <file>
       <correlationId>Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial#a131606e-9407-4bd0-a0ff-3d293339e71b</correlationId>
@@ -110,6 +110,16 @@
       <updatedAt>2025-11-11T08:29:39.3254424Z</updatedAt>
       <deviationsHash>F63BC01AACC8BB8832469411B684FD05191E8167BD5064324E7B04ED211E01AA</deviationsHash>
       <fileHash>D2226832EDC4B78C68152FCDB84338C129F887736E27EC8B36197EC6FDB0C1A5</fileHash>
+    </file>
+    <file>
+      <correlationId>Intent.ModuleBuilder.Templates.StaticContentTemplateRegistration#0384b5c0-a591-46f4-bb2f-1b7a73d587b2</correlationId>
+      <path>Intent.Modules.Angular/Templates/StaticContentTemplateRegistrations/InitialFilesStaticContentTemplateRegistration.cs</path>
+      <count>1</count>
+      <updatedByAccountName>jp.seini@intentarchitect.com</updatedByAccountName>
+      <updatedByDisplayName>JP Seini</updatedByDisplayName>
+      <updatedAt>2026-03-04T14:14:58.4956804Z</updatedAt>
+      <deviationsHash>FA7001CCBE8ECC3998B032104AE3AEE37B1F991737273D8C2EF0F7B0ED69F45C</deviationsHash>
+      <fileHash>2AE934BB96BB8C3C1FF2857893B6C0906C10ED462B2BA9A369D559EA82DD275F</fileHash>
     </file>
     <file>
       <correlationId>Intent.ModuleBuilder.Templates.TemplateExtensions#265ac944-d86f-4522-9569-1860fdc3f4c9</correlationId>

@@ -1,4 +1,5 @@
 ﻿using Intent.Modules.Angular.Settings;
+using Intent.Modules.Angular.Templates.Core.JsonPatches;
 using Intent.Modules.Common.FileBuilders.DataFileBuilder;
 using System;
 using System.Collections.Generic;
@@ -6,13 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Intent.Modules.Angular.Templates.Core.AngularDotJsonFile.Patches;
+namespace Intent.Modules.Angular.Templates.Core.JsonPatches.AngularDotJson;
 
-internal class BuildBuilderApplication : IAngularJsonPatch
+internal class ExtractBuilderApplication : IAngularJsonPatch
 {
     private readonly string _applicationName;
 
-    public BuildBuilderApplication(AngularSettings.AngularVersionOptionsEnum angularVersion, string applicationName)
+    public ExtractBuilderApplication(AngularSettings.AngularVersionOptionsEnum angularVersion, string applicationName)
     {
         AngularVersion = angularVersion;
         _applicationName = applicationName;
@@ -20,7 +21,7 @@ internal class BuildBuilderApplication : IAngularJsonPatch
 
     public AngularSettings.AngularVersionOptionsEnum AngularVersion { get; internal set; }
 
-    public bool Applicable() => AngularVersion != AngularSettings.AngularVersionOptionsEnum._192;
+    public bool Applicable() => AngularVersion == AngularSettings.AngularVersionOptionsEnum._202;
 
     public void Apply(IDataFile file)
     {
@@ -42,20 +43,25 @@ internal class BuildBuilderApplication : IAngularJsonPatch
         }
 
         var architect = appProject["architect"] as IDataFileObjectValue;
-        if (!architect.ContainsKey("build"))
+        if (!architect.ContainsKey("extract-i18n"))
         {
+            architect.WithObject("extract-i18n", 2, extract =>
+            {
+                extract.WithValue("builder", "@angular/build:extract-i18n");
+            });
+
             return;
         }
 
-        var buildObject = architect["build"] as IDataFileObjectValue;
-        if (!buildObject.ContainsKey("builder"))
+        var serveObject = architect["extract-i18n"] as IDataFileObjectValue;
+        if (!serveObject.ContainsKey("builder"))
         {
-            buildObject.WithValue("builder", "@angular/build:application", 0);
+            serveObject.WithValue("builder", "@angular/build:extract-i18n", 2);
             return;
         }
 
-        var builderProperty = buildObject["builder"] as IDataFileScalarValue;
-        builderProperty.Value = "@angular/build:application";
+        var builderProperty = serveObject["builder"] as IDataFileScalarValue;
+        builderProperty.Value = "@angular/build:extract-i18n";
     }
 
 }

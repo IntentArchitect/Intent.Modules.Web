@@ -1,4 +1,5 @@
 ﻿using Intent.Modules.Angular.Settings;
+using Intent.Modules.Angular.Templates.Core.JsonPatches;
 using Intent.Modules.Common.FileBuilders.DataFileBuilder;
 using System;
 using System.Collections.Generic;
@@ -6,13 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Intent.Modules.Angular.Templates.Core.AngularDotJsonFile.Patches;
+namespace Intent.Modules.Angular.Templates.Core.JsonPatches.AngularDotJson;
 
-internal class TestBuilderBuildPatch : IAngularJsonPatch
+internal class TestBuilderDevKitPatch : IAngularJsonPatch
 {
     private readonly string _applicationName;
 
-    public TestBuilderBuildPatch(AngularSettings.AngularVersionOptionsEnum angularVersion, string applicationName)
+    public TestBuilderDevKitPatch(AngularSettings.AngularVersionOptionsEnum angularVersion, string applicationName)
     {
         AngularVersion = angularVersion;
         _applicationName = applicationName;
@@ -20,7 +21,7 @@ internal class TestBuilderBuildPatch : IAngularJsonPatch
 
     public AngularSettings.AngularVersionOptionsEnum AngularVersion { get; internal set; }
 
-    public bool Applicable() => AngularVersion == AngularSettings.AngularVersionOptionsEnum._202;
+    public bool Applicable() => AngularVersion == AngularSettings.AngularVersionOptionsEnum._192;
 
     public void Apply(IDataFile file)
     {
@@ -47,7 +48,7 @@ internal class TestBuilderBuildPatch : IAngularJsonPatch
             architect.WithObject("test", test =>
             {
                 test
-                    .WithValue("builder", "@angular/build:karma")
+                    .WithValue("builder", "@angular-devkit/build-angular:karma")
                     .WithObject("options", options =>
                     {
                         options.WithArray("polyfills", poly =>
@@ -70,7 +71,8 @@ internal class TestBuilderBuildPatch : IAngularJsonPatch
                         WithArray("styles", styles =>
                         {
                             styles.WithValue("src/styles.scss");
-                        });
+                        })
+                        .WithArray("scripts", scripts => { });
                     });
             });
         }

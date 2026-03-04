@@ -70,6 +70,14 @@ namespace Intent.Modules.Angular.Templates.Core.AppConfig
                 });
         }
 
+        public override void BeforeTemplateExecution()
+        {
+            NpmPackagesScripts.AddCorePackagesScripts(this);
+            NpmPackagesEntries.AddCorePackagesEntries(this);
+
+            base.BeforeTemplateExecution();
+        }
+
         public void HandleServiceConfigurationRequest(ServiceConfigurationRequestEvent @event)
         {
             _serviceConfigurations.Add(@event);

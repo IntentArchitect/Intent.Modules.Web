@@ -1,4 +1,5 @@
 ﻿using Intent.Modules.Angular.Settings;
+using Intent.Modules.Angular.Templates.Core.JsonPatches;
 using Intent.Modules.Common.FileBuilders.DataFileBuilder;
 using System;
 using System.Collections.Generic;
@@ -6,21 +7,20 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Intent.Modules.Angular.Templates.Core.AngularDotJsonFile.Patches;
+namespace Intent.Modules.Angular.Templates.Core.JsonPatches.AngularDotJson;
 
-internal class ExtractBuilderDevKitPatch : IAngularJsonPatch
+internal class OptionsPolyFillsPatch : IAngularJsonPatch
 {
     private readonly string _applicationName;
 
-    public ExtractBuilderDevKitPatch(AngularSettings.AngularVersionOptionsEnum angularVersion, string applicationName)
+    public OptionsPolyFillsPatch(AngularSettings.AngularVersionOptionsEnum angularVersion, string applicationName)
     {
         AngularVersion = angularVersion;
         _applicationName = applicationName;
     }
-
     public AngularSettings.AngularVersionOptionsEnum AngularVersion { get; internal set; }
 
-    public bool Applicable() => AngularVersion == AngularSettings.AngularVersionOptionsEnum._192;
+    public bool Applicable() => AngularVersion == AngularSettings.AngularVersionOptionsEnum._192 || AngularVersion == AngularSettings.AngularVersionOptionsEnum._202;
 
     public void Apply(IDataFile file)
     {
@@ -42,25 +42,26 @@ internal class ExtractBuilderDevKitPatch : IAngularJsonPatch
         }
 
         var architect = appProject["architect"] as IDataFileObjectValue;
-        if (!architect.ContainsKey("extract-i18n"))
+        if (!architect.ContainsKey("build"))
         {
-            architect.WithObject("extract-i18n", 2, extract =>
+            return;
+        }
+
+        var build = architect["build"] as IDataFileObjectValue;
+        if (!build.ContainsKey("options"))
+        {
+            return;
+        }
+
+        var optionsObject = build["options"] as IDataFileObjectValue;
+        if (!optionsObject.ContainsKey("polyfills"))
+        {
+            var position = AngularVersion == AngularSettings.AngularVersionOptionsEnum._192 ? 3 : 1;
+
+            optionsObject.WithArray("polyfills", position, poly =>
             {
-                extract.WithValue("builder", "@angular-devkit/build-angular:extract-i18n");
+                poly.WithValue("zone.js");
             });
-
-            return;
         }
-
-        var serveObject = architect["extract-i18n"] as IDataFileObjectValue;
-        if (!serveObject.ContainsKey("builder"))
-        {
-            serveObject.WithValue("builder", "@angular-devkit/build-angular:extract-i18n", 0);
-            return;
-        }
-
-        var builderProperty = serveObject["builder"] as IDataFileScalarValue;
-        builderProperty.Value = "@angular-devkit/build-angular:extract-i18n";
     }
 }
-

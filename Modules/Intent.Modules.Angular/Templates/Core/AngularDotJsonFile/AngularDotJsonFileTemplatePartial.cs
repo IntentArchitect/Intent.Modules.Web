@@ -1,17 +1,18 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Security.Cryptography;
 using Intent.Engine;
 using Intent.Metadata.Models;
 using Intent.Modules.Angular.Settings;
-using Intent.Modules.Angular.Templates.Core.AngularDotJsonFile.Patches;
+using Intent.Modules.Angular.Templates.Core.JsonPatches;
+using Intent.Modules.Angular.Templates.Core.JsonPatches.AngularDotJson;
 using Intent.Modules.Common;
 using Intent.Modules.Common.FileBuilders.DataFileBuilder;
 using Intent.Modules.Common.Templates;
 using Intent.Modules.Common.TypeScript.Events;
 using Intent.RoslynWeaver.Attributes;
 using Intent.Templates;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography;
 
 [assembly: DefaultIntentManaged(Mode.Fully)]
 [assembly: IntentTemplate("Intent.ModuleBuilder.ProjectItemTemplate.Partial", Version = "1.0")]

@@ -1,4 +1,5 @@
 ﻿using Intent.Modules.Angular.Settings;
+using Intent.Modules.Angular.Templates.Core.JsonPatches;
 using Intent.Modules.Common.FileBuilders.DataFileBuilder;
 using System;
 using System.Collections.Generic;
@@ -6,13 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Intent.Modules.Angular.Templates.Core.AngularDotJsonFile.Patches;
+namespace Intent.Modules.Angular.Templates.Core.JsonPatches.AngularDotJson;
 
-internal class TestBuilderUnitTestPatch : IAngularJsonPatch
+internal class ServeBuilderApplication : IAngularJsonPatch
 {
     private readonly string _applicationName;
 
-    public TestBuilderUnitTestPatch(AngularSettings.AngularVersionOptionsEnum angularVersion, string applicationName)
+    public ServeBuilderApplication(AngularSettings.AngularVersionOptionsEnum angularVersion, string applicationName)
     {
         AngularVersion = angularVersion;
         _applicationName = applicationName;
@@ -20,7 +21,7 @@ internal class TestBuilderUnitTestPatch : IAngularJsonPatch
 
     public AngularSettings.AngularVersionOptionsEnum AngularVersion { get; internal set; }
 
-    public bool Applicable() => AngularVersion == AngularSettings.AngularVersionOptionsEnum._210;
+    public bool Applicable() => AngularVersion != AngularSettings.AngularVersionOptionsEnum._192;
 
     public void Apply(IDataFile file)
     {
@@ -42,14 +43,20 @@ internal class TestBuilderUnitTestPatch : IAngularJsonPatch
         }
 
         var architect = appProject["architect"] as IDataFileObjectValue;
-        if (!architect.ContainsKey("test"))
+        if (!architect.ContainsKey("serve"))
         {
-            architect.WithObject("test", test =>
-            {
-                test
-                    .WithValue("builder", "@angular/build:unit-test");
-            });
+            return;
         }
-    }
-}
 
+        var serveObject = architect["serve"] as IDataFileObjectValue;
+        if (!serveObject.ContainsKey("builder"))
+        {
+            serveObject.WithValue("builder", "@angular/build:dev-server", 0);
+            return;
+        }
+
+        var builderProperty = serveObject["builder"] as IDataFileScalarValue;
+        builderProperty.Value = "@angular/build:dev-server";
+    }
+
+}
