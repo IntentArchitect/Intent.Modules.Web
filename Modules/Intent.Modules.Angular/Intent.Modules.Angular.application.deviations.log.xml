@@ -29,7 +29,7 @@
       <updatedByDisplayName>JP Seini</updatedByDisplayName>
       <updatedAt>2025-11-05T07:52:11.2711151Z</updatedAt>
       <deviationsHash>07300FCA02470B68144FBE2DC6BF9676E85D730A638177527DFD2690811587B3</deviationsHash>
-      <fileHash>3F7BC6783340E3B2FB8B67CE52A89F3963B89EB4B479D263E21958D7A8D9BAF1</fileHash>
+      <fileHash>867530D542CBB0D412B6CD5C212024C23EC2A243A8EA64F1AB9662E6143A475A</fileHash>
     </file>
     <file>
       <correlationId>Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial#eb2568a1-e43f-480c-8136-8a9346f816f9</correlationId>
@@ -70,6 +70,26 @@
       <updatedAt>2025-12-08T13:45:01.5045653Z</updatedAt>
       <deviationsHash>8C8A48C4A631B44B280EA6CD0A12F846ED0A9E989548C1EC12C6A132F4E0304C</deviationsHash>
       <fileHash>400EEFA9C8CD100E8449C6DDB90A5E4300F8FD226AF66748C321D3A8D6C2AFA3</fileHash>
+    </file>
+    <file>
+      <correlationId>Intent.ModuleBuilder.ProjectItemTemplate.Partial#631c3fb8-6202-4d36-bb42-93656e59b7a4</correlationId>
+      <path>Intent.Modules.Angular/Templates/Core/TypescriptConfigAppJsonFile/TypescriptConfigAppJsonFileTemplatePartial.cs</path>
+      <count>1</count>
+      <updatedByAccountName>jp.seini@intentarchitect.com</updatedByAccountName>
+      <updatedByDisplayName>JP Seini</updatedByDisplayName>
+      <updatedAt>2026-03-04T17:49:49.3207168Z</updatedAt>
+      <deviationsHash>D13020E7CBEB9AE00B697809E9B5F9DF88855A92BC8B6E10827F2A2AAD423CB6</deviationsHash>
+      <fileHash>E4036C67056AB588E10F8AAF9396FEDAC86CD8E643291E660508594BD5532250</fileHash>
+    </file>
+    <file>
+      <correlationId>Intent.ModuleBuilder.ProjectItemTemplate.Partial#a84aedb6-be19-40e6-9c6b-3006c349ee86</correlationId>
+      <path>Intent.Modules.Angular/Templates/Core/TypescriptConfigJsonFile/TypescriptConfigJsonFileTemplatePartial.cs</path>
+      <count>1</count>
+      <updatedByAccountName>jp.seini@intentarchitect.com</updatedByAccountName>
+      <updatedByDisplayName>JP Seini</updatedByDisplayName>
+      <updatedAt>2026-03-04T15:03:19.1128889Z</updatedAt>
+      <deviationsHash>C8D4989C5D178A6ED72111945220E422B2B04B3EB67FEFF798897EE031888D0C</deviationsHash>
+      <fileHash>7F86CC55E0DB248BFE5C4E5BCFA1E8BBE3EACE8C58093E953BBD03F2F007CFFC</fileHash>
     </file>
     <file>
       <correlationId>Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial#bfe9a693-aa42-4037-a473-196aafbaf797</correlationId>

@@ -74,7 +74,15 @@
       <role>Front End</role>
       <location>src</location>
     </template>
+    <template id="Intent.Angular.Core.TypescriptConfigAppJsonFileTemplate" externalReference="631c3fb8-6202-4d36-bb42-93656e59b7a4">
+      <role>Front End</role>
+      <location></location>
+    </template>
     <template id="Intent.Angular.Core.TypescriptConfigJsonFileTemplate" externalReference="a84aedb6-be19-40e6-9c6b-3006c349ee86">
+      <role>Front End</role>
+      <location></location>
+    </template>
+    <template id="Intent.Angular.Core.TypescriptConfigSpecJsonFileTemplate" externalReference="fe78e2d3-783d-452b-8b53-c290a08aa34c">
       <role>Front End</role>
       <location></location>
     </template>
