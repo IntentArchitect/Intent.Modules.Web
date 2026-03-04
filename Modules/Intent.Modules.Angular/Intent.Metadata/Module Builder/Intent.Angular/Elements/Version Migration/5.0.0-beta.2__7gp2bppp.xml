@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="13c3226c-685d-457b-a587-3db87e2ab53d" type="Version Migration" typeId="03f24c57-66d8-4868-95a7-6daef900dc7f">
+  <name>5.0.0-beta.2</name>
+  <display>5.0.0-beta.2</display>
+  <isAbstract>false</isAbstract>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>20af86bb-9961-46ac-8e47-7fafeb27a0b7</parentFolderId>
+  <packageId>d1f9847f-ec1b-4774-910a-816c4f3e8487</packageId>
+  <packageName>Intent.Angular</packageName>
+  <stereotypes />
+  <metadata />
+  <childElements />
+</class>

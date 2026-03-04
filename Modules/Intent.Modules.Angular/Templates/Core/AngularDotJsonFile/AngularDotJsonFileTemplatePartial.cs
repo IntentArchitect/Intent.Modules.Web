@@ -1,15 +1,17 @@
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Security.Cryptography;
 using Intent.Engine;
 using Intent.Metadata.Models;
+using Intent.Modules.Angular.Settings;
+using Intent.Modules.Angular.Templates.Core.AngularDotJsonFile.Patches;
 using Intent.Modules.Common;
 using Intent.Modules.Common.FileBuilders.DataFileBuilder;
 using Intent.Modules.Common.Templates;
 using Intent.Modules.Common.TypeScript.Events;
 using Intent.RoslynWeaver.Attributes;
 using Intent.Templates;
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Security.Cryptography;
 
 [assembly: DefaultIntentManaged(Mode.Fully)]
 [assembly: IntentTemplate("Intent.ModuleBuilder.ProjectItemTemplate.Partial", Version = "1.0")]
@@ -41,7 +43,13 @@ namespace Intent.Modules.Angular.Templates.Core.AngularDotJsonFile
                             {
                                 app
                                     .WithValue("projectType", "application")
-                                    .WithObject("schematics", schematics => { })
+                                    .WithObject("schematics", schematics =>
+                                    {
+                                        schematics.WithObject("@schematics/angular:component", comp =>
+                                        {
+                                            comp.WithValue("style", "scss");
+                                        });
+                                    })
                                     .WithValue("root", "")
                                     .WithValue("sourceRoot", "src")
                                     .WithValue("prefix", "app")
@@ -49,72 +57,64 @@ namespace Intent.Modules.Angular.Templates.Core.AngularDotJsonFile
                                     {
                                         arch
                                             .WithObject("build", build =>
-                                        {
-                                            build
-                                                .WithValue("builder", "@angular-devkit/build-angular:application")
-                                                .WithObject("options", options =>
-                                                {
-                                                    options
-                                                        .WithValue("outputPath", $"dist/{AppNameKebabCased}")
-                                                        .WithValue("index", "src/index.html")
-                                                        .WithValue("browser", "src/main.ts")
-                                                        .WithArray("polyfills", poly =>
-                                                        {
-                                                            poly.WithValue("zone.js");
-                                                        })
-                                                        .WithValue("tsConfig", "tsconfig.app.json")
-                                                        .WithArray("assets", assets =>
-                                                        {
-                                                            assets.WithObject(assetObj =>
-                                                            {
-                                                                assetObj
-                                                                    .WithValue("glob", "**/*")
-                                                                    .WithValue("input", "public");
-                                                            });
-                                                        })
-                                                        .WithArray("styles", styles =>
-                                                        {
-                                                            styles.WithValue("src/styles.scss");
-                                                        })
-                                                        .WithArray("scripts", scripts => { });
-                                                })
-                                                .WithObject("configurations", config =>
-                                                {
-                                                    config.WithObject("production", prod =>
+                                            {
+                                                build
+                                                    .WithObject("options", options =>
                                                     {
-                                                        prod.WithArray("budgets", budgets =>
-                                                        {
-                                                            budgets.WithObject(budgetObj =>
+                                                        options
+                                                            .WithValue("browser", "src/main.ts")
+                                                            .WithValue("tsConfig", "tsconfig.app.json")
+                                                            .WithValue("inlineStyleLanguage", "scss")
+                                                            .WithArray("assets", assets =>
                                                             {
-                                                                budgetObj
-                                                                    .WithValue("type", "initial")
-                                                                    .WithValue("maximumWarning", "500kB")
-                                                                    .WithValue("maximumError", "1MB");
-                                                            });
-                                                            budgets.WithObject(budgetObj =>
+                                                                assets.WithObject(assetObj =>
+                                                                {
+                                                                    assetObj
+                                                                        .WithValue("glob", "**/*")
+                                                                        .WithValue("input", "public");
+                                                                });
+                                                            })
+                                                            .WithArray("styles", styles =>
                                                             {
-                                                                budgetObj
-                                                                    .WithValue("type", "anyComponentStyle")
-                                                                    .WithValue("maximumWarning", "4kB")
-                                                                    .WithValue("maximumError", "8kB");
+                                                                styles.WithValue("src/styles.scss");
                                                             });
-                                                        })
-                                                        .WithValue("outputHashing", "all");
                                                     })
-                                                    .WithObject("development", dev =>
+                                                    .WithObject("configurations", config =>
                                                     {
-                                                        dev
-                                                          .WithValue("optimization", false)
-                                                          .WithValue("extractLicenses", false)
-                                                          .WithValue("sourceMap", true);
-                                                    });
-                                                })
-                                                .WithValue("defaultConfiguration", "production");
-                                        })
+                                                        config.WithObject("production", prod =>
+                                                        {
+                                                            prod.WithArray("budgets", budgets =>
+                                                            {
+                                                                budgets.WithObject(budgetObj =>
+                                                                {
+                                                                    budgetObj
+                                                                        .WithValue("type", "initial")
+                                                                        .WithValue("maximumWarning", "500kB")
+                                                                        .WithValue("maximumError", "1MB");
+                                                                });
+                                                                budgets.WithObject(budgetObj =>
+                                                                {
+                                                                    budgetObj
+                                                                        .WithValue("type", "anyComponentStyle")
+                                                                        .WithValue("maximumWarning", "4kB")
+                                                                        .WithValue("maximumError", "8kB");
+                                                                });
+                                                            })
+                                                            .WithValue("outputHashing", "all");
+                                                        })
+                                                        .WithObject("development", dev =>
+                                                        {
+                                                            dev
+                                                              .WithValue("optimization", false)
+                                                              .WithValue("extractLicenses", false)
+                                                              .WithValue("sourceMap", true);
+                                                        });
+                                                    })
+                                                    .WithValue("defaultConfiguration", "production");
+                                            })
                                             .WithObject("serve", serve =>
                                             {
                                                 serve
-                                                    .WithValue("builder", "@angular-devkit/build-angular:dev-server")
                                                     .WithObject("configurations", config =>
                                                     {
                                                         config.WithObject("production", prod =>
@@ -127,46 +127,41 @@ namespace Intent.Modules.Angular.Templates.Core.AngularDotJsonFile
                                                         });
                                                     })
                                                     .WithValue("defaultConfiguration", "development");
-                                            })
-                                            .WithObject("extract-i18n", extract =>
-                                            {
-                                                extract.WithValue("builder", "@angular-devkit/build-angular:extract-i18n");
-                                            })
-                                            .WithObject("test", test =>
-                                            {
-                                                test
-                                                    .WithValue("builder", "@angular-devkit/build-angular:karma")
-                                                    .WithObject("options", options =>
-                                                    {
-                                                        options.WithArray("polyfills", poly =>
-                                                        {
-                                                            poly
-                                                                .WithValue("zone.js")
-                                                                .WithValue("zone.js/testing");
-                                                        })
-                                                        .WithValue("tsConfig", "tsconfig.spec.json")
-                                                        .WithArray("assets", assets =>
-                                                        {
-                                                            assets.WithObject(assetsObj =>
-                                                            {
-                                                                assetsObj
-                                                                    .WithValue("glob", "**/*")
-                                                                    .WithValue("input", "public");
-                                                            });
-                                                        }).
-                                                        WithArray("styles", styles =>
-                                                        {
-                                                            styles.WithValue("src/styles.scss");
-                                                        })
-                                                        .WithArray("scripts", scripts => { });
-                                                    });
                                             });
                                     })
                                 ;
                             });
-                        })
-                        ;
+                        });
+                }).OnBuild(file =>
+                {
+                    PatchAngularJsonFile(file);
                 });
+        }
+
+        private void PatchAngularJsonFile(IDataFile file)
+        {
+            List<IAngularJsonPatch> Patches =
+            [
+                new CliObjectPatch(ExecutionContext.Settings.GetAngularSettings().AngularVersion().AsEnum()),
+                new BuildBuilderDevKitPatch(ExecutionContext.Settings.GetAngularSettings().AngularVersion().AsEnum(), AppNameKebabCased),
+                new BuildBuilderApplication(ExecutionContext.Settings.GetAngularSettings().AngularVersion().AsEnum(), AppNameKebabCased),
+                new BuildOptionsPatch(ExecutionContext.Settings.GetAngularSettings().AngularVersion().AsEnum(), AppNameKebabCased),
+                new OptionsPolyFillsPatch(ExecutionContext.Settings.GetAngularSettings().AngularVersion().AsEnum(), AppNameKebabCased),
+                new ServeBuilderDevKitPatch(ExecutionContext.Settings.GetAngularSettings().AngularVersion().AsEnum(), AppNameKebabCased),
+                new ServeBuilderApplication(ExecutionContext.Settings.GetAngularSettings().AngularVersion().AsEnum(), AppNameKebabCased),
+                new ExtractBuilderDevKitPatch(ExecutionContext.Settings.GetAngularSettings().AngularVersion().AsEnum(), AppNameKebabCased),
+                new ExtractBuilderApplication(ExecutionContext.Settings.GetAngularSettings().AngularVersion().AsEnum(), AppNameKebabCased),
+                new TestBuilderDevKitPatch(ExecutionContext.Settings.GetAngularSettings().AngularVersion().AsEnum(), AppNameKebabCased),
+                new TestBuilderBuildPatch(ExecutionContext.Settings.GetAngularSettings().AngularVersion().AsEnum(), AppNameKebabCased),
+                new TestBuilderUnitTestPatch(ExecutionContext.Settings.GetAngularSettings().AngularVersion().AsEnum(), AppNameKebabCased),
+            ];
+
+            foreach (var patch in Patches
+                .Where(p => p.Applicable())
+                .OrderBy(p => p.Order))
+            {
+                patch.Apply(file);
+            }
         }
 
         private string AppNameCamelCased => OutputTarget.ApplicationName().ToCamelCase();

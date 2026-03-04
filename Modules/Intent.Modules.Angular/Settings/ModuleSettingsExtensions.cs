@@ -38,5 +38,49 @@ namespace Intent.Modules.Angular.Settings
         {
             return _groupSettings.GetSetting(settingId);
         }
+        public AngularVersionOptions AngularVersion() => new AngularVersionOptions(_groupSettings.GetSetting("3dc81a7d-43f2-44bc-8900-da60ceb75059")?.Value);
+
+        public class AngularVersionOptions
+        {
+            public readonly string Value;
+
+            public AngularVersionOptions(string value)
+            {
+                Value = value;
+            }
+
+            public AngularVersionOptionsEnum AsEnum()
+            {
+                return Value switch
+                {
+                    "21.0" => AngularVersionOptionsEnum._210,
+                    "20.2" => AngularVersionOptionsEnum._202,
+                    "19.2" => AngularVersionOptionsEnum._192,
+                    _ => throw new ArgumentOutOfRangeException(nameof(Value), $"{Value} is out of range")
+                };
+            }
+
+            public bool Is_210()
+            {
+                return Value == "21.0";
+            }
+
+            public bool Is_202()
+            {
+                return Value == "20.2";
+            }
+
+            public bool Is_192()
+            {
+                return Value == "19.2";
+            }
+        }
+
+        public enum AngularVersionOptionsEnum
+        {
+            _210,
+            _202,
+            _192,
+        }
     }
 }

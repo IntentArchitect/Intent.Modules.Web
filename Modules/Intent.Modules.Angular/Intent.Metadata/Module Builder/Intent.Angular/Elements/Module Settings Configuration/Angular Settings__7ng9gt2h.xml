@@ -3,6 +3,7 @@
   <name>Angular Settings</name>
   <display>Angular Settings</display>
   <isAbstract>false</isAbstract>
+  <sort-children>manually</sort-children>
   <genericTypes />
   <isMapped>false</isMapped>
   <parentFolderId>d1f9847f-ec1b-4774-910a-816c4f3e8487</parentFolderId>
@@ -19,5 +20,78 @@
     </stereotype>
   </stereotypes>
   <metadata />
-  <childElements />
+  <childElements>
+    <childElement id="3dc81a7d-43f2-44bc-8900-da60ceb75059" type="Module Settings Field Configuration" typeId="88e29cab-1342-40c7-b052-5fcd68ffafec">
+      <name>Angular Version</name>
+      <display>Angular Version</display>
+      <isAbstract>false</isAbstract>
+      <sort-children>manually</sort-children>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>3697d56e-8390-4e7f-ba44-fee766191e77</parentFolderId>
+      <packageId>d1f9847f-ec1b-4774-910a-816c4f3e8487</packageId>
+      <packageName>Intent.Angular</packageName>
+      <stereotypes>
+        <stereotype stereotypeDefinitionId="4805c791-5be3-4049-b929-6046d7be9944" name="Field Configuration">
+          <addedByDefault>true</addedByDefault>
+          <definitionPackageName>Intent.ModuleBuilder</definitionPackageName>
+          <definitionPackageId>9972b2a9-b749-4bba-b5c8-824bf694c6ef</definitionPackageId>
+          <properties>
+            <property name="e33ce4e3-a3c5-4a3c-a6b8-96418be03de0" display="Control Type" value="Select" isActive="true" />
+            <property name="7070a9ce-ff31-422e-9cff-d82876c5efdf" display="Is Required" value="false" isActive="false" />
+            <property name="01489021-8311-43d5-b41b-e7628a512c1d" display="Hint" value="Specify the Angular version you want to use" isActive="true" />
+            <property name="653d889c-626f-45c5-a6e6-72b74a2f805c" display="Default Value" value="21.0" isActive="true" />
+            <property name="c3456e79-0607-41a5-9b85-e0712f4f4834" display="Is Active Function" isActive="true" />
+            <property name="fa54329f-d4e5-48bc-8027-e17206e9fc89" display="Is Required Function" isActive="true" />
+            <property name="29696a13-bf1d-4fbd-bdf3-adb802430cb4" display="Order Priority" value="1" isActive="true" />
+          </properties>
+        </stereotype>
+      </stereotypes>
+      <metadata />
+      <childElements>
+        <childElement id="77291bf7-ca1c-4ab6-ba21-e4cfd291d554" type="Module Settings Field Option" typeId="1592709a-89b1-4cb0-9801-ce9d3b94545a">
+          <name>21.0</name>
+          <display>21.0 = 21.0</display>
+          <isAbstract>false</isAbstract>
+          <value>21.0</value>
+          <genericTypes />
+          <isMapped>false</isMapped>
+          <parentFolderId>3dc81a7d-43f2-44bc-8900-da60ceb75059</parentFolderId>
+          <packageId>d1f9847f-ec1b-4774-910a-816c4f3e8487</packageId>
+          <packageName>Intent.Angular</packageName>
+          <stereotypes />
+          <metadata />
+          <childElements />
+        </childElement>
+        <childElement id="55a15008-f0b9-4cf0-b08c-0c3117c4f970" type="Module Settings Field Option" typeId="1592709a-89b1-4cb0-9801-ce9d3b94545a">
+          <name>20.2</name>
+          <display>20.2 = 20.2</display>
+          <isAbstract>false</isAbstract>
+          <value>20.2</value>
+          <genericTypes />
+          <isMapped>false</isMapped>
+          <parentFolderId>3dc81a7d-43f2-44bc-8900-da60ceb75059</parentFolderId>
+          <packageId>d1f9847f-ec1b-4774-910a-816c4f3e8487</packageId>
+          <packageName>Intent.Angular</packageName>
+          <stereotypes />
+          <metadata />
+          <childElements />
+        </childElement>
+        <childElement id="51fe0486-3540-4ac7-b422-9d263aeb5cd0" type="Module Settings Field Option" typeId="1592709a-89b1-4cb0-9801-ce9d3b94545a">
+          <name>19.2</name>
+          <display>19.2 = 19.2</display>
+          <isAbstract>false</isAbstract>
+          <value>19.2</value>
+          <genericTypes />
+          <isMapped>false</isMapped>
+          <parentFolderId>3dc81a7d-43f2-44bc-8900-da60ceb75059</parentFolderId>
+          <packageId>d1f9847f-ec1b-4774-910a-816c4f3e8487</packageId>
+          <packageName>Intent.Angular</packageName>
+          <stereotypes />
+          <metadata />
+          <childElements />
+        </childElement>
+      </childElements>
+    </childElement>
+  </childElements>
 </class>

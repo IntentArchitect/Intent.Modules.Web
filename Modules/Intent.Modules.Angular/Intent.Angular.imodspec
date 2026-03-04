@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package>
   <id>Intent.Angular</id>
-  <version>5.0.0-beta.1</version>
+  <version>5.0.0-beta.2</version>
   <supportedClientVersions>[4.5.21-a,5.0.0)</supportedClientVersions>
   <summary>Angular automation systems</summary>
   <description>Angular automation systems</description>
@@ -101,7 +101,17 @@
   </factoryExtensions>
   <moduleSettings>
     <group id="3697d56e-8390-4e7f-ba44-fee766191e77" title="Angular Settings" type="application-settings" externalReference="3697d56e-8390-4e7f-ba44-fee766191e77">
-      <settings />
+      <settings>
+        <setting id="3dc81a7d-43f2-44bc-8900-da60ceb75059" title="Angular Version" type="select" orderPriority="1">
+          <hint>Specify the Angular version you want to use</hint>
+          <defaultValue>21.0</defaultValue>
+          <options>
+            <option value="21.0" description="21.0" />
+            <option value="20.2" description="20.2" />
+            <option value="19.2" description="19.2" />
+          </options>
+        </setting>
+      </settings>
     </group>
   </moduleSettings>
   <dependencies>
@@ -123,5 +133,7 @@
     <install src="modelers/Angular UI Extensions.designer.settings" externalReference="8d5ad9bc-b284-4836-b608-2f7893f05470" target="User Interface" />
     <install target="User Interface;Module Builder" src="Intent.Metadata/Module Builder/Intent.Angular/Intent.Angular.pkg.config" externalReference="d1f9847f-ec1b-4774-910a-816c4f3e8487" />
   </metadata>
-  <migrations />
+  <migrations>
+    <migration version="5.0.0-beta.2" />
+  </migrations>
 </package>
