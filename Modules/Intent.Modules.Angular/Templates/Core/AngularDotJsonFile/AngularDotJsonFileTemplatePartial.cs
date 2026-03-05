@@ -144,17 +144,17 @@ namespace Intent.Modules.Angular.Templates.Core.AngularDotJsonFile
             List<IAngularJsonPatch> Patches =
             [
                 new CliObjectPatch(ExecutionContext.Settings.GetAngularSettings().AngularVersion().AsEnum()),
-                new BuildBuilderDevKitPatch(ExecutionContext.Settings.GetAngularSettings().AngularVersion().AsEnum(), AppNameKebabCased),
-                new BuildBuilderApplication(ExecutionContext.Settings.GetAngularSettings().AngularVersion().AsEnum(), AppNameKebabCased),
-                new BuildOptionsPatch(ExecutionContext.Settings.GetAngularSettings().AngularVersion().AsEnum(), AppNameKebabCased),
-                new OptionsPolyFillsPatch(ExecutionContext.Settings.GetAngularSettings().AngularVersion().AsEnum(), AppNameKebabCased),
-                new ServeBuilderDevKitPatch(ExecutionContext.Settings.GetAngularSettings().AngularVersion().AsEnum(), AppNameKebabCased),
-                new ServeBuilderApplication(ExecutionContext.Settings.GetAngularSettings().AngularVersion().AsEnum(), AppNameKebabCased),
-                new ExtractBuilderDevKitPatch(ExecutionContext.Settings.GetAngularSettings().AngularVersion().AsEnum(), AppNameKebabCased),
-                new ExtractBuilderApplication(ExecutionContext.Settings.GetAngularSettings().AngularVersion().AsEnum(), AppNameKebabCased),
-                new TestBuilderDevKitPatch(ExecutionContext.Settings.GetAngularSettings().AngularVersion().AsEnum(), AppNameKebabCased),
-                new TestBuilderBuildPatch(ExecutionContext.Settings.GetAngularSettings().AngularVersion().AsEnum(), AppNameKebabCased),
-                new TestBuilderUnitTestPatch(ExecutionContext.Settings.GetAngularSettings().AngularVersion().AsEnum(), AppNameKebabCased),
+                new BuildBuilderDevKitPatch(ExecutionContext.Settings.GetAngularSettings().AngularVersion().AsEnum(), AppNameCamelCased),
+                new BuildBuilderApplication(ExecutionContext.Settings.GetAngularSettings().AngularVersion().AsEnum(), AppNameCamelCased),
+                new BuildOptionsPatch(ExecutionContext.Settings.GetAngularSettings().AngularVersion().AsEnum(), AppNameCamelCased, AppNameKebabCased),
+                new OptionsPolyFillsPatch(ExecutionContext.Settings.GetAngularSettings().AngularVersion().AsEnum(), AppNameCamelCased),
+                new ServeBuilderDevKitPatch(ExecutionContext.Settings.GetAngularSettings().AngularVersion().AsEnum(), AppNameCamelCased),
+                new ServeBuilderApplication(ExecutionContext.Settings.GetAngularSettings().AngularVersion().AsEnum(), AppNameCamelCased),
+                new ExtractBuilderDevKitPatch(ExecutionContext.Settings.GetAngularSettings().AngularVersion().AsEnum(), AppNameCamelCased),
+                new ExtractBuilderApplication(ExecutionContext.Settings.GetAngularSettings().AngularVersion().AsEnum(), AppNameCamelCased),
+                new TestBuilderDevKitPatch(ExecutionContext.Settings.GetAngularSettings().AngularVersion().AsEnum(), AppNameCamelCased),
+                new TestBuilderBuildPatch(ExecutionContext.Settings.GetAngularSettings().AngularVersion().AsEnum(), AppNameCamelCased),
+                new TestBuilderUnitTestPatch(ExecutionContext.Settings.GetAngularSettings().AngularVersion().AsEnum(), AppNameCamelCased),
             ];
 
             foreach (var patch in Patches

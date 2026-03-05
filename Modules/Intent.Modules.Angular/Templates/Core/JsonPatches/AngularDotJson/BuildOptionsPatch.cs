@@ -11,12 +11,14 @@ namespace Intent.Modules.Angular.Templates.Core.JsonPatches.AngularDotJson;
 
 internal class BuildOptionsPatch : IAngularJsonPatch
 {
-    private readonly string _applicationName;
+    private readonly string _applicationNameCamel;
+    private readonly string _applicationNameKebab;
 
-    public BuildOptionsPatch(AngularSettings.AngularVersionOptionsEnum angularVersion, string applicationName)
+    public BuildOptionsPatch(AngularSettings.AngularVersionOptionsEnum angularVersion, string applicationNameCamel, string applicationNameKebab)
     {
         AngularVersion = angularVersion;
-        _applicationName = applicationName;
+        _applicationNameCamel = applicationNameCamel;
+        _applicationNameKebab = applicationNameKebab;
     }
     public AngularSettings.AngularVersionOptionsEnum AngularVersion { get; internal set; }
 
@@ -30,12 +32,12 @@ internal class BuildOptionsPatch : IAngularJsonPatch
         }
 
         var projects = file.RootObject["projects"] as IDataFileObjectValue;
-        if (!projects.ContainsKey(_applicationName))
+        if (!projects.ContainsKey(_applicationNameCamel))
         {
             return;
         }
 
-        var appProject = projects[_applicationName] as IDataFileObjectValue;
+        var appProject = projects[_applicationNameCamel] as IDataFileObjectValue;
         if (!appProject.ContainsKey("architect"))
         {
             return;
@@ -61,7 +63,7 @@ internal class BuildOptionsPatch : IAngularJsonPatch
 
         if (!optionsObject.ContainsKey("outputPath"))
         {
-            optionsObject.WithValue("outputPath", $"dist/{_applicationName}", 0);
+            optionsObject.WithValue("outputPath", $"dist/{_applicationNameKebab}", 0);
         }
 
         if (!optionsObject.ContainsKey("scripts"))

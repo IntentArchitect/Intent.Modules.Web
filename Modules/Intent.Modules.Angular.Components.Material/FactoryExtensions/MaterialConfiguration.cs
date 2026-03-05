@@ -1,5 +1,6 @@
 using System.Linq;
 using System.Text.RegularExpressions;
+using System.Threading;
 using Intent.Engine;
 using Intent.Eventing;
 using Intent.Modules.Angular.Components.Material.Settings;
@@ -38,8 +39,7 @@ namespace Intent.Modules.Angular.Components.Material.FactoryExtensions
         /// </remarks>
         protected override void OnAfterTemplateRegistrations(IApplication application)
         {
-            application.EventDispatcher.Publish(new NpmPackageDependency("@angular/animations", "^19.2.15"));
-            application.EventDispatcher.Publish(new NpmPackageDependency("@angular/material", "^19.2.19"));
+            PublishMaterialPackageDependencies(application);
 
             application.EventDispatcher.Publish(new ClientResourceConfigurationRequestEvent("stylesheet", "https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"));
             application.EventDispatcher.Publish(new ClientResourceConfigurationRequestEvent("stylesheet", "https://fonts.googleapis.com/icon?family=Material+Icons"));
@@ -52,6 +52,29 @@ namespace Intent.Modules.Angular.Components.Material.FactoryExtensions
             {
                 var themeTemplate = application.FindTemplateInstance<ThemeDotScssFileTemplate>(TemplateDependency.OnTemplate(ThemeDotScssFileTemplate.TemplateId));
                 SetThemeContent(themeTemplate, application);
+            }
+        }
+
+        private static void PublishMaterialPackageDependencies(IApplication application)
+        {
+            var angularVersion = application.Settings.GetAngularSettings().GetSetting("3dc81a7d-43f2-44bc-8900-da60ceb75059")?.Value;
+
+            switch (angularVersion)
+            {
+                case "19.2":
+                    application.EventDispatcher.Publish(new NpmPackageDependency("@angular/animations", "^19.2.0"));
+                    application.EventDispatcher.Publish(new NpmPackageDependency("@angular/material", "^19.0.0"));
+                    break;
+
+                case "20.2":
+                    application.EventDispatcher.Publish(new NpmPackageDependency("@angular/animations", "^20.3.0"));
+                    application.EventDispatcher.Publish(new NpmPackageDependency("@angular/material", "^20.0.0"));
+                    break;
+
+                case "21.0":
+                    application.EventDispatcher.Publish(new NpmPackageDependency("@angular/animations", "^21.0.0"));
+                    application.EventDispatcher.Publish(new NpmPackageDependency("@angular/material", "^21.0.0"));
+                    break;
             }
         }
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Emit;
 using Intent.Engine;
+using Intent.Modules.Angular.Settings;
 using Intent.Modules.Angular.Templates.Core.AppRoutes;
 using Intent.Modules.Common;
 using Intent.Modules.Common.Templates;
@@ -35,18 +36,13 @@ namespace Intent.Modules.Angular.Templates.Core.AppConfig
             TypescriptFile = new TypescriptFile(this.GetFolderPath(), this)
                 .AddImport("ApplicationConfig", "@angular/core")
                 .AddImport("provideZoneChangeDetection", "@angular/core")
-                .AddImport("provideRouter", "@angular/router")
+                
                 .AddVariable("appConfig", "ApplicationConfig", config =>
                 {
                     config.Export().Const();
                     config.WithObjectValue(obj =>
                     {
-                        var providersArray = new TypescriptVariableArray();
-                        providersArray.Indentation = TypescriptFile.Indentation;
-                        providersArray.AddValue("provideZoneChangeDetection({ eventCoalescing: true })");
-                        providersArray.AddValue("provideRouter(routes)");
-
-                        obj.AddField("providers", providersArray);
+                        obj.AddField("providers", BuildProvidersArray());
                     });
                 }).AfterBuild(file =>
                 {
@@ -68,6 +64,45 @@ namespace Intent.Modules.Angular.Templates.Core.AppConfig
                         }
                     }
                 });
+        }
+
+        private TypescriptVariableArray BuildProvidersArray()
+        {
+            var providersArray = new TypescriptVariableArray
+            {
+                Indentation = TypescriptFile.Indentation
+            };
+
+            var angularVersion = ExecutionContext.Settings.GetAngularSettings().AngularVersion().AsEnum();
+
+            providersArray.AddValue("provideRouter(routes)");
+            AddImport("provideRouter", "@angular/router");
+
+            switch (angularVersion)
+            {
+                case AngularSettings.AngularVersionOptionsEnum._192:
+                    providersArray.AddValue("provideZoneChangeDetection({ eventCoalescing: true })");
+                    AddImport("provideZoneChangeDetection", "@angular/core");
+                    break;
+
+                case AngularSettings.AngularVersionOptionsEnum._202:
+                    providersArray.AddValue("provideBrowserGlobalErrorListeners()");
+                    providersArray.AddValue("provideZoneChangeDetection({ eventCoalescing: true })");
+                    AddImport("provideZoneChangeDetection", "@angular/core");
+                    AddImport("provideBrowserGlobalErrorListeners", "@angular/core");
+                    break;
+
+                case AngularSettings.AngularVersionOptionsEnum._210:
+                    providersArray.AddValue("provideBrowserGlobalErrorListeners()");
+                    AddImport("provideBrowserGlobalErrorListeners", "@angular/core");
+                    break;
+
+                default:
+                    providersArray.AddValue("provideZoneChangeDetection({ eventCoalescing: true })");
+                    break;
+            }
+
+            return providersArray;
         }
 
         public override void BeforeTemplateExecution()

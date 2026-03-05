@@ -29,7 +29,7 @@
       <updatedByDisplayName>JP Seini</updatedByDisplayName>
       <updatedAt>2025-11-05T07:52:11.2711151Z</updatedAt>
       <deviationsHash>07300FCA02470B68144FBE2DC6BF9676E85D730A638177527DFD2690811587B3</deviationsHash>
-      <fileHash>867530D542CBB0D412B6CD5C212024C23EC2A243A8EA64F1AB9662E6143A475A</fileHash>
+      <fileHash>994A15CD5343D8F40A02FBD29D0F10CFE4D0FDDE6296310A0A513D2F3D0C368F</fileHash>
     </file>
     <file>
       <correlationId>Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial#eb2568a1-e43f-480c-8136-8a9346f816f9</correlationId>
@@ -49,7 +49,7 @@
       <updatedByDisplayName>JP Seini</updatedByDisplayName>
       <updatedAt>2025-11-06T13:38:29.8707431Z</updatedAt>
       <deviationsHash>42111E2E2A00EF501636753A86683E0EDE96EFD716725D4F69DFF1724080279E</deviationsHash>
-      <fileHash>71677E6262E72282C7703C71B42DA66771BA4D848208B4AD796F7E2512D8FDCE</fileHash>
+      <fileHash>F0F5C21A8691C50D3C10FC1AFAD1C678C02231842B8806A6398D892BC4F1406D</fileHash>
     </file>
     <file>
       <correlationId>Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial#a131606e-9407-4bd0-a0ff-3d293339e71b</correlationId>
@@ -79,7 +79,7 @@
       <updatedByDisplayName>JP Seini</updatedByDisplayName>
       <updatedAt>2026-03-04T17:49:49.3207168Z</updatedAt>
       <deviationsHash>D13020E7CBEB9AE00B697809E9B5F9DF88855A92BC8B6E10827F2A2AAD423CB6</deviationsHash>
-      <fileHash>E4036C67056AB588E10F8AAF9396FEDAC86CD8E643291E660508594BD5532250</fileHash>
+      <fileHash>5F526ECDF47CE30A45755CD9C3740BC9F5741C8CA6FE791344588EBF2230C70C</fileHash>
     </file>
     <file>
       <correlationId>Intent.ModuleBuilder.ProjectItemTemplate.Partial#a84aedb6-be19-40e6-9c6b-3006c349ee86</correlationId>
@@ -90,6 +90,16 @@
       <updatedAt>2026-03-04T15:03:19.1128889Z</updatedAt>
       <deviationsHash>C8D4989C5D178A6ED72111945220E422B2B04B3EB67FEFF798897EE031888D0C</deviationsHash>
       <fileHash>7F86CC55E0DB248BFE5C4E5BCFA1E8BBE3EACE8C58093E953BBD03F2F007CFFC</fileHash>
+    </file>
+    <file>
+      <correlationId>Intent.ModuleBuilder.ProjectItemTemplate.Partial#fe78e2d3-783d-452b-8b53-c290a08aa34c</correlationId>
+      <path>Intent.Modules.Angular/Templates/Core/TypescriptConfigSpecJsonFile/TypescriptConfigSpecJsonFileTemplatePartial.cs</path>
+      <count>1</count>
+      <updatedByAccountName>jp.seini@intentarchitect.com</updatedByAccountName>
+      <updatedByDisplayName>JP Seini</updatedByDisplayName>
+      <updatedAt>2026-03-05T13:54:53.180056Z</updatedAt>
+      <deviationsHash>95AEA061F18B9DF0172E2B6C72294CF84882C79E645B34DFDBC76ADB8A20ED8C</deviationsHash>
+      <fileHash>28AB939ADA16C900E2879B2545CB8D97FC00FAE7A6BF6F8A9625DD1F03E18020</fileHash>
     </file>
     <file>
       <correlationId>Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial#bfe9a693-aa42-4037-a473-196aafbaf797</correlationId>
