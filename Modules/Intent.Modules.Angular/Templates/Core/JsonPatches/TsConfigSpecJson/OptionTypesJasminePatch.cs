@@ -14,7 +14,7 @@ internal class OptionTypesJasminePatch : IAngularJsonPatch
 
     public AngularSettings.AngularVersionOptionsEnum AngularVersion { get; internal set; }
 
-    public bool Applicable() => AngularVersion == AngularSettings.AngularVersionOptionsEnum._192 || AngularVersion == AngularSettings.AngularVersionOptionsEnum._202;
+    public bool Applicable() => AngularVersion == AngularSettings.AngularVersionOptionsEnum._19 || AngularVersion == AngularSettings.AngularVersionOptionsEnum._20;
 
     public void Apply(IDataFile file)
     {

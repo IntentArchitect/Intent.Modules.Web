@@ -60,6 +60,7 @@ namespace Intent.Modules.Angular.Templates.Core.AngularDotJsonFile
                                             .WithObject("build", build =>
                                             {
                                                 build
+                                                    .WithValue("builder", "@angular/build:application")
                                                     .WithObject("options", options =>
                                                     {
                                                         options
@@ -116,6 +117,7 @@ namespace Intent.Modules.Angular.Templates.Core.AngularDotJsonFile
                                             .WithObject("serve", serve =>
                                             {
                                                 serve
+                                                    .WithValue("builder", "@angular/build:dev-server")
                                                     .WithObject("configurations", config =>
                                                     {
                                                         config.WithObject("production", prod =>
@@ -144,15 +146,9 @@ namespace Intent.Modules.Angular.Templates.Core.AngularDotJsonFile
             List<IAngularJsonPatch> Patches =
             [
                 new CliObjectPatch(ExecutionContext.Settings.GetAngularSettings().AngularVersion().AsEnum()),
-                new BuildBuilderDevKitPatch(ExecutionContext.Settings.GetAngularSettings().AngularVersion().AsEnum(), AppNameCamelCased),
-                new BuildBuilderApplication(ExecutionContext.Settings.GetAngularSettings().AngularVersion().AsEnum(), AppNameCamelCased),
                 new BuildOptionsPatch(ExecutionContext.Settings.GetAngularSettings().AngularVersion().AsEnum(), AppNameCamelCased, AppNameKebabCased),
                 new OptionsPolyFillsPatch(ExecutionContext.Settings.GetAngularSettings().AngularVersion().AsEnum(), AppNameCamelCased),
-                new ServeBuilderDevKitPatch(ExecutionContext.Settings.GetAngularSettings().AngularVersion().AsEnum(), AppNameCamelCased),
-                new ServeBuilderApplication(ExecutionContext.Settings.GetAngularSettings().AngularVersion().AsEnum(), AppNameCamelCased),
-                new ExtractBuilderDevKitPatch(ExecutionContext.Settings.GetAngularSettings().AngularVersion().AsEnum(), AppNameCamelCased),
                 new ExtractBuilderApplication(ExecutionContext.Settings.GetAngularSettings().AngularVersion().AsEnum(), AppNameCamelCased),
-                new TestBuilderDevKitPatch(ExecutionContext.Settings.GetAngularSettings().AngularVersion().AsEnum(), AppNameCamelCased),
                 new TestBuilderBuildPatch(ExecutionContext.Settings.GetAngularSettings().AngularVersion().AsEnum(), AppNameCamelCased),
                 new TestBuilderUnitTestPatch(ExecutionContext.Settings.GetAngularSettings().AngularVersion().AsEnum(), AppNameCamelCased),
             ];

@@ -61,17 +61,17 @@ namespace Intent.Modules.Angular.Components.Material.FactoryExtensions
 
             switch (angularVersion)
             {
-                case "19.2":
+                case "19":
                     application.EventDispatcher.Publish(new NpmPackageDependency("@angular/animations", "^19.2.0"));
                     application.EventDispatcher.Publish(new NpmPackageDependency("@angular/material", "^19.0.0"));
                     break;
 
-                case "20.2":
+                case "20":
                     application.EventDispatcher.Publish(new NpmPackageDependency("@angular/animations", "^20.3.0"));
                     application.EventDispatcher.Publish(new NpmPackageDependency("@angular/material", "^20.0.0"));
                     break;
 
-                case "21.0":
+                case "21":
                     application.EventDispatcher.Publish(new NpmPackageDependency("@angular/animations", "^21.0.0"));
                     application.EventDispatcher.Publish(new NpmPackageDependency("@angular/material", "^21.0.0"));
                     break;

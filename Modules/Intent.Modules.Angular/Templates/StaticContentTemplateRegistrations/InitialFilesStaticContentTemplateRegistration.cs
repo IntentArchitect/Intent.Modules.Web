@@ -42,9 +42,9 @@ namespace Intent.Modules.Angular.Templates.StaticContentTemplateRegistrations
         {
             return angularSettings switch
             {
-                AngularSettings.AngularVersionOptionsEnum._210 => "[Vitest](https://vitest.dev/)",
-                AngularSettings.AngularVersionOptionsEnum._202 => "[Karma](https://karma-runner.github.io)",
-                AngularSettings.AngularVersionOptionsEnum._192 => "[Karma](https://karma-runner.github.io)",
+                AngularSettings.AngularVersionOptionsEnum._21 => "[Vitest](https://vitest.dev/)",
+                AngularSettings.AngularVersionOptionsEnum._20 => "[Karma](https://karma-runner.github.io)",
+                AngularSettings.AngularVersionOptionsEnum._19 => "[Karma](https://karma-runner.github.io)",
                 _ => throw new NotSupportedException($"Unsupported Angular version: {angularSettings}")
             };
         }
@@ -53,9 +53,9 @@ namespace Intent.Modules.Angular.Templates.StaticContentTemplateRegistrations
         {
             return angularSettings switch
             {
-                AngularSettings.AngularVersionOptionsEnum._210 => "src/**/*.ts",
-                AngularSettings.AngularVersionOptionsEnum._202 => "src/**/*.ts",
-                AngularSettings.AngularVersionOptionsEnum._192 => "src/**/*.d.ts",
+                AngularSettings.AngularVersionOptionsEnum._21 => "src/**/*.ts",
+                AngularSettings.AngularVersionOptionsEnum._20 => "src/**/*.ts",
+                AngularSettings.AngularVersionOptionsEnum._19 => "src/**/*.d.ts",
                 _ => throw new NotSupportedException($"Unsupported Angular version: {angularSettings}")
             };
         }
@@ -64,9 +64,9 @@ namespace Intent.Modules.Angular.Templates.StaticContentTemplateRegistrations
         {
             return angularSettings switch
             {
-                AngularSettings.AngularVersionOptionsEnum._210 => "exclude",
-                AngularSettings.AngularVersionOptionsEnum._202 => "exclude",
-                AngularSettings.AngularVersionOptionsEnum._192 => "files",
+                AngularSettings.AngularVersionOptionsEnum._21 => "exclude",
+                AngularSettings.AngularVersionOptionsEnum._20 => "exclude",
+                AngularSettings.AngularVersionOptionsEnum._19 => "files",
                 _ => throw new NotSupportedException($"Unsupported Angular version: {angularSettings}")
             };
         }
@@ -75,9 +75,9 @@ namespace Intent.Modules.Angular.Templates.StaticContentTemplateRegistrations
         {
             return angularSettings switch
             {
-                AngularSettings.AngularVersionOptionsEnum._210 => "src/**/*.spec.ts",
-                AngularSettings.AngularVersionOptionsEnum._202 => "src/**/*.spec.ts",
-                AngularSettings.AngularVersionOptionsEnum._192 => "src/main.ts",
+                AngularSettings.AngularVersionOptionsEnum._21 => "src/**/*.spec.ts",
+                AngularSettings.AngularVersionOptionsEnum._20 => "src/**/*.spec.ts",
+                AngularSettings.AngularVersionOptionsEnum._19 => "src/main.ts",
                 _ => throw new NotSupportedException($"Unsupported Angular version: {angularSettings}")
             };
         }

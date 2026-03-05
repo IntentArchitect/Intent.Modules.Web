@@ -50,10 +50,10 @@
       <metadata />
       <childElements>
         <childElement id="77291bf7-ca1c-4ab6-ba21-e4cfd291d554" type="Module Settings Field Option" typeId="1592709a-89b1-4cb0-9801-ce9d3b94545a">
-          <name>21.0</name>
-          <display>21.0 = 21.0</display>
+          <name>21</name>
+          <display>21 = 21</display>
           <isAbstract>false</isAbstract>
-          <value>21.0</value>
+          <value>21</value>
           <genericTypes />
           <isMapped>false</isMapped>
           <parentFolderId>3dc81a7d-43f2-44bc-8900-da60ceb75059</parentFolderId>
@@ -64,10 +64,10 @@
           <childElements />
         </childElement>
         <childElement id="55a15008-f0b9-4cf0-b08c-0c3117c4f970" type="Module Settings Field Option" typeId="1592709a-89b1-4cb0-9801-ce9d3b94545a">
-          <name>20.2</name>
-          <display>20.2 = 20.2</display>
+          <name>20</name>
+          <display>20 = 20</display>
           <isAbstract>false</isAbstract>
-          <value>20.2</value>
+          <value>20</value>
           <genericTypes />
           <isMapped>false</isMapped>
           <parentFolderId>3dc81a7d-43f2-44bc-8900-da60ceb75059</parentFolderId>
@@ -78,10 +78,10 @@
           <childElements />
         </childElement>
         <childElement id="51fe0486-3540-4ac7-b422-9d263aeb5cd0" type="Module Settings Field Option" typeId="1592709a-89b1-4cb0-9801-ce9d3b94545a">
-          <name>19.2</name>
-          <display>19.2 = 19.2</display>
+          <name>19</name>
+          <display>19 = 19</display>
           <isAbstract>false</isAbstract>
-          <value>19.2</value>
+          <value>19</value>
           <genericTypes />
           <isMapped>false</isMapped>
           <parentFolderId>3dc81a7d-43f2-44bc-8900-da60ceb75059</parentFolderId>

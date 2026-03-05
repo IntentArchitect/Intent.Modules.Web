@@ -118,9 +118,9 @@
           <hint>Specify the Angular version you want to use</hint>
           <defaultValue>21.0</defaultValue>
           <options>
-            <option value="21.0" description="21.0" />
-            <option value="20.2" description="20.2" />
-            <option value="19.2" description="19.2" />
+            <option value="21" description="21" />
+            <option value="20" description="20" />
+            <option value="19" description="19" />
           </options>
         </setting>
       </settings>

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Reflection.Emit;
 using Intent.Engine;
+using Intent.Modules.Angular.NpmPackages;
 using Intent.Modules.Angular.Settings;
 using Intent.Modules.Angular.Templates.Core.AppRoutes;
 using Intent.Modules.Common;
@@ -80,19 +81,19 @@ namespace Intent.Modules.Angular.Templates.Core.AppConfig
 
             switch (angularVersion)
             {
-                case AngularSettings.AngularVersionOptionsEnum._192:
+                case AngularSettings.AngularVersionOptionsEnum._19:
                     providersArray.AddValue("provideZoneChangeDetection({ eventCoalescing: true })");
                     AddImport("provideZoneChangeDetection", "@angular/core");
                     break;
 
-                case AngularSettings.AngularVersionOptionsEnum._202:
+                case AngularSettings.AngularVersionOptionsEnum._20:
                     providersArray.AddValue("provideBrowserGlobalErrorListeners()");
                     providersArray.AddValue("provideZoneChangeDetection({ eventCoalescing: true })");
                     AddImport("provideZoneChangeDetection", "@angular/core");
                     AddImport("provideBrowserGlobalErrorListeners", "@angular/core");
                     break;
 
-                case AngularSettings.AngularVersionOptionsEnum._210:
+                case AngularSettings.AngularVersionOptionsEnum._21:
                     providersArray.AddValue("provideBrowserGlobalErrorListeners()");
                     AddImport("provideBrowserGlobalErrorListeners", "@angular/core");
                     break;
@@ -107,8 +108,8 @@ namespace Intent.Modules.Angular.Templates.Core.AppConfig
 
         public override void BeforeTemplateExecution()
         {
-            NpmPackagesScripts.AddCorePackagesScripts(this);
-            NpmPackagesEntries.AddCorePackagesEntries(this);
+            this.AddCorePackagesScripts();
+            this.AddCorePackagesEntries();
 
             base.BeforeTemplateExecution();
         }

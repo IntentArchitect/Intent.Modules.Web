@@ -53,34 +53,34 @@ namespace Intent.Modules.Angular.Settings
             {
                 return Value switch
                 {
-                    "21.0" => AngularVersionOptionsEnum._210,
-                    "20.2" => AngularVersionOptionsEnum._202,
-                    "19.2" => AngularVersionOptionsEnum._192,
+                    "21" => AngularVersionOptionsEnum._21,
+                    "20" => AngularVersionOptionsEnum._20,
+                    "19" => AngularVersionOptionsEnum._19,
                     _ => throw new ArgumentOutOfRangeException(nameof(Value), $"{Value} is out of range")
                 };
             }
 
-            public bool Is_210()
+            public bool Is_21()
             {
-                return Value == "21.0";
+                return Value == "21";
             }
 
-            public bool Is_202()
+            public bool Is_20()
             {
-                return Value == "20.2";
+                return Value == "20";
             }
 
-            public bool Is_192()
+            public bool Is_19()
             {
-                return Value == "19.2";
+                return Value == "19";
             }
         }
 
         public enum AngularVersionOptionsEnum
         {
-            _210,
-            _202,
-            _192,
+            _21,
+            _20,
+            _19,
         }
     }
 }

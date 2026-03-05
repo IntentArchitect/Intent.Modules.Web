@@ -22,7 +22,7 @@ internal class BuildOptionsPatch : IAngularJsonPatch
     }
     public AngularSettings.AngularVersionOptionsEnum AngularVersion { get; internal set; }
 
-    public bool Applicable() => AngularVersion == AngularSettings.AngularVersionOptionsEnum._192;
+    public bool Applicable() => AngularVersion == AngularSettings.AngularVersionOptionsEnum._19;
     
     public void Apply(IDataFile file)
     {

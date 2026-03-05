@@ -20,7 +20,7 @@ internal class OptionsPolyFillsPatch : IAngularJsonPatch
     }
     public AngularSettings.AngularVersionOptionsEnum AngularVersion { get; internal set; }
 
-    public bool Applicable() => AngularVersion == AngularSettings.AngularVersionOptionsEnum._192 || AngularVersion == AngularSettings.AngularVersionOptionsEnum._202;
+    public bool Applicable() => AngularVersion == AngularSettings.AngularVersionOptionsEnum._19 || AngularVersion == AngularSettings.AngularVersionOptionsEnum._20;
 
     public void Apply(IDataFile file)
     {
@@ -56,7 +56,7 @@ internal class OptionsPolyFillsPatch : IAngularJsonPatch
         var optionsObject = build["options"] as IDataFileObjectValue;
         if (!optionsObject.ContainsKey("polyfills"))
         {
-            var position = AngularVersion == AngularSettings.AngularVersionOptionsEnum._192 ? 3 : 1;
+            var position = AngularVersion == AngularSettings.AngularVersionOptionsEnum._19 ? 3 : 1;
 
             optionsObject.WithArray("polyfills", position, poly =>
             {
