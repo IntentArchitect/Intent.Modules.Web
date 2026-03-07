@@ -95,7 +95,9 @@ namespace Intent.Modules.Angular.Templates.Core.AppConfig
 
                 case AngularSettings.AngularVersionOptionsEnum._21:
                     providersArray.AddValue("provideBrowserGlobalErrorListeners()");
+                    providersArray.AddValue("provideZoneChangeDetection({ eventCoalescing: true })");
                     AddImport("provideBrowserGlobalErrorListeners", "@angular/core");
+                    AddImport("provideZoneChangeDetection", "@angular/core");
                     break;
 
                 default:

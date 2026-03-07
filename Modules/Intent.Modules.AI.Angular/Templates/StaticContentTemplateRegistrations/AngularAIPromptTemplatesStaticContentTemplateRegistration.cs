@@ -1,10 +1,12 @@
 using System.Collections.Generic;
+using System.Linq;
 using Intent.Configuration;
 using Intent.Engine;
 using Intent.Modules.AI.Prompts.Tasks;
 using Intent.Modules.Common.AI.Configuration;
 using Intent.Modules.Common.Templates.StaticContent;
 using Intent.RoslynWeaver.Attributes;
+using static System.Net.Mime.MediaTypeNames;
 
 [assembly: DefaultIntentManaged(Mode.Fully)]
 [assembly: IntentTemplate("Intent.ModuleBuilder.Templates.StaticContentTemplateRegistration", Version = "1.0")]
@@ -33,9 +35,19 @@ namespace Intent.Modules.AI.Angular.Templates.StaticContentTemplateRegistrations
 
 
         [IntentManaged(Mode.Fully, Body = Mode.Ignore)]
-        public override IReadOnlyDictionary<string, string> Replacements(IOutputTarget outputTarget) => new Dictionary<string, string>
+        public override IReadOnlyDictionary<string, string> Replacements(IOutputTarget outputTarget)
         {
-        };
+            var angularMajorVersion = _applicationConfigurationProvider.GetApplicationConfig()
+                .ModuleSetting
+                .FirstOrDefault(ms => ms.Id == "3697d56e-8390-4e7f-ba44-fee766191e77")?
+                .GetSetting("3dc81a7d-43f2-44bc-8900-da60ceb75059")?
+                .Value ?? "19";
+
+            return new Dictionary<string, string>
+            {
+                ["AngularMajorVersion"] = angularMajorVersion
+            };
+        }
 
         public override string RelativeOutputPathPrefix => PromptConfig.GetTemplatePromptPath(_solutionConfig.SolutionRootLocation, _applicationConfigurationProvider.GetApplicationConfig().Name, GenerateAngularWithAITask.TaskTypeId);
 

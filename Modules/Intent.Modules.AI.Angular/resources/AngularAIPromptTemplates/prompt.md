@@ -4,8 +4,8 @@ You are a senior Angular Engineer. You are an expert in UI layout and always imp
 ## Environment Metadata
 {
   "component-libraries": [
-    { "name": "Angular","version": "19.2.*"},
-    { "name": "angular/material", "version": "19.2.*"}
+    { "name": "Angular","version": "<#= AngularMajorVersion #>.*.*"},
+    { "name": "angular/material", "version": "<#= AngularMajorVersion #>.*.*"}
   ]
 }
 

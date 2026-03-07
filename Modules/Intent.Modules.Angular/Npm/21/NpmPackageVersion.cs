@@ -14,6 +14,8 @@ internal class NpmPackageVersion(AngularSettings.AngularVersionOptionsEnum angul
 
     public IEnumerable<NpmPackageDependency> GetPackages()
     {
+        yield return new NpmPackageDependency("zone.js", "~0.15.0");
+
         yield return new NpmPackageDependency("jsdom", "^28.0.0", true);
         yield return new NpmPackageDependency("prettier", "^3.8.1", true);
         yield return new NpmPackageDependency("typescript", "~5.9.2", true);

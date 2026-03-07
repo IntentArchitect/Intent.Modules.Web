@@ -40,7 +40,7 @@ public static class NpmPackagesExtensions
 
         foreach (var entry in resolvers.Where(r => r.Applicable()))
         {
-            template.ExecutionContext.EventDispatcher.Publish(entry);
+            entry.GetEntries().ToList().ForEach(template.ExecutionContext.EventDispatcher.Publish);
         }
     }
 
@@ -55,7 +55,7 @@ public static class NpmPackagesExtensions
 
         foreach (var script in resolvers.Where(r => r.Applicable()))
         {
-            template.ExecutionContext.EventDispatcher.Publish(script);
+            script.GetScripts().ToList().ForEach(template.ExecutionContext.EventDispatcher.Publish);
         }
     }
 

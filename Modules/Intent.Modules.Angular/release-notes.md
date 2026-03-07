@@ -1,6 +1,7 @@
 ### Version 5.0.0
 
 - Improvement: Overhaul of the module to support Angular 18 and leverage the latest features of Intent Architect.
+- Improvement: Added support to be able to choose Angular version.
 
 ### Version 4.0.0
 
