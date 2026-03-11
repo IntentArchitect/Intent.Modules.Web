@@ -1,6 +1,7 @@
 using System.Linq;
 using Intent.Engine;
 using Intent.Modules.Angular.Settings;
+using Intent.Modules.Common;
 using Intent.Persistence;
 using Intent.Plugins;
 using Intent.RoslynWeaver.Attributes;
@@ -40,8 +41,7 @@ namespace Intent.Modules.Angular.Migrations
             angSettings ??= group.Settings.Add(angularVersionSettingsId,
                 ModuleSettingControlType.Select,
                 "Angular Version",
-                "Intent.Angular",
-                AngularSettings.AngularVersionOptionsEnum._21.ToString());
+                "Intent.Angular", "19");
 
             app.SaveAllChanges();
         }
