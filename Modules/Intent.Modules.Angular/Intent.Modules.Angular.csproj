@@ -46,8 +46,8 @@
   </ItemGroup>
 
   <ItemGroup>
-  
-  
+
+
     <Compile Update="Templates\Core\Index\IndexTemplate.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>
