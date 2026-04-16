@@ -1,6 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <outputFiles>
   <files>
+    <file relativePath="Intent.Modules.AI.Angular/content/AgentInstructions/readme.txt" state="ignored;once-off-generated" />
+    <file relativePath="Intent.Modules.AI.Angular/content/AgentSkills/readme.txt" state="ignored;once-off-generated" />
     <file relativePath="Intent.Modules.AI.Angular/content/AngularAIPromptTemplates/readme.txt" state="ignored;once-off-generated" />
     <file relativePath="Intent.Modules.AI.Angular/release-notes.md" state="ignored;once-off-generated" />
   </files>

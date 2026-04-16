@@ -61,12 +61,12 @@
       <stereotypes />
       <metadata />
       <childElements>
-        <childElement id="48abea07-b0ff-4269-9a9b-9ed878808cfb" type="Run Script Option" typeId="345d46fb-c500-409a-88c7-26720572c9af">
-          <name>Implement with AI</name>
-          <display>Implement with AI: Inline Script</display>
+        <childElement id="b4160729-4218-4f09-a11c-fbe3f561ce0e" type="Run Script Option" typeId="345d46fb-c500-409a-88c7-26720572c9af">
+          <name>Generate Menu</name>
+          <display>Generate Menu: Inline Script</display>
           <isAbstract>false</isAbstract>
           <genericTypes />
-          <typeReference id="18f8aeb5-250f-4542-a3db-ea20c37b07fb">
+          <typeReference id="60a03be1-2efa-43b9-9a5f-f82d7f284942">
             <typeId>043eee26-1591-42ac-9f2c-fc911b070eb1</typeId>
             <isNavigable>true</isNavigable>
             <isNullable>false</isNullable>
@@ -87,7 +87,7 @@
               <definitionPackageName>Intent.ModuleBuilder</definitionPackageName>
               <definitionPackageId>9972b2a9-b749-4bba-b5c8-824bf694c6ef</definitionPackageId>
               <properties>
-                <property name="73a4088f-626e-4d31-b0b2-113167f015b2" display="Script" value="await execute();" isActive="true" />
+                <property name="73a4088f-626e-4d31-b0b2-113167f015b2" display="Script" value="await createLayoutImplementAICodingTask();" isActive="true" />
                 <property name="7df9c3b9-91a0-4cb7-bc3a-15d72f160054" display="Dependencies" value="[&quot;c58a8b18-f337-42ac-9f06-7fe075811f2b&quot;]" isActive="true" />
               </properties>
             </stereotype>
@@ -101,7 +101,7 @@
                 <property name="79f6973f-5e3a-4618-9d4c-d7cc604bffe0" display="Shortcut (macOS)" isActive="true" />
                 <property name="6087e660-9599-47fb-9ff4-1ad901ce2a00" display="Trigger On Double-Click" value="false" isActive="true" />
                 <property name="c03841e5-a1e9-4e95-b699-5a466dde7d7d" display="Is Option Visible Function" isActive="true" />
-                <property name="e034a0ca-0101-4594-8384-43048b714578" display="Order" value="1000" isActive="true" />
+                <property name="e034a0ca-0101-4594-8384-43048b714578" display="Order" value="500" isActive="true" />
                 <property name="c37d8704-0003-4886-b6c2-4e51aa22a8f9" display="Menu Group" value="2" isActive="true" />
                 <property name="3e93529e-2110-414e-aec1-2656e1a99b22" display="Top Divider" value="false" isActive="true" />
                 <property name="d2572c08-f02e-40b2-8a06-4d5251bb3352" display="Bottom Divider" value="false" isActive="true" />

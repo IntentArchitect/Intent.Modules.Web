@@ -2,14 +2,24 @@
 <deviationsLog>
   <files>
     <file>
-      <correlationId>Intent.ModuleBuilder.Templates.StaticContentTemplateRegistration#f5443fa4-afbe-4d49-a83e-3dc3ca1f010e</correlationId>
-      <path>Intent.Modules.AI.Angular/Templates/StaticContentTemplateRegistrations/AngularAIPromptTemplatesStaticContentTemplateRegistration.cs</path>
+      <correlationId>Intent.ModuleBuilder.Templates.StaticContentTemplateRegistration#dc9f652b-4177-4850-a30c-b26771088052</correlationId>
+      <path>Intent.Modules.AI.Angular/Templates/StaticContentTemplateRegistrations/AIAgentInstructionsStaticContentTemplateRegistration.cs</path>
       <count>2</count>
-      <updatedByAccountName>joel.turner@intentarchitect.com</updatedByAccountName>
-      <updatedByDisplayName>Joel Turner</updatedByDisplayName>
-      <updatedAt>2025-11-27T11:43:08.1985476Z</updatedAt>
-      <deviationsHash>2E6946F2BC7527CFAAC90D417D9440E685D09969F1CFA4607340B0F8E38D3EFB</deviationsHash>
-      <fileHash>4522ADF3D01DEE93A80C7CD086BC96B435C996E8FB49AEE2C175557F0E008F54</fileHash>
+      <updatedByAccountName>jp.seini@intentarchitect.com</updatedByAccountName>
+      <updatedByDisplayName>JP Seini</updatedByDisplayName>
+      <updatedAt>2026-04-15T11:15:56.6256412Z</updatedAt>
+      <deviationsHash>C1817E7BE076454A339C6BC75BA1683A43870793195FB6136D227312B29682EE</deviationsHash>
+      <fileHash>F37217CE7BB388F5D74FEE36C8B09C4495188DBC65E009C3F06B967EE0EE8D04</fileHash>
+    </file>
+    <file>
+      <correlationId>Intent.ModuleBuilder.Templates.StaticContentTemplateRegistration#3170adea-1e4f-4c7c-870f-ed1e3ce6aa2d</correlationId>
+      <path>Intent.Modules.AI.Angular/Templates/StaticContentTemplateRegistrations/AIAgentSkillsStaticContentTemplateRegistration.cs</path>
+      <count>2</count>
+      <updatedByAccountName>jp.seini@intentarchitect.com</updatedByAccountName>
+      <updatedByDisplayName>JP Seini</updatedByDisplayName>
+      <updatedAt>2026-04-15T11:16:52.7252943Z</updatedAt>
+      <deviationsHash>F8D0B32FEA7237BDE74F48547C0CAEA7A2AE22C6A9CF6A3B2E22397FEF58141C</deviationsHash>
+      <fileHash>280C831BA6DAD88FDDCFA74C8DE7178A00EFFF34EB2A42F0C7A2AD95C0B4B9A4</fileHash>
     </file>
   </files>
 </deviationsLog>

@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package>
   <id>Intent.Angular</id>
-  <version>5.0.0-beta.3</version>
-  <supportedClientVersions>[4.5.21-a,5.0.0)</supportedClientVersions>
+  <version>5.1.0-beta.0</version>
+  <supportedClientVersions>[4.7.0-a,5.0.0)</supportedClientVersions>
   <summary>Angular automation systems</summary>
   <description>Angular automation systems</description>
   <authors>Intent Architect</authors>

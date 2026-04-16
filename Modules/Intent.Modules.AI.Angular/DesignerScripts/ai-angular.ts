@@ -1,78 +1,62 @@
-async function execute(): Promise<void> {
-    const providerModelsResult = await getAiProviderModels();
-    const settingName = "AI.Angular";
+const navigationSourceEndSpecializationId = "97a3de8a-c9bf-4cf2-bc0a-b8692b02211b";
+const navigationTargetEndSpecializationId = "2b191288-ecae-4743-b069-cbdd927ef349";
+const layoutSpecializationId = "8beaa629-d615-4062-b936-7106530cdf52";
 
-    let promptTemplatesString = await executeModuleTask(
-        "Intent.Modules.Common.AI.Tasks.GetPromptTemplates",
-        application.id,
-        "Intent.Modules.AI.Angular.Generate",
-        element.getParent().getName() + "/" + element.getName());
+async function createLayoutImplementAICodingTask() {
+    let filePaths = element.getAssociatedFiles().map(x => x.absolutePath)
 
-    let promptTemplates = JSON.parse(promptTemplatesString) as any[];
-    let defaultPromptTemplate = promptTemplates.find(t => t.recommenedDefault);
+    // build up the context
+    let context = '';
+    element.getAssociations().filter(a => a.specializationId == navigationTargetEndSpecializationId).forEach(nav => {
+        let appendComment = `- A menu item MUST be added to navigation to the page "${nav.getName()}"`
 
-    // Open a dialog for the user to enter an AI prompt
-    let promptResult = await dialogService.openForm({
-        title: "AI: Implement " + element.getName(),
-        icon: Icons.AiAngular,
-        fields: [
-            {
-                id: "prompt",
-                fieldType: "textarea",
-                label: "Provide any additional context",
-                placeholder: "Leave blank if you wish to provide no additional context.",
-                hint: "This additional context will be combined with the pre-engineered prompt to guide the AI Agent.",
-                value: defaultPromptTemplate?.defaultUserPrompt
-            },
-            {
-                id: "templateId",
-                fieldType: "select",
-                label: "Prompt Template",
-                placeholder: "Select Template",
-                selectOptions: promptTemplates,
-                hint: "Select a Prompt Template to guide the the LLM.",
-                value: defaultPromptTemplate?.id
-            },
-            {
-                id: "exampleComponentIds",
-                fieldType: "multi-select",
-                label: "Example Components",
-                placeholder: "Select components",
-                selectOptions: lookupTypesOf("Component").filter(x => x.id != element.id).map(x => {
-                    return {
-                        id: x.id,
-                        description: x.getName(),
-                        icon: x.getIcon(),
-                        additionalInfo: x.getParents().map(x => x.getName()).join("/")
-                    }
-                }),
-                hint: "Provide the LLM with examples of existing components that it should base its implementation on."
-            },
-            ...await getAiModelSelectionFields(providerModelsResult, settingName)
-        ],
-        submitButtonText: "Execute",
-        minWidth: "750px"
+        if (context == '') {
+            context = appendComment;
+        } else {
+            context = `${context}\n${appendComment}`;
+        }
+        
     });
-    // Check if the user cancelled
-    if (!promptResult) {
-        return;
+
+    createAICodingTask({
+        title: `Implement Angular Layout: ${element.getName()}`,
+        instructions: `Implement "${element.getName()}" using the appropriate skill.`,
+        context: context,
+        filesToInclude: filePaths
+    });
+}
+
+async function createComponentImplementAICodingTask() {
+    let filePaths = element.getAssociatedFiles().map(x => x.absolutePath)
+    let menuNavigations = element.getAssociations().filter(a => a.specializationId == navigationSourceEndSpecializationId
+        && a.typeReference?.typeId == layoutSpecializationId);
+
+    let navContext = '';
+    let navInstruction = '';
+    if (menuNavigations.length > 0) {
+        const layoutElement = lookup(menuNavigations[0].getParent()?.id);
+        if (layoutElement) {
+            filePaths = filePaths.concat(layoutElement.getAssociatedFiles().map(x => x.absolutePath))
+
+            // build up the context
+            let navContext = '';
+            element.getAssociations().filter(a => a.specializationId == "2b191288-ecae-4743-b069-cbdd927ef349").forEach(nav => {
+                let appendComment = `- A menu item MUST be added to navigation to the page "${nav.getName()}"`
+                if (navContext == '') {
+                    navContext = appendComment;
+                } else {
+                    navContext = `${navContext}\n${appendComment}`;
+                }
+            });
+
+            navInstruction = `and "${layoutElement.getName()}" `
+        }
     }
 
-    const { providerId, modelId, thinkingLevel: thinkingLevel } = await collectAndPersistAiSettingsFromPromptResult(
-        promptResult, providerModelsResult, settingName);
-
-    await launchHostedModuleTask("Intent.Modules.AI.Angular.Generate",
-        [
-            application.id,
-            element.id,
-            promptResult.prompt ?? "",
-            JSON.stringify(promptResult.exampleComponentIds ?? []) ?? "",
-            providerId,
-            modelId,
-            thinkingLevel,
-            promptResult.templateId
-        ],
-        {
-            taskName: "AI: Angular for " + element.getName()
-        });
+    createAICodingTask({
+        title: `Implement Angular Component: ${element.getName()}`,
+        instructions: `Implement "${element.getName()}" ${navInstruction}using the appropriate skill(s).`,
+        context: navContext,
+        filesToInclude: filePaths
+    });
 }

@@ -1,0 +1,175 @@
+﻿---
+name: angular-page-editing-entity
+description: Creates Angular edit/update entity pages using Angular Material and template-driven forms, strictly preserving existing TypeScript service and payload behavior while wiring a valid Save flow and model-bound UI.
+paths:
+	- "**/*.component.ts"
+	- "**/*.component.html"
+---
+
+## Reference Examples
+
+Before generating any output, read the following files in the same folder as this skill:
+
+1. **`./edit-entity-sample.ts`** - MUST be read and used as the TypeScript structure template (imports, component metadata, `model` wiring, data loading, save flow orchestration, and helper methods) and adapt names and types for the target entity.
+2. **`./edit-entity-sample.html`** - MUST be read and used as the HTML layout template. Copy its layout and Angular Material form composition, then adapt fields, bindings, and labels for the target entity.
+3. **`./edit-entity-sample.scss`** - MUST be read whenever implementing the component, even if you expect minimal styling.
+
+---
+
+### Styling Rules
+- Use existing utility classes from `styles.scss` (e.g., `.filter-grid`, `.button-row`, `.table-wrapper`, `.ux-gradient-primary`, `.pa-4`, `.mb-4`, etc.)
+- SCSS decision rule:
+  - Use global utilities where possible.
+  - If the sample uses component SCSS for structural layout (grid columns, responsive behavior) and global styles don't already guarantee it, copy/adapt the sample SCSS into the component SCSS.
+  - Only add to styles.scss when the style is reusable across multiple pages; otherwise keep it component-scope
+- If you need a new utility class or pattern that doesn't exist, you may add it to `styles.scss`
+- NEVER modify existing styles in `styles.scss` or `theme.scss` - only add new ones if needed
+- Copy/adapt sample SCSS into the component SCSS unless you can prove the same classes already exist globally.
+- The generated page must visually match the sample layout.
+- SCSS Parity Rule (Required): The edit-entity sample relies on component-scoped SCSS for layout. Therefore, when generating an edit page, the agent must copy/adapt the sample SCSS into the component SCSS unless those exact styles already exist in styles.scss. The agent must not leave component SCSS empty if the template uses classes that aren't confirmed global.
+
+### 1. Source of truth and data loading
+- In the ngOnInit, load the data the component needs using the provided service and data.
+- Build an Angular Material form based on the entity model defined in the component TypeScript file.
+- Do not modify the shape of the model.
+- Do not add properties that do not exist.
+- Do not rename or remove properties.
+- Do not invent new fields.
+
+### 2. Map property types to correct Angular Material controls
+- For each property:
+	- Strings -> `<input matInput>`
+	- Booleans -> `<mat-slide-toggle>`
+	- Enums -> `<mat-select>`
+	- Lookups -> `<mat-select>` with service-loaded options only if such services exist
+	- Arrays -> repeatable Material blocks
+- Prepopulate form values using `[(ngModel)]="model.propertyName"`.
+
+### 3. Template-driven validation is required
+- Form must use `<form #form="ngForm" ...>`.
+- Use template-driven Angular forms (`ngForm`).
+- Required fields must include all of the following:
+	- `required`
+	- `name="xxx"`
+	- `#xxxCtrl="ngModel"`
+	- `<mat-error>` with validation messages when invalid
+- Save button must be disabled when:
+	- the form is invalid, or
+	- `isLoading` is true
+
+### 4. Save behavior must use existing service flow
+- The Save button must call a `save()` method.
+- The `save()` method must:
+	- perform validation via `form.invalid`
+	- call the existing service method (e.g. `updateEntity()`) without modifying it
+	- on success, navigate using an existing navigation method (e.g., `navigateToEntitySearch()`)
+- DO NOT modify the existing service method.
+
+### 5. Conditional sections
+- If the TS model uses boolean toggles (like `hasLoyalty`):
+  - Only render conditional blocks when flagged.
+  - Maintain the exact logic from the TS file for showing/hiding these blocks.
+- Render a toggle (or checkbox) appropriately
+  - Only render the nested fields when enabled
+  - Ensure the toggle actually controls nullability:
+    - ON: create the object if currently null
+    - OFF: set it to null
+- Nullable objects should not be rendered as required/always visible unless:
+  - the TS code has explicit required validation logic, or
+  - the payload unconditionally sends it, or
+  - there are required validators on nested fields and the object is always non-null.
+
+### 6. Child collections must follow existing method availability
+- When arrays exist (`addresses`, `phones`, etc.):
+  - Render list items in Material blocks.
+  - Include a delete/remove button **only if corresponding TS methods exist**:
+    - `addAddress()` → show Add button
+    - `removeAddress(i)` → show Remove button
+- Render child collections in repeatable Material UI blocks.
+- Include a delete button only if the TypeScript file already contains a matching remove method (e.g., `removeX()`).
+- Include an add button only if the TypeScript file already contains a matching add method (e.g., `addX()`).
+
+### 7. Forbidden actions
+- DO NOT modify existing backend-calling methods (e.g., `updateEntity()`).
+- DO NOT change the shape of the payload.
+- DO NOT invent lookup services.
+- DO NOT add logic that rewrites existing TypeScript functionality.
+
+### 8. General constraints
+- Use this skill for Edit/Update entity screens in Angular.
+- Do not use this skill for search/list pages, detail/view forms, or non-Angular projects.
+- Treat the existing component TypeScript file as the source of truth for service calls and navigation behavior.
+
+
+### 9. Enum fields Required Implementation Steps
+For each enum used by the target component model:
+1. Locate the enum definition (MANDATORY)
+	- Prefer the direct import path already present in the component (e.g., import { AddressType } from '...').
+	- Otherwise use search_code for:
+		- export enum <EnumName>
+		- enum <EnumName>
+	- If the enum definition cannot be located, you MUST NOT reference any <EnumName>.<Member> in .html or .ts. Stop and request the enum file/path or add a non-enum placeholder control.
+2. Read and extract (MANDATORY)
+	- Read the enum file and extract the exact member identifiers as declared (case-sensitive), and whether the enum is string-valued or number-valued.
+	- Record the allowed set of members for use in this component.
+3. Use only verified members (NO GUESSING)
+	- You MUST ONLY use members that exist in the extracted set.
+	- You MUST NOT:
+		- invent members,
+		- “correct” spelling (e.g., Deliver → Delivery) without the enum file proving it,
+		- copy members from skill examples unless they match the extracted set.
+4. Template + TS implementation must be driven by the verified set
+	- Expose the enum to the template only after verification (e.g., AddressType = AddressType;).
+	- Populate selects using only verified members:
+		- .ts default initialization uses a verified member (e.g., AddressType.Delivery)
+		- .html uses the same verified member (e.g., <mat-option [value]="AddressType.Delivery">...</mat-option>)
+5. Pre-output enum validation (REQUIRED CHECK)
+	- Before finalizing, verify every <EnumName>.<Member> referenced in .html and .ts is present in the enum definition you read.
+	- If any mismatch exists, fix it before output.
+		 
+## Completion Checklist
+
+ - [] The HTML template compiles and every referenced symbol exists in the component TS:
+  - [] All bound properties exist (e.g., model.*, isLoading, serviceErrors.*, lookup arrays).
+  - [] All called methods exist (e.g., save(form), addX(), removeX(), navigation methods).
+  - [] All structural directives and bindings are syntactically valid (*ngIf, *ngFor, (click), etc.).
+- [] The form is strictly model-driven:
+  - [] All inputs/selects/toggles bind only to properties that already exist on model (no invented fields).
+  - [] No model properties were renamed, removed, or retyped to satisfy the UI.
+  - [] Data is loaded in ngOnInit using the existing service and prepopulated into the model.
+- [] All controls follow the Angular Material mapping rules:
+  - [] Strings use <input matInput> (or <textarea matInput> when appropriate).
+  - [] Booleans use <mat-slide-toggle> or <mat-checkbox>.
+  - [] Enums use <mat-select> with explicit enum values.
+  - [] Lookups use <mat-select> populated only from options loaded by existing services (no invented services/options).
+  - [] Arrays render as repeatable blocks bound to each item.
+  - [] Form values are prepopulated using [(ngModel)]="model.propertyName".
+ - Template-driven forms and validation are correctly implemented:
+  - [] The form uses template-driven forms: <form #form="ngForm">.
+  - [] Every [(ngModel)] has a name="..." attribute, and names are unique (including inside *ngFor blocks).
+  - [] Required fields include all of: required, name="...", #ctrl="ngModel", and a <mat-error> shown when invalid and touched.
+  - [] The Save button is disabled when isLoading is true or form.invalid is true.
+  - [] save(form) prevents saving when form.invalid is true (no backend call when invalid).
+- [] Save flow and backend behavior are preserved:
+  - [] The Save button calls save(form) (not a service method directly).
+  - [] Existing backend-calling methods (e.g., updateEntity()) were not modified.
+  - [] The request payload sent to the backend matches the existing TS mapping exactly (no added/removed/reshaped fields).
+  - [] Post-save navigation uses an existing navigation method (no new router.navigate(...) logic introduced).
+- []Nullable object sections (e.g., loyalty: X | null) are handled safely and intentionally:
+  - [] Nullable object sections are optional by default via a toggle/checkbox (e.g., "Has Loyalty").
+  - [] Toggle OFF sets the object to null; toggle ON initializes the object if it is null.
+  - [] Nested fields render only when enabled (no unsafe model.obj!.field usage when it can be null).
+  - [] Conditional sections maintain the exact logic from the TS file for showing/hiding blocks.
+  - [] Any newly added TS methods only manipulate component state and do not call services or the router.
+- [] Child collection actions match method availability:
+  - [] "Add" buttons exist only if an addX() method already exists in TS.
+  - [] "Remove/Delete" buttons exist only if a removeX(...) method already exists in TS.
+  - [] Collection UI does not introduce validation/name collisions when items are added/removed.
+- [] Styling rules are respected:
+  - [] Existing styles.scss and theme.scss were not modified (only additive changes allowed if necessary).
+  - [] Component SCSS is minimal and only includes truly component-specific layout/styling, preferring global utility classes where possible.
+- [] Any non-utility CSS classes used in the template are defined either globally or in the component SCSS.
+- [] If the sample template uses component SCSS for grid/layout, the target component SCSS includes an adapted version.
+- [] Every enum option rendered in the template matches a real enum member defined in the codebase.
+- [] No enum member names were copied from the sample without verification.
+- [] Any enum default values in TS compile against the actual enum type.

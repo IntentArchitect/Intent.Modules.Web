@@ -1,190 +1,60 @@
-async function execute() {
-    var _a, _b, _c;
-    const providerModelsResult = await getAiProviderModels();
-    const settingName = "AI.Angular";
-    let promptTemplatesString = await executeModuleTask("Intent.Modules.Common.AI.Tasks.GetPromptTemplates", application.id, "Intent.Modules.AI.Angular.Generate", element.getParent().getName() + "/" + element.getName());
-    let promptTemplates = JSON.parse(promptTemplatesString);
-    let defaultPromptTemplate = promptTemplates.find(t => t.recommenedDefault);
-    // Open a dialog for the user to enter an AI prompt
-    let promptResult = await dialogService.openForm({
-        title: "AI: Implement " + element.getName(),
-        icon: Icons.AiAngular,
-        fields: [
-            {
-                id: "prompt",
-                fieldType: "textarea",
-                label: "Provide any additional context",
-                placeholder: "Leave blank if you wish to provide no additional context.",
-                hint: "This additional context will be combined with the pre-engineered prompt to guide the AI Agent.",
-                value: defaultPromptTemplate === null || defaultPromptTemplate === void 0 ? void 0 : defaultPromptTemplate.defaultUserPrompt
-            },
-            {
-                id: "templateId",
-                fieldType: "select",
-                label: "Prompt Template",
-                placeholder: "Select Template",
-                selectOptions: promptTemplates,
-                hint: "Select a Prompt Template to guide the the LLM.",
-                value: defaultPromptTemplate === null || defaultPromptTemplate === void 0 ? void 0 : defaultPromptTemplate.id
-            },
-            {
-                id: "exampleComponentIds",
-                fieldType: "multi-select",
-                label: "Example Components",
-                placeholder: "Select components",
-                selectOptions: lookupTypesOf("Component").filter(x => x.id != element.id).map(x => {
-                    return {
-                        id: x.id,
-                        description: x.getName(),
-                        icon: x.getIcon(),
-                        additionalInfo: x.getParents().map(x => x.getName()).join("/")
-                    };
-                }),
-                hint: "Provide the LLM with examples of existing components that it should base its implementation on."
-            },
-            ...await getAiModelSelectionFields(providerModelsResult, settingName)
-        ],
-        submitButtonText: "Execute",
-        minWidth: "750px"
+const navigationSourceEndSpecializationId = "97a3de8a-c9bf-4cf2-bc0a-b8692b02211b";
+const navigationTargetEndSpecializationId = "2b191288-ecae-4743-b069-cbdd927ef349";
+const layoutSpecializationId = "8beaa629-d615-4062-b936-7106530cdf52";
+async function createLayoutImplementAICodingTask() {
+    let filePaths = element.getAssociatedFiles().map(x => x.absolutePath);
+    // build up the context
+    let context = '';
+    element.getAssociations().filter(a => a.specializationId == navigationTargetEndSpecializationId).forEach(nav => {
+        let appendComment = `- A menu item MUST be added to navigation to the page "${nav.getName()}"`;
+        if (context == '') {
+            context = appendComment;
+        }
+        else {
+            context = `${context}\n${appendComment}`;
+        }
     });
-    // Check if the user cancelled
-    if (!promptResult) {
-        return;
-    }
-    const { providerId, modelId, thinkingLevel: thinkingLevel } = await collectAndPersistAiSettingsFromPromptResult(promptResult, providerModelsResult, settingName);
-    await launchHostedModuleTask("Intent.Modules.AI.Angular.Generate", [
-        application.id,
-        element.id,
-        (_a = promptResult.prompt) !== null && _a !== void 0 ? _a : "",
-        (_c = JSON.stringify((_b = promptResult.exampleComponentIds) !== null && _b !== void 0 ? _b : [])) !== null && _c !== void 0 ? _c : "",
-        providerId,
-        modelId,
-        thinkingLevel,
-        promptResult.templateId
-    ], {
-        taskName: "AI: Angular for " + element.getName()
+    createAICodingTask({
+        title: `Implement Angular Layout: ${element.getName()}`,
+        instructions: `Implement "${element.getName()}" using the appropriate skill.`,
+        context: context,
+        filesToInclude: filePaths
     });
 }
-async function getAiProviderModels() {
-    const moduleTaskResult = await executeModuleTask("Intent.Modules.Common.AI.Tasks.ProviderModelsTask");
-    const providerModels = JSON.parse(moduleTaskResult);
-    const modelLookup = providerModels.reduce((acc, item) => {
-        acc[`${item.providerId}--${item.modelName}`] = item;
-        return acc;
-    }, {});
-    return { providerModels, modelLookup };
-}
-async function getAiModelSelectionFields(providerModelsResult, aiSettingKeyPrefix) {
+async function createComponentImplementAICodingTask() {
     var _a;
-    const { providerModels, modelLookup } = providerModelsResult;
-    const globalSettings = await userSettings.loadGlobalAsync();
-    let settingModelId = globalSettings.get(`${aiSettingKeyPrefix}.ModelId`);
-    let settingThinkingLevel = globalSettings.get(`${aiSettingKeyPrefix}.ThinkingLevel`);
-    if (settingModelId == null && modelLookup["open-ai--gpt-5.1"] != null) {
-        settingModelId = "open-ai--gpt-5.1";
-        settingThinkingLevel = "low";
-    }
-    const initialThinkingType = (_a = modelLookup[settingModelId]) === null || _a === void 0 ? void 0 : _a.thinkingType;
-    return [
-        {
-            id: "model",
-            fieldType: "select",
-            label: "Model",
-            isRequired: true,
-            hint: getModelHint(providerModels, initialThinkingType),
-            selectOptions: Object.entries(modelLookup)
-                .map(([key, value]) => {
-                return {
-                    id: key,
-                    description: value.modelName,
-                    additionalInfo: value.providerName
-                };
-            }),
-            value: settingModelId,
-            onChange: async (config) => {
-                const curThinkingType = modelLookup[config.getField("model").value].thinkingType;
-                const thinkingField = config.getField("thinking");
-                thinkingField.isHidden = curThinkingType === "None";
-                thinkingField.selectOptions = getApplicableThinkingOptions(curThinkingType);
-                thinkingField.hint = getModelHint(providerModels, curThinkingType);
-                if (curThinkingType === "ThinkingLevels") {
-                    thinkingField.value = "low";
-                }
-                else if (curThinkingType === "Unknown") {
-                    thinkingField.value = "none";
+    let filePaths = element.getAssociatedFiles().map(x => x.absolutePath);
+    let menuNavigations = element.getAssociations().filter(a => {
+        var _a;
+        return a.specializationId == navigationSourceEndSpecializationId
+            && ((_a = a.typeReference) === null || _a === void 0 ? void 0 : _a.typeId) == layoutSpecializationId;
+    });
+    let navContext = '';
+    let navInstruction = '';
+    if (menuNavigations.length > 0) {
+        const layoutElement = lookup((_a = menuNavigations[0].getParent()) === null || _a === void 0 ? void 0 : _a.id);
+        if (layoutElement) {
+            filePaths = filePaths.concat(layoutElement.getAssociatedFiles().map(x => x.absolutePath));
+            // build up the context
+            let navContext = '';
+            element.getAssociations().filter(a => a.specializationId == "2b191288-ecae-4743-b069-cbdd927ef349").forEach(nav => {
+                let appendComment = `- A menu item MUST be added to navigation to the page "${nav.getName()}"`;
+                if (navContext == '') {
+                    navContext = appendComment;
                 }
                 else {
-                    thinkingField.value = null;
+                    navContext = `${navContext}\n${appendComment}`;
                 }
-            }
-        },
-        {
-            id: "thinking",
-            fieldType: "select",
-            label: "Thinking/reasoning mode",
-            isHidden: settingThinkingLevel == null || providerModels.length === 0,
-            value: settingThinkingLevel,
-            selectOptions: getApplicableThinkingOptions(initialThinkingType)
-        }
-    ];
-    function getModelHint(providerModels, thinkingType) {
-        if (providerModels.length === 0) {
-            return "Not seeing any AI Models? Learn how to configure or add models [here](https://docs.intentarchitect.com/articles/modules-common/intent-common-ai/intent-common-ai.html).";
-        }
-        else if (thinkingType == "Unknown") {
-            return "Thinking level for model is unknown; none is selected by default.";
-        }
-        else {
-            return "";
+            });
+            navInstruction = `and "${layoutElement.getName()}" `;
         }
     }
-    function getApplicableThinkingOptions(thinkingType) {
-        if (thinkingType === "ThinkingLevels") {
-            return [
-                {
-                    id: "low",
-                    description: "Low",
-                    additionalInfo: "Thinks less, quicker"
-                },
-                {
-                    id: "high",
-                    description: "High",
-                    additionalInfo: "Thinks more, slower"
-                }
-            ];
-        }
-        else if (thinkingType === "Unknown") {
-            return [
-                {
-                    id: "none",
-                    description: "None",
-                    additionalInfo: "No thinking/reasoning"
-                },
-                {
-                    id: "low",
-                    description: "Low",
-                    additionalInfo: "Thinks less, quicker"
-                },
-                {
-                    id: "high",
-                    description: "High",
-                    additionalInfo: "Thinks more, slower"
-                }
-            ];
-        }
-        else {
-            return [];
-        }
-    }
-}
-async function collectAndPersistAiSettingsFromPromptResult(promptResult, providerModelsResult, aiSettingKeyPrefix) {
-    const providerId = providerModelsResult.modelLookup[promptResult.model].providerId;
-    const modelId = providerModelsResult.modelLookup[promptResult.model].modelName;
-    const thinkingLevel = promptResult.thinking;
-    const globalSettings = await userSettings.loadGlobalAsync();
-    globalSettings.set(`${aiSettingKeyPrefix}.ModelId`, `${providerId}--${modelId}`);
-    globalSettings.set(`${aiSettingKeyPrefix}.ThinkingLevel`, thinkingLevel);
-    return { providerId, modelId, thinkingLevel: thinkingLevel };
+    createAICodingTask({
+        title: `Implement Angular Component: ${element.getName()}`,
+        instructions: `Implement "${element.getName()}" ${navInstruction}using the appropriate skill(s).`,
+        context: navContext,
+        filesToInclude: filePaths
+    });
 }
 class Icons {
 }
