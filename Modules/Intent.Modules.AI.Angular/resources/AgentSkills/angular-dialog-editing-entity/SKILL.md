@@ -2,31 +2,200 @@
 name: angular-dialog-editing-entity
 description: Creates Angular edit/update entity dialog using Angular Material and template-driven forms, strictly preserving existing TypeScript service and payload behavior while wiring a valid Save flow and model-bound UI.
 paths:
-	- "**/*.component.ts"
-	- "**/*.component.html"
+  - "**/*.component.ts"
+  - "**/*.component.html"
 ---
 
-## Reference Examples
+## MANDATORY: Read Samples Before Implementation
 
-Before generating any output, read the following files in the same folder as this skill:
+**STOP** - You MUST read ALL sample files in the SAME folder as this SKILL.md before writing ANY code:
 
-1. **`./edit-entity-dialog-sample.ts`** - MUST be read and used as the TypeScript structure template (imports, component metadata, MatDialogRef injection, data loading from MAT_DIALOG_DATA, `model` wiring, save/cancel flow orchestration, and helper methods) and adapt names and types for the target entity.
-2. **`./edit-entity-dialog-sample.html`** - MUST be read and used as the HTML layout template. Copy its layout and Angular Material dialog/form composition, then adapt fields, bindings, and labels for the target entity.
-3. **`./edit-entity-dialog-sample.scss`** - MUST be read whenever implementing the component, even if you expect minimal styling.
+1. `edit-entity-dialog-sample.ts`
+2. `edit-entity-dialog-sample.html`
+3. `edit-entity-dialog-sample.scss`
+
+Then read target component `.ts` file and related project files (models, enums, lookups, services, styles).
+
+**If any sample file cannot be accessed**: Stop immediately, confirm SKILL.md folder location, retry from that location. If still inaccessible, report which file and ask user. Do NOT proceed with partial implementation or approximation.
 
 ---
 
-### Styling Rules
-- Use existing utility classes from `styles.scss` (e.g., `.filter-grid`, `.button-row`, `.table-wrapper`, `.ux-gradient-primary`, `.pa-4`, `.mb-4`, etc.)
-- SCSS decision rule:
-  - Use global utilities where possible.
-  - If the sample uses component SCSS for structural layout (grid columns, responsive behavior) and global styles don't already guarantee it, copy/adapt the sample SCSS into the component SCSS.
-  - Only add to styles.scss when the style is reusable across multiple pages; otherwise keep it component-scope
-- If you need a new utility class or pattern that doesn't exist, you may add it to `styles.scss`
-- NEVER modify existing styles in `styles.scss` or `theme.scss` - only add new ones if needed
-- Copy/adapt sample SCSS into the component SCSS unless you can prove the same classes already exist globally.
-- The generated dialog must visually match the sample layout.
-- SCSS Parity Rule (Required): The edit-entity-dialog sample relies on component-scoped SCSS for layout. Therefore, when generating a dialog, the agent must copy/adapt the sample SCSS into the component SCSS unless those exact styles already exist in styles.scss. The agent must not leave component SCSS empty if the template uses classes that aren't confirmed global.
+## Preserve Existing Implementation
+
+**Use for**: Edit/Update entity **dialogs** in Angular with Angular Material  
+**Do NOT use for**: Full-page forms, search/list pages, or non-Angular projects  
+**Source of truth**: Existing component TS file defines service calls and model structure  
+**This is a DIALOG**: No navigation—use `dialogRef.close()` instead
+
+### You MUST NOT:
+- Modify existing backend methods (e.g., `updateEntity()`)
+- Change payload shape sent to backend
+- Add, rename, or remove model properties
+- Invent lookup services
+- Rewrite existing TS functionality
+- Add navigation logic
+
+---
+
+## 1. Dialog Structure & Data Loading
+
+**Dialog setup**:
+- Inject `MatDialogRef<COMPONENT_NAME>` in constructor: `constructor(private dialogRef: MatDialogRef<COMPONENT_NAME>, ...) { }`
+- **Data loading**: Receive entity data via `@Inject(MAT_DIALOG_DATA) public data: { id: string }` or `@Inject(MAT_DIALOG_DATA) public data: EntityModel`
+- If ID passed: Load entity in `ngOnInit()` using existing service
+- If entity passed: Prepopulate model directly from `MAT_DIALOG_DATA`
+
+**Form**: Build from existing model in component TS. Bind to `model` using `[(ngModel)]="model.propertyName"`. Prepopulate all values. Use only existing properties—no additions, renames, or removals.
+
+**Nullable objects** (e.g., `loyalty: X | null`):
+- Toggle/checkbox controls section (e.g., "Has Loyalty")
+- Nested fields render only when toggle ON
+- Toggle OFF ? null; toggle ON ? initialize if null
+- Do NOT render as required/visible unless: explicit required validation, payload always sends it, or required validators on nested fields with always non-null object
+
+---
+
+## 2. Save & Cancel Methods (CRITICAL)
+
+**`save()` or `onSave(form: NgForm)`**:
+1. Validate form (check `form.invalid` if using `NgForm`)
+2. Call existing service method (e.g., `updateEntity()`) without modification
+3. On success: `this.dialogRef.close(true)`
+4. On error: Set `serviceErrors.*`, keep dialog open (do NOT close)
+
+**`cancel()`**:
+- ONLY calls `this.dialogRef.close(null)` or `this.dialogRef.close(false)`
+- Do NOT reset model, call services, or add other logic
+
+**Template bindings**:
+- Save button: `(click)="save()"` or `type="submit"` with `(ngSubmit)="onSave(form)"`
+- Cancel button: `(click)="cancel()"`
+- Do NOT call service methods directly (e.g., `(click)="updateCustomer()"`)
+
+---
+
+## 3. Map Properties to Controls
+
+| Property Type | Control |
+|---------------|---------|
+| String | `<input matInput>` or `<textarea matInput>` |
+| Boolean | `<mat-slide-toggle>` or `<mat-checkbox>` |
+| Enum | `<mat-select>` (see Enum Rules) |
+| Lookup | `<mat-select>` from **real** services only |
+| Array | Repeatable Material blocks |
+
+**Enum Rules**:
+1. **Locate**: Use import path in component or code search `export enum AddressType`
+2. **Read**: Extract exact member names/values
+3. **Use**: Expose to template (`AddressType = AddressType;`), use in HTML (`<mat-option [value]="AddressType.Delivery">`)
+4. **Forbidden**: Assume member names from sample. Target project enum is source of truth.
+
+---
+
+## 4. Template-Driven Forms & Validation
+
+Use `<form #form="ngForm" novalidate>` wrapping dialog content and actions.
+
+**Required fields need ALL**:
+```html
+<mat-form-field>
+    <mat-label>Name</mat-label>
+    <input matInput required name="name" [(ngModel)]="model.name" #nameCtrl="ngModel" />
+    <mat-error *ngIf="nameCtrl.invalid && (nameCtrl.touched || form.submitted)">
+        Name is required
+    </mat-error>
+</mat-form-field>
+```
+
+**Form state**:
+- Use `(ngSubmit)="onSave(form)"` (preferred) or `(click)="onSave(form)"`
+- In `onSave(form)`: If `form.invalid`, call `form.control.markAllAsTouched()` and return (no service call)
+- Save button disabled when `form.invalid || isLoading`:
+```html
+<button mat-raised-button color="primary" type="submit" [disabled]="form.invalid || isLoading">Save</button>
+```
+
+---
+
+## 5. Child Collections
+
+Render in repeatable Material blocks (e.g., `addresses`, `phones`).
+
+**Buttons**: Add only if `addX()` exists in TS (e.g., `addAddress()`). Remove only if `removeX()` exists in TS (e.g., `removeAddress(i)`). Do NOT invent.
+
+---
+
+## 6. Styling
+
+- **Global utilities first**: `.filter-grid`, `.button-row`, `.table-wrapper`, `.ux-gradient-primary`, `.pa-4`, `.mb-4`
+- **Component SCSS**: Add when sample uses component styling and global doesn't provide it
+- **Match sample layout visually**
+- **NEVER modify** `styles.scss`/`theme.scss` (add only if reusable across pages)
+- **Component SCSS required**: Edit-entity-dialog sample needs component SCSS for layout. Copy/adapt unless exact styles exist globally.
+
+---
+
+## Definition of Done
+
+**Template compilation**:
+- [ ] All bound properties exist in TS (`model.*`, `isLoading`, `serviceErrors.*`, lookups)
+- [ ] All methods exist (`save(form)`/`onSave(form)`, `cancel()`, `addX()`, `removeX()`)
+- [ ] Directives valid (`*ngIf`, `*ngFor`, `(click)`)
+- [ ] `MatDialogRef<COMPONENT_NAME>` injected in constructor
+- [ ] `MAT_DIALOG_DATA` injected to receive entity data
+
+**Data loading**:
+- [ ] If ID passed: Data loaded in `ngOnInit()` via existing service
+- [ ] If entity passed: Model prepopulated from `MAT_DIALOG_DATA`
+- [ ] Form prepopulated using `[(ngModel)]="model.propertyName"`
+
+**Form fidelity**:
+- [ ] Controls bind only to existing model properties
+- [ ] No properties renamed/removed/retyped
+- [ ] Controls follow section 3 mapping
+
+**Template-driven forms**:
+- [ ] Uses `<form #form="ngForm" novalidate>`
+- [ ] Every `[(ngModel)]` has unique `name`
+- [ ] Required fields: `required`, `name`, `#ctrl="ngModel"`, `<mat-error>` shown when `ctrl.invalid && (ctrl.touched || form.submitted)`
+- [ ] Save disabled when `form.invalid || isLoading`
+- [ ] `onSave(form)` prevents call when invalid
+
+**Dialog behavior**:
+- [ ] Injects `MatDialogRef<COMPONENT_NAME>`
+- [ ] `save()`/`onSave(form)` calls `dialogRef.close(true)` on success
+- [ ] `save()`/`onSave(form)` does NOT close on error
+- [ ] `cancel()` calls `dialogRef.close(null/false)` with no other logic
+- [ ] `cancel()` does NOT reset model or call services
+- [ ] Save button calls `save()` or uses `type="submit"` with `(ngSubmit)="onSave(form)"`
+- [ ] Cancel button calls `cancel()`
+- [ ] No navigation logic
+
+**Save flow**:
+- [ ] Save calls `save(form)`/`onSave(form)`, not service directly
+- [ ] Backend methods (e.g., `updateEntity()`) not modified
+- [ ] Payload matches existing TS exactly
+
+**Nullable objects & conditional sections**:
+- [ ] Toggle/checkbox controls visibility
+- [ ] Toggle OFF ? null; ON ? initialize
+- [ ] Nested fields render only when enabled
+- [ ] No unsafe `model.obj!.field`
+- [ ] Conditional sections maintain exact TS logic
+
+**Child collections**:
+- [ ] Add buttons only if `addX()` in TS
+- [ ] Remove buttons only if `removeX()` in TS
+
+**Enums**:
+- [ ] Options match real enum members
+- [ ] No names from sample without verification
+- [ ] Defaults compile against actual type
+
+**Styling**:
+- [ ] No modifications to `styles.scss`/`theme.scss`
+- [ ] Component SCSS minimal, prefers global utilities
+- [ ] Component SCSS adapted from sample when needed
 
 ### 1. Dialog-specific component structure and data loading
 - This component is a Material dialog, **not a page**. Use the standard Angular Material dialog pattern.
@@ -187,6 +356,24 @@ For each enum used by the target component model:
   - Use those exact members in:
   - Template exposure in .ts (e.g., AddressType = AddressType;)
   - `<mat-option [value]="AddressType.Delivery">...</mat-option>` in .html
+
+## 12. Mandatory: Verify DTO/Wrapper Shapes Before Template Binding
+When binding in HTML to a property that is not directly declared on the component (e.g., `customersModels?.X`, `response?.X`, `paged?.X`, `result?.X`), you MUST verify the shape of the type:
+
+- If the property is a generic wrapper (e.g., `PagedResult<T>`, `ListResult<T>`, `ApiResponse<T>`), you MUST:
+	- Navigate to its definition (via import path) and read the file.
+	- Use the exact collection property name from the type (e.g., data vs items).
+
+- For any `*ngFor`, you MUST confirm the iterated expression resolves to an array type in the codebase.
+	- Forbidden: assuming common names like items, results, value, content.
+	- Required: use only verified members from the actual interface/class.
+
+- Output requirement:
+	- If the wrapper type cannot be located/read, STOP and ask the user which property contains the collection.
+
+No `*ngFor` over ?.items unless the type definition explicitly contains items
+
+---
 
 ## Completion Checklist
 

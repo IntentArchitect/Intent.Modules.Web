@@ -283,6 +283,7 @@ namespace Intent.Modules.Angular.Templates.Component.ComponentTypeScript
 
                 List<ITemplate> menuTemplates = new();
                 var intention = new StringBuilder();
+                var templateInstruction = "";
                 foreach (var associationEnd in model.InternalElement.AssociatedElements.Where(a => a.IsNavigationSourceEndModel() && !a.IsNavigable))
                 {
                     intention.AppendLine($"- This pages is navigated to from a {associationEnd.TypeReference.Element.Name} menu item");
@@ -292,6 +293,7 @@ namespace Intent.Modules.Angular.Templates.Component.ComponentTypeScript
                     {
                         var template = ExecutionContext.FindTemplateInstance(LayoutComponentHtmlTemplate.TemplateId, associationEnd.TypeReference.Element.Id);
                         menuTemplates.Add(template);
+                        templateInstruction = $"as well as the {associationEnd.TypeReference.Element.Name} Layout ";
                     }
                 }
 
@@ -301,14 +303,13 @@ namespace Intent.Modules.Angular.Templates.Component.ComponentTypeScript
                     intention.AppendLine($"- This pages navigates to the {navEndModel.TypeReference.Element.Name} component");
                 }
 
-                var context = new StringBuilder();
                 // Show Dialog associations
                 foreach (var operation in Model.Operations.Where(o => o.InternalElement.AssociatedElements.Any(e => e.IsShowDialogTargetEndModel())))
                 {
                     foreach (var association in operation.InternalElement.AssociatedElements.Where(e => e.IsShowDialogTargetEndModel()))
                     {
                         var dialogTargetEnd = association.AsShowDialogTargetEndModel();
-                        context.AppendLine($"- The {operation.Name} operation opens a dialog to show the {dialogTargetEnd.TypeReference.Element.Name} component");
+                        intention.AppendLine($"- The {operation.Name} operation opens a dialog to show the {dialogTargetEnd.TypeReference.Element.Name} component");
                     }
                 }
 
@@ -367,12 +368,9 @@ namespace Intent.Modules.Angular.Templates.Component.ComponentTypeScript
                     Context = @$"""
                                     ## User has modeled the following intentions:
                                     {intention}
-
-                                    ## Implementation Rules:
-                                    - If the request has layout componenet html file attached, you MUST updated it to include a navigation item to this new page component. The navigation item should be added to the end of the existing list of items, and should follow the existing format of the other items. You MUST NOT modify or delete any existing lines in the layout component file. You can only add new lines to it, and you must not reformat any existing lines. You MUST ensure that the final diff for the layout component file contains additions only, with no deletions or modifications to existing lines. CRITICAL: For `{ComponentName}` existing lines are immutable. Only insert new lines. No replacements, no deletions, no reformatting. Required diff shape: additions only. Do NOT perform a patch - you must INSERT.
                                 """,
                     Instructions =
-                        $"""Implement the {this.Model.Name} Angular component using the appropriate skill."""
+                        $"""Implement the {this.Model.Name} Angular {templateInstruction}component using the appropriate skill(s)."""
                 };
             }));
         }
