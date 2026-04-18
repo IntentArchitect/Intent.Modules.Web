@@ -51,9 +51,9 @@ namespace Intent.Modules.Angular.FactoryExtensions
         {
             var tasks = new List<IAITask>();
 
-            // build up tasks here
+            tasks.AddRange(GetAngularComponentImplementationTasks(changes, application));
 
-            return tasks.ToArray();
+            return [.. tasks];
         }
 
         private IEnumerable<IAITask> GetAngularComponentImplementationTasks(IChange[] changes, IApplication application)
@@ -81,7 +81,8 @@ namespace Intent.Modules.Angular.FactoryExtensions
             var intention = new StringBuilder();
             var templateInstructionExtension = "";
 
-            List<ITemplate> layoutComponents = AddLayoutComponentInstructions(template, model, change, intention, ref templateInstructionExtension);
+            var (LayoutTemplates, Instructions) = AddLayoutComponentInstructions(template, model, change, intention);
+            templateInstructionExtension += Instructions;
 
             AddNavigatesToContext(model, intention);
             AddShowDialogContext(model, intention);
@@ -96,8 +97,8 @@ namespace Intent.Modules.Angular.FactoryExtensions
                 componentScssTemplate
             }
             .Where(t => t is not null)
-            .Concat(layoutComponents
-            .Where(t => t is not null));
+            .Concat(LayoutTemplates
+                .Where(t => t is not null));
 
             return new TemplateAITask(template, [.. relatedTemplates])
             {
@@ -138,9 +139,11 @@ namespace Intent.Modules.Angular.FactoryExtensions
 
         // If this component is being navigated to from a menu item, we want to include the layout component in the task so that both are generated together and the user doesn't have to wait for two separate tasks.
         // We can identify this by looking for any navigation source associations where the other end is not navigable (i.e. it's a menu item).
-        private static List<ITemplate> AddLayoutComponentInstructions(ITypescriptFileBuilderTemplate template, ComponentModel model, IChange change, StringBuilder intention, ref string templateInstructionExtension)
+        private static (List<ITemplate> LayoutTemplates, string Instructions) AddLayoutComponentInstructions(ITypescriptFileBuilderTemplate template, ComponentModel model, IChange change, StringBuilder intention)
         {
             List<ITemplate> menuTemplates = [];
+            string templateInstructionExtension = "";
+
             foreach (var associationEnd in model.InternalElement.AssociatedElements.Where(a => a.IsNavigationSourceEndModel() && !a.IsNavigable))
             {
                 intention.AppendLine($"- This pages is navigated to from a {associationEnd.TypeReference.Element.Name} menu item");
@@ -149,12 +152,12 @@ namespace Intent.Modules.Angular.FactoryExtensions
                 if (change.ChangeType == ChangeType.Create)
                 {
                     var layoutTemplate = template.ExecutionContext.FindTemplateInstance(LayoutComponentHtmlTemplate.TemplateId, associationEnd.TypeReference.Element.Id);
-                    menuTemplates.Add(template);
+                    menuTemplates.Add(layoutTemplate);
                     templateInstructionExtension = $"as well as the {associationEnd.TypeReference.Element.Name} Layout ";
                 }
             }
 
-            return menuTemplates;
+            return (LayoutTemplates: menuTemplates, Instructions: templateInstructionExtension);
         }
 
         private static bool TryGetTemplate<TTemplate, TModel>(
