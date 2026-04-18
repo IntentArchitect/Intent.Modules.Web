@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="d25b7dc8-8c51-4037-9943-d655b617e14e" type="Factory Extension" typeId="7d008e84-bb28-4b10-ba28-7439202fca76">
+  <name>AITasksFactoryExtension</name>
+  <display>AITasksFactoryExtension</display>
+  <isAbstract>false</isAbstract>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>d1f9847f-ec1b-4774-910a-816c4f3e8487</parentFolderId>
+  <packageId>d1f9847f-ec1b-4774-910a-816c4f3e8487</packageId>
+  <packageName>Intent.Angular</packageName>
+  <stereotypes />
+  <metadata />
+  <childElements />
+</class>

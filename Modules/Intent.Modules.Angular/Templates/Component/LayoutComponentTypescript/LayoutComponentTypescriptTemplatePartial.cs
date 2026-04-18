@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using Intent.Engine;
 using Intent.Modelers.UI.Api;
-using Intent.Modules.Angular.AITask;
 using Intent.Modules.Angular.Templates.Shared.IntentDecorators;
 using Intent.Modules.Common;
 using Intent.Modules.Common.Templates;
@@ -77,39 +76,6 @@ namespace Intent.Modules.Angular.Templates.Component.LayoutComponentTypescript
                         component.AddArgument(obj.GetText(""));
                     });
                 });
-
-            //this.ExecutionContext.AITaskManager.RegisterTaskProvider(new TemplateAITaskProvider((changes, outputFiles) =>
-            //{
-            //    var outputFile = outputFiles.FirstOrDefault(x => x.Template?.Equals(this) == true);
-            //    if (outputFile == null)
-            //    {
-            //        return null;
-            //    }
-
-            //    var hasRelevantChanges = changes.Any(x =>
-            //        x.Template?.Equals(this) == true);
-
-            //    //if (!hasRelevantChanges)
-            //    //{
-            //    //    return null;
-            //    //}
-
-            //    var context = new StringBuilder();
-            //    // Nagivation associations
-            //    foreach (var nav in Model.InternalElement.AssociatedElements.Where(e => e.Association.SpecializationTypeId == "6d2b2070-c1cb-4cd2-88b4-4e5f8414bd9e"))
-            //    {
-            //        context.AppendLine($"- A menu item MUST be added to navigation to the page '{nav.Name}'");
-            //    }
-
-            //    return new TemplateAITask(this, [])
-            //    {
-            //        Type = "Implement Angular Layout",
-            //        Title = $"Implement Angular Layout: {this.ClassName}",
-            //        Instructions =
-            //            $"""Implement the {this.ClassName} Angular Layout using the appropriate skill.""",
-            //        Context = context.ToString()
-            //    };
-            //}));
         }
 
         [IntentManaged(Mode.Fully)]

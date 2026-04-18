@@ -109,6 +109,7 @@
   </templates>
   <decorators></decorators>
   <factoryExtensions>
+    <factoryExtension id="Intent.Angular.AITasksFactoryExtension" externalReference="d25b7dc8-8c51-4037-9943-d655b617e14e" />
     <factoryExtension id="Intent.Angular.SampleFilesConfiguration" externalReference="3216a70d-3066-4255-87d7-128082dfdecf" />
   </factoryExtensions>
   <moduleSettings>
@@ -137,13 +138,13 @@
     <dependency id="Intent.Modelers.UI" version="1.0.5-pre.0" />
     <dependency id="Intent.Npm" version="4.0.1-pre.0" />
   </dependencies>
-	<interoperability>
-		<detect id="Intent.Angular.Components.Material">
-			<install>
-				<package id="Intent.Angular.Components.Material" version="1.0.0-beta.2" />
-			</install>
-		</detect>
-	</interoperability>
+  <interoperability>
+    <detect id="Intent.Angular.Components.Material">
+      <install>
+        <package id="Intent.Angular.Components.Material" version="1.0.0-beta.2" />
+      </install>
+    </detect>
+  </interoperability>
   <files>
     <file src="$outDir$/$id$.dll" />
     <file src="$outDir$/$id$.pdb" />

@@ -1,16 +1,13 @@
 ﻿using Intent.AI;
 using Intent.Engine;
+using Intent.Modules.Common;
 using Intent.Modules.Common.Templates;
 using Intent.Templates;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Intent.Modules.Common;
-using Intent.Modules.Common.Templates;
 
-namespace Intent.Modules.Angular.AITask;
+namespace Intent.Modules.Angular.FactoryExtensions;
 
 public class TemplateAITask : IAITask
 {

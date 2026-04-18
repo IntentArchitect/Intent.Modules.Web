@@ -1,16 +1,9 @@
-using Intent.CodeToModelOperations;
 using Intent.Engine;
 using Intent.Exceptions;
 using Intent.Metadata.Models;
 using Intent.Modelers.UI.Api;
-using Intent.Modelers.UI.Core.Api;
-using Intent.Modules.Angular.AITask;
 using Intent.Modules.Angular.Api;
 using Intent.Modules.Angular.Api.Mappings;
-using Intent.Modules.Angular.Templates.Component.ComponentHtml;
-using Intent.Modules.Angular.Templates.Component.ComponentStyle;
-using Intent.Modules.Angular.Templates.Component.LayoutComponentHtml;
-using Intent.Modules.Angular.Templates.Component.LayoutComponentTypescript;
 using Intent.Modules.Angular.Templates.Shared.IntentDecorators;
 using Intent.Modules.Common;
 using Intent.Modules.Common.Templates;
@@ -25,13 +18,6 @@ using Intent.Templates;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Reflection;
-using System.Reflection.Emit;
-using System.Reflection.Metadata;
-using System.Security.Claims;
-using System.Text;
-using System.Xml.Linq;
-using static System.Reflection.Metadata.BlobBuilder;
 
 [assembly: DefaultIntentManaged(Mode.Fully)]
 [assembly: IntentTemplate("Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial", Version = "1.0")]
@@ -258,121 +244,6 @@ namespace Intent.Modules.Angular.Templates.Component.ComponentTypeScript
                 file.AddImport("IntentIgnoreBody", this.GetRelativePath(intentDecoratorTemplate));
                 file.AddImport("IntentMerge", this.GetRelativePath(intentDecoratorTemplate));
             }, 1000); // this build needs to happen AFTER the "Intent.Angular.HttpClients.DtoContract" template, otherwise PagedResults cannot be resolved
-
-
-            this.ExecutionContext.AITaskManager.RegisterTaskProvider(new TemplateAITaskProvider((changes, outputFiles) =>
-            {
-                var outputFile = outputFiles.FirstOrDefault(x => x.Template?.Equals(this) == true);
-                if (outputFile == null)
-                {
-                    return null;
-                }
-                var relevantChangeTypes = new ChangeType[] { ChangeType.Create, ChangeType.Overwrite };
-                var hasRelevantChanges = changes.Any(x =>
-                    relevantChangeTypes.Contains(x.ChangeType) &&
-                    x.Template?.Equals(this) == true);
-
-                if (!hasRelevantChanges)
-                {
-                    return null;
-                }
-
-                var isBeingCreated = changes.Any(x =>
-                    x.ChangeType == ChangeType.Create &&
-                    x.Template?.Equals(this) == true);
-
-                List<ITemplate> menuTemplates = new();
-                var intention = new StringBuilder();
-                var templateInstruction = "";
-                foreach (var associationEnd in model.InternalElement.AssociatedElements.Where(a => a.IsNavigationSourceEndModel() && !a.IsNavigable))
-                {
-                    intention.AppendLine($"- This pages is navigated to from a {associationEnd.TypeReference.Element.Name} menu item");
-
-                    // we only want to add the menu template when the item is being created
-                    if (isBeingCreated)
-                    {
-                        var template = ExecutionContext.FindTemplateInstance(LayoutComponentHtmlTemplate.TemplateId, associationEnd.TypeReference.Element.Id);
-                        menuTemplates.Add(template);
-                        templateInstruction = $"as well as the {associationEnd.TypeReference.Element.Name} Layout ";
-                    }
-                }
-
-                foreach (var navigation in model.InternalElement.AssociatedElements.Where(e => e.IsNavigationEndModel() && e.IsNavigable))
-                {
-                    var navEndModel = navigation.AsNavigationEndModel();
-                    intention.AppendLine($"- This pages navigates to the {navEndModel.TypeReference.Element.Name} component");
-                }
-
-                // Show Dialog associations
-                foreach (var operation in Model.Operations.Where(o => o.InternalElement.AssociatedElements.Any(e => e.IsShowDialogTargetEndModel())))
-                {
-                    foreach (var association in operation.InternalElement.AssociatedElements.Where(e => e.IsShowDialogTargetEndModel()))
-                    {
-                        var dialogTargetEnd = association.AsShowDialogTargetEndModel();
-                        intention.AppendLine($"- The {operation.Name} operation opens a dialog to show the {dialogTargetEnd.TypeReference.Element.Name} component");
-                    }
-                }
-
-                
-                //foreach (var menuItem in Model.InternalElement.AssociatedElements
-                //    .Where(e => e.Association.SpecializationTypeId == "6d2b2070-c1cb-4cd2-88b4-4e5f8414bd9e" && e.TypeReference?.Element.SpecializationTypeId == "776a9393-6b23-4a8c-8937-fd7e833fa0ef"))
-                //{
-                //    var layoutElement = menuItem.ParentElement;
-
-                //    foreach(var layoutNav in layoutElement.AssociatedElements.Where(a => a.SpecializationTypeId == "97a3de8a-c9bf-4cf2-bc0a-b8692b02211b"))
-                //    {
-                //        var targetComponent = layoutNav.OtherEnd();
-                //        context.AppendLine($"- A menu item MUST be added to navigation to the page {targetComponent.Name}");
-                //    }
-
-                //    menuTemplates.Add(ExecutionContext.FindTemplateInstance(LayoutComponentTypescriptTemplate.TemplateId, layoutElement.Id));
-                //}
-
-                //foreach (var layoutNav in Model.InternalElement.AssociatedElements.Where(e => e.IsNavigationEndModel() && !e.IsNavigable))
-                //{
-                //    var navModel = layoutNav.AsNavigationEndModel();
-                //    var layout = navModel?.Element?.AsLayoutModel();
-
-                //    if (layout is not null)
-                //    {
-                //        context.AppendLine("## Menu Rules (IMPORTANT)");
-                //        context.AppendLine($"- A menu item MUST be added to the '{layout.Name}' layout to navigate to this page");
-                //        context.AppendLine($"- Add one new navigation item to `{layout.Name}`");
-                //        context.AppendLine($"- CRITICAL: For `{layout.Name}` existing lines are immutable. Only insert new lines. No replacements, no deletions, no reformatting. Required diff shape: additions only. Do NOT perform a patch - you must INSERT.");
-                //        //context.AppendLine("- Existing menu items are protected and must remain exactly unchanged");
-                //        //context.AppendLine($"- Only additive diff is allowed to `{layout.Name}`");
-                //        //context.AppendLine("- The final diff for this file must contain additions only, with no deletions or modified existing lines");
-
-                //        var template = ExecutionContext.FindTemplateInstance(LayoutComponentHtmlTemplate.TemplateId, layout.Id);
-                //        menuTemplates.Add(template);
-                //    }
-                //}
-
-                // find the related templates for this component (e.g. HTML, SCSS, and any layout HTML templates for layouts that navigate to this component)
-                var componentHtmlTemplate = this.ExecutionContext.FindTemplateInstance(ComponentHtmlTemplate.TemplateId, Model.Id);
-                var componentScssTemplate = this.ExecutionContext.FindTemplateInstance(ComponentStyleTemplate.TemplateId, Model.Id);
-
-                // Collect related templates
-                var relatedTemplates = new[]
-                    {
-                    componentHtmlTemplate,
-                    componentScssTemplate
-                }.Where(t => t is not null)
-                    .Concat(menuTemplates.Where(t => t is not null));
-
-
-                return new TemplateAITask(this, relatedTemplates.ToArray())
-                {
-                    Type = "Implement Angular Component",
-                    Title = $"Implement Angular Component: {this.Model.Name}",
-                    Context = @$"""
-                                    ## User has modeled the following intentions:
-                                    {intention}
-                                """,
-                    Instructions =
-                        $"""Implement the {this.Model.Name} Angular {templateInstruction}component using the appropriate skill(s)."""
-                };
-            }));
         }
 
         public TypescriptClassMappingManager CreateMappingManager()
