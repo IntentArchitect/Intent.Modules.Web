@@ -2,7 +2,7 @@
 <package>
   <id>Intent.Angular</id>
   <version>5.1.0-beta.0</version>
-  <supportedClientVersions>[4.7.0-a,5.0.0)</supportedClientVersions>
+  <supportedClientVersions>[5.0.0-a,6.0.0-a)</supportedClientVersions>
   <summary>Angular automation systems</summary>
   <description>Angular automation systems</description>
   <authors>Intent Architect</authors>
@@ -131,7 +131,7 @@
   <dependencies>
     <dependency id="Intent.Code.Weaving.Html" version="1.0.0" />
     <dependency id="Intent.Code.Weaving.TypeScript" version="1.0.2" />
-    <dependency id="Intent.Common" version="3.7.2" />
+    <dependency id="Intent.Common" version="3.11.0-pre.3" />
     <dependency id="Intent.Common.Html" version="4.0.0" />
     <dependency id="Intent.Common.Types" version="3.4.0" />
     <dependency id="Intent.Common.TypeScript" version="4.1.5-pre.0" />

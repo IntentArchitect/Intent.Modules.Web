@@ -1,3 +1,7 @@
+### Version 5.1.0
+
+- Improvement: Automatic creation of AI tasks for Angular pages in-line with the release of Intent Architect 5.0.0
+
 ### Version 5.0.0
 
 - Improvement: Overhaul of the module to support Angular 18 and leverage the latest features of Intent Architect.

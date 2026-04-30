@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net8.0</TargetFramework>
-	<Version>5.0.0-beta.3</Version>
+	<Version>5.1.0-beta.0</Version>
 	<GeneratePackageOnBuild>true</GeneratePackageOnBuild>
   </PropertyGroup>
 
@@ -13,7 +13,7 @@
   </ItemGroup>
 
   <ItemGroup>
-	<PackageReference Include="Intent.Modules.Common" Version="3.11.0-pre.0" />
+	<PackageReference Include="Intent.Modules.Common" Version="3.11.0-pre.3" />
     <PackageReference Include="Intent.Modules.Common.Html" Version="4.0.0" />
     <PackageReference Include="Intent.Modules.Common.TypeScript" Version="4.1.5-pre.0" />
     <PackageReference Include="Intent.Modules.Modelers.UI" Version="1.0.5-pre.0" />

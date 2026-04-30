@@ -2,7 +2,7 @@
 <package>
   <id>Intent.AI.Angular</id>
   <version>1.0.1-beta.0</version>
-  <supportedClientVersions>[4.7.0-a,5.0.0)</supportedClientVersions>
+  <supportedClientVersions>[5.0.0-a,6.0.0-a)</supportedClientVersions>
   <summary>AI support for auto-implementing Angular Views based on UI modeling</summary>
   <description>AI support for auto-implementing Angular Views based on UI modeling</description>
   <authors>Intent Architect</authors>
