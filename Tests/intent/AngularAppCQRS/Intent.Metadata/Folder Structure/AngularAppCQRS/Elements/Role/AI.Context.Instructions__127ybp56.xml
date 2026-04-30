@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="75b4850f-12f7-453a-b261-7e504e5e5071" type="Role" typeId="8663c9f9-2852-45e7-aaa1-0883a2e6f1da">
+  <name>AI.Context.Instructions</name>
+  <display>AI.Context.Instructions</display>
+  <isAbstract>false</isAbstract>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>0da8c5db-713f-420a-a32a-2e35be077244</parentFolderId>
+  <stereotypes />
+  <metadata />
+  <childElements />
+</class>

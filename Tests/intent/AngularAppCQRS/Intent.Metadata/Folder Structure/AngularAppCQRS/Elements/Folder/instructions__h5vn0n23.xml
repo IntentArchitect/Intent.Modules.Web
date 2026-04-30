@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<class id="0da8c5db-713f-420a-a32a-2e35be077244" type="Folder" typeId="4d95d53a-8855-4f35-aa82-e312643f5c5f">
+  <name>instructions</name>
+  <display>instructions</display>
+  <isAbstract>false</isAbstract>
+  <genericTypes />
+  <isMapped>false</isMapped>
+  <parentFolderId>c4f6dad5-594e-4868-b370-90db3e4c594b</parentFolderId>
+  <stereotypes />
+  <metadata />
+  <childElements>
+    <childElement id="cdbb2835-8f1e-4c5d-a655-a841d576bfb4" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+      <name>Intent.Modules.AI.Angular.Templates.StaticContentTemplateRegistrations.AIAgentInstructionsStaticContentTemplateRegistration</name>
+      <display>Intent.Modules.AI.Angular.Templates.StaticContentTemplateRegistrations.AIAgentInstructionsStaticContentTemplateRegistration</display>
+      <externalReference>Intent.AI.Angular</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>0da8c5db-713f-420a-a32a-2e35be077244</parentFolderId>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
+      <childElements />
+    </childElement>
+  </childElements>
+</class>

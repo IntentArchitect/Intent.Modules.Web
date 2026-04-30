@@ -1,0 +1,216 @@
+<div class="pa-4">
+  <mat-card class="mb-4 ux-gradient-primary" appearance="outlined">
+    <mat-card-content class="pa-4">
+      <div class="header-content">
+        <div class="title-row">
+          <mat-icon class="mr-2">visibility</mat-icon>
+          <span class="mat-headline-5 text-white font-weight-bold">View Customer</span>
+        </div>
+        <div class="subtitle-row text-white opacity-90">
+          View the details of this customer.
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
+
+<mat-card class="ux-fade-in-up" style="animation-delay: 0.1s">
+  <mat-card-header>
+    <mat-card-title>Customer Details</mat-card-title>
+  </mat-card-header>
+
+  <mat-card-content>
+    <div *ngIf="serviceErrors.loadCustomerByIdError" class="error-container">
+      {{ serviceErrors.loadCustomerByIdError }}
+    </div>
+
+    <ng-container *ngIf="customerByIdModels; else loadingTpl">
+      <div class="grid">
+        <div class="grid-item">
+          <mat-form-field appearance="outline" class="w-100">
+            <mat-label>Name</mat-label>
+            <input matInput [value]="customerByIdModels!.name" readonly />
+            <button mat-icon-button matPrefix disabled>
+              <mat-icon>badge</mat-icon>
+            </button>
+          </mat-form-field>
+        </div>
+
+        <div class="grid-item">
+          <mat-form-field appearance="outline" class="w-100">
+            <mat-label>Surname</mat-label>
+            <input matInput [value]="customerByIdModels!.surname" readonly />
+            <button mat-icon-button matPrefix disabled>
+              <mat-icon>person</mat-icon>
+            </button>
+          </mat-form-field>
+        </div>
+
+        <div class="grid-item">
+          <mat-form-field appearance="outline" class="w-100">
+            <mat-label>Email</mat-label>
+            <input matInput [value]="customerByIdModels!.email" readonly />
+            <button mat-icon-button matPrefix disabled>
+              <mat-icon>email</mat-icon>
+            </button>
+          </mat-form-field>
+        </div>
+
+        <div class="grid-item">
+          <mat-form-field appearance="outline" class="w-100">
+            <mat-label>Category</mat-label>
+            <input matInput [value]="customerByIdModels!.categoryName" readonly />
+          </mat-form-field>
+        </div>
+
+        <div class="grid-item">
+          <mat-form-field appearance="outline" class="w-100">
+            <mat-label>Sub Category</mat-label>
+            <input matInput [value]="customerByIdModels!.subCategoryName" readonly />
+          </mat-form-field>
+        </div>
+
+        <div class="grid-item">
+          <mat-slide-toggle color="primary" [checked]="customerByIdModels!.isActive" disabled>
+            Active
+          </mat-slide-toggle>
+        </div>
+
+        <div class="grid-item-wide">
+          <mat-divider class="my-4"></mat-divider>
+          <h3 class="section-title">Preferences</h3>
+        </div>
+
+        <div class="grid-item">
+          <mat-slide-toggle
+            color="primary"
+            [checked]="customerByIdModels!.preference.newsLetter"
+            disabled
+          >
+            Subscribe to Newsletter
+          </mat-slide-toggle>
+        </div>
+
+        <div class="grid-item">
+          <mat-slide-toggle
+            color="primary"
+            [checked]="customerByIdModels!.preference.specials"
+            disabled
+          >
+            Receive Specials
+          </mat-slide-toggle>
+        </div>
+
+        <div class="grid-item-wide">
+          <mat-divider class="my-4"></mat-divider>
+          <div class="loyalty-header">
+            <h3 class="section-title">Loyalty</h3>
+            <mat-slide-toggle color="primary" [checked]="hasLoyalty" disabled>
+              Has Loyalty
+            </mat-slide-toggle>
+          </div>
+        </div>
+
+        <ng-container *ngIf="hasLoyalty && customerByIdModels?.loyalty">
+          <div class="grid-item">
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Loyalty Number</mat-label>
+              <input matInput [value]="customerByIdModels!.loyalty!.loyaltyNo" readonly />
+              <button mat-icon-button matPrefix disabled>
+                <mat-icon>card_giftcard</mat-icon>
+              </button>
+            </mat-form-field>
+          </div>
+
+          <div class="grid-item">
+            <mat-form-field appearance="outline" class="w-100">
+              <mat-label>Points</mat-label>
+              <input matInput [value]="customerByIdModels!.loyalty!.points" readonly />
+            </mat-form-field>
+          </div>
+        </ng-container>
+
+        <div class="grid-item-wide">
+          <mat-divider class="my-4"></mat-divider>
+          <h3 class="section-title">Addresses</h3>
+        </div>
+
+        <ng-container *ngFor="let addr of customerByIdModels!.addresses; let i = index">
+          <div class="grid-item-wide address-block">
+            <div class="address-grid">
+              <div class="address-item">
+                <mat-form-field appearance="outline" class="w-100">
+                  <mat-label>Type</mat-label>
+                  <input
+                    matInput
+                    [value]="addr.addressType === AddressType.Deliver ? 'Delivery' : 'Billing'"
+                    readonly
+                  />
+                </mat-form-field>
+              </div>
+
+              <div class="address-item">
+                <mat-form-field appearance="outline" class="w-100">
+                  <mat-label>Address line 1</mat-label>
+                  <input matInput [value]="addr.line1" readonly />
+                  <button mat-icon-button matPrefix disabled>
+                    <mat-icon>home</mat-icon>
+                  </button>
+                </mat-form-field>
+              </div>
+
+              <div class="address-item">
+                <mat-form-field appearance="outline" class="w-100">
+                  <mat-label>Address line 2</mat-label>
+                  <input matInput [value]="addr.line2" readonly />
+                  <button mat-icon-button matPrefix disabled>
+                    <mat-icon>home_work</mat-icon>
+                  </button>
+                </mat-form-field>
+              </div>
+
+              <div class="address-item">
+                <mat-form-field appearance="outline" class="w-100">
+                  <mat-label>City</mat-label>
+                  <input matInput [value]="addr.city" readonly />
+                  <button mat-icon-button matPrefix disabled>
+                    <mat-icon>location_city</mat-icon>
+                  </button>
+                </mat-form-field>
+              </div>
+
+              <div class="address-item">
+                <mat-form-field appearance="outline" class="w-100">
+                  <mat-label>Postal code</mat-label>
+                  <input matInput [value]="addr.postal" readonly />
+                  <button mat-icon-button matPrefix disabled>
+                    <mat-icon>local_post_office</mat-icon>
+                  </button>
+                </mat-form-field>
+              </div>
+            </div>
+          </div>
+        </ng-container>
+
+        <div class="grid-item-wide actions-row">
+          <button
+            mat-raised-button
+            color="accent"
+            type="button"
+            (click)="navigateToCustomerSearch()"
+          >
+            <mat-icon class="mr-1">arrow_back</mat-icon>
+            Back to list
+          </button>
+        </div>
+      </div>
+    </ng-container>
+
+    <ng-template #loadingTpl>
+      <div class="loading-container">
+        <mat-progress-spinner mode="indeterminate" diameter="40"></mat-progress-spinner>
+        <div class="mt-2">Loading customer...</div>
+      </div>
+    </ng-template>
+  </mat-card-content>
+</mat-card>
+</div>
