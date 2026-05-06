@@ -1,4 +1,4 @@
-import { CreateProductCommand } from './../models/dot-net-back-end-service/services/products/create-product-command';import { ProductDto } from './../models/dot-net-back-end-service/services/products/product-dto';
+import { CreateProductCommand } from './../models/dot-net-back-end-service/services/products/create-product-command'; import { ProductDto } from './../models/dot-net-back-end-service/services/products/product-dto';
 import { UpdateProductCommand } from './../models/dot-net-back-end-service/services/products/update-product-command';
 import { JsonResponse } from './../models/json-response';
 import { Injectable } from '@angular/core';
@@ -27,7 +27,7 @@ export class ProductsService {
         retry(this.retries),
         map((response: JsonResponse<string>) => {
           return response.value;
-      }));
+        }));
   }
 
   public getProductById(id: string): Observable<ProductDto> {
@@ -38,7 +38,7 @@ export class ProductsService {
         retry(this.retries),
         map((response: ProductDto) => {
           return response;
-      }));
+        }));
   }
 
   public getProducts(): Observable<ProductDto[]> {
@@ -49,14 +49,14 @@ export class ProductsService {
         retry(this.retries),
         map((response: ProductDto[]) => {
           return response;
-      }));
+        }));
   }
 
   public updateProduct(command: UpdateProductCommand): Observable<void> {
     const url = `${this.baseUrl}api/products/${encodeURIComponent(command.id)}`;
     return this.httpClient.put<void>(url, command)
       .pipe(
-        timeout(this.timeoutMs), 
+        timeout(this.timeoutMs),
         retry(this.retries)
       );
   }

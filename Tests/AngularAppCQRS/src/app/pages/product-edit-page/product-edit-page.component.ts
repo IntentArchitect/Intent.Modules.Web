@@ -67,24 +67,24 @@ export class ProductEditPageComponent implements OnInit {
   loadProductById(id: string): void {
     this.serviceErrors.loadProductByIdError = null;
     this.isLoading = true;
-    
-    this.productsService.getProductById(id)
-    .pipe(
-        finalize(() => {
-          this.isLoading = false; 
-        })
-     )
-    .subscribe({
-      next: (data) => {
-        this.productByIdModels = data;
-      },
-      error: (err) => {
-        const message = err?.error?.message || err.message || 'Unknown error';
-        this.serviceErrors.loadProductByIdError = `Failed to call service: ${message}`;
 
-        console.error('Failed to call service:', err);
-      }
-    });
+    this.productsService.getProductById(id)
+      .pipe(
+        finalize(() => {
+          this.isLoading = false;
+        })
+      )
+      .subscribe({
+        next: (data) => {
+          this.productByIdModels = data;
+        },
+        error: (err) => {
+          const message = err?.error?.message || err.message || 'Unknown error';
+          this.serviceErrors.loadProductByIdError = `Failed to call service: ${message}`;
+
+          console.error('Failed to call service:', err);
+        }
+      });
   }
 
   navigateToProductList(): void {
@@ -95,8 +95,8 @@ export class ProductEditPageComponent implements OnInit {
   updateProduct(): void {
     this.serviceErrors.updateProductError = null;
     this.isLoading = true;
-    
-    if(!this.productByIdModels) {
+
+    if (!this.productByIdModels) {
       this.serviceErrors.updateProductError = "Property 'productByIdModels' cannot be null";
       this.isLoading = false;
       return;
@@ -108,19 +108,19 @@ export class ProductEditPageComponent implements OnInit {
       sku: this.productByIdModels.sku,
       price: this.productByIdModels.price,
     })
-    .pipe(
+      .pipe(
         finalize(() => {
-          this.isLoading = false; 
+          this.isLoading = false;
         })
-    )
-    .subscribe({
-      error: (err) => {
-        const message = err?.error?.message || err.message || 'Unknown error';
-        this.serviceErrors.updateProductError = `Failed to call service: ${message}`;
+      )
+      .subscribe({
+        error: (err) => {
+          const message = err?.error?.message || err.message || 'Unknown error';
+          this.serviceErrors.updateProductError = `Failed to call service: ${message}`;
 
-        console.error('Failed to call service:', err);
-      }
-    });
+          console.error('Failed to call service:', err);
+        }
+      });
   }
 
   save(form: NgForm): void {

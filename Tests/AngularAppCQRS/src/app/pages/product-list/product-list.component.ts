@@ -27,7 +27,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
     MatIconModule,
     MatProgressSpinnerModule,
     MatTooltipModule
-  ]
+  ],
 })
 export class ProductListComponent implements OnInit {
   serviceErrors = {
@@ -53,24 +53,24 @@ export class ProductListComponent implements OnInit {
   loadProducts(): void {
     this.serviceErrors.loadProductsError = null;
     this.isLoading = true;
-    
-    this.productsService.getProducts()
-    .pipe(
-        finalize(() => {
-          this.isLoading = false; 
-        })
-     )
-    .subscribe({
-      next: (data) => {
-        this.productsModels = data;
-      },
-      error: (err) => {
-        const message = err?.error?.message || err.message || 'Unknown error';
-        this.serviceErrors.loadProductsError = `Failed to call service: ${message}`;
 
-        console.error('Failed to call service:', err);
-      }
-    });
+    this.productsService.getProducts()
+      .pipe(
+        finalize(() => {
+          this.isLoading = false;
+        })
+      )
+      .subscribe({
+        next: (data) => {
+          this.productsModels = data;
+        },
+        error: (err) => {
+          const message = err?.error?.message || err.message || 'Unknown error';
+          this.serviceErrors.loadProductsError = `Failed to call service: ${message}`;
+
+          console.error('Failed to call service:', err);
+        }
+      });
   }
 
   navigateToProductAddPage(): void {
