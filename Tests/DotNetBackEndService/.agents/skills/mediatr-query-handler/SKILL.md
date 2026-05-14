@@ -1,9 +1,9 @@
 ---
 name: mediatr-query-handler
 description: implement or revise mediatR query handler business logic in an existing handler file. use when a c# mediatR query handler has an incomplete or incorrect handle method and chatgpt should update the handle method, add private helper methods, and extend application or domain abstractions such as repositories or read services if required, while avoiding direct infrastructure dependencies in the handler.
-contentHash: C374BC8F2298E87725CB7442DC878C6A1BE138160776EF05DEB8E3D1B06C3A4D
+template-id: {TemplateId}
+contentHash: FEE1291099D8574057BF85E91BD582B25C43F970287BD59157E1ADA2FC66767E
 ---
-
 # MediatR Query Handler
 
 Implement query handler business logic inside an existing handler file. Keep handlers aligned with the modeled domain and existing query patterns while protecting architectural boundaries.
@@ -27,10 +27,10 @@ Implement query handler business logic inside an existing handler file. Keep han
 
 1. Inspect the existing handler, request, response, repository or read-service abstractions, and related domain/read-model types.
 2. Search for code usages of:
-   - similar query handlers
-   - projection or DTO mapping patterns
-   - pagination, sorting, filtering, and authorization rules
-   - repository or read-service methods serving similar data
+  - similar query handlers
+  - projection or DTO mapping patterns
+  - pagination, sorting, filtering, and authorization rules
+  - repository or read-service methods serving similar data
 3. Infer the intended read behavior from the request shape, response contract, naming, and nearby feature implementations.
 4. Implement the `Handle` method using existing query patterns first.
 5. If the handler needs missing DAL capabilities, extend the relevant repository or read abstraction in an allowed layer instead of introducing infrastructure access into the handler.
@@ -57,6 +57,46 @@ When a needed read capability is missing:
 - Prefer names such as `GetDetailsAsync`, `ListByCriteriaAsync`, `SearchActive...Async`, or `GetSummaryAsync` over schema-oriented names.
 - Do not explain or encode infrastructure implementation details in the handler.
 - Do not reference EF includes, Dapper SQL, joins, or storage-specific tuning from the handler.
+
+## AutoMapper guidance
+
+- Any read/query method, including MediatR query handlers and application services, that returns Application-layer DTOs (`*Dto`) derived from Domain entities **MUST** use AutoMapper.
+    - Do not manually construct DTOs (`new XxxDto { ... }`) on read/query paths.
+- **AutoMapper gate (absolute):** If you use any `ProjectTo*`, `Find*ProjectTo*`, `FindAllProjectTo*`, or `*ProjectToAsync*` method anywhere in the call chain, you **MUST**:
+    - **verify mapping exists** by locating `CreateMap<TDomain, TDto>()` in a `Profile` **and cite file path + excerpt**, **OR**
+    - if verification fails, **immediately create** the required AutoMapper `Profile`(s) (including **all required nested mappings**).
+    - **No assumptions allowed** (a generic projection method or other feature usage is not verification).
+- **Registration assumption (do not block on DI):**
+    - Assume AutoMapper is registered via assembly scanning, e.g.:services.AddAutoMapper(Assembly.GetExecutingAssembly());
+    - Therefore, **do not delay profile creation** because DI registration details are not currently visible.
+    - Do not modify DI registration as part of this guidance unless the user explicitly asks.
+- Manual DTO construction is allowed only when the DTO is a non-entity-shaped view model/aggregation and AutoMapper is not reasonable.
+    - This must include an inline code comment explaining why AutoMapper is not reasonable.
+    - “Mapping doesn’t exist yet” is not a valid exception.
+- If you can't find any existing mappings, create them in the same project as the services under:
+    - `./Mappings/<FeatureOrAggregate>/<Entity>DtoProfile.cs`
+    - Example: `MyApp.Application/Mappings/Invoices/InvoiceDtoProfile.cs`            
+
+**Example:**
+```csharp
+
+public class CustomerDtoProfile : Profile
+{
+    public CustomerDtoProfile()
+    {
+        CreateMap<Customer, CustomerDto>();
+    }
+}
+
+public static class CustomerDtoMappingExtensions
+{
+    public static CustomerDto MapToCustomerDto(this Customer projectFrom, IMapper mapper) =>
+        mapper.Map<CustomerDto>(projectFrom);
+
+    public static List<CustomerDto> MapToCustomerDtoList(this IEnumerable<Customer> projectFrom, IMapper mapper) =>
+        projectFrom.Select(x => x.MapToCustomerDto(mapper)).ToList();
+}
+```
 
 ## Output expectations
 
