@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package>
   <id>Intent.Angular</id>
-  <version>5.1.0-beta.0</version>
+  <version>5.1.0-pre.0</version>
   <supportedClientVersions>[5.0.0-a,6.0.0-a)</supportedClientVersions>
   <summary>Angular automation systems</summary>
   <description>Angular automation systems</description>
@@ -10,97 +10,133 @@
   <tags>Angular</tags>
   <releaseNotes>release-notes.md</releaseNotes>
   <templates>
+    <template id="Intent.Angular.AI.DialogAddEntitySkillTemplate" externalReference="cad3225b-dde2-42e0-addf-d90028055ddd">
+      <role>AI.Context.Skills</role>
+      <location></location>
+    </template>
+    <template id="Intent.Angular.AI.DialogEditEntitySkillTemplate" externalReference="1e5ef4c4-7d19-41e3-b592-2e588b86397a">
+      <role>AI.Context.Skills</role>
+      <location></location>
+    </template>
+    <template id="Intent.Angular.AI.GeneralAngularComponentInstructionsTemplate" externalReference="9b66d275-9645-4659-bf3e-c095c280f339">
+      <role>AI.Context.Instructions.Angular</role>
+      <location></location>
+    </template>
+    <template id="Intent.Angular.AI.LayoutShellSkillTemplate" externalReference="3ffa863b-886c-4c8b-946d-fbe1d208738c">
+      <role>AI.Context.Skills</role>
+      <location></location>
+    </template>
+    <template id="Intent.Angular.AI.PageAddEntitySkillTemplate" externalReference="2dcdd741-fb22-4173-a08e-36518d5e27c3">
+      <role>AI.Context.Skills</role>
+      <location></location>
+    </template>
+    <template id="Intent.Angular.AI.PageEditEntitySkillTemplate" externalReference="2ff8fba9-25e4-4c8d-92c4-90780a792422">
+      <role>AI.Context.Skills</role>
+      <location></location>
+    </template>
+    <template id="Intent.Angular.AI.PageSearchEntitySkillTemplate" externalReference="2b1e9227-5906-47db-9a16-2144cd14b05a">
+      <role>AI.Context.Skills</role>
+      <location></location>
+    </template>
+    <template id="Intent.Angular.AI.PageViewEntitySkillTemplate" externalReference="62c6c8b3-d428-4690-832b-cb6805a412cd">
+      <role>AI.Context.Skills</role>
+      <location></location>
+    </template>
     <template id="Intent.Angular.Component.ComponentHtmlTemplate" externalReference="924597b4-518c-4fc7-b51e-6da10bd24886">
-      <role>Front End</role>
+      <role>Angular</role>
       <location>src/app</location>
     </template>
     <template id="Intent.Angular.Component.ComponentStyleTemplate" externalReference="96e2396b-c1e5-486e-bd2f-3c04c8c07a01">
-      <role>Front End</role>
+      <role>Angular</role>
       <location>src/app</location>
     </template>
     <template id="Intent.Angular.Component.ComponentTypeScript" externalReference="66c56723-ba93-4a7c-92be-956f54fdb4f8">
-      <role>Front End</role>
+      <role>Angular</role>
       <location>src/app</location>
     </template>
     <template id="Intent.Angular.Component.LayoutComponentHtmlTemplate" externalReference="6052b499-5fc6-4741-ac2e-e4386ab8b128">
-      <role>Front End</role>
+      <role>Angular</role>
       <location>src/app</location>
     </template>
     <template id="Intent.Angular.Component.LayoutComponentStyleTemplate" externalReference="0d262fb2-5f86-4023-bd04-0e2e997f974b">
-      <role>Front End</role>
+      <role>Angular</role>
       <location>src/app</location>
     </template>
     <template id="Intent.Angular.Component.LayoutComponentTypescript" externalReference="8d3160db-cfcb-45df-860f-00eba74fdcc2">
-      <role>Front End</role>
+      <role>Angular</role>
       <location>src/app</location>
     </template>
     <template id="Intent.Angular.Core.AngularDotJsonFileTemplate" externalReference="bb603edc-d1a0-4fbf-bf28-97b19d93a51c">
-      <role>Front End</role>
+      <role>Angular</role>
       <location></location>
     </template>
     <template id="Intent.Angular.Core.AppComponent" externalReference="eb2568a1-e43f-480c-8136-8a9346f816f9">
-      <role>Front End</role>
+      <role>Angular</role>
       <location>src/app</location>
     </template>
     <template id="Intent.Angular.Core.AppComponentHtmlFile" externalReference="772e817a-2c28-4eb0-b53a-1fd173d2e716">
-      <role>Front End</role>
+      <role>Angular</role>
       <location>src/app</location>
     </template>
     <template id="Intent.Angular.Core.AppComponentScssFileTemplate" externalReference="9a65050d-9695-473b-944f-de372a6d3f45">
-      <role>Front End</role>
+      <role>Angular</role>
       <location>src/app</location>
     </template>
     <template id="Intent.Angular.Core.AppConfig" externalReference="f0710102-9ea8-4133-af13-9047df41a49f">
-      <role>Front End</role>
+      <role>Angular</role>
       <location>src/app</location>
     </template>
     <template id="Intent.Angular.Core.AppRoutes" externalReference="a131606e-9407-4bd0-a0ff-3d293339e71b">
-      <role>Front End</role>
+      <role>Angular</role>
       <location>src/app</location>
     </template>
     <template id="Intent.Angular.Core.IndexHtmlTemplate" externalReference="0abba320-95fe-4070-b07f-ec1f93ae2049">
-      <role>Front End</role>
+      <role>Angular</role>
       <location>src</location>
     </template>
     <template id="Intent.Angular.Core.Main" externalReference="0faf347d-bce4-4a80-a22e-de235f1ac0d6">
-      <role>Front End</role>
+      <role>Angular</role>
       <location>src</location>
     </template>
     <template id="Intent.Angular.Core.StylesDotScssFileTemplate" externalReference="51846760-db36-45d2-b14c-0d701e579189">
-      <role>Front End</role>
+      <role>Angular</role>
       <location>src</location>
     </template>
     <template id="Intent.Angular.Core.ThemeDotScssFileTemplate" externalReference="42656e45-00db-4668-b375-f7ff4f342ffc">
-      <role>Front End</role>
+      <role>Angular</role>
       <location>src</location>
     </template>
     <template id="Intent.Angular.Core.TypescriptConfigAppJsonFileTemplate" externalReference="631c3fb8-6202-4d36-bb42-93656e59b7a4">
-      <role>Front End</role>
+      <role>Angular</role>
       <location></location>
     </template>
     <template id="Intent.Angular.Core.TypescriptConfigJsonFileTemplate" externalReference="a84aedb6-be19-40e6-9c6b-3006c349ee86">
-      <role>Front End</role>
+      <role>Angular</role>
       <location></location>
     </template>
     <template id="Intent.Angular.Core.TypescriptConfigSpecJsonFileTemplate" externalReference="fe78e2d3-783d-452b-8b53-c290a08aa34c">
-      <role>Front End</role>
+      <role>Angular</role>
       <location></location>
     </template>
     <template id="Intent.Angular.Environment.Environment" externalReference="bfe9a693-aa42-4037-a473-196aafbaf797">
-      <role>Front End</role>
+      <role>Angular</role>
       <location>src/environments</location>
     </template>
     <template id="Intent.Angular.Environment.EnvironmentDotDevelopment" externalReference="a34e5b50-c6fd-4247-b5c1-35bf263d9e9b">
-      <role>Front End</role>
+      <role>Angular</role>
       <location>src/environments</location>
     </template>
     <template id="Intent.Angular.Environment.EnvironmentTypes" externalReference="d0ddc42a-1425-4370-9168-29b1c7458736">
-      <role>Front End</role>
+      <role>Angular</role>
       <location>src/environments</location>
     </template>
     <template id="Intent.Angular.Shared.IntentDecorators" externalReference="48c256b1-17b3-43fa-a650-3d50bd71668c">
-      <role>Front End</role>
+      <role>Angular</role>
       <location>src/app/intent</location>
+    </template>
+    <template id="Intent.Modules.Angular.Templates.AI.StaticContentTemplateRegistrations.AIAgentSkillsStaticContentTemplateRegistration" externalReference="a31da1b9-018f-40b0-a097-743d8e89c238">
+      <role>AI.Context.Skills.Angular</role>
+      <location></location>
     </template>
     <template id="Intent.Modules.Angular.Templates.StaticContentTemplateRegistrations.InitialFilesStaticContentTemplateRegistration" externalReference="0384b5c0-a591-46f4-bb2f-1b7a73d587b2">
       <role>Front End</role>
@@ -131,17 +167,17 @@
   <dependencies>
     <dependency id="Intent.Code.Weaving.Html" version="1.0.0" />
     <dependency id="Intent.Code.Weaving.TypeScript" version="1.0.2" />
-    <dependency id="Intent.Common" version="3.11.0-pre.3" />
+    <dependency id="Intent.Common" version="3.11.1-pre.0" />
     <dependency id="Intent.Common.Html" version="4.0.0" />
     <dependency id="Intent.Common.Types" version="3.4.0" />
-    <dependency id="Intent.Common.TypeScript" version="4.1.5-pre.0" />
+    <dependency id="Intent.Common.TypeScript" version="4.1.6-pre.0" />
     <dependency id="Intent.Modelers.UI" version="1.0.5-pre.0" />
     <dependency id="Intent.Npm" version="4.0.1-pre.0" />
   </dependencies>
   <interoperability>
     <detect id="Intent.Angular.Components.Material">
       <install>
-        <package id="Intent.Angular.Components.Material" version="1.0.0-beta.2" />
+        <package id="Intent.Angular.Components.Material" version="1.0.0-pre.0" />
       </install>
     </detect>
   </interoperability>

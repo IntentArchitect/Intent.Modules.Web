@@ -1,6 +1,8 @@
 ### Version 5.1.0
 
-- Improvement: Automatic creation of AI tasks for Angular pages in-line with the release of Intent Architect 5.0.0
+- Improvement: Converted template and markdown files to use skills.
+- Improvement: AI Context improved to provide more consistant and better AI results.
+- Improvement: Code builders updated to generate more consistant code, specifically around Intent Managed decorators
 
 ### Version 5.0.0
 

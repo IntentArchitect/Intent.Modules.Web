@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <package>
   <id>Intent.Angular.HttpClients</id>
-  <version>1.0.0-beta.0</version>
-  <supportedClientVersions>[4.5.21-a,5.0.0)</supportedClientVersions>
+  <version>1.0.0-pre.0</version>
+  <supportedClientVersions>[5.0.0-a,6.0.0-a)</supportedClientVersions>
   <summary>Introduces an HTTP Client implementation for Angular applications that can make service calls against a referenced service Restful API.</summary>
   <description>Introduces an HTTP Client implementation for Angular applications that can make service calls against a referenced service Restful API.</description>
   <authors>Intent Architect</authors>
@@ -11,23 +11,23 @@
   <releaseNotes>release-notes.md</releaseNotes>
   <templates>
     <template id="Intent.Angular.HttpClients.DtoContract" externalReference="884d5643-af1f-4a4c-a387-481f7362c628">
-      <role>Front End</role>
+      <role>Angular</role>
       <location>src/app/service-proxies/models</location>
     </template>
     <template id="Intent.Angular.HttpClients.EnumContract" externalReference="9ca2ac42-c725-4b5c-beb3-272afe4ac1a7">
-      <role>Front End</role>
+      <role>Angular</role>
       <location>src/app/service-proxies/models</location>
     </template>
     <template id="Intent.Angular.HttpClients.HttpServiceProxy" externalReference="51ad7798-5b63-4e2f-8fa9-84cceebff21d">
-      <role>Front End</role>
+      <role>Angular</role>
       <location>src/app/service-proxies</location>
     </template>
     <template id="Intent.Angular.HttpClients.JsonResponse" externalReference="87793f43-db00-4ce8-a28b-defeeef4d267">
-      <role>Front End</role>
+      <role>Angular</role>
       <location>src/app/service-proxies/models</location>
     </template>
     <template id="Intent.Angular.HttpClients.PagedResult" externalReference="e2fde9ee-588d-4f30-a1be-17c5a912c15a">
-      <role>Front End</role>
+      <role>Angular</role>
       <location>src/app/service-proxies/models</location>
     </template>
   </templates>
@@ -41,14 +41,14 @@
     <dependency id="Intent.Common" version="3.7.2" />
     <dependency id="Intent.Common.Types" version="4.1.2" />
     <dependency id="Intent.Common.TypeScript" version="4.0.0" />
-    <dependency id="Intent.Metadata.Security" version="1.1.2" />
-    <dependency id="Intent.Metadata.WebApi" version="4.7.17" />
-    <dependency id="Intent.Modelers.ServiceProxies" version="5.2.3" metadataOnly="true" />
-    <dependency id="Intent.Modelers.Services" version="4.0.8" metadataOnly="true" />
-    <dependency id="Intent.Modelers.Services.CQRS" version="6.0.4" metadataOnly="true" />
-    <dependency id="Intent.Modelers.Types.ServiceProxies" version="5.5.3" />
+    <dependency id="Intent.Metadata.Security" version="1.1.2" includeAssets="factoryExtensions" />
+    <dependency id="Intent.Metadata.WebApi" version="4.7.17" includeAssets="factoryExtensions" />
+    <dependency id="Intent.Modelers.ServiceProxies" version="5.2.3" includeAssets="factoryExtensions" />
+    <dependency id="Intent.Modelers.Services" version="4.0.8" includeAssets="factoryExtensions" />
+    <dependency id="Intent.Modelers.Services.CQRS" version="6.0.4" includeAssets="factoryExtensions" />
+    <dependency id="Intent.Modelers.Types.ServiceProxies" version="5.5.3" includeAssets="factoryExtensions" />
     <dependency id="Intent.Modelers.UI" version="1.0.5-pre.0" />
-    <dependency id="Intent.Modelers.UI.ServiceProxies" version="1.0.0" />
+    <dependency id="Intent.Modelers.UI.ServiceProxies" version="1.0.0" includeAssets="factoryExtensions" />
   </dependencies>
   <files>
     <file src="$outDir$/$id$.dll" />

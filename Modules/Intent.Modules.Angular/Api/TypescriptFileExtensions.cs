@@ -67,7 +67,7 @@ public static class TypescriptFileExtensions
             @class.AddField("serviceErrors", field =>
             {
                 field.WithDefaultValue(@$"{{
-    {methodName}Error: null as string | null
+    {methodName}Error: null as string | null,
   }}");
             });
         }
@@ -169,7 +169,7 @@ public static class TypescriptFileExtensions
     .pipe(
         finalize(() => {{
           this.isLoading = false; 
-        }})
+        }}),
      )
     .subscribe({{{(!string.IsNullOrWhiteSpace(responseText) ? $@"
       next: (data) => {{
@@ -189,7 +189,7 @@ public static class TypescriptFileExtensions
     .pipe(
       finalize(() => {{
         this.isLoading = false; 
-      }})
+      }}),
     ).subscribe({{");
 
                 if(responses.Any())
@@ -218,7 +218,7 @@ public static class TypescriptFileExtensions
     .pipe(
         finalize(() => {{
           this.isLoading = false; 
-        }})
+        }}),
     )
     .subscribe({{
       {GetErrorBlock(currentMethodName)}
@@ -242,7 +242,7 @@ public static class TypescriptFileExtensions
         this.serviceErrors.{methodName}Error = `Failed to call service: ${{message}}`;
 
         console.error('Failed to call service:', err);
-      }}";
+      }},";
     }
 }
 

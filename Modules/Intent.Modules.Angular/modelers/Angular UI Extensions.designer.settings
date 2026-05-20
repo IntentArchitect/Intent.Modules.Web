@@ -2,6 +2,14 @@
 <settings version="3.1.1">
   <id>8d5ad9bc-b284-4836-b608-2f7893f05470</id>
   <name>Angular UI Extensions</name>
+  <rules>### Angular Modeling Rules
+1. When creating AI tasks for a grid/list/search page, all fields specified to be rendered in the grid/table, should be human readable (no Ids), unless specifically told otherwise
+2. When create grid/list/search page, you MUST confirm with the user if the page should be navigable from the main menu or not.
+3. You must NEVER try model individual items on the page (e.g. Tables, buttons etc). The modelling is just for intent, and not details.
+4. ALWAYS set the route to a valid value (non-blank) unless specifically told otherwise. If unsure of a valid route, always ask the user.
+5. Navigation between pages should AWLAYS be modelled in both directions unless explicitly told otherwise. This does NOT apply when navigating from the main layout, this should always be one-directional
+6.  Related entities
+When a command has a SomethingId property, always add a call from the page to a query returning SomethingDto[*] (prefer GetSomethingsQuery; fallback to GetSomethingTypesQuery), unless the user says the value is not user-selectable. If unsure, confirm with the user whether the property is a lookup that requires user selection or a hidden field that gets set to a default value.</rules>
   <designerReferences />
   <packageSettings />
   <packageExtensions />

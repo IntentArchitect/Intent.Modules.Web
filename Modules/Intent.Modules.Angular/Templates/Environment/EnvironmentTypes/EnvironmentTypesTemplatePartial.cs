@@ -31,12 +31,12 @@ namespace Intent.Modules.Angular.Templates.Environment.EnvironmentTypes
                 .AddInterface("AppEnvironment", @interface =>
                 {
                     @interface.WithComments("// interface for all environment configuration");
-                    @interface.WithComments("//@IntentMerge()");
+                    @interface.WithComments("// @IntentMerge()");
                     @interface.Export();
 
                 });
 
-            TypescriptFile.WithComments("//@IntentMerge()").AfterBuild(file =>
+            TypescriptFile.IntentManagedMerge().AfterBuild(file =>
             {
                 AddRegistrationRequestTypes(file);
             });

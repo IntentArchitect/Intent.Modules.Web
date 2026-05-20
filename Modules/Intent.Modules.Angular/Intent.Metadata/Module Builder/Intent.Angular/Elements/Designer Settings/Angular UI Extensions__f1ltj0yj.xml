@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <class id="8d5ad9bc-b284-4836-b608-2f7893f05470" type="Designer Settings" typeId="7a6411a8-ffef-4209-91c6-8d12755a806a">
+  <comment />
   <name>Angular UI Extensions</name>
   <display>Angular UI Extensions</display>
   <isAbstract>false</isAbstract>
@@ -17,6 +18,14 @@
       <properties>
         <property name="9566aa04-ab84-4fbc-b039-6e676159ed82" display="Is Reference" value="false" isActive="true" />
         <property name="fdbbd211-a162-4f29-bcdb-1250309d8aef" display="Extend Designers" value="[&quot;f492faed-0665-4513-9853-5a230721786f&quot;]" isActive="true" />
+      </properties>
+    </stereotype>
+    <stereotype stereotypeDefinitionId="14441454-bfe0-4d5d-8dba-d86d74d33a3b" name="AI Settings">
+      <addedByDefault>false</addedByDefault>
+      <definitionPackageName>Intent.ModuleBuilder</definitionPackageName>
+      <definitionPackageId>9972b2a9-b749-4bba-b5c8-824bf694c6ef</definitionPackageId>
+      <properties>
+        <property name="17477a69-d9a5-4251-9329-0963e8121b5f" display="Rules" value="### Angular Modeling Rules&#xA;1. When creating AI tasks for a grid/list/search page, all fields specified to be rendered in the grid/table, should be human readable (no Ids), unless specifically told otherwise&#xA;2. When create grid/list/search page, you MUST confirm with the user if the page should be navigable from the main menu or not.&#xA;3. You must NEVER try model individual items on the page (e.g. Tables, buttons etc). The modelling is just for intent, and not details.&#xA;4. ALWAYS set the route to a valid value (non-blank) unless specifically told otherwise. If unsure of a valid route, always ask the user.&#xA;5. Navigation between pages should AWLAYS be modelled in both directions unless explicitly told otherwise. This does NOT apply when navigating from the main layout, this should always be one-directional&#xA;6.  Related entities&#xA;When a command has a SomethingId property, always add a call from the page to a query returning SomethingDto[*] (prefer GetSomethingsQuery; fallback to GetSomethingTypesQuery), unless the user says the value is not user-selectable. If unsure, confirm with the user whether the property is a lookup that requires user selection or a hidden field that gets set to a default value." isActive="true" />
       </properties>
     </stereotype>
   </stereotypes>

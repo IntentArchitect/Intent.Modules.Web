@@ -204,7 +204,7 @@ public abstract partial class EnvironmentTemplateBase : TypeScriptTemplateBase<o
 
         if (_environmentVariables.Count == 0)
         {
-            sb.AppendLine($"export const environment : AppEnvironment = {{ }};");
+            sb.AppendLine($"export const environment: AppEnvironment = {{}};");
             return sb.ToString();
         }
 
@@ -212,7 +212,7 @@ public abstract partial class EnvironmentTemplateBase : TypeScriptTemplateBase<o
             .Where(env => !string.IsNullOrWhiteSpace(env.EnvironmentName))
             .Select(env => $"{env.EnvironmentName}: {GetDefaultValue(env)}"));
 
-        sb.AppendLine($@"export const environment : AppEnvironment = {{
+        sb.AppendLine($@"export const environment: AppEnvironment = {{
   {entries}
 }};");
 

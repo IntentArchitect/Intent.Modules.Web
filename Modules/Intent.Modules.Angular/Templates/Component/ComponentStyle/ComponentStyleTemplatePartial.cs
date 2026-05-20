@@ -54,7 +54,13 @@ namespace Intent.Modules.Angular.Templates.Component.ComponentStyle
                 relativeLocation: $"{string.Join("/", Model.GetParentFolderNames().Select(f => f.ToKebabCase()))}/{ComponentName.ToKebabCase()}",
                 fileExtension: "scss",
                 overwriteBehaviour: OverwriteBehaviour.OverwriteDisabled
-            );
+            )
+            .WithAISummary("Implementation of the styling for the " + Model.Name + " component/page.")
+            .WithAIContext(
+                """
+                - Search for and use any appropriate skills when implementing or modifying this file. If you find a qualifying skill, you MUST follow its instructions, unless specifically instructed otherwise.
+                - Treat 'use an applicable skill' as a hard requirement; do not proceed with implementation until you’ve either used a skill or explicitly confirmed with the user no skill applies.
+                """);
         }
     }
 }

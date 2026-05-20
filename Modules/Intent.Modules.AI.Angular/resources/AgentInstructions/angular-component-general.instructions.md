@@ -46,6 +46,49 @@ You are a senior Angular engineer. Build modern Angular Material UIs that compil
 - If a new UI action is needed, call an existing method or add a thin wrapper around it instead of changing service/navigation logic.
 - Load required initial data in `ngOnInit()`, preferably by calling existing load methods. If needed, add new load methods rather than editing service methods.
 
+#### Chained method invocations
+When modifying an existing chained method statement (fluent API), any newly added chained invocation must be explicitly annotated so Intent does not treat it as an untracked structural change.
+Rule:
+- If you add a new call in an existing chain (e.g. adding next: inside `subscribe({...}`) is not a new invocation, but adding `.pipe(...)`, `.subscribe(...)`, `.catchError(...)`, `.tap(...)`, etc. is), then insert `// @IntentIgnore` immediately before the newly-added chained invocation line.
+Examples
+
+Adding a new chained call (`.pipe(...)`)
+``` typescript
+this.service.doWork()
+	// @IntentIgnore
+	.pipe(finalize(() => this.isLoading = false))
+	.subscribe(...);
+```
+
+Adding `.subscribe(...)` to an existing chain
+``` typescript
+this.service.doWork()
+    // @IntentIgnore
+    .subscribe({
+        next: () => this.onSuccess(),
+        error: (err) => this.onError(err),
+    });
+```
+
+#### Intent annotations for object changes
+
+When modifying an existing object, eg the `subscribe({ ... })` call:
+- If you add any new handler property inside the object literal (`next`, `error`, `complete`) that did not exist before, you must add `// @IntentIgnore `immediately above the new handler property line.
+
+Example (adding `next`):
+``` typescript
+this.service.doWork()
+    .subscribe({
+        // @IntentIgnore
+        next: () => {
+            this.onSuccess();
+        },
+        error: (err) => this.onError(err),
+    });
+```
+- If you only change the body of an existing handler (`error: (...) => { ... }`) and do not add/remove handler properties, no `// @IntentIgnore` is required.
+- This rule is in addition to the existing rule for adding new chained invocations (`.pipe(...)`, `.subscribe(...)`, etc.), which still requires `// @IntentIgnore` above the newly-added chained line.
+
 ### Layout
 - Use the sample template as the layout blueprint.
 - Preserve the main structure: hero card, then main card with a `.filter-grid`, a `.button-row` containing both Search and Add, then the table and paginator.

@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <class id="bb603edc-d1a0-4fbf-bf28-97b19d93a51c" type="File Template" typeId="43eae4bd-4613-4d15-88ac-52b7e743b7b2">
+  <comment />
   <name>AngularDotJsonFileTemplate</name>
   <display>AngularDotJsonFileTemplate: Single File</display>
   <isAbstract>false</isAbstract>
@@ -40,7 +41,7 @@
         <property name="00d3537c-f71f-4450-8cc8-d9e87c12baee" display="Designer" isActive="true" />
         <property name="75b89367-1808-43f8-9f18-785915ec1630" display="Model Type" isActive="true" />
         <property name="d1e89313-0647-48bd-81da-b04b644db475" display="Model Name" value="object" isActive="false" />
-        <property name="f1d88e59-1ca6-426e-b52d-42f3467e6bd5" display="Role" value="Front End" isActive="true" />
+        <property name="f1d88e59-1ca6-426e-b52d-42f3467e6bd5" display="Role" value="Angular" isActive="true" />
         <property name="1ac0fa39-ecea-48f8-92e4-41616a639586" display="Default Location" isActive="true" />
       </properties>
     </stereotype>

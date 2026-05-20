@@ -44,7 +44,7 @@ namespace Intent.Modules.Angular.Templates.Component.ComponentTypeScript
             AddTypeSource(TemplateId);
 
             TypescriptFile = new TypescriptFile(this.GetFolderPath(), this)
-                .WithComments("//@IntentMergeFile()");
+                .IntentManagedMerge();
 
             AddModelDefinitions(model);
 
@@ -74,7 +74,7 @@ namespace Intent.Modules.Angular.Templates.Component.ComponentTypeScript
 
                 @class.AddConstructor(ctor =>
                 {
-                    ctor.WithComments("//@IntentMerge()");
+                    ctor.IntentManagedMerge();
                 });
 
                 foreach (var operation in model.Operations)
@@ -438,7 +438,13 @@ namespace Intent.Modules.Angular.Templates.Component.ComponentTypeScript
                 fileName: $"{ComponentName.ToKebabCase()}.component",
                 relativeLocation: $"{string.Join("/", Model.GetParentFolderNames().Select(f => f.ToKebabCase()))}/{ComponentName.ToKebabCase()}",
                 className: $"{ComponentName}Component"
-            );
+            )
+            .WithAISummary("Implementation of the typescript codebehind for the " + Model.Name + " component/page.")
+            .WithAIContext(
+                """
+                - Search for and use any appropriate skills when implementing or modiying this file. If you find a qualifying skill, you MUST follow its instructions, unless specifically instructed otherwise.
+                - Treat 'use an applicable skill' as a hard requirement; do not proceed with implementation until you’ve either used a skill or explicitly confirmed no skill applies.
+                """);
         }
 
         [IntentManaged(Mode.Fully)]

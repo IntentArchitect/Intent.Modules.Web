@@ -58,7 +58,7 @@ namespace Intent.Modules.Angular.FactoryExtensions
 
         private IEnumerable<IAITask> GetAngularComponentImplementationTasks(IChange[] changes, IApplication application)
         {
-            var relevantChangeTypes = new ChangeType[] { ChangeType.Create, ChangeType.Overwrite };
+            var relevantChangeTypes = new ChangeType[] { ChangeType.Create };
 
             var handlerChanges = changes.Where(c =>
                 c.Template?.Id == ComponentTypeScriptTemplate.TemplateId &&
@@ -85,6 +85,7 @@ namespace Intent.Modules.Angular.FactoryExtensions
             templateInstructionExtension += Instructions;
 
             AddNavigatesToContext(model, intention);
+            var fromTemplates = AddNavigatesFromContext(model, intention, template);
             AddShowDialogContext(model, intention);
 
             // get the html and stylesheet for the component
@@ -98,6 +99,8 @@ namespace Intent.Modules.Angular.FactoryExtensions
             }
             .Where(t => t is not null)
             .Concat(LayoutTemplates
+                .Where(t => t is not null))
+            .Concat(fromTemplates
                 .Where(t => t is not null));
 
             return new TemplateAITask(template, [.. relatedTemplates])
@@ -119,7 +122,27 @@ namespace Intent.Modules.Angular.FactoryExtensions
             foreach (var navigation in model.InternalElement.AssociatedElements.Where(e => e.IsNavigationEndModel() && e.IsNavigable))
             {
                 var navEndModel = navigation.AsNavigationEndModel();
-                intention.AppendLine($"- This pages navigates to the {navEndModel.TypeReference.Element.Name} component");
+                intention.AppendLine($"- This page navigates to the {navEndModel.TypeReference.Element.Name} component");
+            }
+        }
+
+        private static IEnumerable<ITemplate> AddNavigatesFromContext(ComponentModel model, StringBuilder intention, ITypescriptFileBuilderTemplate template)
+        {
+            foreach (var navigation in model.InternalElement.AssociatedElements.Where(e => e.IsNavigationSourceEndModel() && e.IsNavigable))
+            {
+                var navEndModel = navigation.AsNavigationEndModel();
+                intention.AppendLine($"- This page is navigates to from the {navEndModel.TypeReference.Element.Name} component. You MUST read the {navEndModel.TypeReference.Element.Name} component (HTML and ts file) and update it toensure  it has the required implementation (buttons, actions etc) to navigate to this component. If it does not contain the necessary implementation, you MUST update it accordingly.");
+
+                if (navEndModel.TypeReference.Element.IsComponentModel())
+                {
+                    var fromModel = navEndModel.TypeReference.Element.AsComponentModel();
+                    var fromHtmlPage = template.ExecutionContext.FindTemplateInstance(ComponentHtmlTemplate.TemplateId, fromModel.Id);
+
+                    if (fromHtmlPage is not null)
+                    {
+                        yield return fromHtmlPage;
+                    }
+                }
             }
         }
 

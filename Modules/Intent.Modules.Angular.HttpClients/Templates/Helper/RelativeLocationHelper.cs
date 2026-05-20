@@ -53,7 +53,28 @@ public static class RelativeLocationHelper
             packageParts.Dequeue();
         }
 
-        return packageParts;
+        var result = new List<string>();
+
+        if (packageParts.Count > 0)
+        {
+            var lastPart = packageParts.Last();
+            if (lastPart.Equals("services", StringComparison.OrdinalIgnoreCase) ||
+                lastPart.Equals("domain", StringComparison.OrdinalIgnoreCase))
+            {
+                var remainingParts = packageParts.SkipLast(1).ToList();
+                if (remainingParts.Count > 0)
+                {
+                    result.Add(string.Join("-", remainingParts));
+                }
+                result.Add("services");
+            }
+            else
+            {
+                result.Add(string.Join("-", packageParts));
+            }
+        }
+
+        return result;
     }
 
     private static IEnumerable<string> GetParentFolders(IHasFolder hasFolder) => hasFolder
