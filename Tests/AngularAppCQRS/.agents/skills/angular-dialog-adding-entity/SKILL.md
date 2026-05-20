@@ -1,15 +1,17 @@
 ---
 name: angular-dialog-adding-entity
 description: Creates Angular add/create entity dialog using Angular Material and template-driven forms, strictly preserving existing TypeScript service and payload behavior while wiring a valid Save flow and model-bound UI.
-paths:
+template-id: Intent.Angular.AI.DialogAddEntitySkillTemplate
+paths: 
+applyTo: 
   - "**/*.component.ts"
   - "**/*.component.html"
-contentHash: EB8D6737AB503440390B98984C3EDA343EFAB828CBC45B6CE7EAEEF29FF9E2AC
+- "**/*.component.scss"
+contentHash: 7A56DDCE73FB4A28E01321A6743BEB78C6E6B341C4E4142FB755A64592DD6940
 ---
-
 ## MANDATORY: Read Samples Before Implementation
 
-**STOP** - You MUST read ALL sample files in the SAME folder as this SKILL.md before writing ANY code:
+NB. **STOP** - You MUST read ALL sample files in the SAME folder as this SKILL.md before writing ANY code:
 
 1. `add-entity-dialog-sample.ts`
 2. `add-entity-dialog-sample.html`
@@ -17,18 +19,17 @@ contentHash: EB8D6737AB503440390B98984C3EDA343EFAB828CBC45B6CE7EAEEF29FF9E2AC
 
 Then read target component `.ts` file and related project files (models, enums, lookups, services, styles).
 
-**If any sample file cannot be accessed**: Stop immediately, confirm SKILL.md folder location, retry from that location. If still inaccessible, report which file and ask user. Do NOT proceed with partial implementation or approximation.
-
----
+If any sample file cannot be accessed: STOP immediately, confirm SKILL.md folder location, retry from that location. If still inaccessible, report which file and ask user. Do NOT proceed with partial implementation or approximation.
 
 ## Preserve Existing Implementation
 
-**Use for**: Add/Create entity **dialogs** in Angular with Angular Material  
-**Do NOT use for**: Full-page forms, search/list pages, or non-Angular projects  
-**Source of truth**: Existing component TS file defines service calls and model structure  
-**This is a DIALOG**: No navigation�use `dialogRef.close()` instead
+- **Use for**: Add/Create entity **dialogs** in Angular with Angular Material  
+- **Do NOT use for**: Full-page forms, search/list pages, or non-Angular projects  
+- **Source of truth**: Existing component TS file defines service calls and model structure  
+- **This is a DIALOG**: No navigation—use `dialogRef.close()` instead
 
 ### You MUST NOT:
+
 - Modify existing backend methods (e.g., `createEntity()`)
 - Change payload shape sent to backend
 - Add, rename, or remove model properties
@@ -36,42 +37,41 @@ Then read target component `.ts` file and related project files (models, enums, 
 - Rewrite existing TS functionality
 - Add navigation logic
 
----
-
 ## 1. Dialog Structure
 
-**Dialog setup**:
+NB. **Dialog setup**:
+
 - Inject `MatDialogRef<COMPONENT_NAME>` in constructor: `constructor(private dialogRef: MatDialogRef<COMPONENT_NAME>, ...) { }`
 - If input data needed: Also inject `@Inject(MAT_DIALOG_DATA) public data: SomeDataType`
 
-**Form**: Build from existing model in component TS. Bind to `model` using `[(ngModel)]`. Use only existing properties�no additions, renames, or removals.
+NB. **Form**: Build from existing model in component TS. Bind to `model` using `[(ngModel)]`. Use only existing properties—no additions, renames, or removals.
 
-**Nullable objects** (e.g., `loyalty: X | null`):
+NB. **Nullable objects** (e.g., `loyalty: X | null`):
+
 - Toggle/checkbox controls section (e.g., "Has Loyalty")
 - Nested fields render only when toggle ON
 - Toggle OFF ? null; toggle ON ? initialize if null
 - Do NOT render as required/visible unless: explicit required validation, payload always sends it, or required validators on nested fields with always non-null object
 
----
-
 ## 2. Save & Cancel Methods (CRITICAL)
 
-**`save()` or `onSave(form: NgForm)`**:
+`save()` or `onSave(form: NgForm)`:
+
 1. Validate form (check `form.invalid` if using `NgForm`)
 2. Call existing service method (e.g., `createEntity()`) without modification
 3. On success: `this.dialogRef.close(true)`
 4. On error: Set `serviceErrors.*`, keep dialog open (do NOT close)
 
-**`cancel()`**:
+`cancel()`:
+
 - ONLY calls `this.dialogRef.close(null)` or `this.dialogRef.close(false)`
 - Do NOT reset model, call services, or add other logic
 
-**Template bindings**:
+Template bindings:
+
 - Save button: `(click)="save()"` or `type="submit"` with `(ngSubmit)="onSave(form)"`
 - Cancel button: `(click)="cancel()"`
 - Do NOT call service methods directly (e.g., `(click)="createCustomer()"`)
-
----
 
 ## 3. Map Properties to Controls
 
@@ -83,19 +83,19 @@ Then read target component `.ts` file and related project files (models, enums, 
 | Lookup | `<mat-select>` from **real** services only |
 | Array | Repeatable Material blocks |
 
-**Enum Rules**:
+Enum Rules:
+
 1. **Locate**: Use import path in component or code search `export enum AddressType`
 2. **Read**: Extract exact member names/values
 3. **Use**: Default in TS (`AddressType.Delivery`), HTML (`<mat-option [value]="AddressType.Delivery">`)
 4. **Forbidden**: Assume member names from sample. Target project enum is source of truth.
 
----
-
 ## 4. Template-Driven Forms & Validation
 
 Use `<form #form="ngForm" novalidate>` wrapping dialog content and actions.
 
-**Required fields need ALL**:
+Required fields need ALL:
+
 ```html
 <mat-form-field>
     <mat-label>Name</mat-label>
@@ -106,23 +106,21 @@ Use `<form #form="ngForm" novalidate>` wrapping dialog content and actions.
 </mat-form-field>
 ```
 
-**Form state**:
+Form state:
+
 - Use `(ngSubmit)="onSave(form)"` (preferred) or `(click)="onSave(form)"`
 - In `onSave(form)`: If `form.invalid`, call `form.control.markAllAsTouched()` and return (no service call)
 - Save button disabled when `form.invalid || isLoading`:
+
 ```html
 <button mat-raised-button color="primary" type="submit" [disabled]="form.invalid || isLoading">Save</button>
 ```
-
----
 
 ## 5. Child Collections
 
 Render in repeatable Material blocks.
 
-**Buttons**: Add only if `addX()` exists in TS. Remove only if `removeX()` exists in TS. Do NOT invent.
-
----
+Buttons: Add only if `addX()` exists in TS. Remove only if `removeX()` exists in TS. Do NOT invent.
 
 ## 6. Styling
 
@@ -132,30 +130,32 @@ Render in repeatable Material blocks.
 - **NEVER modify** `styles.scss`/`theme.scss` (add only if reusable across pages)
 - **Component SCSS required**: Add-entity-dialog sample needs component SCSS for layout. Copy/adapt unless exact styles exist globally.
 
----
-
 ## Definition of Done
 
-**Template compilation**:
+Template compilation:
+
 - [ ] All bound properties exist in TS (`model.*`, `isLoading`, `serviceErrors.*`, lookups)
 - [ ] All methods exist (`save(form)`/`onSave(form)`, `cancel()`, `addX()`, `removeX()`)
 - [ ] Directives valid (`*ngIf`, `*ngFor`, `(click)`)
 - [ ] `MatDialogRef<COMPONENT_NAME>` injected in constructor
 - [ ] If needed, `MAT_DIALOG_DATA` properly injected
 
-**Form fidelity**:
+Form fidelity:
+
 - [ ] Controls bind only to existing model properties
 - [ ] No properties renamed/removed/retyped
 - [ ] Controls follow section 3 mapping
 
-**Template-driven forms**:
+Template-driven forms:
+
 - [ ] Uses `<form #form="ngForm" novalidate>`
 - [ ] Every `[(ngModel)]` has unique `name`
 - [ ] Required fields: `required`, `name`, `#ctrl="ngModel"`, `<mat-error>` shown when `ctrl.invalid && (ctrl.touched || form.submitted)`
 - [ ] Save disabled when `form.invalid || isLoading`
 - [ ] `onSave(form)` prevents call when invalid
 
-**Dialog behavior**:
+Dialog behavior:
+
 - [ ] Injects `MatDialogRef<COMPONENT_NAME>`
 - [ ] `save()`/`onSave(form)` calls `dialogRef.close(true)` on success
 - [ ] `save()`/`onSave(form)` does NOT close on error
@@ -165,32 +165,38 @@ Render in repeatable Material blocks.
 - [ ] Cancel button calls `cancel()`
 - [ ] No navigation logic
 
-**Save flow**:
+Save flow:
+
 - [ ] Save calls `save(form)`/`onSave(form)`, not service directly
 - [ ] Backend methods (e.g., `createEntity()`) not modified
 - [ ] Payload matches existing TS exactly
 
-**Nullable objects**:
+Nullable objects:
+
 - [ ] Toggle/checkbox controls visibility
 - [ ] Toggle OFF ? null; ON ? initialize
 - [ ] Nested fields render only when enabled
 - [ ] No unsafe `model.obj!.field`
 
-**Child collections**:
+Child collections:
+
 - [ ] Add buttons only if `addX()` in TS
 - [ ] Remove buttons only if `removeX()` in TS
 
-**Enums**:
+Enums:
+
 - [ ] Options match real enum members
 - [ ] No names from sample without verification
 - [ ] Defaults compile against actual type
 
-**Styling**:
+Styling:
+
 - [ ] No modifications to `styles.scss`/`theme.scss`
 - [ ] Component SCSS minimal, prefers global utilities
 - [ ] Component SCSS adapted from sample when needed
 
 ### 1. Dialog-specific component structure
+
 - This component is a Material dialog, **not a page**. Use the standard Angular Material dialog pattern.
 - The component must inject `MatDialogRef<COMPONENT_NAME>` in the constructor:
   - `constructor(private dialogRef: MatDialogRef<COMPONENT_NAME>, ...) { }`
@@ -201,20 +207,24 @@ Render in repeatable Material blocks.
 - Do not rename or remove properties.
 
 ### 2. Save and Cancel methods (IMPORTANT)
+
 Implement two top-level methods for the template to use:
 
-**`save()` or `onSave(form: NgForm)` method:**
+`save()` or `onSave(form: NgForm)` method:
+
 - Validates the form (if using `onSave(form: NgForm)`, check `form.invalid`)
 - Calls the existing service method (e.g. `createCustomer()` or `updateCustomer()`)
 - On success, calls `this.dialogRef.close(true)` to close the dialog and signal success
 - On error, sets an error message (e.g., `serviceErrors.*`) but does NOT close the dialog
 
-**`cancel()` method:**
+`cancel()` method:
+
 - Calls `this.dialogRef.close(null)` or `this.dialogRef.close(false)` to close the dialog without saving
 - Do NOT reset the model or call any services here
 - (IMPORTANT) Never treat `cancel()` as a "reset the form" method. It must only close the dialog.
 
-**Template binding rules:**
+Template binding rules:
+
 - (IMPORTANT) In the HTML, bind the action buttons to `save()` (or `onSave(form)`) and `cancel()`, NOT to raw service methods:
   - Save button: `(click)="save()"` or `type="submit"` with `(ngSubmit)="onSave(form)"`
   - Cancel button: `(click)="cancel()"`
@@ -222,16 +232,17 @@ Implement two top-level methods for the template to use:
 - (IMPORTANT) After a successful save, always close the dialog via `dialogRef.close(...)` so the caller can react (e.g. refresh the list).
 
 ### 3. Map property types to correct Angular Material controls
+
 - For each property:
-	- Strings -> `<input matInput>`
-	- Booleans -> `<mat-slide-toggle>`
-	- Enums -> `<mat-select>`
+- Strings -> `<input matInput>`
+- Booleans -> `<mat-slide-toggle>`
+- Enums -> `<mat-select>`
     - When rendering enum fields (e.g., AddressType, Status, etc.):
       - The enum must be treated as the source of truth from the actual imported enum definition in the target project, not from the skill sample.
       - Before generating template options or default enum values, the agent must read the enum definition file (or otherwise verify the enum members via project search).
       - The agent must not assume enum member names from any sample code (e.g., Deliver vs Delivery).
-	- Lookups -> `<mat-select>` with service-loaded options only if such services exist
-	- Arrays -> repeatable Material blocks
+- Lookups -> `<mat-select>` with service-loaded options only if such services exist
+- Arrays -> repeatable Material blocks
 - Render a toggle (or checkbox) for nullable objects like "Has Loyalty"
   - Only render the nested fields when enabled
   - Ensure the toggle actually controls nullability:
@@ -243,17 +254,19 @@ Implement two top-level methods for the template to use:
   - there are required validators on nested fields and the object is always non-null.
 
 ### 4. Template-driven validation is required
+
 - Use **template-driven forms** with `FormsModule` and `ngForm`.
 - Wrap the dialog content and actions in a single `<form #form="ngForm" novalidate>` element.
 - Use either `(ngSubmit)="onSave(form)"` on the form with a `type="submit"` Save button, or `(click)="onSave(form)"` with `form` passed as argument. **Preferred: `(ngSubmit)="onSave(form)"`**.
 - Required fields must include all of the following:
-	- `required`
-	- `name="xxx"`
-	- `#xxxCtrl="ngModel"`
-	- `[(ngModel)]="model.xxx"`
-	- `<mat-error>` with validation messages bound to `xxxCtrl.invalid && (xxxCtrl.touched || form.submitted)`
+- `required`
+- `name="xxx"`
+- `#xxxCtrl="ngModel"`
+- `[(ngModel)]="model.xxx"`
+- `<mat-error>` with validation messages bound to `xxxCtrl.invalid && (xxxCtrl.touched || form.submitted)`
 
 Example:
+
 ```html
 <mat-form-field>
     <mat-label>Name</mat-label>
@@ -268,10 +281,11 @@ Example:
   - If `form.invalid`, call `form.control.markAllAsTouched()` and **return without calling any service**.
   - Only call the backend service if the form is valid.
 - Save button must be disabled when:
-	- the form is invalid, or
-	- `isLoading` is true
+- the form is invalid, or
+- `isLoading` is true
 
 Example:
+
 ```html
 <button
     mat-raised-button
@@ -283,29 +297,33 @@ Example:
 ```
 
 ### 5. Save behavior must use existing service flow
+
 - The Save button must call `save()` or `onSave(form)` method.
 - The save method must:
-	- perform validation via `form.invalid` (if using NgForm)
-	- call the existing service method (e.g., `createEntity()`) without modifying it
-	- on success, call `this.dialogRef.close(true)` to close the dialog and signal success to the caller
-	- on error, set a `serviceErrors.*` message and keep the dialog open
+- perform validation via `form.invalid` (if using NgForm)
+- call the existing service method (e.g., `createEntity()`) without modifying it
+- on success, call `this.dialogRef.close(true)` to close the dialog and signal success to the caller
+- on error, set a `serviceErrors.*` message and keep the dialog open
 - Never call `dialogRef.close(...)` on failure.
 - If a method name like `createCustomer()` or `updateCustomer()` already exists and calls the backend, either:
   - call it from inside `save()`, **or**
   - inline its logic into `save()`, but do not change its behavior to stop calling the service.
 
 ### 6. Cancel behavior (IMPORTANT)
+
 - The Cancel button must call `cancel()` and `cancel()` must only call `this.dialogRef.close(null)` (or `false`), with no additional logic.
 - Do NOT reset the model in `cancel()`.
 - Do NOT call any services in `cancel()`.
 - The dialog should close without saving any data.
 
 ### 7. Child collections must follow existing method availability
+
 - Render child collections in repeatable Material UI blocks.
 - Include a delete button only if the TypeScript file already contains a matching remove method (e.g., `removeX()`).
 - Include an add button only if the TypeScript file already contains a matching add method (e.g., `addX()`).
 
 ### 8. Forbidden actions
+
 - DO NOT modify existing backend-calling methods (e.g., `createEntity()`).
 - DO NOT change the shape of the payload.
 - DO NOT invent lookup services.
@@ -313,13 +331,16 @@ Example:
 - DO NOT add navigation logic (this is a dialog, not a page).
 
 ### 9. General constraints
+
 - Use this skill for Add/Create entity **dialogs** in Angular.
 - Do not use this skill for full-page forms, search/list pages, or non-Angular projects.
 - Treat the existing component TypeScript file as the source of truth for service calls.
 - Remember this is a dialog component - no navigation, use `dialogRef.close()` instead.
 
 ### 10. Enum fields Required Implementation Steps
+
 For each enum used by the target component model:
+
 - Locate the enum definition:
   - Prefer direct import path already present in the component (import { AddressType } from '...')
   - Otherwise use search_code for export enum AddressType (or the enum name)
@@ -329,22 +350,19 @@ For each enum used by the target component model:
   - `<mat-option [value]="AddressType.Delivery">...</mat-option>` in .html
 
 ## 11. Mandatory: Verify DTO/Wrapper Shapes Before Template Binding
+
 When binding in HTML to a property that is not directly declared on the component (e.g., `customersModels?.X`, `response?.X`, `paged?.X`, `result?.X`), you MUST verify the shape of the type:
 
 - If the property is a generic wrapper (e.g., `PagedResult<T>`, `ListResult<T>`, `ApiResponse<T>`), you MUST:
-	- Navigate to its definition (via import path) and read the file.
-	- Use the exact collection property name from the type (e.g., data vs items).
-
+- Navigate to its definition (via import path) and read the file.
+- Use the exact collection property name from the type (e.g., data vs items).
 - For any `*ngFor`, you MUST confirm the iterated expression resolves to an array type in the codebase.
-	- Forbidden: assuming common names like items, results, value, content.
-	- Required: use only verified members from the actual interface/class.
-
+- Forbidden: assuming common names like items, results, value, content.
+- Required: use only verified members from the actual interface/class.
 - Output requirement:
-	- If the wrapper type cannot be located/read, STOP and ask the user which property contains the collection.
+- If the wrapper type cannot be located/read, STOP and ask the user which property contains the collection.
 
 No `*ngFor` over ?.items unless the type definition explicitly contains items
-
----
 
 ## Completion Checklist
 

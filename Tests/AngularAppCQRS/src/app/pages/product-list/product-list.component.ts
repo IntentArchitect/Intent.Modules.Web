@@ -31,7 +31,7 @@ import { MatTooltipModule } from '@angular/material/tooltip';
 })
 export class ProductListComponent implements OnInit {
   serviceErrors = {
-    loadProductsError: null as string | null
+    loadProductsError: null as string | null,
   };
   isLoading = false;
   productsModels: ProductDto[] | null = null;

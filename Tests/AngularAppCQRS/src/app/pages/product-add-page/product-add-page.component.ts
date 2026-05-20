@@ -40,7 +40,7 @@ interface CreateProductModel {
 })
 export class ProductAddPageComponent implements OnInit {
   serviceErrors = {
-    createProductError: null as string | null
+    createProductError: null as string | null,
   };
   isLoading = false;
   model: CreateProductModel = {
@@ -70,26 +70,26 @@ export class ProductAddPageComponent implements OnInit {
   createProduct(): void {
     this.serviceErrors.createProductError = null;
     this.isLoading = true;
-    
+
     this.productsService.createProduct({
       name: this.model.name,
       description: this.model.description,
       sku: this.model.sku,
       price: this.model.price!,
     })
-    .pipe(
+      .pipe(
         finalize(() => {
-          this.isLoading = false; 
+          this.isLoading = false;
         })
-    )
-    .subscribe({
-      error: (err) => {
-        const message = err?.error?.message || err.message || 'Unknown error';
-        this.serviceErrors.createProductError = `Failed to call service: ${message}`;
+      )
+      .subscribe({
+        error: (err) => {
+          const message = err?.error?.message || err.message || 'Unknown error';
+          this.serviceErrors.createProductError = `Failed to call service: ${message}`;
 
-        console.error('Failed to call service:', err);
-      }
-    });
+          console.error('Failed to call service:', err);
+        }
+      });
   }
 
   navigateToProductList(): void {

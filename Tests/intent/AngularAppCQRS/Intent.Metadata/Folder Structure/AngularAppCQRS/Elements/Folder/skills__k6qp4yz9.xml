@@ -9,10 +9,108 @@
   <stereotypes />
   <metadata />
   <childElements>
-    <childElement id="a6ca4901-07c6-491c-afd0-baef3033b67b" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
-      <name>Intent.Modules.AI.Angular.Templates.StaticContentTemplateRegistrations.AIAgentSkillsStaticContentTemplateRegistration</name>
-      <display>Intent.Modules.AI.Angular.Templates.StaticContentTemplateRegistrations.AIAgentSkillsStaticContentTemplateRegistration</display>
-      <externalReference>Intent.AI.Angular</externalReference>
+    <childElement id="9d5f3be6-38af-4ffc-aaee-d6fa0d037ec3" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+      <name>Intent.Angular.AI.DialogAddEntitySkillTemplate</name>
+      <display>Intent.Angular.AI.DialogAddEntitySkillTemplate</display>
+      <externalReference>Intent.Angular</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>da111ef9-0bd9-483b-b6ee-62748179ffd4</parentFolderId>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
+      <childElements />
+    </childElement>
+    <childElement id="58d7a628-39ac-4eae-b193-2ee4b478818f" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+      <name>Intent.Angular.AI.DialogEditEntitySkillTemplate</name>
+      <display>Intent.Angular.AI.DialogEditEntitySkillTemplate</display>
+      <externalReference>Intent.Angular</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>da111ef9-0bd9-483b-b6ee-62748179ffd4</parentFolderId>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
+      <childElements />
+    </childElement>
+    <childElement id="116e0357-d5e4-4122-bd1e-ea49992a89cc" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+      <name>Intent.Angular.AI.LayoutShellSkillTemplate</name>
+      <display>Intent.Angular.AI.LayoutShellSkillTemplate</display>
+      <externalReference>Intent.Angular</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>da111ef9-0bd9-483b-b6ee-62748179ffd4</parentFolderId>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
+      <childElements />
+    </childElement>
+    <childElement id="fce3bf38-e564-442e-a989-d278e5573580" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+      <name>Intent.Angular.AI.PageAddEntitySkillTemplate</name>
+      <display>Intent.Angular.AI.PageAddEntitySkillTemplate</display>
+      <externalReference>Intent.Angular</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>da111ef9-0bd9-483b-b6ee-62748179ffd4</parentFolderId>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
+      <childElements />
+    </childElement>
+    <childElement id="c0c22f7f-8405-48e4-9c99-f9105901a9b9" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+      <name>Intent.Angular.AI.PageEditEntitySkillTemplate</name>
+      <display>Intent.Angular.AI.PageEditEntitySkillTemplate</display>
+      <externalReference>Intent.Angular</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>da111ef9-0bd9-483b-b6ee-62748179ffd4</parentFolderId>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
+      <childElements />
+    </childElement>
+    <childElement id="b8baf092-b045-4dbc-917a-4fe0fed2f019" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+      <name>Intent.Angular.AI.PageSearchEntitySkillTemplate</name>
+      <display>Intent.Angular.AI.PageSearchEntitySkillTemplate</display>
+      <externalReference>Intent.Angular</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>da111ef9-0bd9-483b-b6ee-62748179ffd4</parentFolderId>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
+      <childElements />
+    </childElement>
+    <childElement id="961963d6-7116-4d93-b736-41a8bc8c8f94" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+      <name>Intent.Angular.AI.PageViewEntitySkillTemplate</name>
+      <display>Intent.Angular.AI.PageViewEntitySkillTemplate</display>
+      <externalReference>Intent.Angular</externalReference>
+      <isAbstract>false</isAbstract>
+      <genericTypes />
+      <isMapped>false</isMapped>
+      <parentFolderId>da111ef9-0bd9-483b-b6ee-62748179ffd4</parentFolderId>
+      <stereotypes />
+      <metadata>
+        <entry key="status" value="assigned" />
+      </metadata>
+      <childElements />
+    </childElement>
+    <childElement id="36b4857d-77c7-4269-871a-279a4a14c875" type="Template Output" typeId="09de2192-2507-41a2-8044-286c7ecadec2">
+      <name>Intent.Modules.Angular.Templates.AI.StaticContentTemplateRegistrations.AIAgentSkillsStaticContentTemplateRegistration</name>
+      <display>Intent.Modules.Angular.Templates.AI.StaticContentTemplateRegistrations.AIAgentSkillsStaticContentTemplateRegistration</display>
+      <externalReference>Intent.Angular</externalReference>
       <isAbstract>false</isAbstract>
       <genericTypes />
       <isMapped>false</isMapped>

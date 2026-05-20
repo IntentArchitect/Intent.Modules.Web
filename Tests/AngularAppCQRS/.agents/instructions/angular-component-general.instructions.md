@@ -1,24 +1,27 @@
 ---
 description: Instructions for implementing Angular components using Angular Material and best practices for modern UI development.
-appliesTo:
+template-id: Intent.Angular.AI.GeneralAngularComponentInstructionsTemplate
+applyTo: 
   - "**/*.component.html"
   - "**/*.component.ts"
   - "**/*.component.scss"
-contentHash: 31CA4809BD6B081E0F25EA8E655203AD029322A6A0983DBCDE4239D5BEBE28F1
+contentHash: 7A274219C6A518C7ED869766B42F77E688C1699201B1B636B8F2202DEEA3C13E
 ---
-
 ## Role and Context
+
 You are a senior Angular engineer. Build modern Angular Material UIs that compile, follow best practices, and preserve existing application behavior.
 
 ## Core Rules
 
 ### Styling
+
 - Prefer existing global styles from `styles.scss` and theme variables from `theme.scss`.
 - Keep component `.scss` files minimal and component-specific.
 - You may add new utilities/patterns to `styles.scss` and new variables to `theme.scss` if needed.
 - Do not modify or override existing styles, classes, or theme values.
 
 ### File Safety
+
 - Read all provided files and understand how they work together before editing.
 - Only modify files explicitly allowed for modification.
 - Preserve all `[IntentManaged]` attributes on the file, class, and constructor.
@@ -26,6 +29,7 @@ You are a senior Angular engineer. Build modern Angular Material UIs that compil
 - Use existing services when available.
 
 ### TypeScript
+
 - Preserve existing `.ts` code. You may add code, but do not alter existing logic.
 - Never add comments.
 - Do not show technical IDs such as GUIDs to end users.
@@ -35,19 +39,73 @@ You are a senior Angular engineer. Build modern Angular Material UIs that compil
 ## UI and Template Rules
 
 ### Actions
+
 - The TypeScript class is the source of truth for UI actions, service calls, and navigation.
 - Create page action buttons only from existing public TypeScript methods, never from navigation items.
 - Prefer rendering controls for clear action methods such as `navigateTo*`, `add*`, `create*`, `new*`, `edit*`, `update*`, `delete*`, `remove*`, `view*`, `open*`, `search*`, or `load*`.
 - Never bind to a method that does not exist. If intent is unclear, skip the control.
 
 ### TypeScript Changes
+
 - You may add helper/orchestration methods if they only update component state or call existing methods in the same class.
 - New helper methods must not directly call services or `router.navigate`.
 - Do not change the internals of existing methods that call injected services or the Angular router.
 - If a new UI action is needed, call an existing method or add a thin wrapper around it instead of changing service/navigation logic.
 - Load required initial data in `ngOnInit()`, preferably by calling existing load methods. If needed, add new load methods rather than editing service methods.
 
+#### Chained method invocations
+
+When modifying an existing chained method statement (fluent API), any newly added chained invocation must be explicitly annotated so Intent does not treat it as an untracked structural change.
+Rule:
+
+- If you add a new call in an existing chain (e.g. adding next: inside `subscribe({...}`) is not a new invocation, but adding `.pipe(...)`, `.subscribe(...)`, `.catchError(...)`, `.tap(...)`, etc. is), then insert `// @IntentIgnore` immediately before the newly-added chained invocation line.
+
+Examples
+
+Adding a new chained call (`.pipe(...)`)
+
+```typescript
+this.service.doWork()
+	// @IntentIgnore
+	.pipe(finalize(() => this.isLoading = false))
+	.subscribe(...);
+```
+
+Adding `.subscribe(...)` to an existing chain
+
+```typescript
+this.service.doWork()
+    // @IntentIgnore
+    .subscribe({
+        next: () => this.onSuccess(),
+        error: (err) => this.onError(err),
+    });
+```
+
+#### Intent annotations for object changes
+
+When modifying an existing object, eg the `subscribe({ ... })` call:
+
+- If you add any new handler property inside the object literal (`next`, `error`, `complete`) that did not exist before, you must add `// @IntentIgnore `immediately above the new handler property line.
+
+Example (adding `next`):
+
+```typescript
+this.service.doWork()
+    .subscribe({
+        // @IntentIgnore
+        next: () => {
+            this.onSuccess();
+        },
+        error: (err) => this.onError(err),
+    });
+```
+
+- If you only change the body of an existing handler (`error: (...) => { ... }`) and do not add/remove handler properties, no `// @IntentIgnore` is required.
+- This rule is in addition to the existing rule for adding new chained invocations (`.pipe(...)`, `.subscribe(...)`, etc.), which still requires `// @IntentIgnore` above the newly-added chained line.
+
 ### Layout
+
 - Use the sample template as the layout blueprint.
 - Preserve the main structure: hero card, then main card with a `.filter-grid`, a `.button-row` containing both Search and Add, then the table and paginator.
 - Do not add unnecessary top-level wrappers.
@@ -55,6 +113,7 @@ You are a senior Angular engineer. Build modern Angular Material UIs that compil
 - Labels and method bindings may change, but the DOM structure and CSS class names should stay aligned to the sample.
 
 ### Control Selection
+
 1. Angular Material component
 2. Angular Material with native input integration such as `matInput`
 3. Native HTML only as a last resort
@@ -62,12 +121,14 @@ You are a senior Angular engineer. Build modern Angular Material UIs that compil
 Use `mat-datepicker` for dates, `mat-slide-toggle` or `mat-checkbox` for booleans, `mat-select` for enums, and `matInput` for text.
 
 ### Template Safety
+
 - Ensure all bindings between `.html` and `.ts` are valid and the code compiles.
 - Do not use expressions or interpolation in template reference variables.
 - Ensure Material directive bindings point to valid identifiers.
 - Prefer simpler valid Angular patterns when uncertain.
 
 ## Navigation Rules
+
 - Navigation items are only for menus/drawers, never for page action buttons.
 - Render only the provided navigation items.
 - If a matching navigation method exists in TypeScript, use `(click)` to call it; otherwise use `routerLink` and `routerLinkActive`.
@@ -76,12 +137,14 @@ Use `mat-datepicker` for dates, `mat-slide-toggle` or `mat-checkbox` for boolean
 - If a navigation item points to an Add page and the class already has a matching action method such as `navigateToCustomerAdd()`, create the page button from the method, not from the navigation item.
 
 ## Architecture
+
 - Keep components focused on presentation and orchestration.
 - Delegate business logic and data access to services.
 - Follow Angular lifecycle and change-detection best practices.
 - Use reactive patterns for async work and clean up subscriptions in `ngOnDestroy()`.
 
 ## Validation Checklist
+
 - [ ] All `[(ngModel)]`, signals, and event bindings used in `.html` exist in `.ts`.
 - [ ] `[IntentManaged]` attributes are preserved.
 - [ ] Required imports are added and the code compiles.
