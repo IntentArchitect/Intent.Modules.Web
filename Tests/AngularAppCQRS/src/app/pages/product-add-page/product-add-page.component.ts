@@ -1,3 +1,4 @@
+// @IntentMergeFile()
 //@IntentMerge()
 import { IntentIgnoreBody, IntentMerge, IntentIgnore } from './../../intent/intent.decorators';
 import { CreateProductCommand } from './../../service-proxies/models/dot-net-back-end-service/services/products/create-product-command';

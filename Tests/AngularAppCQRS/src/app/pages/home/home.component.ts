@@ -1,3 +1,4 @@
+// @IntentMergeFile()
 //@IntentMerge()
 import { IntentIgnoreBody, IntentMerge, IntentIgnore } from './../../intent/intent.decorators';
 import { Component, OnInit } from '@angular/core';
