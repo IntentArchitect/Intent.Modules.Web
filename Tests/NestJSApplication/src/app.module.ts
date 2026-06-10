@@ -12,23 +12,23 @@ import { IntentMerge } from './intent/intent.decorators';
 
 @IntentMerge()
 @Module({
-  imports: [
-    ConfigModule.forRoot({ isGlobal: true }),
-    AuthModule,
-    TypeOrmModule.forRoot(typeOrmConfig),
-    ClsModule.forRoot({
-      global: true,
-      middleware: { mount: true },
-    }),
-    UsersModules
-  ],
-  controllers: [
-    IntegrationController
-  ],
-  providers: [
-    IntegrationService,
-    Logger,
-    BasicAuditingSubscriber
-  ]
+    imports: [
+        ConfigModule.forRoot({ isGlobal: true }),
+        AuthModule,
+        UsersModules,
+        ClsModule.forRoot({
+            global: true,
+            middleware: { mount: true },
+        }),
+        TypeOrmModule.forRoot(typeOrmConfig)
+    ],
+    controllers: [
+        IntegrationController
+    ],
+    providers: [
+        Logger,
+        IntegrationService,
+        BasicAuditingSubscriber
+    ]
 })
 export class AppModule { }
