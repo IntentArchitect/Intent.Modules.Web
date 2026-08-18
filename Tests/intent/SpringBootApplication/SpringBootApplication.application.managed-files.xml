@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<managedFiles version="1" applicationId="7510940e-4d4d-49bf-8086-8353ca131d36">
+  <file path="pom.xml" />
+  <file path="src/main/java/com/AngularTest/JavaApplication/Application.java" />
+  <file path="src/main/java/com/AngularTest/JavaApplication/application/models/Integration/CustomDTO.java" />
+  <file path="src/main/java/com/AngularTest/JavaApplication/application/rest/IntegrationController.java" />
+  <file path="src/main/java/com/AngularTest/JavaApplication/application/rest/JsonResponse.java" />
+  <file path="src/main/java/com/AngularTest/JavaApplication/application/rest/RestResponseEntityExceptionHandler.java" />
+  <file path="src/main/java/com/AngularTest/JavaApplication/application/services/IntegrationService.java" />
+  <file path="src/main/java/com/AngularTest/JavaApplication/application/services/impl/IntegrationServiceImpl.java" />
+  <file path="src/main/java/com/AngularTest/JavaApplication/configuration/CorsConfig.java" />
+  <file path="src/main/java/com/AngularTest/JavaApplication/configuration/ModelMapperBean.java" />
+  <file path="src/main/java/com/AngularTest/JavaApplication/exceptions/Integration/TestException.java" />
+  <file path="src/main/java/com/AngularTest/JavaApplication/intent/IntentCanAdd.java" />
+  <file path="src/main/java/com/AngularTest/JavaApplication/intent/IntentCanRemove.java" />
+  <file path="src/main/java/com/AngularTest/JavaApplication/intent/IntentCanUpdate.java" />
+  <file path="src/main/java/com/AngularTest/JavaApplication/intent/IntentIgnore.java" />
+  <file path="src/main/java/com/AngularTest/JavaApplication/intent/IntentIgnoreBody.java" />
+  <file path="src/main/java/com/AngularTest/JavaApplication/intent/IntentManage.java" />
+  <file path="src/main/java/com/AngularTest/JavaApplication/intent/IntentManageClass.java" />
+  <file path="src/main/java/com/AngularTest/JavaApplication/intent/IntentMerge.java" />
+  <file path="src/main/java/com/AngularTest/JavaApplication/intent/Mode.java" />
+  <file path="src/main/resources/application.properties" />
+</managedFiles>
