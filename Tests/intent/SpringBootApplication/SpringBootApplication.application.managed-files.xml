@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="utf-8"?>
 <managedFiles version="1" applicationId="7510940e-4d4d-49bf-8086-8353ca131d36">
-  <file path="pom.xml" />
-  <file path="src/main/java/com/AngularTest/JavaApplication/Application.java" />
-  <file path="src/main/java/com/AngularTest/JavaApplication/application/models/Integration/CustomDTO.java" />
-  <file path="src/main/java/com/AngularTest/JavaApplication/application/rest/IntegrationController.java" />
-  <file path="src/main/java/com/AngularTest/JavaApplication/application/rest/JsonResponse.java" />
-  <file path="src/main/java/com/AngularTest/JavaApplication/application/rest/RestResponseEntityExceptionHandler.java" />
-  <file path="src/main/java/com/AngularTest/JavaApplication/application/services/IntegrationService.java" />
-  <file path="src/main/java/com/AngularTest/JavaApplication/application/services/impl/IntegrationServiceImpl.java" />
-  <file path="src/main/java/com/AngularTest/JavaApplication/configuration/CorsConfig.java" />
-  <file path="src/main/java/com/AngularTest/JavaApplication/configuration/ModelMapperBean.java" />
-  <file path="src/main/java/com/AngularTest/JavaApplication/exceptions/Integration/TestException.java" />
-  <file path="src/main/java/com/AngularTest/JavaApplication/intent/IntentCanAdd.java" />
-  <file path="src/main/java/com/AngularTest/JavaApplication/intent/IntentCanRemove.java" />
-  <file path="src/main/java/com/AngularTest/JavaApplication/intent/IntentCanUpdate.java" />
-  <file path="src/main/java/com/AngularTest/JavaApplication/intent/IntentIgnore.java" />
-  <file path="src/main/java/com/AngularTest/JavaApplication/intent/IntentIgnoreBody.java" />
-  <file path="src/main/java/com/AngularTest/JavaApplication/intent/IntentManage.java" />
-  <file path="src/main/java/com/AngularTest/JavaApplication/intent/IntentManageClass.java" />
-  <file path="src/main/java/com/AngularTest/JavaApplication/intent/IntentMerge.java" />
-  <file path="src/main/java/com/AngularTest/JavaApplication/intent/Mode.java" />
-  <file path="src/main/resources/application.properties" />
+  <file path="pom.xml" templateId="Intent.Java.Maven.PomFile" />
+  <file path="src/main/java/com/AngularTest/JavaApplication/Application.java" templateId="Intent.Java.SpringBoot.Application" />
+  <file path="src/main/java/com/AngularTest/JavaApplication/application/models/Integration/CustomDTO.java" templateId="Intent.Java.Services.DataTransferModel" />
+  <file path="src/main/java/com/AngularTest/JavaApplication/application/rest/IntegrationController.java" templateId="Intent.Java.SpringBoot.RestController" />
+  <file path="src/main/java/com/AngularTest/JavaApplication/application/rest/JsonResponse.java" templateId="Intent.Java.SpringBoot.JsonResponse" />
+  <file path="src/main/java/com/AngularTest/JavaApplication/application/rest/RestResponseEntityExceptionHandler.java" templateId="Intent.Java.SpringBoot.Validation.RestResponseEntityExceptionHandler" />
+  <file path="src/main/java/com/AngularTest/JavaApplication/application/services/IntegrationService.java" templateId="Intent.Java.Services.ServiceInterface" />
+  <file path="src/main/java/com/AngularTest/JavaApplication/application/services/impl/IntegrationServiceImpl.java" templateId="Intent.Java.Services.ServiceImplementation" />
+  <file path="src/main/java/com/AngularTest/JavaApplication/configuration/CorsConfig.java" templateId="Intent.Java.Spring.Cors.CorsConfig" />
+  <file path="src/main/java/com/AngularTest/JavaApplication/configuration/ModelMapperBean.java" templateId="Intent.Java.ModelMapper.ModelMapperBean" />
+  <file path="src/main/java/com/AngularTest/JavaApplication/exceptions/Integration/TestException.java" templateId="Intent.Java.Services.ExceptionType" />
+  <file path="src/main/java/com/AngularTest/JavaApplication/intent/IntentCanAdd.java" templateId="Intent.Java.Weaving.Annotations.IntentCanAdd" />
+  <file path="src/main/java/com/AngularTest/JavaApplication/intent/IntentCanRemove.java" templateId="Intent.Java.Weaving.Annotations.IntentCanRemove" />
+  <file path="src/main/java/com/AngularTest/JavaApplication/intent/IntentCanUpdate.java" templateId="Intent.Java.Weaving.Annotations.IntentCanUpdate" />
+  <file path="src/main/java/com/AngularTest/JavaApplication/intent/IntentIgnore.java" templateId="Intent.Java.Weaving.Annotations.IntentIgnore" />
+  <file path="src/main/java/com/AngularTest/JavaApplication/intent/IntentIgnoreBody.java" templateId="Intent.Java.Weaving.Annotations.IntentIgnoreBody" />
+  <file path="src/main/java/com/AngularTest/JavaApplication/intent/IntentManage.java" templateId="Intent.Java.Weaving.Annotations.IntentManage" />
+  <file path="src/main/java/com/AngularTest/JavaApplication/intent/IntentManageClass.java" templateId="Intent.Java.Weaving.Annotations.IntentManageClass" />
+  <file path="src/main/java/com/AngularTest/JavaApplication/intent/IntentMerge.java" templateId="Intent.Java.Weaving.Annotations.IntentMerge" />
+  <file path="src/main/java/com/AngularTest/JavaApplication/intent/Mode.java" templateId="Intent.Java.Weaving.Annotations.ModeEnum" />
+  <file path="src/main/resources/application.properties" templateId="Intent.Java.SpringBoot.ApplicationProperties" />
 </managedFiles>
