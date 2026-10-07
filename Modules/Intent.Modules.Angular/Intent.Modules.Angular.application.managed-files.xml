@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<managedFiles version="1" applicationId="d7d7ead8-a88e-4cf0-b1f9-22e00cd94323">
+  <file path="Intent.Modules.Angular/FactoryExtensions/AITasksFactoryExtension.cs" templateId="Intent.ModuleBuilder.Templates.FactoryExtension" />
+  <file path="Intent.Modules.Angular/FactoryExtensions/SampleFilesConfiguration.cs" templateId="Intent.ModuleBuilder.Templates.FactoryExtension" />
+  <file path="Intent.Modules.Angular/Intent.Angular.imodspec" templateId="Intent.ModuleBuilder.IModSpecFile" />
+  <file path="Intent.Modules.Angular/Intent.Modules.Angular.csproj" templateId="Intent.VisualStudio.Projects.CSharpProject" />
+  <file path="Intent.Modules.Angular/Migrations/Migration_05_00_00_Beta_02.cs" templateId="Intent.ModuleBuilder.Templates.Migrations.OnVersionMigration" />
+  <file path="Intent.Modules.Angular/Settings/ModuleSettingsExtensions.cs" templateId="Intent.ModuleBuilder.Templates.Settings.ModuleSettingsExtensions" />
+  <file path="Intent.Modules.Angular/Templates/AI/DialogAddEntitySkill/DialogAddEntitySkillTemplatePartial.cs" templateId="Intent.ModuleBuilder.ProjectItemTemplate.Partial" />
+  <file path="Intent.Modules.Angular/Templates/AI/DialogAddEntitySkill/DialogAddEntitySkillTemplateRegistration.cs" templateId="Intent.ModuleBuilder.TemplateRegistration.SingleFileNoModel" />
+  <file path="Intent.Modules.Angular/Templates/AI/DialogEditEntitySkill/DialogEditEntitySkillTemplatePartial.cs" templateId="Intent.ModuleBuilder.ProjectItemTemplate.Partial" />
+  <file path="Intent.Modules.Angular/Templates/AI/DialogEditEntitySkill/DialogEditEntitySkillTemplateRegistration.cs" templateId="Intent.ModuleBuilder.TemplateRegistration.SingleFileNoModel" />
+  <file path="Intent.Modules.Angular/Templates/AI/GeneralAngularComponentInstructions/GeneralAngularComponentInstructionsTemplatePartial.cs" templateId="Intent.ModuleBuilder.ProjectItemTemplate.Partial" />
+  <file path="Intent.Modules.Angular/Templates/AI/GeneralAngularComponentInstructions/GeneralAngularComponentInstructionsTemplateRegistration.cs" templateId="Intent.ModuleBuilder.TemplateRegistration.SingleFileNoModel" />
+  <file path="Intent.Modules.Angular/Templates/AI/LayoutShellSkill/LayoutShellSkillTemplatePartial.cs" templateId="Intent.ModuleBuilder.ProjectItemTemplate.Partial" />
+  <file path="Intent.Modules.Angular/Templates/AI/LayoutShellSkill/LayoutShellSkillTemplateRegistration.cs" templateId="Intent.ModuleBuilder.TemplateRegistration.SingleFileNoModel" />
+  <file path="Intent.Modules.Angular/Templates/AI/PageAddEntitySkill/PageAddEntitySkillTemplatePartial.cs" templateId="Intent.ModuleBuilder.ProjectItemTemplate.Partial" />
+  <file path="Intent.Modules.Angular/Templates/AI/PageAddEntitySkill/PageAddEntitySkillTemplateRegistration.cs" templateId="Intent.ModuleBuilder.TemplateRegistration.SingleFileNoModel" />
+  <file path="Intent.Modules.Angular/Templates/AI/PageEditEntitySkill/PageEditEntitySkillTemplatePartial.cs" templateId="Intent.ModuleBuilder.ProjectItemTemplate.Partial" />
+  <file path="Intent.Modules.Angular/Templates/AI/PageEditEntitySkill/PageEditEntitySkillTemplateRegistration.cs" templateId="Intent.ModuleBuilder.TemplateRegistration.SingleFileNoModel" />
+  <file path="Intent.Modules.Angular/Templates/AI/PageSearchEntitySkill/PageSearchEntitySkillTemplatePartial.cs" templateId="Intent.ModuleBuilder.ProjectItemTemplate.Partial" />
+  <file path="Intent.Modules.Angular/Templates/AI/PageSearchEntitySkill/PageSearchEntitySkillTemplateRegistration.cs" templateId="Intent.ModuleBuilder.TemplateRegistration.SingleFileNoModel" />
+  <file path="Intent.Modules.Angular/Templates/AI/PageViewEntitySkill/PageViewEntitySkillTemplatePartial.cs" templateId="Intent.ModuleBuilder.ProjectItemTemplate.Partial" />
+  <file path="Intent.Modules.Angular/Templates/AI/PageViewEntitySkill/PageViewEntitySkillTemplateRegistration.cs" templateId="Intent.ModuleBuilder.TemplateRegistration.SingleFileNoModel" />
+  <file path="Intent.Modules.Angular/Templates/AI/StaticContentTemplateRegistrations/AIAgentSkillsStaticContentTemplateRegistration.cs" templateId="Intent.ModuleBuilder.Templates.StaticContentTemplateRegistration" />
+  <file path="Intent.Modules.Angular/Templates/Component/ComponentHtml/ComponentHtmlTemplate.cs" templateId="Intent.ModuleBuilder.Templates.FileTemplateStringInterpolation" />
+  <file path="Intent.Modules.Angular/Templates/Component/ComponentHtml/ComponentHtmlTemplatePartial.cs" templateId="Intent.ModuleBuilder.ProjectItemTemplate.Partial" />
+  <file path="Intent.Modules.Angular/Templates/Component/ComponentHtml/ComponentHtmlTemplateRegistration.cs" templateId="Intent.ModuleBuilder.TemplateRegistration.FilePerModel" />
+  <file path="Intent.Modules.Angular/Templates/Component/ComponentStyle/ComponentStyleTemplate.cs" templateId="Intent.ModuleBuilder.Templates.FileTemplateStringInterpolation" />
+  <file path="Intent.Modules.Angular/Templates/Component/ComponentStyle/ComponentStyleTemplatePartial.cs" templateId="Intent.ModuleBuilder.ProjectItemTemplate.Partial" />
+  <file path="Intent.Modules.Angular/Templates/Component/ComponentStyle/ComponentStyleTemplateRegistration.cs" templateId="Intent.ModuleBuilder.TemplateRegistration.FilePerModel" />
+  <file path="Intent.Modules.Angular/Templates/Component/ComponentTypeScript/ComponentTypeScriptTemplatePartial.cs" deviationsHash="B9517574BC0790A2C5BF8F075604BCE0643E36B35B09E55E9C409246C57E4575" templateId="Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial" />
+  <file path="Intent.Modules.Angular/Templates/Component/ComponentTypeScript/ComponentTypeScriptTemplateRegistration.cs" templateId="Intent.ModuleBuilder.TemplateRegistration.FilePerModel" />
+  <file path="Intent.Modules.Angular/Templates/Component/LayoutComponentHtml/LayoutComponentHtmlTemplate.cs" templateId="Intent.ModuleBuilder.Templates.FileTemplateStringInterpolation" />
+  <file path="Intent.Modules.Angular/Templates/Component/LayoutComponentHtml/LayoutComponentHtmlTemplatePartial.cs" templateId="Intent.ModuleBuilder.ProjectItemTemplate.Partial" />
+  <file path="Intent.Modules.Angular/Templates/Component/LayoutComponentHtml/LayoutComponentHtmlTemplateRegistration.cs" templateId="Intent.ModuleBuilder.TemplateRegistration.FilePerModel" />
+  <file path="Intent.Modules.Angular/Templates/Component/LayoutComponentStyle/LayoutComponentStyleTemplate.cs" templateId="Intent.ModuleBuilder.Templates.FileTemplateStringInterpolation" />
+  <file path="Intent.Modules.Angular/Templates/Component/LayoutComponentStyle/LayoutComponentStyleTemplatePartial.cs" templateId="Intent.ModuleBuilder.ProjectItemTemplate.Partial" />
+  <file path="Intent.Modules.Angular/Templates/Component/LayoutComponentStyle/LayoutComponentStyleTemplateRegistration.cs" templateId="Intent.ModuleBuilder.TemplateRegistration.FilePerModel" />
+  <file path="Intent.Modules.Angular/Templates/Component/LayoutComponentTypescript/LayoutComponentTypescriptTemplatePartial.cs" deviationsHash="2F06BF4126F88E5F66D31F78919DEB271252189852CB65E0BD7018605D3B9959" templateId="Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial" />
+  <file path="Intent.Modules.Angular/Templates/Component/LayoutComponentTypescript/LayoutComponentTypescriptTemplateRegistration.cs" templateId="Intent.ModuleBuilder.TemplateRegistration.FilePerModel" />
+  <file path="Intent.Modules.Angular/Templates/Core/AngularDotJsonFile/AngularDotJsonFileTemplatePartial.cs" deviationsHash="07300FCA02470B68144FBE2DC6BF9676E85D730A638177527DFD2690811587B3" templateId="Intent.ModuleBuilder.ProjectItemTemplate.Partial" />
+  <file path="Intent.Modules.Angular/Templates/Core/AngularDotJsonFile/AngularDotJsonFileTemplateRegistration.cs" templateId="Intent.ModuleBuilder.TemplateRegistration.SingleFileNoModel" />
+  <file path="Intent.Modules.Angular/Templates/Core/AppComponent/AppComponentTemplatePartial.cs" deviationsHash="92B5BCFD0676CF18CE0030FB50A73C7810CA28BF831847960B2192A5486600B6" templateId="Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial" />
+  <file path="Intent.Modules.Angular/Templates/Core/AppComponent/AppComponentTemplateRegistration.cs" templateId="Intent.ModuleBuilder.TemplateRegistration.SingleFileNoModel" />
+  <file path="Intent.Modules.Angular/Templates/Core/AppComponentHtmlFile/AppComponentHtmlFileTemplate.cs" templateId="ModuleBuilder.Html.Templates.HtmlFileTemplate.T4Template.PreProcessed" />
+  <file path="Intent.Modules.Angular/Templates/Core/AppComponentHtmlFile/AppComponentHtmlFileTemplate.tt" templateId="Intent.ModuleBuilder.Html.Templates.HtmlFileTemplate" />
+  <file path="Intent.Modules.Angular/Templates/Core/AppComponentHtmlFile/AppComponentHtmlFileTemplatePartial.cs" templateId="Intent.ModuleBuilder.Html.Templates.HtmlFileTemplatePartial" />
+  <file path="Intent.Modules.Angular/Templates/Core/AppComponentHtmlFile/AppComponentHtmlFileTemplateRegistration.cs" templateId="Intent.ModuleBuilder.TemplateRegistration.SingleFileNoModel" />
+  <file path="Intent.Modules.Angular/Templates/Core/AppComponentScssFile/AppComponentScssFileTemplate.cs" templateId="Intent.ModuleBuilder.Templates.FileTemplateStringInterpolation" />
+  <file path="Intent.Modules.Angular/Templates/Core/AppComponentScssFile/AppComponentScssFileTemplatePartial.cs" templateId="Intent.ModuleBuilder.ProjectItemTemplate.Partial" />
+  <file path="Intent.Modules.Angular/Templates/Core/AppComponentScssFile/AppComponentScssFileTemplateRegistration.cs" templateId="Intent.ModuleBuilder.TemplateRegistration.SingleFileNoModel" />
+  <file path="Intent.Modules.Angular/Templates/Core/AppConfig/AppConfigTemplatePartial.cs" deviationsHash="42111E2E2A00EF501636753A86683E0EDE96EFD716725D4F69DFF1724080279E" templateId="Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial" />
+  <file path="Intent.Modules.Angular/Templates/Core/AppConfig/AppConfigTemplateRegistration.cs" templateId="Intent.ModuleBuilder.TemplateRegistration.SingleFileNoModel" />
+  <file path="Intent.Modules.Angular/Templates/Core/AppRoutes/AppRoutesTemplatePartial.cs" deviationsHash="CD99460662BAE46A72BC82CFB1F7ED858E3CE5EACAC31B05BE11EF55AE9114A9" templateId="Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial" />
+  <file path="Intent.Modules.Angular/Templates/Core/AppRoutes/AppRoutesTemplateRegistration.cs" templateId="Intent.ModuleBuilder.TemplateRegistration.SingleFileNoModel" />
+  <file path="Intent.Modules.Angular/Templates/Core/IndexHtml/IndexHtmlTemplate.cs" templateId="Intent.ModuleBuilder.Templates.FileTemplateStringInterpolation" />
+  <file path="Intent.Modules.Angular/Templates/Core/IndexHtml/IndexHtmlTemplatePartial.cs" templateId="Intent.ModuleBuilder.ProjectItemTemplate.Partial" />
+  <file path="Intent.Modules.Angular/Templates/Core/IndexHtml/IndexHtmlTemplateRegistration.cs" templateId="Intent.ModuleBuilder.TemplateRegistration.SingleFileNoModel" />
+  <file path="Intent.Modules.Angular/Templates/Core/Main/MainTemplatePartial.cs" deviationsHash="8C8A48C4A631B44B280EA6CD0A12F846ED0A9E989548C1EC12C6A132F4E0304C" templateId="Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial" />
+  <file path="Intent.Modules.Angular/Templates/Core/Main/MainTemplateRegistration.cs" templateId="Intent.ModuleBuilder.TemplateRegistration.SingleFileNoModel" />
+  <file path="Intent.Modules.Angular/Templates/Core/StylesDotScssFile/StylesDotScssFileTemplate.cs" templateId="Intent.ModuleBuilder.Templates.FileTemplateStringInterpolation" />
+  <file path="Intent.Modules.Angular/Templates/Core/StylesDotScssFile/StylesDotScssFileTemplatePartial.cs" templateId="Intent.ModuleBuilder.ProjectItemTemplate.Partial" />
+  <file path="Intent.Modules.Angular/Templates/Core/StylesDotScssFile/StylesDotScssFileTemplateRegistration.cs" templateId="Intent.ModuleBuilder.TemplateRegistration.SingleFileNoModel" />
+  <file path="Intent.Modules.Angular/Templates/Core/ThemeDotScssFile/ThemeDotScssFileTemplate.cs" templateId="Intent.ModuleBuilder.Templates.FileTemplateStringInterpolation" />
+  <file path="Intent.Modules.Angular/Templates/Core/ThemeDotScssFile/ThemeDotScssFileTemplatePartial.cs" templateId="Intent.ModuleBuilder.ProjectItemTemplate.Partial" />
+  <file path="Intent.Modules.Angular/Templates/Core/ThemeDotScssFile/ThemeDotScssFileTemplateRegistration.cs" templateId="Intent.ModuleBuilder.TemplateRegistration.SingleFileNoModel" />
+  <file path="Intent.Modules.Angular/Templates/Core/TypescriptConfigAppJsonFile/TypescriptConfigAppJsonFileTemplatePartial.cs" deviationsHash="D13020E7CBEB9AE00B697809E9B5F9DF88855A92BC8B6E10827F2A2AAD423CB6" templateId="Intent.ModuleBuilder.ProjectItemTemplate.Partial" />
+  <file path="Intent.Modules.Angular/Templates/Core/TypescriptConfigAppJsonFile/TypescriptConfigAppJsonFileTemplateRegistration.cs" templateId="Intent.ModuleBuilder.TemplateRegistration.SingleFileNoModel" />
+  <file path="Intent.Modules.Angular/Templates/Core/TypescriptConfigJsonFile/TypescriptConfigJsonFileTemplatePartial.cs" deviationsHash="C8D4989C5D178A6ED72111945220E422B2B04B3EB67FEFF798897EE031888D0C" templateId="Intent.ModuleBuilder.ProjectItemTemplate.Partial" />
+  <file path="Intent.Modules.Angular/Templates/Core/TypescriptConfigJsonFile/TypescriptConfigJsonFileTemplateRegistration.cs" templateId="Intent.ModuleBuilder.TemplateRegistration.SingleFileNoModel" />
+  <file path="Intent.Modules.Angular/Templates/Core/TypescriptConfigSpecJsonFile/TypescriptConfigSpecJsonFileTemplatePartial.cs" deviationsHash="95AEA061F18B9DF0172E2B6C72294CF84882C79E645B34DFDBC76ADB8A20ED8C" templateId="Intent.ModuleBuilder.ProjectItemTemplate.Partial" />
+  <file path="Intent.Modules.Angular/Templates/Core/TypescriptConfigSpecJsonFile/TypescriptConfigSpecJsonFileTemplateRegistration.cs" templateId="Intent.ModuleBuilder.TemplateRegistration.SingleFileNoModel" />
+  <file path="Intent.Modules.Angular/Templates/Environment/Environment/EnvironmentTemplatePartial.cs" deviationsHash="D0DA2C804E115AC6B4894BFF907B45C63609175507DC37EBD32E93C2F1258B2B" templateId="Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial" />
+  <file path="Intent.Modules.Angular/Templates/Environment/Environment/EnvironmentTemplateRegistration.cs" templateId="Intent.ModuleBuilder.TemplateRegistration.SingleFileNoModel" />
+  <file path="Intent.Modules.Angular/Templates/Environment/EnvironmentDotDevelopment/EnvironmentDotDevelopmentTemplatePartial.cs" deviationsHash="78788FDAA49CE2E53E481D8052A016F9B2D83616D1E78632F4A395B808E7BD53" templateId="Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial" />
+  <file path="Intent.Modules.Angular/Templates/Environment/EnvironmentDotDevelopment/EnvironmentDotDevelopmentTemplateRegistration.cs" templateId="Intent.ModuleBuilder.TemplateRegistration.SingleFileNoModel" />
+  <file path="Intent.Modules.Angular/Templates/Environment/EnvironmentTypes/EnvironmentTypesTemplatePartial.cs" deviationsHash="409DEFA3C8FB66406B81C5F20500CFCD0C5EC04CFD6C68876D19B21AD41A25AE" templateId="Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial" />
+  <file path="Intent.Modules.Angular/Templates/Environment/EnvironmentTypes/EnvironmentTypesTemplateRegistration.cs" templateId="Intent.ModuleBuilder.TemplateRegistration.SingleFileNoModel" />
+  <file path="Intent.Modules.Angular/Templates/Shared/IntentDecorators/IntentDecoratorsTemplatePartial.cs" deviationsHash="F63BC01AACC8BB8832469411B684FD05191E8167BD5064324E7B04ED211E01AA" templateId="Intent.ModuleBuilder.TypeScript.Templates.TypescriptTemplatePartial" />
+  <file path="Intent.Modules.Angular/Templates/Shared/IntentDecorators/IntentDecoratorsTemplateRegistration.cs" templateId="Intent.ModuleBuilder.TemplateRegistration.SingleFileNoModel" />
+  <file path="Intent.Modules.Angular/Templates/StaticContentTemplateRegistrations/InitialFilesStaticContentTemplateRegistration.cs" deviationsHash="FA7001CCBE8ECC3998B032104AE3AEE37B1F991737273D8C2EF0F7B0ED69F45C" templateId="Intent.ModuleBuilder.Templates.StaticContentTemplateRegistration" />
+  <file path="Intent.Modules.Angular/Templates/TemplateExtensions.cs" deviationsHash="19F366B0DE0F1B4DBA32BE231F319B6CC7A33A5BA5B5D3B0C95AAE27756483E7" templateId="Intent.ModuleBuilder.Templates.TemplateExtensions" />
+  <file path="Intent.Modules.Angular/content/AgentSkills/readme.txt" templateId="Intent.ModuleBuilder.Templates.StaticContentOutputReadme" />
+  <file path="Intent.Modules.Angular/content/InitialFiles/readme.txt" templateId="Intent.ModuleBuilder.Templates.StaticContentOutputReadme" />
+  <file path="Intent.Modules.Angular/modelers/Angular UI Extensions.designer.settings" templateId="Intent.ModuleBuilder.DesignerSettings" />
+  <file path="Intent.Modules.Angular/resources/documentation.json" templateId="Intent.ModuleBuilder.Templates.DocumentationTemplate" />
+  <file path="Intent.Modules.Web.sln" templateId="Intent.VisualStudio.Projects.VisualStudioSolution" />
+  <file path="csharp-guidelines.md" templateId="Intent.Modules.Common.CSharp.Templates.StaticContentTemplateRegistrations.AIInstructionsStaticContentTemplateRegistration" />
+</managedFiles>

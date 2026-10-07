@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <class id="0abba320-95fe-4070-b07f-ec1f93ae2049" type="File Template" typeId="43eae4bd-4613-4d15-88ac-52b7e743b7b2">
-  <comment />
   <name>IndexHtmlTemplate</name>
   <display>IndexHtmlTemplate: Single File</display>
   <isAbstract>false</isAbstract>
