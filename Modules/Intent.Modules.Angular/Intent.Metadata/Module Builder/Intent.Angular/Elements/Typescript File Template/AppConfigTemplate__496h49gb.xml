@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <class id="f0710102-9ea8-4133-af13-9047df41a49f" type="Typescript File Template" typeId="e6e41d88-2829-41b6-a791-065d2bb44eb3">
-  <comment />
   <name>AppConfigTemplate</name>
   <display>AppConfigTemplate: Single File</display>
   <isAbstract>false</isAbstract>

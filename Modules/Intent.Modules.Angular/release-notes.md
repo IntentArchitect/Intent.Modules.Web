@@ -1,3 +1,7 @@
+### Version 5.1.1
+
+- Improvement: Updated module dependencies to their latest versions.
+
 ### Version 5.1.0
 
 - Improvement: Converted template and markdown files to use skills.

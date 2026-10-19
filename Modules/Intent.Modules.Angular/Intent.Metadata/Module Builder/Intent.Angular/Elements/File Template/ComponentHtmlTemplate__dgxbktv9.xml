@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <class id="924597b4-518c-4fc7-b51e-6da10bd24886" type="File Template" typeId="43eae4bd-4613-4d15-88ac-52b7e743b7b2">
-  <comment />
   <name>ComponentHtmlTemplate</name>
   <display>ComponentHtmlTemplate: File Per Model</display>
   <isAbstract>false</isAbstract>
