@@ -6,6 +6,8 @@
   <genericTypes />
   <isMapped>false</isMapped>
   <parentFolderId>8b7cdc68-ec6e-43b0-8e24-e25b99271cd1</parentFolderId>
+  <packageId>b122ea6c-7f7f-4917-8548-066afb97552f</packageId>
+  <packageName>NestJSApplication</packageName>
   <stereotypes />
   <metadata />
   <childElements>
@@ -17,6 +19,8 @@
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>462804e3-701f-4f2a-951d-ac55760aa09a</parentFolderId>
+      <packageId>b122ea6c-7f7f-4917-8548-066afb97552f</packageId>
+      <packageName>NestJSApplication</packageName>
       <stereotypes />
       <metadata>
         <entry key="status" value="assigned" />
@@ -31,6 +35,8 @@
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>462804e3-701f-4f2a-951d-ac55760aa09a</parentFolderId>
+      <packageId>b122ea6c-7f7f-4917-8548-066afb97552f</packageId>
+      <packageName>NestJSApplication</packageName>
       <stereotypes />
       <metadata>
         <entry key="status" value="assigned" />
@@ -45,6 +51,8 @@
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>462804e3-701f-4f2a-951d-ac55760aa09a</parentFolderId>
+      <packageId>b122ea6c-7f7f-4917-8548-066afb97552f</packageId>
+      <packageName>NestJSApplication</packageName>
       <stereotypes />
       <metadata>
         <entry key="status" value="assigned" />
@@ -59,6 +67,8 @@
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>462804e3-701f-4f2a-951d-ac55760aa09a</parentFolderId>
+      <packageId>b122ea6c-7f7f-4917-8548-066afb97552f</packageId>
+      <packageName>NestJSApplication</packageName>
       <stereotypes />
       <metadata>
         <entry key="status" value="assigned" />

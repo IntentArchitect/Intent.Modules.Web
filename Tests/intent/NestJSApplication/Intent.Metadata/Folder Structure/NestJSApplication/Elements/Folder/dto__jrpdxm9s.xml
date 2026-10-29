@@ -6,6 +6,8 @@
   <genericTypes />
   <isMapped>false</isMapped>
   <parentFolderId>1cd37843-572c-41ca-88d6-89a5dc52df69</parentFolderId>
+  <packageId>b122ea6c-7f7f-4917-8548-066afb97552f</packageId>
+  <packageName>NestJSApplication</packageName>
   <stereotypes />
   <metadata />
   <childElements>
@@ -17,6 +19,8 @@
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>0f5f90f2-a93f-434a-9fb7-ecf3663eaca2</parentFolderId>
+      <packageId>b122ea6c-7f7f-4917-8548-066afb97552f</packageId>
+      <packageName>NestJSApplication</packageName>
       <stereotypes />
       <metadata>
         <entry key="status" value="assigned" />

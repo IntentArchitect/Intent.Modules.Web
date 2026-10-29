@@ -6,6 +6,8 @@
   <genericTypes />
   <isMapped>false</isMapped>
   <parentFolderId>dcd91d69-9435-44cc-ab97-676c3f5bf4e8</parentFolderId>
+  <packageId>d09d982c-4f5d-4005-ba76-b0d7ff40c1b6</packageId>
+  <packageName>DotNetBackEndService</packageName>
   <stereotypes />
   <metadata />
   <childElements>
@@ -17,6 +19,8 @@
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>ea12778a-efa1-43ec-a68e-efcced50a5c6</parentFolderId>
+      <packageId>d09d982c-4f5d-4005-ba76-b0d7ff40c1b6</packageId>
+      <packageName>DotNetBackEndService</packageName>
       <stereotypes />
       <metadata>
         <entry key="status" value="assigned" />

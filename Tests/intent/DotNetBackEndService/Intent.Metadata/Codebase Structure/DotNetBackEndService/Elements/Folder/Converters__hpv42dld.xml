@@ -6,6 +6,8 @@
   <genericTypes />
   <isMapped>false</isMapped>
   <parentFolderId>dc146adc-c08f-4c8e-8ceb-5a140fb26faa</parentFolderId>
+  <packageId>d09d982c-4f5d-4005-ba76-b0d7ff40c1b6</packageId>
+  <packageName>DotNetBackEndService</packageName>
   <stereotypes />
   <metadata />
   <childElements>
@@ -17,6 +19,8 @@
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>de773be3-eaaa-4497-9573-981ae12b6f04</parentFolderId>
+      <packageId>d09d982c-4f5d-4005-ba76-b0d7ff40c1b6</packageId>
+      <packageName>DotNetBackEndService</packageName>
       <stereotypes>
         <stereotype stereotypeDefinitionId="1a5d919b-7ca2-4f2f-8a0d-0995aa6b02ac" name="File Classification">
           <addedByDefault>false</addedByDefault>

@@ -6,6 +6,8 @@
   <genericTypes />
   <isMapped>false</isMapped>
   <parentFolderId>11c3e807-9f91-431f-b833-47341e359257</parentFolderId>
+  <packageId>4d3049c6-3207-44d1-a8d0-1cafbeafde82</packageId>
+  <packageName>AngularAppCQRS</packageName>
   <stereotypes />
   <metadata />
   <childElements>
@@ -17,6 +19,8 @@
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>12c208cf-8fea-47c6-a028-6ae7890c2c7a</parentFolderId>
+      <packageId>4d3049c6-3207-44d1-a8d0-1cafbeafde82</packageId>
+      <packageName>AngularAppCQRS</packageName>
       <stereotypes />
       <metadata>
         <entry key="status" value="assigned" />
@@ -31,6 +35,8 @@
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>12c208cf-8fea-47c6-a028-6ae7890c2c7a</parentFolderId>
+      <packageId>4d3049c6-3207-44d1-a8d0-1cafbeafde82</packageId>
+      <packageName>AngularAppCQRS</packageName>
       <stereotypes />
       <metadata>
         <entry key="status" value="assigned" />
@@ -45,6 +51,8 @@
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>12c208cf-8fea-47c6-a028-6ae7890c2c7a</parentFolderId>
+      <packageId>4d3049c6-3207-44d1-a8d0-1cafbeafde82</packageId>
+      <packageName>AngularAppCQRS</packageName>
       <stereotypes />
       <metadata>
         <entry key="status" value="assigned" />

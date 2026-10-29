@@ -5,7 +5,7 @@ applyTo:
   - "**/*.component.html"
   - "**/*.component.ts"
   - "**/*.component.scss"
-contentHash: 7A274219C6A518C7ED869766B42F77E688C1699201B1B636B8F2202DEEA3C13E
+contentHash: 97C0B4344510D46CE9F9D39E89CCF797C060A4CEDC7D9A1CBD77525A358A1330
 ---
 ## Role and Context
 
@@ -59,8 +59,7 @@ When modifying an existing chained method statement (fluent API), any newly adde
 Rule:
 
 - If you add a new call in an existing chain (e.g. adding next: inside `subscribe({...}`) is not a new invocation, but adding `.pipe(...)`, `.subscribe(...)`, `.catchError(...)`, `.tap(...)`, etc. is), then insert `// @IntentIgnore` immediately before the newly-added chained invocation line.
-
-Examples
+  Examples
 
 Adding a new chained call (`.pipe(...)`)
 

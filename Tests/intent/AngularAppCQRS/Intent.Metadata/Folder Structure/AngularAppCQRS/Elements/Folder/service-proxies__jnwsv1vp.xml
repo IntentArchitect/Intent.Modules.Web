@@ -6,6 +6,8 @@
   <genericTypes />
   <isMapped>false</isMapped>
   <parentFolderId>ec5a4334-90f1-44d1-ba96-833b18c887ed</parentFolderId>
+  <packageId>4d3049c6-3207-44d1-a8d0-1cafbeafde82</packageId>
+  <packageName>AngularAppCQRS</packageName>
   <stereotypes />
   <metadata />
   <childElements>
@@ -17,6 +19,8 @@
       <genericTypes />
       <isMapped>false</isMapped>
       <parentFolderId>aa8442f1-577e-478a-9358-955d00ec92a0</parentFolderId>
+      <packageId>4d3049c6-3207-44d1-a8d0-1cafbeafde82</packageId>
+      <packageName>AngularAppCQRS</packageName>
       <stereotypes />
       <metadata>
         <entry key="status" value="assigned" />
